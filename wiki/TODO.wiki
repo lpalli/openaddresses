@@ -49,6 +49,10 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * Synchronize with OpenStreetMap
  * Free background data
 
+PENDING:
+- Is the address represented only as a point, or are other geometric forms accepted ? The address can be an attribute of the house polygon (as it can be in OSM).
+Addresses can also be captured as ranges, represented as lines.
+As these 2 alternate forms of addresses accepted or rejected by openaddresses?
 = Marketing =
 
  * Create a blog
