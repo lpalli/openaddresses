@@ -1,0 +1,57 @@
+Description of task that need to be accomplished in order to launch www.openaddresses.org
+
+= License =
+
+ * Define license for data and code
+  * Proposal:
+   * Data: http://creativecommons.org/licenses/by/3.0/
+    * The postal addresses must be associated to the url of http://www.openaddresses.org
+   * Code
+    * http://www.opensource.org/licenses/bsd-license.php
+     * The code developped for openaddresses.org is under BSD license
+
+= Development =
+
+=== Phase 1 ===
+
+=== Use cases === 
+
+ * User creates an address by digitizing a point
+ * User imports addresses in various formats
+ * User searches an address
+ * User exports addresses
+
+=== Implementation ===
+
+ * PostGIS database
+ * REST service for addresses amanagement: POST, GET, PUT, DELETE
+ * REST service for data export
+ * Mapping client
+
+= Data =
+
+ * Define data model
+  * ID: Identifier
+  * STREET: String
+  * HOUSE_NUMBER: String
+  * ADDRESS_EXTENSION: String
+  * POSTAL_CODE: Number
+  * CITY: String
+  * LATITUDE: Number
+  * LONGITUDE: Number
+  * GEOMETRY: Point Geom
+  * DATE_CREATED: Date
+  * DATE_MODIFIED: Date
+  * DATE_DELETED: Date
+ * Support history
+ * Convert data to WGS-84
+ * Import data in PostGIS
+ * Synchronize with OpenStreetMap
+ * Free background data
+
+= Marketing =
+
+ * Create a blog
+  * Reference it
+ * Create flyer
+ * Participate to conference
