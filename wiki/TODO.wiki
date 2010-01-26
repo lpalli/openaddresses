@@ -7,8 +7,8 @@ Description of task that need to be accomplished in order to launch www.openaddr
    * Data: http://creativecommons.org/licenses/by/3.0/
     * The postal addresses must be associated to the url of http://www.openaddresses.org
    * Code
-    * http://www.opensource.org/licenses/bsd-license.php
-     * The code developped for openaddresses.org is under BSD license
+    * http://www.opensource.org/licenses/gpl-3.0.html
+     * The code developped for openaddresses.org is under GPL V3 license
 
 = Development =
 
