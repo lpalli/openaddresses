@@ -1,9 +1,15 @@
-#Projects related to openaddresses
+Projects related to openaddresses
 
-= Introduction =
-
-List of projects that are related or equivalent to openaddresses.org
-
-= Details =
-
+= List =
+ 
+ * http://www.openstreetmap.org/
+ * http://www.pagcgeo.org/
  * http://www.gisgraphy.com/
+ * http://www.opengeocoding.org/
+ * http://peoplesmap.com/
+ * http://www.map-your-world.ch/
+ * http://www.geonames.org
+ * http://geocoder.us/ 
+ * http://geocoder.ca/
+ * http://www.batchgeocode.com/
+ * http://www.vterrain.org/Culture/geocoding.html
