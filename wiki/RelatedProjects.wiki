@@ -1,0 +1,9 @@
+#Projects related to openaddresses
+
+= Introduction =
+
+List of projects that are related or equivalent to openaddresses.org
+
+= Details =
+
+ * http://www.gisgraphy.com/
