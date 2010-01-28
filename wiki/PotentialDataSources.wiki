@@ -26,3 +26,8 @@ They are thinking about publishing all vector data to OSM. This will be discusse
 
 List of potential datasources for OSM:
 http://wiki.openstreetmap.org/wiki/Potential_Datasources
+
+e.g.
+- Canton Neuchâtel: http://sitn.ne.ch/ogc-sitn-open/wms
+- Kanton Solothurn: http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms
+and others
