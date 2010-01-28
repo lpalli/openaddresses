@@ -11,10 +11,11 @@ This includes the cadastral layers, which also contain adresses as points.
 Any of these services can be used:
 Connexion aux services WMS ArcGIS Server (normes 1.1.0, 1.1.1 et 1.3.0)
 -------------------------------------------------------------------------------------------------------------------------------------------
-Orthophotos				http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer
-Plans Officiels				http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer
-Cadastre				http://etat.geneve.ch/ags1/services/Cadastre/MapServer/WMSServer
-Viticulture				http://etat.geneve.ch/ags1/services/Viticulture/MapServer/WMSServer
+Orthophotos: http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer
+
+Plans Officiels: http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer
+Cadastre: http://etat.geneve.ch/ags1/services/Cadastre/MapServer/WMSServer
+Viticulture: http://etat.geneve.ch/ags1/services/Viticulture/MapServer/WMSServer
 
 
 They are thinking about publishing all vector data to OSM. This will be discussed at a next steering committee. (after A Vieira de Mello, 28.01.2010)
