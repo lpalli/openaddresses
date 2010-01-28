@@ -35,7 +35,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * STREET: String
   * HOUSE_NUMBER: String
   * ADDRESS_EXTENSION: String
-  * POSTAL_CODE: Number
+  * POSTAL_CODE: String
   * CITY: String
   * LATITUDE: Number
   * LONGITUDE: Number
