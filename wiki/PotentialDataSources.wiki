@@ -21,3 +21,8 @@ Viticulture: http://etat.geneve.ch/ags1/services/Viticulture/MapServer/WMSServer
 
 
 They are thinking about publishing all vector data to OSM. This will be discussed at a next steering committee. (after A Vieira de Mello, 28.01.2010)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+List of potential datasources for OSM:
+http://wiki.openstreetmap.org/wiki/Potential_Datasources
