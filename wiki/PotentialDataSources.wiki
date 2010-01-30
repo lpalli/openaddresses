@@ -39,11 +39,19 @@ Referenced by OSM: http://wiki.openstreetmap.org/wiki/Potential_Datasources
 
 == EPFL ==
 
+=== Introduction ===
+
+Referenced by OSM: http://wiki.openstreetmap.org/wiki/Potential_Datasources
+
 === Details ===
 
  * http://plan.epfl.ch/wms
 
 == City of Lausanne ==
+
+=== Introduction ===
+
+Referenced by OSM: http://wiki.openstreetmap.org/wiki/Potential_Datasources
 
 === Details ===
 
