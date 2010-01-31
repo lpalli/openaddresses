@@ -1,5 +1,7 @@
 Description of task that need to be accomplished in order to launch www.openaddresses.org
 
+<wiki:toc max_depth="2" />
+
 = License =
 
  * Define license for data and code
