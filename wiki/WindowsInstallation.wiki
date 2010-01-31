@@ -78,4 +78,5 @@ C:\Program Files\PostgreSQL\8.4\bin>
 
  * Postgres can be started with: "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
 
+==== Install MapFish ====
  1.
