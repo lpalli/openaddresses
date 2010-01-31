@@ -6,4 +6,6 @@ Install !OpenAddresses code base on Windows
 
 = !HowTo =
 
- * 1. Checkout trunk code
+ 1. Create a directory openaddresses
+ 1. In this directory Checkout trunk code: http://code.google.com/p/openaddresses/source/checkout
+ 1. 
