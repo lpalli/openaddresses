@@ -83,4 +83,18 @@ C:\Program Files\PostgreSQL\8.4\bin>
  * Unregister a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" unregister -N postgresql 
 
 ==== Install !MapFish ====
- 1. Follow http://www.mapfish.org/doc/1.2/installation.html
+
+ 1. in directory openaddresses: follow http://www.mapfish.org/doc/1.2/installation.html
+ 1. cd trunk
+ 1. paster create -t mapfish openaddresses
+ 1. paster create -t mapfish_client openaddresses
+ 1. cd openaddresses
+ 1. paster serve --reload development.ini
+ 1. Add svn external to mfbase in public directory
+
+==== Start !MapFish =====
+
+ 1. env\Scripts\activate.bat
+ 1. cd trunk/openaddresses
+ 1. paster serve --reload development.ini
+ 1. http://localhost:5000
