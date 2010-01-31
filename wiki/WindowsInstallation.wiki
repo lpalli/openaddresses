@@ -13,6 +13,18 @@ Install !OpenAddresses code base on Windows
  1. Create a directory trunk inside openaddresses
  1. In this directory, checkout trunk code: http://code.google.com/p/openaddresses/source/checkout. I use as URL repository: https://openaddresses.googlecode.com/svn/trunk/
 
+== Install !MapFish ==
+
+ 1. Install !MapFish  in a virtual env at the same level as the trunk directory: http://www.mapfish.org/doc/1.2/installation.html 
+
+==== Start !MapFish =====
+
+ 1. cd c:\Sandbox\openadresses (installation directory containing env)
+ 1. env\Scripts\activate.bat
+ 1. cd trunk/openaddresses
+ 1. paster serve --reload development.ini
+ 1. http://localhost:5000 
+
 == Original Install ==
 
 This describes the original installation. It is not required to do that everytime the code base is checked-out.
@@ -91,11 +103,3 @@ C:\Program Files\PostgreSQL\8.4\bin>
  1. cd openaddresses
  1. paster serve --reload development.ini
  1. Add svn external to mfbase in public directory
-
-==== Start !MapFish =====
-
- 1. cd c:\Sandbox\openadresses
- 1. env\Scripts\activate.bat
- 1. cd trunk/openaddresses
- 1. paster serve --reload development.ini
- 1. http://localhost:5000
