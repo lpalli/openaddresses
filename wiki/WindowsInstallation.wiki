@@ -3,6 +3,7 @@ Install !OpenAddresses code base on Windows
 = Requirements =
 
  * http://tortoisesvn.net/downloads
+ * Tested with Windows Vista Family Edition SP2
 
 = !HowTo Install !OpenAddresses Server =
 
