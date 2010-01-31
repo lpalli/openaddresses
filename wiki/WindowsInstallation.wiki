@@ -25,6 +25,12 @@ Install !OpenAddresses code base on Windows
  1. paster serve --reload development.ini
  1. http://localhost:5000 
 
+== Localized application ==
+
+ * Server side
+  * http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
+  * python setup.py compile_catalog
+
 = Initial Install of !OpenAddresses Server =
 
 This describes the initial installation. It is not required to do that everytime the code base is checked-out.
