@@ -94,6 +94,7 @@ C:\Program Files\PostgreSQL\8.4\bin>
 
 ==== Start !MapFish =====
 
+ 1. cd c:\Sandbox\openadresses
  1. env\Scripts\activate.bat
  1. cd trunk/openaddresses
  1. paster serve --reload development.ini
