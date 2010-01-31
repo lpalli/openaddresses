@@ -34,9 +34,6 @@ class HomeController(BaseController):
         if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
             lang = request.params['lang']
         elif 'lang' in session:
-            #
-            # TODO: use cookies instead of session !!
-            #
             lang = session['lang']
             update_session = False
         else:
@@ -51,9 +48,6 @@ class HomeController(BaseController):
 
         set_lang(lang)
         if update_session:
-            #
-            # TODO: use cookies instead of session !!
-            #
             session['lang'] = lang
             session.save()
 
