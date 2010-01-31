@@ -32,7 +32,8 @@ Description of task that need to be accomplished in order to launch www.openaddr
 
 = Data =
 
- * Define data model
+== Data Model ==
+
   * ID: Identifier
   * STREET: String
   * HOUSE_NUMBER: String
@@ -47,19 +48,17 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * DATE_CREATED: Date
   * DATE_MODIFIED: Date
   * DATE_DELETED: Date
- * Support history
- * Convert data to WGS-84
- * Import data in PostGIS
- * Synchronize with OpenStreetMap
- * Free background data
 
 == Open Points ==
 
  * Data Geometry: is the address represented only as a point, or are other geometric forms accepted ? The address can be an attribute of the house polygon (as it can be in OSM).
 Addresses can also be captured as ranges, represented as lines.
 As these 2 alternate forms of addresses accepted or rejected by openaddresses?
- * Version management
- * Data Coordinate System
+ * Version management / History
+ * Data Coordinate System / Convert data to WGS-84
+ * Import data in PostGIS
+ * Synchronize with OpenStreetMap
+
 = Marketing =
 
  * Create a blog
