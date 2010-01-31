@@ -40,6 +40,8 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * LATITUDE: Number
   * LONGITUDE: Number
   * GEOMETRY: Point Geom
+  * ORIGIN: String
+  * REFERENCE_URL: "http://www.openaddresses.org"
   * DATE_CREATED: Date
   * DATE_MODIFIED: Date
   * DATE_DELETED: Date
