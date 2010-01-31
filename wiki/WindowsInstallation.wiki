@@ -4,7 +4,7 @@ Install !OpenAddresses code base on Windows
 
  * http://tortoisesvn.net/downloads
 
-= !HowTo Install OpenAddresses Server =
+= !HowTo Install !OpenAddresses Server =
 
 == Checkout Code ==
 
