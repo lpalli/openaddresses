@@ -24,7 +24,7 @@ This describes the original installation. It is not required to do that everytim
 
 ==== Install Postgres 8.4.2.1 ====
 
-Installation procedure usually fails on Vista.
+Installation procedure usually fails on Vista. It is needed to give full rights to all to data directory.
 Postgres needs to be installed with the installation procedure and then you can do:
 
 C:\>runas /user:postgres cmd
