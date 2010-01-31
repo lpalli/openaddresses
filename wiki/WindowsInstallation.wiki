@@ -82,5 +82,5 @@ C:\Program Files\PostgreSQL\8.4\bin>
 
  * Unregister a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" unregister -N postgresql 
 
-==== Install MapFish ====
- 1.
+==== Install !MapFish ====
+ 1. Follow http://www.mapfish.org/doc/1.2/installation.html
