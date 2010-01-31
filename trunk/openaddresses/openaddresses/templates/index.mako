@@ -29,16 +29,15 @@
 
    <script type="text/javascript" src="mfbase/ext/adapter/ext/ext-base.js"></script>
    <script type="text/javascript" src="mfbase/ext/ext-all-debug.js"></script>
-   <script type="text/javascript" src="geoadminApi/js/config.js"></script>
    <script type="text/javascript" src="MapFishApi/js/firefoxfix.js"></script>
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
 
-   <script src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js" type="text/javascript"></script>
-   <script src="mfbase/mapfish/lang/${c.lang}.js" type="text/javascript"></script>
-   <script src="mfbase/ext/source/locale/ext-lang-${c.lang}.js" type="text/javascript"></script>
+   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
+   <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
+   <script type="text/javascript" src="mfbase/ext/source/locale/ext-lang-${c.lang}.js"></script>
    <script type="text/javascript" src="OpenAddressesApi/js/lang/${c.lang}.js"></script>
 
    <script type="text/javascript" src="MapFishApi/js/mapfish_api.js"></script>

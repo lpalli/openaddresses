@@ -12,7 +12,57 @@ log = logging.getLogger(__name__)
 
 class HomeController(BaseController):
 
+    available_languages = []
+
+    current_lang = ''
+
+    deactivate_cache = True
+
+    def getAvailableLanguages(self):
+        if not self.available_languages:
+            self.available_languages = config['available_languages'].split(',')
+        return self.available_languages
+
+    def _isLangAvailable(self, lang):
+        return lang in self.getAvailableLanguages()
+
+    def __before__(self):
+
+        update_session = True
+        lang = None
+
+        if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
+            lang = request.params['lang']
+        elif 'lang' in session:
+            #
+            # TODO: use cookies instead of session !!
+            #
+            lang = session['lang']
+            update_session = False
+        else:
+            # get from user agent
+            for language in request.languages:
+                language = language[0:2]
+                if self._isLangAvailable(language):
+                    lang = unicode(language)
+                    break
+        if lang is None:
+            lang = unicode(config['lang'])
+
+        set_lang(lang)
+        if update_session:
+            #
+            # TODO: use cookies instead of session !!
+            #
+            session['lang'] = lang
+            session.save()
+
     def index(self):
+        lang = str(get_lang())
+        c.lang = self.current_lang = lang[3:5]
+
+        c.available_languages = self.getAvailableLanguages()
+
         if 'mode' in request.params:
             c.debug = (request.params['mode'].lower() == 'debug')
         else:
