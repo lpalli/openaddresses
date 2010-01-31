@@ -1,9 +1,9 @@
-Install OpenAddresses code base on Windows
+Install !OpenAddresses code base on Windows
 
 = Requirements =
 
  * http://tortoisesvn.net/downloads
 
-= HowTo =
+= !HowTo =
 
  * 1. Checkout trunk code
