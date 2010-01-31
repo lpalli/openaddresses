@@ -3,7 +3,6 @@ Install !OpenAddresses code base on Windows
 = Requirements =
 
  * http://tortoisesvn.net/downloads
- * 
 
 = !HowTo Install OpenAddresses Server =
 
@@ -15,7 +14,7 @@ Install !OpenAddresses code base on Windows
 
 == Install !MapFish ==
 
- 1. Install !MapFish  in a virtual env at the same level as the trunk directory: http://www.mapfish.org/doc/1.2/installation.html 
+ 1. (required only the first time) Install !MapFish  in a virtual env at the same level as the trunk directory: http://www.mapfish.org/doc/1.2/installation.html 
 
 == Start !MapFish ==
 
@@ -25,7 +24,7 @@ Install !OpenAddresses code base on Windows
  1. paster serve --reload development.ini
  1. http://localhost:5000 
 
-= Initial Install of OpenAddresses server =
+= Initial Install of !OpenAddresses Server =
 
 This describes the initial installation. It is not required to do that everytime the code base is checked-out.
 
