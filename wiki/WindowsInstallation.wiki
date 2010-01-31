@@ -78,5 +78,9 @@ C:\Program Files\PostgreSQL\8.4\bin>
 
  * Postgres can be started with: "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
 
+ * Register a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" register -N postgresql -D "C:\Program Files\PostgreSQL\8.4\data" -l "C:\Program Files\PostgreSQL\8.4\log" 
+
+ * Unregister a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" unregister -N postgresql 
+
 ==== Install MapFish ====
  1.
