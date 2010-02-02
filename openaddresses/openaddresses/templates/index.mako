@@ -45,6 +45,9 @@
    <script type="text/javascript" src="MapFishApi/js/ZoomToExtent.js"></script>
    <script type="text/javascript" src="MapFishApi/js/Permalink.js"></script>
    <script type="text/javascript" src="MapFishApi/js/ArgParser.js"></script>
+
+   <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
 % else:
    <script type="text/javascript" src="build/openaddresses.js"></script>
 % endif
