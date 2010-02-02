@@ -1,5 +1,5 @@
 /*
- * @include OpenAddressesLayout.js
+ * @include app/js/OpenAddressesLayout.js
  */
 
 Ext.namespace("openaddresses");

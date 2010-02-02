@@ -49,6 +49,8 @@
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
 % else:
+   <script type="text/javascript" src="mfbase/ext/adapter/ext/ext-base.js"></script>
+   <script type="text/javascript" src="mfbase/ext/ext-all.js"></script>
    <script type="text/javascript" src="build/openaddresses.js"></script>
 % endif
 
