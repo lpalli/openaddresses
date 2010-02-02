@@ -94,7 +94,6 @@ openaddresses.layout = (function() {
             new Ext.Viewport({
                 layout: "border",
                 items: [{
-                    title: "Map",
                     region: "center",
                     xtype: "gx_mappanel",
                     map: map,
