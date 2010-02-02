@@ -8,7 +8,6 @@ var gMfLocation = "mfbase/mapfish/";
 
 (function() {
     Ext.onReady(function() {
-
-        openaddresses.layout.init()
+        openaddresses.layout.init();
     });
 })();

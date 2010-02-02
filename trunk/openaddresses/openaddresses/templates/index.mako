@@ -13,9 +13,8 @@
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
 
-    <link rel="stylesheet" type="text/css" href="mfbase/ext/resources/css/ext-all.css"/>
-    <link rel="stylesheet" type="text/css" href="mfbase/ext/resources/css/xtheme-gray.css"/>
-
+    <link rel="stylesheet" type="text/css" href="mfbase/ext31/resources/css/ext-all.css" />
+    
 </head>
 
 <body>
@@ -26,8 +25,8 @@
       border: 1px solid lime;
    }   </style>
 
-   <script type="text/javascript" src="mfbase/ext/adapter/ext/ext-base.js"></script>
-   <script type="text/javascript" src="mfbase/ext/ext-all-debug.js"></script>
+   <script type="text/javascript" src="mfbase/ext31/adapter/ext/ext-base.js"></script>
+   <script type="text/javascript" src="mfbase/ext31/ext-all-debug.js"></script>
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
@@ -35,14 +34,19 @@
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
-   <script type="text/javascript" src="mfbase/ext/source/locale/ext-lang-${c.lang}.js"></script>
+   <script type="text/javascript" src="mfbase/ext31/src/locale/ext-lang-${c.lang}.js"></script>
    <script type="text/javascript" src="OpenAddressesApi/js/lang/${c.lang}.js"></script>
 
+   <script type="text/javascript" src="app/js/OpenAddressesLanguage.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
 % else:
-   <script type="text/javascript" src="mfbase/ext/adapter/ext/ext-base.js"></script>
-   <script type="text/javascript" src="mfbase/ext/ext-all.js"></script>
+   <script type="text/javascript" src="mfbase/ext31/adapter/ext/ext-base.js"></script>
+   <script type="text/javascript" src="mfbase/ext31/ext-all.js"></script>
+   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
+   <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
+   <script type="text/javascript" src="mfbase/ext31/src/locale/ext-lang-${c.lang}.js"></script>
+   <script type="text/javascript" src="OpenAddressesApi/js/lang/${c.lang}.js"></script>
    <script type="text/javascript" src="build/openaddresses.js"></script>
 % endif
 
