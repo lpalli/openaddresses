@@ -35,7 +35,7 @@
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
    <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
-   <script type="text/javascript" src="OpenAddressesApi/js/lang/${c.lang}.js"></script>
+   <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 
    <script type="text/javascript" src="app/js/OpenAddressesLanguage.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
@@ -43,11 +43,11 @@
 % else:
    <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
    <script type="text/javascript" src="ext31/ext-all.js"></script>
+   <script type="text/javascript" src="build/openaddresses.js"></script>
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
    <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
-   <script type="text/javascript" src="OpenAddressesApi/js/lang/${c.lang}.js"></script>
-   <script type="text/javascript" src="build/openaddresses.js"></script>
+   <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 % endif
 
 </body>
