@@ -76,17 +76,6 @@ openaddresses.layout = (function() {
         });
     };
 
-    /**
-     * Method: createLayerStore
-     * Create a GeoExt layer store.
-     *
-     * Parameters:
-     * map - {OpenLayers.Map} The Map instance.
-     *
-     * Returns:
-     * {GeoExt.data.LayerStore} The layer store.
-     *
-     */
     var createTopToolbar = function(map, languageCombo) {
         var tools = [];
         tools.push('->');
@@ -116,17 +105,18 @@ openaddresses.layout = (function() {
                 for (var param in params) {
                     if (param == 'lang' || param == 'charset') {
                     } else {
-                       parametersObj[param] = params[param]; 
+                        parametersObj[param] = params[param];
                     }
                 }
                 parametersObj.lang = record.get("code");
-                parametersObj.charset = record.get("charset"); 
+                parametersObj.charset = record.get("charset");
                 window.location.search = Ext.urlEncode(parametersObj);
             }
         });
     };
 
     var createViewPort = function(map, layers, layerStore, topToolbar) {
+
         return new Ext.Viewport({
             layout: "border",
             items: [
