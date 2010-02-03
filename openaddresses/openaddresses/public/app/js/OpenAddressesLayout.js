@@ -13,6 +13,7 @@
  * @include app/js/OpenAddressesLanguage.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/ScaleSelectorCombo/ux/widgets/form/ScaleSelectorCombo.js
+ * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
 
 Ext.namespace("openaddresses");
@@ -81,8 +82,9 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createTopToolbar = function(map, languageCombo) {
+    var createTopToolbar = function(map, languageCombo,geonamesSearchCombo) {
         var tools = [];
+        tools.push(geonamesSearchCombo);
         tools.push('->');
         tools.push(languageCombo);
         return tools;
@@ -141,6 +143,7 @@ openaddresses.layout = (function() {
                     xtype: "gx_mappanel",
                     margins: '5 0 5 0',
                     map: map,
+                    layout:'absolute',
                     layers: layerStore,
                     tbar: topToolbar,
                     bbar: bottomToolbar
@@ -184,7 +187,6 @@ openaddresses.layout = (function() {
     var createDisplayProjectionSelectorCombo = function(map) {
         return new GeoExt.ux.form.DisplayProjectionSelectorCombo({
             map: map,
-            updateMapDisplayProjection: true,
             projections: ['EPSG:4326', 'EPSG:900913'],
             width: 200
         });
@@ -194,6 +196,13 @@ openaddresses.layout = (function() {
         return new GeoExt.ux.form.ScaleSelectorCombo({
             map: map,
             fakeScaleValue: ['1000','1500','2500','5000','10000','25000','50000','100000','200000','450000','850000','1500000','2500000','5000000','10000000','50000000','100000000','200000000','400000000',]
+        });
+    };
+
+    var createGeonamesSearchCombo = function(map) {
+        return new GeoExt.ux.geonames.GeoNamesSearchCombo({
+            map: map,
+            zoom: 12
         });
     };
 
@@ -235,9 +244,11 @@ openaddresses.layout = (function() {
             var map = createMap();
             var layers = createLayers();
             var layerStore = createLayerStore(map, layers);
-            var topToolbar = createTopToolbar(map, languageCombo);
+            var geonamesSearchCombo = createGeonamesSearchCombo(map);
+            var topToolbar = createTopToolbar(map, languageCombo, geonamesSearchCombo);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(map);
             var scaleSelectorCombo = createScaleSelectorCombo(map);
+
             var bottomToolbar = createBottomToolbar(map, displayProjectionSelectorCombo, scaleSelectorCombo);
 
             createViewPort(map, layers, layerStore, topToolbar, bottomToolbar);
