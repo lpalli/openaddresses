@@ -6,10 +6,13 @@
  * @include OpenLayers/Tile/Image.js
  * @include OpenLayers/Control/Navigation.js
  * @include OpenLayers/Control/PanZoomBar.js
+ * @include OpenLayers/Control/MousePosition.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
  * @include app/js/OpenAddressesLanguage.js
+ * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
+ * @include geoext-ux-dev/ScaleSelectorCombo/ux/widgets/form/ScaleSelectorCombo.js
  */
 
 Ext.namespace("openaddresses");
@@ -36,7 +39,9 @@ openaddresses.layout = (function() {
             maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
                     20037508, 20037508.34),
             allOverlays: false,
-            controls: [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar()]
+            controls: [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(), new OpenLayers.Control.MousePosition({
+                numDigits: 2
+            })]
         });
     };
 
@@ -83,6 +88,14 @@ openaddresses.layout = (function() {
         return tools;
     };
 
+    var createBottomToolbar = function(map, displayProjectionSelectorCombo, scaleSelectorCombo) {
+        var tools = [];
+        tools.push(scaleSelectorCombo);
+        tools.push('->');
+        tools.push(displayProjectionSelectorCombo);
+        return tools;
+    };
+
     var createLanguageStore = function() {
         return new Ext.data.ArrayStore({
             fields: ['code', 'language', 'charset'],
@@ -115,8 +128,7 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createViewPort = function(map, layers, layerStore, topToolbar) {
-
+    var createViewPort = function(map, layers, layerStore, topToolbar, bottomToolbar) {
         return new Ext.Viewport({
             layout: "border",
             items: [
@@ -130,7 +142,8 @@ openaddresses.layout = (function() {
                     margins: '5 0 5 0',
                     map: map,
                     layers: layerStore,
-                    tbar: topToolbar
+                    tbar: topToolbar,
+                    bbar: bottomToolbar
                 },
                 {
                     region: 'west',
@@ -165,6 +178,22 @@ openaddresses.layout = (function() {
                     ]
                 }
             ]
+        });
+    };
+
+    var createDisplayProjectionSelectorCombo = function(map) {
+        return new GeoExt.ux.form.DisplayProjectionSelectorCombo({
+            map: map,
+            updateMapDisplayProjection: true,
+            projections: ['EPSG:4326', 'EPSG:900913'],
+            width: 200
+        });
+    };
+
+    var createScaleSelectorCombo = function(map) {
+        return new GeoExt.ux.form.ScaleSelectorCombo({
+            map: map,
+            fakeScaleValue: ['1000','1500','2500','5000','10000','25000','50000','100000','200000','450000','850000','1500000','2500000','5000000','10000000','50000000','100000000','200000000','400000000',]
         });
     };
 
@@ -207,8 +236,11 @@ openaddresses.layout = (function() {
             var layers = createLayers();
             var layerStore = createLayerStore(map, layers);
             var topToolbar = createTopToolbar(map, languageCombo);
+            var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(map);
+            var scaleSelectorCombo = createScaleSelectorCombo(map);
+            var bottomToolbar = createBottomToolbar(map, displayProjectionSelectorCombo, scaleSelectorCombo);
 
-            createViewPort(map, layers, layerStore, topToolbar);
+            createViewPort(map, layers, layerStore, topToolbar, bottomToolbar);
         }
     };
 })();
