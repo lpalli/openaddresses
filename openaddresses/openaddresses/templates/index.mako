@@ -30,6 +30,8 @@
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js.js"></script>
+   <script type="text/javascript" src="geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js"></script>
+   <script type="text/javascript" src="geoext-ux-dev/ScaleSelectorCombo/ux/widgets/form/ScaleSelectorCombo.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
 
