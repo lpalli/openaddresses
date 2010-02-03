@@ -1,5 +1,6 @@
 /*
  * @include OpenLayers/Map.js
+ * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Layer/XYZ.js
  * @include OpenLayers/Tile/Image.js
@@ -147,7 +148,6 @@ openaddresses.layout = (function() {
                     minSize: 256,
                     maxSize: 512,
                     split: true,
-                    collapsible: true,
                     margins: '5 0 5 5',
                     layout:'accordion',
                     items: [
@@ -184,6 +184,7 @@ openaddresses.layout = (function() {
             params.lang = $('lang').value;
         }
         if (params.lang) {
+            OpenLayers.Lang.setCode(params.lang);
             // check if there's really a language with that language code
             var record = languageStore.data.find(function(item, key) {
                 return (item.data.code == params.lang);
@@ -207,14 +208,15 @@ openaddresses.layout = (function() {
         init: function() {
             Ext.QuickTips.init();
 
+            // Manage language
+            var languageStore = createLanguageStore();
+            var languageCombo = createLanguageCombo(languageStore);
+            setPermalink(languageStore, languageCombo);
+
             var map = createMap();
             var layers = createLayers();
             var layerStore = createLayerStore(map, layers);
-            var languageStore = createLanguageStore();
-            var languageCombo = createLanguageCombo(languageStore);
             var topToolbar = createTopToolbar(map, languageCombo);
-
-            setPermalink(languageStore, languageCombo);
 
             createViewPort(map, layers, layerStore, topToolbar);
         }
