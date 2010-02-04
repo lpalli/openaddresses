@@ -109,3 +109,8 @@ C:\Program Files\PostgreSQL\8.4\bin>
  1. cd openaddresses
  1. paster serve --reload development.ini
  1. Add svn external to mfbase in public directory
+
+
+==== Install !MapServer ====
+
+ * http://maptools.org/ms4w/
