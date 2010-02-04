@@ -37,11 +37,11 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Create an header
  * Web Site Map
   * Add WMS
-   * Install MapServer
-   * Create MapFile for cascading WMS (reprojection)
+   * Install !MapServer
+   * Create !MapFile for cascading WMS (reprojection)
     * Add Open WMS
    * Add Yahoo Map 
-   * --(Add OpenStreetMap)-- 
+   * ~~Add !OpenStreetMap~~ 
 
 = Data =
 
