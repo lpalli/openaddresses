@@ -26,6 +26,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
 === TODO Implementation List ===
 
  * ~~Web Site Architecture~~
+  * Add permalink support
  * Web Site Header
   * Logo
   * Content
