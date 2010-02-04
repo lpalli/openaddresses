@@ -1,0 +1,50 @@
+MAP
+ NAME "cascading"
+ IMAGECOLOR 255 255 255
+ IMAGETYPE png
+ STATUS ON
+ UNITS METERS
+ MAXSIZE 4000
+ PROJECTION
+  "init=epsg:900913"
+ END
+
+ WEB
+   IMAGEPATH "C:/ms4w/Apache/htdocs"
+   IMAGEURL "/"
+   METADATA
+     "wms_title"           "Cascading"
+     "wms_onlineresource"  "http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\Sandbox\openadresses\trunk\openaddresses\mapserver\cascading.map&"
+     "wms_srs"             "EPSG:4326 EPSG:900913"
+   END
+ END
+
+ LAYER
+  NAME "prov_bound"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:42304"
+    "wms_name"            "prov_bound"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/gif"
+  END
+ END
+
+ LAYER
+  NAME "SITN"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://sitn.ne.ch/ogc-sitn-open/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "SITN"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/png"
+  END
+ END
+
+END

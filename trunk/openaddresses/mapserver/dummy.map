@@ -1,0 +1,39 @@
+MAP
+ NAME "dummy"
+ EXTENT -180 -90 180 90
+ IMAGECOLOR 255 255 255
+ IMAGETYPE png
+ SIZE 400 300
+ STATUS ON
+ UNITS METERS
+ MAXSIZE 4000
+ PROJECTION
+  "init=epsg:4326"
+ END
+
+ WEB
+   IMAGEPATH "C:/ms4w/Apache/htdocs"
+   IMAGEURL "/" 
+   METADATA
+     "wms_title"           "Dummy"
+     "wms_onlineresource"  "http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\Sandbox\openadresses\trunk\openaddresses\mapserver\dummy.map&"      
+     "wms_srs"             "EPSG:4326"
+   END
+ END
+
+ LAYER
+   DATA "C:\data\bluemarble.tiff"
+   NAME "bluemarble"
+   PROJECTION
+     "init=epsg:4326"
+   END
+   METADATA
+     "wms_title"           "bluemarble"
+     "wms_srs"             "EPSG:4326"
+   END
+   STATUS ON
+   TYPE RASTER
+   UNITS METERS
+ END
+
+END
