@@ -30,6 +30,19 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * REST service for data export
  * Mapping client
 
+=== TODO List ===
+
+ * Web Site
+  * Create a logo
+  * Create an header
+ * Web Site Map
+  * Add WMS
+   * Install MapServer
+   * Create MapFile for cascading WMS (reprojection)
+    * Add Open WMS
+   * Add Yahoo Map 
+   * --(Add OpenStreetMap)-- 
+
 = Data =
 
 == Data Model ==
