@@ -115,3 +115,5 @@ C:\Program Files\PostgreSQL\8.4\bin>
 
  * http://maptools.org/ms4w/
   * http://127.0.0.1/cgi-bin/mapserv.exe
+  * add in EPSG:
+   * <900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
