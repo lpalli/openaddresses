@@ -114,3 +114,4 @@ C:\Program Files\PostgreSQL\8.4\bin>
 ==== Install !MapServer ====
 
  * http://maptools.org/ms4w/
+  * http://127.0.0.1/cgi-bin/mapserv.exe
