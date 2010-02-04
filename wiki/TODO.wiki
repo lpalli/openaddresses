@@ -63,6 +63,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * ~~Add Scale Selector~~
   * ~~Add Display Projection Selector~~ 
   * ~~Add Geonames Search~~
+  * ~~Add Navigation Control~~
   * Add address layer
    * !MapFile 
    * WMS
@@ -73,8 +74,8 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Update address
  * Data
   * Define data model
-  * Import OSM data
-  * Import OA.ch and OA.at addresses
+  * Import OSM data in PostGIS
+  * Import OA.ch and OA.at addresses in PostGIS
   * Synchronize OSM and OA addresses, daily
  * Infrastructure
   * Deploy on server
