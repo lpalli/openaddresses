@@ -23,14 +23,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * User searches an address
  * User exports addresses
 
-=== Implementation ===
-
- * PostGIS database
- * REST service for addresses amanagement: POST, GET, PUT, DELETE
- * REST service for data export
- * Mapping client
-
-=== TODO List ===
+=== TODO Implementation List ===
 
  * ~~Web Site Architecture~~
  * Web Site Header
@@ -44,8 +37,8 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Server service
  * Web Site Service
   * Content
-  * GeoCoding API
-  * ReverseGeocoding API
+  * !GeoCoding API
+  * !ReverseGeocoding API
  * Web Site Statistic
   * Client widget
   * Server service
@@ -71,13 +64,20 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * ~~Add Display Projection Selector~~ 
   * ~~Add Geonames Search~~
   * Add address layer
-   * MapFile 
+   * !MapFile 
    * WMS
    * REST CRUD service
  * Web Site Editing
   * Digitize address
   * Delete address
   * Update address
+ * Data
+  * Define data model
+  * Import OSM data
+  * Import OA.ch and OA.at addresses
+  * Synchronize OSM and OA addresses, daily
+ * Infrastructure
+  * Deploy on server
 
 = Data =
 
