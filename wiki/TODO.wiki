@@ -32,16 +32,52 @@ Description of task that need to be accomplished in order to launch www.openaddr
 
 === TODO List ===
 
- * Web Site
-  * Create a logo
-  * Create an header
+ * ~~Web Site Architecture~~
+ * Web Site Header
+  * Logo
+  * Content
+ * Web Site Upload
+  * Client widget
+  * Server service
+ * Web Site Download
+  * Client widget
+  * Server service
+ * Web Site Service
+  * Content
+  * GeoCoding API
+  * ReverseGeocoding API
+ * Web Site Statistic
+  * Client widget
+  * Server service
+ * Web Site License
+  * Content
+ * Web Site About
+  * Content
+ * Web Site Localization 
+  * ~~Language Selector~~
+  * ~~Mako Template localization~~
+  * German translation
+  * ~~English translation~~
+  * French translation
  * Web Site Map
   * Add WMS
    * Install !MapServer
    * Create !MapFile for cascading WMS (reprojection)
     * Add Open WMS
-   * Add Yahoo Map 
-   * ~~Add !OpenStreetMap~~ 
+  * Add Yahoo Map 
+  * ~~Add !OpenStreetMap~~ 
+  * ~~Add Mouse Position~~
+  * ~~Add Scale Selector~~
+  * ~~Add Display Projection Selector~~ 
+  * ~~Add Geonames Search~~
+  * Add address layer
+   * MapFile 
+   * WMS
+   * REST CRUD service
+ * Web Site Editing
+  * Digitize address
+  * Delete address
+  * Update address
 
 = Data =
 
