@@ -42,6 +42,7 @@
    <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 
    <script type="text/javascript" src="app/js/OpenAddressesLanguage.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesLayers.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
 % else:

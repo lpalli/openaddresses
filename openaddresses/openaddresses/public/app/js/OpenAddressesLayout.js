@@ -11,6 +11,7 @@
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
  * @include app/js/OpenAddressesLanguage.js
+ * @include app/js/OpenAddressesLayers.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/ScaleSelectorCombo/ux/widgets/form/ScaleSelectorCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
@@ -54,13 +55,9 @@ openaddresses.layout = (function() {
      * {Array({OpenLayers.Layer}) Array of layers.
      */
     var createLayers = function() {
-        return [
-            new OpenLayers.Layer.OSM("OSM"),
-            new OpenLayers.Layer.OSM(
-                    "OSMap (T@H)",
-                    "http://tah.openstreetmap.org/Tiles/tile/${z}/${x}/${y}.png"
-                    )
-        ];
+        return openaddresses.layers.concat([
+            new OpenLayers.Layer.OSM("OSM")
+        ]);
     };
 
     /**
