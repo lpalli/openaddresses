@@ -19,12 +19,28 @@ openaddresses.layers = [
         transparent: "true",
         format:"image/png"},
     {singleTile:true,
+        isBaseLayer: false,
         buffer: 0,
         ratio: 1,
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 50,
         maxExtent: openaddresses.createBoundsFrom4326(6.31728, 46.7671, 7.1777, 47.222)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "GENEVE_ortho",
+            openaddresses.config.baseWMS,
+    {layers: 'GENEVE_ortho',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        buffer: 0,
+        ratio: 1,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 50,
+        maxExtent: openaddresses.createBoundsFrom4326(5.918669, 46.105563, 6.314182, 46.379977)}
             )
 ];
 
