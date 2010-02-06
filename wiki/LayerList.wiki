@@ -1,6 +1,6 @@
 List of layers that can be used as background layers
 
-|| WMS URL || !LayerName in !OpenAddresses.org || Extent || MaxScale ||
+|| WMS URL || !LayerName in !OpenAddresses.org || Extent || !MaxScale ||
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_sitn || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no ||
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_ortho || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no ||
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_communes || <LatLonBoundingBox minx="6.42901" miny="46.8475" maxx="7.08992" maxy="47.1679"/> || 374177.136322228 ||
