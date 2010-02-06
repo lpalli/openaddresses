@@ -59,7 +59,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
    * Create !MapFile for cascading WMS (reprojection)
     * Add Open WMS
   * Add Yahoo Map
-   * Obtain agreement of Yahoo 
+   * Obtain agreement of Yahoo (being processed by HJ)
   * ~~Add !OpenStreetMap~~ 
   * ~~Add Mouse Position~~
   * ~~Add Scale Selector~~
