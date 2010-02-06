@@ -89,21 +89,6 @@ Description of task that need to be accomplished in order to launch www.openaddr
 
 == Data Model ==
 
-  * ID: Identifier
-  * STREET: String
-  * HOUSE_NUMBER: String
-  * ADDRESS_EXTENSION: String
-  * POSTAL_CODE: String
-  * CITY: String
-  * LATITUDE: Number
-  * LONGITUDE: Number
-  * GEOMETRY: Point Geom
-  * ORIGIN: String
-  * REFERENCE_URL: "http://www.openaddresses.org"
-  * DATE_CREATED: Date
-  * DATE_MODIFIED: Date
-  * DATE_DELETED: Date
-
 === Open Points ===
 
  * Data Geometry: is the address represented only as a point, or are other geometric forms accepted ? The address can be an attribute of the house polygon (as it can be in OSM).
