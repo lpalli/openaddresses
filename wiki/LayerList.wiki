@@ -5,4 +5,5 @@ List of layers that can be used as background layers
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_ortho || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no || image/png ||
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_communes || <LatLonBoundingBox minx="6.42901" miny="46.8475" maxx="7.08992" maxy="47.1679"/> || <ScaleHint min="0" max="374177.136322228"/> ||image/png ||
 || http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer || GENEVE_ortho || <LatLonBoundingBox minx="5.918669" miny="46.105563" maxx="6.314182" maxy="46.379977"/> || no ||image/jpeg ||
-|| http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer || GENEVE_plan_0 || <LatLonBoundingBox minx="5.944047" miny="46.123898" maxx="6.345897" maxy="46.402604"/> || <ScaleHint min="0.990396" max="5.940000"></ScaleHint> ||image/jpeg ||
+|| http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer || GENEVE_plan_0 || <LatLonBoundingBox minx="5.918669" miny="46.105562" maxx="6.314183" maxy="46.379978"/> || <ScaleHint min="0.0" max="0.990000"></ScaleHint> ||image/jpeg ||
+|| http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer || GENEVE_plan_1 || <LatLonBoundingBox minx="5.944047" miny="46.123898" maxx="6.345897" maxy="46.402604"/> || <ScaleHint min="0.990396" max="5.940000"></ScaleHint> ||image/jpeg ||
