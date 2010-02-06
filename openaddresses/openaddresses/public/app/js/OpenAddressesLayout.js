@@ -1,8 +1,11 @@
 /*
+ * @requires app/js/OpenAddressesConfig.js
  * @include OpenLayers/Map.js
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
+ * @include OpenLayers/Layer.js
  * @include OpenLayers/Layer/XYZ.js
+ * @include OpenLayers/Layer/Yahoo.js
  * @include OpenLayers/Tile/Image.js
  * @include OpenLayers/Control/Navigation.js
  * @include OpenLayers/Control/PanZoomBar.js
@@ -14,7 +17,6 @@
  * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
- * @include app/js/OpenAddressesConfig.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
