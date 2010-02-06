@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+<WMT_MS_Capabilities version="1.1.1">
+    <Service>
+        <Name>WMS SITG</Name>
+        <Title>Plan Officiel</Title>
+        <Abstract>OGC:WMS</Abstract>
+        <KeywordList>
+            <Keyword></Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                        xlink:href="http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"/>
+        <ContactInformation>
+            <ContactPersonPrimary>
+                <ContactPerson></ContactPerson>
+                <ContactOrganization></ContactOrganization>
+            </ContactPersonPrimary>
+            <ContactPosition></ContactPosition>
+            <ContactAddress>
+                <AddressType></AddressType>
+                <Address></Address>
+                <City></City>
+                <StateOrProvince></StateOrProvince>
+                <PostCode></PostCode>
+                <Country></Country>
+            </ContactAddress>
+            <ContactVoiceTelephone></ContactVoiceTelephone>
+            <ContactFacsimileTelephone></ContactFacsimileTelephone>
+            <ContactElectronicMailAddress></ContactElectronicMailAddress>
+        </ContactInformation>
+        <Fees></Fees>
+        <AccessConstraints></AccessConstraints>
+    </Service>
+    <Capability>
+        <Request>
+            <GetCapabilities>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                                            xlink:href="http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+            <GetMap>
+                <Format>image/bmp</Format>
+                <Format>image/jpeg</Format>
+                <Format>image/tiff</Format>
+                <Format>image/png</Format>
+                <Format>image/gif</Format>
+                <Format>image/svg+xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                                            xlink:href="http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+            <GetFeatureInfo>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <Format>text/xml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                                            xlink:href="http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+        </Request>
+        <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+        <Layer>
+            <Title>Layers</Title>
+            <SRS>EPSG:4326</SRS>
+            <SRS>EPSG:21781</SRS>
+            <LatLonBoundingBox minx="5.891998" miny="46.090610" maxx="6.367764" maxy="46.417418"/>
+            <BoundingBox SRS="EPSG:21781" minx="481028.740170" miny="105375.959999" maxx="517120.490617"
+                         maxy="141104.001905"/>
+            <Layer>
+                <Name>0</Name>
+                <Title>GEO_RASTER_PE_2500_COULEUR</Title>
+                <Abstract>GEO_RASTER_PE_2500_COULEUR</Abstract>
+                <SRS>EPSG:4326</SRS>
+                <SRS>EPSG:21781</SRS>
+                <LatLonBoundingBox minx="5.918669" miny="46.105562" maxx="6.314183" maxy="46.379978"/>
+                <BoundingBox SRS="EPSG:21781" minx="482999.991372" miny="106999.961904" maxx="513000.090122"
+                             maxy="137000.060654"/>
+                <Style>
+                    <Name>default</Name>
+                    <Title>GEO_RASTER_PE_2500_COULEUR</Title>
+                    <LegendURL width="100" height="9514">
+                        <Format>image/png</Format>
+                        <OnlineResource
+                                xlink:href="http://geode/ags2/arcgisoutput/Plan_Officiel_MapServer/wms/default0.png"
+                                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                    </LegendURL>
+                </Style>
+                <ScaleHint min="0.0" max="0.990000"></ScaleHint>
+            </Layer>
+            <Layer>
+                <Name>1</Name>
+                <Title>GEO_RASTER_PV10000_COULEURS</Title>
+                <Abstract>GEO_RASTER_PV10000_COULEURS</Abstract>
+                <SRS>EPSG:4326</SRS>
+                <SRS>EPSG:21781</SRS>
+                <LatLonBoundingBox minx="5.944047" miny="46.123898" maxx="6.345897" maxy="46.402604"/>
+                <BoundingBox SRS="EPSG:21781" minx="485000.000000" miny="109000.043494" maxx="515479.956506"
+                             maxy="139480.000000"/>
+                <Style>
+                    <Name>default</Name>
+                    <Title>GEO_RASTER_PV10000_COULEURS</Title>
+                    <LegendURL width="100" height="9514">
+                        <Format>image/png</Format>
+                        <OnlineResource
+                                xlink:href="http://geode/ags2/arcgisoutput/Plan_Officiel_MapServer/wms/default1.png"
+                                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                    </LegendURL>
+                </Style>
+                <ScaleHint min="0.990396" max="5.940000"></ScaleHint>
+            </Layer>
+            <Layer>
+                <Name>2</Name>
+                <Title>GEO_RASTER_PLAN_CANTON</Title>
+                <Abstract>GEO_RASTER_PLAN_CANTON</Abstract>
+                <SRS>EPSG:4326</SRS>
+                <SRS>EPSG:21781</SRS>
+                <LatLonBoundingBox minx="5.915568" miny="46.117750" maxx="6.341183" maxy="46.337633"/>
+                <BoundingBox SRS="EPSG:21781" minx="482669.274281" miny="108361.313965" maxx="515106.690027"
+                             maxy="132262.825719"/>
+                <Style>
+                    <Name>default</Name>
+                    <Title>GEO_RASTER_PLAN_CANTON</Title>
+                    <LegendURL width="100" height="9514">
+                        <Format>image/png</Format>
+                        <OnlineResource
+                                xlink:href="http://geode/ags2/arcgisoutput/Plan_Officiel_MapServer/wms/default2.png"
+                                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                    </LegendURL>
+                </Style>
+                <ScaleHint min="5.940396" max="Infinity"></ScaleHint>
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>

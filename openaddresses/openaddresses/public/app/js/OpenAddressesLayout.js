@@ -7,6 +7,7 @@
  * @include OpenLayers/Control/Navigation.js
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/MousePosition.js
+ * @include OpenLayers/Control/LayerSwitcher.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
@@ -36,14 +37,17 @@ openaddresses.layout = (function() {
             projection: new OpenLayers.Projection("EPSG:900913"),
             displayProjection: new OpenLayers.Projection("EPSG:4326"),
             units: "m",
-            numZoomLevels: 18,
             maxResolution: 156543.0339,
             maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
                     20037508, 20037508.34),
+            numZoomLevels: 22,
             allOverlays: false,
-            controls: [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(), new OpenLayers.Control.MousePosition({
-                numDigits: 2
-            })]
+            controls: [new OpenLayers.Control.Navigation(),
+                new OpenLayers.Control.PanZoomBar(),
+                new OpenLayers.Control.MousePosition({
+                    numDigits: 2
+                }),
+                new OpenLayers.Control.LayerSwitcher({'ascending':false})]
         });
     };
 
@@ -56,7 +60,20 @@ openaddresses.layout = (function() {
      */
     var createLayers = function() {
         return openaddresses.layers.concat([
-            new OpenLayers.Layer.OSM("OSM")
+            new OpenLayers.Layer.OSM("OSM"),
+            new OpenLayers.Layer.Yahoo(
+                    "Yahoo Street",
+            {'sphericalMercator': true}
+                    ),
+            new OpenLayers.Layer.Yahoo(
+                    "Yahoo Satellite",
+            {'type': YAHOO_MAP_SAT, 'sphericalMercator': true}
+                    ),
+            new OpenLayers.Layer.Yahoo(
+                    "Yahoo Hybrid",
+            {'type': YAHOO_MAP_HYB, 'sphericalMercator': true}
+                    )
+
         ]);
     };
 
@@ -79,7 +96,7 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createTopToolbar = function(map, languageCombo,geonamesSearchCombo) {
+    var createTopToolbar = function(map, languageCombo, geonamesSearchCombo) {
         var tools = [];
         tools.push(geonamesSearchCombo);
         tools.push('->');
@@ -238,17 +255,17 @@ openaddresses.layout = (function() {
             var languageCombo = createLanguageCombo(languageStore);
             setPermalink(languageStore, languageCombo);
 
-            var map = createMap();
+            this.map = createMap();
             var layers = createLayers();
-            var layerStore = createLayerStore(map, layers);
-            var geonamesSearchCombo = createGeonamesSearchCombo(map);
-            var topToolbar = createTopToolbar(map, languageCombo, geonamesSearchCombo);
-            var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(map);
-            var scaleSelectorCombo = createScaleSelectorCombo(map);
+            var layerStore = createLayerStore(this.map, layers);
+            var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
+            var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo);
+            var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
+            var scaleSelectorCombo = createScaleSelectorCombo(this.map);
 
-            var bottomToolbar = createBottomToolbar(map, displayProjectionSelectorCombo, scaleSelectorCombo);
+            var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo, scaleSelectorCombo);
 
-            createViewPort(map, layers, layerStore, topToolbar, bottomToolbar);
+            createViewPort(this.map, layers, layerStore, topToolbar, bottomToolbar);
         }
     };
 })();

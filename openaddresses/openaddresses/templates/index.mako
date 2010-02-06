@@ -25,6 +25,7 @@
       border: 1px solid lime;
    }   </style>
 
+   <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
    <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
    <script type="text/javascript" src="ext31/ext-all-debug.js"></script>
 
@@ -45,7 +46,9 @@
    <script type="text/javascript" src="app/js/OpenAddressesLayers.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
+
 % else:
+   <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
    <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
    <script type="text/javascript" src="ext31/ext-all.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js.js"></script>
