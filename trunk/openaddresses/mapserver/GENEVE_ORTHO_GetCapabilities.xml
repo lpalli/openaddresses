@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+<WMT_MS_Capabilities version="1.1.1">
+    <Service>
+        <Name>WMS SITG</Name>
+        <Title>Orthophotos_2005</Title>
+        <Abstract>OGC:WMS</Abstract>
+        <KeywordList>
+            <Keyword></Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                        xlink:href="http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer"/>
+        <ContactInformation>
+            <ContactPersonPrimary>
+                <ContactPerson></ContactPerson>
+                <ContactOrganization></ContactOrganization>
+            </ContactPersonPrimary>
+            <ContactPosition></ContactPosition>
+            <ContactAddress>
+                <AddressType></AddressType>
+                <Address></Address>
+                <City></City>
+                <StateOrProvince></StateOrProvince>
+                <PostCode></PostCode>
+                <Country></Country>
+            </ContactAddress>
+            <ContactVoiceTelephone></ContactVoiceTelephone>
+            <ContactFacsimileTelephone></ContactFacsimileTelephone>
+            <ContactElectronicMailAddress></ContactElectronicMailAddress>
+        </ContactInformation>
+        <Fees></Fees>
+        <AccessConstraints></AccessConstraints>
+    </Service>
+    <Capability>
+        <Request>
+            <GetCapabilities>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                                            xlink:href="http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+            <GetMap>
+                <Format>image/bmp</Format>
+                <Format>image/jpeg</Format>
+                <Format>image/tiff</Format>
+                <Format>image/png</Format>
+                <Format>image/gif</Format>
+                <Format>image/svg+xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                                            xlink:href="http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+            <GetFeatureInfo>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <Format>text/xml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                                            xlink:href="http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+        </Request>
+        <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+        <Layer>
+            <Title>Layers</Title>
+            <SRS>EPSG:4326</SRS>
+            <SRS>EPSG:21781</SRS>
+            <LatLonBoundingBox minx="5.898792" miny="46.091808" maxx="6.333857" maxy="46.393664"/>
+            <BoundingBox SRS="EPSG:21781" minx="481500.000000" miny="105500.000000" maxx="514500.000000"
+                         maxy="138500.000000"/>
+            <Layer>
+                <Name>0</Name>
+                <Title>GEO_RASTER_ORTHOPHOTOS_16CM</Title>
+                <Abstract>GEO_RASTER_ORTHOPHOTOS_16CM</Abstract>
+                <SRS>EPSG:4326</SRS>
+                <SRS>EPSG:21781</SRS>
+                <LatLonBoundingBox minx="5.918669" miny="46.105563" maxx="6.314182" maxy="46.379977"/>
+                <BoundingBox SRS="EPSG:21781" minx="483000.000000" miny="107000.000000" maxx="513000.000000"
+                             maxy="137000.000000"/>
+                <Style>
+                    <Name>default</Name>
+                    <Title>GEO_RASTER_ORTHOPHOTOS_16CM</Title>
+                    <LegendURL width="100" height="35">
+                        <Format>image/png</Format>
+                        <OnlineResource
+                                xlink:href="http://geode/ags2/arcgisoutput/Orthophotos_2005_MapServer/wms/default0.png"
+                                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                    </LegendURL>
+                </Style>
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>

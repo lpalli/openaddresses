@@ -34,7 +34,7 @@ MAP
  END
 
  LAYER
-  NAME "SITN"
+  NAME "SITN_sitn"
   TYPE RASTER
   STATUS ON
   CONNECTION "http://sitn.ne.ch/ogc-sitn-open/wms?"
@@ -44,6 +44,90 @@ MAP
     "wms_name"            "SITN"
     "wms_server_version"  "1.1.1"
     "wms_format"          "image/png"
+  END
+ END
+
+ LAYER
+  NAME "SITN_ortho"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://sitn.ne.ch/ogc-sitn-open/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "ortho"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/png"
+  END
+ END
+
+ LAYER
+  NAME "SITN_communes"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://sitn.ne.ch/ogc-sitn-open/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "communes"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/png"
+  END
+ END
+
+ LAYER
+  NAME "GENEVE_ortho"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "0"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "GENEVE_plan_0"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "0"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "GENEVE_plan_1"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "1"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "GENEVE_plan_2"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "2"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
   END
  END
 

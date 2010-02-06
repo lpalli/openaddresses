@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+        [
+                <!ELEMENT VendorSpecificCapabilities EMPTY>
+                ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+    <!-- MapServer version 5.2.1 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=PDF OUTPUT=SWF OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=FRIBIDI SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER SUPPORTS=FASTCGI SUPPORTS=THREADS SUPPORTS=GEOS SUPPORTS=RGBA_PNG INPUT=JPEG INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+    <Service>
+        <Name>OGC:WMS</Name>
+        <Title>WMS Open SITN</Title>
+        <Abstract>Server WMS du SITN open - utilisation possible pour le projet OpenStreetMap</Abstract>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+        <ContactInformation>
+            <ContactAddress>
+                <!-- WARNING: Mandatory metadata '..._addresstype' was missing in this context. -->
+                <!-- WARNING: Mandatory metadata '..._address' was missing in this context. -->
+                <City>Neuchâtel</City>
+                <StateOrProvince>Neuchâtel</StateOrProvince>
+                <PostCode>2000</PostCode>
+                <Country>Switzerland</Country>
+            </ContactAddress>
+            <ContactFacsimileTelephone>++41328894783</ContactFacsimileTelephone>
+            <ContactElectronicMailAddress>marc.riedo@ne.ch</ContactElectronicMailAddress>
+        </ContactInformation>
+    </Service>
+
+    <Capability>
+        <Request>
+            <GetCapabilities>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+            <GetMap>
+                <Format>image/jpeg</Format>
+                <Format>image/gif</Format>
+                <Format>image/png</Format>
+                <Format>image/vnd.wap.wbmp</Format>
+                <Format>image/tiff</Format>
+                <Format>image/svg+xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+            <GetFeatureInfo>
+                <Format>text/plain</Format>
+                <Format>application/vnd.ogc.gml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+            <DescribeLayer>
+                <Format>text/xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </DescribeLayer>
+            <GetLegendGraphic>
+                <Format>image/jpeg</Format>
+                <Format>image/gif</Format>
+                <Format>image/png</Format>
+                <Format>image/vnd.wap.wbmp</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetLegendGraphic>
+            <GetStyles>
+                <Format>text/xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xlink:href="http://sitn.ne.ch/ogc-sitn-open/wms?"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetStyles>
+        </Request>
+        <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+        <VendorSpecificCapabilities/>
+        <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+        <Layer>
+            <Name>SITN</Name>
+            <Title>WMS Open SITN</Title>
+            <SRS>EPSG:21781</SRS>
+            <SRS>EPSG:4326</SRS>
+            <SRS>EPSG:54004</SRS>
+            <SRS>EPSG:3785</SRS>
+            <SRS>EPSG:9814</SRS>
+            <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/>
+            <BoundingBox SRS="EPSG:21781"
+                         minx="515000" miny="180000" maxx="580000" maxy="230000"/>
+            <Layer queryable="0" opaque="0" cascaded="0">
+                <Name>ortho</Name>
+                <Title>Orthophotos2006sitn50cm</Title>
+                <SRS>EPSG:21781</SRS>
+                <SRS>EPSG:4326</SRS>
+                <SRS>EPSG:54004</SRS>
+                <SRS>EPSG:3785</SRS>
+                <SRS>EPSG:9814</SRS>
+                <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting LAYER.EXTENT or wms_extent metadata. Also check that your data exists in the DATA statement -->
+            </Layer>
+            <Layer queryable="0" opaque="0" cascaded="0">
+                <Name>communes</Name>
+                <Title>Communes</Title>
+                <SRS>EPSG:21781</SRS>
+                <SRS>EPSG:4326</SRS>
+                <SRS>EPSG:54004</SRS>
+                <SRS>EPSG:3785</SRS>
+                <SRS>EPSG:9814</SRS>
+                <LatLonBoundingBox minx="6.42901" miny="46.8475" maxx="7.08992" maxy="47.1679"/>
+                <BoundingBox SRS="EPSG:21781"
+                             minx="523386" miny="188829" maxx="573336" maxy="224009"/>
+                <ScaleHint min="0" max="374177.136322228"/>
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>
