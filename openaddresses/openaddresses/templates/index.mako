@@ -31,6 +31,8 @@
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js.js"></script>
+   <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
+   <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
@@ -42,6 +44,7 @@
    <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 
    <script type="text/javascript" src="app/js/OpenAddressesOsm.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesConfig.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLanguage.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLayers.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
@@ -52,6 +55,8 @@
    <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
    <script type="text/javascript" src="ext31/ext-all.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js.js"></script>
+   <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
+   <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="build/openaddresses.js"></script>
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
