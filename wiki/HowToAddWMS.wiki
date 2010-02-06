@@ -6,7 +6,7 @@ This page describes howto add a WMS in !OpenAddresses
 
 = Step by Step =
 
- 1. Add a cascading WMS config in local !MapServer: 
+ 1. Add a cascading WMS config in local !MapServer (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/mapserver/cascading.map): 
 {{{
  LAYER
   NAME "SITN_sitn"
