@@ -1,0 +1,26 @@
+Howto add a WMSin !OpenAddresses
+
+= Introduction =
+
+This page describes howto add a WMS in !OpenAddresses
+
+= Step by Step =
+
+ 1. Add a cascading WMS config in local !MapServer: 
+{{{
+ LAYER
+  NAME "SITN_sitn"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://sitn.ne.ch/ogc-sitn-open/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "SITN"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/png"
+  END
+ END
+}}}
+ 1. Fill information in http://code.google.com/p/openaddresses/wiki/LayerList
+ 1. Add layer in http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesLayers.js
