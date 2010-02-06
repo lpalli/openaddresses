@@ -69,8 +69,11 @@ openaddresses.layout = (function() {
             new OpenLayers.Layer.Yahoo(
                     "Yahoo Satellite",
             {'type': YAHOO_MAP_SAT, 'sphericalMercator': true}
-                    )
-
+                    ),
+            new OpenLayers.Layer("Empty", {
+                isBaseLayer: true,
+                displayInLayerSwitcher: true
+            })
         ]);
     };
 
@@ -257,7 +260,7 @@ openaddresses.layout = (function() {
             this.map.zoomTo(1);
             this.map.events.register('zoomend', this, function(record) {
                 if (this.map.zoom == 0) {
-                      this.map.zoomTo(1);
+                    this.map.zoomTo(1);
                 }
             });
         }
