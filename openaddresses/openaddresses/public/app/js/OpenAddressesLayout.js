@@ -15,7 +15,6 @@
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
- * @include geoext-ux-dev/ScaleSelectorCombo/ux/widgets/form/ScaleSelectorCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
 
@@ -67,16 +66,8 @@ openaddresses.layout = (function() {
                 transitionEffect: "resize"
             }),
             new OpenLayers.Layer.Yahoo(
-                    "Yahoo Street",
-            {'sphericalMercator': true}
-                    ),
-            new OpenLayers.Layer.Yahoo(
                     "Yahoo Satellite",
             {'type': YAHOO_MAP_SAT, 'sphericalMercator': true}
-                    ),
-            new OpenLayers.Layer.Yahoo(
-                    "Yahoo Hybrid",
-            {'type': YAHOO_MAP_HYB, 'sphericalMercator': true}
                     )
 
         ]);
@@ -109,9 +100,8 @@ openaddresses.layout = (function() {
         return tools;
     };
 
-    var createBottomToolbar = function(map, displayProjectionSelectorCombo, scaleSelectorCombo) {
+    var createBottomToolbar = function(map, displayProjectionSelectorCombo) {
         var tools = [];
-        tools.push(scaleSelectorCombo);
         tools.push('->');
         tools.push(displayProjectionSelectorCombo);
         return tools;
@@ -266,11 +256,16 @@ openaddresses.layout = (function() {
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
-            var scaleSelectorCombo = createScaleSelectorCombo(this.map);
 
-            var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo, scaleSelectorCombo);
+            var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
 
             createViewPort(this.map, layers, layerStore, topToolbar, bottomToolbar);
+            this.map.zoomTo(1);
+            this.map.events.register('zoomend', this, function(record) {
+                if (this.map.zoom == 0) {
+                      this.map.zoomTo(1);
+                }
+            });
         }
     };
 })();
