@@ -10,6 +10,6 @@ openaddresses.layers = [
     {singleTile:true,
         buffer: 0,
         ratio: 1,
-    numZoomLevels: 25}
+    numZoomLevels: 23}
             )
 ];
