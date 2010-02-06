@@ -4,3 +4,4 @@ List of layers that can be used as background layers
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_sitn || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no || image/png ||
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_ortho || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no || image/png ||
 || http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_communes || <LatLonBoundingBox minx="6.42901" miny="46.8475" maxx="7.08992" maxy="47.1679"/> || 374177.136322228 ||image/png ||
+|| http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer || GENEVE_ortho || <LatLonBoundingBox minx="5.918669" miny="46.105563" maxx="6.314182" maxy="46.379977"/> || no ||image/png ||
