@@ -11,6 +11,7 @@
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
+ * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
@@ -40,7 +41,7 @@ openaddresses.layout = (function() {
             maxResolution: 156543.0339,
             maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
                     20037508, 20037508.34),
-            numZoomLevels: 22,
+            numZoomLevels: 23,
             allOverlays: false,
             controls: [new OpenLayers.Control.Navigation(),
                 new OpenLayers.Control.PanZoomBar(),
@@ -60,7 +61,11 @@ openaddresses.layout = (function() {
      */
     var createLayers = function() {
         return openaddresses.layers.concat([
-            new OpenLayers.Layer.OSM("OSM"),
+            new openaddresses.OSM({
+                isBaseLayer: true,
+                buffer: 0,
+                transitionEffect: "resize"
+            }),
             new OpenLayers.Layer.Yahoo(
                     "Yahoo Street",
             {'sphericalMercator': true}
