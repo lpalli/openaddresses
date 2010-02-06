@@ -14,6 +14,7 @@
  * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
+ * @include app/js/OpenAddressesConfig.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
@@ -198,13 +199,6 @@ openaddresses.layout = (function() {
             map: map,
             projections: ['EPSG:4326', 'EPSG:900913'],
             width: 200
-        });
-    };
-
-    var createScaleSelectorCombo = function(map) {
-        return new GeoExt.ux.form.ScaleSelectorCombo({
-            map: map,
-            fakeScaleValue: ['100','150','250','500','1000','1500','2500','5000','10000','25000','50000','100000','200000','450000','850000','1500000','2500000','5000000','10000000','50000000','100000000','200000000','400000000',]
         });
     };
 
