@@ -1,0 +1,13 @@
+Description of user tests made in order to check application
+
+= Start Application =
+
+== Test case ==
+
+ 1. Start application on IE7+, Safari 4+, Chrome, Opera 10+, FF 3+
+ 1. Test 2 modes as KVP: ?mode=debug & ?mode=prod
+
+== Expected Result ==
+
+ 1. Applications starts, no Javascript error
+ 1. Both mode debug and prod are working
