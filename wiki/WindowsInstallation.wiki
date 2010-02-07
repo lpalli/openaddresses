@@ -27,11 +27,19 @@ Install !OpenAddresses code base on Windows
 
  * Note the second step is very important, since it makes that your application is working with a private environment (like a private OS)
 
-== Localized application ==
+== Localize application ==
 
  * (required only the first time) Server side localization
   * in trunk/openaddresses, start in command line: python setup.py compile_catalog
   * Documentation http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
+
+
+== Install !MapServer ==
+
+ * http://maptools.org/ms4w/
+  * http://127.0.0.1/cgi-bin/mapserv.exe
+  * add in EPSG:
+   * <900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
 
 = Initial Install of !OpenAddresses Server =
 
@@ -111,11 +119,3 @@ C:\Program Files\PostgreSQL\8.4\bin>
  1. cd openaddresses
  1. paster serve --reload development.ini
  1. Add svn external to mfbase in public directory
-
-
-==== Install !MapServer ====
-
- * http://maptools.org/ms4w/
-  * http://127.0.0.1/cgi-bin/mapserv.exe
-  * add in EPSG:
-   * <900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
