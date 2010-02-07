@@ -11,6 +11,7 @@
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/LayerSwitcher.js
+ * @include OpenLayers/Popup/FramedCloud.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
@@ -36,6 +37,10 @@ openaddresses.layout = (function() {
      * {OpenLayers.Map} The OpenLayers.Map instance.
      */
     var createMap = function() {
+        var navControl = new OpenLayers.Control.Navigation({
+            handleRightClicks: true
+        });
+
         return new OpenLayers.Map({
             projection: new OpenLayers.Projection("EPSG:900913"),
             displayProjection: new OpenLayers.Projection("EPSG:4326"),
@@ -45,7 +50,7 @@ openaddresses.layout = (function() {
                     20037508, 20037508.34),
             numZoomLevels: 23,
             allOverlays: false,
-            controls: [new OpenLayers.Control.Navigation(),
+            controls: [navControl,
                 new OpenLayers.Control.PanZoomBar(),
                 new OpenLayers.Control.MousePosition({
                     numDigits: 2
@@ -232,6 +237,52 @@ openaddresses.layout = (function() {
         }
     };
 
+    var handleRightMouseClick = function(map) {
+        map.controls[0].handlers.click.callbacks.rightclick = function() {
+            var lonlat = map.getLonLatFromViewPortPx(map.controls[0].handlers.click.evt.xy);
+            var content = "<h1 style='font-size: 14px;'>Position</h1><table style='font-size: 12px;'><tr><td width=\"150\">" + "Spherical Mercator</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
+            lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
+            content = content + "<tr><td>WGS 84</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
+            // Create empty proxy
+            map.myProxy = new Ext.data.ScriptTagProxy({
+                url: "http://maps.google.com/maps/geo?q=" + lonlat.lat + "," + lonlat.lon + "&output=json&sensor=true&key=" + openaddresses.config.googleKey,
+                nocache: false
+            });
+            map.geocoderStore = new Ext.data.Store({
+                proxy: map.myProxy,
+                reader: new Ext.data.JsonReader({
+                    root: 'Placemark',
+                    fields: [
+                        {
+                            name: 'address'
+                        }
+                    ]
+                })
+            });
+
+            map.geocoderStore.on(
+                    'load', function(store) {
+                var placemark = store.reader.jsonData.Placemark[0];
+                var position = new OpenLayers.LonLat(placemark.Point.coordinates[0], placemark.Point.coordinates[1]);
+                position.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+                if (map.myPopup) {
+                    map.myPopup.destroy();
+                }
+                map.myPopup = new OpenLayers.Popup.FramedCloud(
+                        "chicken",
+                        position,
+                        null,
+                        content + "<br>" + placemark.address,
+                        null,
+                        true
+                        );
+                map.addPopup(map.myPopup);
+            }, this);
+
+            map.geocoderStore.load();
+        };
+    };
+
     /*
      * Public
      */
@@ -257,6 +308,8 @@ openaddresses.layout = (function() {
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
 
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
+
+            handleRightMouseClick(this.map);
 
             createViewPort(this.map, layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
