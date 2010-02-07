@@ -1,4 +1,6 @@
-Install !OpenAddresses code base on Windows
+Install !OpenAddresses on Windows
+
+<wiki:toc max_depth="2" />
 
 = Requirements =
 
