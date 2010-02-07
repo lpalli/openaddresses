@@ -86,6 +86,10 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Install test server
   * Install prod server
   * Deploy procedure on server
+ * Testing
+  * Create JS Unit tests
+  * Create Python Unit tests
+  * Test with TestBook
 
 = Data =
 
