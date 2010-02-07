@@ -76,6 +76,7 @@ This describes the initial installation. It is not required to do that everytime
 Installation procedure usually fails on Vista. It is needed to give full rights to all to data directory.
 Postgres needs to be installed with the installation procedure and then you can do:
 
+{{{
 C:\>runas /user:postgres cmd
 
 C:\Windows\system32>c:
@@ -84,12 +85,14 @@ C:\Windows\system32>cd "\Program Files\PostgreSQL\8.4\bin"
 
 C:\Program Files\PostgreSQL\8.4\bin>initdb -D "c:\Program Files\PostgreSQL\8.4\d
 ata" -E UTF8
+}}}
 Les fichiers de ce cluster appartiendront à l'utilisateur « postgres ».
 Le processus serveur doit également lui appartenir.
 
 Le cluster sera initialisé avec la locale French_Switzerland.1252.
 La configuration de la recherche plein texte a été initialisée à « french ».
 
+{{{
 correction des droits sur le répertoire existant c:/Program Files/PostgreSQL/8.4
 /data... ok
 création des sous-répertoires... ok
@@ -114,13 +117,17 @@ ATTENTION : active l'authentification « trust » pour les connexions
 locales.
 Cela peut être modifié par l'édition de pg_hba.conf ou en utilisant l'option
 -A au prochain lancement d'initdb.
+}}}
 
 Succès. Vous pouvez maintenant lancer le serveur de bases de données par :
 
+{{{
     "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
+}}}
 ou
-    "pg_ctl" -D "c:/Program Files/PostgreSQL/8.4/data" -l journal_applicatif sta
-rt
+{{{
+    "pg_ctl" -D "c:/Program Files/PostgreSQL/8.4/data" -l journal_applicatif start
+}}}
 
 
 C:\Program Files\PostgreSQL\8.4\bin>
@@ -157,4 +164,4 @@ c:\Sandbox\openadresses\trunk\openaddresses\data>"c:\Program Files\PostgreSQL\8.
 4\bin\psql.exe" -d postgis -h localhost -U postgres -f points.sql
 }}}
 
-==== Create a MapFish REST Service ====
+==== Create a !MapFish REST Service ====
