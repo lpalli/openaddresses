@@ -193,3 +193,25 @@ GRANT SELECT ON spatial_ref_sys TO "www-data";
 {{{
 sqlalchemy.url = postgres://www-data:www-data@localhost:5432/postgis
 }}}
+ 1. Fill layers.ini (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/layers.ini): 
+{{{
+[points]
+singular=point
+plural=points
+table=points
+epsg=4326
+geomcolumn=the_geom
+}}}
+ 1. Create the MapFish REST service:
+{{{
+paster mf-layer points
+}}}
+ 1. Add in routing.py (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/config/routing.py): 
+{{{
+ map.resource("point", "points")
+}}}
+ 1. Reload server:
+{{{
+paster serve development.ini --reload
+}}}
+ 1. Test with: http://127.0.0.1:5000/points/1
