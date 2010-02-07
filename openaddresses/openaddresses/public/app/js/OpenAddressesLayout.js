@@ -240,9 +240,9 @@ openaddresses.layout = (function() {
     var handleRightMouseClick = function(map) {
         map.controls[0].handlers.click.callbacks.rightclick = function() {
             var lonlat = map.getLonLatFromViewPortPx(map.controls[0].handlers.click.evt.xy);
-            var content = "<h1 style='font-size: 14px;'>Position</h1><table style='font-size: 12px;'><tr><td width=\"150\">" + "Spherical Mercator</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
+            var content = "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Digitized Position") + "</h1><table style='font-size: 14px;'><tr><td width=\"150\">" + "" + OpenLayers.i18n("Spherical Mercator") + "</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
             lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
-            content = content + "<tr><td>WGS 84</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
+            content = content + "<tr><td>" + OpenLayers.i18n("WGS84") + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
             // Create empty proxy
             map.myProxy = new Ext.data.ScriptTagProxy({
                 url: "http://maps.google.com/maps/geo?q=" + lonlat.lat + "," + lonlat.lon + "&output=json&sensor=true&key=" + openaddresses.config.googleKey,
@@ -272,7 +272,7 @@ openaddresses.layout = (function() {
                         "chicken",
                         position,
                         null,
-                        content + "<br>" + placemark.address,
+                        content + "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Address") + "</h1>" + placemark.address,
                         null,
                         true
                         );
