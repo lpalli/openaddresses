@@ -55,6 +55,13 @@ This has to be done everytime you want to test the application
   * add in EPSG:
    * <900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
 
+== Start Postgres ==
+
+ 1. runas /user:postgres cmd
+ 1. cd "\Program Files\PostgreSQL\8.4\bin"
+ 1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
+ 1. Start pgAdminIII to check that databse is working
+
 = Initial Install of !OpenAddresses Server =
 
 This describes the initial installation. It is not required to do that everytime the code base is checked-out.
