@@ -25,11 +25,13 @@ Install !OpenAddresses code base on Windows
  1. paster serve --reload development.ini
  1. http://127.0.0.1:5000 
 
+ * Note the second step is very important, since it makes that your application is working with a private environment (like a private OS)
+
 == Localized application ==
 
- * Server side
-  * http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
-  * python setup.py compile_catalog
+ * (required only the first time) Server side localization
+  * in trunk/openaddresses, start in command line: python setup.py compile_catalog
+  * Documentation http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
 
 = Initial Install of !OpenAddresses Server =
 
