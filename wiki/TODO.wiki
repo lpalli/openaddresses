@@ -27,9 +27,9 @@ Description of task that need to be accomplished in order to launch www.openaddr
 
  * ~~Web Site Architecture Cédric~~
   * Add permalink support
- * Web Site Header
-  * Logo
-  * Content
+ * Web Site Header WaitForYourName
+  * Logo WaitForYourName
+  * Content WaitForYourName
  * Web Site Upload
   * Client widget
   * Server service
@@ -43,10 +43,10 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * Web Site Statistic
   * Client widget
   * Server service
- * Web Site License
-  * Content
- * Web Site About
-  * Content
+ * Web Site License WaitForYourName
+  * Content WaitForYourName
+ * Web Site About WaitForYourName
+  * Content WaitForYourName
  * Web Site Localization 
   * ~~Language Selector Cédric~~
   * ~~Mako Template localization Cédric~~
@@ -57,7 +57,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Add WMS
    * Install !MapServer
    * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
-    * Add Open WMS
+    * Add Open WMS WaitForYourName
   * ~~Add Yahoo Map Cédric~~
    * Obtain agreement of Yahoo (Hans-Jörg)
   * ~~Add !OpenStreetMap Cédric~~ 
@@ -74,13 +74,13 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Delete address
   * Update address
  * Data
-  * Define data model
-  * Import OSM data in PostGIS
-  * Import OA.ch and OA.at addresses in PostGIS
-  * Synchronize OSM and OA addresses, daily
+  * Define data model WaitForYourName
+  * Import OSM data in PostGIS WaitForYourName
+  * Import OA.ch and OA.at addresses in PostGIS WaitForYourName
+  * Synchronize OSM and OA addresses, daily WaitForYourName
   * Obtain other data
-   * Switzerland: Cantons
-   * Switzerland: OFS (RegBL)
+   * Switzerland: Cantons WaitForYourName
+   * Switzerland: OFS (RegBL) WaitForYourName
    * France: île de France (Yves J.)
  * Infrastructure
   * Install test server
