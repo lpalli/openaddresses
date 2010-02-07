@@ -163,5 +163,15 @@ c:\Sandbox\openadresses\trunk\openaddresses\data>"c:\Program Files\PostgreSQL\8.
 c:\Sandbox\openadresses\trunk\openaddresses\data>"c:\Program Files\PostgreSQL\8.
 4\bin\psql.exe" -d postgis -h localhost -U postgres -f points.sql
 }}}
+ 1. Create spatial index
+{{{
+CREATE INDEX idx_points_the_geom
+ON points
+USING gist(the_geom);
+}}}
+ 1. Check that primary key exists, otherwise:
+{{{
+ALTER TABLE points ADD PRIMARY KEY (gid);
+}}}
 
 ==== Create a !MapFish REST Service ====
