@@ -83,7 +83,9 @@ Description of task that need to be accomplished in order to launch www.openaddr
    * Switzerland: OFS (RegBL)
    * France: île de France (Yves J.)
  * Infrastructure
-  * Deploy on server
+  * Install test server
+  * Install prod server
+  * Deploy procedure on server
 
 = Data =
 
