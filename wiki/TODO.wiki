@@ -27,9 +27,9 @@ Description of task that need to be accomplished in order to launch www.openaddr
 
  * ~~Web Site Architecture Cédric~~
   * Add permalink support
- * Web Site Header _WaitForYourName_
-  * Logo WaitForYourName
-  * Content WaitForYourName
+ * Web Site Header _!WaitForYourName_
+  * Logo _!WaitForYourName_
+  * Content _!WaitForYourName_
  * Web Site Upload
   * Client widget
   * Server service
@@ -43,10 +43,10 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * Web Site Statistic
   * Client widget
   * Server service
- * Web Site License WaitForYourName
-  * Content WaitForYourName
- * Web Site About WaitForYourName
-  * Content WaitForYourName
+ * Web Site License _!WaitForYourName_
+  * Content _!WaitForYourName_
+ * Web Site About _!WaitForYourName_
+  * Content _!WaitForYourName_
  * Web Site Localization 
   * ~~Language Selector Cédric~~
   * ~~Mako Template localization Cédric~~
@@ -57,7 +57,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Add WMS
    * Install !MapServer
    * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
-    * Add Open WMS WaitForYourName
+    * Add Open WMS _!WaitForYourName_
   * ~~Add Yahoo Map Cédric~~
    * Obtain agreement of Yahoo (Hans-Jörg)
   * ~~Add !OpenStreetMap Cédric~~ 
@@ -74,13 +74,13 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Delete address
   * Update address
  * Data
-  * Define data model WaitForYourName
-  * Import OSM data in PostGIS WaitForYourName
-  * Import OA.ch and OA.at addresses in PostGIS WaitForYourName
-  * Synchronize OSM and OA addresses, daily WaitForYourName
+  * Define data model _!WaitForYourName_
+  * Import OSM data in PostGIS _!WaitForYourName_
+  * Import OA.ch and OA.at addresses in PostGIS _!WaitForYourName_
+  * Synchronize OSM and OA addresses, daily _!WaitForYourName_
   * Obtain other data
-   * Switzerland: Cantons WaitForYourName
-   * Switzerland: OFS (RegBL) WaitForYourName
+   * Switzerland: Cantons _!WaitForYourName_
+   * Switzerland: OFS (RegBL) _!WaitForYourName_
    * France: île de France (Yves J.)
  * Infrastructure
   * Install test server
