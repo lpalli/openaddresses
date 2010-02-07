@@ -65,6 +65,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Add Display Projection Selector Cédric~~ 
   * ~~Add Geonames Search Cédric~~
   * ~~Add Navigation Control Cédric~~
+  * ~~Add Reverse Geocoding on right mouse click Cédric~~
   * Add address layer
    * !MapFile 
    * WMS
