@@ -19,6 +19,8 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
+    map.resource("point", "points")
+    
     map.connect('', controller='home', action='index')
     map.connect(':controller/:action/:id')
 
