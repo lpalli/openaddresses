@@ -99,7 +99,7 @@ As these 2 alternate forms of addresses accepted or rejected by openaddresses?
  * Version management / History
  * Data Coordinate System / Convert data to WGS-84
  * Import data in PostGIS
- * Synchronize with OpenStreetMap
+ * Synchronize with !OpenStreetMap
 
 = Marketing =
 
