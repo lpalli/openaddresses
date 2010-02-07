@@ -173,5 +173,23 @@ USING gist(the_geom);
 {{{
 ALTER TABLE points ADD PRIMARY KEY (gid);
 }}}
+ 1. Create user www-data (http://www.mapfish.org/doc/tutorials/howto_app_development/howto_app_development.html#data-preparation): 
+{{{
+"c:\Program Files\PostgreSQL\8.4\bin\createuser.exe" -U postgres -P "www-data" 
+}}}
+ 1. Grant rights to user www-data
+{{{
+select count(1) from points;
+GRANT ALL ON points TO "www-data";
+GRANT SELECT ON geometry_columns TO "www-data";
+GRANT SELECT ON spatial_ref_sys TO "www-data";
+}}}
 
 ==== Create a !MapFish REST Service ====
+
+ * http://www.mapfish.org/doc/tutorials/introduction/introduction.html#data-access-mapfish-rest-protocol
+
+ 1. Add in development.ini:
+{{{
+sqlalchemy.url = postgres://www-data:www-data@localhost:5432/postgis
+}}}
