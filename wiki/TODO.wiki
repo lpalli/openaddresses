@@ -48,10 +48,10 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * Web Site About
   * Content
  * Web Site Localization 
-  * ~~Language Selector~~
-  * ~~Mako Template localization~~
+  * ~~Language Selector Cédric~~
+  * ~~Mako Template localization Cédric~~
   * German translation
-  * ~~English translation~~
+  * ~~English translation Cédric~~
   * French translation
  * Web Site Map
   * Add WMS
