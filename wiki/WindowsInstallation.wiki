@@ -15,7 +15,7 @@ Install !OpenAddresses on Windows
  1. Create a directory openaddresses
  1. Create a directory trunk inside openaddresses
  1. In this directory, checkout trunk code: http://code.google.com/p/openaddresses/source/checkout. I use as URL repository: https://openaddresses.googlecode.com/svn/trunk/
- 1. Create a file !OpenAddressesConfig.js by replacing the variable of OpenAddressesConfig.js.ini (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesConfig.js.ini). Example:
+ 1. Create a file !OpenAddressesConfig.js by replacing the variable of !OpenAddressesConfig.js.ini (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesConfig.js.ini). Example:
 
 {{{
 Ext.namespace("openaddresses");
