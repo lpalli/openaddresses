@@ -21,6 +21,8 @@ Install !OpenAddresses on Windows
 
 == Start !MapFish ==
 
+This has to be done everytime you want to test the application
+
  1. cd c:\Sandbox\openadresses (installation directory containing env)
  1. env\Scripts\activate.bat
  1. cd trunk/openaddresses
