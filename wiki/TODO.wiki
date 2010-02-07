@@ -27,7 +27,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
 
  * ~~Web Site Architecture Cédric~~
   * Add permalink support
- * Web Site Header WaitForYourName
+ * Web Site Header _WaitForYourName_
   * Logo WaitForYourName
   * Content WaitForYourName
  * Web Site Upload
