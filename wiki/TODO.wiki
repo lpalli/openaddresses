@@ -96,6 +96,15 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * PSC
    * Committer
    * User
+ * Marketing
+  * create a press release
+  * Create a blog
+   * Reference it
+    * osgeo.org
+  * Create a flyer
+  * Participate to conference
+   * FossGIS
+   * Foss4G
 
 = Data =
 
@@ -112,10 +121,3 @@ As these 2 alternate forms of addresses accepted or rejected by openaddresses?
  * Data Coordinate System / Convert data to WGS-84
  * Import data in PostGIS
  * Synchronize with !OpenStreetMap
-
-= Marketing =
-
- * Create a blog
-  * Reference it
- * Create flyer
- * Participate to conference
