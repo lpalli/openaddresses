@@ -58,7 +58,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
    * Install !MapServer
    * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
     * Add Open WMS
-  * Add Yahoo Map
+  * ~~Add Yahoo Map Cédric~~
    * Obtain agreement of Yahoo (Hans-Jörg)
   * ~~Add !OpenStreetMap Cédric~~ 
   * ~~Add Mouse Position Cédric~~
