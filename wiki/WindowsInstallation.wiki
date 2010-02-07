@@ -6,7 +6,7 @@ Install !OpenAddresses on Windows
 
  * Tortoise for SVN: http://tortoisesvn.net/downloads
  * (Optional): Use IDEA http://www.jetbrains.com/idea/ and request a community edition license to Cédric
- * Tested with Windows Vista Family Edition SP2
+ * Tested with Windows Vista Family Edition SP2 (run command line as Administrator)
 
 = !HowTo Install !OpenAddresses Server =
 
