@@ -140,3 +140,13 @@ C:\Program Files\PostgreSQL\8.4\bin>
  1. cd openaddresses
  1. paster serve --reload development.ini
  1. Add svn external to mfbase in public directory
+
+==== Load data in PostGIS ====
+
+ * nice tuto: http://www.bostongis.com/?content_name=postgis_tut01
+
+ 1. cd c:\Sandbox\openadresses\trunk\openaddresses\data
+ 1. c:\Sandbox\openadresses\trunk\openaddresses\data>"c:\Program Files\PostgreSQL\8.
+4\bin\shp2pgsql.exe" -s 4326 points points > points.sql
+ 1. c:\Sandbox\openadresses\trunk\openaddresses\data>"c:\Program Files\PostgreSQL\8.
+4\bin\psql.exe" -d postgis -h localhost -U postgres -f points.sql
