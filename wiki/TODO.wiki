@@ -56,16 +56,15 @@ Description of task that need to be accomplished in order to launch www.openaddr
  * Web Site Map
   * Add WMS
    * Install !MapServer
-   * Create !MapFile for cascading WMS (reprojection)
+   * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
     * Add Open WMS
   * Add Yahoo Map
-   * Obtain agreement of Yahoo (being processed by HJ)
-  * ~~Add !OpenStreetMap~~ 
-  * ~~Add Mouse Position~~
-  * ~~Add Scale Selector~~
-  * ~~Add Display Projection Selector~~ 
-  * ~~Add Geonames Search~~
-  * ~~Add Navigation Control~~
+   * Obtain agreement of Yahoo (Hans-Jörg)
+  * ~~Add !OpenStreetMap Cédric~~ 
+  * ~~Add Mouse Position Cédric~~
+  * ~~Add Display Projection Selector Cédric~~ 
+  * ~~Add Geonames Search Cédric~~
+  * ~~Add Navigation Control Cédric~~
   * Add address layer
    * !MapFile 
    * WMS
@@ -82,6 +81,7 @@ Description of task that need to be accomplished in order to launch www.openaddr
   * Obtain other data
    * Switzerland: Cantons
    * Switzerland: OFS (RegBL)
+   * France: île de France (Yves J.)
  * Infrastructure
   * Deploy on server
 
