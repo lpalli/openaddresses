@@ -60,7 +60,7 @@ This has to be done everytime you want to test the application
  1. runas /user:postgres cmd
  1. cd "\Program Files\PostgreSQL\8.4\bin"
  1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
- 1. Start pgAdminIII to check that databse is working
+ 1. Start pgAdminIII to check that database is working
 
 = Initial Install of !OpenAddresses Server =
 
