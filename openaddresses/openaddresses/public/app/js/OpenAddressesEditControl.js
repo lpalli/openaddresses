@@ -47,13 +47,20 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         //     - show the edition popup
         var clickedPosition = openaddresses.layout.map.getLonLatFromViewPortPx(evt.xy);
 
-        var feature = new OpenLayers.Feature.Vector(
-                new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat)
-                );
+        var vectorLayer = openaddresses.layout.map.getLayersByName('DrawingLayer')[0];
 
-       openaddresses.layout.map.getLayersByName('DrawingLayer')[0].addFeatures(feature);
+        // 1. 
+        var feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat));
 
-        //console.log(evt);
+        if (!openaddresses.layout.map.modifyFeatureControl) {
+            openaddresses.layout.map.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(vectorLayer);
+            openaddresses.layout.map.addControl(openaddresses.layout.map.modifyFeatureControl);
+            openaddresses.layout.map.modifyFeatureControl.activate();
+        }
+
+        vectorLayer.addFeatures(feature);
+        openaddresses.layout.map.modifyFeatureControl.selectControl.select(feature);
+        openaddresses.layout.map.modifyFeatureControl.selectControl.handlers.feature.feature = feature;
     },
 
     /** private: method[onDblclick]

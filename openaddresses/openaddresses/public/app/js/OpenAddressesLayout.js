@@ -16,6 +16,7 @@
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
+ * @include app/js/OpenAddressesCountryList.js
  * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
