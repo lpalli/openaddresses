@@ -37,7 +37,23 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
     /** private: method[onClick]
      */
     onClick: function(evt) {
-        alert('click');
+        // Pseudo code
+        // 1. Check if an address exists at this position
+        //  2. If yes
+        //     - show a movable circle in the map at the position of the address (create a modify feature control)
+        //     - show the edition popup
+        //  3. if no
+        //     - show a movable circle in the map at the digitized poistion
+        //     - show the edition popup
+        var clickedPosition = openaddresses.layout.map.getLonLatFromViewPortPx(evt.xy);
+
+        var feature = new OpenLayers.Feature.Vector(
+                new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat)
+                );
+
+       openaddresses.layout.map.getLayersByName('DrawingLayer')[0].addFeatures(feature);
+
+        //console.log(evt);
     },
 
     /** private: method[onDblclick]
