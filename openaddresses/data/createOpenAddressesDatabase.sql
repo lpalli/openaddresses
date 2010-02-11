@@ -8,9 +8,11 @@ CREATE TABLE ADDRESS (
     REGION VARCHAR(128),
     CITY VARCHAR(128),
     COUNTRY VARCHAR(2),
-    DATAORIGIN VARCHAR(128),
+    CREATED_BY VARCHAR(128),
+    IPADDRESS VARCHAR(64),
     TIME_CREATED timestamp DEFAULT current_timestamp,
     TIME_UPDATED timestamp,
+    QUALITY VARCHAR(128),
     REFERENCE VARCHAR(32) DEFAULT 'http://www.openaddresses.org',
     CONSTRAINT con_reference CHECK (REFERENCE = 'http://www.openaddresses.org')
 );
