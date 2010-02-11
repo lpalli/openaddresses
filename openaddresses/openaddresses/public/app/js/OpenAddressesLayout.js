@@ -19,6 +19,7 @@
  * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
+ * @include app/js/OpenAddressesEditControl.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
@@ -42,6 +43,12 @@ openaddresses.layout = (function() {
             handleRightClicks: true
         });
 
+        var editControl = new openaddresses.EditControl({
+            handlerOptions: {
+                "single": true
+            }
+        });
+
         return new OpenLayers.Map({
             projection: new OpenLayers.Projection("EPSG:900913"),
             displayProjection: new OpenLayers.Projection("EPSG:4326"),
@@ -52,6 +59,7 @@ openaddresses.layout = (function() {
             numZoomLevels: 23,
             allOverlays: false,
             controls: [navControl,
+                editControl,
                 new OpenLayers.Control.PanZoomBar(),
                 new OpenLayers.Control.MousePosition({
                     numDigits: 2
@@ -137,7 +145,7 @@ openaddresses.layout = (function() {
             emptyText: OpenLayers.i18n('Select a language...'),
             selectOnFocus: true,
             onSelect: function(record) {
-                window.location.search = openaddresses.layout.createPermalink(false,record.get("code"),record.get("charset"));
+                window.location.search = openaddresses.layout.createPermalink(false, record.get("code"), record.get("charset"));
             }
         });
     };
@@ -275,6 +283,10 @@ openaddresses.layout = (function() {
         };
     };
 
+    var handleEdit = function(map) {
+       map.controls[1].activate();    
+    };
+
     var createPermalinkButton = function() {
         return new Ext.Button({
             text: OpenLayers.i18n('Permalink'),
@@ -289,7 +301,7 @@ openaddresses.layout = (function() {
         // Manage map
         if (params.easting && params.northing && params.zoom) {
             var center = new OpenLayers.LonLat(parseFloat(params.easting), parseFloat(params.northing));
-            var zoom = parseInt(params.zoom,10);
+            var zoom = parseInt(params.zoom, 10);
             openaddresses.layout.map.setCenter(center, zoom);
         }
     };
@@ -309,10 +321,10 @@ openaddresses.layout = (function() {
                 }
             }
             if (overrideLang) {
-                 parametersObj.lang = overrideLang;
+                parametersObj.lang = overrideLang;
             }
             if (overrideCharset) {
-                 parametersObj.charset = overrideCharset;
+                parametersObj.charset = overrideCharset;
             }
 
             // Manage northing, easting and zoom
@@ -355,6 +367,7 @@ openaddresses.layout = (function() {
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
 
             handleRightMouseClick(this.map);
+            handleEdit(this.map);
 
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
