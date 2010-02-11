@@ -137,8 +137,7 @@ openaddresses.layout = (function() {
             emptyText: OpenLayers.i18n('Select a language...'),
             selectOnFocus: true,
             onSelect: function(record) {
-                var permalink = openaddresses.layout.createPermalink(false,record.get("code"),record.get("charset"));
-                window.location.search = permalink;
+                window.location.search = openaddresses.layout.createPermalink(false,record.get("code"),record.get("charset"));
             }
         });
     };
