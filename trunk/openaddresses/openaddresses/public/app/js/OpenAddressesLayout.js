@@ -89,6 +89,10 @@ openaddresses.layout = (function() {
             new OpenLayers.Layer("Empty", {
                 isBaseLayer: true,
                 displayInLayerSwitcher: true
+            }),
+            new OpenLayers.Layer.Vector("DrawingLayer", {
+                isBaseLayer: false,
+                displayInLayerSwitcher: false
             })
         ]);
     };
@@ -284,7 +288,7 @@ openaddresses.layout = (function() {
     };
 
     var handleEdit = function(map) {
-       map.controls[1].activate();    
+        map.controls[1].activate();
     };
 
     var createPermalinkButton = function() {
@@ -363,9 +367,9 @@ openaddresses.layout = (function() {
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
 
-
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
 
+            // Manage controlers for reverse geocoding and editing 
             handleRightMouseClick(this.map);
             handleEdit(this.map);
 
