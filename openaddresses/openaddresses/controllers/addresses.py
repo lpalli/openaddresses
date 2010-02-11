@@ -2,17 +2,17 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
 from openaddresses.lib.base import BaseController
-from openaddresses.model.points import Point
+from openaddresses.model.addresses import Address
 from openaddresses.model.meta import Session
 
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
 
-class PointsController(BaseController):
+class AddressesController(BaseController):
     readonly = False # if set to True, only GET is supported
 
     def __init__(self):
-        self.protocol = Protocol(Session, Point, self.readonly)
+        self.protocol = Protocol(Session, Address, self.readonly)
 
     def index(self, format='json'):
         """GET /: return all features."""
@@ -28,11 +28,11 @@ class PointsController(BaseController):
         # E.g.
         #
         # default_filter = create_default_filter(
-        #     request, Point
+        #     request, Address
         # )
         # compare_filter = comparison.Comparison(
         #     comparison.Comparison.ILIKE,
-        #     Point.mycolumnname,
+        #     Address.mycolumnname,
         #     value=myvalue
         # )
         # filter = logical.Logical(logical.Logical.AND, [default_filter, compare_filter])
@@ -48,9 +48,9 @@ class PointsController(BaseController):
         # from sqlalchemy.sql import and_
         #
         # default_filter = create_default_filter(
-        #     request, Point
+        #     request, Address
         # )
-        # compare_filter = Point.mycolumnname.ilike('%myvalue%')
+        # compare_filter = Address.mycolumnname.ilike('%myvalue%')
         # if default_filter is not None:
         #     filter = and_(default_filter.to_sql_expr(), compare_filter)
         # else:

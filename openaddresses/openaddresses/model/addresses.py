@@ -6,14 +6,14 @@ from mapfish.sqlalchemygeom import GeometryTableMixIn
 
 from openaddresses.model.meta import metadata, engine
 
-points_table = Table(
-    'points', metadata,
-    Column('the_geom', Geometry(4326)),
+addresses_table = Table(
+    'address', metadata,
+    Column('geom', Geometry(4326)),
     autoload=True, autoload_with=engine)
 
-class Point(GeometryTableMixIn):
+class Address(GeometryTableMixIn):
     # for GeometryTableMixIn to do its job the __table__ property
     # must be set here
-    __table__ = points_table
+    __table__ = addresses_table
 
-mapper(Point, points_table)
+mapper(Address, addresses_table)
