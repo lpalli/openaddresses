@@ -103,11 +103,12 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createTopToolbar = function(map, languageCombo, geonamesSearchCombo) {
+    var createTopToolbar = function(map, languageCombo, geonamesSearchCombo, permalinkButton) {
         var tools = [];
         tools.push(geonamesSearchCombo);
         tools.push('->');
         tools.push(languageCombo);
+        tools.push(permalinkButton);
         return tools;
     };
 
@@ -219,7 +220,7 @@ openaddresses.layout = (function() {
         });
     };
 
-    var setPermalink = function(languageStore, languageCombo) {
+    var setLangPermalink = function(languageStore, languageCombo) {
         var params = Ext.urlDecode(window.location.search.substring(1));
         if (!params.lang && $('lang').value) {
             params.lang = $('lang').value;
@@ -283,6 +284,15 @@ openaddresses.layout = (function() {
         };
     };
 
+    var createPermalinkButton = function() {
+       return new Ext.Button({
+           text: OpenLayers.i18n('Permalink'),
+           handler: function(b,e) {
+              alert(openaddresses.layout.map);    
+           }
+       });
+    };
+
     /*
      * Public
      */
@@ -298,20 +308,22 @@ openaddresses.layout = (function() {
             // Manage language
             var languageStore = createLanguageStore();
             var languageCombo = createLanguageCombo(languageStore);
-            setPermalink(languageStore, languageCombo);
+            setLangPermalink(languageStore, languageCombo);
 
             this.map = createMap();
-            var layers = createLayers();
-            var layerStore = createLayerStore(this.map, layers);
+            this.layers = createLayers();
+            var layerStore = createLayerStore(this.map, this.layers);
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
-            var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo);
+            var permalinkButton = createPermalinkButton();
+            var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
+
 
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
 
             handleRightMouseClick(this.map);
 
-            createViewPort(this.map, layers, layerStore, topToolbar, bottomToolbar);
+            this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
             this.map.events.register('zoomend', this, function(record) {
                 if (this.map.zoom == 0) {
