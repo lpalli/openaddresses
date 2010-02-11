@@ -217,3 +217,4 @@ paster serve development.ini --reload
  1. Test with: 
   * http://127.0.0.1:5000/addresses/1
   * view-source:http://127.0.0.1:5000/addresses/1
+  * view-source:http://127.0.0.1:5000/addresses/?lon=6.6&lat=46.5&tolerance=0.03
