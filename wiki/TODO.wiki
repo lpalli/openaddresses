@@ -26,7 +26,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
 == TODO Implementation List ==
 
  * ~~Web Site Architecture Cédric~~
-  * Add permalink support
+  * ~~Add permalink support~~
  * Web Site Header _!WaitForYourName_
   * Logo _!WaitForYourName_
   * Content _!WaitForYourName_
