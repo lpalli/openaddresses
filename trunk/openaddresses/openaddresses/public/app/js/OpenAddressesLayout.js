@@ -285,18 +285,48 @@ openaddresses.layout = (function() {
     };
 
     var createPermalinkButton = function() {
-       return new Ext.Button({
-           text: OpenLayers.i18n('Permalink'),
-           handler: function(b,e) {
-              alert(openaddresses.layout.map);    
-           }
-       });
+        return new Ext.Button({
+            text: OpenLayers.i18n('Permalink'),
+            handler: function(b, e) {
+                window.open(openaddresses.layout.createPermalink());
+            }
+        });
+    };
+
+    var setPermalink = function() {
+        var params = Ext.urlDecode(window.location.search.substring(1));
+        // Manage map
+        if (params.easting && params.northing && params.zoom) {
+            var center = new OpenLayers.LonLat(parseFloat(params.easting),parseFloat(params.northing));
+            var zoom = parseInt(params.zoom);
+            openaddresses.layout.map.setCenter(center,zoom);
+        }
     };
 
     /*
      * Public
      */
     return {
+        createPermalink: function() {
+            var params = Ext.urlDecode(window.location.search.substring(1));
+            var parametersObj = {};
+            for (var param in params) {
+                if (param == 'lang' || param == 'charset' || param == 'mode') {
+                    parametersObj[param] = params[param];
+                }
+            }
+            // Create map permalink
+            parametersObj['northing'] = this.map.center.lat;
+            parametersObj['easting'] = this.map.center.lon;
+            parametersObj['zoom'] = this.map.zoom;
+            var base = '';
+            if (document.location.href.indexOf("?") > 0) {
+                base = document.location.href.substring(0,document.location.href.indexOf("?"));
+            } else {
+                base = document.location.href;
+            }
+            return base + '?' + Ext.urlEncode(parametersObj);
+        },
 
         /**
          * APIMethod: init
@@ -330,6 +360,7 @@ openaddresses.layout = (function() {
                     this.map.zoomTo(1);
                 }
             });
+            setPermalink();
         }
     };
 })();
