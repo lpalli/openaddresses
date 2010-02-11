@@ -1,6 +1,7 @@
 /*
  * @requires app/js/OpenAddressesConfig.js
  * @include OpenLayers/Map.js
+ * @include OpenLayers/BaseTypes/LonLat.js
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Layer.js
@@ -146,6 +147,13 @@ openaddresses.layout = (function() {
                 }
                 parametersObj.lang = record.get("code");
                 parametersObj.charset = record.get("charset");
+
+                // Create map permalink
+                if (openaddresses.layout.map) {
+                    parametersObj['northing'] = openaddresses.layout.map.center.lat;
+                    parametersObj['easting'] = openaddresses.layout.map.center.lon;
+                    parametersObj['zoom'] = openaddresses.layout.map.zoom;
+                }
                 window.location.search = Ext.urlEncode(parametersObj);
             }
         });
@@ -297,9 +305,9 @@ openaddresses.layout = (function() {
         var params = Ext.urlDecode(window.location.search.substring(1));
         // Manage map
         if (params.easting && params.northing && params.zoom) {
-            var center = new OpenLayers.LonLat(parseFloat(params.easting),parseFloat(params.northing));
+            var center = new OpenLayers.LonLat(parseFloat(params.easting), parseFloat(params.northing));
             var zoom = parseInt(params.zoom);
-            openaddresses.layout.map.setCenter(center,zoom);
+            openaddresses.layout.map.setCenter(center, zoom);
         }
     };
 
@@ -321,7 +329,7 @@ openaddresses.layout = (function() {
             parametersObj['zoom'] = this.map.zoom;
             var base = '';
             if (document.location.href.indexOf("?") > 0) {
-                base = document.location.href.substring(0,document.location.href.indexOf("?"));
+                base = document.location.href.substring(0, document.location.href.indexOf("?"));
             } else {
                 base = document.location.href;
             }
