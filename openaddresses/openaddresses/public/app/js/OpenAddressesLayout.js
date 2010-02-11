@@ -137,24 +137,8 @@ openaddresses.layout = (function() {
             emptyText: OpenLayers.i18n('Select a language...'),
             selectOnFocus: true,
             onSelect: function(record) {
-                var params = Ext.urlDecode(window.location.search.substring(1));
-                var parametersObj = {};
-                for (var param in params) {
-                    if (param == 'lang' || param == 'charset') {
-                    } else {
-                        parametersObj[param] = params[param];
-                    }
-                }
-                parametersObj.lang = record.get("code");
-                parametersObj.charset = record.get("charset");
-
-                // Create map permalink
-                if (openaddresses.layout.map) {
-                    parametersObj['northing'] = openaddresses.layout.map.center.lat;
-                    parametersObj['easting'] = openaddresses.layout.map.center.lon;
-                    parametersObj['zoom'] = openaddresses.layout.map.zoom;
-                }
-                window.location.search = Ext.urlEncode(parametersObj);
+                var permalink = openaddresses.layout.createPermalink(false,record.get("code"),record.get("charset"));
+                window.location.search = permalink;
             }
         });
     };
@@ -296,7 +280,7 @@ openaddresses.layout = (function() {
         return new Ext.Button({
             text: OpenLayers.i18n('Permalink'),
             handler: function(b, e) {
-                window.open(openaddresses.layout.createPermalink());
+                window.open(openaddresses.layout.createPermalink(true));
             }
         });
     };
@@ -315,23 +299,35 @@ openaddresses.layout = (function() {
      * Public
      */
     return {
-        createPermalink: function() {
+        createPermalink: function(fullUrl, overrideLang, overrideCharset) {
             var params = Ext.urlDecode(window.location.search.substring(1));
             var parametersObj = {};
+
+            // Manage lang, charset and mode
             for (var param in params) {
                 if (param == 'lang' || param == 'charset' || param == 'mode') {
                     parametersObj[param] = params[param];
                 }
             }
-            // Create map permalink
+            if (overrideLang) {
+                 parametersObj['lang'] = overrideLang;
+            }
+            if (overrideCharset) {
+                 parametersObj['charset'] = overrideCharset;
+            }
+
+            // Manage northing, easting and zoom
             parametersObj['northing'] = this.map.center.lat;
             parametersObj['easting'] = this.map.center.lon;
             parametersObj['zoom'] = this.map.zoom;
+
             var base = '';
-            if (document.location.href.indexOf("?") > 0) {
-                base = document.location.href.substring(0, document.location.href.indexOf("?"));
-            } else {
-                base = document.location.href;
+            if (fullUrl) {
+                if (document.location.href.indexOf("?") > 0) {
+                    base = document.location.href.substring(0, document.location.href.indexOf("?"));
+                } else {
+                    base = document.location.href;
+                }
             }
             return base + '?' + Ext.urlEncode(parametersObj);
         },
