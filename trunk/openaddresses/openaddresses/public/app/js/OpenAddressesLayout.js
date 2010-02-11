@@ -290,7 +290,7 @@ openaddresses.layout = (function() {
         // Manage map
         if (params.easting && params.northing && params.zoom) {
             var center = new OpenLayers.LonLat(parseFloat(params.easting), parseFloat(params.northing));
-            var zoom = parseInt(params.zoom);
+            var zoom = parseInt(params.zoom,10);
             openaddresses.layout.map.setCenter(center, zoom);
         }
     };
@@ -310,16 +310,16 @@ openaddresses.layout = (function() {
                 }
             }
             if (overrideLang) {
-                 parametersObj['lang'] = overrideLang;
+                 parametersObj.lang = overrideLang;
             }
             if (overrideCharset) {
-                 parametersObj['charset'] = overrideCharset;
+                 parametersObj.charset = overrideCharset;
             }
 
             // Manage northing, easting and zoom
-            parametersObj['northing'] = this.map.center.lat;
-            parametersObj['easting'] = this.map.center.lon;
-            parametersObj['zoom'] = this.map.zoom;
+            parametersObj.northing = this.map.center.lat;
+            parametersObj.easting = this.map.center.lon;
+            parametersObj.zoom = this.map.zoom;
 
             var base = '';
             if (fullUrl) {
@@ -360,7 +360,7 @@ openaddresses.layout = (function() {
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
             this.map.events.register('zoomend', this, function(record) {
-                if (this.map.zoom == 0) {
+                if (this.map.zoom === 0) {
                     this.map.zoomTo(1);
                 }
             });
