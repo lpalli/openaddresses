@@ -19,7 +19,7 @@ def make_map():
 
     # CUSTOM ROUTES HERE
 
-    map.resource("point", "points")
+    map.resource("address", "addresses")
     
     map.connect('', controller='home', action='index')
     map.connect(':controller/:action/:id')
