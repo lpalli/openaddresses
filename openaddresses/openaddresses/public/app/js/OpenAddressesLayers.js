@@ -2,9 +2,9 @@ Ext.namespace('openaddresses');
 
 /*
  * @requires app/js/OpenAddressesConfig.js
+ * @requires OpenLayers/Layer/WMS.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/BaseTypes/LonLat.js
- * @include OpenLayers/Layer/WMS.js
  */
 openaddresses.createBoundsFrom4326 = function(minx, miny, maxx, maxy) {
     var bl = new OpenLayers.LonLat(minx, miny);

@@ -14,6 +14,7 @@
  * @include OpenLayers/BaseTypes/LonLat.js
  * @include OpenLayers/Feature/Vector.js
  * @include OpenLayers/Geometry/Point.js
+ * @include GeoExt/widgets/Popup.js
  */
 
 Ext.namespace("openaddresses");
@@ -237,7 +238,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             params: { lon: clickePositionWGS84.lon,
                 lat: clickePositionWGS84.lat,
                 //tolerance: 0.0001
-                tolerance: 3
+                tolerance: 0.2
             }
         });
 
