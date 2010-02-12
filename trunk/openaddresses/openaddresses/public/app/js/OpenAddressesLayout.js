@@ -8,6 +8,10 @@
  * @include OpenLayers/Layer/XYZ.js
  * @include OpenLayers/Layer/Yahoo.js
  * @include OpenLayers/Tile/Image.js
+ * @include OpenLayers/Renderer.js
+ * @include OpenLayers/Renderer/Canvas.js
+ * @include OpenLayers/Renderer/SVG.js
+ * @include OpenLayers/Renderer/VML.js
  * @include OpenLayers/Control/Navigation.js
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/MousePosition.js
