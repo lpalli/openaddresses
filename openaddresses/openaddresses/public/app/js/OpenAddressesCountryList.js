@@ -200,5 +200,15 @@ openaddresses.country = [
     ['VN',OpenLayers.i18n('Viet Nam')],
     ['YE',OpenLayers.i18n('Yemen')],
     ['ZM',OpenLayers.i18n('Zambia')],
-    ['ZW',OpenLayers.i18n('Zimbabwe')]   
+    ['ZW',OpenLayers.i18n('Zimbabwe')]
 ];
+
+openaddresses.countryStore = new Ext.data.ArrayStore({
+    storeId: 'countryStore',
+    data: openaddresses.country,
+    autoLoad: true,
+    fields: [
+        'countryCode',
+        'countryName'
+    ]
+});
