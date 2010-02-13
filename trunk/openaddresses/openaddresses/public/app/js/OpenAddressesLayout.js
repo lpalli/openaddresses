@@ -97,6 +97,19 @@ openaddresses.layout = (function() {
                 isBaseLayer: true,
                 displayInLayerSwitcher: true
             }),
+            new OpenLayers.Layer.WMS(
+                    "Address Layer",
+                    openaddresses.config.baseWMS,
+            {layers: 'address',
+                transparent: "true",
+                format:"image/png"},
+            {singleTile:true,
+                isBaseLayer: false,
+                buffer: 0,
+                ratio: 1,
+                numZoomLevels: 23,
+                maxResolution: 50}
+                    ),
             new OpenLayers.Layer.Vector("DrawingLayer", {
                 isBaseLayer: false,
                 displayInLayerSwitcher: false

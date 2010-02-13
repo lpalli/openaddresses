@@ -60,6 +60,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         clickedPositionWGS84.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
 
         var vectorLayer = openaddresses.layout.map.getLayersByName('DrawingLayer')[0];
+        var addressLayer = openaddresses.layout.map.getLayersByName('Address Layer')[0];
         var map = openaddresses.layout.map;
 
         /** method[cancelEditing]
@@ -72,6 +73,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             vectorLayer.removeFeatures(feature);
             map.modifyFeatureControl.deactivate();
             delete feature;
+            addressLayer.redraw(true);
         };
 
         /** method[saveEditing]
@@ -440,8 +442,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             params: {
                 lon: clickedPositionWGS84.lon,
                 lat: clickedPositionWGS84.lat,
-                //tolerance: 0.0001
-                tolerance: 0.2
+                tolerance: 0.00002
             }
         });
 
