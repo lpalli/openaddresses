@@ -78,7 +78,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var saveEditing = function(feature) {
             // Check that mandatory fields ar filled
             if (!feature.editingFormPanel.getForm().isValid()) {
-                Ext.Msg.alert(OpenLayers.i18n('Address Validation'), 'Please fill all mandatory fields: ' + OpenLayers.i18n('Username') + " - " + OpenLayers.i18n('Street') + " - " +OpenLayers.i18n('City'));
+                Ext.Msg.alert(OpenLayers.i18n('Address Validation'), 'Please fill all mandatory fields: ' + OpenLayers.i18n('Username') + " - " + OpenLayers.i18n('Street') + " - " + OpenLayers.i18n('City'));
                 return;
             }
 
@@ -97,18 +97,150 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     feature.attributes['' + item.name + ''] = item.getValue();
                 }
             }
-            // Check session
 
-            // Store in database
+            Ext.Ajax.request({
+                url: 'sessionManager/checkSession',
+                method: 'GET',
+                success: function(responseObject) {
+                    if (responseObject.responseText == 'True') {
+                        saveFeature(feature);
+                    } else {
+                        Ext.Msg.show({
+                            title: OpenLayers.i18n('User Validation'),
+                            msg: OpenLayers.i18n('Please confirm that you agree with the OpenAddresses.org license and terms of services'),
+                            buttons: Ext.Msg.OKCANCEL,
+                            fn: function(btn) {
+                                if (btn == OpenLayers.i18n('ok')) {
+                                    createSession();
 
-            // Store as previousEditedFeature
-            map.previousEditedFeature = feature.clone();
+                                    saveFeature(feature);
+                                }
+                            },
+                            icon: Ext.MessageBox.QUESTION
+                        });
 
-            // Cancel editing
-            cancelEditing(feature);
+                    }
+                },
+                failure: function() {
+                    //alert('Error in createSession GET query');
+                }
+            });
 
-            // Refresh WMS layer
-            // TODO
+            var saveFeature = function(feature) {
+                // Save feature
+                var conn = new Ext.data.Connection();
+                var json = new OpenLayers.Format.GeoJSON();
+                // Transform geometry to 4326
+                feature.geometry.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
+                if (feature.attributes.id) {
+                    feature.id = feature.attributes.id;
+                }
+                var jsonData = json.write(feature);
+                conn.request({
+                    url: "/addresses",
+                    method: 'POST',
+                    jsonData: '{"type":"FeatureCollection", "features":[' + jsonData + ']}',
+                    success: function(resp, opt) {
+                        endSaveFeature(feature);
+                    },
+                    failure: function(resp, opt) {
+                        alert(OpenLayers.i18n('Error during data storage'));
+                    }
+                });
+
+            };
+
+            var endSaveFeature = function(feature) {
+                // Store as previousEditedFeature
+                map.previousEditedFeature = feature.clone();
+                if (map.previousEditedFeature.attributes.id) {
+                    delete map.previousEditedFeature.attributes.id;
+                }
+                if (map.previousEditedFeature.attributes.housenumber) {
+                    delete map.previousEditedFeature.attributes.housenumber;
+                }
+                if (map.previousEditedFeature.attributes.housename) {
+                    delete map.previousEditedFeature.attributes.housename;
+                }
+
+                // Cancel editing
+                cancelEditing(feature);
+            };
+        };
+
+        var createSession = function() {
+            Ext.Ajax.request({
+                url: 'sessionManager/createSession',
+                method: 'GET',
+                success: function(responseObject) {
+                    //alert('Session created');
+                },
+                failure: function() {
+                    //alert('Error in createSession GET query');
+                }
+            });
+
+        };
+
+        var deleteEditing = function(feature) {
+            Ext.Ajax.request({
+                url: 'sessionManager/checkSession',
+                method: 'GET',
+                success: function(responseObject) {
+                    if (responseObject.responseText == 'True') {
+                        deleteFeature(feature);
+                    } else {
+                        Ext.Msg.show({
+                            title: OpenLayers.i18n('User Validation'),
+                            msg: OpenLayers.i18n('Please confirm that you agree with the OpenAddresses.org license and terms of services'),
+                            buttons: Ext.Msg.OKCANCEL,
+                            fn: function(btn) {
+                                if (btn == OpenLayers.i18n('ok')) {
+                                    createSession();
+                                    deleteFeature(feature);
+                                }
+                            },
+                            icon: Ext.MessageBox.QUESTION
+                        });
+
+                    }
+                },
+                failure: function() {
+                    //alert('Error in createSession GET query');
+                }
+            });
+
+            var deleteFeature = function(feature) {
+                var conn = new Ext.data.Connection();
+
+                if (feature.attributes.id) {
+                    feature.id = feature.attributes.id;
+                }
+                Ext.Msg.show({
+                    title: OpenLayers.i18n('Deletion Confirmation'),
+                    msg: OpenLayers.i18n('Do you really want to delete this address ?'),
+                    buttons: Ext.Msg.YESNO,
+                    fn: function(btn) {
+                        if (btn == OpenLayers.i18n('yes')) {
+                            if (feature.id) {
+                                conn.request({
+                                    url: "/addresses/" + feature.id,
+                                    method: 'DELETE',
+                                    success: function(resp, opt) {
+                                        cancelEditing(feature);
+                                    },
+                                    failure: function(resp, opt) {
+                                        alert(OpenLayers.i18n('Error during data deletion'));
+                                    }
+                                });
+                            } else {
+                                cancelEditing(feature);
+                            }
+                        }
+                    },
+                    icon: Ext.MessageBox.QUESTION
+                });
+            }
         };
 
         /** method[addEditingPopup]
@@ -222,7 +354,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             text: OpenLayers.i18n('Delete'),
                             disabled: false,
                             handler: function() {
-                                alert('delete');
+                                deleteEditing(feature);
                             }
                         },
                         {
@@ -251,7 +383,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 ]
             });
             feature.editingPopup.show();
-            feature.editingFormPanel.getForm().isValid(); 
+            feature.editingFormPanel.getForm().isValid();
         };
 
         Ext.Ajax.request({

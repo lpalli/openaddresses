@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
@@ -65,7 +66,10 @@ class AddressesController(BaseController):
 
     def create(self):
         """POST /: Create a new feature."""
-        return self.protocol.create(request, response)
+        for key in session:
+           if key == 'authenticated':
+              return self.protocol.create(request, response)
+        abort(403, 'no right')
 
     def update(self, id):
         """PUT /id: Update an existing feature."""
@@ -73,4 +77,7 @@ class AddressesController(BaseController):
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
-        return self.protocol.delete(request, response, id)
+        for key in session:
+           if key == 'authenticated':
+              return self.protocol.delete(request, response, id)
+        abort(403, 'no right')
