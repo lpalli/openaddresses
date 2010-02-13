@@ -63,7 +63,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var map = openaddresses.layout.map;
 
         /** method[cancelEditing]
-        */
+         */
         var cancelEditing = function(feature) {
             if (feature.editingPopup) {
                 feature.editingPopup.close();
@@ -73,11 +73,46 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             delete feature;
         };
 
+        /** method[saveEditing]
+         */
+        var saveEditing = function(feature) {
+            // Check that mandatory fields ar filled
+
+            // Store the form attributes in the feature
+            for (var i = 0; i < feature.editingFormPanel.items.length; i++) {
+                var item = feature.editingFormPanel.items.items[i];
+                if (item.name == 'country') {
+                    if (item.value) {
+                        feature.attributes['' + item.name + ''] = openaddresses.countryStore.getCodeFromValue(item.value);
+                    }
+                } else if (item.name == 'quality') {
+                    if (item.value) {
+                        feature.attributes['' + item.name + ''] = openaddresses.qualityStore.getCodeFromValue(item.value);
+                    }
+                } else if (item.name == 'created_by' || item.name == 'street' || item.name == 'housenumber' || item.name == 'housename' || item.name == 'postcode' || item.name == 'city' || item.name == 'region') {
+                    feature.attributes['' + item.name + ''] = item.getValue();
+                }
+            }
+            // Check session
+
+            // Store in database
+
+            // Store as previousEditedFeature
+            map.previousEditedFeature = feature.clone();
+
+            // Cancel editing
+            cancelEditing(feature);
+
+            // Refresh WMS layer
+            // TODO
+        };
+
         /** method[addEditingPopup]
-        */
+         */
         var addEditingPopup = function(feature) {
 
             var comboCountry = new Ext.form.ComboBox({
+                name: 'country',
                 store: openaddresses.countryStore,
                 fieldLabel: OpenLayers.i18n('Country'),
                 displayField:'countryName',
@@ -89,6 +124,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             });
 
             var comboQuality = new Ext.form.ComboBox({
+                name: 'quality',
                 store: openaddresses.qualityStore,
                 fieldLabel: OpenLayers.i18n('Quality'),
                 displayField:'quality',
@@ -96,16 +132,19 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 mode: 'local',
                 triggerAction: 'all',
                 width: 240,
-                emptyText: OpenLayers.i18n('Select a quality...'),
-                value: OpenLayers.i18n('Digitized')
+                emptyText: OpenLayers.i18n('Select a quality...')
             });
 
             if (feature.attributes.country) {
-                var countryIndex = openaddresses.countryStore.find('countryCode',feature.attributes.country);
-                var record = openaddresses.countryStore.getAt(countryIndex);
-                comboCountry.setValue(record.data.countryName);
+                comboCountry.setValue(openaddresses.countryStore.getValueFromCode(feature.attributes.country));
             }
-            
+
+            if (feature.attributes.quality) {
+                comboQuality.setValue(openaddresses.qualityStore.getValueFromCode(feature.attributes.quality));
+            } else {
+                comboQuality.setValue(OpenLayers.i18n('Digitized'));
+            }
+
             feature.editingFormPanel = new Ext.form.FormPanel({
                 border: false,
                 frame: true,
@@ -161,8 +200,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         width: 240,
                         value: feature.attributes.region
                     },
-                        comboCountry,
-                        comboQuality
+                    comboCountry,
+                    comboQuality
                 ]
             });
             feature.editingPopup = new GeoExt.Popup({
@@ -197,7 +236,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             text: OpenLayers.i18n('Save'),
                             disabled: false,
                             handler: function() {
-                                alert('save');
+                                saveEditing(feature);
                             }
                         }
                     ]
@@ -224,13 +263,23 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 // Add the feature
                 if (mapfishFeatures.features.length === 0) {
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat));
+                    // Keep previous values
+                    if (map.previousEditedFeature) {
+                        var attribute;
+                        for (attribute in map.previousEditedFeature.attributes) {
+                            if (attribute) {
+                                map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
+                            }
+                        }
+                    }
                 } else {
                     var featurePosition = new OpenLayers.LonLat(mapfishFeatures.features[0].geometry.coordinates[0], mapfishFeatures.features[0].geometry.coordinates[1]);
                     featurePosition.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(featurePosition.lon, featurePosition.lat));
                     var property;
+                    // Keep the ID, in order to differentiate between a create and an update
+                    map.editedFeature.attributes['id'] = mapfishFeatures.features[0].id;
                     for (property in mapfishFeatures.features[0].properties) {
-                        //console.log(property + ': ' + mapfishFeatures.features[0].properties[''+property+'']);
                         map.editedFeature.attributes['' + property + ''] = mapfishFeatures.features[0].properties['' + property + ''];
                     }
                 }

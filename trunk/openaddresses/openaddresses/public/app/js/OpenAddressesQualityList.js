@@ -1,9 +1,9 @@
 Ext.namespace("openaddresses");
 
 openaddresses.quality = [
-    [OpenLayers.i18n('Digitized')],
-    [OpenLayers.i18n('GPS')],
-    [OpenLayers.i18n('Linear interpolation')]
+    ['Digitized', OpenLayers.i18n('Digitized')],
+    ['GPS', OpenLayers.i18n('GPS')],
+    ['Linear interpolation', OpenLayers.i18n('Linear interpolation')]
 ];
 
 openaddresses.qualityStore = new Ext.data.ArrayStore({
@@ -11,6 +11,19 @@ openaddresses.qualityStore = new Ext.data.ArrayStore({
     data: openaddresses.quality,
     autoLoad: true,
     fields: [
-        'quality',
+        'qualityCode',
+        'quality'
     ]
 });
+
+openaddresses.qualityStore.getValueFromCode = function(code) {
+    var qualityIndex = openaddresses.qualityStore.find('qualityCode', code);
+    var qualityRecord = openaddresses.qualityStore.getAt(qualityIndex);
+    return qualityRecord.data.quality;
+};
+
+openaddresses.qualityStore.getCodeFromValue = function(value) {
+    var qualityIndex = openaddresses.qualityStore.find('quality', value);
+    var qualityRecord = openaddresses.qualityStore.getAt(qualityIndex);
+    return qualityRecord.data.qualityCode;
+};

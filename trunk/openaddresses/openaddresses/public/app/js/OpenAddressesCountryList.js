@@ -212,3 +212,15 @@ openaddresses.countryStore = new Ext.data.ArrayStore({
         'countryName'
     ]
 });
+
+openaddresses.countryStore.getValueFromCode = function(code) {
+    var countryIndex = openaddresses.countryStore.find('countryCode', code);
+    var countryRecord = openaddresses.countryStore.getAt(countryIndex);
+    return countryRecord.data.countryName;
+};
+
+openaddresses.countryStore.getCodeFromValue = function(value) {
+    var countryIndex = openaddresses.countryStore.find('countryName', value);
+    var countryRecord = openaddresses.countryStore.getAt(countryIndex);
+    return countryRecord.data.countryCode;
+};
