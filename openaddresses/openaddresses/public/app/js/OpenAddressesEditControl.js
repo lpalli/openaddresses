@@ -10,7 +10,6 @@
  * @requires OpenLayers/Control.js
  * @include OpenLayers/Handler/Click.js
  * @include OpenLayers/Projection.js
- * @include OpenLayers/Control/ModifyFeature.js
  * @include OpenLayers/BaseTypes/LonLat.js
  * @include OpenLayers/Feature/Vector.js
  * @include OpenLayers/Geometry/Point.js
@@ -57,12 +56,14 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         //     - show a movable circle in the map at the digitized poistion
         //     - show the edition popup
         var clickedPosition = openaddresses.layout.map.getLonLatFromViewPortPx(evt.xy);
-        var clickePositionWGS84 = clickedPosition.clone();
-        clickePositionWGS84.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
+        var clickedPositionWGS84 = clickedPosition.clone();
+        clickedPositionWGS84.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
 
         var vectorLayer = openaddresses.layout.map.getLayersByName('DrawingLayer')[0];
         var map = openaddresses.layout.map;
 
+        /** method[cancelEditing]
+        */
         var cancelEditing = function(feature) {
             if (feature.editingPopup) {
                 feature.editingPopup.close();
@@ -72,7 +73,10 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             delete feature;
         };
 
-        var addPopup = function(feature) {
+        /** method[addEditingPopup]
+        */
+        var addEditingPopup = function(feature) {
+
             var comboCountry = new Ext.form.ComboBox({
                 store: openaddresses.countryStore,
                 fieldLabel: OpenLayers.i18n('Country'),
@@ -82,6 +86,18 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 triggerAction: 'all',
                 width: 240,
                 emptyText: OpenLayers.i18n('Select a country...')
+            });
+
+            var comboQuality = new Ext.form.ComboBox({
+                store: openaddresses.qualityStore,
+                fieldLabel: OpenLayers.i18n('Quality'),
+                displayField:'quality',
+                typeAhead: true,
+                mode: 'local',
+                triggerAction: 'all',
+                width: 240,
+                emptyText: OpenLayers.i18n('Select a quality...'),
+                value: OpenLayers.i18n('Digitized')
             });
 
             if (feature.attributes.country) {
@@ -145,7 +161,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         width: 240,
                         value: feature.attributes.region
                     },
-                        comboCountry
+                        comboCountry,
+                        comboQuality
                 ]
             });
             feature.editingPopup = new GeoExt.Popup({
@@ -199,13 +216,6 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             success: function(responseObject) {
                 var mapfishFeatures = eval('(' + responseObject.responseText + ')');
 
-                // Add the modify feature control the first time
-                if (!map.modifyFeatureControl) {
-                    map.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(vectorLayer);
-                    map.addControl(map.modifyFeatureControl);
-                    map.modifyFeatureControl.activate();
-                }
-
                 // Check that another feature is edited
                 if (map.editedFeature) {
                     cancelEditing(map.editedFeature);
@@ -230,13 +240,14 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 map.modifyFeatureControl.selectControl.handlers.feature.feature = map.editedFeature;
 
                 // Add the popup associated to the feature
-                addPopup(map.editedFeature);
+                addEditingPopup(map.editedFeature);
             },
             failure: function() {
                 alert('Error in addresses GET query');
             },
-            params: { lon: clickePositionWGS84.lon,
-                lat: clickePositionWGS84.lat,
+            params: {
+                lon: clickedPositionWGS84.lon,
+                lat: clickedPositionWGS84.lat,
                 //tolerance: 0.0001
                 tolerance: 0.2
             }
