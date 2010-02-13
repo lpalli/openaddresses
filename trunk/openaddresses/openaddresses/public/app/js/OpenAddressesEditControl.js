@@ -13,6 +13,7 @@
  * @include OpenLayers/BaseTypes/LonLat.js
  * @include OpenLayers/Feature/Vector.js
  * @include OpenLayers/Geometry/Point.js
+ * @include OpenLayers/Format/GeoJSON.js
  * @include GeoExt/widgets/Popup.js
  */
 
