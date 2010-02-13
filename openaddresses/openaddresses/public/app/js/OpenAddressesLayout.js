@@ -384,8 +384,6 @@ openaddresses.layout = (function() {
             var permalinkButton = createPermalinkButton();
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
-
-
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
 
             // Manage controlers for reverse geocoding and editing 

@@ -70,6 +70,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 delete feature.editingPopup;
             }
             vectorLayer.removeFeatures(feature);
+            map.modifyFeatureControl.deactivate();
             delete feature;
         };
 
@@ -346,6 +347,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 feature: feature,
                 collapsible: false,
                 closable: false,
+                unpinnable: false,
+                draggable: true,
                 width: 400,
                 bbar: new Ext.Toolbar({
                     items: [
@@ -400,6 +403,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 // Add the feature
                 if (mapfishFeatures.features.length === 0) {
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat));
+                    delete map.editedFeature.id;
                     // Keep previous values
                     if (map.previousEditedFeature) {
                         var attribute;
@@ -413,6 +417,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     var featurePosition = new OpenLayers.LonLat(mapfishFeatures.features[0].geometry.coordinates[0], mapfishFeatures.features[0].geometry.coordinates[1]);
                     featurePosition.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(featurePosition.lon, featurePosition.lat));
+                    delete map.editedFeature.id;
                     var property;
                     // Keep the ID, in order to differentiate between a create and an update
                     map.editedFeature.attributes['id'] = mapfishFeatures.features[0].id;
@@ -422,6 +427,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 }
 
                 vectorLayer.addFeatures(map.editedFeature);
+                map.modifyFeatureControl.activate();
                 map.modifyFeatureControl.selectControl.select(map.editedFeature);
                 map.modifyFeatureControl.selectControl.handlers.feature.feature = map.editedFeature;
 
