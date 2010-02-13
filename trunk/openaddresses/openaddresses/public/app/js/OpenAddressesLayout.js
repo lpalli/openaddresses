@@ -16,11 +16,13 @@
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/LayerSwitcher.js
+ * @include OpenLayers/Control/ModifyFeature.js
  * @include OpenLayers/Popup/FramedCloud.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
  * @include app/js/OpenAddressesCountryList.js
+ * @include app/js/OpenAddressesQualityList.js
  * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
@@ -305,6 +307,16 @@ openaddresses.layout = (function() {
         });
     };
 
+    var createModifyFeatureControl = function(map) {
+        if (!map.modifyFeatureControl) {
+            var vectorLayer = map.getLayersByName('DrawingLayer')[0];
+            map.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(vectorLayer);
+            map.addControl(map.modifyFeatureControl);
+            map.modifyFeatureControl.activate();
+        }
+        return map.modifyFeatureControl;
+    };
+
     var setPermalink = function() {
         var params = Ext.urlDecode(window.location.search.substring(1));
         // Manage map
@@ -367,10 +379,12 @@ openaddresses.layout = (function() {
             this.map = createMap();
             this.layers = createLayers();
             var layerStore = createLayerStore(this.map, this.layers);
+            var modifyFeatureControl = createModifyFeatureControl(this.map);
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
+
 
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
 
