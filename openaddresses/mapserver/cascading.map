@@ -5,19 +5,43 @@ MAP
  STATUS ON
  UNITS METERS
  MAXSIZE 4000
+ TRANSPARENT on
  PROJECTION
-  "init=epsg:900913"
+    "init=epsg:900913"
  END
 
+ DEBUG 3
+ CONFIG "MS_ERRORFILE" "C:/ms4w/Apache/htdocs/errors.txt"
+ 
  WEB
    IMAGEPATH "C:/ms4w/Apache/htdocs"
    IMAGEURL "/"
    METADATA
      "wms_title"           "Cascading"
      "wms_onlineresource"  "http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\Sandbox\openadresses\trunk\openaddresses\mapserver\cascading.map&"
-     "wms_srs"             "EPSG:4326 EPSG:900913"
+     "wms_srs"             "EPSG:900913"
    END
  END
+
+ SYMBOL
+   NAME "circle"
+   TYPE ellipse
+   FILLED true
+   POINTS 1 1 END
+ END
+
+ SYMBOL
+   NAME "triangle"
+   TYPE vector
+   FILLED true
+   POINTS
+     0 4
+     2 0
+     4 4
+     0 4
+   END
+ END
+
 
  LAYER
   NAME "prov_bound"
@@ -129,6 +153,27 @@ MAP
     "wms_server_version"  "1.1.1"
     "wms_format"          "image/jpeg"
   END
+ END
+
+ LAYER
+   NAME "address"
+   TYPE POINT
+   CONNECTIONTYPE POSTGIS
+   CONNECTION "user=www-data password=www-data dbname=postgis host=localhost port=5432"
+   PROJECTION
+       "init=epsg:4326"
+   END
+   DATA "geom from address using unique id"
+   STATUS ON
+   CLASS
+      SYMBOL "circle"
+      COLOR 255 0 0
+      SIZE 10
+   END
+   METADATA
+     "ows_title" "address"
+     "wms_srs" "EPSG:900913"
+   END
  END
 
 END
