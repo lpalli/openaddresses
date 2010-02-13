@@ -77,6 +77,10 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
          */
         var saveEditing = function(feature) {
             // Check that mandatory fields ar filled
+            if (!feature.editingFormPanel.getForm().isValid()) {
+                Ext.Msg.alert(OpenLayers.i18n('Address Validation'), 'Please fill all mandatory fields: ' + OpenLayers.i18n('Username') + " - " + OpenLayers.i18n('Street') + " - " +OpenLayers.i18n('City'));
+                return;
+            }
 
             // Store the form attributes in the feature
             for (var i = 0; i < feature.editingFormPanel.items.length; i++) {
@@ -204,6 +208,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     comboQuality
                 ]
             });
+
             feature.editingPopup = new GeoExt.Popup({
                 title: OpenLayers.i18n('Address Editor'),
                 feature: feature,
@@ -246,9 +251,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 ]
             });
             feature.editingPopup.show();
+            feature.editingFormPanel.getForm().isValid(); 
         };
 
-        // 1. Check if an address exists at this position
         Ext.Ajax.request({
             url: 'addresses/',
             method: 'GET',
