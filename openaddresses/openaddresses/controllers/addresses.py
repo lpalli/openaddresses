@@ -9,11 +9,13 @@ from openaddresses.model.meta import Session
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
 
+from datetime import datetime
+
 class AddressesController(BaseController):
     readonly = False # if set to True, only GET is supported
 
     def __init__(self):
-        self.protocol = Protocol(Session, Address, self.readonly)
+        self.protocol = Protocol(Session, Address, self.readonly, before_create = self.before_create)
 
     def index(self, format='json'):
         """GET /: return all features."""
@@ -81,3 +83,10 @@ class AddressesController(BaseController):
            if key == 'authenticated':
               return self.protocol.delete(request, response, id)
         abort(403, 'no right')
+
+    def before_create(self,request,feature):
+       feature.properties['ipaddress'] = request.environ['REMOTE_ADDR']
+       if isinstance(feature.id, int):
+           feature.properties['time_updated'] = datetime.now()
+       else:
+           feature.properties['time_updated'] = None
