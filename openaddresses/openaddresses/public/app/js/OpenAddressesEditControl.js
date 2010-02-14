@@ -60,8 +60,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var clickedPositionWGS84 = clickedPosition.clone();
         clickedPositionWGS84.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
 
-        var vectorLayer = openaddresses.layout.map.getLayersByName('DrawingLayer')[0];
-        var addressLayer = openaddresses.layout.map.getLayersByName('Address Layer')[0];
+        var vectorLayer = openaddresses.layout.map.drawingLayer;
         var map = openaddresses.layout.map;
 
         /** method[cancelEditing]
@@ -73,8 +72,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             }
             vectorLayer.removeFeatures(feature);
             map.modifyFeatureControl.deactivate();
-            delete feature;
-            addressLayer.redraw(true);
+            map.editedFeature = null;
+            openaddresses.layout.map.addressLayer.redraw(true);
         };
 
         /** method[saveEditing]
@@ -313,13 +312,6 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         value: feature.attributes.housenumber
                     },
                     {
-                        name:'housename',
-                        fieldLabel: OpenLayers.i18n('House name'),
-                        allowBlank: true,
-                        width: 240,
-                        value: feature.attributes.housename
-                    },
-                    {
                         name:'postcode',
                         fieldLabel: OpenLayers.i18n('Postal code'),
                         allowBlank: true,
@@ -333,22 +325,29 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         width: 240,
                         value: feature.attributes.city
                     },
+                    comboCountry,
+                    comboQuality,
+                    {
+                        name:'housename',
+                        fieldLabel: OpenLayers.i18n('House name'),
+                        allowBlank: true,
+                        width: 240,
+                        value: feature.attributes.housename
+                    },
                     {
                         name:'region',
                         fieldLabel: OpenLayers.i18n('Region'),
                         allowBlank: true,
                         width: 240,
                         value: feature.attributes.region
-                    },
-                    comboCountry,
-                    comboQuality
+                    }
                 ]
             });
 
             feature.editingPopup = new GeoExt.Popup({
                 title: OpenLayers.i18n('Address Editor'),
                 feature: feature,
-                collapsible: false,
+                collapsible: true,
                 closable: false,
                 unpinnable: false,
                 draggable: true,
