@@ -50,9 +50,9 @@ Description of tasks that need to be accomplished in order to launch www.openadd
  * Web Site Localization 
   * ~~Language Selector Cédric~~
   * ~~Mako Template localization Cédric~~
-  * German translation
+  * German translation _!WaitForYourName_
   * ~~English translation Cédric~~
-  * French translation
+  * French translation _!WaitForYourName_
  * Web Site Map
   * Add WMS
    * Install !MapServer
@@ -73,7 +73,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
  * Web Site Editing
   * ~~Digitize address Cédric~~
   * ~~Delete address Cédric~~
-  * Update address
+  * ~~Update address Cédric~~
  * Data
   * Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr
   * Import OSM data in PostGIS _!WaitForYourName_
