@@ -7,4 +7,13 @@ OpenLayers.i18n is used for the translation of client pages.
 
 = Details =
 
- *The document to translate is  http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/lang/OpenAddressesTranslation.xls*
+ * *The document for translation is: * 
+    * http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/lang/OpenAddressesTranslation.xls
+
+== Steps by step for translators ==
+ 
+ 1. Put some humour in your translations
+ 1. *Never touch anything in the column String ID,i18n EN,i18n FR,i18n DE*
+ 1. Translate the column EN, FR, DE
+ 1. If you have a ' in your translation, escape it with \'
+ 1. Send an email to the list in order to inform that the translation is done
