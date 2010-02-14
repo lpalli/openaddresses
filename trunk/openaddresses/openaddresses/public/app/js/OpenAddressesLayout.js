@@ -255,7 +255,6 @@ openaddresses.layout = (function() {
             params.lang = $('lang').value;
         }
         if (params.lang) {
-            console.log(params.lang);
             if (params.lang == 'zh_CN') {
                 OpenLayers.Lang.setCode('zh-CN');
             } else {
