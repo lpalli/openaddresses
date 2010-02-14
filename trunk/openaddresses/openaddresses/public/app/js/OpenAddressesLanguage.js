@@ -31,9 +31,9 @@ openaddresses.languages = [
      ['ro', 'Romanian', 'utf-8'],
      ['ru', 'Russian', 'UTF-8'],
      ['sr_RS', 'Serbian Cyrillic', 'UTF-8'],
-     ['sr', 'Serbian Latin', 'utf-8'],
+     ['sr', 'Serbian Latin', 'utf-8'],*/
      ['zh_CN', 'Simplified Chinese', 'utf-8'],
-     ['sk', 'Slovak', 'utf-8'],
+     /*['sk', 'Slovak', 'utf-8'],
      ['sl', 'Slovenian', 'utf-8'],
      ['es', 'Spanish/Latin American', 'utf-8'],
      ['sv_SE', 'Swedish', 'utf-8'],
