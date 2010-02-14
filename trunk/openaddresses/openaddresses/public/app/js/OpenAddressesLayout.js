@@ -91,6 +91,7 @@ openaddresses.layout = (function() {
             format:"image/png"},
         {singleTile:true,
             isBaseLayer: false,
+            transitionEffect: "resize",
             ratio: 1.5,
             numZoomLevels: 23,
             maxResolution: 50}
