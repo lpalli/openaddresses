@@ -66,10 +66,10 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Add Geonames Search Cédric~~
   * ~~Add Navigation Control Cédric~~
   * ~~Add Reverse Geocoding on right mouse click Cédric~~
-  * Add address layer
-   * !MapFile 
-   * ~~WMS~~
-   * ~~REST CRUD service~~
+  * ~~Add address layer Cédric~~
+   * ~~!MapFile Cédric~~ 
+   * ~~WMS Cédric~~
+   * ~~REST CRUD service Cédric~~
  * Web Site Editing
   * ~~Digitize address~~
   * ~~Delete address~~
