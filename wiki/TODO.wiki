@@ -105,7 +105,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * Committer
    * User
  * Marketing
-  * create a press release
+  * Create a press release
   * Create a blog
    * Reference it
     * osgeo.org
