@@ -7,7 +7,7 @@ OpenLayers.i18n is used for the translation of client pages.
 
 = Details =
 
- * *The document for translation is: * 
+ * The document for translation is (do a svn checkout): 
     * http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/lang/OpenAddressesTranslation.xls
 
 == Steps by step for translators ==
