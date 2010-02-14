@@ -81,7 +81,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var saveEditing = function(feature) {
             // Check that mandatory fields ar filled
             if (!feature.editingFormPanel.getForm().isValid()) {
-                Ext.Msg.alert(OpenLayers.i18n('Address Validation'), 'Please fill all mandatory fields: ' + OpenLayers.i18n('Username') + " - " + OpenLayers.i18n('Street') + " - " + OpenLayers.i18n('City'));
+                Ext.Msg.alert(OpenLayers.i18n('Address Validation'), OpenLayers.i18n('Please fill all mandatory fields: ') + OpenLayers.i18n('Username') + " - " + OpenLayers.i18n('Street') + " - " + OpenLayers.i18n('City'));
                 return;
             }
 
@@ -113,7 +113,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             msg: OpenLayers.i18n('Please confirm that you agree with the OpenAddresses.org license and terms of services'),
                             buttons: Ext.Msg.OKCANCEL,
                             fn: function(btn) {
-                                if (btn == OpenLayers.i18n('ok')) {
+                                if (btn == 'ok') {
                                     createSession();
 
                                     saveFeature(feature);
@@ -198,7 +198,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             msg: OpenLayers.i18n('Please confirm that you agree with the OpenAddresses.org license and terms of services'),
                             buttons: Ext.Msg.OKCANCEL,
                             fn: function(btn) {
-                                if (btn == OpenLayers.i18n('ok')) {
+                                if (btn == 'ok') {
                                     createSession();
                                     deleteFeature(feature);
                                 }
@@ -224,7 +224,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     msg: OpenLayers.i18n('Do you really want to delete this address ?'),
                     buttons: Ext.Msg.YESNO,
                     fn: function(btn) {
-                        if (btn == OpenLayers.i18n('yes')) {
+                        if (btn == 'yes') {
                             if (feature.id) {
                                 conn.request({
                                     url: "/addresses/" + feature.id,
