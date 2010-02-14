@@ -68,7 +68,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Add Reverse Geocoding on right mouse click Cédric~~
   * Add address layer
    * !MapFile 
-   * WMS
+   * ~~WMS~~
    * ~~REST CRUD service~~
  * Web Site Editing
   * ~~Digitize address~~
