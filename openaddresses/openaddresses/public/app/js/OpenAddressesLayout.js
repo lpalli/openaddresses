@@ -245,7 +245,9 @@ openaddresses.layout = (function() {
     var createGeonamesSearchCombo = function(map) {
         return new GeoExt.ux.geonames.GeoNamesSearchCombo({
             map: map,
-            zoom: 12
+            zoom: 12,
+            loadingText: OpenLayers.i18n('Search in Geonames...'),
+            emptyText: OpenLayers.i18n('Search location in Geonames')
         });
     };
 
