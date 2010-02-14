@@ -32,6 +32,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Quality':'Qualité',
     'Region':'Région',
     'Save':'Enregistrer',
+    'Search in Geonames…':'Rechercher dans GeoNames…',
+    'Search location in Geonames':'Rechercher un lieu dans GeoNames',
     'Select a country…':'Choisissez un pays …',
     'Select a language…':'Choisissez une langue …',
     'Select a quality…':'Choisissez une qualité …',
