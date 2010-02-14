@@ -1,0 +1,10 @@
+Translation process
+
+= Introduction =
+
+This page describes the translation process.
+OpenLayers.i18n is used for the translation of client pages.
+
+= Details =
+
+ *The document to translate is  http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/lang/OpenAddressesTranslation.xls*
