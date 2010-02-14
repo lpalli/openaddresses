@@ -71,8 +71,8 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * ~~WMS Cédric~~
    * ~~REST CRUD service Cédric~~
  * Web Site Editing
-  * ~~Digitize address~~
-  * ~~Delete address~~
+  * ~~Digitize address Cédric~~
+  * ~~Delete address Cédric~~
   * Update address
  * Data
   * Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr
