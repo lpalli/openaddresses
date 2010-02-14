@@ -96,9 +96,14 @@ openaddresses.layout = (function() {
             maxResolution: 50}
                 );
         openaddresses.layout.map.drawingLayer = new OpenLayers.Layer.Vector(OpenLayers.i18n("DrawingLayer"), {
-                isBaseLayer: false,
-                displayInLayerSwitcher: false
-            });
+            isBaseLayer: false,
+            displayInLayerSwitcher: false
+        });
+        openaddresses.layout.map.drawingLayer.events.on({
+            "featuremodified": function(evt) {
+                // TODO problem after feature is modified
+            }
+        });
         return openaddresses.layers.concat([
             new openaddresses.OSM({
                 isBaseLayer: true,

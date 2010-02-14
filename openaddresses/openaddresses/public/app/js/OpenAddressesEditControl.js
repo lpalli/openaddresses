@@ -442,7 +442,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             params: {
                 lon: clickedPositionWGS84.lon,
                 lat: clickedPositionWGS84.lat,
-                tolerance: 0.00002
+                tolerance: 0.000025
             }
         });
 
