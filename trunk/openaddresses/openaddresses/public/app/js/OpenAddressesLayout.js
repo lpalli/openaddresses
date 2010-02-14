@@ -83,6 +83,22 @@ openaddresses.layout = (function() {
      * {Array({OpenLayers.Layer}) Array of layers.
      */
     var createLayers = function() {
+        openaddresses.layout.map.addressLayer = new OpenLayers.Layer.WMS(
+                OpenLayers.i18n("Addresses"),
+                openaddresses.config.baseWMS,
+        {layers: 'address',
+            transparent: "true",
+            format:"image/png"},
+        {singleTile:true,
+            isBaseLayer: false,
+            ratio: 1.5,
+            numZoomLevels: 23,
+            maxResolution: 50}
+                );
+        openaddresses.layout.map.drawingLayer = new OpenLayers.Layer.Vector(OpenLayers.i18n("DrawingLayer"), {
+                isBaseLayer: false,
+                displayInLayerSwitcher: false
+            });
         return openaddresses.layers.concat([
             new openaddresses.OSM({
                 isBaseLayer: true,
@@ -90,30 +106,15 @@ openaddresses.layout = (function() {
                 transitionEffect: "resize"
             }),
             new OpenLayers.Layer.Yahoo(
-                    "Yahoo Satellite",
+                    OpenLayers.i18n("Yahoo Satellite"),
             {'type': YAHOO_MAP_SAT, 'sphericalMercator': true}
                     ),
-            new OpenLayers.Layer("Empty", {
+            new OpenLayers.Layer(OpenLayers.i18n("Empty Layer"), {
                 isBaseLayer: true,
                 displayInLayerSwitcher: true
             }),
-            new OpenLayers.Layer.WMS(
-                    "Address Layer",
-                    openaddresses.config.baseWMS,
-            {layers: 'address',
-                transparent: "true",
-                format:"image/png"},
-            {singleTile:true,
-                isBaseLayer: false,
-                buffer: 0,
-                ratio: 1,
-                numZoomLevels: 23,
-                maxResolution: 50}
-                    ),
-            new OpenLayers.Layer.Vector("DrawingLayer", {
-                isBaseLayer: false,
-                displayInLayerSwitcher: false
-            })
+            openaddresses.layout.map.addressLayer,
+            openaddresses.layout.map.drawingLayer
         ]);
     };
 
@@ -322,7 +323,7 @@ openaddresses.layout = (function() {
 
     var createModifyFeatureControl = function(map) {
         if (!map.modifyFeatureControl) {
-            var vectorLayer = map.getLayersByName('DrawingLayer')[0];
+            var vectorLayer = openaddresses.layout.map.drawingLayer;
             map.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(vectorLayer);
             map.addControl(map.modifyFeatureControl);
             map.modifyFeatureControl.activate();
