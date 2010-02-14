@@ -1,9 +1,7 @@
-Translation process
-
 = Introduction =
 
 This page describes the translation process.
-OpenLayers.i18n is used for the translation of client pages.
+!OpenLayers.i18n is used for the translation of client pages.
 
 = Details =
 
