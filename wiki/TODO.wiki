@@ -47,7 +47,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Content _!WaitForYourName_
  * Web Site About _!WaitForYourName_
   * Content _!WaitForYourName_
- * Web Site Localization 
+ * Web Site Localization: http://code.google.com/p/openaddresses/wiki/HowToTranslate 
   * ~~Language Selector Cédric~~
   * ~~Mako Template localization Cédric~~
   * German translation _!WaitForYourName_
