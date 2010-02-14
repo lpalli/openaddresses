@@ -52,7 +52,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Mako Template localization Cédric~~
   * German translation _!WaitForYourName_
   * ~~English translation Cédric~~
-  * French translation _!WaitForYourName_
+  * ~~French translation Jean-Luc~~
  * Web Site Map
   * Add WMS
    * Install !MapServer
