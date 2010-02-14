@@ -71,8 +71,8 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * WMS
    * REST CRUD service
  * Web Site Editing
-  * Digitize address
-  * Delete address
+  * ~~Digitize address~~
+  * ~~Delete address~~
   * Update address
  * Data
   * Define data model _!WaitForYourName_
