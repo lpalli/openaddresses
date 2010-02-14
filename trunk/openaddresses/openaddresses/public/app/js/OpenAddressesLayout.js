@@ -255,7 +255,12 @@ openaddresses.layout = (function() {
             params.lang = $('lang').value;
         }
         if (params.lang) {
-            OpenLayers.Lang.setCode(params.lang);
+            console.log(params.lang);
+            if (params.lang == 'zh_CN') {
+                OpenLayers.Lang.setCode('zh-CN');
+            } else {
+                OpenLayers.Lang.setCode(params.lang);
+            }
             // check if there's really a language with that language code
             var record = languageStore.data.find(function(item, key) {
                 return (item.data.code == params.lang);

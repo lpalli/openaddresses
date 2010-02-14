@@ -1,7 +1,7 @@
 /**
  * @requires OpenLayers/Lang/zh-CN.js
  */
-OpenLayers.Util.extend(OpenLayers.Lang.zh-CN, {
+OpenLayers.Util.extend(OpenLayers.Lang["zh-CN"], {
     'About':'大约 OpenAddresses',
     'Address':'地址',
     'Address Editor':'地址编辑器',

@@ -38,12 +38,6 @@
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
-
-   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
-   <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
-   <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
-   <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
-
    <script type="text/javascript" src="app/js/OpenAddressesCountryList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesQualityList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesEditControl.js"></script>
@@ -62,6 +56,14 @@
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="build/openaddresses.js"></script>
+% endif
+
+% if c.lang == 'zh':
+   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/zh-CN.js"></script>
+   <script type="text/javascript" src="mfbase/mapfish/lang/zh_CN.js"></script>
+   <script type="text/javascript" src="ext31/src/locale/ext-lang-zh_CN.js"></script>
+   <script type="text/javascript" src="app/lang/zh_CN.js"></script>
+%else:
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
    <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
