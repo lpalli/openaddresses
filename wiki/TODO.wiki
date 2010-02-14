@@ -75,7 +75,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Delete address~~
   * Update address
  * Data
-  * Define data model _!WaitForYourName_
+  * Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr
   * Import OSM data in PostGIS _!WaitForYourName_
   * Import OA.ch and OA.at addresses in PostGIS _!WaitForYourName_
   * Synchronize OSM and OA addresses, daily _!WaitForYourName_
@@ -107,9 +107,3 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Participate to conference
    * FossGIS
    * Foss4G
-
-= Data =
-
-== Data Model ==
-
- * https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr
