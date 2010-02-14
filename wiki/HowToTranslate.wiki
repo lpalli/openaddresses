@@ -12,6 +12,6 @@ This page describes the translation process.
  
  1. Put some humour in your translations
  1. *Never touch anything in the column String ID,i18n EN,i18n FR,i18n DE*
- 1. Translate the column EN, FR, DE
+ 1. Translate the column EN, FR, DE or add new columns with new languages
  1. If you have a ' in your translation, escape it with \'
- 1. Send an email to the list in order to inform that the translation is done
+ 1. Send an email to the list in order to inform that the translation is done and commit the excel sheet.
