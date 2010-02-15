@@ -18,9 +18,9 @@ openaddresses.languages = [
      ['gr', 'Greek (Old Version)', 'utf-8'],
      ['he', 'Hebrew', 'windows-1255'],
      ['hu', 'Hungarian', 'utf-8'],
-     ['id', 'Indonesian', 'ascii'],
+     ['id', 'Indonesian', 'ascii'],*/
      ['it', 'Italian', 'ascii'],
-     ['ja', 'Japanese', 'utf-8'],
+     /*['ja', 'Japanese', 'utf-8'],
      ['ko', 'Korean', 'utf-8'],
      ['lv', 'Latvian', 'utf-8'],
      ['lt', 'Lithuanian', 'utf-8'],
