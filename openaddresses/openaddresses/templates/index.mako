@@ -6,7 +6,7 @@
     Site developed with MapFish (http://www.mapfish.org) framework technology
     -->
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=${c.charset}"/>
     <meta name="content-language" content="${c.lang}"/>
     <title>OpenAddresses.org</title>
     <meta name="Generator" content="MapFish - 2010"/>
