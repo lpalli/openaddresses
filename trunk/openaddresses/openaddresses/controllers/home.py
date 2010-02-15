@@ -31,6 +31,7 @@ class HomeController(BaseController):
 
         update_session = True
         lang = None
+        self.charset = 'utf-8'
 
         if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
             lang = request.params['lang']
@@ -47,6 +48,9 @@ class HomeController(BaseController):
         if lang is None:
             lang = unicode(config['lang'])
 
+        if 'charset' in request.params:
+           self.charset = request.params['charset']
+
         set_lang(lang)
         if update_session:
             session['lang'] = lang
@@ -55,6 +59,7 @@ class HomeController(BaseController):
     def index(self):
         lang = str(get_lang())
         c.lang = self.current_lang = lang[3:5]
+        c.charset = self.charset
 
         c.available_languages = self.getAvailableLanguages()
 
