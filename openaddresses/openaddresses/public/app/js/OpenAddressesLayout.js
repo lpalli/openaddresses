@@ -211,25 +211,32 @@ openaddresses.layout = (function() {
                     layout:'accordion',
                     items: [
                         {
-                            title: OpenLayers.i18n('OpenAddresses')
+                            title: OpenLayers.i18n('OpenAddresses'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         },
                         {
-                            title: OpenLayers.i18n('Upload')
+                            title: OpenLayers.i18n('Upload'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         },
                         {
-                            title: OpenLayers.i18n('Download')
+                            title: OpenLayers.i18n('Download'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         },
                         {
-                            title: OpenLayers.i18n('Services')
+                            title: OpenLayers.i18n('Services'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         },
                         {
-                            title: OpenLayers.i18n('Statistics')
+                            title: OpenLayers.i18n('Statistics'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         },
                         {
-                            title: OpenLayers.i18n('License')
+                            title: OpenLayers.i18n('License'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         },
                         {
-                            title: OpenLayers.i18n('About')
+                            title: OpenLayers.i18n('About'),
+                            bodyStyle: 'backgroundColor: #F0F0F0;'
                         }
                     ]
                 }
@@ -398,6 +405,7 @@ openaddresses.layout = (function() {
          */
         init: function() {
             Ext.QuickTips.init();
+            OpenLayers.ImgPath = "resources/img/OpenLayers/";
 
             // Manage language
             var languageStore = createLanguageStore();
