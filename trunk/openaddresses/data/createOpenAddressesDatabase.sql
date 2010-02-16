@@ -31,3 +31,37 @@ GRANT ALL ON SEQUENCE address_id_seq TO "www-data";
 # LOAD SAMPLE DATA
 
 INSERT INTO "address" (geom) VALUES ('0101000020E61000003F8BA548BE721A4089CD6CFC2E424740');
+
+# Import data
+
+INSERT INTO address (
+   housenumber,
+   housename,
+   street,
+   postcode,
+   city,
+   country,
+   created_by,
+   ipaddress,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+   (CASE WHEN length(hnr) > 8 THEN ''
+          ELSE hnr END),
+   (CASE WHEN adrzusatz = '-' THEN ''
+         ELSE adrzusatz END),
+   strasse,
+   plz,
+   ort,
+   (CASE WHEN country = 'Switzerland' THEN 'CH'
+         WHEN country = 'Austria' THEN 'AU'
+         ELSE '' END),
+   (CASE WHEN herkunft = 'OpenAddresses' THEN usr
+         ELSE herkunft END),
+   ipaddress,
+   to_timestamp(date, 'YYYY-MM-DD,HH24-MI-SS'),
+   'http://www.openaddresses.org',
+   'Digitized',
+   coordinates
+   FROM tmp);
