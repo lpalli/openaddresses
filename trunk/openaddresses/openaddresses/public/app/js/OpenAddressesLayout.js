@@ -94,7 +94,7 @@ openaddresses.layout = (function() {
             transitionEffect: "resize",
             ratio: 1.5,
             numZoomLevels: 23,
-            maxResolution: 50}
+            maxResolution: 500}
                 );
         openaddresses.layout.map.drawingLayer = new OpenLayers.Layer.Vector(OpenLayers.i18n("DrawingLayer"), {
             isBaseLayer: false,
