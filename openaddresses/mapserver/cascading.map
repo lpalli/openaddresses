@@ -24,10 +24,25 @@ MAP
  END
 
  SYMBOL
-   NAME "circle"
-   TYPE ellipse
-   FILLED true
-   POINTS 1 1 END
+    NAME 'circle'
+    TYPE ELLIPSE
+    FILLED TRUE
+    POINTS
+        1 1
+    END
+ END
+
+ SYMBOL
+    NAME 'square'
+    TYPE VECTOR
+    FILLED TRUE
+    POINTS
+        0 1
+        0 0
+        1 0
+        1 1
+        0 1
+    END
  END
 
  SYMBOL
@@ -166,9 +181,29 @@ MAP
    DATA "geom from address using unique id"
    STATUS ON
    CLASS
-      SYMBOL "circle"
-      COLOR 255 0 0
-      SIZE 10
+      STYLE
+         SYMBOL "circle"
+         COLOR 255 0 0
+         SIZE 12
+         MAXSCALEDENOM 2500
+         OFFSET -1 -1
+      END
+      STYLE
+         SYMBOL "circle"
+         COLOR 255 0 0
+         SIZE 6
+         MINSCALEDENOM 2500
+         MAXSCALEDENOM 7500
+         OFFSET -1 -1
+      END
+      STYLE
+         SYMBOL "circle"
+         COLOR 255 0 0
+         SIZE 1
+         MINSCALEDENOM 7500
+         MAXSCALEDENOM 1000000000
+         OFFSET -1 -1
+      END
    END
    METADATA
      "ows_title" "address"
