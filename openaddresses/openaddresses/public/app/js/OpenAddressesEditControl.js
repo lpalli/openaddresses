@@ -344,6 +344,12 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 ]
             });
 
+            var buttonText;
+            if (map.editedFeature.id) {
+                 buttonText = OpenLayers.i18n('Save');
+            } else {
+                 buttonText = OpenLayers.i18n('Create');
+            }
             feature.editingPopup = new GeoExt.Popup({
                 title: OpenLayers.i18n('Address Editor'),
                 feature: feature,
@@ -375,7 +381,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         },
                         {
                             xtype: 'tbbutton',
-                            text: OpenLayers.i18n('Save'),
+                            text: buttonText,
                             disabled: false,
                             handler: function() {
                                 saveEditing(feature);

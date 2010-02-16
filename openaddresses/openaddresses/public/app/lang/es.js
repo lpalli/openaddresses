@@ -9,6 +9,7 @@ OpenLayers.Util.extend(OpenLayers.Lang["es"], {
     'Cancel':'Cancelar',
     'City':'Ciudad',
     'Country':'País',
+    'Create':'Crear',
     'Delete':'Borrar',
     'Deletion Confirmation':'Confirmación de borrado',
     'Digitized':'Digitalizados',
@@ -32,7 +33,7 @@ OpenLayers.Util.extend(OpenLayers.Lang["es"], {
     'Quality':'Calidad',
     'Region':'Región',
     'Save':'Salvar',
-    'Search in Geonames…':'Buscar en Geonames …',
+    'Search in Geonames...':'Buscar en Geonames …',
     'Search location in Geonames':'Búsqueda en la ubicación de Geonames',
     'Select a country...':'Seleccione un país …',
     'Select a language...':'Seleccione un idioma …',
@@ -45,5 +46,5 @@ OpenLayers.Util.extend(OpenLayers.Lang["es"], {
     'User Validation':'Validación de Usuario',
     'Username':'Nombre de usuario',
     'WGS84':'WGS84',
-    'Yahoo Satellite':'Yahoo Satellite'    
+    'Yahoo Satellite':'Yahoo Satellite'
 });
