@@ -63,6 +63,35 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var vectorLayer = openaddresses.layout.map.drawingLayer;
         var map = openaddresses.layout.map;
 
+        var tolerance = 0;
+        if (map.zoom < 16) {
+           tolerance = 0.000000;
+        }
+        if (map.zoom == 16) {
+           tolerance = 0.000128987;
+        }
+        if (map.zoom == 17) {
+           tolerance = 0.000064494;
+        }
+        if (map.zoom == 18) {
+           tolerance = 0.000064494;
+        }
+        if (map.zoom == 19) {
+           tolerance = 0.000032247;
+        }
+        if (map.zoom == 20) {
+           tolerance = 0.000016123;
+        }
+        if (map.zoom == 21) {
+           tolerance = 0.000008062;
+        }
+        if (map.zoom == 22) {
+           tolerance = 0.000004031;
+        }
+        if (map.zoom == 23) {
+           tolerance = 0.000002015;
+        }
+
         /** method[cancelEditing]
          */
         var cancelEditing = function(feature) {
@@ -448,7 +477,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             params: {
                 lon: clickedPositionWGS84.lon,
                 lat: clickedPositionWGS84.lat,
-                tolerance: 0.000025
+                tolerance: tolerance
             }
         });
 
