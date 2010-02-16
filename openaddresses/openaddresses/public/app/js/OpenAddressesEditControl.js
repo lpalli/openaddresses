@@ -345,7 +345,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             });
 
             var buttonText;
-            if (map.editedFeature.id) {
+            if (feature.attributes && feature.attributes.id) {
                  buttonText = OpenLayers.i18n('Save');
             } else {
                  buttonText = OpenLayers.i18n('Create');
