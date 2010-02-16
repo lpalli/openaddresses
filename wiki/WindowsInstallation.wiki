@@ -185,6 +185,15 @@ GRANT SELECT ON geometry_columns TO "www-data";
 GRANT SELECT ON spatial_ref_sys TO "www-data";
 }}}
 
+==== Initial import ====
+
+{{{
+"c:\Program Files\PostgreSQL\8.4\bin\shp2pgsql.exe" -s 4326 OpenAddresses OpenAddresses > OpenAddresses.sql
+
+"c:\Program Files\PostgreSQL\8.4\bin\psql.exe" -d postgis -h localhost -U postgres -f OpenAddresses.sql
+
+}}}
+
 ==== Create a !MapFish REST Service ====
 
  * http://www.mapfish.org/doc/tutorials/introduction/introduction.html#data-access-mapfish-rest-protocol
