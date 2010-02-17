@@ -76,8 +76,8 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Update address Cédric~~
  * Data
   * Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr
-  * Import OSM data in PostGIS _!WaitForYourName_
-  * Import OA.ch and OA.at addresses in PostGIS _!WaitForYourName_
+  * Import OSM data in PostGIS Jeff
+  * ~~Import OA.ch and OA.at addresses in PostGIS Jeff~~
   * Synchronize OSM and OA addresses, daily _!WaitForYourName_
   * Create archive table if addresss is deleted (PostGIS trigger) _!WaitForYourName_
   * Obtain other data
