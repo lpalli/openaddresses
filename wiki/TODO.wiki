@@ -8,6 +8,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Proposal:
    * Data: http://creativecommons.org/licenses/by/3.0/
     * The postal addresses must be associated to the url of http://www.openaddresses.org
+    * The person or entity that submittet the data is stored in a field created_by (SO!GIS, for example)
    * Code
     * http://www.opensource.org/licenses/gpl-3.0.html
      * The code developped for openaddresses.org is under GPL V3 license
