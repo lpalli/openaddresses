@@ -47,21 +47,18 @@ INSERT INTO address (
    reference,
    quality,
    geom) (SELECT
-   (CASE WHEN length(hnr) > 8 THEN ''
-          ELSE hnr END),
-   (CASE WHEN adrzusatz = '-' THEN ''
-         ELSE adrzusatz END),
-   strasse,
-   plz,
-   ort,
-   (CASE WHEN country = 'Switzerland' THEN 'CH'
-         WHEN country = 'Austria' THEN 'AU'
-         ELSE '' END),
-   (CASE WHEN herkunft = 'OpenAddresses' THEN usr
-         ELSE herkunft END),
-   ipaddress,
-   to_timestamp(date, 'YYYY-MM-DD,HH24-MI-SS'),
-   'http://www.openaddresses.org',
-   'Digitized',
-   coordinates
-   FROM tmp);
+      housenum,
+      housename,
+      street,
+      postcode,
+      city,
+      country,
+      created_by,
+      ipaddress,
+      (CASE WHEN time_creat = '--' THEN now()
+         ELSE to_timestamp(time_creat, 'YYYY-MM-DD,HH24:MI:SS') END)
+      ,
+      'http://www.openaddresses.org',
+      'Digitized',
+      the_geom
+   FROM openaddresses);
