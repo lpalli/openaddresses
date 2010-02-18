@@ -59,5 +59,7 @@ Describe the REST services associated to the addresses
 
 == Count ==
 
+==== Examples ====
+
  * Count the number of addresses
   * http://www.openaddresses.org/addresses/count/
