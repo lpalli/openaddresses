@@ -49,6 +49,8 @@ Describe the REST services associated to the addresses
   * http://www.openaddresses.org/addresses/?queryable=city,housenumber,street&city__ilike=%Lausanne%&housenumber__like=31&street__ilike=%Chemin%20Des%20Fleurettes% 
  * Extract the first three addresses in the city of "Lausanne" and return only the street, housenumber and city attribute, without geometry.
   * http://www.openaddresses.org/addresses/?limit=3&&queryable=city&city__ilike=Lausanne&attrs=street,housenumber,city&no_geom=true
+ * Extract the addresses near a point with a specific name:
+  * http://127.0.0.1:5000/addresses/?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%
 
 === Reverse !GeoCoding Service ===
 
