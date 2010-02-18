@@ -1,0 +1,62 @@
+= Introduction =
+
+Describe the REST services associated to the addresses
+
+== Database fields ==
+
+ * HOUSENUMBER: House number
+ * HOUSENAME: House name
+ * STREET: Street
+ * POSTCODE: Postal code
+ * REGION: Region
+ * CITY: City
+ * COUNTRY: country code ('CH','FR','AT' etc..)
+ * QUALITY ('Digitized','GPS','Linear interpolation')
+
+
+== Services ==
+
+=== KVP parameters ===
+
+ * no_geom=true: so that the returned feature has no geometry ("geometry": null)
+ * attrs={field1}[,{field2},...]: to restrict the list of properties returned in the feature 
+ * limit={num}: limit the number of features to num  features
+ * offset={num}: skip num features
+ * order_by={field}: order the features using field
+ * dir=DESC|ASC: determine the ordering direction (applies only if order_by is specified) 
+ * lon={x}: the x coordinate of the center of the search region, this coord's projection system can be specified with the epsg parameter
+ * lat={y}: the y coordinate of the center of the search region, this coord's projection system can be specified with the epsg parameter
+ * tolerance={num}: the tolerance around the center of the search region, expressed in the units of the lon/lat coords' projection system
+ * box={xmin,ymin,xmax,ymax}: a list of coordinates representing a bounding box, the coords' projection system can be specified with the epsg parameter
+ * epsg={num}: the EPSG code of the lon, lat or box values 
+ * queryable={field1}[,{field2},...]}: the names of the feature fields that can be queried
+ * {field}__{query_op}={value}: specify a filter expression, field must be in the list of fields specified by queryable, supported query_op's are:
+  * eq: equal to
+  * ne: not equal to
+  * lt: lower than
+  * le: lower than or equal to
+  * gt: greater than
+  * ge: greater than or equal to
+  * like
+  * ilike 
+
+=== GeoCoding Service ===
+
+==== Examples ====
+
+ * Get the coordinate of the address of "Chemin des Fleurettes 31" in "Lausanne"
+  * http://www.openaddresses.org/addresses/?queryable=city,housenumber,street&city__ilike=%Lausanne%&housenumber__like=31&street__ilike=%Chemin%20Des%20Fleurettes% 
+ * Extract the first three addresses in the city of "Lausanne" and return only the street, housenumber and city attribute, without geometry.
+  * http://www.openaddresses.org/addresses/?limit=3&&queryable=city&city__ilike=Lausanne&attrs=street,housenumber,city&no_geom=true
+
+=== Reverse GeoCoding Service ===
+
+==== Examples ====
+
+ * Extract all the addresses in a tolerance of 1000 m around coordinate 600'000/200'000 of Switzerland EPSG=21781. Return geometry is in EPSG:4326
+  * http://www.openaddresses.org/addresses/?lon=600000&lat=200000&tolerance=1000&epsg=21781
+
+== Count ==
+
+ * Count the number of addresses
+  * http://www.openaddresses.org/addresses/count/
