@@ -4,7 +4,7 @@
 
 Describe the REST services associated to the addresses
 
-== Database fields ==
+== Fields ==
 
  * HOUSENUMBER: House number
  * HOUSENAME: House name
@@ -14,7 +14,6 @@ Describe the REST services associated to the addresses
  * CITY: City
  * COUNTRY: country code ('CH','FR','AT' etc..)
  * QUALITY ('Digitized','GPS','Linear interpolation')
-
 
 == Services ==
 
