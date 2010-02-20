@@ -1,0 +1,36 @@
+= Introduction =
+
+Test of full text search capabilities for OpenAddresses
+
+== Reference Documentation ==
+
+ * http://www.postgresql.org/docs/8.4/static/textsearch.html
+
+== Examples ==
+
+=== Search adresses based on some query strings ===
+
+{{{
+SELECT street, city, housenumber
+FROM address
+WHERE to_tsvector(street || ' ' || city || ' ' || housenumber) @@ to_tsquery('chem:* & du:* & lau:* & 28:*') LIMIT 5;
+}}}
+
+ * Index improves the speed:
+
+{{{
+CREATE INDEX address_fts_idx1 ON address USING gin(to_tsvector('english', street || ' ' || city || ' ' || housenumber));
+}}}
+=== Search street names within an area ===
+
+{{{
+SELECT distinct street
+FROM address
+WHERE to_tsvector(street) @@ to_tsquery('chem:* & d:* & f:*') and
+ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005;
+}}}
+
+ * Index improves the speed:
+{{{
+CREATE INDEX address_fts_idx2 ON address USING gin(to_tsvector('english', street));
+}}}
