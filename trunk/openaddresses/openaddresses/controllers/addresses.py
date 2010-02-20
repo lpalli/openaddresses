@@ -102,11 +102,12 @@ class AddressesController(BaseController):
            feature.properties['time_updated'] = None
 
     def fullTextSearch(self,request):
+       #  addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
        # Read request parameters
        fields = request.params['fields']
        query = request.params['query']
 
-       # Manage attributes
+       # Manage fields
        fieldList =  fields.split(",")
        fieldCount = 0
        tsvector = ''
@@ -133,25 +134,28 @@ class AddressesController(BaseController):
           else:
              tsquery = tsquery + queri + ":* & "
 
-       # Creat SQL Query
+       # Create SQL Query
        sqlQuery = "SELECT "
+
+       # Add distinct to SQL Query
        if ('distinct' in request.params):
           sqlQuery = sqlQuery + "distinct "
 
        sqlQuery = sqlQuery + fields +" FROM address WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
 
+       # Add spatial filter to SQL Query
        if ('easting' in request.params) and ('northing' in request.params) and ('tolerance' in request.params):
           easting = request.params['easting']
           northing = request.params['northing']
           tolerance = request.params['tolerance']
-          # Add spatial filter
           sqlQuery = sqlQuery + " and ST_Distance(geom, ST_GeomFromText('POINT("+easting+" "+northing+")', 4326)) < "+tolerance
 
-       # Add limit
+       # Add limit to SQL Query
        if 'limit' in request.params:
           limit = request.params['limit']
           sqlQuery = sqlQuery + " LIMIT " + limit
 
+       # Execute query
        result = Session.execute(sqlQuery)
 
        rows = result.fetchall()
