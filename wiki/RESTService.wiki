@@ -73,6 +73,8 @@ Describe the REST services associated to the addresses
     * northing: Y in EPSG 4326 (optional)
     * limit: maximum number of return results (optional)
     * distinct: make a select distinct (optional)
+   * Return 
+    * JSON or GeoJSON with requested fields
 
 == Count ==
 
