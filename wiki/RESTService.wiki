@@ -15,9 +15,30 @@ Describe the REST services associated to the addresses
  * COUNTRY: country code ('CH','FR','AT' etc..)
  * QUALITY ('Digitized','GPS','Linear interpolation')
 
-== Services ==
+== !OpenAddresses !GeoCoding and Reverse !GeoCoding, based on Full text search ==
 
-=== KVP parameters ===
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch%20du%2028&limit=5
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10&distinct=true
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&limit=10
+
+   * Specification:
+    * fields: list of fields in which to search (mandatory)
+    * query: query string, separated by space (optional) 
+    * tolerance: spatial tolerance in degree (optional)
+    * easting: X in EPSG 4326 (optional)
+    * northing: Y in EPSG 4326 (optional)
+    * limit: maximum number of return results (optional)
+    * distinct: make a select distinct (optional)
+    * cb: name of the callback function (optional)
+   * Return 
+    * GeoJSON with requested fields or callback
+
+== !MapFish Services ==
+
+=== !MapFish KVP parameters ===
 
  * no_geom=true: so that the returned feature has no geometry ("geometry": null)
  * attrs={field1}[,{field2},...]: to restrict the list of properties returned in the feature 
@@ -61,30 +82,9 @@ Describe the REST services associated to the addresses
  * Extract all the addresses in a tolerance of 1000 m around coordinate 600'000/200'000 of Switzerland EPSG=21781. Return geometry is in EPSG:4326
   * http://www.openaddresses.org/addresses/?lon=600000&lat=200000&tolerance=1000&epsg=21781
 
-=== !OpenAddresses !GeoCoding and Reverse !GeoCoding, based on Full text search ===
-
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch%20du%2028&limit=5
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10&distinct=true
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&limit=10
-
-   * Specification:
-    * fields: list of fields in which to search (mandatory)
-    * query: query string, separated by space (optional) 
-    * tolerance: spatial tolerance in degree (optional)
-    * easting: X in EPSG 4326 (optional)
-    * northing: Y in EPSG 4326 (optional)
-    * limit: maximum number of return results (optional)
-    * distinct: make a select distinct (optional)
-    * cb: name of the callback function (optional)
-   * Return 
-    * GeoJSON with requested fields or callback
-
 == Count ==
 
-==== Examples ====
+=== Examples ===
 
  * Count the number of addresses
   * http://www.openaddresses.org/addresses/count/
