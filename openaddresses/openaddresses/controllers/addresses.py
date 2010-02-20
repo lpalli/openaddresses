@@ -110,7 +110,6 @@ class AddressesController(BaseController):
        #  addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
        # Read request parameters
        fields = request.params['fields']
-       query = request.params['query']
 
        # Manage fields
        fieldList =  fields.split(",")
@@ -128,17 +127,6 @@ class AddressesController(BaseController):
              tsvector = tsvector + field + " || ' ' ||"
              fields = fields + field + ","
 
-       # Manage query
-       queryList = query.split();
-       queryCount = 0
-       tsquery = ''
-       for queri in queryList:
-          queryCount = queryCount + 1
-          if (queryCount == len(queryList)):
-             tsquery = tsquery + queri + ":*"
-          else:
-             tsquery = tsquery + queri + ":* & "
-
        # Create SQL Query
        sqlQuery = "SELECT "
 
@@ -146,14 +134,32 @@ class AddressesController(BaseController):
        if ('distinct' in request.params):
           sqlQuery = sqlQuery + "distinct "
 
-       sqlQuery = sqlQuery + fields +" FROM address WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
+       sqlQuery = sqlQuery + fields + " FROM address "
+
+       if 'query' in request.params:
+          query = request.params['query']
+          # Manage query
+          queryList = query.split();
+          queryCount = 0
+          tsquery = ''
+          for queri in queryList:
+             queryCount = queryCount + 1
+             if (queryCount == len(queryList)):
+                tsquery = tsquery + queri + ":*"
+             else:
+                tsquery = tsquery + queri + ":* & "
+          sqlQuery = sqlQuery + " WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
 
        # Add spatial filter to SQL Query
        if ('easting' in request.params) and ('northing' in request.params) and ('tolerance' in request.params):
           easting = request.params['easting']
           northing = request.params['northing']
           tolerance = request.params['tolerance']
-          sqlQuery = sqlQuery + " and ST_Distance(geom, ST_GeomFromText('POINT("+easting+" "+northing+")', 4326)) < "+tolerance
+          spatialFilter =  "ST_Distance(geom, ST_GeomFromText('POINT("+easting+" "+northing+")', 4326)) < "+tolerance
+          if 'query' in request.params:
+             sqlQuery = sqlQuery + " and " + spatialFilter
+          else:
+             sqlQuery = sqlQuery + " WHERE " + spatialFilter
 
        # Add limit to SQL Query
        if 'limit' in request.params:
