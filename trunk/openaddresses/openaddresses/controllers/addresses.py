@@ -64,7 +64,10 @@ class AddressesController(BaseController):
 
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
-        return self.protocol.show(request, response, id, format=format)
+        if (id == 'count'):
+           return self.protocol.count(request)
+        else:
+           return self.protocol.show(request, response, id, format=format)
 
     def create(self):
         """POST /: Create a new feature."""
