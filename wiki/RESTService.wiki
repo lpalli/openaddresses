@@ -25,7 +25,7 @@ Describe the REST services associated to the addresses
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&limit=10
 
    * Specification:
-    * fields: list of fields in which to search (mandatory)
+    * fields: list of fields to get(mandatory)
     * query: query string, separated by space (optional) 
     * tolerance: spatial tolerance in degree (optional)
     * easting: X in EPSG 4326 (optional)
