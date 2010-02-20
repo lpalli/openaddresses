@@ -16,6 +16,11 @@ except:
 
 from datetime import datetime
 
+from shapely.wkt import loads as geojson_loads
+
+from geojson import dumps as geojson_dumps
+
+
 class AddressesController(BaseController):
     readonly = False # if set to True, only GET is supported
 
@@ -160,4 +165,34 @@ class AddressesController(BaseController):
 
        rows = result.fetchall()
 
-       return rows
+       # Create a GeoJSON response
+       rowsDict = {}
+       featuresArray = []
+       for row in rows:
+          columnCount = 0
+          featureDict = {}
+          featureDict.update(type='Feature')
+          featurePropertiesDict = {}
+          for column in row:
+             fieldName = fieldList[columnCount]
+             if (fieldName == 'geom'):
+                # Convert to GeoJSON
+                coordinates = geojson_loads(column)
+                geojson = geojson_dumps(coordinates)
+             else:
+                featurePropertiesDict.update({'' + fieldName + '': column})
+             columnCount = columnCount + 1
+          featureDict.update(properties=featurePropertiesDict)
+          if 'geojson' in locals():
+             featureDict.update(geometry=eval(geojson))
+          featuresArray.append(featureDict)
+
+       rowsDict.update(type='FeatureCollection')
+       rowsDict.update(features=featuresArray)
+
+       if 'cb' in request.params:
+          response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
+          return request.params['cb'] + '(' + json_dumps(rowsDict) + ');'
+       else:
+          response.headers['Content-Type'] = 'application/json'
+          return json_dumps(rowsDict)
