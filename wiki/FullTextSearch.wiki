@@ -1,6 +1,6 @@
 = Introduction =
 
-Test of full text search capabilities for OpenAddresses
+Test of full text search capabilities for !OpenAddresses
 
 == Reference Documentation ==
 
@@ -31,6 +31,7 @@ ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.00
 }}}
 
  * Index improves the speed:
+
 {{{
 CREATE INDEX address_fts_idx2 ON address USING gin(to_tsvector('english', street));
 }}}
