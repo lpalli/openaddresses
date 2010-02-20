@@ -64,7 +64,7 @@ Describe the REST services associated to the addresses
 ===== Full text search Reverse !GeoCoding=====
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch du 28&limit=5
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch%20du%2028&limit=5
 
    * Specification:
     * fields: list of fields in which to search (mandatory)
