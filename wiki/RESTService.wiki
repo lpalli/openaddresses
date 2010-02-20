@@ -62,8 +62,9 @@ Describe the REST services associated to the addresses
   * http://www.openaddresses.org/addresses/?lon=600000&lat=200000&tolerance=1000&epsg=21781
 
 ===== Full text search Reverse !GeoCoding=====
-  * http://127.0.0.1:5000/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch du 28&limit=5
 
    * Specification:
     * fields: list of fields in which to search (mandatory)
