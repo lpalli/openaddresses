@@ -65,7 +65,7 @@ Describe the REST services associated to the addresses
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20du%2028&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
   * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch%20du%2028&limit=5
-  * http://127.0.0.1:5000/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
+  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
 
    * Specification:
     * fields: list of fields in which to search (mandatory)
