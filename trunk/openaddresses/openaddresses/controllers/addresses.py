@@ -9,6 +9,11 @@ from openaddresses.model.meta import Session
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
 
+try:
+    from json import dumps as json_dumps
+except:
+    from simplejson import dumps as json_dumps
+
 from datetime import datetime
 
 class AddressesController(BaseController):
@@ -66,6 +71,8 @@ class AddressesController(BaseController):
         """GET /id: Show a specific feature."""
         if (id == 'count'):
            return self.protocol.count(request)
+        elif (id == 'fullTextSearch'):
+           return self.fullTextSearch(request)
         else:
            return self.protocol.show(request, response, id, format=format)
 
@@ -93,3 +100,60 @@ class AddressesController(BaseController):
            feature.properties['time_updated'] = datetime.now()
        else:
            feature.properties['time_updated'] = None
+
+    def fullTextSearch(self,request):
+       # Read request parameters
+       fields = request.params['fields']
+       query = request.params['query']
+
+       # Manage attributes
+       fieldList =  fields.split(",")
+       fieldCount = 0
+       tsvector = ''
+       fields = ''
+       for field in fieldList:
+          fieldCount = fieldCount + 1
+          if (field == 'geom'):
+             field = 'astext(geom)'
+          if (fieldCount == len(fieldList)):
+             tsvector = tsvector + field
+             fields = fields + field
+          else:
+             tsvector = tsvector + field + " || ' ' ||"
+             fields = fields + field + ","
+
+       # Manage query
+       queryList = query.split();
+       queryCount = 0
+       tsquery = ''
+       for queri in queryList:
+          queryCount = queryCount + 1
+          if (queryCount == len(queryList)):
+             tsquery = tsquery + queri + ":*"
+          else:
+             tsquery = tsquery + queri + ":* & "
+
+       # Creat SQL Query
+       sqlQuery = "SELECT "
+       if ('distinct' in request.params):
+          sqlQuery = sqlQuery + "distinct "
+
+       sqlQuery = sqlQuery + fields +" FROM address WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
+
+       if ('easting' in request.params) and ('northing' in request.params) and ('tolerance' in request.params):
+          easting = request.params['easting']
+          northing = request.params['northing']
+          tolerance = request.params['tolerance']
+          # Add spatial filter
+          sqlQuery = sqlQuery + " and ST_Distance(geom, ST_GeomFromText('POINT("+easting+" "+northing+")', 4326)) < "+tolerance
+
+       # Add limit
+       if 'limit' in request.params:
+          limit = request.params['limit']
+          sqlQuery = sqlQuery + " LIMIT " + limit
+
+       result = Session.execute(sqlQuery)
+
+       rows = result.fetchall()
+
+       return rows
