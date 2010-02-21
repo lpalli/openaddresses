@@ -43,6 +43,31 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             'dblclick': this.onDblclick},
                 this.handlerOptions
                 );
+        openaddresses.qualityStore = new Ext.data.ArrayStore({
+            storeId: 'qualityStore',
+            data: [
+                ['Digitized', OpenLayers.i18n('Digitized')],
+                ['GPS', OpenLayers.i18n('GPS')],
+                ['Linear interpolation', OpenLayers.i18n('Linear interpolation')]
+            ],
+            autoLoad: true,
+            fields: [
+                'qualityCode',
+                'quality'
+            ]
+        });
+
+        openaddresses.qualityStore.getValueFromCode = function(code) {
+            var qualityIndex = openaddresses.qualityStore.find('qualityCode', code);
+            var qualityRecord = openaddresses.qualityStore.getAt(qualityIndex);
+            return qualityRecord.data.quality;
+        };
+
+        openaddresses.qualityStore.getCodeFromValue = function(value) {
+            var qualityIndex = openaddresses.qualityStore.find('quality', value);
+            var qualityRecord = openaddresses.qualityStore.getAt(qualityIndex);
+            return qualityRecord.data.qualityCode;
+        };
     },
 
     /** private: method[onClick]
@@ -65,31 +90,31 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
         var tolerance = 0;
         if (map.zoom < 16) {
-           tolerance = 0.000000;
+            tolerance = 0.000000;
         }
         if (map.zoom == 16) {
-           tolerance = 0.000128987;
+            tolerance = 0.000128987;
         }
         if (map.zoom == 17) {
-           tolerance = 0.000064494;
+            tolerance = 0.000064494;
         }
         if (map.zoom == 18) {
-           tolerance = 0.000064494;
+            tolerance = 0.000064494;
         }
         if (map.zoom == 19) {
-           tolerance = 0.000032247;
+            tolerance = 0.000032247;
         }
         if (map.zoom == 20) {
-           tolerance = 0.000016123;
+            tolerance = 0.000016123;
         }
         if (map.zoom == 21) {
-           tolerance = 0.000008062;
+            tolerance = 0.000008062;
         }
         if (map.zoom == 22) {
-           tolerance = 0.000004031;
+            tolerance = 0.000004031;
         }
         if (map.zoom == 23) {
-           tolerance = 0.000002015;
+            tolerance = 0.000002015;
         }
 
         /** method[cancelEditing]
@@ -375,9 +400,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
             var buttonText;
             if (feature.attributes && feature.attributes.id) {
-                 buttonText = OpenLayers.i18n('Save');
+                buttonText = OpenLayers.i18n('Save');
             } else {
-                 buttonText = OpenLayers.i18n('Create');
+                buttonText = OpenLayers.i18n('Create');
             }
             feature.editingPopup = new GeoExt.Popup({
                 title: OpenLayers.i18n('Address Editor'),

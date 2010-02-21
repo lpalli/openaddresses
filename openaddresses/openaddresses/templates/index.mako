@@ -42,7 +42,6 @@
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesHover.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesCountryList.js"></script>
-   <script type="text/javascript" src="app/js/OpenAddressesQualityList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesEditControl.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesOsm.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesConfig.js"></script>
