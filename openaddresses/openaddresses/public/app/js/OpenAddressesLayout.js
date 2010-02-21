@@ -27,6 +27,7 @@
  * @include app/js/OpenAddressesLanguage.js
  * @include app/js/OpenAddressesLayers.js
  * @include app/js/OpenAddressesEditControl.js
+ * @include app/js/OpenAddressesHover.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
@@ -283,6 +284,26 @@ openaddresses.layout = (function() {
         }
     };
 
+    var createLocationTooltip = function(map) {
+        map.events.register('mousemove', this, openaddresses.layout.showLocationTooltip);
+        map.events.register('mouseout', this, hideMouseOver);
+        var hoverControl = new openaddresses.hover({
+            handlerOptions: {
+                'delay': 100
+            }
+        });
+        map.addControl(hoverControl);
+        hoverControl.activate();
+    };
+
+    var hideMouseOver = function(evt) {
+        var mouseOver = Ext.get('MouseOver').dom;
+        mouseOver.innerHTML = "";
+        mouseOver.style.top = "0px";
+        mouseOver.style.left = "0px";
+        mouseOver.style.display = "none";
+    };
+
     var handleRightMouseClick = function(map) {
         map.controls[0].handlers.click.callbacks.rightclick = function() {
             var lonlat = map.getLonLatFromViewPortPx(map.controls[0].handlers.click.evt.xy);
@@ -399,6 +420,78 @@ openaddresses.layout = (function() {
             return base + '?' + Ext.urlEncode(parametersObj);
         },
 
+        showLocationTooltip: function(evt) {
+            var map = openaddresses.layout.map;
+            if (map.showLocationInMapRequestOngoing || map.zoom < 16) {
+                return;
+            }
+            var updateTooltip = function(response) {
+                var x = Ext.decode(response.responseText);
+                var mouseOver = Ext.get('MouseOver').dom;
+                if (!x.features[0]) {
+                    mouseOver.innerHTML = "";
+                    mouseOver.style.top = "0px";
+                    mouseOver.style.left = "0px";
+                    mouseOver.style.display = "none";
+                } else {
+                    mouseOver.innerHTML = x.features[0].properties.street + " " + x.features[0].properties.housenumber + " " + x.features[0].properties.city;
+                    var topPixel = this.clientY + 10;
+                    var leftPixel = this.clientX + 10;
+                    var topPixel1 = this.clientY - 10;
+                    var leftPixel1 = this.clientX - 10;
+                    mouseOver.style.top = topPixel + "px";
+                    mouseOver.style.left = leftPixel + "px";
+                    mouseOver.style.display = "block";
+                }
+                map.showLocationInMapRequestOngoing = false;
+            };
+            var lonLat = map.getLonLatFromPixel(evt.xy);
+            lonLat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
+            this.clientX = evt.clientX;
+            this.clientY = evt.clientY;
+            // addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10
+            if (map.zoom == 16) {
+                map.tooltipTolerance = 0.000128987 / 2;
+            }
+            if (map.zoom == 17) {
+                map.tooltipTolerance = 0.000064494 / 2;
+            }
+            if (map.zoom == 18) {
+                map.tooltipTolerance = 0.000064494 / 2;
+            }
+            if (map.zoom == 19) {
+                map.tooltipTolerance = 0.000032247 / 2;
+            }
+            if (map.zoom == 20) {
+                map.tooltipTolerance = 0.000016123 / 2;
+            }
+            if (map.zoom == 21) {
+                map.tooltipTolerance = 0.000008062 / 2;
+            }
+            if (map.zoom == 22) {
+                map.tooltipTolerance = 0.000004031 / 2;
+            }
+            if (map.zoom == 23) {
+                map.tooltipTolerance = 0.000002015 / 2;
+            }
+            map.tooltipRequest = Ext.Ajax.request({
+                url: 'addresses/fullTextSearch',
+                success: updateTooltip,
+                failure: function() {
+                    map.showLocationInMapRequestOngoing = false
+                },
+                method: 'GET',
+                params: {
+                    fields: 'street,housenumber,city',
+                    tolerance: map.tooltipTolerance,
+                    limit: 1,
+                    easting: lonLat.lon,
+                    northing: lonLat.lat
+                },
+                scope: this
+            });
+            map.showLocationInMapRequestOngoing = true;
+        },
         /**
          * APIMethod: init
          * Initialize the page layout.
@@ -426,6 +519,8 @@ openaddresses.layout = (function() {
             handleRightMouseClick(this.map);
             handleEdit(this.map);
 
+            createLocationTooltip(this.map);
+
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
             this.map.events.register('zoomend', this, function(record) {
@@ -437,3 +532,4 @@ openaddresses.layout = (function() {
         }
     };
 })();
+
