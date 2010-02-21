@@ -71,7 +71,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * ~~!MapFile Cédric~~ 
    * ~~WMS Cédric~~
    * ~~REST CRUD service Cédric~~
-  * Add query onHover to get address information _!WaitForYourName_
+  * ~~Add query onHover to get address information Cédric~~
  * Web Site Editing
   * ~~Digitize address Cédric~~
   * ~~Delete address Cédric~~
