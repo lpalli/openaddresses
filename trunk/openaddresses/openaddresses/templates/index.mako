@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/ext-all.css" />
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/xtheme-gray.css" />
     <link rel="stylesheet" type="text/css" href="mfbase/geoext/resources/css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/OpenAddresses.css" />
     
 </head>
 
@@ -39,6 +40,7 @@
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesHover.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesCountryList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesQualityList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesEditControl.js"></script>
@@ -70,6 +72,8 @@
    <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
    <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 % endif
+
+<div id="MouseOver" style="display: none;"></div>
 
 </body>
 </html>
