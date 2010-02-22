@@ -35,8 +35,10 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Client widget
   * Server service
  * Web Site Download
-  * Client widget
-  * Server service
+  * Client widget _!WaitForYourName_
+  * Server
+   * Dump the data: http://postgis.refractions.net/docs/ch04.html#id2805647 _!WaitForYourName_
+   * Make a daily cron _!WaitForYourName_
  * Web Site Service
   * Content
   * !GeoCoding API
