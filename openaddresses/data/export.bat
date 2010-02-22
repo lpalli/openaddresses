@@ -1,0 +1,2 @@
+runas /user:postgres cmd
+"c:\Program Files\PostgreSQL\8.4\bin\pgsql2shp.exe" postgis address -f "C:\Sandbox\openadresses\trunk\openaddresses\openaddresses\public\download\export.shp" -h localhost -p 5432 - u "www-data" -P "www-data"
