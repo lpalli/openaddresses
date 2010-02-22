@@ -203,40 +203,43 @@ openaddresses.layout = (function() {
                 },
                 {
                     region: 'west',
-                    width: 256,
+                    width: 335,
                     minSize: 256,
                     maxSize: 512,
                     split: true,
                     margins: '5 0 5 5',
                     layout:'accordion',
+                    defaults: {
+                        bodyStyle: 'padding-left:5px; padding-top:5px; padding-right:5px; backgroundColor: #F0F0F0; font-size:11px;font-family:tahoma,arial,verdana,sans-serif;line-height: 1.5;'
+                    },
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            html: '<h1>' + OpenLayers.i18n('Welcome in OpenAddresses') + '</h1><br><li>' + OpenLayers.i18n('Click in the map') + '</li><li>' + OpenLayers.i18n('Fill the address attributes') + '</li><li>' + OpenLayers.i18n('Save the address') + '</li><li>' + OpenLayers.i18n('Thanks for your contribution !') + '</li><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
+
                         },
                         {
                             title: OpenLayers.i18n('Upload'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            html: 'Ongoing development...<br> For now, send your data to info[at]openaddresses.org.'
                         },
                         {
                             title: OpenLayers.i18n('Download'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            html: '<a href="download/export.zip">' + OpenLayers.i18n('Download address shapefile') + "</a>"
                         },
                         {
                             title: OpenLayers.i18n('Services'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            html: '<a href="http://code.google.com/p/openaddresses/wiki/RESTService" target="new">' + OpenLayers.i18n('Documentation of GeoCoding and Reverse GeoCoding services') + "</a>"
                         },
                         {
-                            title: OpenLayers.i18n('Statistics'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            title: OpenLayers.i18n('Statistics')
                         },
                         {
                             title: OpenLayers.i18n('License'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            html: '<a href="http://creativecommons.org/licenses/by/3.0/" target="new">' + OpenLayers.i18n('OpenAddresses Data Licence') + '</a><li>' + OpenLayers.i18n('The addresses must be associated to the url of http://www.openaddresses.org.') + '</li><li>' + OpenLayers.i18n('The person or entity that submitted the data is stored in a field CREATED_BY.') + '</li><a href="http://www.opensource.org/licenses/gpl-3.0.html" target="new">' + OpenLayers.i18n('OpenAddresses Code Licence') + '</a>'
                         },
                         {
                             title: OpenLayers.i18n('About'),
-                            bodyStyle: 'backgroundColor: #F0F0F0;'
+                            html: '<a href="http://code.google.com/p/openaddresses/" target="new">' + OpenLayers.i18n('Project Wiki') + '</a><br><a href="http://groups.google.com/group/OpenAddresses" target="new">' + OpenLayers.i18n('Project Discussion') + '</a>'
                         }
                     ]
                 }
