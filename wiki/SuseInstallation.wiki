@@ -57,11 +57,11 @@ openaddresses.config = {
  1. (required only the first time) Install !MapFish  in a virtual env at the same level as the trunk directory: http://www.mapfish.org/doc/1.2/installation.html 
   1. 
 {{{
+cd
 curl http://www.mapfish.org/downloads/go-mapfish-framework-1.2.py
 }}}
   1. Install Virtual environment
 {{{
-cd
 python go-mapfish-framework-1.2.py --no-site-packages env
 }}}
   1. Activate Virtual environment:
