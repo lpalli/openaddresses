@@ -15,7 +15,7 @@ Install !OpenAddresses on Suse
 = Requirements =
 
  * Apache with mod_wsgi
- * MapServer
+ * !MapServer
  * Postgres 8.4 / PostGIS
  * Geos
  * Python 2.5
