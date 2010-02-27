@@ -83,4 +83,16 @@ Available templates:
   pylons_minimal:  Pylons minimal application template
 }}}
 
+== Start !MapFish ==
+
+This has to be done everytime you want to test the application
+
+{{{
+cd
+source env/bin/activate
+cd trunk/openaddresses
+paster serve --reload development.ini
+http://geolin01.cti.ac.at:5000/
+}}}
+
  
