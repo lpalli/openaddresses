@@ -46,6 +46,7 @@ INSERT INTO address (
    time_created,
    reference,
    quality,
+   osmid,
    geom) (SELECT
       housenum,
       housename,
@@ -55,10 +56,9 @@ INSERT INTO address (
       country,
       created_by,
       ipaddress,
-      (CASE WHEN time_creat = '--' THEN now()
-         ELSE to_timestamp(time_creat, 'YYYY-MM-DD,HH24:MI:SS') END)
-      ,
+      time_creat,
       'http://www.openaddresses.org',
       'Digitized',
-      the_geom
-   FROM openaddresses);
+      osmid,
+      ST_SetSRID(ST_GeometryN(geom,1),4326)
+   FROM "OpenAddresses");
