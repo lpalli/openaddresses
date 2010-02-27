@@ -1,0 +1,37 @@
+Install !OpenAddresses on Suse
+
+<wiki:toc max_depth="2" />
+
+= Environment =
+
+ * Main URL: http://geolin01.cti.ac.at/oa_os/
+ * FTP & SSH: geolin01.cti.ac.at
+  * Login: oa_os
+ * Postgresql:
+  * Login: oa_os
+  * postgis-template for new database: “template_gis“
+ * pgAdmin-Webinterface: http://geolin01.cti.ac.at/phpPgAdmin/
+
+= Requirements =
+
+ * Apache with mod_wsgi
+ * MapServer
+ * Postgres 8.4 / PostGIS
+ * Geos
+ * Python 2.5
+
+= !HowTo Install !OpenAddresses Server =
+
+== Checkout Code ==
+
+ 1. Create a directory openaddresses
+{{{
+cd /srv/www/htdocs/oa_os
+mkdir openaddresses
+}}}
+ 1. Create a directory trunk inside openaddresses
+{{{
+cd openaddresses/
+mkdir trunk
+}}}
+ 
