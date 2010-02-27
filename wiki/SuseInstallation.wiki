@@ -20,6 +20,11 @@ Install !OpenAddresses on Suse
  * Geos
  * Python 2.5
 
+= Utils =
+
+ * Putty: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+ * Filezilla: http://filezilla-project.org/
+
 = !HowTo Install !OpenAddresses Server =
 
 == Checkout Code ==
@@ -46,4 +51,36 @@ openaddresses.config = {
     baseWMS: 'http://geolin01.cti.ac.at/cgi-bin/mapserv?map=/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/mapserver/cascading.map'
 };
 }}}
+
+== Install !MapFish ==
+
+ 1. (required only the first time) Install !MapFish  in a virtual env at the same level as the trunk directory: http://www.mapfish.org/doc/1.2/installation.html 
+  1. 
+{{{
+curl http://www.mapfish.org/downloads/go-mapfish-framework-1.2.py
+}}}
+  1. Install Virtual environment
+{{{
+cd
+python go-mapfish-framework-1.2.py --no-site-packages env
+}}}
+  1. Activate Virtual environment:
+{{{
+source env/bin/activate
+}}}
+  1. To check that everything is ok:
+{{{
+paster create --list-templates
+}}}
+  1. And you should see:
+{{{
+Available templates:
+  basic_package:   A basic setuptools-enabled package
+  mapfish:         MapFish application template
+  mapfish_client:  MapFish client plugin template
+  paste_deploy:    A web application deployed through paste.deploy
+  pylons:          Pylons application template
+  pylons_minimal:  Pylons minimal application template
+}}}
+
  
