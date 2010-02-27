@@ -34,4 +34,17 @@ mkdir openaddresses
 cd openaddresses/
 mkdir trunk
 }}}
+ 1. Checkout code (login info here: http://code.google.com/p/openaddresses/source/checkout)
+{{{
+   svn co https://openaddresses.googlecode.com/svn/trunk/
+}}}
+ 1. Create a file !OpenAddressesConfig.js by replacing the variable of !OpenAddressesConfig.js.ini (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesConfig.js.ini).
+
+{{{
+Ext.namespace("openaddresses");
+
+openaddresses.config = {
+    baseWMS: 'http://geolin01.cti.ac.at/cgi-bin/mapserv?map=/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/mapserver/cascading.map'
+};
+}}}
  
