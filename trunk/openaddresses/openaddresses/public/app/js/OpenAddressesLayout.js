@@ -21,6 +21,7 @@
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
  * @include GeoExt/widgets/tree/LayerContainer.js
+ * @include app/js/OpenAddressesOpacitySliderTip.js
  * @include app/js/OpenAddressesCountryList.js
  * @include app/js/OpenAddressesOsm.js
  * @include app/js/OpenAddressesLanguage.js
@@ -383,6 +384,35 @@ openaddresses.layout = (function() {
             var zoom = parseInt(params.zoom, 10);
             openaddresses.layout.map.setCenter(center, zoom);
         }
+        if (params.overlayOpacity) {
+            Ext.getCmp('opacity_slider').setValue(parseFloat(params.overlayOpacity));
+        }
+    };
+
+    var createOpacitySlider = function(map) {
+        var opacitySlider = new Ext.Slider({
+            id: 'opacity_slider',
+            renderTo: Ext.get('OpacitySlider'),
+            width: 100,
+            value: 1,
+            increment: 0.01,
+            minValue: 0,
+            maxValue: 1,
+            decimalPrecision: 2,
+            plugins: new openaddresses.OpacitySliderTip()
+        });
+        opacitySlider.on('change', function(slider, opacity) {
+            for each (var layer in map.layers) {
+                if (!layer.isBaseLayer) {
+                    if (layer.setOpacity) {
+                        if (layer.name != OpenLayers.i18n("Addresses")) {
+                            layer.setOpacity(opacity);
+                        }
+                    }
+                }
+            }
+        });
+        return opacitySlider;
     };
 
     /*
@@ -410,6 +440,7 @@ openaddresses.layout = (function() {
             parametersObj.northing = this.map.center.lat;
             parametersObj.easting = this.map.center.lon;
             parametersObj.zoom = this.map.zoom;
+            parametersObj.overlayOpacity = Ext.getCmp('opacity_slider').getValue();
 
             var base = '';
             if (fullUrl) {
@@ -477,21 +508,21 @@ openaddresses.layout = (function() {
                 map.tooltipTolerance = 0.000002015 / 2;
             }
             /*map.tooltipRequest = Ext.Ajax.request({
-                url: 'addresses/fullTextSearch',
-                success: updateTooltip,
-                failure: function() {
-                    map.showLocationInMapRequestOngoing = false
-                },
-                method: 'GET',
-                params: {
-                    fields: 'street,housenumber,city',
-                    tolerance: map.tooltipTolerance,
-                    limit: 1,
-                    easting: lonLat.lon,
-                    northing: lonLat.lat
-                },
-                scope: this
-            });*/
+             url: 'addresses/fullTextSearch',
+             success: updateTooltip,
+             failure: function() {
+             map.showLocationInMapRequestOngoing = false
+             },
+             method: 'GET',
+             params: {
+             fields: 'street,housenumber,city',
+             tolerance: map.tooltipTolerance,
+             limit: 1,
+             easting: lonLat.lon,
+             northing: lonLat.lat
+             },
+             scope: this
+             });*/
             map.tooltipRequest = Ext.Ajax.request({
                 url: 'addresses',
                 success: updateTooltip,
@@ -533,6 +564,7 @@ openaddresses.layout = (function() {
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
+            var opacitySlider = createOpacitySlider(this.map);
 
             // Manage controlers for reverse geocoding and editing 
             handleRightMouseClick(this.map);

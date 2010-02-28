@@ -41,6 +41,7 @@
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesHover.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesOpacitySliderTip.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesCountryList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesEditControl.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesOsm.js"></script>
@@ -73,6 +74,7 @@
 % endif
 
 <div id="MouseOver" style="display: none;"></div>
+<div id="OpacitySlider"></div>
 
 </body>
 </html>
