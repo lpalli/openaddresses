@@ -32,7 +32,7 @@ WHERE geom && 'BOX(6.61879551 46.51187241, 6.62879551 46.52187241)'::box2d
   AND
 ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005
   AND 
-to_tsvector(street) @@ to_tsquery('chem:* & d:* & f:*')
+to_tsvector('english'::regconfig, street::text) @@ to_tsquery('chem:* & d:* & f:*')
   limit 15;
 }}}
 
