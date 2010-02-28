@@ -476,7 +476,7 @@ openaddresses.layout = (function() {
             if (map.zoom == 23) {
                 map.tooltipTolerance = 0.000002015 / 2;
             }
-            map.tooltipRequest = Ext.Ajax.request({
+            /*map.tooltipRequest = Ext.Ajax.request({
                 url: 'addresses/fullTextSearch',
                 success: updateTooltip,
                 failure: function() {
@@ -489,6 +489,23 @@ openaddresses.layout = (function() {
                     limit: 1,
                     easting: lonLat.lon,
                     northing: lonLat.lat
+                },
+                scope: this
+            });*/
+            map.tooltipRequest = Ext.Ajax.request({
+                url: 'addresses',
+                success: updateTooltip,
+                failure: function() {
+                    map.showLocationInMapRequestOngoing = false
+                },
+                method: 'GET',
+                params: {
+                    tolerance: map.tooltipTolerance,
+                    limit: 1,
+                    lon: lonLat.lon,
+                    lat: lonLat.lat,
+                    attrs: 'street,housenumber,city',
+                    no_geom: 'true'
                 },
                 scope: this
             });
