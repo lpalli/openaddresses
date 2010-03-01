@@ -14,25 +14,18 @@ Test of full text search capabilities for !OpenAddresses
 
 {{{
 SELECT street, city, housenumber
-FROM address
-where tsvector_street_housenumber_city @@ to_tsquery('chem:* & du:* & fontenay:*')
-  limit 15;
+  FROM address
+WHERE tsvector_street_housenumber_city @@ to_tsquery('Solothu:* & Segetzstrasse:*')
+  LIMIT 5;
 }}}
 
 === Search street names within an area ===
 
 {{{
 SELECT distinct street
-FROM address
-WHERE geom && 'BOX(6.61879551 46.51187241, 6.62879551 46.52187241)'::box2d
-  AND
-ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005
-  AND 
-to_tsvector('english'::regconfig, street::text) @@ to_tsquery('chem:* & du:* & font:*')
-  limit 15;
-
-SELECT distinct street
-FROM address
-where tsvector_street @@ to_tsquery('chem:* & du:* & fontenay:*')
-  limit 15;
+  FROM address
+WHERE geom && ST_SetSRID('BOX3D(6.61879551 46.51187241, 6.62879551 46.52187241)'::box3d,4326)
+  AND ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005
+  AND tsvector_street @@ to_tsquery('chem:* & du:* & font:*') 
+  LIMIT 10;
 }}}
