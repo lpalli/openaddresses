@@ -297,7 +297,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     },
                     icon: Ext.MessageBox.QUESTION
                 });
-            }
+            };
         };
 
         /** method[addEditingPopup]

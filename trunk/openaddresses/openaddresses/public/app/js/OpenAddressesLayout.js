@@ -402,7 +402,7 @@ openaddresses.layout = (function() {
             plugins: new openaddresses.OpacitySliderTip()
         });
         opacitySlider.on('change', function(slider, opacity) {
-            for each (var layer in map.layers) {
+            for (var layer in map.layers) {
                 if (!layer.isBaseLayer) {
                     if (layer.setOpacity) {
                         if (layer.name != OpenLayers.i18n("Addresses")) {
@@ -527,7 +527,7 @@ openaddresses.layout = (function() {
                 url: 'addresses',
                 success: updateTooltip,
                 failure: function() {
-                    map.showLocationInMapRequestOngoing = false
+                    map.showLocationInMapRequestOngoing = false;
                 },
                 method: 'GET',
                 params: {
