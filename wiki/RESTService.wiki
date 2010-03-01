@@ -36,6 +36,11 @@ Describe the REST services associated to the addresses
    * Return 
     * GeoJSON with requested fields or callback
 
+=== HINTS ===
+
+ * Use *street* or *street,city,housnumber* as field list. Database is optimzed for these fields.
+ * Try to always add a spatial filter for maximum performance
+
 == !MapFish Services ==
 
 === !MapFish KVP parameters ===
