@@ -63,7 +63,7 @@ def make_app(global_conf, full_stack=True, static_files=True, **app_conf):
 
     if asbool(static_files):
         # Serve static files
-        static_app = StaticURLParser(config['pylons.paths']['static_files'])
+        static_app = StaticURLParser(config['pylons.paths']['static_files'],cache_max_age=604800)
         app = Cascade([static_app, app])
 
     return app
