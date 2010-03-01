@@ -15,14 +15,10 @@ Test of full text search capabilities for !OpenAddresses
 {{{
 SELECT street, city, housenumber
 FROM address
-WHERE to_tsvector(street || ' ' || city || ' ' || housenumber) @@ to_tsquery('chem:* & du:* & lau:* & 28:*') LIMIT 5;
+where tsvector_street_housenumber_city @@ to_tsquery('chem:* & du:* & fontenay:*')
+  limit 15;
 }}}
 
- * Index improves the speed:
-
-{{{
-CREATE INDEX address_fts_idx1 ON address USING gin(to_tsvector('english', street || ' ' || city || ' ' || housenumber));
-}}}
 === Search street names within an area ===
 
 {{{
@@ -32,12 +28,11 @@ WHERE geom && 'BOX(6.61879551 46.51187241, 6.62879551 46.52187241)'::box2d
   AND
 ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005
   AND 
-to_tsvector('english'::regconfig, street::text) @@ to_tsquery('chem:* & d:* & f:*')
+to_tsvector('english'::regconfig, street::text) @@ to_tsquery('chem:* & du:* & font:*')
   limit 15;
-}}}
 
- * Index improves the speed:
-
-{{{
-CREATE INDEX address_fts_idx2 ON address USING gin(to_tsvector('english', street));
+SELECT distinct street
+FROM address
+where tsvector_street @@ to_tsquery('chem:* & du:* & fontenay:*')
+  limit 15;
 }}}
