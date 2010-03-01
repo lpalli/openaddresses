@@ -148,14 +148,25 @@ class AddressesController(BaseController):
                 tsquery = tsquery + queri + ":*"
              else:
                 tsquery = tsquery + queri + ":* & "
-          sqlQuery = sqlQuery + " WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
+          if (len(fieldList) == 3) and ('street' in request.params['fields']) and ('city' in request.params['fields']) and ('housenumber' in request.params['fields']):
+             sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('" + tsquery + "')"
+          elif (len(fieldList) == 4) and ('geom' in request.params['fields']) and ('street' in request.params['fields']) and ('city' in request.params['fields']) and ('housenumber' in request.params['fields']):
+             sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('" + tsquery + "')"
+          elif (len(fieldList) == 1) and ('street' in request.params['fields']):
+             sqlQuery = sqlQuery + " WHERE tsvector_street @@ to_tsquery('" + tsquery + "')"
+          else:
+             sqlQuery = sqlQuery + " WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
 
        # Add spatial filter to SQL Query
        if ('easting' in request.params) and ('northing' in request.params) and ('tolerance' in request.params):
-          easting = request.params['easting']
-          northing = request.params['northing']
-          tolerance = request.params['tolerance']
-          spatialFilter =  "ST_Distance(geom, ST_GeomFromText('POINT("+easting+" "+northing+")', 4326)) < "+tolerance
+          easting = float(request.params['easting'])
+          northing = float(request.params['northing'])
+          tolerance = float(request.params['tolerance'])
+          minx =  easting-tolerance
+          maxx =  easting+tolerance
+          miny =  northing-tolerance
+          maxy =  northing+tolerance
+          spatialFilter =  "geom && ST_SetSRID('BOX3D("+ str(minx) +" "+ str(miny) +","+ str(maxx) +" "+ str(maxy) +")'::box3d,4326) AND ST_Distance(geom, ST_GeomFromText('POINT("+str(easting)+" "+str(northing)+")', 4326)) < "+str(tolerance)
           if 'query' in request.params:
              sqlQuery = sqlQuery + " and " + spatialFilter
           else:
