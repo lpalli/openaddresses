@@ -549,6 +549,7 @@ openaddresses.layout = (function() {
         init: function() {
             Ext.QuickTips.init();
             OpenLayers.ImgPath = "resources/img/OpenLayers/";
+            OpenLayers.Tile.Image.useBlankTile = false;
 
             // Manage language
             var languageStore = createLanguageStore();
