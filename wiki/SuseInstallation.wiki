@@ -110,7 +110,7 @@ http://geolin01.cti.ac.at:5000/
  * Add include in /etd/apache2/httpd.conf
  * sudo /etc/init.d/apache2 configtest
  * sudo /etc/init.d/apache2 restart
- * Access server: http://geolin01.cti.ac.at/openaddresses/
+ * Access server: http://geolin01.cti.ac.at/openaddresses
  * Error log: /var/log/apache2
  * (Not active now) Test with ProxyPass: /etc/apache2/httpd.conf
   * Add proxy and proxy_http in/etc/sysconfig/apache2
