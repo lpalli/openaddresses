@@ -51,6 +51,10 @@ openaddresses.config = {
     baseWMS: 'http://geolin01.cti.ac.at/cgi-bin/mapserv?map=/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/mapserver/cascading.map'
 };
 }}}
+ 1. Localize app
+  * in /srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses
+  * easy_install Babel
+  * python setup.py compile_catalog 
 
 == Install !MapFish ==
 
@@ -82,6 +86,7 @@ Available templates:
   pylons:          Pylons application template
   pylons_minimal:  Pylons minimal application template
 }}}
+ 
 
 == Start !MapFish ==
 
