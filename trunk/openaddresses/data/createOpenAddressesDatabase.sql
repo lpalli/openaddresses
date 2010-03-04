@@ -1,4 +1,10 @@
-CREATE TABLE ADDRESS ( 
+CREATE DATABASE openaddresses TEMPLATE=template_gis;
+
+\q
+sudo su postgres
+createuser -U postgres -P "www-data"
+
+CREATE TABLE ADDRESS (
     ID SERIAL PRIMARY KEY,
     OSMID VARCHAR(128),
     HOUSENUMBER VARCHAR(8),
@@ -25,6 +31,9 @@ CREATE INDEX idx_address_geom
   (geom);
 
 GRANT ALL ON TABLE ADDRESS TO "www-data";
+GRANT ALL ON TABLE geography_columns TO "www-data";
+GRANT ALL ON TABLE geometry_columns TO "www-data";
+GRANT ALL ON TABLE spatial_ref_sys  TO "www-data";
 
 GRANT ALL ON SEQUENCE address_id_seq TO "www-data";
 
