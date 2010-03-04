@@ -96,7 +96,7 @@ http://geolin01.cti.ac.at:5000/
 }}}
 /srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/apache
 
-== Install MapFish in WSGI Mod ==
+== Install !OpenAddresses in WSGI Mod ==
  
  * Create directory /srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/apache
  * Add file wsgi.conf
