@@ -17,11 +17,6 @@
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/xtheme-gray.css" />
     <link rel="stylesheet" type="text/css" href="mfbase/geoext/resources/css/popup.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/OpenAddresses.css" />
-    
-</head>
-
-<body>
-<form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 % if c.debug:
    <style type="text/css">.olTileImage {
@@ -72,6 +67,13 @@
    <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
    <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 % endif
+    
+</head>
+
+<body>
+<form><input type="hidden" id="lang" value="${c.lang}"/></form>
+
+
 
 <div id="MouseOver" style="display: none;"></div>
 <div id="OpacitySlider"></div>
