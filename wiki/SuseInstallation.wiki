@@ -118,4 +118,9 @@ http://geolin01.cti.ac.at:5000/
   * Module directory /usr/lib/apache2 for module
   * Add vhostopenaddresses.conftest in /etc/apache2/vhosts.d
 
+== Create database ==
+
+ * psql -U postgres
+  * CREATE DATABASE openaddresses TEMPLATE=template_gis;
+
  
