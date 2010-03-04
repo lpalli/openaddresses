@@ -7,6 +7,7 @@ Install !OpenAddresses on Suse
  * Main URL: http://geolin01.cti.ac.at/oa_os/
  * FTP & SSH: geolin01.cti.ac.at
   * Login: oa_os
+   * ssh geolin01.cti.ac.at -l oa_os
  * Postgresql:
   * Login: oa_os
   * postgis-template for new database: “template_gis“
