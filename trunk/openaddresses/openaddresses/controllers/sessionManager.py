@@ -15,6 +15,8 @@ class SessionmanagerController(BaseController):
     def checkSession(self):
         for key in session:
            if key == 'authenticated':
+              session['authenticated'] = 'True'
+              session.save()
               return 'True'
         return 'False'
 
