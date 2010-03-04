@@ -111,9 +111,10 @@ http://geolin01.cti.ac.at:5000/
  * sudo /etc/init.d/apache2 restart
  * Access server: http://geolin01.cti.ac.at/openaddresses/
  * Error log: /var/log/apache2
- * Test ProxyPass: /etc/apache2/httpd.conf
+ * (Not active now) Test with ProxyPass: /etc/apache2/httpd.conf
   * Add proxy and proxy_http in/etc/sysconfig/apache2
   * Check proxy module in /etc/apache2/sysconfig.d/loadmodule.conf
-  * /usr/lib/apache2 for module
+  * Module directory /usr/lib/apache2 for module
+  * Add vhostopenaddresses.conftest in /etc/apache2/vhosts.d
 
  
