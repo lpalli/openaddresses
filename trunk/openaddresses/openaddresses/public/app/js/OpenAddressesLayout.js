@@ -402,11 +402,11 @@ openaddresses.layout = (function() {
             plugins: new openaddresses.OpacitySliderTip()
         });
         opacitySlider.on('change', function(slider, opacity) {
-            for (var layer in map.layers) {
-                if (!layer.isBaseLayer) {
-                    if (layer.setOpacity) {
-                        if (layer.name != OpenLayers.i18n("Addresses")) {
-                            layer.setOpacity(opacity);
+            for (var i = 0; i < map.layers.length; i++) {
+                if (!map.layers[i].isBaseLayer) {
+                    if (map.layers[i].setOpacity) {
+                        if (map.layers[i].name != OpenLayers.i18n("Addresses")) {
+                            map.layers[i].setOpacity(opacity);
                         }
                     }
                 }
