@@ -6,19 +6,19 @@ MAP
  UNITS METERS
  MAXSIZE 4000
  TRANSPARENT on
+ CONFIG "PROJ_LIB" "/usr/local/share/proj"
  PROJECTION
     "init=epsg:900913"
  END
-
  DEBUG 3
- CONFIG "MS_ERRORFILE" "C:/ms4w/Apache/htdocs/errors.txt"
+ CONFIG "MS_ERRORFILE" "/tmp/errors.txt"
  
  WEB
-   IMAGEPATH "C:/ms4w/Apache/htdocs"
+   IMAGEPATH "/tmp"
    IMAGEURL "/"
    METADATA
      "wms_title"           "Cascading"
-     "wms_onlineresource"  "http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\Sandbox\openadresses\trunk\openaddresses\mapserver\cascading.map&"
+     "wms_onlineresource"  "http://geolin01.cti.ac.at/cgi-bin/mapserv?map=/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/mapserver/cascading.map&"
      "wms_srs"             "EPSG:900913"
    END
  END
