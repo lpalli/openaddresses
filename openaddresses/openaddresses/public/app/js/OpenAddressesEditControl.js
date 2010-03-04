@@ -281,7 +281,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         if (btn == 'yes') {
                             if (feature.id) {
                                 conn.request({
-                                    url: "/addresses/" + feature.id,
+                                    url: "addresses/" + feature.id,
                                     method: 'DELETE',
                                     success: function(resp, opt) {
                                         cancelEditing(feature);
