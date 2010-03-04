@@ -44,7 +44,9 @@ This has to be done everytime you want to test the application
 == Localize application ==
 
  * (required only the first time) Server side localization
-  * in trunk/openaddresses, start in command line: python setup.py compile_catalog
+  * in trunk/openaddresses, start in command line
+   * easy_install Babel
+   * python setup.py compile_catalog
   * Documentation http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
 
 
