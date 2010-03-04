@@ -194,7 +194,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 }
                 var jsonData = json.write(feature);
                 conn.request({
-                    url: "/addresses",
+                    url: "addresses",
                     method: 'POST',
                     jsonData: '{"type":"FeatureCollection", "features":[' + jsonData + ']}',
                     success: function(resp, opt) {
