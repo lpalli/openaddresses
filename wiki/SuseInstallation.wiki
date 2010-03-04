@@ -94,5 +94,15 @@ cd trunk/openaddresses
 paster serve --reload development.ini
 http://geolin01.cti.ac.at:5000/
 }}}
+/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/apache
+
+== Install MapFish in WSGI Mod ==
+ 
+ * Create directory /srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/apache
+ * Add file wsgi.conf
+ * In directory /srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses, create a file openaddresses.wsgi
+ * Add include in /etd/apache2/httpd.conf
+ * sudo /etc/init.d/apache2 configtest
+ * sudo /etc/init.d/apache2 restart
 
  
