@@ -233,7 +233,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     //alert('Session created');
                 },
                 failure: function() {
-                    //alert('Error in createSession GET query');
+                    alert('Error in createSession GET query');
                 }
             });
 
