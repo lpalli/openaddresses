@@ -22,4 +22,5 @@ class SessionmanagerController(BaseController):
     def createSession(self):
         session['authenticated'] = 'True'
         session.save()
+        session.persist()      
         return session['authenticated']
