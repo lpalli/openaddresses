@@ -306,7 +306,7 @@ openaddresses.layout = (function() {
     };
 
     var createLocationTooltip = function(map) {
-        map.events.register('mousemove', this, openaddresses.layout.showLocationTooltip);
+        //FOR PERFORMANCE: map.events.register('mousemove', this, openaddresses.layout.showLocationTooltip);
         map.events.register('mouseout', this, hideMouseOver);
         var hoverControl = new openaddresses.hover({
             handlerOptions: {
