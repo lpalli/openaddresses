@@ -83,11 +83,12 @@ class AddressesController(BaseController):
 
     def create(self):
         """POST /: Create a new feature."""
-        for key in session:
-           if key == 'authenticated':
-              return self.protocol.create(request, response)
-        #abort(403, 'no right')
-        return self.protocol.create(request, response)
+        if 'authenticated' in session:
+            if session['authenticated'] == 'True':
+                session.save()
+                return self.protocol.create(request, response)
+        abort(403, 'no right')
+        #return self.protocol.create(request, response)
 
     def update(self, id):
         """PUT /id: Update an existing feature."""
@@ -95,11 +96,12 @@ class AddressesController(BaseController):
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
-        for key in session:
-           if key == 'authenticated':
-              return self.protocol.delete(request, response, id)
-        #abort(403, 'no right')
-        return self.protocol.delete(request, response, id)      
+        if 'authenticated' in session:
+            if session['authenticated'] == 'True':
+                session.save()
+                return self.protocol.delete(request, response, id)
+        abort(403, 'no right')
+        #return self.protocol.delete(request, response, id)
 
     def before_create(self,request,feature):
        feature.properties['ipaddress'] = request.environ['REMOTE_ADDR']
