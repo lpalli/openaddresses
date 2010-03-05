@@ -50,7 +50,7 @@ print "Starting deploy. Example: python deploy.py config/geoline01.cfg"
 
 # svn update
 print "SVN update..."
-#os.system("svn up")
+os.system("svn up")
 
 # Replace .in files
 print "Config file replacement..."
