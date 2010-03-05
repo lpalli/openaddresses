@@ -201,6 +201,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         endSaveFeature(feature);
                     },
                     failure: function(resp, opt) {
+                        cancelEditing(feature);
                         alert(OpenLayers.i18n('Error during data storage'));
                     }
                 });
