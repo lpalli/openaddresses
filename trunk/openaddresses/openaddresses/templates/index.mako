@@ -14,6 +14,7 @@
     <meta name="robots" content="index,follow "/>
 
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="ext31/examples/ux/css/ux-all.css"></script>
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/xtheme-gray.css" />
     <link rel="stylesheet" type="text/css" href="mfbase/geoext/resources/css/popup.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/OpenAddresses.css" />
@@ -36,14 +37,16 @@
    }   </style>
 
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
-   <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
+   <script type="text/javascript" src="ext31/adapter/ext/ext-base-debug.js"></script>
    <script type="text/javascript" src="ext31/ext-all-debug.js"></script>
+   <script type="text/javascript" src="ext31/examples/ux/ux-all-debug.js"></script>
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js.js"></script>
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js"></script>
+   <script type="text/javascript" src="geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
@@ -62,6 +65,7 @@
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
    <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
    <script type="text/javascript" src="ext31/ext-all.js"></script>
+   <script type="text/javascript" src="ext31/examples/ux/ux-all.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js.js"></script>
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>

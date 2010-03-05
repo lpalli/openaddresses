@@ -29,6 +29,7 @@
  * @include app/js/OpenAddressesEditControl.js
  * @include app/js/OpenAddressesHover.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
+ * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
 
@@ -172,10 +173,15 @@ openaddresses.layout = (function() {
     };
 
     var createBottomToolbar = function(map, displayProjectionSelectorCombo) {
-        var tools = [];
-        tools.push('->');
-        tools.push(displayProjectionSelectorCombo);
-        return tools;
+        return new GeoExt.ux.LoadingStatusBar({
+            map: map,
+            statusAlign: 'left',
+            busyText: OpenLayers.i18n('Loading layers'),
+            items: [
+                '->',
+                displayProjectionSelectorCombo
+            ]
+        });
     };
 
     var createLanguageStore = function() {
@@ -234,7 +240,7 @@ openaddresses.layout = (function() {
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            html: '<img src="resources/img/Help_'+Ext.get('lang').dom.value+'.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
+                            html: '<img src="resources/img/Help_' + Ext.get('lang').dom.value + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
 
                         },
                         {
