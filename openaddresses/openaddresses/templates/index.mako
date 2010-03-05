@@ -27,7 +27,7 @@
 <div id="OpacitySlider"></div>
 <div id="loading-mask" style=""></div>
 <div id="loading">
-    <div class="loading-indicator"><img src="ext31/examples/shared/extjs/images/extanim32.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org soon ready for you !<br /><span id="loading-msg">Loading styles and images...</span></div>
+    <div class="loading-indicator"><img src="resources/img/OpenAddressesLoader.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org soon ready for you !<br /><span id="loading-msg">Loading styles and images...</span></div>
 </div>
 
 % if c.debug:
