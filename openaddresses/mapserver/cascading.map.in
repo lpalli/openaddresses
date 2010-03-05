@@ -191,7 +191,7 @@ MAP
       STYLE
          SYMBOL "circle"
          COLOR 255 0 0
-         SIZE 6
+         SIZE 8
          MINSCALEDENOM 2500
          MAXSCALEDENOM 7500
          OFFSET -1 -1
@@ -199,7 +199,7 @@ MAP
       STYLE
          SYMBOL "circle"
          COLOR 255 0 0
-         SIZE 1
+         SIZE 4
          MINSCALEDENOM 7500
          MAXSCALEDENOM 1000000000
          OFFSET -1 -1
