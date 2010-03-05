@@ -23,6 +23,13 @@
 <body>
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
+<div id="MouseOver" style="display: none;"></div>
+<div id="OpacitySlider"></div>
+<div id="loading-mask" style=""></div>
+<div id="loading">
+    <div class="loading-indicator"><img src="ext31/examples/shared/extjs/images/extanim32.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org soon ready for you !<br /><span id="loading-msg">Loading styles and images...</span></div>
+</div>
+
 % if c.debug:
    <style type="text/css">.olTileImage {
       border: 1px solid lime;
@@ -72,11 +79,6 @@
    <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
    <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
 % endif
-
-
-
-<div id="MouseOver" style="display: none;"></div>
-<div id="OpacitySlider"></div>
 
 </body>
 </html>

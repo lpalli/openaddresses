@@ -106,23 +106,41 @@ openaddresses.layout = (function() {
                 // TODO problem after feature is modified
             }
         });
-        return openaddresses.layers.concat([
-            new openaddresses.OSM({
-                isBaseLayer: true,
-                buffer: 0,
-                transitionEffect: "resize"
-            }),
-            new OpenLayers.Layer.Yahoo(
-                    OpenLayers.i18n("Yahoo Satellite"),
-            {'type': YAHOO_MAP_SAT, 'sphericalMercator': true}
-                    ),
-            new OpenLayers.Layer(OpenLayers.i18n("Empty Layer"), {
-                isBaseLayer: true,
-                displayInLayerSwitcher: true
-            }),
-            openaddresses.layout.map.addressLayer,
-            openaddresses.layout.map.drawingLayer
-        ]);
+        try {
+            if (YAHOO_MAP_SAT !== undefined) {
+                return openaddresses.layers.concat([
+                    new openaddresses.OSM({
+                        isBaseLayer: true,
+                        buffer: 0,
+                        transitionEffect: "resize"
+                    }),
+                    new OpenLayers.Layer.Yahoo(
+                            OpenLayers.i18n("Yahoo Satellite"),
+                    {'type': YAHOO_MAP_SAT, 'sphericalMercator': true}
+                            ),
+                    new OpenLayers.Layer(OpenLayers.i18n("Empty Layer"), {
+                        isBaseLayer: true,
+                        displayInLayerSwitcher: true
+                    }),
+                    openaddresses.layout.map.addressLayer,
+                    openaddresses.layout.map.drawingLayer
+                ]);
+            }
+        } catch(e) {
+            return openaddresses.layers.concat([
+                new openaddresses.OSM({
+                    isBaseLayer: true,
+                    buffer: 0,
+                    transitionEffect: "resize"
+                }),
+                new OpenLayers.Layer(OpenLayers.i18n("Empty Layer"), {
+                    isBaseLayer: true,
+                    displayInLayerSwitcher: true
+                }),
+                openaddresses.layout.map.addressLayer,
+                openaddresses.layout.map.drawingLayer
+            ]);
+        }
     };
 
     /**
@@ -216,7 +234,7 @@ openaddresses.layout = (function() {
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            html: '<h1>' + OpenLayers.i18n('Welcome in OpenAddresses') + '</h1><br><li>' + OpenLayers.i18n('Click in the map') + '</li><li>' + OpenLayers.i18n('Fill the address attributes') + '</li><li>' + OpenLayers.i18n('Save the address') + '</li><li>' + OpenLayers.i18n('Thanks for your contribution !') + '</li><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
+                            html: '<img src="resources/img/Help_'+Ext.get('lang').dom.value+'.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
 
                         },
                         {
@@ -507,22 +525,6 @@ openaddresses.layout = (function() {
             if (map.zoom == 23) {
                 map.tooltipTolerance = 0.000002015 / 2;
             }
-            /*map.tooltipRequest = Ext.Ajax.request({
-             url: 'addresses/fullTextSearch',
-             success: updateTooltip,
-             failure: function() {
-             map.showLocationInMapRequestOngoing = false
-             },
-             method: 'GET',
-             params: {
-             fields: 'street,housenumber,city',
-             tolerance: map.tooltipTolerance,
-             limit: 1,
-             easting: lonLat.lon,
-             northing: lonLat.lat
-             },
-             scope: this
-             });*/
             map.tooltipRequest = Ext.Ajax.request({
                 url: 'addresses',
                 success: updateTooltip,
@@ -548,8 +550,17 @@ openaddresses.layout = (function() {
          */
         init: function() {
             Ext.QuickTips.init();
+
             OpenLayers.ImgPath = "resources/img/OpenLayers/";
             OpenLayers.Tile.Image.useBlankTile = true;
+            Ext.BLANK_IMAGE_URL = '../../ext31/resources/images/default/s.gif';
+
+            OpenLayers.Util.onImageLoadError = function() {
+                this.style.display = "none";
+                // set the img src because webkit don't take the display into
+                // account and display a "broken image" icon.
+                this.src = Ext.BLANK_IMAGE_URL;
+            };
 
             // Manage language
             var languageStore = createLanguageStore();
@@ -581,6 +592,14 @@ openaddresses.layout = (function() {
                 }
             });
             setPermalink();
+
+            var hideMask = function () {
+                Ext.get('loading').remove();
+                Ext.fly('loading-mask').fadeOut({
+                    remove:true
+                });
+            };
+            hideMask.defer(250);
         }
     };
 })();
