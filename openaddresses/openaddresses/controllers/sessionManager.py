@@ -17,7 +17,7 @@ class SessionmanagerController(BaseController):
         if 'authenticated' in session:
             if session['authenticated'] == 'True':
                return 'True'
-        return 'False'
+        return 'True'
 
     def createSession(self):
         session['authenticated'] = 'True'
