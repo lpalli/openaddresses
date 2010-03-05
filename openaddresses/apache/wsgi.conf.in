@@ -1,0 +1,5 @@
+<IfModule !mod_wsgi.c>
+    LoadModule wsgi_module %WSGI_MODULE%
+</IfModule>
+
+WSGIScriptAlias /%PROJECT_URL% %PROJECT_ROOT%/openaddresses.wsgi
