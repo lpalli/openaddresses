@@ -176,7 +176,7 @@ openaddresses.layout = (function() {
         return new GeoExt.ux.LoadingStatusBar({
             map: map,
             statusAlign: 'left',
-            busyText: OpenLayers.i18n('Loading layers'),
+            busyText: OpenLayers.i18n('...still loading layers...'),
             items: [
                 '->',
                 displayProjectionSelectorCombo
