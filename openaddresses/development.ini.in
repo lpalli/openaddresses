@@ -4,7 +4,7 @@
 # The %(here)s variable will be replaced with the parent directory of this file
 #
 [DEFAULT]
-debug = true
+debug = %DEBUG%
 # Uncomment and replace with the address which should receive any error reports
 #email_to = you@yourdomain.com
 smtp_server = localhost
@@ -20,13 +20,12 @@ use = egg:Paste#gzip
 
 [app:main]
 use = egg:openaddresses
-full_stack = false
+full_stack = %FULL_STACK%
 static_files = true
 filter-with = gzip
-
-
 beaker.session.key = openaddresses
-beaker.session.secret = somesecret
+beaker.session.secret = OpEnAdDrEsSeS
+beaker.session.cookie_expires = True
 beaker.cache.type = memory
 beaker.session.type = memory
 
@@ -35,7 +34,7 @@ lang = en
 
 # SQLAlchemy database URL
 # sqlalchemy.url = sqlite:///%(here)s/development.db
-sqlalchemy.url = postgres://www-data:www-data@localhost:5432/postgis
+sqlalchemy.url = %SQLALCHEMY_URL%
 
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to

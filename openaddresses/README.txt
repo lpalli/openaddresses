@@ -1,19 +1,28 @@
-This file is for you to describe the openaddresses application. Typically
-you would include information such as the information below:
+DEPLOYMENT
+==========
 
-Installation and Setup
-======================
+Start in this directory:
 
-Install ``openaddresses`` using easy_install::
+   python deploy.py config/myConfig.cfg
 
-    easy_install openaddresses
+INSTALLATION
+============
 
-Make a config file as follows::
+Install virtual environment with MapFish according to www.mapfish.org
 
-    paster make-config openaddresses config.ini
+Checkout code from SVN
 
-Tweak the config file as appropriate and then setup the application::
+   svn co TODO
 
-    paster setup-app config.ini
+Create database according to data/createOpenAddressesDatabase.sql
 
-Then you are ready to go.
+Create configuration file in config/
+
+Configure Apache to include apache/wsgi.conf
+
+Complete /usr/local/proj/epsg file with
+
+   <900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
+
+Deploy the projet (see DEPLOYMENT section)
+
