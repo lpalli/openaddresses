@@ -1,0 +1,15 @@
+import site
+import os, sys
+
+site.addsitedir('%MAIN_ROOT%/env/lib/python2.5/site-packages')
+
+sys.path.append('%PROJECT_ROOT%')
+os.environ['PYTHON_EGG_CACHE'] = '/tmp/python-eggs'
+
+# configure the loggin system
+from paste.script.util.logging_config import fileConfig
+fileConfig('%PROJECT_ROOT%/development.ini')
+
+from paste.deploy import loadapp
+application = loadapp('config:%PROJECT_ROOT%/development.ini')
+
