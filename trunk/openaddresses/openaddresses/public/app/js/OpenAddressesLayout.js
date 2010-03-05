@@ -553,7 +553,7 @@ openaddresses.layout = (function() {
 
             OpenLayers.ImgPath = "resources/img/OpenLayers/";
             OpenLayers.Tile.Image.useBlankTile = true;
-            Ext.BLANK_IMAGE_URL = '../../ext31/resources/images/default/s.gif';
+            Ext.BLANK_IMAGE_URL = 'ext31/resources/images/default/s.gif';
 
             OpenLayers.Util.onImageLoadError = function() {
                 this.style.display = "none";
