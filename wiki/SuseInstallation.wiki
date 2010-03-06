@@ -26,6 +26,13 @@ Install !OpenAddresses on Suse
  * Putty: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
  * Filezilla: http://filezilla-project.org/
 
+= !HowTo Deploy !OpenAddresses Server =
+
+This has to be done everytime a new application wants to be deployed on the server
+
+ * cd trunk/openaddresses
+ * python deploy config/geolin01.cfg
+
 = !HowTo Install !OpenAddresses Server =
 
 == Checkout Code ==
