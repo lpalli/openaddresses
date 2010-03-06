@@ -127,7 +127,6 @@ http://geolin01.cti.ac.at:5000/
 
 == Create database ==
 
- * (required only the first time) psql -U postgres
-  * CREATE DATABASE openaddresses TEMPLATE=template_gis;
+ * (required only the first time) Create database according to data/createOpenAddressesDatabase.sql
 
  
