@@ -558,15 +558,7 @@ openaddresses.layout = (function() {
             Ext.QuickTips.init();
 
             OpenLayers.ImgPath = "resources/img/OpenLayers/";
-            OpenLayers.Tile.Image.useBlankTile = true;
             Ext.BLANK_IMAGE_URL = 'ext31/resources/images/default/s.gif';
-
-            OpenLayers.Util.onImageLoadError = function() {
-                this.style.display = "none";
-                // set the img src because webkit don't take the display into
-                // account and display a "broken image" icon.
-                this.src = Ext.BLANK_IMAGE_URL;
-            };
 
             // Manage language
             var languageStore = createLanguageStore();

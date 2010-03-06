@@ -15,10 +15,6 @@
    top:111px;
 }
 
-.olImageLoadError {
-    background-color: transparent !important;
-}
-
 #loading-mask{
    position:absolute;
    left:0;
