@@ -25,7 +25,7 @@ openaddresses.config = {
 };
 }}}
 
-==== Install !MapFish ====
+== Install !MapFish ==
 
  1. (required only the first time) in directory openaddresses: follow http://www.mapfish.org/doc/1.2/installation.html
  1. cd trunk
