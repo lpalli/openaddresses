@@ -35,6 +35,14 @@ openaddresses.config = {
  1. paster serve --reload development.ini
  1. Add svn external to mfbase in public directory
 
+== Localize application ==
+
+ * (required only the first time) Server side localization
+  * in trunk/openaddresses, start in command line
+   * easy_install Babel
+   * python setup.py compile_catalog
+  * Documentation http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
+
 == Start !MapFish ==
 
 This has to be done everytime you want to test the application
@@ -46,14 +54,6 @@ This has to be done everytime you want to test the application
  1. http://127.0.0.1:5000 
 
  * Note that the second step is very important, since it makes that your application is working with a private environment (like a private OS)
-
-== Localize application ==
-
- * (required only the first time) Server side localization
-  * in trunk/openaddresses, start in command line
-   * easy_install Babel
-   * python setup.py compile_catalog
-  * Documentation http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
 
 
 == Install !MapServer ==
