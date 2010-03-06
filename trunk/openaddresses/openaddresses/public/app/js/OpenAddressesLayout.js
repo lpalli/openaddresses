@@ -249,14 +249,15 @@ openaddresses.layout = (function() {
                         },
                         {
                             title: OpenLayers.i18n('Download'),
-                            html: '<a href="download/export.zip">' + OpenLayers.i18n('Download address shapefile') + "</a>"
+                            html: 'Ongoing development...<br> For now, get the data from info[at]openaddresses.org.'
                         },
                         {
                             title: OpenLayers.i18n('Services'),
                             html: '<a href="http://code.google.com/p/openaddresses/wiki/RESTService" target="new">' + OpenLayers.i18n('Documentation of GeoCoding and Reverse GeoCoding services') + "</a>"
                         },
                         {
-                            title: OpenLayers.i18n('Statistics')
+                            title: OpenLayers.i18n('Statistics'),
+                            html: 'Ongoing development...<br> About 4.3 millions in OpenAddresses.org.'
                         },
                         {
                             title: OpenLayers.i18n('License'),
