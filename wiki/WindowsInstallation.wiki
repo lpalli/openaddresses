@@ -140,6 +140,10 @@ C:\Program Files\PostgreSQL\8.4\bin>
  1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
  1. Start pgAdminIII to check that database is working
 
+== Create database ==
+
+ * (required only the first time) Create database according to data/createOpenAddressesDatabase.sql
+
 = Misc Tutorials  =
 
 == Load data in PostGIS ==
