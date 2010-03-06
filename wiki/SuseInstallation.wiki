@@ -129,4 +129,8 @@ http://geolin01.cti.ac.at:5000/
 
  * (required only the first time) Create database according to data/createOpenAddressesDatabase.sql
 
+== Configure Apache ==
+
+ * Include the file apache/wsgi.conf in Apache configuration
+
  
