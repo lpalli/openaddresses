@@ -1,0 +1,19 @@
+= !ToDo list for the launch of www.openaddresses.org BETA =
+
+ * Data
+  * Import new data set
+ * Server
+  * Test performance
+  * Set www.openaddresses.org URL  
+ * Marketing
+  * Announcement to
+   * OSGEO mailing list
+   * OSGEO local chapters
+   * BALIZ
+   * slashgeo
+   * OSM
+   * OSM local chapters
+  * Blog
+  * Twitt
+  * Facebook
+  * LinkedIn
