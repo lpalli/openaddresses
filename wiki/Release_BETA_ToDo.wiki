@@ -16,4 +16,4 @@
   * Blog
   * Twitt
   * Facebook
-  * LinkedIn
+  * !LinkedIn
