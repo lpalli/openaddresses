@@ -1,0 +1,14 @@
+= Frequently Asked Questions about www.openaddresses.org =
+
+== What is the origin the of data ? ==
+
+== What is the license of the data ? == 
+
+== What is the license of the coding and reverse geocoding service ? ==
+
+== How can I contribute to www.openaddresses.org ? ==
+
+== Who develops www.openaddresses.org ? ==
+
+== What can I do if I discover an issue in www.openaddresses.org ? ==
+
