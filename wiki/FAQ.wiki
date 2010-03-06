@@ -1,5 +1,7 @@
 = Frequently Asked Questions about www.openaddresses.org =
 
+<wiki:toc max_depth="2" />
+
 == What is the origin the of data ? ==
 
 == What is the license of the data ? == 
@@ -11,4 +13,3 @@
 == Who develops www.openaddresses.org ? ==
 
 == What can I do if I discover an issue in www.openaddresses.org ? ==
-
