@@ -13,6 +13,8 @@
    * slashgeo
    * OSM
    * OSM local chapters
+   * Geonames
+  * Article VPK
   * Blog
   * Twitt
   * Facebook
