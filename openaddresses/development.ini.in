@@ -6,7 +6,7 @@
 [DEFAULT]
 debug = %DEBUG%
 # Uncomment and replace with the address which should receive any error reports
-#email_to = you@yourdomain.com
+email_to = cedric.moullet@gmail.com
 smtp_server = localhost
 error_email_from = paste@localhost
 
@@ -33,7 +33,6 @@ available_languages = en,fr,de,zh_CN,es,it
 lang = en
 
 # SQLAlchemy database URL
-# sqlalchemy.url = sqlite:///%(here)s/development.db
 sqlalchemy.url = %SQLALCHEMY_URL%
 
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
