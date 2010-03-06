@@ -5,6 +5,9 @@
  * Server
   * Test performance
   * Set www.openaddresses.org URL  
+ * Documentation
+  * Create a FAQ: http://code.google.com/p/openaddresses/wiki/FAQ
+  * Create User Guide: http://code.google.com/p/openaddresses/wiki/UserGuideEn 
  * Marketing
   * Announcement to
    * OSGEO mailing list
