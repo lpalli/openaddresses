@@ -138,17 +138,9 @@ C:\Program Files\PostgreSQL\8.4\bin>
  1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
  1. Start pgAdminIII to check that database is working
 
-= Initial Install of !OpenAddresses Server =
+= Misc Tutorials  =
 
-This describes the initial installation. It is not required to do that everytime the code base is checked-out.
-
-=== Requirements ===
- 
- * Install Postgres 8.4.2.1 (account postgres/postgres for example)
- * Instll PostGIS 1.4.1
-
-
-==== Load data in PostGIS ====
+== Load data in PostGIS ==
 
  * nice tuto: http://www.bostongis.com/?content_name=postgis_tut01
 
@@ -185,7 +177,7 @@ GRANT SELECT ON geometry_columns TO "www-data";
 GRANT SELECT ON spatial_ref_sys TO "www-data";
 }}}
 
-==== Initial import ====
+=== Initial import ===
 
 {{{
 "c:\Program Files\PostgreSQL\8.4\bin\shp2pgsql.exe" -s 4326 OpenAddresses OpenAddresses > OpenAddresses.sql
@@ -194,7 +186,7 @@ GRANT SELECT ON spatial_ref_sys TO "www-data";
 
 }}}
 
-==== Create a !MapFish REST Service ====
+== Create a !MapFish REST Service ==
 
  * http://www.mapfish.org/doc/tutorials/introduction/introduction.html#data-access-mapfish-rest-protocol
 
