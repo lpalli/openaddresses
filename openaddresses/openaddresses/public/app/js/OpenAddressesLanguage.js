@@ -12,7 +12,7 @@ openaddresses.languages = [
     /*['en_UK', 'English (UK)', 'ascii'],
      ['fa', 'Farsi (Persian)', 'utf-8'],
      ['fr_CA', 'France (Canadian)', 'UTF-8'],*/
-    ['fr', 'France (France)', 'UTF-8'],
+    ['fr', 'French', 'UTF-8'],
     ['de', 'German', 'utf-8'],
     /*['el_GR', 'Greek', 'utf-8'],
      ['gr', 'Greek (Old Version)', 'utf-8'],
@@ -35,7 +35,7 @@ openaddresses.languages = [
      ['zh_CN', 'Simplified Chinese', 'utf-8'],
      /*['sk', 'Slovak', 'utf-8'],
      ['sl', 'Slovenian', 'utf-8'],*/
-     ['es', 'Spanish/Latin American', 'utf-8']/*,
+     ['es', 'Spanish', 'utf-8']/*,
      ['sv_SE', 'Swedish', 'utf-8'],
      ['th', 'Thailand', 'utf-8'],
      ['zh_TW', 'Traditional Chinese', 'UTF-8'],
