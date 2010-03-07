@@ -8,11 +8,6 @@ This functionality should therefore be available before the data upload function
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
 As it is impossible to check every address, one should define some patterns to be applied to all address data to make sure that the addresses are likely to be correct.
 
 All addresses that fail the test must be manually checked and corrected before they can be uploaded.
