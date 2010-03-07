@@ -1,1 +1,11 @@
-TODO
+= User Guide =
+
+== What ? Another mapping community ? ==
+
+== How to use OpenAddresses.org ==
+
+=== I'd like to create a new postal address ! ===
+
+=== I'd like to add an address service in my website ===
+
+=== And how can I know the address at this position ? ===
