@@ -2,6 +2,10 @@
 
 <wiki:toc max_depth="2" />
 
+== How can I ask questions ? ==
+
+All the discussions around openaddresses are hold in the discussion group: http://groups.google.com/group/OpenAddresses
+ 
 == What is the history of www.openaddresses.org ==
 
 A university project initiated in Switzerland and Austria www.openaddresses.ch and www.openaddresses.at. With the growing interest for free and open addresses, it became obvious to create a worldwide community around addresses. Thiw was done beginning of 2010. Hans-Jörg Stark was at the origin of these projects.
@@ -16,7 +20,7 @@ For the data, the license is: http://creativecommons.org/licenses/by/3.0/. The f
  * The addresses must be associated to the url of http://www.openaddresses.org
  * The person or entity that submitted the data is stored in a field created_by
 
-== what is the license of the code ? ==
+== What is the license of the code ? ==
 
 For the code, the license is: http://www.opensource.org/licenses/gpl-3.0.html
 
