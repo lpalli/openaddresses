@@ -22,7 +22,9 @@
    * OSM
    * OSM local chapters
    * Geonames
-  * Article VPK
+   * GeowebForum
+   * Georezo.net
+  * Article "Geomatik Schweiz"
   * Blog
   * Twitt
   * Facebook
