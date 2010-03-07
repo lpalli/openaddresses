@@ -4,7 +4,7 @@
 
 == ¿Qué? Otra comunidad de mapeo? ==
 
-Sí, !OpenStreetMap mostró el camino a seguir ;-). Sin embargo, creemos que las direcciones postales de las necesidades de una comunidad dedicada. Al igual que GeoNames objetivos para almacenar todos los lugares del mundo, OpenAddresses objetivos para almacenar todas las direcciones postales del mundo (sí, somos ambiciosos!) Y provee servicios en torno a la dirección postal como la geocodificación y ReverseGeocoding. Para ello, hemos implementado un fácil de utilizar (o al menos eso es lo que creemos) la aplicación web para la visualización y la creación de las direcciones postales.
+Sí, !OpenStreetMap mostró el camino a seguir ;-). Sin embargo, creemos que las direcciones postales de las necesidades de una comunidad dedicada. Al igual que !GeoNames objetivos para almacenar todos los lugares del mundo, !OpenAddresses objetivos para almacenar todas las direcciones postales del mundo (sí, somos ambiciosos!) Y provee servicios en torno a la dirección postal como la geocodificación y ReverseGeocoding. Para ello, hemos implementado un fácil de utilizar (o al menos eso es lo que creemos) la aplicación web para la visualización y la creación de las direcciones postales.
 
 Pero una comunidad no es nada sin .... *tú* ! Tómese el tiempo para crear algunas direcciones, a presentar las direcciones o para proporcionar fantástico ortofotos, mapas o datos de fondo.
 
