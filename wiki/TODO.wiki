@@ -102,8 +102,8 @@ Description of tasks that need to be accomplished in order to launch www.openadd
  * Testing
   * Create JS Unit tests
   * Create Python Unit tests
-  * Create TestBook _!WaitForYourName_ 
-  * Test with TestBook
+  * Create !TestBook _!WaitForYourName_ 
+  * Test with !TestBook
  * Community
   * Organize !OpenAddresses community
    * PSC
