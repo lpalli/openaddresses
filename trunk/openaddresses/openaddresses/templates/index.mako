@@ -31,6 +31,10 @@
     <div class="loading-indicator"><img src="resources/img/OpenAddressesLoader.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org soon ready for you !<br /><span id="loading-msg">Loading styles and images...</span></div>
 </div>
 
+ <div id="waiting">
+    <div class="loading-indicator"><img src="resources/img/OpenAddressesLoader.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org works for you !<br /></div>
+</div>
+
 % if c.debug:
    <style type="text/css">.olTileImage {
       border: 1px solid lime;

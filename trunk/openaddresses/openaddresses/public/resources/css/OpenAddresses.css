@@ -50,3 +50,26 @@
 #loading-msg {
    font: normal 10px arial,tahoma,sans-serif;
 }
+
+#waiting{
+   position:absolute;
+   left:45%;
+   top:110px;
+   padding:2px;
+   z-index:20001;
+   height:auto;
+   display:none;
+}
+
+#waiting a {
+   color:#225588;
+}
+
+#waiting .loading-indicator{
+   background:white;
+   color:#444;
+   font:bold 13px tahoma,arial,helvetica;
+   padding:16px;
+   margin:0;
+   height:auto;
+}
