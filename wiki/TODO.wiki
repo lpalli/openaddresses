@@ -39,17 +39,17 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Server
    * Dump the data: http://postgis.refractions.net/docs/ch04.html#id2805647 _!WaitForYourName_
    * Make a daily cron _!WaitForYourName_
- * Web Site Service
-  * Content
-  * !GeoCoding API
-  * !ReverseGeocoding API
+ * ~~Web Site Service~~
+  * ~~Content Cédric~~
+  * ~~!GeoCoding API Cédric~~
+  * ~~!ReverseGeocoding API Cédric~~
  * Web Site Statistic
   * Client widget
   * Server service
- * Web Site License _!WaitForYourName_
-  * Content _!WaitForYourName_
- * Web Site About _!WaitForYourName_
-  * Content _!WaitForYourName_
+ * ~~Web Site License Cédric~~
+  * ~~Content Cédric~~
+ * ~~Web Site About Cédric~~
+  * ~~Content Cédric~~
  * Web Site Localization: http://code.google.com/p/openaddresses/wiki/HowToTranslate 
   * ~~Language Selector Cédric~~
   * ~~Mako Template localization Cédric~~
@@ -80,7 +80,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Update address Cédric~~
   * Remove ipaddress from protocol
  * Data
-  * Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr
+  * ~~Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr~~
   * Import OSM data in PostGIS Jeff
   * ~~Import OA.ch and OA.at addresses in PostGIS Jeff~~
   * Synchronize OSM and OA addresses, daily _!WaitForYourName_
@@ -88,7 +88,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Obtain other data
    * Switzerland: Cantons _!WaitForYourName_
    * Switzerland: OFS (RegBL) _!WaitForYourName_
-   * France: île de France (Yves J.)
+   * France: île de France Yves J.
  * Infrastructure
   * Install test server
    * !MapServer 5.6.1
@@ -98,7 +98,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * !MapServer 5.6.1
    * PostgreSQL 8.5
    * PostGIS 1.5.0
-  * Deploy procedure on server
+  * ~~Deploy procedure on server Cédric~~
  * Testing
   * Create JS Unit tests
   * Create Python Unit tests
@@ -111,10 +111,10 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * User
  * Marketing
   * Create a press release
-  * Create a blog
+  * ~~Create a blog Cédric~~
    * Reference it
     * osgeo.org
   * Create a flyer
   * Participate to conference
-   * FossGIS
+   * ~~FossGIS Cédric Hans-Jörg~~
    * Foss4G
