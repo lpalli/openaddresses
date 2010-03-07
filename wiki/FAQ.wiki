@@ -4,11 +4,11 @@
 
 == How can I ask questions ? ==
 
-All the discussions around openaddresses are hold in the discussion group: http://groups.google.com/group/OpenAddresses
+All the discussions around openaddresses are hold in the discussion group: http://groups.google.com/group/OpenAddresses. You can join this group here: http://groups.google.com/group/openaddresses/subscribe (a google account is required)
  
 == What is the history of www.openaddresses.org ==
 
-A university project initiated in Switzerland and Austria www.openaddresses.ch and www.openaddresses.at. With the growing interest for free and open addresses, it became obvious to create a worldwide community around addresses. Thiw was done beginning of 2010. Hans-Jörg Stark was at the origin of these projects.
+A university project initiated in Switzerland and Austria www.openaddresses.ch and www.openaddresses.at. With the growing interest for free and open addresses, it became obvious to create a worldwide community around addresses. This was done beginning of 2010. Hans-Jörg Stark was at the origin of these projects.
 
 == What is the origin the of data ? ==
 
