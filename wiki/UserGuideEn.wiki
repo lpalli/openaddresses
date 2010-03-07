@@ -28,11 +28,11 @@ The attributes are the following:
 
 === I'd like to add a search address service in my website ===
 
-!OpenAddresses offer REST services for this purpose. 
+!OpenAddresses offers REST services for this purpose. 
 Theses services are documented here: http://code.google.com/p/openaddresses/wiki/RESTService
 
 These services are free to use. But we don't garanty any quality of service. 
 
-=== And how can I know the address at this position ? ===
+=== And how can I know the address located at this position ? ===
 
-Reverse Geocoding is also part of !OpenAddresses. Doc is here: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
+Reverse Geocoding is also part of !OpenAddresses. Documentation is here: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
