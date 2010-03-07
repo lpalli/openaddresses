@@ -33,7 +33,7 @@ Les attributs sont les suivants:
 Ces services sont documentés ici:
 http://code.google.com/p/openaddresses/wiki/RESTService
 
-These services are free to use. But we don't garanty any quality of service. 
+Ces services sont libres d'utilisation. Mais nous ne garantissons aucune qualité de service.
 
 === Et comment puis-je connaître l'adresse située à cette position?  ===
 
