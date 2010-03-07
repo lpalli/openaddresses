@@ -1,5 +1,6 @@
 = !ToDo list for the launch of www.openaddresses.org BETA =
 
+ * Target date: 29 march 2010
  * Data
   * Import new data set
  * Server
