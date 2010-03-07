@@ -474,6 +474,14 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             });
             feature.editingPopup.show();
             feature.editingFormPanel.getForm().isValid();
+            // Focus on the first empty field
+            for (var i = 0; i < feature.editingFormPanel.items.getCount(); ++i) {
+                var comp = feature.editingFormPanel.items.get(i);
+                if (!comp.value) {
+                    comp.focus(true,300);
+                    break;
+                } 
+            }
         };
 
         Ext.Ajax.request({
