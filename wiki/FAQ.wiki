@@ -2,14 +2,39 @@
 
 <wiki:toc max_depth="2" />
 
+== What is the history of www.openaddresses.org ==
+
+A university project initiated in Switzerland and Austria www.openaddresses.ch and www.openaddresses.at. With the growing interest for free and open addresses, it became obvious to create a worldwide community around addresses. Thiw was done beginning of 2010. Hans-Jörg Stark was at the origin of these projects.
+
 == What is the origin the of data ? ==
+
+Addresses have been digitized or have been donated by person, group or entity. 
 
 == What is the license of the data ? == 
 
-== What is the license of the coding and reverse geocoding service ? ==
+For the data, the license is: http://creativecommons.org/licenses/by/3.0/. The following conditions are associated to this license:
+ * The addresses must be associated to the url of http://www.openaddresses.org
+ * The person or entity that submitted the data is stored in a field created_by
 
+== what is the license of the code ? ==
+
+For the code, the license is: http://www.opensource.org/licenses/gpl-3.0.html
+
+== What are the terms of service of the coding and reverse geocoding services ? ==
+
+The services provided by www.openaddresses.org are free to use.
+Nevertheless, no warranties are provided about the services
 == How can I contribute to www.openaddresses.org ? ==
 
+By creating addresses, of course ! But also by informing your friends of this community, by providing address list, by providing background data like orthophotos, wms, maps.
+ 
+Developers or system administrators are also very welcome. We have very interesting challenges in term of load balancing, distributed environment, cloud computing, database optimization, spatial ETL etc...
+
 == Who develops www.openaddresses.org ? ==
+Some persons believing that this project has a great future (for a more precise answer, have a look at the changes: http://code.google.com/p/openaddresses/source/list
 
 == What can I do if I discover an issue in www.openaddresses.org ? ==
+
+Piece of cake: create an issue here: http://code.google.com/p/openaddresses/issues/list
+
+It is *very important* to describe the workflow to reproduce the problem, to inform about your browser and operating system. we'll take care of the solving ;-)
