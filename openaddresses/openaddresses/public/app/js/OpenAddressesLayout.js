@@ -1,5 +1,6 @@
 /*
  * @requires app/js/OpenAddressesConfig.js
+ * @requires app/js/OpenAddressesExtOverride.js
  * @include OpenLayers/Map.js
  * @include OpenLayers/BaseTypes/LonLat.js
  * @include OpenLayers/Lang.js
