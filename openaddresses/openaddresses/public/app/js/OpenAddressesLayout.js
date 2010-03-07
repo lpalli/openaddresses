@@ -334,6 +334,7 @@ openaddresses.layout = (function() {
 
     var handleRightMouseClick = function(map) {
         map.controls[0].handlers.click.callbacks.rightclick = function() {
+            openaddresses.layout.showWaitingMask();
             var lonlat = map.getLonLatFromViewPortPx(map.controls[0].handlers.click.evt.xy);
             var content = "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Digitized Position") + "</h1><table style='font-size: 14px;'><tr><td width=\"150\">" + "" + OpenLayers.i18n("Spherical Mercator") + "</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
             lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
@@ -372,6 +373,7 @@ openaddresses.layout = (function() {
                         true
                         );
                 map.addPopup(map.myPopup);
+                openaddresses.layout.hideWaitingMask();
             }, this);
 
             map.geocoderStore.load();
@@ -476,6 +478,16 @@ openaddresses.layout = (function() {
                 }
             }
             return base + '?' + Ext.urlEncode(parametersObj);
+        },
+
+        waitingMask: Ext.get('waiting').dom,
+
+        showWaitingMask: function() {
+            this.waitingMask.style.display = "block";
+        },
+
+        hideWaitingMask: function() {
+            this.waitingMask.style.display = "none"; 
         },
 
         showLocationTooltip: function(evt) {

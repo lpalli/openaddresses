@@ -81,6 +81,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         //  3. if no
         //     - show a movable circle in the map at the digitized poistion
         //     - show the edition popup
+        openaddresses.layout.showWaitingMask();
         var clickedPosition = openaddresses.layout.map.getLonLatFromViewPortPx(evt.xy);
         var clickedPositionWGS84 = clickedPosition.clone();
         clickedPositionWGS84.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
@@ -120,6 +121,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         /** method[cancelEditing]
          */
         var cancelEditing = function(feature) {
+            openaddresses.layout.showWaitingMask();
             if (feature.editingPopup) {
                 feature.editingPopup.close();
                 delete feature.editingPopup;
@@ -128,11 +130,13 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             map.modifyFeatureControl.deactivate();
             map.editedFeature = null;
             openaddresses.layout.map.addressLayer.redraw(true);
+            openaddresses.layout.hideWaitingMask();
         };
 
         /** method[saveEditing]
          */
         var saveEditing = function(feature) {
+            openaddresses.layout.showWaitingMask();
             // Check that mandatory fields ar filled
             if (!feature.editingFormPanel.getForm().isValid()) {
                 Ext.Msg.alert(OpenLayers.i18n('Address Validation'), OpenLayers.i18n('Please fill all mandatory fields: ') + OpenLayers.i18n('Username') + " - " + OpenLayers.i18n('Street') + " - " + OpenLayers.i18n('City'));
@@ -169,7 +173,6 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             fn: function(btn) {
                                 if (btn == 'ok') {
                                     createSession();
-
                                     saveFeature(feature);
                                 }
                             },
@@ -179,6 +182,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     }
                 },
                 failure: function() {
+                    openaddresses.layout.hideWaitingMask();
                     //alert('Error in createSession GET query');
                 }
             });
@@ -234,6 +238,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     //alert('Session created');
                 },
                 failure: function() {
+                    openaddresses.layout.hideWaitingMask();
                     alert('Error in createSession GET query');
                 }
             });
@@ -241,6 +246,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         };
 
         var deleteEditing = function(feature) {
+            openaddresses.layout.showWaitingMask();
             Ext.Ajax.request({
                 url: 'sessionManager/checkSession',
                 method: 'GET',
@@ -264,6 +270,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     }
                 },
                 failure: function() {
+                    openaddresses.layout.hideWaitingMask();
                     //alert('Error in createSession GET query');
                 }
             });
@@ -288,6 +295,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                         cancelEditing(feature);
                                     },
                                     failure: function(resp, opt) {
+                                        openaddresses.layout.hideWaitingMask();
                                         alert(OpenLayers.i18n('Error during data deletion'));
                                     }
                                 });
@@ -304,7 +312,14 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         /** method[addEditingPopup]
          */
         var addEditingPopup = function(feature) {
-
+            openaddresses.layout.showWaitingMask();
+            var keyListener = {
+                specialkey: function(f, o) {
+                    if (o.getKey() == 13) {
+                        saveEditing(feature);
+                    }
+                }
+            };
             var comboCountry = new Ext.form.ComboBox({
                 name: 'country',
                 store: openaddresses.countryStore,
@@ -314,7 +329,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 mode: 'local',
                 triggerAction: 'all',
                 width: 240,
-                emptyText: OpenLayers.i18n('Select a country...')
+                emptyText: OpenLayers.i18n('Select a country...'),
+                listeners: keyListener
             });
 
             var comboQuality = new Ext.form.ComboBox({
@@ -326,7 +342,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 mode: 'local',
                 triggerAction: 'all',
                 width: 240,
-                emptyText: OpenLayers.i18n('Select a quality...')
+                emptyText: OpenLayers.i18n('Select a quality...'),
+                listeners: keyListener
             });
 
             if (feature.attributes.country) {
@@ -339,11 +356,15 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 comboQuality.setValue(OpenLayers.i18n('Digitized'));
             }
 
+
             feature.editingFormPanel = new Ext.form.FormPanel({
                 border: false,
                 frame: true,
                 labelWidth:120,
                 defaultType:'textfield',
+                defaults: {
+                    listeners: keyListener
+                },
                 items:[
                     {
                         name:'created_by',
@@ -420,6 +441,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             text: OpenLayers.i18n('Delete'),
                             disabled: false,
                             handler: function() {
+                                openaddresses.layout.showWaitingMask();
                                 deleteEditing(feature);
                             }
                         },
@@ -431,6 +453,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             text: OpenLayers.i18n('Cancel'),
                             disabled: false,
                             handler: function() {
+                                openaddresses.layout.showWaitingMask();
                                 cancelEditing(feature);
                             }
                         },
@@ -439,6 +462,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             text: buttonText,
                             disabled: false,
                             handler: function() {
+                                openaddresses.layout.showWaitingMask();
                                 saveEditing(feature);
                             }
                         }
@@ -496,8 +520,10 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
                 // Add the popup associated to the feature
                 addEditingPopup(map.editedFeature);
+                openaddresses.layout.hideWaitingMask();
             },
             failure: function() {
+                openaddresses.layout.hideWaitingMask();
                 alert('Error in addresses GET query');
             },
             params: {
