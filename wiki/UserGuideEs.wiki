@@ -1,4 +1,4 @@
-= Spanish User Guide =
+= Español Guía del usuario =
 
 <wiki:toc max_depth="3" />
 
@@ -32,7 +32,7 @@ Los atributos son los siguientes:
 Servicios de Tesis se documentan aquí:
 http://code.google.com/p/openaddresses/wiki/RESTService
 
-These services are free to use. But we don't garanty any quality of service. 
+Estos servicios son de uso libre. Pero no cualquier garantia de calidad de servicio.
 
 === ¿Y cómo puedo saber la dirección que se encuentra en esta posición? ===
 
