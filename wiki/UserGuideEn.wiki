@@ -16,15 +16,15 @@ But a community is nothing without .... YOU ! Take the time to create some addre
 Fine, click in the map. A popup will appear with several attributes. Fill them and click on "Create". That's it, your first address is created. Thank you !
 
 The attributes are the following:
-- Username: the person or entity who created the address. We use it ONLY for statistic purpose. This information can be viewed by all. You can use a pseudo,a group name or whatever you consider as pertinent.
-- The street name. Try to use the name used by the person living in this area.
-- The house number, if one exists
-- The postal code of the city
-- The city
-- The country of the city
-- The quality. If you use the web interface, this will be "Digitized". 
-- The house name if one exists
-- The region. This can be a department, a state, a canton.
+ * Username: the person or entity who created the address. We use it ONLY for statistic purpose. This information can be viewed by all. You can use a pseudo,a group name or whatever you consider as pertinent.
+ * The street name. Try to use the name used by the person living in this area.
+ * The house number, if one exists
+ * The postal code of the city
+ * The city
+ * The country of the city
+ * The quality. If you use the web interface, this will be "Digitized". 
+ * The house name if one exists
+ * The region. This can be a department, a state, a canton.
 
 === I'd like to add a search address service in my website ===
 
