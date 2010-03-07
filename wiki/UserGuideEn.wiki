@@ -1,6 +1,13 @@
-= User Guide =
+= English User Guide =
+
+<wiki:toc max_depth="2" />
 
 == What ? Another mapping community ? ==
+
+Yes, !OpenStreetMap showed the path to follow ;-). But, we believe that postal addresses needs a dedicated community. Like !GeoNames who targets to store all the location, !OpenAddresses targets to store all postal addresses of the world (yes, we are ambitious !) and provides services around postal addresses like !GeoCoding and !ReverseGeocoding. 
+For that, we implemented an easy to use (or at least that's what we believe) web application  for the viewing and the creation of postal addresses. 
+
+But a community web site is nothing without .... YOU ! Take the time to create some addresses, to submit open addresses or to provide fantastic orthophotos, maps or background data. 
 
 == How to use OpenAddresses.org ==
 
