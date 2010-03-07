@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="3" />
 
-== What ? Another mapping community ? ==
+== Quoi ? Une autre communauté cartographique ? ==
 
 Oui, !OpenStreetMap a montré la voie à suivre ;-). Mais, nous croyons que les adresses postales ont besoin d'une communauté dédiée. Comme !GeoNames  qui recense tous les endroits du monde, le but d'OpenAddresses est de recenser toutes les adresses postales du monde (oui, nous sommes ambitieux!) Le but est aussi de fournir des services autour de l'adresse postale comme le Géocodage et Gécodoage invers. Pour cela, nous avons implémenté une application web facile d'utilisation (ou du moins c'est ce que nous croyons) pour la visualisation et la création d'adresses postales.
 
@@ -27,13 +27,14 @@ Les attributs sont les suivants:
  * La région. Cela peut être un département, un état, un canton.
 
 
-=== I'd like to add a search address service in my website ===
+=== J'aimerai ajouter un service de recherche d'adresse dans mon site web ===
 
-!OpenAddresses offer REST services for this purpose. 
-Theses services are documented here: http://code.google.com/p/openaddresses/wiki/RESTService
+!OpenAddresses offre des services REST à cet effet.
+Ces services sont documentés ici:
+http://code.google.com/p/openaddresses/wiki/RESTService
 
 These services are free to use. But we don't garanty any quality of service. 
 
-=== And how can I know the address at this position ? ===
+=== Et comment puis-je connaître l'adresse située à cette position?  ===
 
-Reverse Geocoding is also part of !OpenAddresses. Doc is here: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
+Le géocodage inverse fait également partie de !OpenAddresses. La documentation est ici: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
