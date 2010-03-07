@@ -34,6 +34,8 @@ By creating addresses, of course ! But also by informing your friends of this co
  
 Developers or system administrators are also very welcome. We have very interesting challenges in term of load balancing, distributed environment, cloud computing, database optimization, spatial ETL etc...
 
+If you want to be a member of http://code.google.com/p/openaddresses, sends an email to cedric.moullet[at]gmail.com
+
 == Who develops www.openaddresses.org ? ==
 Some persons believing that this project has a great future (for a more precise answer, have a look at the changes: http://code.google.com/p/openaddresses/source/list
 
