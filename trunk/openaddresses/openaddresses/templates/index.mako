@@ -28,7 +28,7 @@
 <div id="OpacitySlider"></div>
 <div id="loading-mask" style=""></div>
 <div id="loading">
-    <div class="loading-indicator"><img src="resources/img/OpenAddressesLoader.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org soon ready for you !<br /><span id="loading-msg">Loading styles and images...</span></div>
+    <div class="loading-indicator"><img src="resources/img/OpenAddressesLoader.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>OpenAddresses.org soon ready for you !<br /><span id="loading-msg">Loading application...</span></div>
 </div>
 
  <div id="waiting">
@@ -53,7 +53,8 @@
    <script type="text/javascript" src="geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
-   <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script>
+   <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script> 
+   <script type="text/javascript" src="app/js/OpenAddressesExtOverride.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesHover.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesOpacitySliderTip.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesCountryList.js"></script>

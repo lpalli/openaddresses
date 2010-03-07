@@ -478,9 +478,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             for (var i = 0; i < feature.editingFormPanel.items.getCount(); ++i) {
                 var comp = feature.editingFormPanel.items.get(i);
                 if (!comp.value) {
-                    comp.focus(true,300);
+                    comp.focus(true, 300);
                     break;
-                } 
+                }
             }
         };
 
