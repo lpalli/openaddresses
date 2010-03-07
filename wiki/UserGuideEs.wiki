@@ -1,0 +1,37 @@
+= Spanish User Guide =
+
+<wiki:toc max_depth="3" />
+
+== What ? Another mapping community ? ==
+
+Sí, !OpenStreetMap mostró el camino a seguir ;-). Sin embargo, creemos que las direcciones postales de las necesidades de una comunidad dedicada. Al igual que GeoNames objetivos para almacenar todos los lugares del mundo, OpenAddresses objetivos para almacenar todas las direcciones postales del mundo (sí, somos ambiciosos!) Y provee servicios en torno a la dirección postal como la geocodificación y ReverseGeocoding. Para ello, hemos implementado un fácil de utilizar (o al menos eso es lo que creemos) la aplicación web para la visualización y la creación de las direcciones postales.
+
+Pero una comunidad no es nada sin .... *tú* ! Tómese el tiempo para crear algunas direcciones, a presentar las direcciones o para proporcionar fantástico ortofotos, mapas o datos de fondo.
+
+== Cómo usar !OpenAddresses.org ==
+
+=== Me gustaría crear una nueva dirección postal ! ===
+
+Fine, click in the map. A popup will appear with several attributes. Fill them and click on "Create". That's it, your first address is created. Thank you !
+
+Los atributos son los siguientes:
+
+ * Nombre de usuario: la persona o entidad que creó la dirección. Nosotros sólo la utiliza para fines estadísticos. Esta información puede ser vista por todos. Usted puede utilizar un seudónimo, un nombre de grupo o lo que consideren pertinente.
+ * El nombre de la calle. Trate de usar el nombre utilizado por la persona que vive en esta área.
+ * El número de casa, si es que existe
+ * El código postal de la ciudad
+ * La ciudad
+ * El país de la ciudad de
+ * La calidad. Si utiliza la interfaz web, esta será "digitalizado".
+ * El nombre de la casa si es que existe
+ * De la región. Esto puede ser un departamento, un estado, un cantón.
+=== I'd like to add a search address service in my website ===
+
+!OpenAddresses offer REST services for this purpose. 
+Theses services are documented here: http://code.google.com/p/openaddresses/wiki/RESTService
+
+These services are free to use. But we don't garanty any quality of service. 
+
+=== And how can I know the address at this position ? ===
+
+Reverse Geocoding is also part of !OpenAddresses. Doc is here: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
