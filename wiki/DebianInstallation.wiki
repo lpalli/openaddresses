@@ -1,0 +1,10 @@
+Install !OpenAddresses on Debian
+
+<wiki:toc max_depth="2" />
+
+= Environment = 
+
+Main URL: http://c2cpc84.camptocamp.com
+SSH: ssh admin@c2cpc84.camptocamp.com
+
+= !HowTo Install !OpenAddresses Server =
