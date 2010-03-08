@@ -21,6 +21,8 @@ Ext.namespace("openaddresses");
 
 openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
+    isAuthenticated: false,
+
     /** api: property[defaultHandlerOptions]
      *  Default options.
      */
@@ -164,7 +166,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 method: 'GET',
                 disableCaching: true,
                 success: function(responseObject) {
-                    if (responseObject.responseText == 'True') {
+                    if (responseObject.responseText == 'True' && this.isAuthenticated) {
                         saveFeature(feature);
                     } else {
                         Ext.Msg.show({
@@ -173,7 +175,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             buttons: Ext.Msg.OKCANCEL,
                             fn: function(btn) {
                                 if (btn == 'ok') {
-                                    createSession();
+                                    // Not working due to session issues in mod_wsgi
+                                    // createSession();
+                                    this.isAuthenticated = true;
                                     saveFeature(feature);
                                 }
                             },
@@ -237,6 +241,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 disableCaching: true,
                 method: 'POST',
                 success: function(responseObject) {
+                    this.isAuthenticated = true;
                     //alert('Session created');
                 },
                 failure: function() {
@@ -254,7 +259,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 method: 'GET',
                 disableCaching: true,
                 success: function(responseObject) {
-                    if (responseObject.responseText == 'True') {
+                    if (responseObject.responseText == 'True' && this.isAuthenticated) {
                         deleteFeature(feature);
                     } else {
                         Ext.Msg.show({
@@ -263,7 +268,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             buttons: Ext.Msg.OKCANCEL,
                             fn: function(btn) {
                                 if (btn == 'ok') {
-                                    createSession();
+                                    // Doesn't work due to mod_wsgi
+                                    //createSession();
+                                    this.isAuthenticated = true;
                                     deleteFeature(feature);
                                 }
                             },
