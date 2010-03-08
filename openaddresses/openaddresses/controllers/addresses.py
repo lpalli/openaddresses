@@ -87,24 +87,15 @@ class AddressesController(BaseController):
 
     def create(self):
         """POST /: Create a new feature."""
-        if session['authenticated'] == 'True':
-            return self.protocol.create(request, response)
-        else:
-            abort(403, 'No right to create an address.')
+        return self.protocol.create(request, response)
 
     def update(self, id):
         """PUT /id: Update an existing feature."""
-        if session['authenticated'] == 'True':
-            return self.protocol.update(request, response, id)
-        else:
-            abort(403, 'No right to update an address.')
+        return self.protocol.update(request, response, id)
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
-        if session['authenticated'] == 'True':
-            return self.protocol.delete(request, response, id)
-        else:
-            abort(403, 'No right to delete an address.')
+        return self.protocol.delete(request, response, id)
 
     def before_create(self,request,feature):
        feature.properties['ipaddress'] = request.environ['REMOTE_ADDR']
@@ -222,22 +213,7 @@ class AddressesController(BaseController):
           return json_dumps(rowsDict)
 
     def checkSession(self):
-       if 'authenticated' in session:
-          authenticated = session.get('authenticated')
-          if authenticated:
-             if authenticated == 'True':
-                return 'True'
-             else:
-                return 'False'
-          else:
-             return 'False'
-       else:
-          return 'False'
+       return 'True'
 
     def createSession(self):
-        session['authenticated'] = 'True'
-        session.save()
-
-    def killSession(self):
-        session['authenticated'] = 'False'
-        session.save()
+        return 'True'
