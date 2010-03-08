@@ -18,7 +18,7 @@ openaddresses.createBoundsFrom4326 = function(minx, miny, maxx, maxy) {
 };
 
 openaddresses.layers = [
-    /*new OpenLayers.Layer.WMS(
+    new OpenLayers.Layer.WMS(
             "SITN_Ortho",
             openaddresses.config.baseWMS,
     {layers: 'SITN_ortho',
@@ -32,7 +32,7 @@ openaddresses.layers = [
         displayOutsideMaxExtent: false,
         maxResolution: 50,
         maxExtent: openaddresses.createBoundsFrom4326(6.31728, 46.7671, 7.1777, 47.222)}
-            ), */
+            ),
     new OpenLayers.Layer.WMS(
             "GENEVE_ortho",
             openaddresses.config.baseWMS,
