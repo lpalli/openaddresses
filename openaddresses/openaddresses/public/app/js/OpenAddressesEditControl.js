@@ -160,8 +160,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             }
 
             Ext.Ajax.request({
-                url: 'sessionManager/checkSession',
+                url: 'addresses/checkSession',
                 method: 'GET',
+                disableCaching: true,
                 success: function(responseObject) {
                     if (responseObject.responseText == 'True') {
                         saveFeature(feature);
@@ -232,8 +233,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
         var createSession = function() {
             Ext.Ajax.request({
-                url: 'sessionManager/createSession',
-                method: 'GET',
+                url: 'addresses/createSession',
+                disableCaching: true,
+                method: 'POST',
                 success: function(responseObject) {
                     //alert('Session created');
                 },
@@ -248,8 +250,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var deleteEditing = function(feature) {
             openaddresses.layout.showWaitingMask();
             Ext.Ajax.request({
-                url: 'sessionManager/checkSession',
+                url: 'addresses/checkSession',
                 method: 'GET',
+                disableCaching: true,
                 success: function(responseObject) {
                     if (responseObject.responseText == 'True') {
                         deleteFeature(feature);
