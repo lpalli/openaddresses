@@ -78,6 +78,10 @@ class AddressesController(BaseController):
            return self.protocol.count(request)
         elif (id == 'fullTextSearch'):
            return self.fullTextSearch(request)
+        elif (id == 'checkSession'):
+           return self.checkSession()
+        elif (id == 'createSession'):
+           return self.createSession()
         else:
            return self.protocol.show(request, response, id, format=format)
 
@@ -216,3 +220,24 @@ class AddressesController(BaseController):
        else:
           response.headers['Content-Type'] = 'application/json'
           return json_dumps(rowsDict)
+
+    def checkSession(self):
+       if 'authenticated' in session:
+          authenticated = session.get('authenticated')
+          if authenticated:
+             if authenticated == 'True':
+                return 'True'
+             else:
+                return 'False'
+          else:
+             return 'False'
+       else:
+          return 'False'
+
+    def createSession(self):
+        session['authenticated'] = 'True'
+        session.save()
+
+    def killSession(self):
+        session['authenticated'] = 'False'
+        session.save()
