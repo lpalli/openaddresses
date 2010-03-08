@@ -14,13 +14,22 @@ class SessionmanagerController(BaseController):
         return 'Hello World'
 
     def checkSession(self):
-        if 'authenticated' in session:
-            if session['authenticated'] == 'True':
-               return 'True'
-        return 'True'
+       if 'authenticated' in session:
+          authenticated = session.get('authenticated')
+          if authenticated:
+             if authenticated == 'True':
+                return 'True'
+             else:
+                return 'False'
+          else:
+             return 'False'
+       else:
+          return 'False'
 
     def createSession(self):
         session['authenticated'] = 'True'
         session.save()
-        session.persist()      
-        return session['authenticated']
+
+    def killSession(self):
+        session['authenticated'] = 'False'
+        session.save()

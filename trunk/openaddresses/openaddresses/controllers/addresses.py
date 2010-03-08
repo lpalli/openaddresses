@@ -83,33 +83,24 @@ class AddressesController(BaseController):
 
     def create(self):
         """POST /: Create a new feature."""
-        if 'authenticated' in session:
-            if session['authenticated'] == 'True':
-                session.save()
-                return self.protocol.create(request, response)
-        else:
-            #abort(403, 'No right to create an address:')
+        if session['authenticated'] == 'True':
             return self.protocol.create(request, response)
+        else:
+            abort(403, 'No right to create an address.')
 
     def update(self, id):
         """PUT /id: Update an existing feature."""
-        if 'authenticated' in session:
-            if session['authenticated'] == 'True':
-                session.save()
-                return self.protocol.update(request, response, id)
-        else:
-            #abort(403, 'No right to update an address:')
+        if session['authenticated'] == 'True':
             return self.protocol.update(request, response, id)
+        else:
+            abort(403, 'No right to update an address.')
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
-        if 'authenticated' in session:
-            if session['authenticated'] == 'True':
-                session.save()
-                return self.protocol.delete(request, response, id)
-        else:
-            #abort(403, 'No right to delete an address:')
+        if session['authenticated'] == 'True':
             return self.protocol.delete(request, response, id)
+        else:
+            abort(403, 'No right to delete an address.')
 
     def before_create(self,request,feature):
        feature.properties['ipaddress'] = request.environ['REMOTE_ADDR']
