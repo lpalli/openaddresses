@@ -3,6 +3,8 @@
  * Target date: 29 march 2010
  * Data
   * Synchronize new data set
+ * Application
+  * Test http://code.google.com/p/openaddresses/wiki/HowToTest
  * Server
   * Test performance
   * Set www.openaddresses.org URL  
@@ -19,10 +21,13 @@
   * Announcement to
    * OSGEO mailing list
    * OSGEO local chapters
+    * http://www.osgeo.org/content/chapters/index.html
    * BALIZ
    * slashgeo
    * OSM
-   * OSM local chapters
+    * http://wiki.openstreetmap.org/wiki/Mailing_list
+   * OSM user groups
+    * http://wiki.openstreetmap.org/wiki/OSM_User_Groups
    * Geonames
    * CH: !GeowebForum
    * FR: Georezo.net
