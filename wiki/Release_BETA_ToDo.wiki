@@ -2,7 +2,7 @@
 
  * Target date: 29 march 2010
  * Data
-  * Import new data set
+  * Synchronize new data set
  * Server
   * Test performance
   * Set www.openaddresses.org URL  
