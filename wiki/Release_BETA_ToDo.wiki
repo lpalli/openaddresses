@@ -24,7 +24,7 @@
    * OSM
    * OSM local chapters
    * Geonames
-   * CH: GeowebForum
+   * CH: !GeowebForum
    * FR: Georezo.net
   * Article "Geomatik Schweiz"
   * Blog
