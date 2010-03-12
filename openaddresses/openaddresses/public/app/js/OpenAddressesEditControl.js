@@ -340,7 +340,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 triggerAction: 'all',
                 width: 240,
                 emptyText: OpenLayers.i18n('Select a country...'),
-                listeners: keyListener
+                listeners: keyListener,
+                qtip: OpenLayers.i18n('The country of the city.')
             });
 
             var comboQuality = new Ext.form.ComboBox({
@@ -353,7 +354,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 triggerAction: 'all',
                 width: 240,
                 emptyText: OpenLayers.i18n('Select a quality...'),
-                listeners: keyListener
+                listeners: keyListener,
+                qtip: OpenLayers.i18n('The quality. If you use the web interface, this will be "Digitized".')
             });
 
             if (feature.attributes.country) {
@@ -381,35 +383,41 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         fieldLabel: OpenLayers.i18n('Username'),
                         allowBlank: false,
                         width: 160,
-                        value: feature.attributes.created_by
+                        value: feature.attributes.created_by,
+                        qtip: OpenLayers.i18n('The person or entity who created the address. ONLY used for statistic purpose.')
                     },
                     {
                         name:'street',
                         fieldLabel: OpenLayers.i18n('Street'),
                         allowBlank: false,
                         width: 240,
-                        value: feature.attributes.street
+                        value: feature.attributes.street,
+                        qtip: OpenLayers.i18n('The street name used by the persons living in this area.')
                     },
                     {
                         name:'housenumber',
                         fieldLabel: OpenLayers.i18n('House number'),
                         allowBlank: true,
                         width: 80,
-                        value: feature.attributes.housenumber
+                        value: feature.attributes.housenumber,
+                        qtip: OpenLayers.i18n('The house number, if one exists.')
                     },
                     {
                         name:'postcode',
                         fieldLabel: OpenLayers.i18n('Postal code'),
                         allowBlank: true,
                         width: 80,
-                        value: feature.attributes.postcode
+                        value: feature.attributes.postcode,
+                        qtip: OpenLayers.i18n('The postal code.')                        
                     },
                     {
                         name:'city',
                         fieldLabel: OpenLayers.i18n('City'),
                         allowBlank: false,
                         width: 240,
-                        value: feature.attributes.city
+                        value: feature.attributes.city,
+                        qtip: OpenLayers.i18n('The city.')
+
                     },
                     comboCountry,
                     comboQuality,
@@ -418,14 +426,16 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         fieldLabel: OpenLayers.i18n('House name'),
                         allowBlank: true,
                         width: 240,
-                        value: feature.attributes.housename
+                        value: feature.attributes.housename,
+                        qtip: OpenLayers.i18n('The house name if one exists.')
                     },
                     {
                         name:'region',
                         fieldLabel: OpenLayers.i18n('Region'),
                         allowBlank: true,
                         width: 240,
-                        value: feature.attributes.region
+                        value: feature.attributes.region,
+                        qtip: OpenLayers.i18n('The region. This can be a department, a state, a canton.')
                     }
                 ]
             });
@@ -443,7 +453,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 closable: false,
                 unpinnable: false,
                 draggable: true,
-                width: 400,
+                width: 410,
                 bbar: new Ext.Toolbar({
                     items: [
                         {
