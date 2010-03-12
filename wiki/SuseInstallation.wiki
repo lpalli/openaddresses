@@ -139,5 +139,7 @@ http://geolin01.cti.ac.at:5000/
 == Configure Apache ==
 
  * Include the file apache/wsgi.conf in Apache configuration
+ * Include the file apache/mapserver.conf in Apache configuration
+ 
 
  
