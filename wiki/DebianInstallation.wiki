@@ -7,4 +7,14 @@ Install !OpenAddresses on Debian
 Main URL: http://c2cpc84.camptocamp.com
 SSH: ssh admin@c2cpc84.camptocamp.com
 
+= !HowTo Deploy !OpenAddresses Server =
+
+This has to be done everytime a new application wants to be deployed on the server
+
+ * cd trunk/openaddresses
+ * python deploy config/debian.cfg
+ * http://c2cpc84.camptocamp.com/openaddresses/
+
 = !HowTo Install !OpenAddresses Server =
+
+ * See http://code.google.com/p/openaddresses/wiki/SuseInstallation#HowTo_Install_OpenAddresses_Server
