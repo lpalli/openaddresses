@@ -18,23 +18,23 @@ Wunderbar, klick einfach in die Karte. Ein Popup-Fenster mit einigen Attribut-Fe
 
 Attribute der Postadressen sind:
 
-* Der Nutzername: Name der Person oder Organisation die die Postadresse erstellt hat. Wir nutzen dieses Attribut AUSSCHLIESSLICH für statistische Zwecke. Dieses Attribut kann von allen eingesehen werden. Du kannst ein passendes Pseudonym oder Gruppennamen wählen.
+ * Der Nutzername: Name der Person oder Organisation die die Postadresse erstellt hat. Wir nutzen dieses Attribut AUSSCHLIESSLICH für statistische Zwecke. Dieses Attribut kann von allen eingesehen werden. Du kannst ein passendes Pseudonym oder Gruppennamen wählen.
 
-* Der Strassenname: Versuche den Strassennamen so einzutragen wie er in der Region genannt wird.
+ * Der Strassenname: Versuche den Strassennamen so einzutragen wie er in der Region genannt wird.
 
-* Die Hausnummer, falls eine existiert
+ * Die Hausnummer, falls eine existiert
 
-* Die Postleitzahl des Ortes
+ * Die Postleitzahl des Ortes
 
-* Den Ort/die Stadt
+ * Den Ort/die Stadt
 
-* Das Land
+ * Das Land
 
-* Die Qualität: Wenn du die Adresse über das Webportal erfasst, dann verwende "Digitized".
+ * Die Qualität: Wenn du die Adresse über das Webportal erfasst, dann verwende "Digitized".
 
-* Eine Bezeichnung für das Haus, falls eine existiert
+ * Eine Bezeichnung für das Haus, falls eine existiert
 
-* Die Region: Das kann eine Gemeinde, ein Bundesland, usw. sein.
+ * Die Region: Das kann eine Gemeinde, ein Bundesland, usw. sein.
 
 === Ich möchte einen Dienst zur Adresssuche in meine Webseite einbauen ===
 
