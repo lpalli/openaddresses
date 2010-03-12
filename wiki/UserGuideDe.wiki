@@ -1,1 +1,49 @@
-TODO
+= Benutzerhandbuch in deutscher Sprache =
+
+<wiki:toc max_depth="3" />
+
+== Was? - Schon wieder eine Mapping Community? ==
+
+Ja, !OpenStreetMap hat den Weg aufgezeigt ;-). Aber wir glauben, dass Adressen eine eigene Community verdienen. So wie !GeoNames darauf abziehlt alle Orte der Welt zu speichern, so hat sich !OpenAddresses zum Ziel gesetzt alle Postadressen der Welt (ja wir haben viel vor !) zu speichern und Dienste die diese Adressen nutzen, wie !GeoCoding und !ReverseGeocoding, bereitzustellen.
+
+Um das zu ermöglichen, haben wir eine einfach zu bedienende (zumindest glauben wir das)  Web Anwendung entwickelt um Postadressen zu speichern und abzurufen.
+
+Aber eine Community ist nichts ohne .... DICH ! Nimm dir Zeit ein paar Adressen selbst anzulegen, freie Postadressen an uns zu schicken oder fantastische Orthophotos, Karten oder Hintergrunddaten bereitzustellen.
+
+== Wie ist !OpenAddresses.org zu nutzen ==
+
+=== Ich möchte einen neue Postadresse erzeugen! ===
+
+Wunderbar, klick einfach in die Karte. Ein Popup-Fenster mit einigen Attribut-Feldern erscheint. Füll die Attribut-Felder aus und klick auf  "Herstellen". Das war es schon, deine erste Postadresse ist fertig. Vielen Dank!
+
+Attribute der Postadressen sind:
+
+* Der Nutzername: Name der Person oder Organisation die die Postadresse erstellt hat. Wir nutzen dieses Attribut AUSSCHLIESSLICH für statistische Zwecke. Dieses Attribut kann von allen eingesehen werden. Du kannst ein passendes Pseudonym oder Gruppennamen wählen.
+
+* Der Strassenname: Versuche den Strassennamen so einzutragen wie er in der Region genannt wird.
+
+* Die Hausnummer, falls eine existiert
+
+* Die Postleitzahl des Ortes
+
+* Den Ort/die Stadt
+
+* Das Land
+
+* Die Qualität: Wenn du die Adresse über das Webportal erfasst, dann verwende "Digitized".
+
+* Eine Bezeichnung für das Haus, falls eine existiert
+
+* Die Region: Das kann eine Gemeinde, ein Bundesland, usw. sein.
+
+=== Ich möchte einen Dienst zur Adresssuche in meine Webseite einbauen ===
+
+!OpenAddresses stellt für diesen Zweck einen REST basierten Dienst zur Verfügung.
+
+Eine Beschreibung des Dienstes findest du hier: http://code.google.com/p/openaddresses/wiki/RESTService
+
+Dieser Dienst ist kostenfrei nutzbar. Wir können jedoch keine Qualitätgarantie dieses Dienst abgeben.
+
+=== Und wie kann ich herausfinden welche Adressen an einem bestimmten Ort existieren? ===
+
+Reverse Geocoding ist ebenfalls in !OpenAddresses realisiert. Eine Beschreibung findest du hier: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
