@@ -18,3 +18,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.4\n"
 
+msgid 'OpenAddresses.org soon ready for you !'
+msgstr 'OpenAddresses.org va vous accueillir tout bientöt!'
+
+msgid 'Loading application...'
+msgstr 'Bougez pas, on charge....'
+
+msgid 'OpenAddresses.org works for you !'
+msgstr 'OpenAddresses.org est en plein travail !'
+
+
+
