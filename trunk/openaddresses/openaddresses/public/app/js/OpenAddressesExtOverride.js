@@ -16,6 +16,8 @@ Ext.override(Ext.form.Field, {
     }
 });
 
+Ext.form.Field.prototype.msgTarget = 'side';
+
 Ext.override(Ext.form.Checkbox, {
     getTipTarget: function() {
         return this.imageEl;
