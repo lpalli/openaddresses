@@ -137,6 +137,10 @@ under the terms of the GPL v3.  See http://extjs.com/products/license.php for
 details on ExtJS licensing.
 
 
+******************************************************************************
+MapFish
+******************************************************************************
+
 /*
  * Copyright (C) 2009  Camptocamp
  *
@@ -157,9 +161,8 @@ details on ExtJS licensing.
  */
 
 
-
 ******************************************************************************
-MapFish
+OpenLayers
 ******************************************************************************
 /*
  * This code is taken from the OpenLayers code base.
@@ -169,10 +172,6 @@ MapFish
  * full text of the license.
  */
 
-
-******************************************************************************
-OpenLayers
-******************************************************************************
 This license applies to all code and content in the 'branches', 'trunk', and
 'project' directories of the Openlayers code repository at svn.openlayers.org,
 and applies to all release of OpenLayers later than 2.5.
