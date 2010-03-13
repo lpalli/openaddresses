@@ -45,8 +45,8 @@ def replaceConfig(filename,config):
     file.close()
     outputFile.close();
 
-# Start programm
-print "Starting deploy. Example: python deploy.py config/geoline01.cfg"
+# Start programm 
+print "Starting deploy. Example: python deploy.py config/myconfig.cfg"
 
 # svn update
 print "SVN update..."
