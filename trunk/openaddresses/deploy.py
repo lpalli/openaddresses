@@ -30,14 +30,14 @@ def replaceConfig(filename,config):
         newLine = ''
         if len(splitString) == 3:
             if config.get(splitString[1]) is not None:
-                newLine=line.replace('%'+splitString[1]+'%',config.get(splitString[1]).replace('\n','').replace('^M',''))
+                newLine=line.replace('%'+splitString[1]+'%',config.get(splitString[1]).replace('\n',''))
                 outputFile.write(newLine)
         elif len(splitString) == 5:
             newLine = line
             if config.get(splitString[1]) is not None:
-                newLine=newLine.replace('%'+splitString[1]+'%',config.get(splitString[1]).replace('\n','').replace('^M',''))
+                newLine=newLine.replace('%'+splitString[1]+'%',config.get(splitString[1]).replace('\n',''))
             if config.get(splitString[3]) is not None:
-                newLine=newLine.replace('%'+splitString[3]+'%',config.get(splitString[3]).replace('\n','').replace('^M',''))
+                newLine=newLine.replace('%'+splitString[3]+'%',config.get(splitString[3]).replace('\n',''))
             outputFile.write(newLine)
         else:
             outputFile.write(line)
