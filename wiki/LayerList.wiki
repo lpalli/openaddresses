@@ -1,6 +1,6 @@
 List of layers that can be used as background layers
 
 || WMS URL || !LayerName in !OpenAddresses.org || Extent || Scale || Format ||
-|| http://sitn.ne.ch/ogc-sitn-open/wms? || SITN_ortho || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no || image/png ||
-|| http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer || GENEVE_ortho || <LatLonBoundingBox minx="5.918669" miny="46.105563" maxx="6.314182" maxy="46.379977"/> || no ||image/jpeg ||
-|| http://www.landesvermessung.sachsen.de/ias/basiskarte4/service/SRV4ADV_P_DOPRGB/WMSFREE_TK/wmsservice? || adv_dop || <LatLonBoundingBox minx="11.765" miny="50.0294" maxx="15.13579" maxy="51.85922"/> || no ||image/jpeg || 
+|| http://sitn.ne.ch/ogc-sitn-open/wms? || CH_SITN_Orth || <LatLonBoundingBox minx="6.31728" miny="46.7671" maxx="7.1777" maxy="47.222"/> || no || image/png ||
+|| http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer || CH_GENEVE_ortho || <LatLonBoundingBox minx="5.918669" miny="46.105563" maxx="6.314182" maxy="46.379977"/> || no ||image/jpeg ||
+|| http://www.landesvermessung.sachsen.de/ias/basiskarte4/service/SRV4ADV_P_DOPRGB/WMSFREE_TK/wmsservice? || DE_adv_dop || <LatLonBoundingBox minx="11.765" miny="50.0294" maxx="15.13579" maxy="51.85922"/> || no ||image/jpeg || 
