@@ -2,7 +2,7 @@ Description of user tests made in order to check application
 
 <wiki:toc max_depth="1" />
 
-= Start Application =
+= 1. Start Application =
 
 == Test case ==
 
@@ -13,3 +13,20 @@ Description of user tests made in order to check application
 
  1. Applications starts, no Javascript error
  1. Both mode debug and prod are working
+
+= 1. Create address =
+
+== Test case ==
+
+ 1. Start application on IE7+
+ 1. Zoom in order to see a building
+ 1. Right mouse click in the building
+ 1. Left mouse click
+ 1. Fill the mandatory attributes
+ 1. Save the address
+
+== Expected Result ==
+
+ 1. Right mouse clicks generates a popup with address information
+ 1. Left mouse click generates a popup and a point in the map
+ 1. Address can be saved and is represented with a red point
