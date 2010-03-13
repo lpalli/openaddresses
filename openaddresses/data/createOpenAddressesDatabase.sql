@@ -112,4 +112,6 @@ CREATE TRIGGER tsvector_street_housenumber_city_update BEFORE INSERT OR UPDATE
 ON address FOR EACH ROW EXECUTE PROCEDURE
 tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', street, city, housenumber);
 
+# Import backup file: pg_restore -d openaddresses oa.backup
+
 
