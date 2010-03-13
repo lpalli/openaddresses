@@ -1,0 +1,1106 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis projectname="" version="1.4.0-Enceladus" >
+    <title></title>
+    <mapcanvas>
+        <units>degrees</units>
+        <extent>
+            <xmin>-0.379351</xmin>
+            <ymin>39.995596</ymin>
+            <xmax>-0.371128</xmax>
+            <ymax>40.002524</ymax>
+        </extent>
+        <projections>0</projections>
+        <destinationsrs>
+            <spatialrefsys>
+                <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                <srsid>3452</srsid>
+                <srid>4326</srid>
+                <epsg>4326</epsg>
+                <description>WGS 84</description>
+                <projectionacronym>longlat</projectionacronym>
+                <ellipsoidacronym>WGS84</ellipsoidacronym>
+                <geographicflag>true</geographicflag>
+            </spatialrefsys>
+        </destinationsrs>
+    </mapcanvas>
+    <legend>
+        <legendlayer open="true" checked="Qt::Checked" name="OA_Spain_Catastro" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="Catastro20100313201846457" visible="1" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Checked" name="OA_Spain_CONSTRU" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="CONSTRU20100313201941223" visible="1" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Toscana" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="otf10k0920100313201339584" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Minnesota" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="fsa200920100313200717507" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_SITN_ortho" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="ortho20100313195551158" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Andalucia" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="ocaene_200920100313195326441" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_GDI_DOPDLM" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="DOPDLM20100313194229502" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Bayern_DOP" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="DOP20100313181827422" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Sachsen_adv_dop" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="adv_dop20100313181536674" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Canaries_ortofotos" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="ortofotos20100313180655815" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Maine" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="ME_StatePartial_1_0m_Color_Mar_2007_01_ME_StatePartial_1_0m_Color_Mar_2007_02_ME_Southwest_0_15m_Color_Apr_2001_Footprint_ME_Southwest_0_15m_Color_Apr_2001_01_ME_Southwest_0_15m_Color_Apr_2001_02_ME_Southwest_0_15m_Color_Apr_2001_03_ME_Southwest_0_15m_Color_Apr_2001_04_ME_Southwest_0_3m_Color_Apr_2003_Footprint_ME_Southwest_0_3m_Color_Apr_2003_01_ME_Southwest_0_3m_Color_Apr_2003_02_ME_Southwest_0_61m_Color_Apr_2003_Footprint_ME_Southwest_0_3m_Color_Apr_2003_03_ME_Southwest_0_61m_Color_Apr_2003_01_ME_Southwest_0_61m_Color_Apr_2003_02_ME_Southwest_0_3m_Color_Sep_2004_Footprint_ME_Southwest_0_3m_Color_Sep_2004_ME_Southwest_0_61m_Color_Sep_2004_Footprint_ME_Southwest_0_61m_Color_Sep_2004_ME_YorkCounty_0_15m_Color_Apr_2007_Footprint_ME_YorkCounty_0_15m_Color_Apr_2007_01_ME_YorkCounty_0_15m_Color_Apr_2007_02_ME_YorkCounty_0_15m_Color_Apr_2007_03_YorkME_0_5ft_Color_May_2005_Metadata_YorkME_0_5ft_Color_May_2005_Footprint_YorkME_0_5ft_Color_May_2005_KitteryME_0_1524m_Color_May_2006_Footprint_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_03_PortlandME_0_5ft_Color_Apr_2006_01_ME_StatePartial_1_0m_Color_Mar_2007_Footprint_PortlandME_0_5ft_Color_Apr_2006_02_PortlandME_0_5ft_Color_Apr_2006_Footprint_PortlandME_0_5ft_Color_Apr_2006_Metadata_PortlandME_0_25ft_Color_Apr_2006_PortlandME_0_25ft_Color_Apr_2006_Footprint_PortlandME_0_25ft_Color_Apr_2006_Metadata_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_02_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_01_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_Footprint_ME_EasternAreas_0_6m_Color_Mar_2003_03_ME_EasternAreas_0_6m_Color_Mar_2003_02_ME_EasternAreas_0_6m_Color_Mar_2003_01_ME_EasternAreas_0_6m_Color_Mar_2003_Footprint_KitteryME_0_1524m_Color_May_2006_KitteryME_0_1524m_Color_May_2006_Metadata_Augusta_ManchesterME_0_3m_Color_May_2008_Augusta_ManchesterME_0_3m_Color_May_2008_Footprint_Augusta_ManchesterME_0_3m_Color_May_2008_Metadata_Augusta_ManchesterME_0_15m_Color_May_2008_Augusta_ManchesterME_0_15m_Color_May_2008_Footprint_AugustaME_0_3m_Color_Mar_2003_Augusta_ManchesterME_0_15m_Color_May_2008_Metadata_AugustaME_0_3m_Color_Mar_2003_Footprint_AugustaME_0_3m_Color_Mar_2003_Metadata20100313180402190" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Ortho09" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="Ortho0920100313175647118" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_SOGIS_Orthofoto07" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="Orthofoto0720100313175253140" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_lausanne/epfl" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="lausanne_epfl20100313174957425" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Oberösterreich_ortho05m_farbe" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="ortho05m_farbe_PolitischeGemeinden20100313174627590" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Kärnten_ortho1m_farbe" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="ortho1m_farbe20100313174044898" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="Oberösterreich_Landesgrenzen" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="Landesgrenzen20100313174330950" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="Kärnten_Landesgrenzen" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="Landesgrenzen20100313175134606" visible="0" />
+            </filegroup>
+        </legendlayer>
+    </legend>
+    <projectlayers layercount="18" >
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>CONSTRU20100313201941223</id>
+            <datasource>http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?</datasource>
+            <layername>OA_Spain_CONSTRU</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>CONSTRU</name>
+                    <style>Default</style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >nan</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>Catastro20100313201846457</id>
+            <datasource>http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?</datasource>
+            <layername>OA_Spain_Catastro</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>Catastro</name>
+                    <style>Default</style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >nan</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>DOP20100313181827422</id>
+            <datasource>http://www.geodaten.bayern.de/ogc/getogc.cgi?</datasource>
+            <layername>OA_Bayern_DOP</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>DOP</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/gif</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false" />
+                <mRGBMinimumMaximumEstimated boolean="false" />
+                <mUserDefinedGrayMinimumMaximum boolean="false" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>DOPDLM20100313194229502</id>
+            <datasource>http://www.gaia-mv.de/dienste/DOPDLM?</datasource>
+            <layername>OA_GDI_DOPDLM</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>DOPDLM</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/gif</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="false" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>Landesgrenzen20100313174330950</id>
+            <datasource>http://doris.ooe.gv.at/wmsconnector/com.esri.wms.Esrimap/GeoLand2_WMS?request=getcapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
+            <layername>Oberösterreich_Landesgrenzen</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>Landesgrenzen</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>Landesgrenzen20100313175134606</id>
+            <datasource>http://gis.ktn.gv.at/wmsconnector/com.esri.wms.Esrimap/geoland_wms?request=getcapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
+            <layername>Kärnten_Landesgrenzen</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>Landesgrenzen</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="false" >nan</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>ME_StatePartial_1_0m_Color_Mar_2007_01_ME_StatePartial_1_0m_Color_Mar_2007_02_ME_Southwest_0_15m_Color_Apr_2001_Footprint_ME_Southwest_0_15m_Color_Apr_2001_01_ME_Southwest_0_15m_Color_Apr_2001_02_ME_Southwest_0_15m_Color_Apr_2001_03_ME_Southwest_0_15m_Color_Apr_2001_04_ME_Southwest_0_3m_Color_Apr_2003_Footprint_ME_Southwest_0_3m_Color_Apr_2003_01_ME_Southwest_0_3m_Color_Apr_2003_02_ME_Southwest_0_61m_Color_Apr_2003_Footprint_ME_Southwest_0_3m_Color_Apr_2003_03_ME_Southwest_0_61m_Color_Apr_2003_01_ME_Southwest_0_61m_Color_Apr_2003_02_ME_Southwest_0_3m_Color_Sep_2004_Footprint_ME_Southwest_0_3m_Color_Sep_2004_ME_Southwest_0_61m_Color_Sep_2004_Footprint_ME_Southwest_0_61m_Color_Sep_2004_ME_YorkCounty_0_15m_Color_Apr_2007_Footprint_ME_YorkCounty_0_15m_Color_Apr_2007_01_ME_YorkCounty_0_15m_Color_Apr_2007_02_ME_YorkCounty_0_15m_Color_Apr_2007_03_YorkME_0_5ft_Color_May_2005_Metadata_YorkME_0_5ft_Color_May_2005_Footprint_YorkME_0_5ft_Color_May_2005_KitteryME_0_1524m_Color_May_2006_Footprint_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_03_PortlandME_0_5ft_Color_Apr_2006_01_ME_StatePartial_1_0m_Color_Mar_2007_Footprint_PortlandME_0_5ft_Color_Apr_2006_02_PortlandME_0_5ft_Color_Apr_2006_Footprint_PortlandME_0_5ft_Color_Apr_2006_Metadata_PortlandME_0_25ft_Color_Apr_2006_PortlandME_0_25ft_Color_Apr_2006_Footprint_PortlandME_0_25ft_Color_Apr_2006_Metadata_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_02_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_01_ME_EasternPopulatedAreas_0_3m_Color_Mar_2003_Footprint_ME_EasternAreas_0_6m_Color_Mar_2003_03_ME_EasternAreas_0_6m_Color_Mar_2003_02_ME_EasternAreas_0_6m_Color_Mar_2003_01_ME_EasternAreas_0_6m_Color_Mar_2003_Footprint_KitteryME_0_1524m_Color_May_2006_KitteryME_0_1524m_Color_May_2006_Metadata_Augusta_ManchesterME_0_3m_Color_May_2008_Augusta_ManchesterME_0_3m_Color_May_2008_Footprint_Augusta_ManchesterME_0_3m_Color_May_2008_Metadata_Augusta_ManchesterME_0_15m_Color_May_2008_Augusta_ManchesterME_0_15m_Color_May_2008_Footprint_AugustaME_0_3m_Color_Mar_2003_Augusta_ManchesterME_0_15m_Color_May_2008_Metadata_AugustaME_0_3m_Color_Mar_2003_Footprint_AugustaME_0_3m_Color_Mar_2003_Metadata20100313180402190</id>
+            <datasource>http://imsortho.cr.usgs.gov/WMS_Capabilities/USGS_EDC_Ortho_Maine/capabilities_1_1_1.xml?SERVICE=WMS&amp;REQUEST=GetCapabilities</datasource>
+            <layername>OA_Maine</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>ME_StatePartial_1.0m_Color_Mar_2007_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_StatePartial_1.0m_Color_Mar_2007_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.15m_Color_Apr_2001_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.15m_Color_Apr_2001_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.15m_Color_Apr_2001_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.15m_Color_Apr_2001_03</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.15m_Color_Apr_2001_04</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.3m_Color_Apr_2003_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.3m_Color_Apr_2003_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.3m_Color_Apr_2003_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.61m_Color_Apr_2003_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.3m_Color_Apr_2003_03</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.61m_Color_Apr_2003_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.61m_Color_Apr_2003_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.3m_Color_Sep_2004_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.3m_Color_Sep_2004</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.61m_Color_Sep_2004_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_Southwest_0.61m_Color_Sep_2004</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_YorkCounty_0.15m_Color_Apr_2007_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_YorkCounty_0.15m_Color_Apr_2007_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_YorkCounty_0.15m_Color_Apr_2007_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_YorkCounty_0.15m_Color_Apr_2007_03</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>YorkME_0.5ft_Color_May_2005_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>YorkME_0.5ft_Color_May_2005_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>YorkME_0.5ft_Color_May_2005</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>KitteryME_0.1524m_Color_May_2006_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternPopulatedAreas_0.3m_Color_Mar_2003_03</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.5ft_Color_Apr_2006_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_StatePartial_1.0m_Color_Mar_2007_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.5ft_Color_Apr_2006_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.5ft_Color_Apr_2006_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.5ft_Color_Apr_2006_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.25ft_Color_Apr_2006</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.25ft_Color_Apr_2006_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PortlandME_0.25ft_Color_Apr_2006_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternPopulatedAreas_0.3m_Color_Mar_2003_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternPopulatedAreas_0.3m_Color_Mar_2003_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternPopulatedAreas_0.3m_Color_Mar_2003_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternAreas_0.6m_Color_Mar_2003_03</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternAreas_0.6m_Color_Mar_2003_02</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternAreas_0.6m_Color_Mar_2003_01</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>ME_EasternAreas_0.6m_Color_Mar_2003_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>KitteryME_0.1524m_Color_May_2006</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>KitteryME_0.1524m_Color_May_2006_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>Augusta-ManchesterME_0.3m_Color_May_2008</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>Augusta-ManchesterME_0.3m_Color_May_2008_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>Augusta-ManchesterME_0.3m_Color_May_2008_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>Augusta-ManchesterME_0.15m_Color_May_2008</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>Augusta-ManchesterME_0.15m_Color_May_2008_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>AugustaME_0.3m_Color_Mar_2003</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>Augusta-ManchesterME_0.15m_Color_May_2008_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>AugustaME_0.3m_Color_Mar_2003_Footprint</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>AugustaME_0.3m_Color_Mar_2003_Metadata</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >560894448536324782652478528813959934368022615704733205711657401881458711636252590644029403405364291451220629775343145328539346340483650824566306577178620329984.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>Ortho0920100313175647118</id>
+            <datasource>http://maps.york.ca/wmsconnector/com.esri.wms.Esrimap/WMS_RegOrtho?Request=GetCapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
+            <layername>OA_Ortho09</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>Ortho09</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >nan</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>Orthofoto0720100313175253140</id>
+            <datasource>http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms</datasource>
+            <layername>OA_SOGIS_Orthofoto07</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>Orthofoto07</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/jpeg</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="false" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>adv_dop20100313181536674</id>
+            <datasource>http://www.landesvermessung.sachsen.de/ias/basiskarte4/service/SRV4ADV_P_DOPRGB/WMSFREE_TK/wmsservice?</datasource>
+            <layername>OA_Sachsen_adv_dop</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>adv_dop</name>
+                    <style>DEFAULT</style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>fsa200920100313200717507</id>
+            <datasource>http://geoint.lmic.state.mn.us/cgi-bin/wmsll?</datasource>
+            <layername>OA_Minnesota</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>fsa2009</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/jpeg</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >nan</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>lausanne_epfl20100313174957425</id>
+            <datasource>http://plan.epfl.ch/lausanne-epfl-osm?</datasource>
+            <layername>OA_lausanne/epfl</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>lausanne</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>epfl</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/jpeg</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >-674447028229157413599506655519509914943585078000918151586283438583440458481692861163897183193968120325092933662335190268160926000301464584115894157777166015088177929295624462299403526726739244842368789619614444264807317077436213384466006968284198072742568096931863068926737707123450654217683812287969755136.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>ocaene_200920100313195326441</id>
+            <datasource>http://www.ideandalucia.es/wms/ortofoto2009ene?</datasource>
+            <layername>OA_Andalucia</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>ocaene_2009</name>
+                    <style>default</style>
+                </wmsSublayer>
+                <wmsFormat>image/png;%20mode=24bit</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >45379504296575284321243311856089455103475351325984120872425567488370275640738871160055859868523771742435626254402984893716937543550949235368037047242007056742789884898424793746582433906863347113517053925210032841949184.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>ortho05m_farbe_PolitischeGemeinden20100313174627590</id>
+            <datasource>http://doris.ooe.gv.at/wmsconnector/com.esri.wms.Esrimap/GeoLand2_WMS?request=getcapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
+            <layername>OA_Oberösterreich_ortho05m_farbe</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>ortho05m_farbe</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsSublayer>
+                    <name>PolitischeGemeinden</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="false" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>ortho1m_farbe20100313174044898</id>
+            <datasource>http://gis.ktn.gv.at/wmsconnector/com.esri.wms.Esrimap/geoland_wms?request=getcapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
+            <layername>OA_Kärnten_ortho1m_farbe</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>ortho1m_farbe</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >506183112330144926955471371266411866676569196483495904460111881113142397271374125789753748012849390935835737032663482868504955625043212884093758675730460473509960153889501001400643976429568.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>ortho20100313195551158</id>
+            <datasource>http://sitn.ne.ch/ogc-sitn-open/wms</datasource>
+            <layername>OA_SITN_ortho</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>ortho</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/jpeg</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false" />
+                <mRGBMinimumMaximumEstimated boolean="false" />
+                <mUserDefinedGrayMinimumMaximum boolean="false" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="false" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>ortofotos20100313180655815</id>
+            <datasource>http://idecan1.grafcan.es/ServicioWMS/OrtoProd?SERVICE=WMS&amp;REQUEST=GetCapabilities</datasource>
+            <layername>OA_Canaries_ortofotos</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>ortofotos</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/jpeg</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="false" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="false" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="false" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>otf10k0920100313201339584</id>
+            <datasource>http://web.rete.toscana.it/sgrwms/com.rt.wms.RTmap?servicename=_rt_wms_wgs84</datasource>
+            <layername>OA_Toscana</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>otf10k09</name>
+                    <style></style>
+                </wmsSublayer>
+                <wmsFormat>image/png</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="false" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="true" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="false" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
+    </projectlayers>
+    <properties>
+        <Gui>
+            <SelectionColorBluePart type="int" >0</SelectionColorBluePart>
+            <CanvasColorGreenPart type="int" >255</CanvasColorGreenPart>
+            <CanvasColorRedPart type="int" >255</CanvasColorRedPart>
+            <SelectionColorRedPart type="int" >255</SelectionColorRedPart>
+            <SelectionColorGreenPart type="int" >255</SelectionColorGreenPart>
+            <CanvasColorBluePart type="int" >255</CanvasColorBluePart>
+        </Gui>
+        <PositionPrecision>
+            <DecimalPlaces type="int" >2</DecimalPlaces>
+            <Automatic type="bool" >true</Automatic>
+        </PositionPrecision>
+    </properties>
+</qgis>
