@@ -36,4 +36,4 @@
   * Twitt
   * Facebook
   * !LinkedIn
-  * ~~Add Google Analytics in http://code.google.com/p/openaddresses~~ 
+  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
