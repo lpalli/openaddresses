@@ -1,6 +1,6 @@
 = Describe the way the prod instance is monitored =
 
  * Use http://www.siteuptime.com
- * Free account: cedric.moullet[at]gmail.com
- * Send email to openaddresses[at]googlegroups.com
+ * Free account: cedric.moullet [at] gmail.com
+ * Send email to openaddresses [at] googlegroups.com
  * Monitor name: openaddresses.org
