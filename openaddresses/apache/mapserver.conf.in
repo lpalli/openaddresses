@@ -1,6 +1,6 @@
 ScriptAlias /mapserv /usr/lib/cgi-bin/mapserv
 <Location /mapserv>
   SetHandler fcgid-script
-  SetEnv MS_MAPFILE $MAPFILE$
-  SetEnv MS_MAPFILE_PATTERN "^$MAPFILE$"
+  SetEnv MS_MAPFILE %MAPFILE%
+  SetEnv MS_MAPFILE_PATTERN "^%MAPFILE%"
 </Location>
