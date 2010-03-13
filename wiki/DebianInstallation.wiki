@@ -12,7 +12,7 @@ SSH: ssh admin@c2cpc84.camptocamp.com
 This has to be done everytime a new application wants to be deployed on the server
 
  * cd trunk/openaddresses
- * python deploy config/debian.cfg
+ * python deploy config/c2cpc84.cfg
  * http://c2cpc84.camptocamp.com/openaddresses/
 
 = !HowTo Install !OpenAddresses Server =
