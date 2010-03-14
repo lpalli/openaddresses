@@ -85,5 +85,22 @@ openaddresses.layers = [
         attribution:"Staatsbetrieb Geobasisinformation und Vermessung Sachsen (GeoSN)",
         maxExtent: openaddresses.createBoundsFrom4326(11.863, 50.145, 15.034, 51.716)}
             )
+        ,
+    new OpenLayers.Layer.WMS(
+            "CH_Lausanne_EPFL",
+            openaddresses.config.baseWMS,
+    {layers: 'lausanne_epfl',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 50,
+        attribution:"WMS server for Lausanne and EPFL raster images",
+        maxExtent: openaddresses.createBoundsFrom4326(6.558, 46.500, 6.682, 46.555)}
+            )
 ];
 
