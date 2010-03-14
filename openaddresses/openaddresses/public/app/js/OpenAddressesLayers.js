@@ -98,7 +98,7 @@ openaddresses.layers = [
         ratio: 1.0,
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
-        maxResolution: 50,
+        maxResolution: 20,
         attribution:"WMS server for Lausanne and EPFL raster images",
         maxExtent: openaddresses.createBoundsFrom4326(6.558, 46.500, 6.682, 46.555)}
             )
