@@ -6,21 +6,24 @@ This page describes howto add a WMS in !OpenAddresses
 
 = Step by Step =
 
- 1. Add a cascading WMS config in local !MapServer (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/mapserver/cascading.map): 
+ 1. Add a cascading WMS config in local !MapServer (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/mapserver/cascading.map.in): 
 {{{
  LAYER
-  NAME "SITN_sitn"
+  NAME "SITN_ortho"
   TYPE RASTER
   STATUS ON
   CONNECTION "http://sitn.ne.ch/ogc-sitn-open/wms?"
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
-    "wms_name"            "SITN"
+    "wms_name"            "ortho"
     "wms_server_version"  "1.1.1"
-    "wms_format"          "image/png"
+    "wms_format"          "image/jpeg"
   END
  END
 }}}
- 1. Fill information in http://code.google.com/p/openaddresses/wiki/LayerList
  1. Add layer in http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesLayers.js
+
+== Tip ==
+
+ * A QGIS project has been done for facilitating this task: http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/mapserver/qgisProject.qgs 
