@@ -1,0 +1,17 @@
+= General information =
+
+ * [http://wiki.openstreetmap.org/wiki/Data_Primitives OSM Data Primitives] 
+ * [https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr OA data model]
+
+= From OSM to OA =
+
+ * Export all nodes
+{{{
+curl --globoff --location http://www.informationfreeway.org/api/0.6/node[addr:housenumber] -o addresses.osm
+}}}
+ * Export everything
+{{{
+curl --globoff --location http://www.informationfreeway.org/api/0.6/*[addr:housenumber] -o addresses.osm
+}}}
+
+= From OA to OSM =
