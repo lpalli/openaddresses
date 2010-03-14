@@ -157,6 +157,20 @@ MAP
  END
 
  LAYER
+  NAME "karnten"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://gis.ktn.gv.at:80/wmsconnector/com.esri.wms.Esrimap/geoland_wms"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "ortho1m_farbe"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
    NAME "address"
    TYPE POINT
    CONNECTIONTYPE POSTGIS

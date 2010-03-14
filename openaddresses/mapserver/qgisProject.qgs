@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>15.439991</xmin>
-            <ymin>49.761727</ymin>
-            <xmax>15.685487</xmax>
-            <ymax>49.968554</ymax>
+            <xmin>13.849235</xmin>
+            <ymin>46.737668</ymin>
+            <xmax>13.889006</xmax>
+            <ymax>46.762026</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -24,9 +24,14 @@
         </destinationsrs>
     </mapcanvas>
     <legend>
-        <legendlayer open="true" checked="Qt::Checked" name="adv_dop" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_Geneva_0" >
             <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="adv_dop20100313205405504" visible="1" />
+                <legendlayerfile isInOverview="0" layerid="020100314045658003" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_adv_dop" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="adv_dop20100313205405504" visible="0" />
             </filegroup>
         </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="OA_Spain_Catastro" >
@@ -34,7 +39,7 @@
                 <legendlayerfile isInOverview="0" layerid="Catastro20100313201846457" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_SITN_ortho" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_SITN_ortho" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="ortho20100313195551158" visible="0" />
             </filegroup>
@@ -54,7 +59,7 @@
                 <legendlayerfile isInOverview="0" layerid="fsa200920100313200717507" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Andalucia" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_Andalucia" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="ocaene_200920100313195326441" visible="0" />
             </filegroup>
@@ -69,9 +74,14 @@
                 <legendlayerfile isInOverview="0" layerid="DOP20100313181827422" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="OA_Sachsen_adv_dop" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_lausanne/epfl" >
             <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="adv_dop20100313181536674" visible="1" />
+                <legendlayerfile isInOverview="0" layerid="lausanne_epfl20100313174957425" visible="0" />
+            </filegroup>
+        </legendlayer>
+        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Sachsen_adv_dop" >
+            <filegroup open="true" hidden="false" >
+                <legendlayerfile isInOverview="0" layerid="adv_dop20100313181536674" visible="0" />
             </filegroup>
         </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="OA_Canaries_ortofotos" >
@@ -89,14 +99,9 @@
                 <legendlayerfile isInOverview="0" layerid="Ortho0920100313175647118" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_SOGIS_Orthofoto07" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_SOGIS_Orthofoto07" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="Orthofoto0720100313175253140" visible="0" />
-            </filegroup>
-        </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_lausanne/epfl" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="lausanne_epfl20100313174957425" visible="0" />
             </filegroup>
         </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="OA_Oberösterreich_ortho05m_farbe" >
@@ -104,9 +109,9 @@
                 <legendlayerfile isInOverview="0" layerid="ortho05m_farbe_PolitischeGemeinden20100313174627590" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Kärnten_ortho1m_farbe" >
+        <legendlayer open="true" checked="Qt::Checked" name="DONE_OA_Kärnten_ortho1m_farbe" >
             <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="ortho1m_farbe20100313174044898" visible="0" />
+                <legendlayerfile isInOverview="0" layerid="ortho1m_farbe20100313174044898" visible="1" />
             </filegroup>
         </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="Oberösterreich_Landesgrenzen" >
@@ -114,13 +119,55 @@
                 <legendlayerfile isInOverview="0" layerid="Landesgrenzen20100313174330950" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="Kärnten_Landesgrenzen" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_Kärnten_Landesgrenzen" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="Landesgrenzen20100313175134606" visible="0" />
             </filegroup>
         </legendlayer>
     </legend>
-    <projectlayers layercount="19" >
+    <projectlayers layercount="20" >
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+            <id>020100314045658003</id>
+            <datasource>http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer</datasource>
+            <layername>DONE_OA_Geneva_0</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <epsg>4326</epsg>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider>wms</provider>
+            <rasterproperties>
+                <wmsSublayer>
+                    <name>0</name>
+                    <style>default</style>
+                </wmsSublayer>
+                <wmsFormat>image/jpeg</wmsFormat>
+                <mDrawingStyle>MultiBandColor</mDrawingStyle>
+                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
+                <mInvertColor boolean="false" />
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
+                <mGrayBandName></mGrayBandName>
+                <mStandardDeviations>0</mStandardDeviations>
+                <mUserDefinedRGBMinimumMaximum boolean="true" />
+                <mRGBMinimumMaximumEstimated boolean="true" />
+                <mUserDefinedGrayMinimumMaximum boolean="true" />
+                <mGrayMinimumMaximumEstimated boolean="false" />
+                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
+                <contrastEnhancementMinMaxValues/>
+                <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
+            </rasterproperties>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>CONSTRU20100313201941223</id>
             <datasource>http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?</datasource>
@@ -149,10 +196,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -191,10 +238,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -233,10 +280,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false" />
                 <mRGBMinimumMaximumEstimated boolean="false" />
@@ -275,10 +322,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -317,10 +364,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -334,7 +381,7 @@
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>Landesgrenzen20100313175134606</id>
             <datasource>http://gis.ktn.gv.at/wmsconnector/com.esri.wms.Esrimap/geoland_wms?request=getcapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
-            <layername>Kärnten_Landesgrenzen</layername>
+            <layername>DONE_Kärnten_Landesgrenzen</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -359,10 +406,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -609,10 +656,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -651,10 +698,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -668,7 +715,7 @@
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>Orthofoto0720100313175253140</id>
             <datasource>http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms</datasource>
-            <layername>OA_SOGIS_Orthofoto07</layername>
+            <layername>DONE_OA_SOGIS_Orthofoto07</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -693,10 +740,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -735,10 +782,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -752,7 +799,7 @@
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>adv_dop20100313205405504</id>
             <datasource>http://www.landesvermessung.sachsen.de/ias/basiskarte4/service/SRV4ADV_P_DOPRGB/WMSFREE_TK/wmsservice?</datasource>
-            <layername>adv_dop</layername>
+            <layername>DONE_OA_adv_dop</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -777,10 +824,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="false" />
@@ -819,10 +866,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -836,7 +883,7 @@
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>lausanne_epfl20100313174957425</id>
             <datasource>http://plan.epfl.ch/lausanne-epfl-osm?</datasource>
-            <layername>OA_lausanne/epfl</layername>
+            <layername>DONE_OA_lausanne/epfl</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -865,10 +912,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -879,10 +926,10 @@
                 <mNoDataValue mValidNoDataValue="true" >-674447028229157413599506655519509914943585078000918151586283438583440458481692861163897183193968120325092933662335190268160926000301464584115894157777166015088177929295624462299403526726739244842368789619614444264807317077436213384466006968284198072742568096931863068926737707123450654217683812287969755136.000000</mNoDataValue>
             </rasterproperties>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>ocaene_200920100313195326441</id>
             <datasource>http://www.ideandalucia.es/wms/ortofoto2009ene?</datasource>
-            <layername>OA_Andalucia</layername>
+            <layername>DONE_OA_Andalucia</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -907,10 +954,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -953,10 +1000,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -970,7 +1017,7 @@
         <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>ortho1m_farbe20100313174044898</id>
             <datasource>http://gis.ktn.gv.at/wmsconnector/com.esri.wms.Esrimap/geoland_wms?request=getcapabilities&amp;service=WMS&amp;version=1.1.1</datasource>
-            <layername>OA_Kärnten_ortho1m_farbe</layername>
+            <layername>DONE_OA_Kärnten_ortho1m_farbe</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -995,10 +1042,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -1012,7 +1059,7 @@
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>ortho20100313195551158</id>
             <datasource>http://sitn.ne.ch/ogc-sitn-open/wms</datasource>
-            <layername>OA_SITN_ortho</layername>
+            <layername>DONE_OA_SITN_ortho</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -1037,10 +1084,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false" />
                 <mRGBMinimumMaximumEstimated boolean="false" />
@@ -1079,10 +1126,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -1121,10 +1168,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="false" />
