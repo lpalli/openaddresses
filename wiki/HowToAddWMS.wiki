@@ -1,4 +1,4 @@
-Howto add a WMSin !OpenAddresses
+Howto add a WMS in !OpenAddresses
 
 = Introduction =
 
