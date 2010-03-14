@@ -288,11 +288,11 @@ openaddresses.layout = (function() {
                         },
                         {
                             title: OpenLayers.i18n('Upload'),
-                            html: 'Ongoing development...<br> For now, send your data to info[at]openaddresses.org.'
+                            html: OpenLayers.i18n('Ongoing development...<br> For now, take contact with us through openaddresses[at]googlegroups.com.')
                         },
                         {
                             title: OpenLayers.i18n('Download'),
-                            html: 'Ongoing development...<br> For now, get the data from info[at]openaddresses.org.'
+                            html: OpenLayers.i18n('Ongoing development...<br> For now, take contact with us through openaddresses[at]googlegroups.com.')
                         },
                         {
                             title: OpenLayers.i18n('Services'),
@@ -300,7 +300,7 @@ openaddresses.layout = (function() {
                         },
                         {
                             title: OpenLayers.i18n('Statistics'),
-                            html: 'Ongoing development...<br> About 4.3 millions in OpenAddresses.org.'
+                            html: OpenLayers.i18n('Ongoing development...<br> About 4.3 millions in OpenAddresses.org.For now, take contact with us through openaddresses[at]googlegroups.com.')
                         },
                         {
                             title: OpenLayers.i18n('License'),
