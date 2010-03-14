@@ -73,3 +73,16 @@
    margin:0;
    height:auto;
 }
+
+.olControlAttribution  {
+   bottom:3px !important;
+   font-family:Arial !important;
+   font-size:11px !important;
+   left:3px !important;
+}
+
+div.olControlMousePosition  {
+   bottom:3px !important;
+   font-size:11px !important;
+   right:3px !important;
+}

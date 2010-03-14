@@ -37,6 +37,7 @@
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/LayerSwitcher.js
  * @include OpenLayers/Control/ModifyFeature.js
+ * @include OpenLayers/Control/Attribution.js
  * @include OpenLayers/Popup/FramedCloud.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
@@ -78,6 +79,27 @@ openaddresses.layout = (function() {
             }
         });
 
+        OpenLayers.Control.Attribution.prototype.updateAttribution = function() {
+            var attributions = [];
+            if (this.map && this.map.layers) {
+                for (var i = 0, len = this.map.layers.length; i < len; i++) {
+                    var layer = this.map.layers[i];
+                    var withinMaxExtent = (layer.maxExtent && this.map.getExtent() &&
+                                           this.map.getExtent().intersectsBounds(layer.maxExtent, false));
+                    if (layer.attribution && layer.getVisibility() & withinMaxExtent) {
+                        // add attribution only if attribution text is unique
+                        if (OpenLayers.Util.indexOf(
+                                attributions, layer.attribution) === -1) {
+                            attributions.push(layer.attribution);
+                        }
+                    }
+                }
+                this.div.innerHTML = attributions.join(this.separator);
+            }
+        };
+
+        var attributionControl = new OpenLayers.Control.Attribution();
+
         return new OpenLayers.Map({
             projection: new OpenLayers.Projection("EPSG:900913"),
             displayProjection: new OpenLayers.Projection("EPSG:4326"),
@@ -89,6 +111,7 @@ openaddresses.layout = (function() {
             allOverlays: false,
             controls: [navControl,
                 editControl,
+                attributionControl,
                 new OpenLayers.Control.PanZoomBar(),
                 new OpenLayers.Control.MousePosition({
                     numDigits: 2
@@ -507,7 +530,7 @@ openaddresses.layout = (function() {
         },
 
         hideWaitingMask: function() {
-            this.waitingMask.style.display = "none"; 
+            this.waitingMask.style.display = "none";
         },
 
         showLocationTooltip: function(evt) {
