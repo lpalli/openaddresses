@@ -1,0 +1,17 @@
+= www.openaddresses.org BETA launched =
+
+Do you dream of free and open localized addresses or free and open geocoding and reverse geocoding services ? It's not a dream anymore, it's a reality !
+After www.openaddresses.ch and www.openaddresses.at, [http://www.openaddresses.org www.openaddresses.org] has been launched to collect worldwide localized addresses.
+This inititiave of several persons, universities and companies of central Europe aims to offer a web portail for the management of open and free addresses. www.openaddresses.org aims also to collaborate nicely with www.openstreetmap.org by exchanging data, but since localized addresses are a very specific, we consider that it is appropriate to have a plattform dedicated only to addresses.
+
+Don't hesitate to add your own address, the address of your friends and of the friends of your friends ;-) If you'd like to participate to this effort, you can also provide address listing, orthophoto or whatever data that can support this effort. We are also looking for persons willing to participate to the development, the translation, the system administration, the testing, the communication etc, etc...
+
+You'll find more information in the following documents:
+
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Frequently asked questions]
+ * [http://code.google.com/p/openaddresses/wiki/UserGuideEn User guide]
+ * [http://code.google.com/p/openaddresses/ Wiki]
+ * [http://groups.google.com/group/OpenAddresses Discussion group]
+
+Thanks for your interest.
+ 
