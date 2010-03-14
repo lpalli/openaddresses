@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>13.849235</xmin>
-            <ymin>46.737668</ymin>
-            <xmax>13.889006</xmax>
-            <ymax>46.762026</ymax>
+            <xmin>11.408817</xmin>
+            <ymin>48.758270</ymin>
+            <xmax>11.438807</xmax>
+            <ymax>48.776638</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -34,27 +34,17 @@
                 <legendlayerfile isInOverview="0" layerid="adv_dop20100313205405504" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Spain_Catastro" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="Catastro20100313201846457" visible="0" />
-            </filegroup>
-        </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_SITN_ortho" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="ortho20100313195551158" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Spain_CONSTRU" >
-            <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="CONSTRU20100313201941223" visible="0" />
-            </filegroup>
-        </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Toscana" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_Toscana" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="otf10k0920100313201339584" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Minnesota" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_Minnesota" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="fsa200920100313200717507" visible="0" />
             </filegroup>
@@ -64,12 +54,12 @@
                 <legendlayerfile isInOverview="0" layerid="ocaene_200920100313195326441" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_GDI_DOPDLM" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_GDI_DOPDLM" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="DOPDLM20100313194229502" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Unchecked" name="OA_Bayern_DOP" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_Bayern_DOP" >
             <filegroup open="true" hidden="false" >
                 <legendlayerfile isInOverview="0" layerid="DOP20100313181827422" visible="0" />
             </filegroup>
@@ -109,9 +99,9 @@
                 <legendlayerfile isInOverview="0" layerid="ortho05m_farbe_PolitischeGemeinden20100313174627590" visible="0" />
             </filegroup>
         </legendlayer>
-        <legendlayer open="true" checked="Qt::Checked" name="DONE_OA_Kärnten_ortho1m_farbe" >
+        <legendlayer open="true" checked="Qt::Unchecked" name="DONE_OA_Kärnten_ortho1m_farbe" >
             <filegroup open="true" hidden="false" >
-                <legendlayerfile isInOverview="0" layerid="ortho1m_farbe20100313174044898" visible="1" />
+                <legendlayerfile isInOverview="0" layerid="ortho1m_farbe20100313174044898" visible="0" />
             </filegroup>
         </legendlayer>
         <legendlayer open="true" checked="Qt::Unchecked" name="Oberösterreich_Landesgrenzen" >
@@ -125,7 +115,7 @@
             </filegroup>
         </legendlayer>
     </legend>
-    <projectlayers layercount="20" >
+    <projectlayers layercount="18" >
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>020100314045658003</id>
             <datasource>http://etat.geneve.ch/ags2/services/Orthophotos_2005/MapServer/WMSServer</datasource>
@@ -154,10 +144,10 @@
                 <mDrawingStyle>MultiBandColor</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false" />
-                <mRedBandName></mRedBandName>
-                <mGreenBandName></mGreenBandName>
-                <mBlueBandName></mBlueBandName>
-                <mGrayBandName></mGrayBandName>
+                <mRedBandName>Not Set</mRedBandName>
+                <mGreenBandName>Not Set</mGreenBandName>
+                <mBlueBandName>Not Set</mBlueBandName>
+                <mGrayBandName>Not Set</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="true" />
                 <mRGBMinimumMaximumEstimated boolean="true" />
@@ -168,94 +158,10 @@
                 <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
             </rasterproperties>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
-            <id>CONSTRU20100313201941223</id>
-            <datasource>http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?</datasource>
-            <layername>OA_Spain_CONSTRU</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <epsg>4326</epsg>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider>wms</provider>
-            <rasterproperties>
-                <wmsSublayer>
-                    <name>CONSTRU</name>
-                    <style>Default</style>
-                </wmsSublayer>
-                <wmsFormat>image/png</wmsFormat>
-                <mDrawingStyle>MultiBandColor</mDrawingStyle>
-                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
-                <mInvertColor boolean="false" />
-                <mRedBandName>Not Set</mRedBandName>
-                <mGreenBandName>Not Set</mGreenBandName>
-                <mBlueBandName>Not Set</mBlueBandName>
-                <mGrayBandName>Not Set</mGrayBandName>
-                <mStandardDeviations>0</mStandardDeviations>
-                <mUserDefinedRGBMinimumMaximum boolean="true" />
-                <mRGBMinimumMaximumEstimated boolean="true" />
-                <mUserDefinedGrayMinimumMaximum boolean="true" />
-                <mGrayMinimumMaximumEstimated boolean="true" />
-                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
-                <contrastEnhancementMinMaxValues/>
-                <mNoDataValue mValidNoDataValue="true" >nan</mNoDataValue>
-            </rasterproperties>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
-            <id>Catastro20100313201846457</id>
-            <datasource>http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?</datasource>
-            <layername>OA_Spain_Catastro</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <epsg>4326</epsg>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <transparencyLevelInt>255</transparencyLevelInt>
-            <customproperties/>
-            <provider>wms</provider>
-            <rasterproperties>
-                <wmsSublayer>
-                    <name>Catastro</name>
-                    <style>Default</style>
-                </wmsSublayer>
-                <wmsFormat>image/png</wmsFormat>
-                <mDrawingStyle>MultiBandColor</mDrawingStyle>
-                <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
-                <mInvertColor boolean="false" />
-                <mRedBandName>Not Set</mRedBandName>
-                <mGreenBandName>Not Set</mGreenBandName>
-                <mBlueBandName>Not Set</mBlueBandName>
-                <mGrayBandName>Not Set</mGrayBandName>
-                <mStandardDeviations>0</mStandardDeviations>
-                <mUserDefinedRGBMinimumMaximum boolean="true" />
-                <mRGBMinimumMaximumEstimated boolean="true" />
-                <mUserDefinedGrayMinimumMaximum boolean="true" />
-                <mGrayMinimumMaximumEstimated boolean="true" />
-                <mContrastEnhancementAlgorithm>NoEnhancement</mContrastEnhancementAlgorithm>
-                <contrastEnhancementMinMaxValues/>
-                <mNoDataValue mValidNoDataValue="true" >nan</mNoDataValue>
-            </rasterproperties>
-        </maplayer>
         <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>DOP20100313181827422</id>
             <datasource>http://www.geodaten.bayern.de/ogc/getogc.cgi?</datasource>
-            <layername>OA_Bayern_DOP</layername>
+            <layername>DONE_OA_Bayern_DOP</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -294,10 +200,10 @@
                 <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
             </rasterproperties>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>DOPDLM20100313194229502</id>
             <datasource>http://www.gaia-mv.de/dienste/DOPDLM?</datasource>
-            <layername>OA_GDI_DOPDLM</layername>
+            <layername>DONE_OA_GDI_DOPDLM</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -838,10 +744,10 @@
                 <mNoDataValue mValidNoDataValue="true" >0.000000</mNoDataValue>
             </rasterproperties>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
+        <maplayer minimumScale="1" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>fsa200920100313200717507</id>
             <datasource>http://geoint.lmic.state.mn.us/cgi-bin/wmsll?</datasource>
-            <layername>OA_Minnesota</layername>
+            <layername>DONE_OA_Minnesota</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
@@ -1143,7 +1049,7 @@
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0" >
             <id>otf10k0920100313201339584</id>
             <datasource>http://web.rete.toscana.it/sgrwms/com.rt.wms.RTmap?servicename=_rt_wms_wgs84</datasource>
-            <layername>OA_Toscana</layername>
+            <layername>DONE_OA_Toscana</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>

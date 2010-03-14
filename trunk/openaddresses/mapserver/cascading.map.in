@@ -171,6 +171,64 @@ MAP
  END
 
  LAYER
+  NAME "toscana"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://web.rete.toscana.it:80/sgrwms/com.rt.wms.RTmap/_rt_wms_wgs84"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "otf10k09"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "minnesota"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://geoint.lmic.state.mn.us/cgi-bin/wmsll"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "fsa2009"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "mecklenburg"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://www.gaia-mv.de/dienste/DOPDLM"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "DOPDLM"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "bayern"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://www.geodaten.bayern.de/ogc/getogc.cgi"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "DOP"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+
+
+ LAYER
    NAME "address"
    TYPE POINT
    CONNECTIONTYPE POSTGIS
