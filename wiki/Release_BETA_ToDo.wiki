@@ -2,7 +2,7 @@
 
  * Target date: 29 march 2010
  * Data
-  * Synchronize new data set
+  * Import/Synchronize new data set
  * Application
   * Test http://code.google.com/p/openaddresses/wiki/HowToTest
  * Server
