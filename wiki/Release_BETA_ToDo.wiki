@@ -18,23 +18,31 @@
    * Translate user guide in german: http://code.google.com/p/openaddresses/wiki/UserGuideDe
    * Translate user guide in italian:
    * Translate user guide in spanish: http://code.google.com/p/openaddresses/wiki/UserGuideEs
- * Marketing
-  * Announcement to
-   * OSGEO mailing list
-   * OSGEO local chapters
-    * http://www.osgeo.org/content/chapters/index.html
-   * BALIZ
-   * slashgeo
-   * OSM
-    * http://wiki.openstreetmap.org/wiki/Mailing_list
-   * OSM user groups
-    * http://wiki.openstreetmap.org/wiki/OSM_User_Groups
-   * Geonames
-   * CH: !GeowebForum
-   * FR: Georezo.net
-  * Article "Geomatik Schweiz"
-  * Blog
-  * Twitt
-  * Facebook
-  * !LinkedIn
-  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
+ * Marketing/Communication
+  * 29.3.2010: Blog
+  * 29.3.2010: Twitter
+  * 29.3.2010: Facebook
+  * 29.3.2010: !LinkedIn
+  * 29.3.2010: Private mails
+  * 30.3.2010: OSGEO mailing list
+   * discuss@lists.osgeo.org
+  * 31.3.2010: OSM
+   * http://lists.openstreetmap.org/listinfo/talk
+  * 1.4.2010: BALIZ
+   * FR: http://media.baliz-geospatial.com/fr/publiez-une-information
+  * 1.4.2010: Slashgeo
+   * http://slashgeo.org/submit.pl
+  * 1.4.2010: Directions Mag
+   * http://www.directionsmedia.net/masthead.php?p=contact
+  * 2.4.2010: OSGEO local chapters
+   * http://www.osgeo.org/content/chapters/index.html
+  * 2.4.2010: OSM user groups
+   * http://wiki.openstreetmap.org/wiki/OSM_User_Groups
+  * 3.4.2010: Geonames
+   * http://forum.geonames.org/gforum/forums/show/4.page
+  * 3.4.2010: !GeowebForum
+   * http://www.geowebforum.ch/index.php
+  * 3.4.2010: Georezo.net
+   * http://georezo.net/forum/viewforum.php?id=38
+  * May: Article "Geomatik Schweiz"
+ * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
