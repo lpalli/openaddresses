@@ -5,6 +5,7 @@
 
 = From OSM to OA =
 
+ * [http://wiki.openstreetmap.org/wiki/API_v0.6 OSM API]
  * Export all nodes
 {{{
 curl --globoff --location http://www.informationfreeway.org/api/0.6/node[addr:housenumber] -o addresses.osm
