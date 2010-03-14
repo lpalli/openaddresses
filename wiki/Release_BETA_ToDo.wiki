@@ -41,6 +41,6 @@
   * 3.4.2010: !GeowebForum
    * http://www.geowebforum.ch/index.php
   * 3.4.2010: Georezo.net
-   * http://georezo.net/forum/viewforum.php?id=38
+   * FR http://georezo.net/forum/viewforum.php?id=38
   * May: Article "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
