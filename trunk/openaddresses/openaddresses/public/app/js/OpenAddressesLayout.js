@@ -86,7 +86,7 @@ openaddresses.layout = (function() {
                     var layer = this.map.layers[i];
                     var withinMaxExtent = (layer.maxExtent && this.map.getExtent() &&
                                            this.map.getExtent().intersectsBounds(layer.maxExtent, false));
-                    if (layer.attribution && layer.getVisibility() & withinMaxExtent) {
+                    if (layer.attribution && layer.getVisibility() && withinMaxExtent) {
                         // add attribution only if attribution text is unique
                         if (OpenLayers.Util.indexOf(
                                 attributions, layer.attribution) === -1) {
