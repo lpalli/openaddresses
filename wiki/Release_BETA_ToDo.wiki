@@ -11,6 +11,7 @@
    * Configure monitoring: http://code.google.com/p/openaddresses/wiki/Monitoring  
   * Add external WMS
   * Add google analytics
+  * Add backup system
  * Documentation
   * Create a FAQ: http://code.google.com/p/openaddresses/wiki/FAQ
   * Create User Guide: http://code.google.com/p/openaddresses/wiki/UserGuideEn 
