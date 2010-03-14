@@ -31,5 +31,6 @@ foreach way
    get all coordinates and compute centroid
       store address point by using addr key
 }}}
+ * Associate related information: http://wiki.openstreetmap.org/wiki/Proposed_features/House_numbers/Karlsruhe_Schema#Using_Relations_to_associate_house_and_street_.28optional.29
 
 = From OA to OSM =
