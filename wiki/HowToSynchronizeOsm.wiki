@@ -1,3 +1,5 @@
+<wiki:toc max_depth="3" />
+
 = General information =
 
  * [http://wiki.openstreetmap.org/wiki/Data_Primitives OSM Data Primitives]
