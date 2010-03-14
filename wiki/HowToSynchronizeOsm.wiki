@@ -1,6 +1,7 @@
 = General information =
 
- * [http://wiki.openstreetmap.org/wiki/Data_Primitives OSM Data Primitives] 
+ * [http://wiki.openstreetmap.org/wiki/Data_Primitives OSM Data Primitives]
+ * [http://wiki.openstreetmap.org/wiki/Address OSM Address description] 
  * [https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr OA data model]
 
 = From OSM to OA =
@@ -12,7 +13,21 @@ curl --globoff --location http://www.informationfreeway.org/api/0.6/node[addr:ho
 }}}
  * Export everything
 {{{
-curl --globoff --location http://www.informationfreeway.org/api/0.6/*[addr:housenumber] -o addresses.osm
+curl --globoff --location http://www.informationfreeway.org/api/0.6/*[addr:housenumber] -o addressesAll.osm
+}}}
+
+== Parsing data ==
+
+ * Convert to flat file
+{{{
+   xml2 < addressesAll.osm > addressesFlat.txt
+}}}
+ * Export all node to address point
+ * Export all way to address point
+{{{
+foreach way
+   get all coordinates and compute centroid
+      store address point by using addr key
 }}}
 
 = From OA to OSM =
