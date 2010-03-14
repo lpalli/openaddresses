@@ -132,6 +132,22 @@ openaddresses.layers = [
         maxResolution: 20,
         attribution:"Abteilung SO!GIS Koordination Amt fuer Geoinformation",
         maxExtent: openaddresses.createBoundsFrom4326(7.34084, 47.0741, 8.03378, 47.5041)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "AT_Kärnten",
+            openaddresses.config.baseWMS,
+    {layers: 'karnten',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 3,
+        attribution:"Amt der Kärntner Landesregierung, Kärntner Geographisches Informationssystem (KAGIS)",
+        maxExtent: openaddresses.createBoundsFrom4326(12.6078, 46.3413, 15.11358, 47.16447)}
             )
 ];
 
