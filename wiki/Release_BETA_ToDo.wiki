@@ -21,8 +21,6 @@
  * Marketing/Communication
   * 29.3.2010: Blog
   * 29.3.2010: Twitter
-  * 29.3.2010: Facebook
-  * 29.3.2010: !LinkedIn
   * 29.3.2010: Private mails
   * 30.3.2010: OSGEO mailing list
    * discuss@lists.osgeo.org
