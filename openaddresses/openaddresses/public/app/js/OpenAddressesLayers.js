@@ -38,11 +38,11 @@ openaddresses.createBoundsFrom4326 = function(minx, miny, maxx, maxy) {
 
 openaddresses.layers = [
     new OpenLayers.Layer.WMS(
-            "SITN_Ortho",
+            "CH_SITN_Ortho",
             openaddresses.config.baseWMS,
     {layers: 'SITN_ortho',
-        transparent: "true",
-        format:"image/png"},
+        transparent: "false",
+        format:"image/jpeg"},
     {singleTile:true,
         isBaseLayer: false,
         transitionEffect: "resize",
@@ -50,10 +50,11 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 50,
+        attribution:"Server WMS du SITN open",
         maxExtent: openaddresses.createBoundsFrom4326(6.31728, 46.7671, 7.1777, 47.222)}
             ),
     new OpenLayers.Layer.WMS(
-            "GENEVE_ortho",
+            "CH_GENEVE_ortho",
             openaddresses.config.baseWMS,
     {layers: 'GENEVE_ortho',
         transparent: "false",
@@ -65,7 +66,24 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 50,
+        attribution:"etat.geneve.ch",
         maxExtent: openaddresses.createBoundsFrom4326(5.918669, 46.105563, 6.314182, 46.379977)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "DE_adv_dop",
+            openaddresses.config.baseWMS,
+    {layers: 'adv_dop',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 200,
+        attribution:"Staatsbetrieb Geobasisinformation und Vermessung Sachsen (GeoSN)",
+        maxExtent: openaddresses.createBoundsFrom4326(11.863, 50.145, 15.034, 51.716)}
             )
 ];
 
