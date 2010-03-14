@@ -116,6 +116,22 @@ openaddresses.layers = [
         maxResolution: 20,
         attribution:"Instituto de Cartografia de Andalucia. Consejeria de Vivienda y Ordenacion del Territorio. Junta de Andalucia",
         maxExtent: openaddresses.createBoundsFrom4326(-4.536, 37.320, -1.94, 38.572)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "CH_SOGIS",
+            openaddresses.config.baseWMS,
+    {layers: 'sogis',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 20,
+        attribution:"Abteilung SO!GIS Koordination Amt fuer Geoinformation",
+        maxExtent: openaddresses.createBoundsFrom4326(7.34084, 47.0741, 8.03378, 47.5041)}
             )
 ];
 

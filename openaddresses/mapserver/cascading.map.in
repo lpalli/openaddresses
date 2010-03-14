@@ -143,6 +143,20 @@ MAP
  END
 
  LAYER
+  NAME "sogis"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "Orthofoto07"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
    NAME "address"
    TYPE POINT
    CONNECTIONTYPE POSTGIS
