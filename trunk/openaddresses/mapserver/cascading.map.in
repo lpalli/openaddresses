@@ -128,6 +128,19 @@ MAP
   END
  END
 
+ LAYER
+  NAME "andalucia"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://www.ideandalucia.es/wms/ortofoto2009ene"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "ocaene_2009"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
 
  LAYER
    NAME "address"
