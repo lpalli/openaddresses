@@ -1,22 +1,30 @@
-Description of user tests made in order to check application
+Test for openaddresses.org
 
 <wiki:toc max_depth="1" />
 
-= 1. Start Application =
+= Unit tests =
 
-== Test case ==
+ * JavaScript
+ * Python
+
+
+= User tests =
+
+== 1. Start Application ==
+
+=== Test case ===
 
  1. Start application on IE7+, Safari 4+, Chrome, Opera 10+, FF 3+
  1. Test 2 modes as KVP: ?mode=debug & ?mode=prod
 
-== Expected Result ==
+=== Expected Result ===
 
  1. Applications starts, no Javascript error
  1. Both mode debug and prod are working
 
-= 2. Create address =
+== 2. Create address ==
 
-== Test case ==
+=== Test case ===
 
  1. Start application on IE7+
  1. Zoom in order to see a building
@@ -25,22 +33,22 @@ Description of user tests made in order to check application
  1. Fill the mandatory attributes
  1. Save the address
 
-== Expected Result ==
+=== Expected Result ===
 
  1. Right mouse clicks generates a popup with address information
  1. Left mouse click generates a popup and a point in the map
  1. Address can be saved and is represented with a red point
 
-= 3. Show address =
+== 3. Show address ==
 
-== Test case ==
+=== Test case ===
 
  1. Start application on IE7+
  1. Zoom in order to see an address
  1. Hover an address
  1. Click on the address
 
-== Expected Result ==
+=== Expected Result ===
 
  1. Hover produces a div showing the address information
  1. Click produces a popup with address information
