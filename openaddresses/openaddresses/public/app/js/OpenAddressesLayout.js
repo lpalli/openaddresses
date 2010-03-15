@@ -657,10 +657,12 @@ openaddresses.layout = (function() {
             setPermalink();
 
             var hideMask = function () {
-                Ext.get('loading').remove();
-                Ext.fly('loading-mask').fadeOut({
-                    remove:true
-                });
+                if (Ext.get('loading')) {
+                    Ext.get('loading').remove();
+                    Ext.fly('loading-mask').fadeOut({
+                        remove:true
+                    });
+                }
             };
             hideMask.defer(250);
         }
