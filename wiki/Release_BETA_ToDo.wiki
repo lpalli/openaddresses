@@ -43,5 +43,7 @@
    * http://www.geowebforum.ch/index.php
   * 3.4.2010: Georezo.net
    * FR http://georezo.net/forum/viewforum.php?id=38
+  * 3.4.2010: mailinglist - oesterreichischer dachverband für geographische information
+   * ageo-news@googlegroups.com
   * May: Article "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
