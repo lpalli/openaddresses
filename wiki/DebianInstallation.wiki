@@ -30,3 +30,8 @@ createlang plpgsql openaddresses
 psql -d openaddresses -f /usr/share/postgresql-8.3-postgis/lwpostgis.sql
 psql -d openaddresses -f /usr/share/postgresql-8.3-postgis/spatial_ref_sys.sql
 }}}
+
+{{{
+ pg_restore -d openaddresses oa.backup
+ psql -d openaddresses -f myfile.sql
+}}}
