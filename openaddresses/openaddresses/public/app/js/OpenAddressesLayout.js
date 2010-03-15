@@ -250,6 +250,10 @@ openaddresses.layout = (function() {
     };
 
     var createViewPort = function(map, layers, layerStore, topToolbar, bottomToolbar) {
+        var langvalue = 'en';
+        if (Ext.get('lang')) {
+            langvalue = Ext.get('lang').dom.value;
+        }
         return new Ext.Viewport({
             layout: "border",
             items: [
@@ -283,7 +287,7 @@ openaddresses.layout = (function() {
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            html: '<img src="resources/img/Help_' + Ext.get('lang').dom.value + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
+                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
 
                         },
                         {
@@ -335,6 +339,9 @@ openaddresses.layout = (function() {
 
     var setLangPermalink = function(languageStore, languageCombo) {
         var params = Ext.urlDecode(window.location.search.substring(1));
+        if (!$('lang')) {
+            params.lang = 'en';
+        }
         if (!params.lang && $('lang').value) {
             params.lang = $('lang').value;
         }
@@ -523,14 +530,16 @@ openaddresses.layout = (function() {
             return base + '?' + Ext.urlEncode(parametersObj);
         },
 
-        waitingMask: Ext.get('waiting').dom,
-
         showWaitingMask: function() {
-            this.waitingMask.style.display = "block";
+            if (Ext.get('waiting')) {
+                Ext.get('waiting').dom.style.display = "block";
+            }
         },
 
         hideWaitingMask: function() {
-            this.waitingMask.style.display = "none";
+            if (Ext.get('waiting')) {
+                this.waitingMask.style.display = "none";
+            }
         },
 
         showLocationTooltip: function(evt) {
