@@ -4,7 +4,7 @@ Test for openaddresses.org
 
 = Unit tests =
 
- * !JavaScript
+ * !JavaScript: http://c2cpc84.camptocamp.com/openaddresses/tests/run-tests.html
  * Python
 
 
