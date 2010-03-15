@@ -28,6 +28,7 @@ openaddresses.OSM = OpenLayers.Class(OpenLayers.Layer.OSM, {
 
     initialize: function(options) {
         options.numZoomLevels = 23;
+        options.ratio = 1;
         var newArguments = [null, options.url ? options.url : null, options];
         OpenLayers.Layer.OSM.prototype.initialize.apply(this, newArguments);
     },
