@@ -160,7 +160,7 @@ MAP
   NAME "karnten"
   TYPE RASTER
   STATUS ON
-  CONNECTION "http://gis.ktn.gv.at:80/wmsconnector/com.esri.wms.Esrimap/geoland_wms"
+  CONNECTION "http://gis.ktn.gv.at:80/wmsconnector/com.esri.wms.Esrimap/geoland_wms?reaspect=false"
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
