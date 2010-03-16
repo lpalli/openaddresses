@@ -69,16 +69,6 @@ openaddresses.layout = (function() {
      * {OpenLayers.Map} The OpenLayers.Map instance.
      */
     var createMap = function() {
-        var navControl = new OpenLayers.Control.Navigation({
-            handleRightClicks: true
-        });
-
-        var editControl = new openaddresses.EditControl({
-            handlerOptions: {
-                "single": true
-            }
-        });
-
         OpenLayers.Control.Attribution.prototype.updateAttribution = function() {
             var attributions = [];
             if (this.map && this.map.layers) {
@@ -109,8 +99,7 @@ openaddresses.layout = (function() {
                     20037508, 20037508.34),
             numZoomLevels: 23,
             allOverlays: false,
-            controls: [navControl,
-                editControl,
+            controls: [
                 attributionControl,
                 new OpenLayers.Control.PanZoomBar(),
                 new OpenLayers.Control.MousePosition({
@@ -365,13 +354,6 @@ openaddresses.layout = (function() {
     var createLocationTooltip = function(map) {
         //FOR PERFORMANCE: map.events.register('mousemove', this, openaddresses.layout.showLocationTooltip);
         map.events.register('mouseout', this, hideMouseOver);
-        var hoverControl = new openaddresses.hover({
-            handlerOptions: {
-                'delay': 100
-            }
-        });
-        map.addControl(hoverControl);
-        hoverControl.activate();
     };
 
     var hideMouseOver = function(evt) {
@@ -383,9 +365,9 @@ openaddresses.layout = (function() {
     };
 
     var handleRightMouseClick = function(map) {
-        map.controls[0].handlers.click.callbacks.rightclick = function() {
+        openaddresses.layout.navControl.handlers.click.callbacks.rightclick = function() {
             openaddresses.layout.showWaitingMask();
-            var lonlat = map.getLonLatFromViewPortPx(map.controls[0].handlers.click.evt.xy);
+            var lonlat = map.getLonLatFromViewPortPx(openaddresses.layout.navControl.handlers.click.evt.xy);
             var content = "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Digitized Position") + "</h1><table style='font-size: 14px;'><tr><td width=\"150\">" + "" + OpenLayers.i18n("Spherical Mercator") + "</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
             lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
             content = content + "<tr><td>" + OpenLayers.i18n("WGS84") + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
@@ -430,10 +412,6 @@ openaddresses.layout = (function() {
         };
     };
 
-    var handleEdit = function(map) {
-        map.controls[1].activate();
-    };
-
     var createPermalinkButton = function() {
         return new Ext.Button({
             text: OpenLayers.i18n('Permalink'),
@@ -441,16 +419,6 @@ openaddresses.layout = (function() {
                 window.open(openaddresses.layout.createPermalink(true));
             }
         });
-    };
-
-    var createModifyFeatureControl = function(map) {
-        if (!map.modifyFeatureControl) {
-            var vectorLayer = openaddresses.layout.map.drawingLayer;
-            map.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(vectorLayer);
-            map.addControl(map.modifyFeatureControl);
-            map.modifyFeatureControl.activate();
-        }
-        return map.modifyFeatureControl;
     };
 
     var setPermalink = function() {
@@ -634,10 +602,31 @@ openaddresses.layout = (function() {
             var languageCombo = createLanguageCombo(languageStore);
             setLangPermalink(languageStore, languageCombo);
 
+
             this.map = createMap();
             this.layers = createLayers();
             var layerStore = createLayerStore(this.map, this.layers);
-            var modifyFeatureControl = createModifyFeatureControl(this.map);
+
+            // Create controls
+            this.navControl = new OpenLayers.Control.Navigation({
+                handleRightClicks: true
+            });
+            this.editControl = new openaddresses.EditControl({
+                handlerOptions: {
+                    "single": true
+                }
+            });
+            this.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(openaddresses.layout.map.drawingLayer);
+            this.hoverControl = new openaddresses.hover({
+                handlerOptions: {
+                    'delay': 100
+                }
+            });
+            this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
+            this.editControl.activate();
+            this.navControl.activate();
+            this.hoverControl.activate();
+
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
@@ -647,7 +636,6 @@ openaddresses.layout = (function() {
 
             // Manage controlers for reverse geocoding and editing 
             handleRightMouseClick(this.map);
-            handleEdit(this.map);
 
             createLocationTooltip(this.map);
 

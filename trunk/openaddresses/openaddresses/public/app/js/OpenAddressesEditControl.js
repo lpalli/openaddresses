@@ -140,7 +140,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 delete feature.editingPopup;
             }
             vectorLayer.removeFeatures(feature);
-            map.modifyFeatureControl.deactivate();
+            openaddresses.layout.modifyFeatureControl.deactivate();
+            openaddresses.layout.editControl.activate();
+            openaddresses.layout.hoverControl.activate();
             map.editedFeature = null;
             openaddresses.layout.map.addressLayer.redraw(true);
             openaddresses.layout.hideWaitingMask();
@@ -553,9 +555,11 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 }
 
                 vectorLayer.addFeatures(map.editedFeature);
-                map.modifyFeatureControl.activate();
-                map.modifyFeatureControl.selectControl.select(map.editedFeature);
-                map.modifyFeatureControl.selectControl.handlers.feature.feature = map.editedFeature;
+                openaddresses.layout.modifyFeatureControl.activate();
+                openaddresses.layout.editControl.deactivate();
+                openaddresses.layout.hoverControl.deactivate();
+                openaddresses.layout.modifyFeatureControl.selectControl.select(map.editedFeature);
+                openaddresses.layout.modifyFeatureControl.selectControl.handlers.feature.feature = map.editedFeature;
 
                 // Add the popup associated to the feature
                 addEditingPopup(map.editedFeature);
