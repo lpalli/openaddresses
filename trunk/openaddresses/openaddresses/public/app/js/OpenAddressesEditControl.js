@@ -140,11 +140,11 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 delete feature.editingPopup;
             }
             vectorLayer.removeFeatures(feature);
+            openaddresses.layout.map.addressLayer.redraw(true);
             openaddresses.layout.modifyFeatureControl.deactivate();
             openaddresses.layout.editControl.activate();
             openaddresses.layout.hoverControl.activate();
             map.editedFeature = null;
-            openaddresses.layout.map.addressLayer.redraw(true);
             openaddresses.layout.hideWaitingMask();
         };
 
