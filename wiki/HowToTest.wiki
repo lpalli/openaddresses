@@ -10,7 +10,10 @@ Test for openaddresses.org
 
 = User tests =
 
-On Dev-Server http://c2cpc84.camptocamp.com/openaddresses/ and Prod-Server http://geolin01.cti.ac.at/openaddresses/ in : IE8, Safari4, Chrome4, Opera10, FF3
+ * Dev-Server http://c2cpc84.camptocamp.com/openaddresses/
+ * Prod-Server http://geolin01.cti.ac.at/openaddresses/
+
+ * Browser: IE8, Safari4, Chrome4, Opera10, FF3
 
 == 1. Start Application ==
 
@@ -25,8 +28,12 @@ On Dev-Server http://c2cpc84.camptocamp.com/openaddresses/ and Prod-Server http:
  1. Both mode debug and prod are working
 
 === Results ===
- 1. IE8, Safari4, Chrome4, Opera10, FF3 works, IE6 has RuntimeErrors
- 1. Debug-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, IE6 has RuntimeErrors;  Prod-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, IE6 has RuntimeErrors
+ 1. IE8, Safari4, Chrome4, Opera10, FF3 works
+    IE6 has RuntimeErrors
+ 1. Debug-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, 
+    IE6 has RuntimeErrors;  
+    Prod-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, 
+    IE6 has RuntimeErrors
 
 == 2. Create address ==
 
