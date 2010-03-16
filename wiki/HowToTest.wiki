@@ -28,12 +28,21 @@ Test for openaddresses.org
  1. Both mode debug and prod are working
 
 === Results ===
- 1. IE8, Safari4, Chrome4, Opera10, FF3 works
-    IE6 has RuntimeErrors
- 1. Debug-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, 
-    IE6 has RuntimeErrors;  
-    Prod-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, 
-    IE6 has RuntimeErrors
+ 1. Applications starts, no Javascript error
+   * IE8 ok
+   * SF4 ok
+   * CH4 ok
+   * OP1 ok
+   * FF3 ok
+   * IE6 !RuntimeErrors KO
+ 1. Both mode debug and prod are working
+   * DEBUG
+    * IE8 ok
+    * SF4 ok
+    * CH4 ok
+    * OP1 ok
+    * FF3 ok
+    * IE6 !RuntimeErrors KO
 
 == 2. Create address ==
 
