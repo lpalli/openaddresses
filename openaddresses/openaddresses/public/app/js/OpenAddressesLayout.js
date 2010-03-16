@@ -538,7 +538,7 @@ openaddresses.layout = (function() {
 
         hideWaitingMask: function() {
             if (Ext.get('waiting')) {
-                Ext.get('waiting').style.display = "none";
+                Ext.get('waiting').dom.style.display = "none";
             }
         },
 
