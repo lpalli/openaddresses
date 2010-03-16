@@ -625,6 +625,10 @@ openaddresses.layout = (function() {
             OpenLayers.ImgPath = "resources/img/OpenLayers/";
             Ext.BLANK_IMAGE_URL = 'ext31/resources/images/default/s.gif';
 
+            if (Ext.isIE6) {
+                alert(OpenLayers.i18n('You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !'))
+            }
+
             // Manage language
             var languageStore = createLanguageStore();
             var languageCombo = createLanguageCombo(languageStore);
