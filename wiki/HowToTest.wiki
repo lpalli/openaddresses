@@ -28,21 +28,8 @@ Test for openaddresses.org
  1. Both mode debug and prod are working
 
 === Results ===
- 1. Applications starts, no Javascript error
-   * IE8 ok
-   * SF4 ok
-   * CH4 ok
-   * OP1 ok
-   * FF3 ok
-   * IE6 !RuntimeErrors KO
- 1. Both mode debug and prod are working
-   * DEBUG
-    * IE8 ok
-    * SF4 ok
-    * CH4 ok
-    * OP1 ok
-    * FF3 ok
-    * IE6 !RuntimeErrors KO
+
+ * 100316: OK (Issue 9, r525)
 
 == 2. Create address ==
 
@@ -63,7 +50,7 @@ Test for openaddresses.org
 
 === Results ===
 
- 1. Creating addresses works on both servers and in all browsers.
+ * 100316: OK
 
 == 3. Show address ==
 
@@ -81,8 +68,7 @@ Test for openaddresses.org
 
 === Results ===
 
- 1. Showing addresses works on both servers and in all browsers.
-
+ * 100316: OK
 
 == 4. Edit address-informations and -position ==
 
