@@ -10,6 +10,8 @@ Test for openaddresses.org
 
 = User tests =
 
+On Dev-Server http://c2cpc84.camptocamp.com/openaddresses/ and Prod-Server http://geolin01.cti.ac.at/openaddresses/ in : IE8, Safari4, Chrome4, Opera10, FF3
+
 == 1. Start Application ==
 
 === Test case ===
@@ -21,6 +23,11 @@ Test for openaddresses.org
 
  1. Applications starts, no Javascript error
  1. Both mode debug and prod are working
+
+=== Results ===
+ 1. IE8, Safari4, Chrome4, Opera10, FF3 works, IE6 has RuntimeErrors
+ 1. Debug-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, IE6 has RuntimeErrors
+    Prod-Mode: IE8, Safari4, Chrome4, Opera10, FF3 works, IE6 has RuntimeErrors
 
 == 2. Create address ==
 
@@ -39,6 +46,10 @@ Test for openaddresses.org
  1. Left mouse click generates a popup and a point in the map
  1. Address can be saved and is represented with a red point
 
+=== Results ===
+
+ 1. Creating addresses works on both servers and in all browsers.
+
 == 3. Show address ==
 
 === Test case ===
@@ -52,3 +63,41 @@ Test for openaddresses.org
 
  1. Hover produces a div showing the address information
  1. Click produces a popup with address information
+
+=== Results ===
+ 1. Creating addresses works on both servers and in all browsers.
+
+
+== 4. Edit address-informations and -position ==
+
+=== Test case ===
+
+  1. Click on the address
+  1. Edit and save address-informations
+  1. Move the address
+
+=== Expected Result ===
+
+  1. By changing the address-informations, they are saved in the database.
+  1. Moving the address, the new postion is saved in the database.
+
+=== Result ===
+
+  1. On http://geolin01.cti.ac.at/openaddresses/: FF, IE, Opera, Chrome can't move an address.
+  2. On http://geolin01.cti.ac.at/openaddresses/: Safari don't move the address, but makes a copy of it. Also the Create-Button don't change to "Save".
+
+== 5. Delete address ==
+
+=== Test case ===
+
+  1. Click on the address
+  1. Delete the address
+
+=== Expected Result ===
+
+  1. The address is deleted or marked as "deleted" in the database.
+
+=== Result ===
+
+  1. On http://c2cpc84.camptocamp.com/openaddresses/: Safari creates something like an error (red half-transparent overlay over the whole map)
+  1. On http://geolin01.cti.ac.at/openaddresses/: Safari creates something like an error. It deletes the address, but sets a question mark instead of the red point
