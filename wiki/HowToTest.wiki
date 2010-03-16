@@ -80,7 +80,7 @@ On Dev-Server http://c2cpc84.camptocamp.com/openaddresses/ and Prod-Server http:
   1. By changing the address-informations, they are saved in the database.
   1. Moving the address, the new postion is saved in the database.
 
-=== Result ===
+=== Results ===
 
   1. On http://geolin01.cti.ac.at/openaddresses/ : FF, IE, Opera, Chrome can't move an address.
   1. On http://geolin01.cti.ac.at/openaddresses/ : Safari don't move the address, but makes a copy of it. Also the Create-Button don't change to "Save".
@@ -96,7 +96,7 @@ On Dev-Server http://c2cpc84.camptocamp.com/openaddresses/ and Prod-Server http:
 
   1. The address is deleted or marked as "deleted" in the database.
 
-=== Result s===
+=== Results ===
 
   1. On http://c2cpc84.camptocamp.com/openaddresses/ : Safari creates something like an error (red half-transparent overlay over the whole map)
   1. On http://geolin01.cti.ac.at/openaddresses/ : Safari creates something like an error. It deletes the address, but sets a question mark instead of the red point
