@@ -597,6 +597,10 @@ openaddresses.layout = (function() {
                 alert(OpenLayers.i18n('You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !'))
             }
 
+            if (Ext.isChrome) {
+                alert(OpenLayers.i18n('You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.'))
+            }
+
             // Manage language
             var languageStore = createLanguageStore();
             var languageCombo = createLanguageCombo(languageStore);
