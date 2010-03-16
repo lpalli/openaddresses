@@ -83,7 +83,7 @@ On Dev-Server http://c2cpc84.camptocamp.com/openaddresses/ and Prod-Server http:
 === Result ===
 
   1. On http://geolin01.cti.ac.at/openaddresses/ : FF, IE, Opera, Chrome can't move an address.
-  2. On http://geolin01.cti.ac.at/openaddresses/ : Safari don't move the address, but makes a copy of it. Also the Create-Button don't change to "Save".
+  1. On http://geolin01.cti.ac.at/openaddresses/ : Safari don't move the address, but makes a copy of it. Also the Create-Button don't change to "Save".
 
 == 5. Delete address ==
 
