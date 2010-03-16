@@ -85,10 +85,7 @@ Test for openaddresses.org
 
 === Results ===
 
-  1. On http://geolin01.cti.ac.at/openaddresses/ : 
-    * FF, IE, OP, CH can't move an address.
-  1. On http://geolin01.cti.ac.at/openaddresses/ : 
-    * SF don't move the address, but makes a copy of it. Also the Create-Button don't change to "Save".
+  * 100316: ok
 
 == 5. Delete address ==
 
@@ -103,5 +100,4 @@ Test for openaddresses.org
 
 === Results ===
 
-  1. On http://c2cpc84.camptocamp.com/openaddresses/ : SF creates something like an error (red half-transparent overlay over the whole map)
-  1. On http://geolin01.cti.ac.at/openaddresses/ : SF creates something like an error. It deletes the address, but sets a question mark instead of the red point
+  * 100316: Issue 11
