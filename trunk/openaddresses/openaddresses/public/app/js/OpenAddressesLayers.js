@@ -50,7 +50,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 50,
-        attribution:"Server WMS du SITN open",
+        attribution:"CH_SITN_Ortho: Server WMS du SITN open",
         maxExtent: openaddresses.createBoundsFrom4326(6.31728, 46.7671, 7.1777, 47.222)}
             ),
     new OpenLayers.Layer.WMS(
@@ -66,7 +66,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 50,
-        attribution:"etat.geneve.ch",
+        attribution:"CH_GENEVE_ortho: etat.geneve.ch",
         maxExtent: openaddresses.createBoundsFrom4326(5.918669, 46.105563, 6.314182, 46.379977)}
             ),
     new OpenLayers.Layer.WMS(
@@ -82,7 +82,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 200,
-        attribution:"Staatsbetrieb Geobasisinformation und Vermessung Sachsen (GeoSN)",
+        attribution:"DE_adv_dop: Staatsbetrieb Geobasisinformation und Vermessung Sachsen (GeoSN)",
         maxExtent: openaddresses.createBoundsFrom4326(11.863, 50.145, 15.034, 51.716)}
             ),
     new OpenLayers.Layer.WMS(
@@ -98,7 +98,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 20,
-        attribution:"WMS server for Lausanne and EPFL raster images",
+        attribution:"CH_Lausanne_EPFL: WMS server for Lausanne and EPFL raster images",
         maxExtent: openaddresses.createBoundsFrom4326(6.558, 46.500, 6.682, 46.555)}
             ),
     new OpenLayers.Layer.WMS(
@@ -114,7 +114,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 20,
-        attribution:"Instituto de Cartografia de Andalucia. Consejeria de Vivienda y Ordenacion del Territorio. Junta de Andalucia",
+        attribution:"ES_Andalucia: Instituto de Cartografia de Andalucia. Consejeria de Vivienda y Ordenacion del Territorio. Junta de Andalucia",
         maxExtent: openaddresses.createBoundsFrom4326(-4.536, 37.320, -1.94, 38.572)}
             ),
     new OpenLayers.Layer.WMS(
@@ -130,7 +130,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 20,
-        attribution:"Abteilung SO!GIS Koordination Amt fuer Geoinformation",
+        attribution:"CH_SOGIS: Abteilung SO!GIS Koordination Amt fuer Geoinformation",
         maxExtent: openaddresses.createBoundsFrom4326(7.34084, 47.0741, 8.03378, 47.5041)}
             ),
     new OpenLayers.Layer.WMS(
@@ -146,7 +146,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 3,
-        attribution:"Amt der Kärntner Landesregierung, Kärntner Geographisches Informationssystem (KAGIS)",
+        attribution:"AT_Kärnten: Amt der Kärntner Landesregierung, Kärntner Geographisches Informationssystem (KAGIS)",
         maxExtent: openaddresses.createBoundsFrom4326(12.6078, 46.3413, 15.11358, 47.16447)}
             ),
     new OpenLayers.Layer.WMS(
@@ -162,7 +162,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 3,
-        attribution:"GeoscopipWMS _rt_wms_wgs84 Web Map Service",
+        attribution:"IT_Toscana: GeoscopipWMS _rt_wms_wgs84 Web Map Service",
         maxExtent: openaddresses.createBoundsFrom4326(10.07729, 43.73522, 11.26259, 44.303045)}
             ),
     new OpenLayers.Layer.WMS(
@@ -178,7 +178,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 1500,
-        attribution:"LMIC WMS server (aerial photography)",
+        attribution:"US_Minnesota: LMIC WMS server (aerial photography)",
         maxExtent: openaddresses.createBoundsFrom4326(-97.39, 43.3699, -89.32999, 49.409)}
             ),
     new OpenLayers.Layer.WMS(
@@ -194,7 +194,7 @@ openaddresses.layers = [
         numZoomLevels: 23,
         displayOutsideMaxExtent: false,
         maxResolution: 20,
-        attribution:"Geodateninfrastruktur Mecklenburg-Vorpommern",
+        attribution:"DE_Mecklenburg_Vorpommern: Geodateninfrastruktur Mecklenburg-Vorpommern",
         maxExtent: openaddresses.createBoundsFrom4326(10.3493, 53.0058, 14.6948, 54.7744)}
             ),
     new OpenLayers.Layer.WMS(
@@ -211,8 +211,24 @@ openaddresses.layers = [
         displayOutsideMaxExtent: false,
         maxResolution: 300,
         minResolution: 2,
-        attribution:"Web Map Service der Bayerischen Vermessungsverwaltung",
+        attribution:"DE_Bayern: Web Map Service der Bayerischen Vermessungsverwaltung",
         maxExtent: openaddresses.createBoundsFrom4326(8.89292, 47.08279, 13.97819, 50.626899)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "CH_Building",
+            openaddresses.config.baseWMS,
+    {layers: 'building',
+        transparent: "true",
+        format:"image/png"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 5,
+        attribution:"CH_Building: BGDI WMS Dienst mit oeffentlich zugaenglichen Daten",
+        maxExtent: openaddresses.createBoundsFrom4326(5.90971, 45.7899, 10.5604, 47.8154)}
             )
 ];
 
