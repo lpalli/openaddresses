@@ -628,7 +628,8 @@ openaddresses.layout = (function() {
                 }
             });
 
-            /*this.buildingControl = new OpenLayers.Control.WMSGetFeatureInfo({
+            /* http://trac.openlayers.org/ticket/2528
+            this.buildingControl = new OpenLayers.Control.WMSGetFeatureInfo({
                 url: openaddresses.config.baseWMS,
                 clickCallback: "rightclick",
                 layers: openaddresses.layout.map.getLayersByName('CH_Building'),
