@@ -38,6 +38,7 @@
  * @include OpenLayers/Control/LayerSwitcher.js
  * @include OpenLayers/Control/ModifyFeature.js
  * @include OpenLayers/Control/Attribution.js
+ * @include OpenLayers/Control/WMSGetFeatureInfo.js
  * @include OpenLayers/Popup/FramedCloud.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
@@ -626,10 +627,23 @@ openaddresses.layout = (function() {
                     'delay': 100
                 }
             });
+
+            /*this.buildingControl = new OpenLayers.Control.WMSGetFeatureInfo({
+                url: openaddresses.config.baseWMS,
+                clickCallback: "rightclick",
+                layers: openaddresses.layout.map.getLayersByName('CH_Building'),
+                eventListeners: {
+                    getfeatureinfo: function(event) {
+                        alert('hello');
+                    }
+                }
+            });*/
+
             this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
             this.editControl.activate();
             this.navControl.activate();
             this.hoverControl.activate();
+            //this.buildingControl.activate();
 
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
