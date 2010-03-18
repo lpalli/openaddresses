@@ -113,5 +113,8 @@ ON address FOR EACH ROW EXECUTE PROCEDURE
 tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', street, city, housenumber);
 
 # Import backup file: pg_restore -d openaddresses oa.backup
+# Migrate from 8.3 to 8.4:
+# /usr/lib/postgresql/8.4/bin/pg_dump -C -f openaddresses.backup -p 5432 openaddresses
+# /usr/lib/postgresql/8.4/bin/pg_restore -C -f openaddresses.backup -p 5433
 
 
