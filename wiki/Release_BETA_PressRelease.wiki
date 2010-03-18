@@ -29,7 +29,7 @@ Andrerseits gab es auch technische Anpassungen: so wurde die Benutzeroberfläche
 
 Es werden nach wie vor Freiwillige aufgerufen, sich am Projekt zu beteiligen. Ebenso werden Anbieter von Orthophoto-WMS gebeten, ihre Dienste für das Projekt kostenlos zur Verfügung zu stellen, damit die Adressdaten lagerichtig in den Gebäuden platziert werden können – seien dies neue Adressdaten oder solche, die von OSM übernommen und hinsichtlich Lage verbessert werden sollen.
 
-In Zukunft soll das Projekt auch bei der Open Source Geospatial Foundation (OSGEO) angemeldet werden. Eine weiter Möglichkeit um an OpenAddresses mitzuarbeiten ist das Schulprojekt Map your World (www.map-your-world.ch), welches bereits mehrfach erfolgreich an Schweizer Schulen durchgeführt wurde. !OpenAddresses ist neu über die URL www.openaddresses.org zu finden.
+In Zukunft soll das Projekt auch bei der Open Source Geospatial Foundation (OSGEO) angemeldet werden. Eine weiter Möglichkeit um an !OpenAddresses mitzuarbeiten ist das Schulprojekt Map your World (www.map-your-world.ch), welches bereits mehrfach erfolgreich an Schweizer Schulen durchgeführt wurde. !OpenAddresses ist neu über die URL www.openaddresses.org zu finden.
 
 Hans-Jörg Stark
 
