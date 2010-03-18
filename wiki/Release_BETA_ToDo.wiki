@@ -3,6 +3,7 @@
  * Target date: 29 march 2010
  * Data
   * Import/Synchronize new data set
+   * migrate prod server to 8.4
  * Application
   * Test http://code.google.com/p/openaddresses/wiki/HowToTest
  * Server
@@ -43,7 +44,7 @@
    * http://www.geowebforum.ch/index.php
   * 3.4.2010: Georezo.net
    * FR http://georezo.net/forum/viewforum.php?id=38
-  * 3.4.2010: mailinglist - oesterreichischer dachverband für geographische information
+  * 3.4.2010: mailinglist - oesterreichischer dachverband fï¿½r geographische information
    * ageo-news@googlegroups.com
   * May: Article "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
