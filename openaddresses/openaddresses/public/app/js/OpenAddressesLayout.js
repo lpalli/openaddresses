@@ -373,8 +373,18 @@ openaddresses.layout = (function() {
             lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
             content = content + "<tr><td>" + OpenLayers.i18n("WGS84") + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
             // Create empty proxy
+            var key = openaddresses.config.googleKey;
+            if (location.host.indexOf('openaddresses.org') > -1) {
+                key = openaddresses.config.googleKeyOpenAddresses;
+            }
+            if (location.host.indexOf('openaddress.org') > -1) {
+                key = openaddresses.config.googleKeyOpenAddress;
+            }
+            if (location.host.indexOf('openaddressmap.org') > -1) {
+                key = openaddresses.config.googleKeyOpenAddressMap;
+            }
             map.myProxy = new Ext.data.ScriptTagProxy({
-                url: "http://maps.google.com/maps/geo?q=" + lonlat.lat + "," + lonlat.lon + "&output=json&sensor=true&key=" + openaddresses.config.googleKey,
+                url: "http://maps.google.com/maps/geo?q=" + lonlat.lat + "," + lonlat.lon + "&output=json&sensor=true&key=" + key,
                 nocache: false
             });
             map.geocoderStore = new Ext.data.Store({
