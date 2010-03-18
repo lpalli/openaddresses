@@ -9,17 +9,17 @@
  * Server
   * Test performance
   * ~~Set www.openaddresses.org and www.openaddress.org URL~~
-   * ~~Configure monitoring: http://code.google.com/p/openaddresses/wiki/Monitoring~~  
+   * ~~Configure monitoring: http://code.google.com/p/openaddresses/wiki/Monitoring ~~  
   * ~~Add external WMS~~
   * ~~Add google analytics~~
   * Add backup system
  * Documentation
-  * ~~Create a FAQ: http://code.google.com/p/openaddresses/wiki/FAQ~~
-  * ~~Create User Guide: http://code.google.com/p/openaddresses/wiki/UserGuideEn~~ 
-   * ~~Translate user guide in french: http://code.google.com/p/openaddresses/wiki/UserGuideFr~~   
-   * ~~Translate user guide in german: http://code.google.com/p/openaddresses/wiki/UserGuideDe~~
+  * ~~Create a FAQ: http://code.google.com/p/openaddresses/wiki/FAQ ~~
+  * ~~Create User Guide: http://code.google.com/p/openaddresses/wiki/UserGuideEn ~~ 
+   * ~~Translate user guide in french: http://code.google.com/p/openaddresses/wiki/UserGuideFr ~~   
+   * ~~Translate user guide in german: http://code.google.com/p/openaddresses/wiki/UserGuideDe ~~
    * Translate user guide in italian:
-   * ~~Translate user guide in spanish: http://code.google.com/p/openaddresses/wiki/UserGuideEs~~
+   * ~~Translate user guide in spanish: http://code.google.com/p/openaddresses/wiki/UserGuideEs ~~
  * Marketing/Communication
   * 29.3.2010: Blog
   * 29.3.2010: Twitter
