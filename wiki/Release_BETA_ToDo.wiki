@@ -10,7 +10,7 @@
   * Test performance
   * Set www.openaddresses.org and www.openaddress.org URL
    * Configure monitoring: http://code.google.com/p/openaddresses/wiki/Monitoring  
-  * Add external WMS
+  * ~~Add external WMS~~
   * Add google analytics
   * Add backup system
  * Documentation
