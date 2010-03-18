@@ -277,7 +277,7 @@ openaddresses.layout = (function() {
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.')
+                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.') + '<br><br><object width="317" height="264"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="317" height="264"></embed></object>'
 
                         },
                         {
