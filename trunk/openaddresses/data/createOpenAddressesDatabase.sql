@@ -70,7 +70,7 @@ INSERT INTO address (
       'Digitized',
       osmid,
       ST_SetSRID(ST_GeometryN(geom,1),4326)
-   FROM "OpenAddresses");
+   FROM "OpenAddresses" where created_by = 'OSM');
 
 -- Full text search
 -- http://code18.blogspot.com/2009/06/full-text-search-postgresql.html
@@ -113,8 +113,58 @@ ON address FOR EACH ROW EXECUTE PROCEDURE
 tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', street, city, housenumber);
 
 # Import backup file: pg_restore -d openaddresses oa.backup
+# /usr/lib/postgresql/8.4/bin/pg_restore -d openaddresses oa.backup -p 5433
 # Migrate from 8.3 to 8.4:
 # /usr/lib/postgresql/8.4/bin/pg_dump -C -f openaddresses.backup -p 5432 openaddresses
 # /usr/lib/postgresql/8.4/bin/pg_restore -C -f openaddresses.backup -p 5433
+# /usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433
+
+# IMPORT PROCEDURE FROM CSV FILE
+# On Windows: convert to UTF-8:
+# C:\Sandbox\openadresses\trunk\openaddresses\data>"C:\Program Files\GnuWin32\bin\iconv.exe" -f windows-1252 -t UTF-8 oa_ch.csv > oa_ch_utf8.csv
+
+drop table importtmp cascade;
+
+create table importtmp (attr1 VARCHAR(255),
+attr2 VARCHAR(255),
+attr3 VARCHAR(255),
+attr4 VARCHAR(255),
+attr5 VARCHAR(255),
+attr6 VARCHAR(255),
+attr7 VARCHAR(255),
+attr8 VARCHAR(255),
+attr9 VARCHAR(255),
+attr10 VARCHAR(255),
+attr11 VARCHAR(255),
+attr12 VARCHAR(255));
+
+COPY importtmp FROM '/home/admin/openaddresses/trunk/openaddresses/data/oa_ch_utf8.csv' WITH DELIMITER ';' CSV HEADER;
+
+street;housenr;housename;postalcode;city;username;origin;8long;lat;date;quality;country
+
+INSERT INTO address (
+   street,
+   housenumber,
+   housename,
+   postcode,
+   city,
+   created_by,
+   time_created,
+   quality,
+   country,
+   geom) (select attr1 street,
+   attr2 housenumber,
+   attr3 housename,
+   attr4 postcode,
+   attr5 city,
+   attr6 created_by,
+   to_timestamp(attr10,'YYYYMMDD') time_created,
+   CASE WHEN attr11='GPS' THEN 'GPS'
+              WHEN attr11='donated' THEN 'Donated'
+              ELSE 'Donated' END quality,
+   CASE WHEN attr12='Switzerland' THEN 'CH' ELSE 'CH' END country,
+   GeomFromEWKT('SRID=4326;POINT(' || attr8 || ' ' || attr9 || ')') geom
+from importtmp);
+
 
 
