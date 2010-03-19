@@ -167,4 +167,27 @@ INSERT INTO address (
 from importtmp);
 
 
+Clean data
+
+delete from address where country = '<\x1A';
+delete from address where country = 'R\x1A';
+delete from address where country = '69';
+delete from address where country = '23';
+delete from address where country = '+4';
+delete from address where country = '36';
+
+
+select count(1) from address where city ilike '%\x1A%';
+update address set city = replace(city,'\x1A','') where city ilike '%\x1A%';
+
+select count(1) from address where postcode ilike '%\x1A%';
+update address set postcode = replace(postcode,'\x1A','') where postcode ilike '%\x1A%';
+select count(1) from address where housename ilike '%\x1A%';
+update address set housename = replace(housename,'\x1A','') where housename ilike '%\x1A%';
+select count(1) from address where housenumber ilike '%\x1A%';
+update address set housenumber = replace(housenumber,'\x1A','') where housenumber ilike '%\x1A%';
+select count(1) from address where street ilike '%\x1A%';
+update address set street = replace(street,'\x1A','') where street ilike '%\x1A%';
+
+
 
