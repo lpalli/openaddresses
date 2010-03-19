@@ -19,7 +19,7 @@ This has to be done everytime a new application wants to be deployed on the serv
 
  * See http://code.google.com/p/openaddresses/wiki/SuseInstallation#HowTo_Install_OpenAddresses_Server
 
-== Create a database ==
+== Create a database 8.3 ==
 
 {{{
 sudo su postgres
