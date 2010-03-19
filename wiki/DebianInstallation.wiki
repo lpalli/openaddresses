@@ -35,3 +35,22 @@ psql -d openaddresses -f /usr/share/postgresql-8.3-postgis/spatial_ref_sys.sql
  pg_restore -d openaddresses oa.backup
  psql -d openaddresses -f myfile.sql
 }}}
+
+== Migrate database 8.3 -> 8.4 ==
+
+{{{
+sudo su - postgres
+cd /tmp
+wget http://svn.osgeo.org/postgis/trunk/utils/postgis_restore.pl
+chmod +x postgis_restore.pl
+
+# dump:
+export PGPORT=5432
+pg_dump -Fc openaddresses > /tmp/openaddresses.dump
+
+# restore:
+export PGPORT=5433
+./postgis_restore.pl
+/usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
+openaddresses /tmp/openaddresses.dump
+}}}
