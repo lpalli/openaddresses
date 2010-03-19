@@ -20,9 +20,9 @@ Describe the REST services associated to the addresses
  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=chemin%20fonten
  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20d%20fonten&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch%20de%20fonten&limit=5
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10&distinct=true
-  * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&limit=10
+ * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
+ * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10&distinct=true
+ * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&limit=10
 
    * Specification:
     * fields: list of fields to get(mandatory)
