@@ -60,6 +60,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             storeId: 'qualityStore',
             data: [
                 ['Digitized', OpenLayers.i18n('Digitized')],
+                ['Donated', OpenLayers.i18n('Donated')]
                 ['GPS', OpenLayers.i18n('GPS')],
                 ['Linear interpolation', OpenLayers.i18n('Linear interpolation')]
             ],
