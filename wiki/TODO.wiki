@@ -37,7 +37,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
  * Web Site Download
   * Client widget _!WaitForYourName_
   * Server
-   * ~~Daily data dump: http://postgis.refractions.net/docs/ch04.html#id2805647 Cédric~~
+   * ~~Daily data dump: http://postgis.refractions.net/docs/ch04.html#id2805647 Cédric ~~
    * Make a daily cron _!WaitForYourName_
  * ~~Web Site Service~~
   * ~~Content Cédric~~
