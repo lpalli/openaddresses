@@ -2,8 +2,8 @@
 
  * Target date: 29 march 2010
  * Data
-  * Import/Synchronize new data set
-   * migrate prod server to 8.4
+  * ~~Import/Synchronize new data set~~
+   * ~~migrate prod server to 8.4~~
  * Application
   * Test http://code.google.com/p/openaddresses/wiki/HowToTest
  * Server
