@@ -21,6 +21,7 @@ Ext.namespace("openaddresses");
 
 openaddresses.config = {
     baseWMS: '%BASE_WMS%',
+    addressWMS: '%ADDRESS_WMS%',
     googleKey: '%GOOGLE_KEY%',
     googleKeyOpenAddresses: '%GOOGLE_KEY_OPENADDRESSES%',
     googleKeyOpenAddress: '%GOOGLE_KEY_OPENADDRESS%',
