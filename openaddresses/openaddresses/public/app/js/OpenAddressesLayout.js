@@ -89,6 +89,134 @@ openaddresses.layout = (function() {
             }
         };
 
+        OpenLayers.Control.LayerSwitcher.prototype.redraw = function() {
+            //if the state hasn't changed since last redraw, no need
+            // to do anything. Just return the existing div.
+            if (!this.checkRedraw()) {
+                return this.div;
+            }
+
+            //clear out previous layers
+            this.clearLayersArray("base");
+            this.clearLayersArray("data");
+
+            var containsOverlays = false;
+            var containsBaseLayers = false;
+
+            // Save state -- for checking layer if the map state changed.
+            // We save this before redrawing, because in the process of redrawing
+            // we will trigger more visibility changes, and we want to not redraw
+            // and enter an infinite loop.
+            var len = this.map.layers.length;
+            this.layerStates = new Array(len);
+            for (var i = 0; i < len; i++) {
+                var layer = this.map.layers[i];
+                this.layerStates[i] = {
+                    'name': layer.name,
+                    'visibility': layer.visibility,
+                    'inRange': layer.inRange,
+                    'id': layer.id
+                };
+            }
+
+            var layers = this.map.layers.slice();
+            if (!this.ascending) {
+                layers.reverse();
+            }
+            for (var i = 0, len = layers.length; i < len; i++) {
+
+                var layer = layers[i];
+                var withinMaxExtent = true;
+                if (!layer.inRange) {
+                   withinMaxExtent = false; 
+                }
+                if (this.map.getExtent()) {
+                    withinMaxExtent = (layer.maxExtent &&
+                                       this.map.getExtent().intersectsBounds(layer.maxExtent, false) && layer.inRange);
+                }
+                if (layer.isBaseLayer) {
+                   withinMaxExtent = true; 
+                }
+                var baseLayer = layer.isBaseLayer;
+
+                if (layer.displayInLayerSwitcher && withinMaxExtent) {
+
+                    if (baseLayer) {
+                        containsBaseLayers = true;
+                    } else {
+                        containsOverlays = true;
+                    }
+
+                    // only check a baselayer if it is *the* baselayer, check data
+                    //  layers if they are visible
+                    var checked = (baseLayer) ? (layer == this.map.baseLayer)
+                            : layer.getVisibility();
+
+                    // create input element
+                    var inputElem = document.createElement("input");
+                    inputElem.id = this.id + "_input_" + layer.name;
+                    inputElem.name = (baseLayer) ? this.id + "_baseLayers" : layer.name;
+                    inputElem.type = (baseLayer) ? "radio" : "checkbox";
+                    inputElem.value = layer.name;
+                    inputElem.checked = checked;
+                    inputElem.defaultChecked = checked;
+
+                    if (!baseLayer && !layer.inRange) {
+                        inputElem.disabled = true;
+                    }
+                    var context = {
+                        'inputElem': inputElem,
+                        'layer': layer,
+                        'layerSwitcher': this
+                    };
+                    OpenLayers.Event.observe(inputElem, "mouseup",
+                            OpenLayers.Function.bindAsEventListener(this.onInputClick,
+                                    context)
+                            );
+
+                    // create span
+                    var labelSpan = document.createElement("span");
+                    OpenLayers.Element.addClass(labelSpan, "labelSpan")
+                    if (!baseLayer && !layer.inRange) {
+                        labelSpan.style.color = "gray";
+                    }
+                    labelSpan.innerHTML = layer.name;
+                    labelSpan.style.verticalAlign = (baseLayer) ? "bottom"
+                            : "baseline";
+                    OpenLayers.Event.observe(labelSpan, "click",
+                            OpenLayers.Function.bindAsEventListener(this.onInputClick,
+                                    context)
+                            );
+                    // create line break
+                    var br = document.createElement("br");
+
+
+                    var groupArray = (baseLayer) ? this.baseLayers
+                            : this.dataLayers;
+                    groupArray.push({
+                        'layer': layer,
+                        'inputElem': inputElem,
+                        'labelSpan': labelSpan
+                    });
+
+
+                    var groupDiv = (baseLayer) ? this.baseLayersDiv
+                            : this.dataLayersDiv;
+                    groupDiv.appendChild(inputElem);
+                    groupDiv.appendChild(labelSpan);
+                    groupDiv.appendChild(br);
+                }
+            }
+
+            // if no overlays, dont display the overlay label
+            this.dataLbl.style.display = (containsOverlays) ? "" : "none";
+
+            // if no baselayers, dont display the baselayer label
+            this.baseLbl.style.display = (containsBaseLayers) ? "" : "none";
+
+            return this.div;
+        };
+
         var attributionControl = new OpenLayers.Control.Attribution();
 
         return new OpenLayers.Map({
@@ -277,7 +405,7 @@ openaddresses.layout = (function() {
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.') + '<br><br><object width="317" height="264"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="317" height="264"></embed></object><br><br><a href="http://www.openaddresses.org/?northing=6248874.5043244&easting=266781.98209719&zoom=17&overlayOpacity=1">'+OpenLayers.i18n('Try in Paris')+'</a>'
+                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.') + '<br><br><object width="317" height="264"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="317" height="264"></embed></object><br><br><a href="http://www.openaddresses.org/?northing=6248874.5043244&easting=266781.98209719&zoom=17&overlayOpacity=1">' + OpenLayers.i18n('Try in Paris') + '</a>'
 
                         },
                         {
@@ -639,16 +767,16 @@ openaddresses.layout = (function() {
             });
 
             /* http://trac.openlayers.org/ticket/2528
-            this.buildingControl = new OpenLayers.Control.WMSGetFeatureInfo({
-                url: openaddresses.config.baseWMS,
-                clickCallback: "rightclick",
-                layers: openaddresses.layout.map.getLayersByName('CH_Building'),
-                eventListeners: {
-                    getfeatureinfo: function(event) {
-                        alert('hello');
-                    }
-                }
-            });*/
+             this.buildingControl = new OpenLayers.Control.WMSGetFeatureInfo({
+             url: openaddresses.config.baseWMS,
+             clickCallback: "rightclick",
+             layers: openaddresses.layout.map.getLayersByName('CH_Building'),
+             eventListeners: {
+             getfeatureinfo: function(event) {
+             alert('hello');
+             }
+             }
+             });*/
 
             this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
             this.editControl.activate();
