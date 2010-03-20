@@ -9,7 +9,7 @@ Test for openaddresses.org
  1. A tester creates an issue: http://code.google.com/p/openaddresses/issues/entry
  1. This issue is assigned to a developer by the issue manager
  1. The developer fixes the issue and set its status to "Fixed"
- 1. The tester validates the issue on the dev server (http://geolin01.cti.ac.at/openaddresses/) and set its status to "Verified"
+ 1. The issue manager validates the issue on the dev server (http://geolin01.cti.ac.at/openaddresses/) and set its status to "Verified"
  1. A new release is deployed on the prod server every week: http://www.openaddresses.org/
 
 = Unit tests =
