@@ -44,3 +44,7 @@ Some persons believing that this project has a great future (for a more precise 
 Piece of cake: create an issue here: http://code.google.com/p/openaddresses/issues/list
 
 It is *very important* to describe the workflow to reproduce the problem, to inform about your browser and operating system. we'll take care of the solving ;-)
+
+== I have that the feeling that there is a white transparent layer over the background data. Why ? ==
+
+This is due to some external WMS that don't support transparency. You are probabaly in an area covered by the WMS but that has no data. You can simply set the opacity to 0 (the slider on top right). 
