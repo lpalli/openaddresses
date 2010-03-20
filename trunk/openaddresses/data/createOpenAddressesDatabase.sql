@@ -1,9 +1,23 @@
+# Create database c2cpc84
+sudo su postgres
+/usr/lib/postgresql/8.4/bin/psql -p 5433
+/usr/lib/postgresql/8.4/bin/psql -p 5433 -d openaddresses
+
+/usr/lib/postgresql/8.4/bin/createdb -p 5433 openaddresses
+/usr/lib/postgresql/8.4/bin/createlang plpgsql -p 5433 openaddresses
+/usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433 -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
+/usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433 -f /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql
+
+# Create database geolin01
 CREATE DATABASE openaddresses TEMPLATE=template_gis;
 
 \q
 sudo su postgres
+/usr/lib/postgresql/8.4/bin/createuser -p 5433 -U postgres -P "www-data"
 createuser -U postgres -P "www-data"
 
+
+/usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433
 CREATE TABLE ADDRESS (
     ID SERIAL PRIMARY KEY,
     OSMID VARCHAR(128),
@@ -114,12 +128,11 @@ tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', 
 
 # Import backup file: pg_restore -d openaddresses oa.backup
 # /usr/lib/postgresql/8.4/bin/pg_restore -d openaddresses oa.backup -p 5433
-# Migrate from 8.3 to 8.4:
-# /usr/lib/postgresql/8.4/bin/pg_dump -C -f openaddresses.backup -p 5432 openaddresses
-# /usr/lib/postgresql/8.4/bin/pg_restore -C -f openaddresses.backup -p 5433
-# /usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433
 
+
+#  ****************************************************************
 # IMPORT PROCEDURE FROM CSV FILE
+#  ****************************************************************
 # On Windows: convert to UTF-8:
 # C:\Sandbox\openadresses\trunk\openaddresses\data>"C:\Program Files\GnuWin32\bin\iconv.exe" -f windows-1252 -t UTF-8 oa_ch.csv > oa_ch_utf8.csv
 
@@ -179,7 +192,6 @@ delete from address where country = '36';
 
 select count(1) from address where city ilike '%\x1A%';
 update address set city = replace(city,'\x1A','') where city ilike '%\x1A%';
-
 select count(1) from address where postcode ilike '%\x1A%';
 update address set postcode = replace(postcode,'\x1A','') where postcode ilike '%\x1A%';
 select count(1) from address where housename ilike '%\x1A%';
@@ -188,6 +200,17 @@ select count(1) from address where housenumber ilike '%\x1A%';
 update address set housenumber = replace(housenumber,'\x1A','') where housenumber ilike '%\x1A%';
 select count(1) from address where street ilike '%\x1A%';
 update address set street = replace(street,'\x1A','') where street ilike '%\x1A%';
+
+# FOR THE RECORD, but no migration has been done
+# Migrate from 8.3 to 8.4:
+# /usr/lib/postgresql/8.4/bin/pg_dump -C -f openaddresses.backup -p 5432 openaddresses
+# /usr/lib/postgresql/8.4/bin/pg_restore -C -f openaddresses.backup -p 5433
+# /usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433
+
+
+
+
+
 
 
 
