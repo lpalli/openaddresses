@@ -28,16 +28,16 @@ Description of tasks that need to be accomplished in order to launch www.openadd
 
  * ~~Web Site Architecture Cédric~~
   * ~~Add permalink support~~
- * Web Site Header _!WaitForYourName_
-  * Logo _!WaitForYourName_
-  * Content _!WaitForYourName_
+ * ~~Web Site Header Cédric~~
+  * ~~Logo Steffi~~
+  * ~~Content Cédric~~
  * Web Site Upload
   * Client widget
   * Server service
  * Web Site Download
   * Client widget _!WaitForYourName_
   * Server
-   * Dump the data: http://postgis.refractions.net/docs/ch04.html#id2805647 _!WaitForYourName_
+   * ~~Daily data dump: http://postgis.refractions.net/docs/ch04.html#id2805647 Cédric~~
    * Make a daily cron _!WaitForYourName_
  * ~~Web Site Service~~
   * ~~Content Cédric~~
@@ -46,6 +46,8 @@ Description of tasks that need to be accomplished in order to launch www.openadd
  * Web Site Statistic
   * Client widget
   * Server service
+   * ~~Count service Cédric~~
+   * Statistic service
  * ~~Web Site License Cédric~~
   * ~~Content Cédric~~
  * ~~Web Site About Cédric~~
@@ -58,9 +60,9 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~French translation Jean-Luc~~
  * Web Site Map
   * Add WMS
-   * Install !MapServer
+   * ~~Install !MapServer Cédric~~
    * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
-    * Add Open WMS _!WaitForYourName_ (http://code.google.com/p/openaddresses/wiki/HowToAddWMS)
+    * ~~Add Open WMS Cédric (http://code.google.com/p/openaddresses/wiki/HowToAddWMS)~~
   * ~~Add Yahoo Map Cédric~~
    * Obtain agreement of Yahoo (Hans-Jörg)
   * ~~Add !OpenStreetMap Cédric~~ 
@@ -81,7 +83,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Remove ipaddress from protocol
  * Data
   * ~~Define data model: https://spreadsheets.google.com/ccc?key=0AvgmqEgDEiu5dFpfWEhDTlpveFhWYW42a3RGLW16VUE&hl=fr ~~
-  * Import OSM data in PostGIS Jeff
+  * ~~Import OSM data in PostGIS Jeff~~
   * ~~Import OA.ch and OA.at addresses in PostGIS Jeff~~
   * Synchronize OSM and OA addresses, daily _!WaitForYourName_
   * Create archive table if addresss is deleted (PostGIS trigger) _!WaitForYourName_
@@ -89,33 +91,33 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * Switzerland: Cantons _!WaitForYourName_
    * Switzerland: OFS (RegBL) _!WaitForYourName_
    * France: île de France Yves J.
-  * Plausibility checks _!WaitForYourName_
+  * Plausibility checks Jean-Luc
  * Infrastructure
-  * Install test server
-   * !MapServer 5.6.1
-   * PostgreSQL 8.5
-   * PostGIS 1.5.0
-  * Install prod server
-   * !MapServer 5.6.1
-   * PostgreSQL 8.5
-   * PostGIS 1.5.0
+  * ~~Install test server~~
+   * ~~!MapServer 5.6.1~~
+   * ~~PostgreSQL 8.5~~
+   * ~~PostGIS 1.5.0~~
+  * ~~Install prod server~~
+   * ~~!MapServer 5.6.1~~
+   * ~~PostgreSQL 8.5~~
+   * ~~PostGIS 1.5.0~~
   * ~~Deploy procedure on server Cédric~~
  * Testing
   * Create JS Unit tests
   * Create Python Unit tests
-  * Create !TestBook _!WaitForYourName_ 
-  * Test with !TestBook
+  * ~~Create !TestBook Lukas~~
+  * ~~Test with !TestBook Lukas~~
  * Community
   * Organize !OpenAddresses community
    * PSC
    * Committer
    * User
  * Marketing
-  * Create a press release
+  * ~~Create a press release http://code.google.com/p/openaddresses/wiki/Release_BETA_PressRelease Cédric~~
   * ~~Create a blog Cédric~~
    * Reference it
     * osgeo.org
-  * Create a flyer
+  * ~~Create a flyer Steffi~~
   * Participate to conference
    * ~~FossGIS Cédric Hans-Jörg~~
    * Foss4G
