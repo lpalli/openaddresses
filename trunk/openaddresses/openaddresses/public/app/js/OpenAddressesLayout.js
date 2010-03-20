@@ -248,7 +248,7 @@ openaddresses.layout = (function() {
     var createLayers = function() {
         openaddresses.layout.map.addressLayer = new OpenLayers.Layer.WMS(
                 OpenLayers.i18n("Addresses"),
-                openaddresses.config.baseWMS,
+                openaddresses.config.addressWMS,
         {layers: 'address',
             transparent: "true",
             format:"image/png"},
