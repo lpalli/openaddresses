@@ -578,7 +578,7 @@ openaddresses.layout = (function() {
             id: 'opacity_slider',
             renderTo: Ext.get('OpacitySlider'),
             width: 100,
-            value: 1,
+            value: 0.7,
             increment: 0.01,
             minValue: 0,
             maxValue: 1,
