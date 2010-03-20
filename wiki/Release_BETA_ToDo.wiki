@@ -6,6 +6,7 @@
    * ~~migrate prod server to 8.4~~
  * Application
   * Test http://code.google.com/p/openaddresses/wiki/HowToTest
+  * Redirect from www.openaddresses.ch and www.openaddresses.at
  * Server
   * Test performance
   * ~~Set www.openaddresses.org and www.openaddress.org URL~~
