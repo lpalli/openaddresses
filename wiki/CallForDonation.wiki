@@ -19,7 +19,7 @@ En espérant que cet appel à donation aura sucité votre intérêt, nous vous p
 
 L'équipe !OpenAddresses.
 
-[1] Licence des données d'OpenAddresses: http://creativecommons.org/licenses/by/3.0/
-[2] http://code.google.com/p/openaddresses/wiki/RESTService
-[3] http://code.google.com/p/openaddresses/
-[4] http://groups.google.com/group/OpenAddresses?pli=1
+ [1] Licence des données d'OpenAddresses: http://creativecommons.org/licenses/by/3.0/
+ [2] http://code.google.com/p/openaddresses/wiki/RESTService
+ [3] http://code.google.com/p/openaddresses/
+ [4] http://groups.google.com/group/OpenAddresses?pli=1
