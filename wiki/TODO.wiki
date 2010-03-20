@@ -62,7 +62,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Add WMS
    * ~~Install !MapServer Cédric~~
    * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
-    * ~~Add Open WMS Cédric (http://code.google.com/p/openaddresses/wiki/HowToAddWMS)~~
+    * ~~Add Open WMS Cédric (http://code.google.com/p/openaddresses/wiki/HowToAddWMS) ~~
   * ~~Add Yahoo Map Cédric~~
    * Obtain agreement of Yahoo (Hans-Jörg)
   * ~~Add !OpenStreetMap Cédric~~ 
