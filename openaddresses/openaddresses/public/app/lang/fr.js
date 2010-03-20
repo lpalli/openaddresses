@@ -78,13 +78,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Street':'Rue',
     'Thanks for your contribution !':'Merci de votre contribution',
     'The addresses must be associated to the url of http://www.openaddresses.org.':'L\'URL http://www.openaddresses.org doit être associée à l\'adresse',
-    'The city':'La ville',
-    'The country of the city':'Le pays de la ville',
-    'The house name if one exists':'Le nom de la maison s\'il en existe un',
-    'The house number, if one exists':'Le numéro de la maison, s\'il en existe un',
+    'The city.':'La ville',
+    'The country of the city.':'Le pays de la ville',
+    'The house name if one exists.':'Le nom de la maison s\'il en existe un',
+    'The house number, if one exists.':'Le numéro de la maison, s\'il en existe un',
     'The person or entity that submitted the data is stored in a field CREATED_BY.':'Le nom de la personne ou entité qui a saisi l\'adresse est enregistré dans le champ CREATED_BY',
     'The person or entity who created the address. ONLY used for statistic purpose.':'Nom d\'utilisateur: la personne ou l\'entité qui a créé l\'adresse. Utilisé UNIQUEMENT à des fins statistiques.',
-    'The postal code':'Le code postal',
+    'The postal code.':'Le code postal',
     'The quality. If you use the web interface, this will be "Digitized".':'La qualité. Si vous utilisez l\'interface Web, ce sera «Digitalisé».',
     'The region. This can be a department, a state, a canton.':'La région. Cela peut être un département, un état, un canton.',
     'The street name used by the persons living in this area.':'Le nom de la rue. Essayez d\'utiliser le nom utilisé par les personnes qui vivent dans cet endroit.',
@@ -95,5 +95,5 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'WGS84':'WGS84',
     'Yahoo Satellite':'Yahoo Satellite',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'Vous utilisez actuellement Chrome. Certains points en cours de résolution concernent ce browser. Nous vous recommandons d\'utiliser Firefox, Safari ou Internet Explorer.',
-    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'Vous utilisez actuellement Internet Explorer 6. Nous vous recommandons de passer à une version plus sûre et plus récente.'    
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'Vous utilisez actuellement Internet Explorer 6. Nous vous recommandons de passer à une version plus sûre et plus récente.'  
 });
