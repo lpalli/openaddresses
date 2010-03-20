@@ -78,13 +78,13 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Street':'Via',
     'Thanks for your contribution !':'Grazie per il vostro contributo',
     'The addresses must be associated to the url of http://www.openaddresses.org.':'L\'indirizzo deve essere associato all\'url di http://www.openaddresses.org.',
-    'The city':'La città',
-    'The country of the city':'Il paese della città',
-    'The house name if one exists':'Il nome della casa, se esiste',
-    'The house number, if one exists':'Il numero della casa, se esiste',
+    'The city.':'La città',
+    'The country of the city.':'Il paese della città',
+    'The house name if one exists.':'Il nome della casa, se esiste',
+    'The house number, if one exists.':'Il numero della casa, se esiste',
     'The person or entity that submitted the data is stored in a field CREATED_BY.':'Il nome del utente o dell\'entità è registrata nel campo CREATED_BY.',
     'The person or entity who created the address. ONLY used for statistic purpose.':'Il nome del utente o dell\'entità che ha creato lIl nome del utente o dell\'entità l\'indirizzo. UNICAMENTE per scopi statistici.',
-    'The postal code':'Il codice postale',
+    'The postal code.':'Il codice postale',
     'The quality. If you use the web interface, this will be "Digitized".':'La qualità. Se utilizzate l\'interfaccia web, sarà "Digitalizzato".',
     'The region. This can be a department, a state, a canton.':'La regione. Può essere una provincia, un dipartimento, uno stato, un cantone.',
     'The street name used by the persons living in this area.':'Il nome della strada utilizzato dalle persone che vivono in quella zona.',
@@ -95,5 +95,5 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'WGS84':'WGS84',
     'Yahoo Satellite':'Yahoo Satellite',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'State utilizzando Chrome. Alcuni problemi in corso di risoluzione concernono questo navigatore. Vi raccomandiamo d\'utilizzare Firefox, Safari o Internet Explorer.',
-    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'       
 });
