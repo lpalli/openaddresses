@@ -1,6 +1,6 @@
 The goal of this page is to prepare a standard email for asking for addresses
 
-= French call =
+= French call for donation  =
 
 Madame, Monsieur,
 Nous nous permettons de vous contacter pour vous présenter le projet http://www.openaddresses.org.
