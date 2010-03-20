@@ -93,5 +93,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Username':'Nom d\'utilisateur',
     'Welcome in OpenAddresses':'Bienvenue dans OpenAddresses',
     'WGS84':'WGS84',
-    'Yahoo Satellite':'Yahoo Satellite'
+    'Yahoo Satellite':'Yahoo Satellite',
+    'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'Vous utilisez actuellement Chrome. Certains points en cours de résolution concernent ce browser. Nous vous recommandons d\'utiliser Firefox, Safari ou Internet Explorer.',
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'Vous utilisez actuellement Internet Explorer 6. Nous vous recommandons de passer à une version plus sûre et plus récente.'    
 });
