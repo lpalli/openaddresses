@@ -227,6 +227,48 @@ MAP
  END
 
  LAYER
+  NAME "Lauf"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://wms.openstreetmap.de/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "Lauf"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "Dortmund"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://wms.openstreetmap.de/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "Dortmund"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
+  NAME "Neunkirchen"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://wms.openstreetmap.de/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "Neunkirchen"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
   NAME "building"
   TYPE RASTER
   STATUS ON
@@ -239,8 +281,6 @@ MAP
     "wms_format"          "image/png"
   END
  END
-
-
 
  LAYER
    NAME "address"

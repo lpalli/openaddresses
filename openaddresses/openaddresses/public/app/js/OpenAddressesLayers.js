@@ -241,6 +241,57 @@ openaddresses.layers = [
         maxResolution: 5,
         attribution:"CH_Building: BGDI WMS Dienst mit oeffentlich zugaenglichen Daten",
         maxExtent: openaddresses.createBoundsFrom4326(5.90971, 45.7899, 10.5604, 47.8154)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "DE_Lauf",
+            openaddresses.config.baseWMS,
+    {layers: 'Lauf',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        opacity: 0.7,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 5,
+        attribution:"DE_Lauf: openstreetmap.de WMS-Server",
+        maxExtent: openaddresses.createBoundsFrom4326(11.1828, 49.463, 11.3571, 49.5765)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "DE_Dortmund",
+            openaddresses.config.baseWMS,
+    {layers: 'Dortmund',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        opacity: 0.7,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 5,
+        attribution:"DE_Dortmund: openstreetmap.de WMS-Server",
+        maxExtent: openaddresses.createBoundsFrom4326(7.29305, 51.4097, 7.6446, 51.60269)}
+            ),
+    new OpenLayers.Layer.WMS(
+            "DE_Neunkirchen",
+            openaddresses.config.baseWMS,
+    {layers: 'Neunkirchen',
+        transparent: "true",
+        format:"image/png"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        opacity: 0.7,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 5,
+        attribution:"DE_Neunkirchen: openstreetmap.de WMS-Server",
+        maxExtent: openaddresses.createBoundsFrom4326(11.3013, 49.5112, 11.3869, 49.5579)}
             )
 ];
 
