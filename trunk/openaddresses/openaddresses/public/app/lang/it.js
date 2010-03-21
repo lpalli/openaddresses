@@ -39,7 +39,7 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Do you really want to delete this address ?':'Siete sicuri di cancellare questo indirizzo ?',
     'Documentation of GeoCoding and Reverse GeoCoding services':'Documentazione dei servizi di geocodifica diretta ed invertita',
     'Download':'Scarica',
-    'Download address shapefile':'Scarica il shapefile degli indirizzi',
+    'Download addresses':'Scarica il file degli indirizzi',
     'DrawingLayer':'Strato attivo',
     'Empty Layer':'Strato vuoto',
     'Error during data deletion':'Errore durante la cancellazione dei dati',
@@ -95,5 +95,5 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'WGS84':'WGS84',
     'Yahoo Satellite':'Yahoo Satellite',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'State utilizzando Chrome. Alcuni problemi in corso di risoluzione concernono questo navigatore. Vi raccomandiamo d\'utilizzare Firefox, Safari o Internet Explorer.',
-    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'       
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'    
 });

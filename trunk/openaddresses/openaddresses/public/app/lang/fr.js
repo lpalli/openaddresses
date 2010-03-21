@@ -39,7 +39,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Do you really want to delete this address ?':'Êtes-vous vraiment sûr de supprimer cette adresse ?',
     'Documentation of GeoCoding and Reverse GeoCoding services':'Documentation des services de géocodage directs et inverses',
     'Download':'Téléchargement',
-    'Download address shapefile':'Télécharger le shapefile des adresses',
+    'Download addresses':'Télécharger les adresses',
     'DrawingLayer':'Couche active',
     'Empty Layer':'Couche vide',
     'Error during data deletion':'Erreur pendant la suppression de l\'adresse',
@@ -50,7 +50,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'House number':'Numéro de bâtiment',
     'License':'Licence',
     'Linear interpolation':'Interpolation linéaire',
-    'Ongoing development...<br> About 4.3 millions in OpenAddresses.org.For now, take contact with us through openaddresses[at]googlegroups.com.':'Développement en cours...<br> Environ 4.3 millions dans OpenAddresses.org. Dans l\'état actuel, prenez contact avec nous à travers le groupe de discussion openaddresses[at]googlegroups.com.',
+    'Ongoing development...<br> About 4.3 millions in OpenAddresses.org.For now, take contact with us through openaddresses[at]googlegroups.com.':'Développement en cours...<br> Environ 5 millions d\'adresses dans OpenAddresses.org. Dans l\'état actuel, prenez contact avec nous à travers le groupe de discussion openaddresses[at]googlegroups.com.',
     'Ongoing development...<br> For now, take contact with us through openaddresses[at]googlegroups.com.':'Développement en cours...<br> Dans l\'état actuel, prenez contact avec nous à travers le groupe de discussion openaddresses[at]googlegroups.com.',
     'OpenAddresses':'OpenAddresses',
     'OpenAddresses Code Licence':'Licence du code d\'OpenAddresses',
@@ -95,5 +95,5 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'WGS84':'WGS84',
     'Yahoo Satellite':'Yahoo Satellite',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'Vous utilisez actuellement Chrome. Certains points en cours de résolution concernent ce browser. Nous vous recommandons d\'utiliser Firefox, Safari ou Internet Explorer.',
-    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'Vous utilisez actuellement Internet Explorer 6. Nous vous recommandons de passer à une version plus sûre et plus récente.'  
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'Vous utilisez actuellement Internet Explorer 6. Nous vous recommandons de passer à une version plus sûre et plus récente.'
 });
