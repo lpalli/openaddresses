@@ -573,13 +573,13 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat));
                     delete map.editedFeature.id;
                     // Keep previous values
-                    if (map.previousEditedFeature) {
+                    /*if (map.previousEditedFeature) {
                         for (attribute in map.previousEditedFeature.attributes) {
                             if (attribute) {
                                 map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
                             }
                         }
-                    }
+                    }*/
                 } else {
                     var featurePosition = new OpenLayers.LonLat(mapfishFeatures.features[0].geometry.coordinates[0], mapfishFeatures.features[0].geometry.coordinates[1]);
                     featurePosition.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
