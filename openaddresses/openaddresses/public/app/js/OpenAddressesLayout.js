@@ -791,8 +791,10 @@ openaddresses.layout = (function() {
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
 
-            // Manage controlers for reverse geocoding and editing 
-            handleRightMouseClick(this.map);
+            // Manage controlers for reverse geocoding and editing
+            if (openaddresses.config.googleGeocoding) {
+                handleRightMouseClick(this.map);
+            }
 
             createLocationTooltip(this.map);
 

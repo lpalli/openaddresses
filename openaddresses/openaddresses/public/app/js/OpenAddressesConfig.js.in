@@ -25,5 +25,6 @@ openaddresses.config = {
     googleKey: '%GOOGLE_KEY%',
     googleKeyOpenAddresses: '%GOOGLE_KEY_OPENADDRESSES%',
     googleKeyOpenAddress: '%GOOGLE_KEY_OPENADDRESS%',
-    googleKeyOpenAddressMap: '%GOOGLE_KEY_OPENADDRESSMAP%'
+    googleKeyOpenAddressMap: '%GOOGLE_KEY_OPENADDRESSMAP%',
+    googleGeocoding: %GOOGLE_GEOCODING%
 };
