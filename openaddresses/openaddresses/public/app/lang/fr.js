@@ -47,7 +47,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Fill the address attributes':'Renseignez les attributs de l\'adresse',
     'GPS':'GPS',
     'House name':'Nom du bâtiment',
-    'House number':'Numéro de bâtiment',
+    'House number':'No. de bâtiment',
     'License':'Licence',
     'Linear interpolation':'Interpolation linéaire',
     'Ongoing development...<br> About 4.3 millions in OpenAddresses.org.For now, take contact with us through openaddresses[at]googlegroups.com.':'Développement en cours...<br> Environ 5 millions d\'adresses dans OpenAddresses.org. Dans l\'état actuel, prenez contact avec nous à travers le groupe de discussion openaddresses[at]googlegroups.com.',
