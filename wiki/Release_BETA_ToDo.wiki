@@ -26,6 +26,15 @@
   * 29.3.2010: Blog
   * 29.3.2010: Twitter
   * 29.3.2010: Private mails
+   * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
+   * TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
+   * Nouvo: http://www.nouvo.ch/contact
+   * 24 heures: scoopmobile@edipresse.ch
+   * Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre@rsr.ch
+   * Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
+   * RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
+   * Le Temps: http://www.letemps.ch/contact
+   * 20 minutes: reporter@20minutes.ch
   * 30.3.2010: OSGEO mailing list
    * discuss@lists.osgeo.org
   * 31.3.2010: OSM
