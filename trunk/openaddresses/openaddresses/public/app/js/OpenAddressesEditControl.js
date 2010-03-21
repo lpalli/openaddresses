@@ -393,6 +393,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 },
                 items:[
                     {
+                        id:'created_by',
                         name:'created_by',
                         fieldLabel: OpenLayers.i18n('Username'),
                         allowBlank: false,
@@ -401,6 +402,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         qtip: OpenLayers.i18n('The person or entity who created the address. ONLY used for statistic purpose.')
                     },
                     {
+                        id:'street',
                         name:'street',
                         fieldLabel: OpenLayers.i18n('Street'),
                         allowBlank: false,
@@ -409,6 +411,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         qtip: OpenLayers.i18n('The street name used by the persons living in this area.')
                     },
                     {
+                        id:'housenumber',
                         name:'housenumber',
                         fieldLabel: OpenLayers.i18n('House number'),
                         allowBlank: true,
@@ -417,14 +420,16 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         qtip: OpenLayers.i18n('The house number, if one exists.')
                     },
                     {
+                        id:'postcode',
                         name:'postcode',
                         fieldLabel: OpenLayers.i18n('Postal code'),
                         allowBlank: true,
                         width: 80,
                         value: feature.attributes.postcode,
-                        qtip: OpenLayers.i18n('The postal code.')                        
+                        qtip: OpenLayers.i18n('The postal code.')
                     },
                     {
+                        id:'city',
                         name:'city',
                         fieldLabel: OpenLayers.i18n('City'),
                         allowBlank: false,
@@ -436,6 +441,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     comboCountry,
                     comboQuality,
                     {
+                        id:'housename',
                         name:'housename',
                         fieldLabel: OpenLayers.i18n('House name'),
                         allowBlank: true,
@@ -445,6 +451,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     },
                     {
                         name:'region',
+                        id:'region',
                         fieldLabel: OpenLayers.i18n('Region'),
                         allowBlank: true,
                         width: 240,
@@ -477,6 +484,38 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             handler: function() {
                                 openaddresses.layout.showWaitingMask();
                                 deleteEditing(feature);
+                            }
+                        },
+                        {
+                            xtype: 'tbbutton',
+                            text: OpenLayers.i18n('Fill with previous values'),
+                            qtip: OpenLayers.i18n('Fill the empty attributes of this feature with the value of the previous edited feature. For all attributes except house number and house name.'),
+                            disabled: false,
+                            handler: function() {
+                                var attribute;
+                                if (map.previousEditedFeature) {
+                                    for (attribute in map.previousEditedFeature.attributes) {
+                                        if (attribute && !map.editedFeature.attributes['' + attribute + '']) {
+                                            map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
+                                            if (attribute == 'country') {
+                                                comboCountry.setValue(openaddresses.countryStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
+                                            } else if (attribute == 'quality') {
+                                                comboQuality.setValue(openaddresses.qualityStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
+                                            } else {
+                                                if (attribute == 'created_by' || attribute == 'street' || attribute == 'postcode' || attribute == 'city' || attribute == 'region') {
+                                                    Ext.getCmp(attribute).setValue(map.editedFeature.attributes['' + attribute + '']);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                for (var i = 0; i < feature.editingFormPanel.items.getCount(); ++i) {
+                                    var comp = feature.editingFormPanel.items.get(i);
+                                    if (!comp.value) {
+                                        comp.focus(true, 300);
+                                        break;
+                                    }
+                                }
                             }
                         },
                         {
@@ -528,14 +567,13 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 if (map.editedFeature) {
                     cancelEditing(map.editedFeature);
                 }
-
+                var attribute;
                 // Add the feature
                 if (mapfishFeatures.features.length === 0) {
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat));
                     delete map.editedFeature.id;
                     // Keep previous values
                     if (map.previousEditedFeature) {
-                        var attribute;
                         for (attribute in map.previousEditedFeature.attributes) {
                             if (attribute) {
                                 map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
