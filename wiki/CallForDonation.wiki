@@ -8,11 +8,11 @@ Nous nous permettons de vous contacter pour vous présenter le projet http://www
 
 L'idée de base de projet est de mettre à disposition de tous des points adresses libres de droit (1), ceci à l'instar de ce que fait http://www.openstreetmap.org pour les données cartographiques.
 
-Actuellement, la base de données contient plus de 5 millions d'adresse et comme le but est de recenser l'entier des adresses mondiales, il reste du chemin à faire. 
+Actuellement, la base de données contient plus de 5 millions d'adresses et comme le but est de recenser l'entier des adresses mondiales, il reste du chemin à faire. 
 
 Si vous pouviez mettre à disposition les adresses en votre possession, vous participeriez à cet effort et bénéficierez de la communauté !OpenAddresses qui se chargera de mettre communautairement à jour les adresses et qui offre des services de geocoding et reverse geocoding (2). A ce jour, de nombreuses entités administratives ou économiques ont mis à disposition des adresses (3), soyez le suivant ;-)
 
-Une autre manière de contribuer est de mettre à disposition des données permettant de saisir les adresses, comme des orthophotos, des données de fonds, des services WMS, WFS etc...
+Une autre manière de contribuer est de mettre à disposition des données permettant de saisir les adresses, comme des orthophotos, des données de fond, des services WMS, WFS etc...
 
 Bien que supportée par plusieurs entreprises et universités, cette initiative est le fait de plusieurs personnes privées qui ont décidé de s'unir pour mettre à disposition des adresses libres de droit. Vous êtes également bienvenus au sein de cette communauté (4)
 
