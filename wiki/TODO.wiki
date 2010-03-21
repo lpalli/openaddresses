@@ -91,6 +91,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * Switzerland: Cantons _!WaitForYourName_
    * Switzerland: OFS (RegBL) _!WaitForYourName_
    * France: île de France Yves J.
+  * Integrate IGN data: http://api.ign.fr/geoportail/api/doc/examples/index.html
   * Plausibility checks Jean-Luc
  * Infrastructure
   * ~~Install test server~~
