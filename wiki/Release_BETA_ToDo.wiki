@@ -39,18 +39,18 @@
    * Germany
     * Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
     * http://www.business-geomatics.com/cms/index.php
-    * www.linux-magazin.de (mfeilner[at]linux-magazin.de)
+    * www.linux-magazin.de (mfeilner at linux-magazin.de)
     * http://www.gis-news.de/
     * http://www.gis-biz.de/
     * http://www.kirschbaum.de/texte/zkn.php
     * German key mails:
-     * presse-info[at]linuxnewmedia.de
-     * presse[at]ct.heise.de
-     * monika.rech[at]abcverlag.de
-     * presse[at]onlinekosten.de
-     * christoph[at]linuxundich.de
-     * news[at]golem.de
-     * opengeodb[at]phpbar.de
+     * presse-info at linuxnewmedia.de
+     * presse at ct.heise.de
+     * monika.rech at abcverlag.de
+     * presse at onlinekosten.de
+     * christoph at linuxundich.de
+     * news at golem.de
+     * opengeodb at phpbar.de
   * 30.3.2010: OSGEO mailing list
    * discuss@lists.osgeo.org
   * 31.3.2010: OSM
