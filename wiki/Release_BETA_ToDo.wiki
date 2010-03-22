@@ -63,7 +63,7 @@
    * http://www.directionsmedia.net/masthead.php?p=contact
   * 2.4.2010: OSGEO local chapters
    * http://www.osgeo.org/content/chapters/index.html
-    * fossgis-talk-liste[at]fossgis.de
+    * fossgis-talk-liste at fossgis.de
     * https://freegis.org/mailman/listinfo/mapserver-de
   * 2.4.2010: OSM user groups
    * http://wiki.openstreetmap.org/wiki/OSM_User_Groups
