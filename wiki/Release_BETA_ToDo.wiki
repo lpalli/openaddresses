@@ -43,7 +43,7 @@
     * http://www.gis-news.de/
     * http://www.gis-biz.de/
     * http://www.kirschbaum.de/texte/zkn.php
-    * Lars:
+    * German key mails:
      * presse-info[at]linuxnewmedia.de
      * presse[at]ct.heise.de
      * monika.rech[at]abcverlag.de
