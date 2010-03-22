@@ -18,7 +18,7 @@ Les jeux de données actuelles ne sont pas libres de droit, sont onéreuses ou r
 
 === Quelle est l'histoire du projet !OpenAddresses.org ? ===
 
-Le projet a vu le jour en 2007 en Suisse, ceci sous l'impulsion de la Haute école du Nord Ouest de la Suisse (FHNW). Puis en 2009, un groupe de personnes et d'entreprises a décidé de créer un répertoire mondial d'adresses et a développé une nouvelle plateforme web. Actuellement plus de 5 millions d'adresses sont à disposition et des pays comme le Danemark ou des cantons comme Soleure sont entiérement saisis.
+Le projet a vu le jour en 2007 en Suisse, ceci sous l'impulsion de la Haute école du Nord Ouest de la Suisse (FHNW). Puis en 2009, un groupe de personnes et d'entreprises a décidé de créer un répertoire mondial d'adresses et a développé une nouvelle plateforme web. Actuellement plus de 5 millions d'adresses sont à disposition et des pays comme le Danemark ou des cantons comme Soleure (Suisse) sont entiérement saisis.
 
 === Quelle est la relation avec le célèbre projet !OpenStreetMap.org ? ===
 
