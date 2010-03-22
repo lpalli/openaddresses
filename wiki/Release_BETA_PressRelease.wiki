@@ -2,6 +2,42 @@
 
 = Press release =
 
+== FR: !OpenAddresses.org, le site communautaire de gestion des adresses vient d'être mis en ligne ==
+
+Dans la plus pure tradition du web 2.0, le nouveau site http://www.openaddresses.org a pour but de mettre à disposition des points adresses gratuites et librement utilisables. Cette plateforme communautaire permet à tous d'enregistrer des points adresses, de les utiliser ou encore de les mettre à jour.
+
+=== Quelle est l'utilité des points adresses ? ===
+
+Les points adresses sont par exemples utilisés dans les GPS pour connaître l'endroit à atteindre, sont utilisés par les entreprises pour connaître la provenance de leur client et faire du geomarketing, sont utilisés par les statisticiens pour analyser les populations ou sont présentés sur les plans de ville, les mises à l'enquête etc..etc..
+
+Les points addresses sont à la base des services de recherche géographique ("Où se trouve la rue de la gare ?") ou des services de géocodage inverse ("Quelle est l'adresse la plus proche de ce lieu ?"). !OpenAddresses.org met également gratuitement à dispostion ce type de service.
+
+=== Pourquoi des données libres ? ===
+
+Les jeux de données actuelles ne sont pas libres de droit, sont onéreuses ou recouvrent partiellement la planète. !OpenAddresses.org a pour ambition de mettre à disposition de tous des points adresses, ceci gratuitement et sans copyrights et sur l'ensemble de la planète. Pour atteindre ce but, !OpenAddresses.org compte sur la mobilisation de la communauté pour faire avancer la saisie et la mise à jour des données.
+
+=== Quelle est l'histoire du projet !OpenAddresses.org ? ===
+
+Le projet a vu le jour en 2007 en Suisse, ceci sous l'impulsion de la Haute école du Nord Ouest de la Suisse (FHNW). Puis en 2009, un groupe de personnes et d'entreprises a décidé de créer un répertoire mondial d'adresses et a développé une nouvelle plateforme web. Actuellement plus de 5 millions d'adresses sont à disposition et des pays comme le Danemark ou des cantons comme Soleure sont entiérement saisis.
+
+=== Quelle est la relation avec le célèbre projet !OpenStreetMap.org ? ===
+
+!OpenStreetMap.org et !OpenAddresses.org sont complémentaires et partagent la même philosophie. !OpenAddresses.org se concentre uniquement sur les points adresses et peut ainsi offrir une plateforme dédiée et spécialisée. Le but est que chaque projet profite l'un de l'autre. Les données sont régulièrement synchronisées pour permettre cette réciprocité.
+
+=== Comment est-il possibble de participer à !OpenAddresses.org ? ===
+
+Tout d'abord en saisissant des adresses ! Ou encore, mieux, en mettant à disposition des adresses ou d'autres données permettant de saisir des adresses comme des photos aériennes, des plans de bâtiments etc... La communauté !OpenAddresses 
+
+=== Renseignements complémentaires ===
+ 
+ * Le site: http://www.openaddresses.org/
+ * Le guide de l'utilisateur: http://code.google.com/p/openaddresses/wiki/UserGuideFr 
+ * Toutes questions: info@openaddresses.org
+ * Le groupe de discussion: http://groups.google.com/group/OpenAddresses
+ * le blog: http://openaddresses.blogspot.com/
+ * Twitter: https://twitter.com/openaddresses
+ * Le site de la communauté: http://code.google.com/p/openaddresses/
+
 = Community emails =
 
 == EN: www.openaddresses.org BETA launched ==
