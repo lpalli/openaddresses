@@ -51,9 +51,146 @@ GRANT ALL ON TABLE spatial_ref_sys  TO "www-data";
 
 GRANT ALL ON SEQUENCE address_id_seq TO "www-data";
 
--- LOAD SAMPLE DATA
+DROP TABLE ADDRESS_ARCHIVE cascade;
 
-INSERT INTO "address" (geom) VALUES ('0101000020E61000003F8BA548BE721A4089CD6CFC2E424740');
+CREATE TABLE ADDRESS_ARCHIVE (
+    ID INTEGER,
+    OSMID VARCHAR(128),
+    HOUSENUMBER VARCHAR(8),
+    HOUSENAME VARCHAR(64),
+    STREET VARCHAR(128),
+    POSTCODE VARCHAR(8),
+    REGION VARCHAR(128),
+    CITY VARCHAR(128),
+    COUNTRY VARCHAR(2),
+    CREATED_BY VARCHAR(128),
+    IPADDRESS VARCHAR(64),
+    TIME_CREATED timestamp,
+    TIME_UPDATED timestamp,
+    QUALITY VARCHAR(128),
+    REFERENCE VARCHAR(32),
+    ARCHIVE_DATE timestamp,
+    ARCHIVE_TYPE VARCHAR(64)
+);
+
+SELECT AddGeometryColumn('address_archive', 'geom', 4326, 'POINT', 2);
+
+GRANT ALL ON TABLE ADDRESS_ARCHIVE TO "www-data";
+
+DROP FUNCTION update_address() cascade;
+
+CREATE FUNCTION update_address() RETURNS OPAQUE AS '
+  BEGIN
+     INSERT INTO ADDRESS_ARCHIVE
+	(ID,
+    OSMID,
+    HOUSENUMBER,
+    HOUSENAME,
+    STREET,
+    POSTCODE,
+    REGION,
+    CITY,
+    COUNTRY,
+    CREATED_BY,
+    IPADDRESS,
+    TIME_CREATED,
+    TIME_UPDATED,
+    QUALITY,
+    REFERENCE,
+    GEOM,
+    ARCHIVE_DATE,
+    ARCHIVE_TYPE
+	)
+        VALUES
+       (
+         OLD.ID,
+         OLD.OSMID,
+         OLD.HOUSENUMBER,
+         OLD.HOUSENAME,
+         OLD.STREET,
+         OLD.POSTCODE,
+         OLD.REGION,
+         OLD.CITY,
+         OLD.COUNTRY,
+         OLD.CREATED_BY,
+         OLD.IPADDRESS,
+         OLD.TIME_CREATED,
+         OLD.TIME_UPDATED,
+         OLD.QUALITY,
+         OLD.REFERENCE,
+         OLD.GEOM,
+         NOW(),
+         TG_OP
+       );
+   RETURN NULL;
+
+  END;
+
+' LANGUAGE 'plpgsql';
+
+DROP FUNCTION delete_address() cascade;
+
+CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
+  BEGIN
+     INSERT INTO ADDRESS_ARCHIVE
+	(ID,
+    OSMID,
+    HOUSENUMBER,
+    HOUSENAME,
+    STREET,
+    POSTCODE,
+    REGION,
+    CITY,
+    COUNTRY,
+    CREATED_BY,
+    IPADDRESS,
+    TIME_CREATED,
+    TIME_UPDATED,
+    QUALITY,
+    REFERENCE,
+    GEOM,
+    ARCHIVE_DATE,
+    ARCHIVE_TYPE
+	)
+        VALUES
+       (
+         OLD.ID,
+         OLD.OSMID,
+         OLD.HOUSENUMBER,
+         OLD.HOUSENAME,
+         OLD.STREET,
+         OLD.POSTCODE,
+         OLD.REGION,
+         OLD.CITY,
+         OLD.COUNTRY,
+         OLD.CREATED_BY,
+         OLD.IPADDRESS,
+         OLD.TIME_CREATED,
+         OLD.TIME_UPDATED,
+         OLD.QUALITY,
+         OLD.REFERENCE,
+         OLD.GEOM,
+         NOW(),
+         TG_OP
+       );
+   RETURN NULL;
+
+  END;
+
+' LANGUAGE 'plpgsql';
+
+GRANT ALL ON FUNCTION update_address() TO "www-data";
+GRANT ALL ON FUNCTION delete_address() TO "www-data";
+
+CREATE TRIGGER update_address
+    AFTER UPDATE ON address
+    FOR EACH ROW
+    EXECUTE PROCEDURE update_address();
+
+CREATE TRIGGER delete_address
+    AFTER DELETE ON address
+    FOR EACH ROW
+    EXECUTE PROCEDURE delete_address();
 
 -- Import data
 
@@ -85,6 +222,37 @@ INSERT INTO address (
       osmid,
       ST_SetSRID(ST_GeometryN(geom,1),4326)
    FROM "OpenAddresses" where created_by = 'OSM');
+
+INSERT INTO address (
+   housenumber,
+   housename,
+   street,
+   postcode,
+   city,
+   country,
+   created_by,
+   ipaddress,
+   time_created,
+   reference,
+   quality,
+   osmid,
+   geom) (SELECT
+      housenum,
+      housename,
+      street,
+      postcode,
+      city,
+      country,
+      created_by,
+      ipaddress,
+      time_creat,
+      'http://www.openaddresses.org',
+      'Donated',
+      osmid,
+      ST_SetSRID(ST_GeometryN(geom,1),4326)
+   FROM "OpenAddresses" where created_by in ('pr_rueba','pr_Kogler','Stadt Villach'));
+
+update address set quality='Donated' where created_by in ('pr_rueba','pr_Kogler','Stadt Villach');
 
 -- Full text search
 -- http://code18.blogspot.com/2009/06/full-text-search-postgresql.html
