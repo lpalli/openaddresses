@@ -1,8 +1,10 @@
+<wiki:toc max_depth="2" />
+
 = Press release =
 
 = Community emails =
 
-== www.openaddresses.org BETA launched ==
+== EN: www.openaddresses.org BETA launched ==
 
 Do you dream of free and open localized addresses or free and open geocoding and reverse geocoding services ? It's not a dream anymore, it's a reality !
 After www.openaddresses.ch and www.openaddresses.at, [http://www.openaddresses.org www.openaddresses.org] has been launched to collect worldwide localized addresses.
@@ -21,7 +23,7 @@ Thanks for your interest.
 
 = Short Article = 
 
-== !OpenAddresses reloaded ==
+== DE !OpenAddresses reloaded ==
 
 !OpenAddresses.ch war 2007 am Institut Vermessung und Geoinformation der FHNW konzipiert und entwickelt worden. Ziel des Projektes ist es, mittels Engagement von Freiwilligen und der Datenspende von Organisationen oder amtlichen Stellen einen kompletten Datensatz geokodierter Gebäudeadressen zu erstellen. Ein solcher Datensatz leistet wertvolle Dienste für eine Vielzahl von Anwendungsbereichen, namentlich für räumliche Analysen. 
 
@@ -37,7 +39,7 @@ In Zukunft soll das Projekt auch bei der Open Source Geospatial Foundation (OSGE
 
 Hans-Jörg Stark
 
-== !OpenAddresses est relancé ==
+== FR !OpenAddresses est relancé ==
 
 Le projet !OpenAddresses a été initié en 2007 par l'institut de mensuration et de géoinformation de la Haute école du Nord Ouest de la Suisse (FHNW). Le but de ce projet est de constituer un jeu de données d'adresses de bâtiments géocodées grâce à la contribution bénévole des contributeurs intéressés ou des donations d'institutions ou autorités publiques.
 
