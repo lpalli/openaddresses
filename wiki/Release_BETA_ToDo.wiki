@@ -29,53 +29,53 @@
   * 29.3.2010: Private announcement and press releases
    * Switzerland
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
-    * TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
-    * Nouvo: http://www.nouvo.ch/contact
-    * 24 heures: scoopmobile at edipresse.ch
-    * Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre at rsr.ch
-    * Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
-    * RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
-    * Le Temps: http://www.letemps.ch/contact
-    * 20 minutes: reporter at 20minutes.ch
+    * PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
+    * PR FR: Nouvo: http://www.nouvo.ch/contact
+    * PR FR: 24 heures: scoopmobile at edipresse.ch
+    * PR FR: Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre at rsr.ch
+    * PR FR: Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
+    * PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
+    * PR FR: Le Temps: http://www.letemps.ch/contact
+    * PR FR: 20 minutes: reporter at 20minutes.ch
    * Germany
-    * Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
-    * http://www.business-geomatics.com/cms/index.php
-    * www.linux-magazin.de (mfeilner at linux-magazin.de)
-    * http://www.gis-news.de/
-    * http://www.gis-biz.de/
-    * http://www.kirschbaum.de/texte/zkn.php
+    * PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
+    * PR DE: http://www.business-geomatics.com/cms/index.php
+    * PR DE: www.linux-magazin.de (mfeilner at linux-magazin.de)
+    * PR DE: http://www.gis-news.de/
+    * PR DE: http://www.gis-biz.de/
+    * PR DE: http://www.kirschbaum.de/texte/zkn.php
     * German key mails:
-     * presse-info at linuxnewmedia.de
-     * presse at ct.heise.de
-     * monika.rech at abcverlag.de
-     * presse at onlinekosten.de
-     * christoph at linuxundich.de
-     * news at golem.de
-     * opengeodb at phpbar.de
+     * PR DE: presse-info at linuxnewmedia.de
+     * PR DE: presse at ct.heise.de
+     * PR DE: monika.rech at abcverlag.de
+     * PR DE: presse at onlinekosten.de
+     * PR DE: christoph at linuxundich.de
+     * PR DE: news at golem.de
+     * PR DE: opengeodb at phpbar.de
   * 30.3.2010: OSGEO mailing list
-   * discuss@lists.osgeo.org
+   * MAIL EN: discuss@lists.osgeo.org
   * 31.3.2010: OSM
-   * http://lists.openstreetmap.org/listinfo/talk
+   * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
   * 1.4.2010: BALIZ
-   * FR: http://media.baliz-geospatial.com/fr/publiez-une-information
+   * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
   * 1.4.2010: Slashgeo
-   * http://slashgeo.org/submit.pl
+   * MAIL FRhttp://slashgeo.org/submit.pl
   * 1.4.2010: Directions Mag
-   * http://www.directionsmedia.net/masthead.php?p=contact
+   * PR EN: http://www.directionsmedia.net/masthead.php?p=contact
   * 2.4.2010: OSGEO local chapters
-   * http://www.osgeo.org/content/chapters/index.html
-    * fossgis-talk-liste at fossgis.de
-    * https://freegis.org/mailman/listinfo/mapserver-de
+   * MAIL XX http://www.osgeo.org/content/chapters/index.html
+    * MAIL DE: fossgis-talk-liste at fossgis.de
+    * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
   * 2.4.2010: OSM user groups
-   * http://wiki.openstreetmap.org/wiki/OSM_User_Groups
-    * talk-de@openstreetmap.org
+   * MAIL XX: http://wiki.openstreetmap.org/wiki/OSM_User_Groups
+    * MAIL DE: talk-de@openstreetmap.org
   * 3.4.2010: Geonames
-   * http://forum.geonames.org/gforum/forums/show/4.page
+   * MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
   * 3.4.2010: !GeowebForum
-   * http://www.geowebforum.ch/index.php
+   * PR DE: http://www.geowebforum.ch/index.php
   * 3.4.2010: Georezo.net
-   * FR http://georezo.net/forum/viewforum.php?id=38
+   * MAIL FR: http://georezo.net/forum/viewforum.php?id=38
   * 3.4.2010: mailinglist - oesterreichischer dachverband für geographische information
-   * ageo-news@googlegroups.com
-  * May: Article "Geomatik Schweiz"
+   * MAIL DE: ageo-news@googlegroups.com
+  * May: ARTICLE FR DE  "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
