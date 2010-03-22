@@ -24,7 +24,7 @@ Le projet a vu le jour en 2007 en Suisse, ceci sous l'impulsion de la Haute éco
 
 !OpenStreetMap.org et !OpenAddresses.org sont complémentaires et partagent la même philosophie. !OpenAddresses.org se concentre uniquement sur les points adresses et peut ainsi offrir une plateforme dédiée et spécialisée. Le but est que chaque projet profite l'un de l'autre. Les données sont régulièrement synchronisées pour permettre cette réciprocité.
 
-=== Comment est-il possibble de participer à !OpenAddresses.org ? ===
+=== Comment est-il possible de participer à !OpenAddresses.org ? ===
 
 Tout d'abord en saisissant des adresses ! Ou encore, mieux, en mettant à disposition des adresses ou d'autres données permettant de saisir des adresses comme des photos aériennes, des plans de bâtiments etc...
 
