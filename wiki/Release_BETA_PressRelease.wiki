@@ -1,4 +1,6 @@
-= www.openaddresses.org BETA launched =
+= Community emails =
+
+== www.openaddresses.org BETA launched ==
 
 Do you dream of free and open localized addresses or free and open geocoding and reverse geocoding services ? It's not a dream anymore, it's a reality !
 After www.openaddresses.ch and www.openaddresses.at, [http://www.openaddresses.org www.openaddresses.org] has been launched to collect worldwide localized addresses.
@@ -15,7 +17,7 @@ You'll find more information in the following documents:
 
 Thanks for your interest.
 
-= Article for Geomatik Schweiz = 
+= Short Article = 
 
 == !OpenAddresses reloaded ==
 
