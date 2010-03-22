@@ -23,6 +23,7 @@
    * Translate user guide in italian:
    * ~~Translate user guide in spanish: http://code.google.com/p/openaddresses/wiki/UserGuideEs ~~
  * Marketing/Communication
+  * Create email info at openaddresses.org
   * 29.3.2010: Blog
   * 29.3.2010: Twitter
   * 29.3.2010: Private announcement and press releases
