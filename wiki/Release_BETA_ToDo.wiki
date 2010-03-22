@@ -25,16 +25,32 @@
  * Marketing/Communication
   * 29.3.2010: Blog
   * 29.3.2010: Twitter
-  * 29.3.2010: Private mails
-   * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
-   * TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
-   * Nouvo: http://www.nouvo.ch/contact
-   * 24 heures: scoopmobile@edipresse.ch
-   * Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre@rsr.ch
-   * Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
-   * RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
-   * Le Temps: http://www.letemps.ch/contact
-   * 20 minutes: reporter@20minutes.ch
+  * 29.3.2010: Private announcement and press releases
+   * Switzerland
+    * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
+    * TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
+    * Nouvo: http://www.nouvo.ch/contact
+    * 24 heures: scoopmobile@edipresse.ch
+    * Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre@rsr.ch
+    * Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
+    * RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
+    * Le Temps: http://www.letemps.ch/contact
+    * 20 minutes: reporter@20minutes.ch
+   * Germany
+    * Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
+    * http://www.business-geomatics.com/cms/index.php
+    * www.linux-magazin.de (mfeilner[at]linux-magazin.de)
+    * http://www.gis-news.de/
+    * http://www.gis-biz.de/
+    * http://www.kirschbaum.de/texte/zkn.php
+    * Lars:
+     * presse-info[at]linuxnewmedia.de
+     * presse[at]ct.heise.de
+     * monika.rech[at]abcverlag.de
+     * presse[at]onlinekosten.de
+     * christoph[at]linuxundich.de
+     * news[at]golem.de
+     * opengeodb[at]phpbar.de
   * 30.3.2010: OSGEO mailing list
    * discuss@lists.osgeo.org
   * 31.3.2010: OSM
@@ -47,8 +63,11 @@
    * http://www.directionsmedia.net/masthead.php?p=contact
   * 2.4.2010: OSGEO local chapters
    * http://www.osgeo.org/content/chapters/index.html
+    * fossgis-talk-liste[at]fossgis.de
+    * https://freegis.org/mailman/listinfo/mapserver-de
   * 2.4.2010: OSM user groups
    * http://wiki.openstreetmap.org/wiki/OSM_User_Groups
+    * talk-de@openstreetmap.org
   * 3.4.2010: Geonames
    * http://forum.geonames.org/gforum/forums/show/4.page
   * 3.4.2010: !GeowebForum
