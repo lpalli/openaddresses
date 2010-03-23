@@ -76,6 +76,10 @@ class AddressesController(BaseController):
         """GET /id: Show a specific feature."""
         if (id == 'count'):
            return self.protocol.count(request)
+        elif (id == 'countCreatedToday'):
+           return self.countCreatedToday(request)
+        elif (id == 'countUpdatedToday'):
+           return self.countUpdatedToday(request)
         elif (id == 'fullTextSearch'):
            return self.fullTextSearch(request)
         elif (id == 'checkSession'):
@@ -217,3 +221,27 @@ class AddressesController(BaseController):
 
     def createSession(self):
         return 'True'
+
+    def countCreatedToday(self,request):
+
+       # Create SQL Query
+       sqlQuery = "select count(1) from address where time_created::date=now()::date"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+
+       rows = result.fetchall()
+
+       return rows[0][0]
+
+    def countUpdatedToday(self,request):
+
+       # Create SQL Query
+       sqlQuery = "select count(1) from address where time_updated::date=now()::date"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+
+       rows = result.fetchall()
+
+       return rows[0][0]
