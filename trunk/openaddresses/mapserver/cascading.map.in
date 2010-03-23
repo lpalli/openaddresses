@@ -101,6 +101,20 @@ MAP
  END
 
  LAYER
+  NAME "GENEVE_plan"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://etat.geneve.ch/ags2/services/Plan_Officiel/MapServer/WMSServer"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "0,1,2"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+
+ LAYER
   NAME "adv_dop"
   TYPE RASTER
   STATUS ON
