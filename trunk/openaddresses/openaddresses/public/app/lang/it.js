@@ -46,7 +46,7 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Error during data storage':'Errore durante la registrazione dei dati',
     'Fill the address attributes':'Inserite gli attributi dell\'indirizzo',
     'Fill the empty attributes of this address with the value of the previous edited address. For all attributes except house number and house name.':'Riempire il vuoto attributi di questo indirizzo con il valore di indirizzo precedente modificato. Per tutti gli attributi tranne il numero civico e il nome di casa.',
-    'Get missing values from previous address':'Ottenere i valori mancanti di indirizzo precedente',
+    'Get missing values from previous address':'Ottenere i valori di indirizzo precedente',
     'GPS':'GPS',
     'House name':'Nome dell\'edificio',
     'House number':'Numero dell\'edificio',
