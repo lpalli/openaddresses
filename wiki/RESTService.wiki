@@ -93,3 +93,7 @@ Describe the REST services associated to the addresses
 
  * Count the number of addresses
   * http://www.openaddresses.org/addresses/count/
+ * Count the number of addresses created today
+  * http://www.openaddresses.org/addresses/countCreatedToday
+ * Count the number of addresses updated today
+  * http://www.openaddresses.org/addresses/countUpdatedToday
