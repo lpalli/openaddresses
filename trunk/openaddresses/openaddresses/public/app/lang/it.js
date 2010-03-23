@@ -45,6 +45,8 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Error during data deletion':'Errore durante la cancellazione dei dati',
     'Error during data storage':'Errore durante la registrazione dei dati',
     'Fill the address attributes':'Inserite gli attributi dell\'indirizzo',
+    'Fill the empty attributes of this address with the value of the previous edited address. For all attributes except house number and house name.':'Riempire il vuoto attributi di questo indirizzo con il valore di indirizzo precedente modificato. Per tutti gli attributi tranne il numero civico e il nome di casa.',
+    'Get missing values from previous address':'Ottenere i valori mancanti di indirizzo precedente',
     'GPS':'GPS',
     'House name':'Nome dell\'edificio',
     'House number':'Numero dell\'edificio',
@@ -95,5 +97,5 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'WGS84':'WGS84',
     'Yahoo Satellite':'Yahoo Satellite',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'State utilizzando Chrome. Alcuni problemi in corso di risoluzione concernono questo navigatore. Vi raccomandiamo d\'utilizzare Firefox, Safari o Internet Explorer.',
-    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'    
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'
 });
