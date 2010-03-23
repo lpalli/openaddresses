@@ -75,7 +75,7 @@
   * 1.4.2010: BALIZ
    * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
   * 1.4.2010: Slashgeo
-   * MAIL FRhttp://slashgeo.org/submit.pl
+   * MAIL FR http://slashgeo.org/submit.pl
   * 1.4.2010: Directions Mag
    * PR EN: http://www.directionsmedia.net/masthead.php?p=contact
   * 2.4.2010: OSGEO local chapters
