@@ -31,14 +31,14 @@ openaddresses.languages = [
     /*['en_UK', 'English (UK)', 'ascii'],
      ['fa', 'Farsi (Persian)', 'utf-8'],
      ['fr_CA', 'France (Canadian)', 'UTF-8'],*/
-    ['fr', 'French', 'UTF-8'],
-    ['de', 'German', 'utf-8'],
+    ['fr', 'Français', 'UTF-8'],
+    ['de', 'Deutsch', 'utf-8'],
     /*['el_GR', 'Greek', 'utf-8'],
      ['gr', 'Greek (Old Version)', 'utf-8'],
      ['he', 'Hebrew', 'windows-1255'],
      ['hu', 'Hungarian', 'utf-8'],
      ['id', 'Indonesian', 'ascii'],*/
-     ['it', 'Italian', 'utf-8'],
+     ['it', 'Italiano', 'utf-8'],
      /*['ja', 'Japanese', 'utf-8'],
      ['ko', 'Korean', 'utf-8'],
      ['lv', 'Latvian', 'utf-8'],
@@ -51,10 +51,10 @@ openaddresses.languages = [
      ['ru', 'Russian', 'UTF-8'],
      ['sr_RS', 'Serbian Cyrillic', 'UTF-8'],
      ['sr', 'Serbian Latin', 'utf-8'],*/
-     ['zh_CN', 'Simplified Chinese', 'utf-8'],
+     ['zh_CN', '简体中文', 'utf-8'],
      /*['sk', 'Slovak', 'utf-8'],
      ['sl', 'Slovenian', 'utf-8'],*/
-     ['es', 'Spanish', 'utf-8']/*,
+     ['es', 'Español', 'utf-8']/*,
      ['sv_SE', 'Swedish', 'utf-8'],
      ['th', 'Thailand', 'utf-8'],
      ['zh_TW', 'Traditional Chinese', 'UTF-8'],
