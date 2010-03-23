@@ -45,6 +45,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Error during data deletion':'Fehler während des Löschprozesses',
     'Error during data storage':'Fehler während des Datenspeicherprozesses',
     'Fill the address attributes':'Füllen Sie die Attribute der Adresse aus',
+    'Fill the empty attributes of this address with the value of the previous edited address. For all attributes except house number and house name.':'Füllen Sie die leeren Attribute dieser Adresse mit dem Wert der bisherige Adresse. Für alle Attribute, mit Ausnahme der Hausnummer und Hausnamen.',
+    'Get missing values from previous address':'Holen fehlenden Werte der bisherige Adresse ',
     'GPS':'GPS',
     'House name':'Gebäudename',
     'House number':'Gebäudenummer',

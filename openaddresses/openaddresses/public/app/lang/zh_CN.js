@@ -45,6 +45,8 @@ OpenLayers.Util.extend(OpenLayers.Lang["zh-CN"], {
     'Error during data deletion':'在数据错误删除',
     'Error during data storage':'在数据存储错误',
     'Fill the address attributes':'填写的地址属性',
+    'Fill the empty attributes of this address with the value of the previous edited address. For all attributes except house number and house name.':'填补这与以前的报告编辑的值的地址空属性。除去房子的名称和门牌号码的所有属性。',
+    'Get missing values from previous address':'获得前处理缺失值',
     'GPS':'全球定位系统',
     'House name':'楼名',
     'House number':'门牌号码',
@@ -95,5 +97,5 @@ OpenLayers.Util.extend(OpenLayers.Lang["zh-CN"], {
     'WGS84':'WGS84',
     'Yahoo Satellite':'雅虎卫星',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'您正在使用铬。一些尚未解决的已知问题影响这一浏览器。我们推荐使用Firefox，Safari或IE浏览器。',
-    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'您正在使用Internet Explorer 6。我们强烈建议您升级到一个更安全，新版本！'    
+    'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'您正在使用Internet Explorer 6。我们强烈建议您升级到一个更安全，新版本！'
 });

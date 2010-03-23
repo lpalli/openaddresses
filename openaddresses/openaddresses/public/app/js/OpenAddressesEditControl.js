@@ -462,11 +462,50 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             });
 
             var buttonText;
+            var getPreviousValueButton = new Ext.Button({
+                id: 'getPreviousValueButton',
+                text: OpenLayers.i18n('Get missing values from previous address'),
+                qtip: OpenLayers.i18n('Fill the empty attributes of this address with the value of the previous edited address. For all attributes except house number and house name.'),
+                disabled: false,
+                handler: function() {
+                    var attribute;
+                    if (map.previousEditedFeature) {
+                        for (attribute in map.previousEditedFeature.attributes) {
+                            if (attribute && !map.editedFeature.attributes['' + attribute + '']) {
+                                map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
+                                if (attribute == 'country') {
+                                    comboCountry.setValue(openaddresses.countryStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
+                                } else if (attribute == 'quality') {
+                                    comboQuality.setValue(openaddresses.qualityStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
+                                } else {
+                                    if (attribute == 'created_by' || attribute == 'street' || attribute == 'postcode' || attribute == 'city' || attribute == 'region') {
+                                        Ext.getCmp(attribute).setValue(map.editedFeature.attributes['' + attribute + '']);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    for (var i = 0; i < feature.editingFormPanel.items.getCount(); ++i) {
+                        var comp = feature.editingFormPanel.items.get(i);
+                        if (!comp.value) {
+                            comp.focus(true, 300);
+                            break;
+                        }
+                    }
+                }
+            });
             if (feature.attributes && feature.attributes.id) {
                 buttonText = OpenLayers.i18n('Save');
+                if (map.previousEditedFeature) {
+                    getPreviousValueButton.show();
+                } else {
+                    getPreviousValueButton.hide();
+                }
             } else {
                 buttonText = OpenLayers.i18n('Create');
+                getPreviousValueButton.hide();
             }
+
             feature.editingPopup = new GeoExt.Popup({
                 title: OpenLayers.i18n('Address Editor'),
                 feature: feature,
@@ -485,39 +524,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                 openaddresses.layout.showWaitingMask();
                                 deleteEditing(feature);
                             }
-                        },
-                        {
-                            xtype: 'tbbutton',
-                            text: OpenLayers.i18n('Fill with previous values'),
-                            qtip: OpenLayers.i18n('Fill the empty attributes of this feature with the value of the previous edited feature. For all attributes except house number and house name.'),
-                            disabled: false,
-                            handler: function() {
-                                var attribute;
-                                if (map.previousEditedFeature) {
-                                    for (attribute in map.previousEditedFeature.attributes) {
-                                        if (attribute && !map.editedFeature.attributes['' + attribute + '']) {
-                                            map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
-                                            if (attribute == 'country') {
-                                                comboCountry.setValue(openaddresses.countryStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
-                                            } else if (attribute == 'quality') {
-                                                comboQuality.setValue(openaddresses.qualityStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
-                                            } else {
-                                                if (attribute == 'created_by' || attribute == 'street' || attribute == 'postcode' || attribute == 'city' || attribute == 'region') {
-                                                    Ext.getCmp(attribute).setValue(map.editedFeature.attributes['' + attribute + '']);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                for (var i = 0; i < feature.editingFormPanel.items.getCount(); ++i) {
-                                    var comp = feature.editingFormPanel.items.get(i);
-                                    if (!comp.value) {
-                                        comp.focus(true, 300);
-                                        break;
-                                    }
-                                }
-                            }
-                        },
+                        },getPreviousValueButton,
                         {
                             xtype: 'tbfill'
                         },
@@ -572,14 +579,13 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 if (mapfishFeatures.features.length === 0) {
                     map.editedFeature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(clickedPosition.lon, clickedPosition.lat));
                     delete map.editedFeature.id;
-                    // Keep previous values
-                    /*if (map.previousEditedFeature) {
+                    if (map.previousEditedFeature) {
                         for (attribute in map.previousEditedFeature.attributes) {
                             if (attribute) {
                                 map.editedFeature.attributes['' + attribute + ''] = map.previousEditedFeature.attributes['' + attribute + ''];
                             }
                         }
-                    }*/
+                    }
                 } else {
                     var featurePosition = new OpenLayers.LonLat(mapfishFeatures.features[0].geometry.coordinates[0], mapfishFeatures.features[0].geometry.coordinates[1]);
                     featurePosition.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));

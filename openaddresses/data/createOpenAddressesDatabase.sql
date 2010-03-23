@@ -252,7 +252,9 @@ INSERT INTO address (
       ST_SetSRID(ST_GeometryN(geom,1),4326)
    FROM "OpenAddresses" where created_by in ('pr_rueba','pr_Kogler','Stadt Villach'));
 
-update address set quality='Donated' where created_by in ('pr_rueba','pr_Kogler','Stadt Villach');
+update address set quality='Donated' where created_by in ('Stadt Villach');
+
+update address set quality='GPS' where created_by in ('pr_rueba','pr_Kogler');
 
 -- Full text search
 -- http://code18.blogspot.com/2009/06/full-text-search-postgresql.html
