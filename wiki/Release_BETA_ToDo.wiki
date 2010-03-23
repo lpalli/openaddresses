@@ -59,15 +59,15 @@
      * PR DE: christoph at linuxundich.de
      * PR DE: news at golem.de
      * PR DE: opengeodb at phpbar.de
-    * France
-     * PR FR: redaction at 01informatique.presse.fr
-     * PR FR: ab at thesame-innovation.com
-     * PR FR: orafal at idg.fr
-     * PR FR: http://fr.newspeg.com/submit
-     * PR FR: deblomac at sig-la-lettre.com
-     * PR FR: vincent at cimaxonline.fr
-     * PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
-     * PR FR: satri at slashgisrs.org
+   * France
+    * PR FR: redaction at 01informatique.presse.fr
+    * PR FR: ab at thesame-innovation.com
+    * PR FR: orafal at idg.fr
+    * PR FR: http://fr.newspeg.com/submit
+    * PR FR: deblomac at sig-la-lettre.com
+    * PR FR: vincent at cimaxonline.fr
+    * PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
+    * PR FR: satri at slashgisrs.org
   * 30.3.2010: OSGEO mailing list
    * MAIL EN: discuss@lists.osgeo.org
   * 31.3.2010: OSM
