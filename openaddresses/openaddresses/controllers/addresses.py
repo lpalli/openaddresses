@@ -225,14 +225,14 @@ class AddressesController(BaseController):
     def countCreatedToday(self,request):
 
        # Create SQL Query
-       sqlQuery = "select count(1) from address where time_created::date=now()::date"
+       sqlQuery = "select count(1) count from address where time_created::date=now()::date"
 
        # Execute query
        result = Session.execute(sqlQuery)
 
-       rows = result.fetchall()
-
-       return rows[0][0]
+       for row in result:
+          for column in row:
+             return str(column)
 
     def countUpdatedToday(self,request):
 
@@ -242,6 +242,6 @@ class AddressesController(BaseController):
        # Execute query
        result = Session.execute(sqlQuery)
 
-       rows = result.fetchall()
-
-       return rows[0][0]
+       for row in result:
+          for column in row:
+             return str(column)
