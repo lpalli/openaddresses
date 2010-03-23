@@ -57,6 +57,22 @@ You'll find more information in the following documents:
 
 Thanks for your interest.
 
+== DE: www.openaddresses.org BETA gestartet ==
+
+Träumen Sie von freien und offenen lokalisierten Adressen oder freien und offenen Geokodier- und ReverseGeokodier-Diensten? Es ist kein Traum mehr, jetzt ist es Realität! Nach www.openaddresses.ch und www.openaddresses.at, ist nun [http://www.openaddresses.org www.openaddresses.org] gestartet, um weltweit lokalisierte Adressen zu sammeln. Die Initiative von mehreren Personen, Fachhochschulen und Unternehmen aus Mitteleuropa bietet ein Webportal für das Management von offenen und freien Adressen an. www.openaddresses.org arbeitet auch mit www.openstreetmap.org zusammen, indem Daten ausgetauscht werden, weil aber lokalisierte Adressen etwas spezifisches sind, erachteten wir es als angebracht, eine selbstständige Plattform nur für Adressen einzurichten.
+
+Zögern Sie nicht, Ihre eigene Adresse, die Adressen Ihrer Freunde und die der Freunde Ihrer Freunde hinzufügen ;-) Wenn Sie sich an diesem Projekt weiter beteiligen möchten, dann können Sie auch ganze Adressdatensätze, Orthophotos oder andere Daten, die das Projekt unterstützen und vorantreiben, übermitteln. Gesucht werden auch Personen, die sich in der Entwicklung, der Übersetzung, der System-Administration, dem Testing, der Kommunikation etc, etc. beteiligen. 
+
+Weitere Informationen finden Sie in den folgenden Dokumenten: 
+
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Häufig gestellte Fragen]
+ * [http://code.google.com/p/openaddresses/wiki/UserGuideDe Bedienungsanleitung ]
+ * [http://code.google.com/p/openaddresses/ Wiki]
+ * [http://groups.google.com/group/OpenAddresses Diskussionsforum ]
+
+Vielen Dank für Ihr Interesse.
+
+
 = Short Article = 
 
 == DE: !OpenAddresses reloaded ==
