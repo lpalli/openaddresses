@@ -72,6 +72,23 @@ openaddresses.layers = [
         maxExtent: openaddresses.createBoundsFrom4326(5.918669, 46.105563, 6.314182, 46.379977)}
             ),
     new OpenLayers.Layer.WMS(
+            "CH_GENEVE_plan",
+            openaddresses.config.baseWMS,
+    {layers: 'GENEVE_plan',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        opacity: 0.7,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 50,
+        attribution:"CH_GENEVE_plan: etat.geneve.ch",
+        maxExtent: openaddresses.createBoundsFrom4326(5.918669, 46.105563, 6.314182, 46.379977)}
+            ),
+    new OpenLayers.Layer.WMS(
             "DE_adv_dop",
             openaddresses.config.baseWMS,
     {layers: 'adv_dop',
