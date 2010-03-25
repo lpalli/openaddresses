@@ -64,6 +64,7 @@
      * PR DE: christoph at linuxundich.de
      * PR DE: news at golem.de
      * PR DE: opengeodb at phpbar.de
+     * MAIL DE: harald.schwenk at agentur-geoinfo.de
    * France
     * PR FR: redaction at 01informatique.presse.fr
     * PR FR: ab at thesame-innovation.com
