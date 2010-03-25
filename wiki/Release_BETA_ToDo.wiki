@@ -29,11 +29,16 @@
   * 29.3.2010: Private announcement and press releases
    * International
     * MAIL EN: http://posterous.com/site/profile/opengeodata 
+    * MAIL EN: news at gisdevelopment.net
+    * MAIL EN: pressreleases at vector1media.com
     * PR EN: mailbox at geoinformatics.com
     * PR EN: editorgeo at geoconnexion.com
     * PR EN: enquiries at pvpubs.demon.co.uk
     * PR EN: http://gislounge.com/contact
     * PR EN: cispress at tmcnet.com
+    * PR EN: https://secure.ibsystems.com/GIS/nbc/members/
+    * PR EN: http://www.gim-international.com/contact.php
+    * PR EN: http://mapgiving.blogspot.com/
    * Switzerland
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
     * PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
@@ -68,6 +73,7 @@
     * PR FR: vincent at cimaxonline.fr
     * PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
     * PR FR: satri at slashgisrs.org
+    * PR FR: http://www.portailsig.org/contact
   * 30.3.2010: OSGEO mailing list
    * MAIL EN: discuss@lists.osgeo.org
   * 31.3.2010: OSM
