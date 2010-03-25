@@ -77,7 +77,7 @@ openaddresses.layout = (function() {
                     var layer = this.map.layers[i];
                     var withinMaxExtent = (layer.maxExtent && this.map.getExtent() &&
                                            this.map.getExtent().intersectsBounds(layer.maxExtent, false));
-                    if (layer.attribution && layer.getVisibility() && withinMaxExtent) {
+                    if (layer.attribution && layer.getVisibility() && withinMaxExtent && layer.inRange) {
                         // add attribution only if attribution text is unique
                         if (OpenLayers.Util.indexOf(
                                 attributions, layer.attribution) === -1) {
@@ -571,6 +571,11 @@ openaddresses.layout = (function() {
         if (params.overlayOpacity) {
             Ext.getCmp('opacity_slider').setValue(parseFloat(params.overlayOpacity));
         }
+        if (params.geocoding) {
+            openaddresses.config.geocoding = true;
+        } else {
+            openaddresses.config.geocoding = false;
+        }
     };
 
     var createOpacitySlider = function(map) {
@@ -791,10 +796,7 @@ openaddresses.layout = (function() {
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
 
-            // Manage controlers for reverse geocoding and editing
-            if (openaddresses.config.googleGeocoding) {
-                handleRightMouseClick(this.map);
-            }
+
 
             createLocationTooltip(this.map);
 
@@ -806,6 +808,11 @@ openaddresses.layout = (function() {
                 }
             });
             setPermalink();
+
+            // Manage controlers for reverse geocoding and editing
+            if (openaddresses.config.geocoding) {
+                handleRightMouseClick(this.map);
+            }
 
             var hideMask = function () {
                 if (Ext.get('loading')) {
