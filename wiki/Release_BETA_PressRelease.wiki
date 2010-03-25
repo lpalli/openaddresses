@@ -76,6 +76,52 @@ Tout d'abord en saisissant des adresses ! Ou encore, mieux, en mettant à dispos
  * Twitter: https://twitter.com/openaddresses
  * Le site de la communauté: http://code.google.com/p/openaddresses/
 
+== DE: !OpenAddresses.org, die Webseite für offene und freie gekodierte Adressdaten ==
+
+Das Ziel der nach dem Prinzip von Web 2.0 erstellen Seite http://www.openaddresses.org ist die zur Verfügung Stellung von freien, d.h. kostenlosen und offenen geokodierten Adressdaten. Das Projekt !OpenAddresses erlaubt es allen Interessierten, sich an der Erhebung und der Pflege der über einen kollaborativen Ansatz erstellten Adressen zu beteiligen und diese Daten auch frei zu nutzen.
+
+=== Wozu werden geokodierte Adressdaten benötigt? ===
+
+Lagerichtige und qualitativ hochstehende geokodierte Adressdaten als Punkte werden benötigt, um bspw. bei Routinganwendungen die gesuchten Destinationen zu finden oder damit Unternehmen ihre Kunden im räumlichen Kontext visualisieren und ggf. auch analysieren können. Weitere Geomarketing-Anwendungen wie Standortanalysen, Planungsaufgaben und viele andere mehr verlangen nach solchen Daten. Das Potenzial steigert sich, wenn die Kundendaten mit weiteren Sekundärmerkmalen kombiniert werden können um anspruchsvollere Analysen und Auswertungen durchzuführen: als gemeinsamer Bezugsrahmen dienen dazu geokodierte Adressdaten.
+
+Des Weiteren dienen Adresspunkte auch einfachen Abfragen wie "Wo befindet sich die Bahnhofstrasse 10?". Oder weiter können sie für inverse Geokodierdienste verwendet werden: gegeben sei ein Koordinatenpaar, welches einen Ort definiert und gesucht ist textuelle Beschreibung des Ortes in Form einer, bzw. derjenigen Adresse, für welche dieses Koordinatenpaar gilt.
+
+Nebst den eigentlichen Adressdaten stellt !OpenAddresses.org auch solche Geokodier-Dienste kostenlos zur Verfügung.
+
+=== Weshalb freie Geodaten? ===
+
+Gegenwärtig sind aktuelle räumliche Daten in den meisten Fällen durch Urheberrechte in deren Nutzung eingeschränkt, mit Kosten für die Anschaffung und Nutzung behaftet und teilweise auch nicht flächendeckend vorhanden. !OpenAddresses.org hat sich zum Ziel gesetzt, diesen Tatbestand im Bereich von geokodierten Adressdaten zu ändern und eine offene Plattform zur Verfügung zu stellen, welche sehr einfach zu bedienen ist und bei der alle Interessieren dank einer sehr einfachen Benutzeroberfläche mitmachen können. Die so erhobenen Daten sind kostenlos verfügbar und unterliegen einer offenen Lizenz, welche die freie weitere Verwendung erlaubt. Dieses Ziel gilt grundsätzlich für alle Länder dieser Erde.
+
+Um das Ziel zu erreichen ist es nötig, eine aktive Community rund um !OpenAddresses.org aufzubauen, welche sich in der Erhebung und Aktualisierung der Adressdaten engagiert.
+
+=== Wie ist das Projekt !OpenAddresses.org entstanden? ===
+
+Das Projekt wurde im Jahr 2007 am Institut Vermessung und Geoinformation der Fachhochschule Nordwestschweiz ins Leben gerufen um damals hauptsächlich Adressdaten der Schweiz zu erheben. 2009 hat sich das Projektteam erweitert und die Erhebung von Adressdaten weltweit zum Ziel gesetzt. In diesem Zusammenhang wurde auch die Benutzeroberfläche neu konzipiert. Gegenwärtig sind bereits über 5 Millionen Adressen erhoben worden.
+
+=== In welcher Beziehung steht !OpenAddresses.org zum Projekt !OpenStreetMap.org? ===
+
+!OpenStreetMap.org und !OpenAddresses.org verstehen sich als komplementäre Projekte und nicht als "Konkurrzen-Projekte". Beide Projekte basieren auf dem gleichen Grundsatz, dass räumliche Daten über das Engagement von Freiwilligen erhoben werden. Während sich !OpenAddresses.org ausschliesslich auf die Erhebung von geokodierten Adressdaten fokussiert, können bei !OpenStreetMap auch andere räumliche Objekte wie Strassen, Flüsse, Parks u.v.m. erhoben werden. Die Projekte ergänzen sich in dieser Hinsicht und deren Datenbestand wird regelmässig synchronisiert.
+
+=== Wie kann man bei !OpenAddresses.org mitmachen? ===
+
+In aller erster Linie kann jede Person über www.openaddresses.org ihr bekannte Adressen in der Karte platzieren und so die Datengrundlage erweitern. Die Erhebung der Daten ist äusserst einfach und erfordert keine Registrierung.
+
+Weiter können Organisationen oder amtliche Stellen ihre vorhandenen Adressdaten !OpenAddresses.org als "Datenspende" zur Verfügung stellen. Damit wächst der Datenbestand am schnellsten und damit ist auch der Profit für alle am grössten.
+
+Weiter sind auch öffentliche  Kartendienste (sog. !WebMapServices WMS) bspw. von Luftbilddaten oder amtlichen Vermessungsdaten sehr hilfreiche. Diese dienen zur genauen Platzierung der Adresspunkte in der Karte. Wer solche Dienste anbietet ist sehr willkommen, diese Dienste auch in !OpenAddresses.org zur Verfügung zu stellen.
+
+=== Weitere Informationen ===
+
+Die folgenden Links bieten weiterführende Informationen zum Projekt:
+
+ * Webseite von OpenAddresses: http://www.openaddresses.org/
+ * Bedienungsanleitung: http://code.google.com/p/openaddresses/wiki/UserGuideDe
+ * Kontaktadresse für Fragen: info@openaddresses.org
+ * Diskussionsforum: http://groups.google.com/group/OpenAddresses
+ * Blog: http://openaddresses.blogspot.com/
+ * Twitter: https://twitter.com/openaddresses
+ * Community-Webseite: http://code.google.com/p/openaddresses/
+
 = Community emails =
 
 == EN: www.openaddresses.org BETA launched ==
