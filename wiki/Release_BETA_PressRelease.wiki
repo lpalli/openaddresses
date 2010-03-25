@@ -141,6 +141,24 @@ You'll find more information in the following documents:
 
 Thanks for your interest.
 
+== FR: www.openaddresses.org BETA est en ligne ==
+
+Voux rêvez d'adresses localisées gratuites et libres de droits ou de services gratuites de géocodage et géocodage inverse ? Ce n'est plus un rêve, c'est devenu une réalité !
+
+Après www.openaddresses.ch et www.openaddresses.at, [http://www.openaddresses.org www.openaddresses.org] vient d'être mis en ligne dans le but de collecter des adresses localisées sur l'ensemble de la planète. 
+Cette initiative de plusieurs personnes, universités et entreprises d'Europe centrale a pour but d'offrir un géoportail permettant la gestion d'adresses gratuites et libres de droit. !OpenAddresses a aussi pour but de travailler en symbiose avec !OpenStreetMap en échangeant les données, mais comme les adresses sont un domaine particulier, nous considérons qu'une plateforme simple d'utilisation et dédiée est plus appropriée. 
+
+N'hésitez pas à ajouter votre propre adresse, l'adresse de vos amis et celles des amis de vos amis ;-) Si vous voulez participer à cette effor, vous pouvez également mettre à disposition des adresses libres de droit, des orthophotos ou toute chose permettant de faciliter la saisie d'adresses. Nous sommes également à la recherche de personnes désireuse de s'investir dans le développement, la traduction, l'administration, le traitement des données, la validation, le testing, la communication etc... etc... 
+
+Vous trouverez de plus amples informations sous:
+
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Questions fréquemments posées]
+ * [http://code.google.com/p/openaddresses/wiki/UserGuideFr Guide de l'utilisateur]
+ * [http://code.google.com/p/openaddresses/ Wiki]
+ * [http://groups.google.com/group/OpenAddresses Groupe de discussion]
+
+Merci pour votre intérêt.
+
 == DE: www.openaddresses.org BETA gestartet ==
 
 Träumen Sie von freien und offenen lokalisierten Adressen oder freien und offenen Geokodierungs- und umgekehrt Geokodierungs-Diensten? Es ist kein Traum mehr, jetzt ist es Realität! Nach www.openaddresses.ch und www.openaddresses.at, ist nun [http://www.openaddresses.org www.openaddresses.org] gestartet, um weltweit lokalisierte Adressen zu sammeln. Die Initiative von mehreren Personen, Fachhochschulen und Unternehmen aus Mitteleuropa bietet ein Webportal für das Management von offenen und freien Adressen an. www.openaddresses.org arbeitet auch mit www.openstreetmap.org zusammen, indem Daten ausgetauscht werden, weil aber lokalisierte Adressen etwas spezifisches sind, erachteten wir es als angebracht, eine selbstständige Plattform nur für Adressen einzurichten.
