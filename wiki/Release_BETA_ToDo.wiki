@@ -59,11 +59,12 @@
     * German key mails:
      * PR DE: presse-info at linuxnewmedia.de
      * PR DE: presse at ct.heise.de
-     * PR DE: monika.rech at abcverlag.de
-     * PR DE: presse at onlinekosten.de
-     * PR DE: christoph at linuxundich.de
-     * PR DE: news at golem.de
-     * PR DE: opengeodb at phpbar.de
+     * LL PR DE: monika.rech at abcverlag.de
+     * LL PR DE: presse at onlinekosten.de
+     * LL PR DE: christoph at linuxundich.de
+     * LL PR DE: news at golem.de
+     * LL PR DE: opengeodb at phpbar.de
+     * LL PR DE: gislist at lists.geocomm.com
      * MAIL DE: harald.schwenk at agentur-geoinfo.de
    * France
     * PR FR: redaction at 01informatique.presse.fr
@@ -87,11 +88,11 @@
    * PR EN: http://www.directionsmedia.net/masthead.php?p=contact
   * 2.4.2010: OSGEO local chapters
    * MAIL XX http://www.osgeo.org/content/chapters/index.html
-    * MAIL DE: fossgis-talk-liste at fossgis.de
+    * LL MAIL DE: fossgis-talk-liste at fossgis.de
     * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
   * 2.4.2010: OSM user groups
    * MAIL XX: http://wiki.openstreetmap.org/wiki/OSM_User_Groups
-    * MAIL DE: talk-de@openstreetmap.org
+    * LL MAIL DE: talk-de@openstreetmap.org
   * 3.4.2010: Geonames
    * MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
   * 3.4.2010: !GeowebForum
