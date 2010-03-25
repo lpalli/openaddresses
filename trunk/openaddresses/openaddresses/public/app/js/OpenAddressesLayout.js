@@ -43,6 +43,7 @@
  * @include OpenLayers/Popup/FramedCloud.js
  * @include GeoExt/data/LayerStore.js
  * @include GeoExt/widgets/MapPanel.js
+ * @include GeoExt/widgets/Action.js
  * @include GeoExt/widgets/tree/LayerContainer.js
  * @include app/js/OpenAddressesOpacitySliderTip.js
  * @include app/js/OpenAddressesCountryList.js
