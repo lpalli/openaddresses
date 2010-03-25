@@ -86,3 +86,9 @@ div.olControlMousePosition  {
    font-size:11px !important;
    right:3px !important;
 }
+
+.zoomin {
+    background-image:url(../img/zoom_in.png) !important;
+    height:20px !important;
+    width:20px !important;
+}
