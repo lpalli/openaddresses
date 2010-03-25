@@ -33,6 +33,7 @@
  * @include OpenLayers/Renderer/SVG.js
  * @include OpenLayers/Renderer/VML.js
  * @include OpenLayers/Control/Navigation.js
+ * @include OpenLayers/Control/ZoomBox.js
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/LayerSwitcher.js
@@ -128,14 +129,14 @@ openaddresses.layout = (function() {
                 var layer = layers[i];
                 var withinMaxExtent = true;
                 if (!layer.inRange) {
-                   withinMaxExtent = false; 
+                    withinMaxExtent = false;
                 }
                 if (this.map.getExtent()) {
                     withinMaxExtent = (layer.maxExtent &&
                                        this.map.getExtent().intersectsBounds(layer.maxExtent, false) && layer.inRange);
                 }
                 if (layer.isBaseLayer) {
-                   withinMaxExtent = true; 
+                    withinMaxExtent = true;
                 }
                 var baseLayer = layer.isBaseLayer;
 
@@ -326,6 +327,17 @@ openaddresses.layout = (function() {
 
     var createTopToolbar = function(map, languageCombo, geonamesSearchCombo, permalinkButton) {
         var tools = [];
+
+        var actionZoomBox = new GeoExt.Action({
+            control: new OpenLayers.Control.ZoomBox(),
+            tooltip: OpenLayers.i18n('Zoom in: drag to create a rectangle'),
+            map: map,
+            iconCls: 'zoomin',
+            toggleGroup: 'map'
+        });
+
+        tools.push(actionZoomBox);
+        tools.push('-');
         tools.push(geonamesSearchCombo);
         tools.push('->');
         tools.push(languageCombo);
@@ -795,7 +807,6 @@ openaddresses.layout = (function() {
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
-
 
 
             createLocationTooltip(this.map);
