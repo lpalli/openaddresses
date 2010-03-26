@@ -4,25 +4,25 @@
 
 == EN: !OpenAddresses.org, the community web site for the management of free and open addresses has been launched ==
 
-As pure web 2.0 application, http://www.openaddresses.org aims to collect free and open located addresses. This community web site allows everyone to store, manage and use adress points.
+A pure web 2.0 application, http://www.openaddresses.org aims to collect free and open geolocated addresses. This community web site allows everyone to store, manage and use adress points.
 
 === Why are located addresses useful ? ===
 
-Located addresses are for examples used in the GPS to find a place to meet, are used by businesses to know the location of their customer and make geomarketing, are used by statisticians to analyze populations or are presented in city plans etc. .. etc. 
+Located addresses are, for example, used in the GPS to find a place to meet, used by businesses to know the location of their customer and improve geomarketing, used by statisticians to analyze populations or used in city plans, presentations etc. .. etc. 
 
-Located addresses are used to deliver geocoding services ("Where is main street ?") or reverse geocoding services ("What is the nearest address of this location ?"). !OpenAddresses.org proposes also freely this kind of service.
+Geolocated addresses are used to deliver geocoding services ("Where is main street ?") or reverse geocoding services ("What is the nearest address of this location ?"). !OpenAddresses.org proposes to freely provide this kind of service.
 
 === Why are free and open data important ? ===
 
-The current data sets are not free of rights, are expensive or doesn't cover the whole planet. !OpenAddresses.org aims to make available to all point addresses free of charge, without copyright and covering the whole planet. To achieve this goal, the !OpenAddresses.org community will create and update this dataset.
+The current data sets are not free of rights, are expensive or doesn't cover the whole planet. !OpenAddresses.org aims to make available to all geolocated addresses free of charge, with an open license and covering the whole planet. To achieve this goal, the !OpenAddresses.org community will create and update this dataset.
 
 === What is the history of the project !OpenAddresses.org ? ===
 
-The project was launched in 2007 in Switzerland, this under the leadership of University of Applied Sciences Northwestern Switzerland (FHNW). Then, in 2009, a group of people and companies decided to create a global directory of addresses and has developed a new website. Currently more than 5 million addresses are available and countries like Denmark or cantons as Solothurn (Switzerland) are fully acquired.
+The project was launched in 2007 in Switzerland, under the leadership of University of Applied Sciences Northwestern Switzerland (FHNW). Then, in 2009, a group of people and companies decided to create a global directory of addresses and have developed a new website. Currently more than 5 million addresses are available and data for countries like Denmark or cantons as Solothurn (Switzerland) are fully acquired.
 
 === What is the relationship with the famous project !OpenStreetMap.org ? ===
 
-!OpenStreetMap.org et !OpenAddresses.org are complementary and share the same philosophy. !OpenAddresses.org focuses only on the address points and providea a specialized and dedicated platform. The goal is that each project benefits from each other. The data is regularly synchronized to allow such reciprocity.
+!OpenStreetMap.org et !OpenAddresses.org are complementary and share the same philosophy. !OpenAddresses.org focuses only on the address points and providea a specialized and dedicated platform. The goal is that each project benefits from the other. The data is regularly synchronized to allow such reciprocity.
 
 === How is it possible to participate in !OpenAddresses.org ? ===
 
@@ -41,7 +41,7 @@ First by entering addresses! Or even better, by providing addresses or other dat
 
 == FR: !OpenAddresses.org, le site communautaire de gestion des adresses vient d'être mis en ligne ==
 
-Dans la plus pure tradition du web 2.0, le nouveau site http://www.openaddresses.org a pour but de mettre à disposition des points adresses gratuites et librement utilisables. Cette plateforme communautaire permet à tous d'enregistrer des points adresses, de les utiliser ou encore de les mettre à jour.
+Dans la plus pure tradition du web 2.0, le nouveau site http://www.openaddresses.org a pour but de mettre à disposition des points adresses gratuits et librement utilisables. Cette plateforme communautaire permet à tous d'enregistrer des points adresses, de les utiliser ou encore de les mettre à jour.
 
 === Quelle est l'utilité des points adresses ? ===
 
@@ -51,7 +51,7 @@ Les points addresses sont à la base des services de recherche géographique ("O
 
 === Pourquoi des données libres ? ===
 
-Les jeux de données actuelles ne sont pas libres de droit, sont onéreuses ou recouvrent partiellement la planète. !OpenAddresses.org a pour ambition de mettre à disposition de tous des points adresses, ceci gratuitement et sans copyrights et sur l'ensemble de la planète. Pour atteindre ce but, !OpenAddresses.org compte sur la mobilisation de la communauté pour faire avancer la saisie et la mise à jour des données.
+Les jeux de données actuelles ne sont pas libres de droit, sont onéreuses ou recouvrent partiellement la planète. !OpenAddresses.org a pour ambition de mettre à disposition de tous des points adresses, ceci gratuitement et avec une licence liber et sur l'ensemble de la planète. Pour atteindre ce but, !OpenAddresses.org compte sur la mobilisation de la communauté pour faire avancer la saisie et la mise à jour des données.
 
 === Quelle est l'histoire du projet !OpenAddresses.org ? ===
 
