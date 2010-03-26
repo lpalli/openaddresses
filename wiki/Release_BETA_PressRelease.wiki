@@ -2,7 +2,7 @@
 
 = Press release =
 
-== EN: !OpenAddresses.org, the community web site for the management of free and open addresses has been launched ==
+== EN: !OpenAddresses.org, a community web site for the management of free and open addresses has been launched ==
 
 A pure web 2.0 application, http://www.openaddresses.org aims to collect free and open geolocated addresses. This community web site allows everyone to store, manage and use adress points.
 
