@@ -76,7 +76,7 @@ Tout d'abord en saisissant des adresses ! Ou encore, mieux, en mettant à dispos
  * Twitter: https://twitter.com/openaddresses
  * Le site de la communauté: http://code.google.com/p/openaddresses/
 
-== DE: !OpenAddresses.org, die Webseite für offene und freie gekodierte Adressdaten ==
+== DE: !OpenAddresses.org, die Webseite für offene und freie geokodierte Adressdaten ==
 
 Das Ziel der nach dem Prinzip von Web 2.0 erstellten Seite http://www.openaddresses.org ist freie, im Sinne von offen und kostenlos, geokodierte Adressdaten zur Verfügung zu stellen. Das Projekt !OpenAddresses erlaubt es allen Interessierten, sich an der Erhebung und der Pflege, der über einen kollaborativen Ansatz erstellten Adressen zu beteiligen und diese Daten auch frei zu nutzen.
 
