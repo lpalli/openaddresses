@@ -55,16 +55,16 @@ Description of tasks that need to be accomplished in order to launch www.openadd
  * Web Site Localization: http://code.google.com/p/openaddresses/wiki/HowToTranslate 
   * ~~Language Selector Cédric~~
   * ~~Mako Template localization Cédric~~
-  * German translation _!WaitForYourName_
+  * ~~German translation Hans-Jörg~~
   * ~~English translation Cédric~~
   * ~~French translation Jean-Luc~~
  * Web Site Map
-  * Add WMS
+  * ~~Add WMS~~
    * ~~Install !MapServer Cédric~~
    * ~~Create !MapFile for cascading WMS (reprojection) Cédric~~
     * ~~Add Open WMS Cédric (http://code.google.com/p/openaddresses/wiki/HowToAddWMS) ~~
   * ~~Add Yahoo Map Cédric~~
-   * Obtain agreement of Yahoo (Hans-Jörg)
+   * Obtain agreement of Yahoo Hans-Jörg
   * ~~Add !OpenStreetMap Cédric~~ 
   * ~~Add Mouse Position Cédric~~
   * ~~Add Display Projection Selector Cédric~~ 
@@ -86,7 +86,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Import OSM data in PostGIS Jeff~~
   * ~~Import OA.ch and OA.at addresses in PostGIS Jeff~~
   * Synchronize OSM and OA addresses, daily _!WaitForYourName_
-  * Create archive table if addresss is deleted (PostGIS trigger) _!WaitForYourName_
+  * ~~Create archive table if addresss is deleted (PostGIS trigger) Cédric~~
   * Obtain other data
    * Switzerland: Cantons _!WaitForYourName_
    * Switzerland: OFS (RegBL) _!WaitForYourName_
@@ -122,3 +122,4 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * Participate to conference
    * ~~FossGIS Cédric Hans-Jörg~~
    * Foss4G
+   * AGIT Hans-Jörg, Lukas
