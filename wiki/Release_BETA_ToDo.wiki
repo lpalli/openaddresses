@@ -48,11 +48,11 @@
    * Austria
     * MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO mailing list
-   * MAIL EN: discuss@lists.osgeo.org
-   * MAIL XX http://www.osgeo.org/content/chapters/index.html
+   * International
+    * MAIL EN: discuss@lists.osgeo.org
+    * MAIL XX http://www.osgeo.org/content/chapters/index.html
     * LL MAIL DE: fossgis-talk-liste at fossgis.de
     * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
-   * International
     * MAIL EN: http://posterous.com/site/profile/opengeodata 
     * MAIL EN: news at gisdevelopment.net
     * MAIL EN: pressreleases at vector1media.com
