@@ -95,5 +95,6 @@
     * PR FR: http://www.portailsig.org/contact
     * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
     * MAIL FR: http://georezo.net/forum/viewforum.php?id=38
+    * MAIL FR: afigeo [at] afigeo.asso.fr  
   * May: ARTICLE FR DE  "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
