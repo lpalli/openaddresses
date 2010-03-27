@@ -1,12 +1,10 @@
 The goal of this page is to prepare a standard email for asking for addresses
 
-= French call for donation  =
+= FR: Recherche de données adresses =
 
 Madame, Monsieur,
 
-Nous nous permettons de vous contacter pour vous présenter le projet http://www.openaddresses.org.
-
-L'idée de base de projet est de mettre à disposition de tous des points adresses libres de droit (1), ceci à l'instar de ce que fait http://www.openstreetmap.org pour les données cartographiques.
+http://www.openaddresses.org/ est un site communautaire ayant pour but de collecter et de mettre à des dispositions des adresses localisées. Les adresses sont libres de droits et gratuites et peuvent donc être utilisées par toute personne ou entité intéressée.
 
 Actuellement, la base de données contient plus de 5 millions d'adresses et comme le but est de recenser l'entier des adresses mondiales, il reste du chemin à faire. 
 
@@ -16,11 +14,16 @@ Une autre manière de contribuer est de mettre à disposition des données perme
 
 Bien que soutenue par plusieurs entreprises et universités, cette initiative est le fait de plusieurs personnes privées qui ont décidé de s'unir pour mettre à disposition des adresses libres de droit. Vous êtes également bienvenus au sein de cette communauté (4)
 
-En espérant que cet appel à donation aura suscité votre intérêt, nous vous présentons nos meilleures salutations,
+En espérant que notre mail pourra trouver une réponse positive, nous sommes bien sûr à votre disposition pour toute question que vous pourriez avoir,
 
-L'équipe !OpenAddresses.
+Pour la communauté !OpenAddresses, Cédric Moullet
 
  * (1) Licence des données d'!OpenAddresses: http://creativecommons.org/licenses/by/3.0/
- * (2) http://code.google.com/p/openaddresses/wiki/RESTService
- * (3) http://code.google.com/p/openaddresses/
+ * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Services]
+ * (3) [http://code.google.com/p/openaddresses/ Site de la communauté]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Questions fréquemments posées]
+
+= Contacts pour donation =
+
+ * http://www.bfs.admin.ch/bfs/portal/fr/index/infothek/nomenklaturen/blank/blank/gem_liste/03.html
