@@ -46,6 +46,7 @@
      * LL PR DE: news at golem.de
      * LL PR DE: opengeodb at phpbar.de
      * LL PR DE: gislist at lists.geocomm.com
+     * LL MAIL DE: fossgis-talk-liste at fossgis.de
      * MAIL DE: harald.schwenk at agentur-geoinfo.de
    * Austria
     * MAIL DE: ageo-news@googlegroups.com
@@ -53,7 +54,6 @@
    * International
     * MAIL EN: discuss@lists.osgeo.org
     * MAIL XX http://www.osgeo.org/content/chapters/index.html
-    * LL MAIL DE: fossgis-talk-liste at fossgis.de
     * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
     * MAIL EN: http://posterous.com/site/profile/opengeodata 
     * MAIL EN: news at gisdevelopment.net
