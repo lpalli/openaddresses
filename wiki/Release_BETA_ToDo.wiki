@@ -8,7 +8,7 @@
   * Test http://code.google.com/p/openaddresses/wiki/HowToTest
   * ~~Redirect from www.openaddresses.ch and www.openaddresses.at~~
  * Server
-  * Test performance
+  * ~~Test performance~~
    * ~~Support two WMS. This could be a kind of load balancing~~
   * ~~Set www.openaddresses.org and www.openaddress.org URL~~
    * ~~Configure monitoring: http://code.google.com/p/openaddresses/wiki/Monitoring ~~  
