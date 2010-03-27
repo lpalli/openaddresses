@@ -1,3 +1,5 @@
+<wiki:toc max_depth="2" />
+
 = !ToDo list for the launch of www.openaddresses.org BETA =
 
  * Target date: 29 march 2010
