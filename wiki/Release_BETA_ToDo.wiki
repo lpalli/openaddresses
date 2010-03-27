@@ -23,10 +23,29 @@
    * Translate user guide in italian:
    * ~~Translate user guide in spanish: http://code.google.com/p/openaddresses/wiki/UserGuideEs ~~
  * Marketing/Communication
-  * Create email info at openaddresses.org
+  * ~~Create email info at openaddresses.org~~
   * 29.3.2010: Blog
   * 29.3.2010: Twitter
   * 29.3.2010: Private announcement and press releases
+   * Germany
+    * PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
+    * PR DE: http://www.business-geomatics.com/cms/index.php
+    * PR DE: www.linux-magazin.de (mfeilner at linux-magazin.de)
+    * PR DE: http://www.gis-news.de/
+    * PR DE: http://www.gis-biz.de/
+    * PR DE: http://www.kirschbaum.de/texte/zkn.php
+    * German key mails:
+     * PR DE: presse-info at linuxnewmedia.de
+     * PR DE: presse at ct.heise.de
+     * LL PR DE: monika.rech at abcverlag.de
+     * LL PR DE: presse at onlinekosten.de
+     * LL PR DE: christoph at linuxundich.de
+     * LL PR DE: news at golem.de
+     * LL PR DE: opengeodb at phpbar.de
+     * LL PR DE: gislist at lists.geocomm.com
+     * MAIL DE: harald.schwenk at agentur-geoinfo.de
+  * 30.3.2010: OSGEO mailing list
+   * MAIL EN: discuss@lists.osgeo.org
    * International
     * MAIL EN: http://posterous.com/site/profile/opengeodata 
     * MAIL EN: news at gisdevelopment.net
@@ -49,23 +68,8 @@
     * PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
     * PR FR: Le Temps: http://www.letemps.ch/contact
     * PR FR: 20 minutes: reporter at 20minutes.ch
-   * Germany
-    * PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
-    * PR DE: http://www.business-geomatics.com/cms/index.php
-    * PR DE: www.linux-magazin.de (mfeilner at linux-magazin.de)
-    * PR DE: http://www.gis-news.de/
-    * PR DE: http://www.gis-biz.de/
-    * PR DE: http://www.kirschbaum.de/texte/zkn.php
-    * German key mails:
-     * PR DE: presse-info at linuxnewmedia.de
-     * PR DE: presse at ct.heise.de
-     * LL PR DE: monika.rech at abcverlag.de
-     * LL PR DE: presse at onlinekosten.de
-     * LL PR DE: christoph at linuxundich.de
-     * LL PR DE: news at golem.de
-     * LL PR DE: opengeodb at phpbar.de
-     * LL PR DE: gislist at lists.geocomm.com
-     * MAIL DE: harald.schwenk at agentur-geoinfo.de
+  * 31.3.2010: OSM
+   * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
    * France
     * PR FR: redaction at 01informatique.presse.fr
     * PR FR: ab at thesame-innovation.com
@@ -76,10 +80,6 @@
     * PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
     * PR FR: satri at slashgisrs.org
     * PR FR: http://www.portailsig.org/contact
-  * 30.3.2010: OSGEO mailing list
-   * MAIL EN: discuss@lists.osgeo.org
-  * 31.3.2010: OSM
-   * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
   * 1.4.2010: BALIZ
    * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
   * 1.4.2010: Slashgeo
