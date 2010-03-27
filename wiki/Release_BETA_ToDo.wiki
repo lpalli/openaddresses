@@ -34,7 +34,7 @@
     * PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
     * PR DE: http://www.business-geomatics.com/cms/index.php
     * PR DE: www.linux-magazin.de (mfeilner at linux-magazin.de)
-    * PR DE: http://www.gis-news.de/
+    * PR DE: http://www.gis-news.de/ (its address is abcverlag.de, see below)
     * PR DE: http://www.gis-biz.de/
     * PR DE: http://www.kirschbaum.de/texte/zkn.php
     * German key mails:
@@ -47,7 +47,8 @@
      * LL PR DE: opengeodb at phpbar.de
      * LL PR DE: gislist at lists.geocomm.com
      * LL MAIL DE: fossgis-talk-liste at fossgis.de
-     * MAIL DE: harald.schwenk at agentur-geoinfo.de
+     * LL MAIL DE: talk-de at openstreetmap.org
+     * LL MAIL DE: harald.schwenk at agentur-geoinfo.de
    * Austria
     * MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO / International / Switzerland
