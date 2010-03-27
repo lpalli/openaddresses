@@ -78,6 +78,7 @@
     * PR FR: Le Temps: http://www.letemps.ch/contact
     * PR FR: 20 minutes: reporter at 20minutes.ch
     * PR DE: http://www.geowebforum.ch/index.php
+    * PR DE: http://www.zeitung.ch/index.php
   * 31.3.2010: OSM
    * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
    * France
