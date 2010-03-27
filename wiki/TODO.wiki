@@ -26,6 +26,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
 
 == TODO Implementation List ==
 
+ * Manage version of Javascript
  * ~~Web Site Architecture Cédric~~
   * ~~Add permalink support~~
  * ~~Web Site Header Cédric~~
