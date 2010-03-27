@@ -47,7 +47,7 @@
      * MAIL DE: harald.schwenk at agentur-geoinfo.de
    * Austria
     * MAIL DE: ageo-news@googlegroups.com
-  * 30.3.2010: OSGEO mailing list
+  * 30.3.2010: OSGEO / International / Schweiz
    * International
     * MAIL EN: discuss@lists.osgeo.org
     * MAIL XX http://www.osgeo.org/content/chapters/index.html
@@ -79,7 +79,7 @@
     * PR FR: 20 minutes: reporter at 20minutes.ch
     * PR DE: http://www.geowebforum.ch/index.php
     * PR DE: http://www.zeitung.ch/index.php
-  * 31.3.2010: OSM
+  * 31.3.2010: OSM / France
    * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
    * France
     * PR FR: redaction at 01informatique.presse.fr
