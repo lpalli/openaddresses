@@ -443,7 +443,7 @@ openaddresses.layout = (function() {
                         },
                         {
                             title: OpenLayers.i18n('About'),
-                            html: '<a href="http://code.google.com/p/openaddresses/" target="new">' + OpenLayers.i18n('Project Wiki') + '</a><br><a href="http://groups.google.com/group/OpenAddresses" target="new">' + OpenLayers.i18n('Project Discussion') + '</a>'
+                            html: '<a href="http://code.google.com/p/openaddresses/" target="new">' + OpenLayers.i18n('Project Wiki') + '</a><br><a href="http://groups.google.com/group/OpenAddresses" target="new">' + OpenLayers.i18n('Project Discussion') + '</a> <br>' + OpenLayers.i18n('This project is a joint effort of several persons:') + '<br>' + OpenLayers.i18n('Several universities:') + '<br>' + OpenLayers.i18n('Several companies:') + '<br>' + OpenLayers.i18n('Powered by MapFish: the web mapping development framework !')
                         }
                     ]
                 }
