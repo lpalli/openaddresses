@@ -8,21 +8,21 @@ As a typical web 2.0 application, http://www.openaddresses.org aims to collect f
 
 === Why are located addresses so important ? ===
 
-Located addresses are, for example, used in a GPS to find a place to meet, used by businesses to locate their customers and improve geomarketing, used by statisticians to analyze populations or used in city plans, presentations etc... 
+Geolocated addresses are, for example, used in a GPS to find a place to meet, used by businesses to locate their customers and improve geomarketing, used by statisticians to analyze populations or used in city plans, presentations etc... 
 
 Geolocated addresses are required to deliver geocoding services ("Where is main street ?") or reverse geocoding services ("What is the nearest address to this location ?"). !OpenAddresses.org freely provides this kind of services.
 
 === Why are free and open data important ? ===
 
-The currently available data sets are not free of rights, expensive or don't cover the whole planet. The goal of !OpenAddresses.org is let everyone use geolocated addresses free of charge, with an open license and covering the whole planet. To achieve this goal, the !OpenAddresses.org community will create and update this dataset.
+The currently available data sets are not free of rights, expensive or don't cover the whole planet. The goal of !OpenAddresses.org is let everyone use geolocated addresses free of charge, with an open license and covering the whole planet. To achieve this goal, the !OpenAddresses.org community creates and updates this dataset.
 
 === What is the history of the project !OpenAddresses.org ? ===
 
 The project was launched in 2007 in Switzerland, under the leadership of University of Applied Sciences Northwestern Switzerland (FHNW). Then, in 2009, a group of people and companies decided to create a global directory of addresses and have developed a new website. Currently more than 5 million addresses are available and data for countries like Denmark or cantons as Solothurn (Switzerland) are fully acquired.
 
-=== How is this related to famous project !OpenStreetMap.org ? ===
+=== How is this related to the famous project !OpenStreetMap.org ? ===
 
-!OpenStreetMap.org et !OpenAddresses.org are complementary and share the same philosophy. !OpenAddresses.org focuses only on the address points and provides a specialized and dedicated platform. The goal is that each project benefits from the other. The data is regularly synchronized to allow such reciprocity.
+!OpenStreetMap.org and !OpenAddresses.org are complementary and share the same philosophy. !OpenAddresses.org focuses only on the address points and provides a specialized and dedicated platform. The goal is that each project benefits from the other. The data are regularly synchronized to allow such reciprocity.
 
 === How can I concretely be part of !OpenAddresses.org ? ===
 
@@ -35,7 +35,7 @@ First by entering addresses (think about your home, your neighbors', your workpl
  * FAQ: http://code.google.com/p/openaddresses/wiki/FAQ
  * For all other questions: info@openaddresses.org
  * Discussion group: http://groups.google.com/group/OpenAddresses
- * blog: http://openaddresses.blogspot.com/
+ * Blog: http://openaddresses.blogspot.com/
  * Twitter: https://twitter.com/openaddresses
  * Community site: http://code.google.com/p/openaddresses/
 
@@ -126,7 +126,7 @@ Die folgenden Links bieten weiterführende Informationen zum Projekt:
 
 == EN: www.openaddresses.org BETA launched ==
 
-Do you dream of free and open localized addresses ? or free and open geocoding and reverse geocoding services ? It's not a dream anymore, it's a reality !
+Do you dream of free and open geolocated addresses ? or free and open geocoding and reverse geocoding services ? It's not a dream anymore, it's a reality !
 After www.openaddresses.ch and www.openaddresses.at, [http://www.openaddresses.org www.openaddresses.org] has been launched to collect worldwide localized addresses.
 This initiative of several people, universities and companies of central Europe aims to provide a web portail for the management of free and open addresses. The goal of www.openaddresses.org is also to collaborate nicely with www.openstreetmap.org by exchanging data. However, since localized addresses are very specific, we consider that it is appropriate to have a dedicated platform only for addresses.
 
