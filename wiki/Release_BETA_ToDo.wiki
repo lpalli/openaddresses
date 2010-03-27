@@ -54,17 +54,17 @@
    * International
     * MAIL EN: discuss@lists.osgeo.org
     * MAIL XX http://www.osgeo.org/content/chapters/index.html
-    * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
-    * MAIL EN: http://posterous.com/site/profile/opengeodata 
-    * MAIL EN: news at gisdevelopment.net
-    * MAIL EN: pressreleases at vector1media.com
+    * HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
+    * HJ MAIL EN: http://posterous.com/site/profile/opengeodata 
+    * HJ MAIL EN: news at gisdevelopment.net
+    * HJ MAIL EN: pressreleases at vector1media.com
     * MAIL EN http://slashgeo.org/submit.pl
     * MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
-    * PR EN: mailbox at geoinformatics.com
-    * PR EN: editorgeo at geoconnexion.com
-    * PR EN: enquiries at pvpubs.demon.co.uk
-    * PR EN: http://gislounge.com/contact
-    * PR EN: cispress at tmcnet.com
+    * HJ PR EN: mailbox at geoinformatics.com
+    * HJ PR EN: editorgeo at geoconnexion.com
+    * HJ PR EN: enquiries at pvpubs.demon.co.uk
+    * HJ PR EN: http://gislounge.com/contact
+    * HJ PR EN: cispress at tmcnet.com
     * PR EN: https://secure.ibsystems.com/GIS/nbc/members/
     * PR EN: http://www.gim-international.com/contact.php
     * PR EN: http://mapgiving.blogspot.com/
@@ -79,7 +79,7 @@
     * PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
     * PR FR: Le Temps: http://www.letemps.ch/contact
     * PR FR: 20 minutes: reporter at 20minutes.ch
-    * PR DE: http://www.geowebforum.ch/index.php
+    * HJ PR DE: http://www.geowebforum.ch/index.php
     * PR DE: http://www.zeitung.ch/index.php
   * 31.3.2010: OSM / France
    * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
