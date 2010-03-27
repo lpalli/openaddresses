@@ -6,7 +6,7 @@
 
 As a typical web 2.0 application, http://www.openaddresses.org aims to collect free and open geolocated addresses. This community web site allows everyone to store, manage and use address points.
 
-=== Why are located addresses so important ? ===
+=== Why are geolocated addresses so important ? ===
 
 Geolocated addresses are, for example, used in a GPS to find a place to meet, used by businesses to locate their customers and improve geomarketing, used by statisticians to analyze populations or used in city plans, presentations etc... 
 
