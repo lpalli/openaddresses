@@ -76,7 +76,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * ~~WMS Cédric~~
    * ~~REST CRUD service Cédric~~
   * ~~Add query onHover to get address information Cédric~~
-  * Add GetFeatureInfo on Swiss address from OFS
+  * Add !GetFeatureInfo on Swiss address from OFS
   * Add Search widget working with OA addresses
   * Add Routing widget
    * Integrate OA search in routing widget
