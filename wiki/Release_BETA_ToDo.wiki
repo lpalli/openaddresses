@@ -45,12 +45,19 @@
      * LL PR DE: opengeodb at phpbar.de
      * LL PR DE: gislist at lists.geocomm.com
      * MAIL DE: harald.schwenk at agentur-geoinfo.de
+   * Austria
+    * MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO mailing list
    * MAIL EN: discuss@lists.osgeo.org
+   * MAIL XX http://www.osgeo.org/content/chapters/index.html
+    * LL MAIL DE: fossgis-talk-liste at fossgis.de
+    * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
    * International
     * MAIL EN: http://posterous.com/site/profile/opengeodata 
     * MAIL EN: news at gisdevelopment.net
     * MAIL EN: pressreleases at vector1media.com
+    * MAIL EN http://slashgeo.org/submit.pl
+    * MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
     * PR EN: mailbox at geoinformatics.com
     * PR EN: editorgeo at geoconnexion.com
     * PR EN: enquiries at pvpubs.demon.co.uk
@@ -59,6 +66,7 @@
     * PR EN: https://secure.ibsystems.com/GIS/nbc/members/
     * PR EN: http://www.gim-international.com/contact.php
     * PR EN: http://mapgiving.blogspot.com/
+    * PR EN: http://www.directionsmedia.net/masthead.php?p=contact
    * Switzerland
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
     * PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
@@ -69,6 +77,7 @@
     * PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
     * PR FR: Le Temps: http://www.letemps.ch/contact
     * PR FR: 20 minutes: reporter at 20minutes.ch
+    * PR DE: http://www.geowebforum.ch/index.php
   * 31.3.2010: OSM
    * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
    * France
@@ -81,26 +90,7 @@
     * PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
     * PR FR: satri at slashgisrs.org
     * PR FR: http://www.portailsig.org/contact
-  * 1.4.2010: BALIZ
-   * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
-  * 1.4.2010: Slashgeo
-   * MAIL FR http://slashgeo.org/submit.pl
-  * 1.4.2010: Directions Mag
-   * PR EN: http://www.directionsmedia.net/masthead.php?p=contact
-  * 2.4.2010: OSGEO local chapters
-   * MAIL XX http://www.osgeo.org/content/chapters/index.html
-    * LL MAIL DE: fossgis-talk-liste at fossgis.de
-    * MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
-  * 2.4.2010: OSM user groups
-   * MAIL XX: http://wiki.openstreetmap.org/wiki/OSM_User_Groups
-    * LL MAIL DE: talk-de@openstreetmap.org
-  * 3.4.2010: Geonames
-   * MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
-  * 3.4.2010: !GeowebForum
-   * PR DE: http://www.geowebforum.ch/index.php
-  * 3.4.2010: Georezo.net
-   * MAIL FR: http://georezo.net/forum/viewforum.php?id=38
-  * 3.4.2010: mailinglist - oesterreichischer dachverband für geographische information
-   * MAIL DE: ageo-news@googlegroups.com
+    * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
+    * MAIL FR: http://georezo.net/forum/viewforum.php?id=38
   * May: ARTICLE FR DE  "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
