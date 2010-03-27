@@ -49,7 +49,7 @@ Les points adresses sont par exemple utilisés dans les GPS pour localiser une d
 
 Les points adresses sont à la base des services de recherche géographique ("Où se trouve la rue de la gare ?") ou des services de géocodage inverse ("Quelle est l'adresse la plus proche de ce lieu ?"). !OpenAddresses.org met également gratuitement à disposition ce type de services.
 
-=== Pourquoi des données libres ? ===
+=== Pourquoi des données libres de droit ? ===
 
 Les jeux de données actuelles ne sont pas libres de droit, sont onéreux ou ne couvrent que partiellement la planète. !OpenAddresses.org a pour ambition de mettre à disposition de tous des points adresses, ceci gratuitement et avec une licence libre et sur l'ensemble de la planète. Pour atteindre ce but, !OpenAddresses.org compte sur la mobilisation de la communauté pour faire avancer la saisie et la mise à jour des données.
 
