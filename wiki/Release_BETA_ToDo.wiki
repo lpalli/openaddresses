@@ -52,6 +52,7 @@
     * MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO / International / Switzerland
    * International
+    * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
     * MAIL EN: discuss@lists.osgeo.org
     * MAIL XX http://www.osgeo.org/content/chapters/index.html
     * HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
@@ -82,7 +83,6 @@
     * HJ PR DE: http://www.geowebforum.ch/index.php
     * PR DE: http://www.zeitung.ch/index.php
   * 31.3.2010: OSM / France
-   * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
    * France
     * PR FR: redaction at 01informatique.presse.fr
     * PR FR: ab at thesame-innovation.com
