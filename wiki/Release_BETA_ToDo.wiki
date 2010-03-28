@@ -33,14 +33,13 @@
    * Germany
     * PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
     * PR DE: http://www.business-geomatics.com/cms/index.php
-    * PR DE: www.linux-magazin.de (mfeilner at linux-magazin.de)
-    * PR DE: http://www.gis-news.de/ (its address is abcverlag.de, see below)
     * PR DE: http://www.gis-biz.de/
     * PR DE: http://www.kirschbaum.de/texte/zkn.php
     * German key mails:
-     * PR DE: presse-info at linuxnewmedia.de
-     * PR DE: presse at ct.heise.de
-     * LL PR DE: monika.rech at abcverlag.de
+     * LL PR DE: mfeilner at linux-magazin.de / http://www.linux-magazin.de
+     * LL PR DE: presse-info at linuxnewmedia.de
+     * LL PR DE: presse at ct.heise.de
+     * LL PR DE: monika.rech at abcverlag.de / http://www.gis-news.de/
      * LL PR DE: presse at onlinekosten.de
      * LL PR DE: christoph at linuxundich.de
      * LL PR DE: news at golem.de
