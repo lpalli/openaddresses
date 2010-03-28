@@ -209,9 +209,9 @@ class AddressesController(BaseController):
        rowsDict.update(type='FeatureCollection')
        rowsDict.update(features=featuresArray)
 
-       if 'cb' in request.params:
+       if 'callback' in request.params:
           response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
-          return request.params['cb'] + '(' + json_dumps(rowsDict) + ');'
+          return request.params['callback'] + '(' + json_dumps(rowsDict) + ');'
        else:
           response.headers['Content-Type'] = 'application/json'
           return json_dumps(rowsDict)
