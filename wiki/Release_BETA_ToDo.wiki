@@ -49,52 +49,52 @@
      * LL MAIL DE: talk-de at openstreetmap.org
      * LL MAIL DE: harald.schwenk at agentur-geoinfo.de
    * Austria
-    * MAIL DE: ageo-news@googlegroups.com
+    * ST MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO / International / Switzerland
    * International
-    * MAIL EN: http://lists.openstreetmap.org/listinfo/talk
-    * MAIL EN: discuss@lists.osgeo.org
-    * MAIL XX http://www.osgeo.org/content/chapters/index.html
+    * CM MAIL EN: http://lists.openstreetmap.org/listinfo/talk
+    * CM MAIL EN: discuss@lists.osgeo.org
+    * CM MAIL XX http://www.osgeo.org/content/chapters/index.html
     * HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
     * HJ MAIL EN: http://posterous.com/site/profile/opengeodata 
     * HJ MAIL EN: news at gisdevelopment.net
     * HJ MAIL EN: pressreleases at vector1media.com
-    * MAIL EN http://slashgeo.org/submit.pl
-    * MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
+    * CM MAIL EN http://slashgeo.org/submit.pl
+    * CM MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
     * HJ PR EN: mailbox at geoinformatics.com
     * HJ PR EN: editorgeo at geoconnexion.com
     * HJ PR EN: enquiries at pvpubs.demon.co.uk
     * HJ PR EN: http://gislounge.com/contact
     * HJ PR EN: cispress at tmcnet.com
-    * PR EN: https://secure.ibsystems.com/GIS/nbc/members/
-    * PR EN: http://www.gim-international.com/contact.php
-    * PR EN: http://mapgiving.blogspot.com/
-    * PR EN: http://www.directionsmedia.net/masthead.php?p=contact
+    * CM PR EN: https://secure.ibsystems.com/GIS/nbc/members/
+    * CM PR EN: http://www.gim-international.com/contact.php
+    * CM PR EN: http://mapgiving.blogspot.com/
+    * CM PR EN: http://www.directionsmedia.net/masthead.php?p=contact
    * Switzerland
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
-    * PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
-    * PR FR: Nouvo: http://www.nouvo.ch/contact
-    * PR FR: 24 heures: scoopmobile at edipresse.ch
-    * PR FR: Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre at rsr.ch
-    * PR FR: Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
-    * PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
-    * PR FR: Le Temps: http://www.letemps.ch/contact
-    * PR FR: 20 minutes: reporter at 20minutes.ch
+    * CM PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
+    * CM PR FR: Nouvo: http://www.nouvo.ch/contact
+    * CM PR FR: 24 heures: scoopmobile at edipresse.ch
+    * CM PR FR: Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre at rsr.ch
+    * CM PR FR: Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
+    * CM PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
+    * CM PR FR: Le Temps: http://www.letemps.ch/contact
+    * CM PR FR: 20 minutes: reporter at 20minutes.ch
     * HJ PR DE: http://www.geowebforum.ch/index.php
-    * PR DE: http://www.zeitung.ch/index.php
+    * CM PR DE: http://www.zeitung.ch/index.php
   * 31.3.2010: OSM / France
    * France
-    * PR FR: redaction at 01informatique.presse.fr
-    * PR FR: ab at thesame-innovation.com
-    * PR FR: orafal at idg.fr
-    * PR FR: http://fr.newspeg.com/submit
-    * PR FR: deblomac at sig-la-lettre.com
-    * PR FR: vincent at cimaxonline.fr
-    * PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
-    * PR FR: satri at slashgisrs.org
-    * PR FR: http://www.portailsig.org/contact
-    * MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
-    * MAIL FR: http://georezo.net/forum/viewforum.php?id=38
-    * MAIL FR: afigeo [at] afigeo.asso.fr  
-  * May: ARTICLE FR DE  "Geomatik Schweiz"
+    * CM PR FR: redaction at 01informatique.presse.fr
+    * CM PR FR: ab at thesame-innovation.com
+    * CM PR FR: orafal at idg.fr
+    * CM PR FR: http://fr.newspeg.com/submit
+    * CM PR FR: deblomac at sig-la-lettre.com
+    * CM PR FR: vincent at cimaxonline.fr
+    * CM PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
+    * CM PR FR: satri at slashgisrs.org
+    * CM PR FR: http://www.portailsig.org/contact
+    * CM MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
+    * CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38
+    * CM MAIL FR: afigeo [at] afigeo.asso.fr  
+  * May: HJ ARTICLE FR DE  "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
