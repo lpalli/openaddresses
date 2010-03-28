@@ -178,7 +178,7 @@ openaddresses.layout = (function() {
 
                     // create span
                     var labelSpan = document.createElement("span");
-                    OpenLayers.Element.addClass(labelSpan, "labelSpan")
+                    OpenLayers.Element.addClass(labelSpan, "labelSpan");
                     if (!baseLayer && !layer.inRange) {
                         labelSpan.style.color = "gray";
                     }
@@ -507,61 +507,73 @@ openaddresses.layout = (function() {
     };
 
     var handleRightMouseClick = function(map) {
-        openaddresses.layout.navControl.handlers.click.callbacks.rightclick = function() {
-            openaddresses.layout.showWaitingMask();
-            var lonlat = map.getLonLatFromViewPortPx(openaddresses.layout.navControl.handlers.click.evt.xy);
-            var content = "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Digitized Position") + "</h1><table style='font-size: 14px;'><tr><td width=\"150\">" + "" + OpenLayers.i18n("Spherical Mercator") + "</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
-            lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
-            content = content + "<tr><td>" + OpenLayers.i18n("WGS84") + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
-            // Create empty proxy
-            var key = openaddresses.config.googleKey;
-            if (location.host.indexOf('openaddresses.org') > -1) {
-                key = openaddresses.config.googleKeyOpenAddresses;
-            }
-            if (location.host.indexOf('openaddress.org') > -1) {
-                key = openaddresses.config.googleKeyOpenAddress;
-            }
-            if (location.host.indexOf('openaddressmap.org') > -1) {
-                key = openaddresses.config.googleKeyOpenAddressMap;
-            }
-            map.myProxy = new Ext.data.ScriptTagProxy({
-                url: "http://maps.google.com/maps/geo?q=" + lonlat.lat + "," + lonlat.lon + "&output=json&sensor=true&key=" + key,
-                nocache: false
-            });
-            map.geocoderStore = new Ext.data.Store({
-                proxy: map.myProxy,
-                reader: new Ext.data.JsonReader({
-                    root: 'Placemark',
-                    fields: [
-                        {
-                            name: 'address'
-                        }
-                    ]
-                })
-            });
-
-            map.geocoderStore.on(
-                    'load', function(store) {
-                var placemark = store.reader.jsonData.Placemark[0];
-                var position = new OpenLayers.LonLat(placemark.Point.coordinates[0], placemark.Point.coordinates[1]);
-                position.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
-                if (map.myPopup) {
-                    map.myPopup.destroy();
+        if (openaddresses.config.geocoding) {
+            openaddresses.layout.navControl.handlers.click.callbacks.rightclick = function() {
+                openaddresses.layout.showWaitingMask();
+                var lonlat = map.getLonLatFromViewPortPx(openaddresses.layout.navControl.handlers.click.evt.xy);
+                var content = "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Digitized Position") + "</h1><table style='font-size: 14px;'><tr><td width=\"150\">" + "" + OpenLayers.i18n("Spherical Mercator") + "</td><td>" + Math.round(lonlat.lon * 10) / 10 + " " + Math.round(lonlat.lat * 10) / 10 + '</td></tr>';
+                lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
+                content = content + "<tr><td>" + OpenLayers.i18n("WGS84") + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr></table>';
+                // Create empty proxy
+                var key = openaddresses.config.googleKey;
+                if (location.host.indexOf('openaddresses.org') > -1) {
+                    key = openaddresses.config.googleKeyOpenAddresses;
                 }
-                map.myPopup = new OpenLayers.Popup.FramedCloud(
-                        "chicken",
-                        position,
-                        null,
-                        content + "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Address") + "</h1>" + placemark.address,
-                        null,
-                        true
-                        );
-                map.addPopup(map.myPopup);
-                openaddresses.layout.hideWaitingMask();
-            }, this);
+                if (location.host.indexOf('openaddress.org') > -1) {
+                    key = openaddresses.config.googleKeyOpenAddress;
+                }
+                if (location.host.indexOf('openaddressmap.org') > -1) {
+                    key = openaddresses.config.googleKeyOpenAddressMap;
+                }
+                map.myProxy = new Ext.data.ScriptTagProxy({
+                    url: "http://maps.google.com/maps/geo?q=" + lonlat.lat + "," + lonlat.lon + "&output=json&sensor=true&key=" + key,
+                    nocache: false
+                });
+                map.geocoderStore = new Ext.data.Store({
+                    proxy: map.myProxy,
+                    reader: new Ext.data.JsonReader({
+                        root: 'Placemark',
+                        fields: [
+                            {
+                                name: 'address'
+                            }
+                        ]
+                    })
+                });
 
-            map.geocoderStore.load();
-        };
+                map.geocoderStore.on(
+                        'load', function(store) {
+                    var placemark = store.reader.jsonData.Placemark[0];
+                    var position = new OpenLayers.LonLat(placemark.Point.coordinates[0], placemark.Point.coordinates[1]);
+                    position.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+                    if (map.myPopup) {
+                        map.myPopup.destroy();
+                    }
+                    map.myPopup = new OpenLayers.Popup.FramedCloud(
+                            "chicken",
+                            position,
+                            null,
+                            content + "<h1 style='font-size: 14px;'>" + OpenLayers.i18n("Address") + "</h1>" + placemark.address,
+                            null,
+                            true
+                            );
+                    map.addPopup(map.myPopup);
+                    openaddresses.layout.hideWaitingMask();
+                }, this);
+
+                map.geocoderStore.load();
+            };
+        } else {
+            openaddresses.layout.navControl.handlers.click.callbacks.rightclick = function() {
+                var lonlat = map.getLonLatFromViewPortPx(openaddresses.layout.navControl.handlers.click.evt.xy);
+                lonlat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:21781"));
+                var bboxminx = lonlat.lon - 200;
+                var bboxminy = lonlat.lat - 200;
+                var bboxmaxx = lonlat.lon + 200;
+                var bboxmaxy = lonlat.lat + 200;
+                window.open("http://map.housing-stat.ch/index.php?reset_session&recenter_bbox=" + bboxminx + "," + bboxminy + "," + bboxmaxx + "," + bboxmaxy);
+            };
+        }
     };
 
     var createPermalinkButton = function() {
@@ -751,11 +763,11 @@ openaddresses.layout = (function() {
             Ext.BLANK_IMAGE_URL = 'ext31/resources/images/default/s.gif';
 
             if (Ext.isIE6) {
-                alert(OpenLayers.i18n('You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !'))
+                alert(OpenLayers.i18n('You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !'));
             }
 
             if (Ext.isChrome) {
-                alert(OpenLayers.i18n('You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.'))
+                alert(OpenLayers.i18n('You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.'));
             }
 
             // Manage language
@@ -784,17 +796,24 @@ openaddresses.layout = (function() {
                 }
             });
 
-            /* http://trac.openlayers.org/ticket/2528
+            /* http://trac.openlayers.org/ticket/2528: OK */
+            /* http://trac.osgeo.org/mapserver/ticket/1617 NO SUPPORT IN CASCADING WMS...
              this.buildingControl = new OpenLayers.Control.WMSGetFeatureInfo({
              url: openaddresses.config.baseWMS,
+             handleRightClicks: true,
              clickCallback: "rightclick",
+             infoFormat: 'text/plain',
              layers: openaddresses.layout.map.getLayersByName('CH_Building'),
              eventListeners: {
              getfeatureinfo: function(event) {
              alert('hello');
+             },
+             beforegetfeatureinfo: function(event) {
+
              }
              }
-             });*/
+             });
+             */
 
             this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
             this.editControl.activate();
@@ -822,9 +841,8 @@ openaddresses.layout = (function() {
             setPermalink();
 
             // Manage controlers for reverse geocoding and editing
-            if (openaddresses.config.geocoding) {
-                handleRightMouseClick(this.map);
-            }
+            handleRightMouseClick(this.map);
+
 
             var hideMask = function () {
                 if (Ext.get('loading')) {
