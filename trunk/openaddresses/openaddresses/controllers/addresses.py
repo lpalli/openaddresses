@@ -147,9 +147,15 @@ class AddressesController(BaseController):
           for queri in queryList:
              queryCount = queryCount + 1
              if (queryCount == len(queryList)):
-                tsquery = tsquery + queri + ":*"
+                if queri.isdigit():
+                   tsquery = tsquery + queri
+                else:
+                   tsquery = tsquery + queri + ":*"
              else:
-                tsquery = tsquery + queri + ":* & "
+                if queri.isdigit():
+                   tsquery = tsquery + queri + " & "
+                else:
+                    tsquery = tsquery + queri + ":* & "
           if (len(fieldList) == 3) and ('street' in request.params['fields']) and ('city' in request.params['fields']) and ('housenumber' in request.params['fields']):
              sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('" + tsquery + "')"
           elif (len(fieldList) == 4) and ('geom' in request.params['fields']) and ('street' in request.params['fields']) and ('city' in request.params['fields']) and ('housenumber' in request.params['fields']):
