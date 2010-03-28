@@ -31,10 +31,10 @@
   * 29.3.2010: Twitter
   * 29.3.2010: Private announcement and press releases
    * Germany
-    * PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
-    * PR DE: http://www.business-geomatics.com/cms/index.php
-    * PR DE: http://www.gis-biz.de/
-    * PR DE: http://www.kirschbaum.de/texte/zkn.php
+    * CM PR DE: Geobranchen: http://www.geobranchen.de / info(at)geobranchen.de
+    * CM PR DE: http://www.business-geomatics.com/cms/index.php
+    * CM PR DE: http://www.gis-biz.de/
+    * CM PR DE: http://www.kirschbaum.de/texte/zkn.php
     * German key mails:
      * LL PR DE: mfeilner at linux-magazin.de / http://www.linux-magazin.de
      * LL PR DE: presse-info at linuxnewmedia.de
