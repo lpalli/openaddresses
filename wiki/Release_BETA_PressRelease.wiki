@@ -114,7 +114,7 @@ Weiter sind auch öffentliche  Kartendienste (sog. !WebMapServices WMS) bspw. vo
 
 Die folgenden Links bieten weiterführende Informationen zum Projekt:
 
- * Webseite von OpenAddresses: http://www.openaddresses.org/
+ * Webseite von !OpenAddresses: http://www.openaddresses.org/
  * Bedienungsanleitung: http://code.google.com/p/openaddresses/wiki/UserGuideDe
  * Kontaktadresse für Fragen: info@openaddresses.org
  * Diskussionsforum: http://groups.google.com/group/OpenAddresses
