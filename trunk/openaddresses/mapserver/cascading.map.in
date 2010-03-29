@@ -301,10 +301,11 @@ MAP
    TYPE POINT
    CONNECTIONTYPE POSTGIS
    CONNECTION "%DATABASE_CONNECTION_ADDRESS%"
+   PROCESSING "CLOSE_CONNECTION=DEFER"
    PROJECTION
        "init=epsg:4326"
    END
-   DATA "geom from address using unique id"
+   DATA "geom from address using unique id using srid=4326"
    STATUS ON
    CLASS
       STYLE
