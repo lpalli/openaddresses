@@ -11,8 +11,8 @@
   * ~~Redirect from www.openaddresses.ch and www.openaddresses.at~~
  * Server
   * ~~Test performance~~
-   * ~~Support two WMS. This could be a kind of load balancing~~
-  * ~~Set www.openaddresses.org and www.openaddress.org URL~~
+   * ~~Support two WMS. This could be a kind of load balancing ~~
+  * ~~Set www.openaddresses.org and www.openaddress.org URL ~~
    * ~~Configure monitoring: http://code.google.com/p/openaddresses/wiki/Monitoring ~~  
   * ~~Add external WMS~~
   * ~~Add google analytics~~
@@ -31,7 +31,7 @@
   * ~~29.3.2010: Twitter~~
   * 29.3.2010: Private announcement and press releases
    * Germany
-    * ~~CM PR DE: Geobranchen: http://www.geobranchen.de / info at geobranchen.de~~
+    * ~~CM PR DE: Geobranchen: http://www.geobranchen.de / info at geobranchen.de ~~
     * ~~CM PR DE: http://www.business-geomatics.com/cms/index.php ~~
     * ~~CM PR DE: http://www.kirschbaum.de/texte/zkn.php ~~
     * German key mails:
