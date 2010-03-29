@@ -39,14 +39,14 @@
      * LL PR DE: presse-info at linuxnewmedia.de
      * LL PR DE: presse at ct.heise.de
      * LL PR DE: monika.rech at abcverlag.de / http://www.gis-news.de/ http://www.gis-biz.de/
-     * LL PR DE: presse at onlinekosten.de
-     * LL PR DE: christoph at linuxundich.de
-     * LL PR DE: news at golem.de
-     * LL PR DE: opengeodb at phpbar.de
-     * LL PR DE: gislist at lists.geocomm.com
-     * LL MAIL DE: fossgis-talk-liste at fossgis.de
-     * LL MAIL DE: talk-de at openstreetmap.org
-     * LL MAIL DE: harald.schwenk at agentur-geoinfo.de
+     * ~~LL PR DE: presse at onlinekosten.de~~
+     * ~~LL PR DE: christoph at linuxundich.de~~
+     * ~~LL PR DE: news at golem.de~~
+     * ~~LL PR DE: opengeodb at phpbar.de~~
+     * ~~LL PR DE: gislist at lists.geocomm.com~~
+     * ~~LL MAIL DE: fossgis-talk-liste at fossgis.de~~
+     * ~~LL MAIL DE: talk-de at openstreetmap.org~~
+     * ~~LL MAIL DE: harald.schwenk at agentur-geoinfo.de~~
    * Austria
     * ST MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO / International / Switzerland
