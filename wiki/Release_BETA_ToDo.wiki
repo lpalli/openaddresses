@@ -29,7 +29,7 @@
   * ~~Create email info at openaddresses.org~~
   * ~~29.3.2010: Blog~~
   * ~~29.3.2010: Twitter~~
-  * 29.3.2010: Private announcement and press releases
+  * ~~29.3.2010: Private announcement and press releases~~
    * Germany
     * ~~CM PR DE: Geobranchen: http://www.geobranchen.de / info at geobranchen.de ~~
     * ~~CM PR DE: http://www.business-geomatics.com/cms/index.php ~~
@@ -54,24 +54,13 @@
    * International
     * CM MAIL EN: http://lists.openstreetmap.org/listinfo/talk
     * CM MAIL EN: discuss@lists.osgeo.org
-    * CM MAIL XX http://www.osgeo.org/content/chapters/index.html
+    * CM MAIL EN http://slashgeo.org/submit.pl  
     * HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
     * HJ MAIL EN: http://posterous.com/site/profile/opengeodata 
     * HJ MAIL EN: news at gisdevelopment.net
     * HJ MAIL EN: pressreleases at vector1media.com
-    * CM MAIL EN http://slashgeo.org/submit.pl
-    * CM MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
-    * HJ PR EN: mailbox at geoinformatics.com
-    * HJ PR EN: editorgeo at geoconnexion.com
-    * HJ PR EN: enquiries at pvpubs.demon.co.uk
-    * HJ PR EN: http://gislounge.com/contact
-    * HJ PR EN: cispress at tmcnet.com
-    * CM PR EN: https://secure.ibsystems.com/GIS/nbc/members/
-    * CM PR EN: http://www.gim-international.com/contact.php
-    * CM PR EN: http://mapgiving.blogspot.com/
-    * CM PR EN: http://www.directionsmedia.net/masthead.php?p=contact
-    * CM PR EN: http://www.free-press-release.com/members/login.php
    * Switzerland
+    * HJ PR DE: http://www.geowebforum.ch/index.php
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
     * CM PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
     * CM PR FR: Nouvo: http://www.nouvo.ch/contact
@@ -81,9 +70,21 @@
     * CM PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
     * CM PR FR: Le Temps: http://www.letemps.ch/contact
     * CM PR FR: 20 minutes: reporter at 20minutes.ch
-    * HJ PR DE: http://www.geowebforum.ch/index.php
-    * CM PR DE: http://www.zeitung.ch/index.php
-  * 31.3.2010: OSM / France
+    * CM PR DE: http://www.zeitung.ch/index.php  
+  * 31.3.2010: International / France
+   * International
+    * HJ PR EN: mailbox at geoinformatics.com
+    * HJ PR EN: editorgeo at geoconnexion.com
+    * HJ PR EN: enquiries at pvpubs.demon.co.uk
+    * HJ PR EN: http://gislounge.com/contact
+    * HJ PR EN: cispress at tmcnet.com
+    * CM MAIL XX http://www.osgeo.org/content/chapters/index.html
+    * CM MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
+    * CM PR EN: https://secure.ibsystems.com/GIS/nbc/members/
+    * CM PR EN: http://www.gim-international.com/contact.php
+    * CM PR EN: http://mapgiving.blogspot.com/
+    * CM PR EN: http://www.directionsmedia.net/masthead.php?p=contact
+    * CM PR EN: http://www.free-press-release.com/members/login.php
    * France
     * CM PR FR: redaction at 01informatique.presse.fr
     * CM PR FR: ab at thesame-innovation.com
@@ -96,6 +97,6 @@
     * CM PR FR: http://www.portailsig.org/contact
     * CM MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
     * CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38
-    * CM MAIL FR: afigeo at afigeo.asso.fr  
+    * CM MAIL FR: afigeo at afigeo.asso.fr
   * May: HJ ARTICLE FR DE  "Geomatik Schweiz"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
