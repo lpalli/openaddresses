@@ -39,10 +39,19 @@ CREATE TABLE ADDRESS (
 
 SELECT AddGeometryColumn('address', 'geom', 4326, 'POINT', 2);
 
+#TODO
+SELECT AddGeometryColumn('address', 'geom1', 900913, 'POINT', 2);
+
 CREATE INDEX idx_address_geom
   ON address
   USING gist
   (geom);
+
+#TODO
+CREATE INDEX idx_address_geom1
+  ON address
+  USING gist
+  (geom1);
 
 GRANT ALL ON TABLE ADDRESS TO "www-data";
 GRANT ALL ON TABLE geography_columns TO "www-data";
@@ -75,6 +84,9 @@ CREATE TABLE ADDRESS_ARCHIVE (
 
 SELECT AddGeometryColumn('address_archive', 'geom', 4326, 'POINT', 2);
 
+#TODO
+SELECT AddGeometryColumn('address_archive', 'geom1', 900913, 'POINT', 2);
+
 GRANT ALL ON TABLE ADDRESS_ARCHIVE TO "www-data";
 
 DROP FUNCTION update_address() cascade;
@@ -98,6 +110,7 @@ CREATE FUNCTION update_address() RETURNS OPAQUE AS '
     QUALITY,
     REFERENCE,
     GEOM,
+    GEOM1,
     ARCHIVE_DATE,
     ARCHIVE_TYPE
 	)
@@ -119,6 +132,7 @@ CREATE FUNCTION update_address() RETURNS OPAQUE AS '
          OLD.QUALITY,
          OLD.REFERENCE,
          OLD.GEOM,
+         OLD.GEOM1,
          NOW(),
          TG_OP
        );
@@ -149,6 +163,7 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
     QUALITY,
     REFERENCE,
     GEOM,
+    GEOM1,
     ARCHIVE_DATE,
     ARCHIVE_TYPE
 	)
@@ -170,6 +185,7 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
          OLD.QUALITY,
          OLD.REFERENCE,
          OLD.GEOM,
+         OLD.GEOM1,
          NOW(),
          TG_OP
        );
@@ -179,18 +195,56 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
 
 ' LANGUAGE 'plpgsql';
 
+#TODO
+DROP FUNCTION update_insert_address_geometry() cascade;
+
+CREATE FUNCTION update_insert_address_geometry() RETURNS OPAQUE AS '
+  BEGIN
+     NEW.GEOM1 := Transform(NEW.GEOM,900913);
+     RETURN NEW;
+  END;
+
+' LANGUAGE 'plpgsql';
+
 GRANT ALL ON FUNCTION update_address() TO "www-data";
 GRANT ALL ON FUNCTION delete_address() TO "www-data";
+#TODO
+GRANT ALL ON FUNCTION update_address_geometry() TO "www-data";
+
+
+
+DROP TRIGGER delete_address on address cascade;
+
+CREATE TRIGGER delete_address
+    AFTER DELETE ON address
+    FOR EACH ROW
+    EXECUTE PROCEDURE delete_address();
+
+#TODO
+DROP TRIGGER update_insert_address_geometry on address cascade;
+DROP TRIGGER update_address on address cascade;
+
+CREATE TRIGGER update_insert_address_geometry
+    BEFORE UPDATE OR INSERT ON address
+    FOR EACH ROW
+    EXECUTE PROCEDURE update_insert_address_geometry();
+
+# update address set geom=geom;
 
 CREATE TRIGGER update_address
     AFTER UPDATE ON address
     FOR EACH ROW
     EXECUTE PROCEDURE update_address();
 
-CREATE TRIGGER delete_address
-    AFTER DELETE ON address
-    FOR EACH ROW
-    EXECUTE PROCEDURE delete_address();
+#TEST
+# update address set geom1 = (select Transform(geom,900913) from address where id = 349710) where id = 349710;
+# select street,geom, geom1 from address where id = 349710;
+# update address set street='test1' where id = 349710;
+# select geom, geom1 from address where id = 349710;
+# select street,geom, geom1 from address where id = 349711;
+# update address set geom=geom where id = 349711;
+# select street,geom, geom1 from address where id = 349711;
+# update address set geom = geom;
 
 -- Import data
 

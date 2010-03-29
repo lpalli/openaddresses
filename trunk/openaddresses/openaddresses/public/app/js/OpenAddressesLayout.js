@@ -87,6 +87,7 @@ openaddresses.layout = (function() {
                         }
                     }
                 }
+                attributions.push("OSM: Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>");
                 this.div.innerHTML = attributions.join(this.separator);
             }
         };
