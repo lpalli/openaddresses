@@ -33,20 +33,20 @@
    * Germany
     * ~~CM PR DE: Geobranchen: http://www.geobranchen.de / info at geobranchen.de~~
     * ~~CM PR DE: http://www.business-geomatics.com/cms/index.php ~~
-    * ~~CM PR DE: http://www.kirschbaum.de/texte/zkn.php~~
+    * ~~CM PR DE: http://www.kirschbaum.de/texte/zkn.php ~~
     * German key mails:
-     * done LL PR DE: mfeilner at linux-magazin.de (www.linux-magazin.de) ~~
-     * done ~~LL PR DE: presse-info at linuxnewmedia.de~~
-     * done ~~LL PR DE: presse at ct.heise.de~~
-     * done ~~LL PR DE: monika.rech at abcverlag.de (www.gis-news.de www.gis-biz.de)~~
-     * done ~~LL PR DE: presse at onlinekosten.de~~
-     * done ~~LL PR DE: christoph at linuxundich.de~~
-     * done ~~LL PR DE: news at golem.de~~
-     * done ~~LL PR DE: opengeodb at phpbar.de~~
-     * done ~~LL PR DE: gislist at lists.geocomm.com~~
-     * done ~~LL MAIL DE: fossgis-talk-liste at fossgis.de~~
-     * done ~~LL MAIL DE: talk-de at openstreetmap.org~~
-     * done ~~LL MAIL DE: harald.schwenk at agentur-geoinfo.de~~
+     * ~~ LL PR DE: mfeilner at linux-magazin.de (www.linux-magazin.de) ~~
+     * ~~LL PR DE: presse-info at linuxnewmedia.de~~
+     * ~~LL PR DE: presse at ct.heise.de~~
+     * ~~LL PR DE: monika.rech at abcverlag.de (www.gis-news.de www.gis-biz.de)~~
+     * ~~LL PR DE: presse at onlinekosten.de~~
+     * ~~LL PR DE: christoph at linuxundich.de~~
+     * ~~LL PR DE: news at golem.de~~
+     * ~~LL PR DE: opengeodb at phpbar.de~~
+     * ~~LL PR DE: gislist at lists.geocomm.com~~
+     * ~~LL MAIL DE: fossgis-talk-liste at fossgis.de~~
+     * ~~LL MAIL DE: talk-de at openstreetmap.org~~
+     * ~~LL MAIL DE: harald.schwenk at agentur-geoinfo.de~~
    * Austria
     * ST MAIL DE: ageo-news@googlegroups.com
   * 30.3.2010: OSGEO / International / Switzerland
