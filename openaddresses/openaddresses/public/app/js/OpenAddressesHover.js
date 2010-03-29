@@ -40,7 +40,8 @@ openaddresses.hover = OpenLayers.Class(OpenLayers.Control, {
                 );
         this.handler = new OpenLayers.Handler.Hover(
                 this,
-        {'pause': this.onPause, 'move': this.onMove},
+        {'pause': this.onPause,
+            'move': this.onMove},
                 this.handlerOptions
                 );
     },

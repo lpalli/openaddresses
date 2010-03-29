@@ -134,17 +134,21 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
         /** method[cancelEditing]
          */
-        var cancelEditing = function(feature) {
+        var cancelEditing = function(feature,redraw) {
             openaddresses.layout.showWaitingMask();
             if (feature.editingPopup) {
                 feature.editingPopup.close();
                 delete feature.editingPopup;
             }
             vectorLayer.removeFeatures(feature);
-            openaddresses.layout.map.addressLayer.redraw(true);
+            if (redraw) {
+                openaddresses.layout.map.addressLayer.redraw(true);
+            }
             openaddresses.layout.modifyFeatureControl.deactivate();
             openaddresses.layout.editControl.activate();
-            openaddresses.layout.hoverControl.activate();
+            if (openaddresses.config.activateHover) {
+                openaddresses.layout.hoverControl.activate();
+            }
             map.editedFeature = null;
             openaddresses.layout.hideWaitingMask();
         };
@@ -224,7 +228,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         endSaveFeature(feature);
                     },
                     failure: function(resp, opt) {
-                        cancelEditing(feature);
+                        cancelEditing(feature,true);
                         alert(OpenLayers.i18n('Error during data storage'));
                     }
                 });
@@ -245,7 +249,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 }
 
                 // Cancel editing
-                cancelEditing(feature);
+                cancelEditing(feature, true);
             };
         };
 
@@ -316,7 +320,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                     url: "addresses/" + feature.id,
                                     method: 'DELETE',
                                     success: function(resp, opt) {
-                                        cancelEditing(feature);
+                                        cancelEditing(feature, true);
                                     },
                                     failure: function(resp, opt) {
                                         openaddresses.layout.hideWaitingMask();
@@ -324,7 +328,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                     }
                                 });
                             } else {
-                                cancelEditing(feature);
+                                cancelEditing(feature, false);
                             }
                         }
                     },
@@ -534,7 +538,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             disabled: false,
                             handler: function() {
                                 openaddresses.layout.showWaitingMask();
-                                cancelEditing(feature);
+                                cancelEditing(feature,false);
                             }
                         },
                         {
@@ -572,7 +576,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
                 // Check that another feature is edited
                 if (map.editedFeature) {
-                    cancelEditing(map.editedFeature);
+                    cancelEditing(map.editedFeature, true);
                 }
                 var attribute;
                 // Add the feature
@@ -602,7 +606,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 vectorLayer.addFeatures(map.editedFeature);
                 openaddresses.layout.modifyFeatureControl.activate();
                 openaddresses.layout.editControl.deactivate();
-                openaddresses.layout.hoverControl.deactivate();
+                if (openaddresses.config.activateHover) {
+                    openaddresses.layout.hoverControl.deactivate();
+                }
                 openaddresses.layout.modifyFeatureControl.selectControl.select(map.editedFeature);
                 openaddresses.layout.modifyFeatureControl.selectControl.handlers.feature.feature = map.editedFeature;
 
