@@ -819,7 +819,7 @@ openaddresses.layout = (function() {
             this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
             this.editControl.activate();
             this.navControl.activate();
-            //this.hoverControl.activate();
+            this.hoverControl.activate();
             //this.buildingControl.activate();
 
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
@@ -830,7 +830,7 @@ openaddresses.layout = (function() {
             var opacitySlider = createOpacitySlider(this.map);
 
 
-            //createLocationTooltip(this.map);
+            createLocationTooltip(this.map);
 
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
