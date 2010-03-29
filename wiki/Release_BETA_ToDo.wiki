@@ -20,7 +20,7 @@
    * Add cron
  * Documentation
   * ~~Create a FAQ: http://code.google.com/p/openaddresses/wiki/FAQ ~~
-  * ~~Create User Guide: http://code.google.com/p/openaddresses/wiki/UserGuideEn ~~ 
+  * ~~Create User Guide: http://code.google.com/p/openaddresses/wiki/UserGuideEn
    * ~~Translate user guide in french: http://code.google.com/p/openaddresses/wiki/UserGuideFr ~~   
    * ~~Translate user guide in german: http://code.google.com/p/openaddresses/wiki/UserGuideDe ~~
    * Translate user guide in italian:
