@@ -35,7 +35,7 @@
     * ~~CM PR DE: http://www.business-geomatics.com/cms/index.php ~~
     * ~~CM PR DE: http://www.kirschbaum.de/texte/zkn.php~~
     * German key mails:
-     * ~~LL PR DE: mfeilner at linux-magazin.de (www.linux-magazin.de)~~
+     * ~~ LL PR DE: mfeilner at linux-magazin.de (www.linux-magazin.de) ~~
      * done ~~LL PR DE: presse-info at linuxnewmedia.de~~
      * done ~~LL PR DE: presse at ct.heise.de~~
      * done ~~LL PR DE: monika.rech at abcverlag.de (www.gis-news.de www.gis-biz.de)~~
