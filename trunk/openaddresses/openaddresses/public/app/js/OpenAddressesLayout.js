@@ -77,6 +77,12 @@ openaddresses.layout = (function() {
             if (this.map && this.map.layers) {
                 for (var i = 0, len = this.map.layers.length; i < len; i++) {
                     var layer = this.map.layers[i];
+                    if (layer.name == 'OpenStreetMap' && layer.getVisibility()) {
+                        if (OpenLayers.Util.indexOf(
+                                attributions, layer.attribution) === -1) {
+                            attributions.push(layer.attribution);
+                        }
+                    }
                     var withinMaxExtent = (layer.maxExtent && this.map.getExtent() &&
                                            this.map.getExtent().intersectsBounds(layer.maxExtent, false));
                     if (layer.attribution && layer.getVisibility() && withinMaxExtent && layer.inRange) {
@@ -87,7 +93,7 @@ openaddresses.layout = (function() {
                         }
                     }
                 }
-                attributions.push("OSM: Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>");
+
                 this.div.innerHTML = attributions.join(this.separator);
             }
         };
