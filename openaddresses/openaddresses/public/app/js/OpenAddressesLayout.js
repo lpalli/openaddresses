@@ -795,6 +795,7 @@ openaddresses.layout = (function() {
                     'delay': 100
                 }
             });
+            
 
             /* http://trac.openlayers.org/ticket/2528: OK */
             /* http://trac.osgeo.org/mapserver/ticket/1617 NO SUPPORT IN CASCADING WMS...
@@ -818,7 +819,7 @@ openaddresses.layout = (function() {
             this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
             this.editControl.activate();
             this.navControl.activate();
-            this.hoverControl.activate();
+            //this.hoverControl.activate();
             //this.buildingControl.activate();
 
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
