@@ -9,3 +9,4 @@ Found on the web during the launch:
   * TWITTER: Open Addresses user interface (beta) from the creators of MapFish
   * TWITTER: Interesting: Open Source Web Portal for geolocated postal addresses: 
   * http://www.mail-archive.com/talk-de@openstreetmap.org/msg64346.html
+  * http://blog.gisuser.com/?p=6472: "So far the web service has a pretty slick UI using the OpenStreetMap base... "
