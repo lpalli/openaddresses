@@ -829,7 +829,7 @@ openaddresses.layout = (function() {
             var opacitySlider = createOpacitySlider(this.map);
 
 
-            createLocationTooltip(this.map);
+            //createLocationTooltip(this.map);
 
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
