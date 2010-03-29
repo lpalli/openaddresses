@@ -493,8 +493,7 @@ openaddresses.layout = (function() {
         }
     };
 
-    var createLocationTooltip = function(map) {
-        //FOR PERFORMANCE: map.events.register('mousemove', this, openaddresses.layout.showLocationTooltip);
+    var handleMouseOutEvent = function(map) {
         map.events.register('mouseout', this, hideMouseOver);
     };
 
@@ -819,7 +818,10 @@ openaddresses.layout = (function() {
             this.map.addControls([this.editControl,this.navControl,this.modifyFeatureControl,this.hoverControl]);
             this.editControl.activate();
             this.navControl.activate();
-            this.hoverControl.activate();
+            if (openaddresses.config.activateHover) {
+                this.hoverControl.activate();
+                handleMouseOutEvent(this.map);
+            }
             //this.buildingControl.activate();
 
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
@@ -830,7 +832,6 @@ openaddresses.layout = (function() {
             var opacitySlider = createOpacitySlider(this.map);
 
 
-            createLocationTooltip(this.map);
 
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
@@ -841,7 +842,7 @@ openaddresses.layout = (function() {
             });
             setPermalink();
 
-            // Manage controlers for reverse geocoding and editing
+            // Manage controlers for reverse geocoding and editing, associated to navControl
             handleRightMouseClick(this.map);
 
 
