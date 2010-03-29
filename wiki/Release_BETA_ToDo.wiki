@@ -48,7 +48,8 @@
      * ~~LL MAIL DE: talk-de at openstreetmap.org~~
      * ~~LL MAIL DE: harald.schwenk at agentur-geoinfo.de~~
    * Austria
-    * ST MAIL DE: ageo-news@googlegroups.com
+    * ~~ST MAIL DE: ageo-news@googlegroups.com~~
+	* ~~ST MAIL DE: university partners & alumni~~
   * 30.3.2010: OSGEO / International / Switzerland
    * International
     * CM MAIL EN: http://lists.openstreetmap.org/listinfo/talk
