@@ -49,11 +49,11 @@ Für das Projektkernteam von OpenAddresses
 Hans-Jörg Stark
 
 
- * [1] Datenlizenz von OpenAddresses: http://creativecommons.org/licenses/by/3.0/ 
- * [2] Dienste 
- * [3] Datenspenden 
- * [4] http://groups.google.com/group/OpenAddresses?pli=1 
- * Häufig gestellte Fragen (vorerst noch in Englisch) 
+ * (1) Licence des données d'!OpenAddresses: http://creativecommons.org/licenses/by/3.0/
+ * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Services]
+ * (3) [http://code.google.com/p/openaddresses/ Site de la communauté]
+ * (4) http://groups.google.com/group/OpenAddresses?pli=1
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Questions fréquemments posées]
 
 = Kontakt für Datenspende: = 
  * http://www.bfs.admin.ch/bfs/portal/fr/index/infothek/nomenklaturen/blank/blank/gem_liste/03.html 
