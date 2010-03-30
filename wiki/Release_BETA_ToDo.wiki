@@ -98,5 +98,7 @@
     * CM MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
     * CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38
     * CM MAIL FR: afigeo at afigeo.asso.fr
+  * April: SA ARTICLE DE  "GISBusiness"
   * May: HJ ARTICLE FR DE  "Geomatik Schweiz"
+  * May: SA ARTICLE DE  "AGEO Newsletter"
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
