@@ -73,11 +73,11 @@
     * CM PR DE: http://www.zeitung.ch/index.php  
   * 31.3.2010: International / France
    * International
-    * ~~HJ PR EN: mailbox at geoinformatics.com~~
-    * ~~HJ PR EN: editorgeo at geoconnexion.com~~
-    * ~~HJ PR EN: enquiries at pvpubs.demon.co.uk~~
-    * HJ PR EN: http://gislounge.com/contact
-    * ~~HJ PR EN: cispress at tmcnet.com~~
+    * ~~ HJ PR EN: mailbox at geoinformatics.com~~
+    * ~~ HJ PR EN: editorgeo at geoconnexion.com~~
+    * ~~ HJ PR EN: enquiries at pvpubs.demon.co.uk~~
+    * ~~ HJ PR EN: editor at gislounge.com ~~ 
+    * ~~ HJ PR EN: cispress at tmcnet.com~~
     * CM MAIL XX http://www.osgeo.org/content/chapters/index.html
     * CM MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page
     * CM PR EN: https://secure.ibsystems.com/GIS/nbc/members/
