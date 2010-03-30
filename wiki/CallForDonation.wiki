@@ -45,15 +45,15 @@ Falls Sie in der Lage sind, andere Daten, welche für das Projekt hilfreich sein
 Gerne dürfen Sie sich auch unsrer "Community" anschliessen und mitdiskutieren [4]
 Wir hoffen, dass wir mit dieser Mail nicht nur Ihr Interesse, sondern auch Ihre Bereitschaft zu mitmachen wecken konnten. Gerne stehen wir für allfällige Fragen zur Verfügung.
 
-Für das Projektkernteam von OpenAddresses
-Hans-Jörg Stark
+Für das Projektkernteam von !OpenAddresses, Hans-Jörg Stark
+
 
 
  * (1) Licence des données d'!OpenAddresses: http://creativecommons.org/licenses/by/3.0/
- * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Services]
- * (3) [http://code.google.com/p/openaddresses/ Site de la communauté]
+ * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Dienste]
+ * (3) [http://code.google.com/p/openaddresses/ Community]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
- * [http://code.google.com/p/openaddresses/wiki/FAQ Questions fréquemments posées]
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Häufig gestellte Fragen (vorerst in Englisch)]
 
 = Kontakt für Datenspende: = 
  * http://www.bfs.admin.ch/bfs/portal/fr/index/infothek/nomenklaturen/blank/blank/gem_liste/03.html 
