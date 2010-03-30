@@ -10,3 +10,10 @@ Found on the web during the launch:
   * TWITTER: Interesting: Open Source Web Portal for geolocated postal addresses: 
   * http://www.mail-archive.com/talk-de@openstreetmap.org/msg64346.html
   * http://blog.gisuser.com/?p=6472: "So far the web service has a pretty slick UI using the OpenStreetMap base... "
+  * http://www.geo2web.com/2010/03/29/openaddresses-org-beta/
+  * http://www.thegisforum.com/blogs/communitymashup/archive/2010/03/29/openaddresses-org-beta-for-localized-postal-addresses.aspx
+ * 30.03.2010
+  * http://bbox.me/blog/?p=106
+  * TWITTER: great job! http://www.openaddresses.org/
+  * TWITTER: @jaykayone http://bbox.me added support for http://Openaddresses.org. Simple to extract a limited bbox with address data in FME.
+  * TWITTER: Openaddresses+bbox.me+fme=cool: http://bbox.me/blog/?p=106 (via @ulfme)
