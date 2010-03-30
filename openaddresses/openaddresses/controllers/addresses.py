@@ -182,7 +182,7 @@ class AddressesController(BaseController):
 
        # Add limit to SQL Query
        if 'limit' in request.params:
-          limit = request.params['limit']
+          limit = int(request.params['limit'])
           sqlQuery = sqlQuery + " LIMIT " + limit
 
        # Execute query
