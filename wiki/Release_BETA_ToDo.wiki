@@ -60,7 +60,7 @@
     * HJ MAIL EN: news at gisdevelopment.net
     * HJ MAIL EN: pressreleases at vector1media.com
    * Switzerland
-    * HJ PR DE: http://www.geowebforum.ch/index.php
+    * ~~ HJ PR DE: http://www.geowebforum.ch/index.php ~~
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
     * CM PR FR: TSR: http://www.tsr.ch/tsr/index.html?siteSect=200801
     * CM PR FR: Nouvo: http://www.nouvo.ch/contact
