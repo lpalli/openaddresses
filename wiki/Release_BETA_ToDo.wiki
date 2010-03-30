@@ -52,9 +52,9 @@
     * ~~ST MAIL DE: university partners & alumni~~
   * 30.3.2010: OSGEO / International / Switzerland
    * International
-    * CM MAIL EN: http://lists.openstreetmap.org/listinfo/talk
-    * CM MAIL EN: discuss@lists.osgeo.org
-    * CM MAIL EN http://slashgeo.org/submit.pl  
+    * ~~CM MAIL EN: http://lists.openstreetmap.org/listinfo/talk~~
+    * ~~CM MAIL EN: discuss@lists.osgeo.org~~
+    * ~~CM MAIL EN http://slashgeo.org/submit.pl~~  
     * HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
     * HJ MAIL EN: http://posterous.com/site/profile/opengeodata 
     * HJ MAIL EN: news at gisdevelopment.net
