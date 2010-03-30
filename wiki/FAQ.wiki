@@ -16,7 +16,7 @@ Addresses have been digitized or have been donated by person, group or entity.
 
 == What is the license of the data ? == 
 
-For the data, the license is: http://creativecommons.org/licenses/by/3.0/. The following conditions are associated to this license:
+For the data, the license is: http://creativecommons.org/licenses/by-sa/3.0/. The following conditions are associated to this license:
  * The addresses must be associated to the url of http://www.openaddresses.org
  * The person or entity that submitted the data is stored in a field created_by
 
