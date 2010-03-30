@@ -55,10 +55,10 @@
     * ~~CM MAIL EN: http://lists.openstreetmap.org/listinfo/talk ~~
     * ~~CM MAIL EN: discuss@lists.osgeo.org ~~
     * ~~CM MAIL EN http://slashgeo.org/submit.pl ~~  
-    * HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de
+    * ~~ HJ MAIL DE: https://freegis.org/mailman/listinfo/mapserver-de ~~
     * HJ MAIL EN: http://posterous.com/site/profile/opengeodata 
-    * ~~HJ MAIL EN: news at gisdevelopment.net ~~
-    * ~~HJ MAIL EN: pressreleases at vector1media.com ~~
+    * ~~ HJ MAIL EN: news at gisdevelopment.net ~~
+    * ~~ HJ MAIL EN: pressreleases at vector1media.com ~~
    * Switzerland
     * ~~ HJ PR DE: http://www.geowebforum.ch/index.php ~~
     * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
