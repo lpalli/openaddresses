@@ -66,9 +66,9 @@
     * ~~CM PR FR: Nouvo: http://www.nouvo.ch/contact ~~
     * ~~CM PR FR: 24 heures: scoopmobile at edipresse.ch ~~
     * ~~CM PR FR: Couleur 3, Point Barre: http://www.couleur3.ch/fr/rsr.html?siteSect=40&email=pointbarre at rsr.ch ~~
-    * CM PR FR: Le Matin: http://www.lematin.ch/aide/contact/form?cid=37
-    * CM PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/
-    * CM PR FR: Le Temps: http://www.letemps.ch/contact
+    * ~~CM PR FR: Le Matin: http://www.lematin.ch/aide/contact/form?cid=37 ~~
+    * ~~CM PR FR: RSR: Les urbanités: http://urbanites.rsr.ch/ecrire-a-lemission/ ~~
+    * ~~CM PR FR: Le Temps: http://www.letemps.ch/contact ~~
     * ~~CM PR FR: 20 minutes: reporter at 20minutes.ch~~
     * CM PR DE: http://www.zeitung.ch/index.php  
   * 31.3.2010: International / France
