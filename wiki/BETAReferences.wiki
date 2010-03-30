@@ -17,3 +17,4 @@ Found on the web during the launch:
   * TWITTER: great job! http://www.openaddresses.org/
   * TWITTER: @jaykayone http://bbox.me added support for http://Openaddresses.org. Simple to extract a limited bbox with address data in FME.
   * TWITTER: Openaddresses+bbox.me+fme=cool: http://bbox.me/blog/?p=106 (via @ulfme)
+  * http://mapperz.blogspot.com/2010/03/openaddressesorg-beta.html
