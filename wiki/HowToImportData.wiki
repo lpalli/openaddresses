@@ -78,3 +78,25 @@ INSERT INTO address (
       GeomFromEWKT('SRID=4326;POINT(' || address_lo || ' ' || address_la || ')') geom
    FROM carolina1);
 }}}
+
+= US ZIP Code =
+
+ * Data origin: http://mappinghacks.com/data/ http://ramsonit.wordpress.com/2008/04/29/free-us-zip-code-database-as-csv/
+ * Contact person: schuyler geocoder.us
+ * License: The database andthis README are copyright 2004 CivicSpace Labs, Inc., and are published under a Creative Commons Attribution-ShareAlike license, which requires that all updates must be released under the same license. See http://creativecommons.org/licenses/by-sa/2.0/ for more details.
+
+{{{
+ * sudo su postgres
+
+create table zipcode (
+    zip char(5) primary key,
+    city varchar(64),
+    state char(2),
+    latitude varchar(64),
+    longitude varchar(64),
+    timezone int,
+    dst varchar(16)
+);
+
+COPY zipcode FROM '/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/zipcode.csv' WITH DELIMITER ',' CSV HEADER NULL AS '';
+}}}
