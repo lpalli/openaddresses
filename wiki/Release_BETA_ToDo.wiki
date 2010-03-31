@@ -81,18 +81,17 @@
     * ~~CM PR EN: http://www.directionsmedia.net/masthead.php?p=contact ~~
     * ~~CM PR EN: http://www.free-press-release.com/members/login.php ~~
    * France
-    * CM PR FR: redaction at 01informatique.presse.fr
-    * CM PR FR: ab at thesame-innovation.com
-    * CM PR FR: orafal at idg.fr
-    * CM PR FR: http://fr.newspeg.com/submit
-    * CM PR FR: deblomac at sig-la-lettre.com
-    * CM PR FR: vincent at cimaxonline.fr
-    * CM PR FR: francais at directionsmag.com / jane.elliott directionsmag.com
-    * CM PR FR: satri at slashgisrs.org
-    * CM PR FR: http://www.portailsig.org/contact
-    * CM MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information
-    * CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38
-    * CM MAIL FR: afigeo at afigeo.asso.fr
+    * ~~CM PR FR: ddufour at 01net.fr ~~
+    * ~~CM PR FR: ab at thesame-innovation.com ~~
+    * ~~CM PR FR: orafal at idg.fr ~~
+    * ~~CM PR FR: http://fr.newspeg.com/submit~~
+    * ~~CM PR FR: deblomac at sig-la-lettre.com~~
+    * ~~CM PR FR: vincent at cimaxonline.fr~~
+    * ~~CM PR FR: francais at directionsmag.com / jane.elliott directionsmag.com ~~
+    * ~~CM PR FR: http://www.portailsig.org/contact~~
+    * ~~CM MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information~~
+    * ~~CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38 ~~
+    * ~~CM MAIL FR: afigeo at afigeo.asso.fr~~
   * TODO
    * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
    * CM PR DE: http://www.zeitung.ch/index.php 
