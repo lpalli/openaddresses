@@ -24,6 +24,7 @@ Found on the web during the launch:
   * http://mapfishblog.blogspot.com/2010/03/mapfish-used-for-wwwopenaddressesorg.html
   * http://sdteffen.blogspot.com/2010/03/wwwopenaddressesorg.html
   * http://technology.slashgeo.org/print.pl?sid=10/03/30/1229247
+  * http://www.opensuse-forum.de/showthread.php?t=2898
  * 31.03.2010
   * http://www.geowebguru.com/news/262-openaddressesorg-launched
   * http://gislounge.com/openaddresses-org-beta/
