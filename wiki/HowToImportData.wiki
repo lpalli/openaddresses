@@ -75,6 +75,6 @@ INSERT INTO address (
       now(),
       'http://www.openaddresses.org',
       'Donated',
-      ST_Force_2D(ST_SetSRID(the_geom,4326))
+      GeomFromEWKT('SRID=4326;POINT(' || address_lo || ' ' || address_la || ')') geom
    FROM carolina1);
 }}}
