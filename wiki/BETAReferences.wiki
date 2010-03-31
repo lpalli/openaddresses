@@ -25,6 +25,7 @@ Found on the web during the launch:
   * http://sdteffen.blogspot.com/2010/03/wwwopenaddressesorg.html
   * http://technology.slashgeo.org/print.pl?sid=10/03/30/1229247
   * http://www.opensuse-forum.de/showthread.php?t=2898
+  * http://www.geobranchen.de/index.php?option=content&task=view&id=4356
  * 31.03.2010
   * http://www.geowebguru.com/news/262-openaddressesorg-launched
   * http://gislounge.com/openaddresses-org-beta/
