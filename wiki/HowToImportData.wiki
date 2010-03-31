@@ -19,6 +19,7 @@ INSERT INTO address (
    postcode,
    city,
    country,
+   region,
    created_by,
    time_created,
    reference,
@@ -29,10 +30,51 @@ INSERT INTO address (
       adr_zip5,
       adr_city,
       'US',
+      cnty_name,
       'arkansas.gov',
       now(),
       'http://www.openaddresses.org',
       'Donated',
       ST_Force_2D(ST_SetSRID(the_geom,4326))
    FROM arkansas);
+}}}
+
+= North Carolina =
+
+ * Data origin: NC Center for Geographic Information & Analysis
+ * Contact person: juliaharrell at mindspring.com 
+ * License validation: email from 4/30/2010
+ * Import shapefile
+
+ * To be done 10 times:
+
+{{{
+  * unzip NCMasterAddress_area01_shp.zip
+  * shp2pgsql -s 4326  NCMasterAddress_Area01 carolina1 > carolina1.sql
+  * psql -d openaddresses -h localhost -U postgres -f carolina1.sql
+  * sudo su postgres
+  * psql -d openadresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+      address_nu,
+      rtrim(ltrim(str_name || ' ') || coalesce(str_po_typ,'')),
+      zip_code,
+      'US',
+      county,
+      'cgia.state.nc.us',
+      now(),
+      'http://www.openaddresses.org',
+      'Donated',
+      ST_Force_2D(ST_SetSRID(the_geom,4326))
+   FROM carolina1);
 }}}
