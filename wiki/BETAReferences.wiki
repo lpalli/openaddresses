@@ -30,3 +30,4 @@ Found on the web during the launch:
   * http://lac-conakry.blogspot.com/2010/03/openstreetmap-et-adresses-postales.html
   * http://www.directionsmag.com/press.releases/?duty=Show&id=46205
   * http://apb.directionsmag.com/archives/7623-Open-Source-Address-Database.html
+  * http://www.geowebguru.com/news/262-openaddressesorg-launched
