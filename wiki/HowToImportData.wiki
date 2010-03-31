@@ -79,6 +79,13 @@ INSERT INTO address (
    FROM carolina1);
 }}}
 
+ * Set zipcode
+
+  * North Carolina
+{{{
+update public.address set city = (select public.zipcode.city from public.zipcode where public.address.postcode = public.zipcode.zip and public.zipcode.zip is not null) where public.address.created_by = 'cgia.state.nc.us'; 
+}}}
+
 = US ZIP Code =
 
  * Data origin: http://mappinghacks.com/data/ http://ramsonit.wordpress.com/2008/04/29/free-us-zip-code-database-as-csv/
@@ -99,4 +106,6 @@ create table zipcode (
 );
 
 COPY zipcode FROM '/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/zipcode.csv' WITH DELIMITER ',' CSV HEADER NULL AS '';
+
+create index zipcode_zip on zipcode USING btree(zip);
 }}}
