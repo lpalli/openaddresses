@@ -1,3 +1,5 @@
+<wiki:toc max_depth="2" />
+
 = Situs Addresses for State of Arkansas =
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
