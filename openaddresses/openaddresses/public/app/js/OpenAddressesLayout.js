@@ -425,7 +425,7 @@ openaddresses.layout = (function() {
                     items: [
                         {
                             title: OpenLayers.i18n('OpenAddresses'),
-                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.') + '<br><br><object width="317" height="264"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="317" height="264"></embed></object><br><br><a href="http://www.openaddresses.org/?northing=6248874.5043244&easting=266781.98209719&zoom=17&overlayOpacity=1">' + OpenLayers.i18n('Try in Paris') + '</a>'
+                            html: '<img src="resources/img/Help_' + langvalue + '.png"><br>' + OpenLayers.i18n('OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.') + '<br><br><a href="javascript:openaddresses.layout.showHelpWindow()">' + OpenLayers.i18n('Do you need help ?') + '</a>'
 
                         },
                         {
@@ -685,6 +685,24 @@ openaddresses.layout = (function() {
             }
         },
 
+        showHelpWindow: function() {
+            var win = new Ext.Window({
+                width:440,
+                height:420,
+                title: OpenLayers.i18n('Help'),
+                html: '<div style="width:425px" id="__ss_3471274"><object width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=openaddressesfordummiesen-100318164801-phpapp02&stripped_title=open-addresses-for-dummies-english" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object></div>',
+                bbar:['->',
+                    {
+                        text:OpenLayers.i18n('Close'),
+                        handler:function() {
+                            win.close();
+                        }
+                    }
+                ]
+            });
+            win.show();
+        },
+
         showLocationTooltip: function(evt) {
             var map = openaddresses.layout.map;
             if (map.showLocationInMapRequestOngoing || map.zoom < 16) {
@@ -803,7 +821,7 @@ openaddresses.layout = (function() {
                     'delay': 100
                 }
             });
-            
+
 
             /* http://trac.openlayers.org/ticket/2528: OK */
             /* http://trac.osgeo.org/mapserver/ticket/1617 NO SUPPORT IN CASCADING WMS...
@@ -839,7 +857,6 @@ openaddresses.layout = (function() {
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
-
 
 
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
