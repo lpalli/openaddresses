@@ -24,13 +24,15 @@ Who has never searched for an address ? NOBODY. We all need addresses and unfort
 
 == Geocoding ==
 
-OpenAddresses provide geocoding functions.
+!OpenAddresses provides geocoding functions that you can freely use.
 
 == Reverse geocoding ==  
 
-OpenAddresses provide reverse geocoding functions.
+!OpenAddresses provides reverse geocoding functions that you can freely use.
 
 == You don't want to buy a license or have a maintenance contract ==
+
+Do you ?
 
 == You want to have a free navigation system ==
 
