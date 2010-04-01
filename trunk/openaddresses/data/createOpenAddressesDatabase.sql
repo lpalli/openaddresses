@@ -353,6 +353,8 @@ tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', 
 # Import backup file: pg_restore -d openaddresses oa.backup
 # /usr/lib/postgresql/8.4/bin/pg_restore -d openaddresses oa.backup -p 5433
 
+create index address_postcode on address USING btree(postcode);
+
 
 #  ****************************************************************
 # IMPORT PROCEDURE FROM CSV FILE
