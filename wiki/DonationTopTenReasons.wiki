@@ -18,7 +18,7 @@ For companies, governments or private persons, the spatial information allows to
 
 Think that if you provide an address in your area, you could maybe use an address provided by someone else on the other side of the earth.
 
-== Address search is used by everyon ==
+== Address search is used by everyone ==
 
 Who has never searched for an address ? NOBODY. We all need addresses and unfortunately, it's difficult to access them or they are provided by advertisement companies that have other ideas in mind.
 
