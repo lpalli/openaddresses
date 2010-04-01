@@ -23,6 +23,10 @@ sudo su postgres
 
 psql -d openaddresses -f arkansas.sql
 
+sudo su postgres 
+
+psql -d openaddresses
+
 INSERT INTO address (
    housenumber,
    street,
