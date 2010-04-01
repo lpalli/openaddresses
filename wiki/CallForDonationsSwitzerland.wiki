@@ -2,9 +2,9 @@ List of swiss cities
 
 Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
 
-Zürich 1
-Genf 1
-Basel 1
+ Zürich 1
+ Genf 1
+ Basel 1
 Bern 1
 Lausanne 1
 Winterthur 1
