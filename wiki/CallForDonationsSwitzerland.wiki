@@ -1,137 +1,137 @@
-List of swiss cities
+= List of swiss cities =
 
 Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
 
- Zürich 1
- Genf 1
- Basel 1
-Bern 1
-Lausanne 1
-Winterthur 1
-St. Gallen 1
-Luzern 1
-Lugano 1
-Biel/Bienne 1
-Thun 1
-Köniz
-La Chaux-de-Fonds 1
-Freiburg 1
-Schaffhausen 1
-Chur 1
-Neuenburg 1
-Vernier
-Uster
-Sion 1
-Lancy
-Emmen
-Rapperswil-Jona 1
-Kriens
-Yverdon-les-Bains 1
-Zug 1
-Montreux
-Dübendorf
-Dietikon
-Frauenfeld 1
-Baar
-Wetzikon
-Riehen
-Meyrin
-Wädenswil
-Carouge
-Wettingen
-Allschwil
-Renens
-Reinach
-Kreuzlingen
-Horgen
-Nyon 1
-Wil 1
-Vevey 1
-Kloten
-Bulle 1
-Baden 1
-Gossau
-Bellinzona 1
-Muttenz
-Onex
-Littau
-Olten 1
-Pully
-Bülach 1
-Thalwil
-Volketswil
-Monthey 1
-Adliswil
-Regensdorf
-Grenchen
-Aarau 1
-Freienbach
-Martigny 1
-Solothurn 1
-Sierre
-Herisau
-Steffisburg
-Illnau-Effretikon
-Burgdorf 1
-Locarno 1
-Pratteln
-Ostermundigen
-Langenthal
-Opfikon
-Morges 1
-Binningen
-Cham
-Schlieren
-Schwyz
-Wohlen
-Einsiedeln
-Stäfa
-Arbon 1
-Thônex
-Liestal 1
-Küsnacht
-Horw
-Wallisellen
-Muri bei Bern
-Versoix
-Spiez
-Uzwil
-Meilen
-Brig-Glis
-Zollikon
-Küssnacht
-Richterswil
-Amriswil
-Ebikon
-Münchenstein
-Rüti
-Oftringen
-Delémont 1
-Lyss
-Worb
-Gland
-Rheinfelden 1
-Prilly
-Münsingen
-Buchs
-Altstätten 1
-Davos
-Bassersdorf
-Ecublens
-Ittigen
-Villars-sur-Glâne
-La Tour-de-Peilz 1
-Affoltern am Albis
-Zofingen
-Le Grand-Saconnex
-Arth
-Spreitenbach
-Oberwil
-Birsfelden
-Chêne-Bougeries
-Pfäffikon
-Le Locle
-Neuhausen am Rheinfall
-Aesch
-Männedorf
-Weinfelden
+ * Zürich 1
+ * Genf 1
+ * Basel 1
+ * Bern 1
+ * Lausanne 1
+ * Winterthur 1
+ * St. Gallen 1
+ * Luzern 1
+ * Lugano 1
+ * Biel/Bienne 1
+ * Thun 1
+ * Köniz
+ * La Chaux-de-Fonds 1
+ * Freiburg 1
+ * Schaffhausen 1
+ * Chur 1
+ * Neuenburg 1
+ * Vernier
+ * Uster
+ * Sion 1
+ * Lancy
+ * Emmen
+ * Rapperswil-Jona 1
+ * Kriens
+ * Yverdon-les-Bains 1
+ * Zug 1
+ * Montreux
+ * Dübendorf
+ * Dietikon
+ * Frauenfeld 1
+ * Baar
+ * Wetzikon
+ * Riehen
+ * Meyrin
+ * Wädenswil
+ * Carouge
+ * Wettingen
+ * Allschwil
+ * Renens
+ * Reinach
+ * Kreuzlingen
+ * Horgen
+ * Nyon 1
+ * Wil 1
+ * Vevey 1
+ * Kloten
+ * Bulle 1
+ * Baden 1
+ * Gossau
+ * Bellinzona 1
+ * Muttenz
+ * Onex
+ * Littau
+ * Olten 1
+ * Pully
+ * Bülach 1
+ * Thalwil
+ * Volketswil
+ * Monthey 1
+ * Adliswil
+ * Regensdorf
+ * Grenchen
+ * Aarau 1
+ * Freienbach
+ * Martigny 1
+ * Solothurn 1
+ * Sierre
+ * Herisau
+ * Steffisburg
+ * Illnau-Effretikon
+ * Burgdorf 1
+ * Locarno 1
+ * Pratteln
+ * Ostermundigen
+ * Langenthal
+ * Opfikon
+ * Morges 1
+ * Binningen
+ * Cham
+ * Schlieren
+ * Schwyz
+ * Wohlen
+ * Einsiedeln
+ * Stäfa
+ * Arbon 1
+ * Thônex
+ * Liestal 1
+ * Küsnacht
+ * Horw
+ * Wallisellen
+ * Muri bei Bern
+ * Versoix
+ * Spiez
+ * Uzwil
+ * Meilen
+ * Brig-Glis
+ * Zollikon
+ * Küssnacht
+ * Richterswil
+ * Amriswil
+ * Ebikon
+ * Münchenstein
+ * Rüti
+ * Oftringen
+ * Delémont 1
+ * Lyss
+ * Worb
+ * Gland
+ * Rheinfelden 1
+ * Prilly
+ * Münsingen
+ * Buchs
+ * Altstätten 1
+ * Davos
+ * Bassersdorf
+ * Ecublens
+ * Ittigen
+ * Villars-sur-Glâne
+ * La Tour-de-Peilz 1
+ * Affoltern am Albis
+ * Zofingen
+ * Le Grand-Saconnex
+ * Arth
+ * Spreitenbach
+ * Oberwil
+ * Birsfelden
+ * Chêne-Bougeries
+ * Pfäffikon
+ * Le Locle
+ * Neuhausen am Rheinfall
+ * Aesch
+ * Männedorf
+ * Weinfelden
