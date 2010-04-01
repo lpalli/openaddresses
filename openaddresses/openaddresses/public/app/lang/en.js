@@ -93,7 +93,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'The quality. If you use the web interface, this will be "Digitized".':'The quality. If you use the web interface, this will be "Digitized".',
     'The region. This can be a department, a state, a canton.':'The region. This can be a department, a state, a canton.',
     'The street name used by the persons living in this area.':'The street name used by the persons living in this area.',
-    'This project is a joint effort of several persons:':'This project is a joint effort of several persons: Stefi, Hans-J?rg, C?dric, Jeff, Jean-Luc, Luca, Lukas, Lars, Yves J., Yves ',
+    'This project is a joint effort of several persons:':'This project is a joint effort of several persons: Stefi, Hans-Jörg, Cédric, Jeff, Jean-Luc, Luca, Lukas, Lars, Yves J., Yves ',
     'Upload':'Upload',
     'User Validation':'User Validation',
     'Username':'Username',

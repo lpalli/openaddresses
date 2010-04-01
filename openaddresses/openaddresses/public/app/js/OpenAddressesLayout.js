@@ -796,6 +796,8 @@ openaddresses.layout = (function() {
                 }
             });
             this.modifyFeatureControl = new OpenLayers.Control.ModifyFeature(openaddresses.layout.map.drawingLayer);
+            //this.modifyFeatureControl.dragControl.handlers.feature.stopClick = false;
+            //this.modifyFeatureControl.dragControl.handlers.feature.stopDown = false;
             this.hoverControl = new openaddresses.hover({
                 handlerOptions: {
                     'delay': 100
