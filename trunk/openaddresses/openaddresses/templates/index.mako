@@ -76,7 +76,7 @@
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js"></script>
-   <script type="text/javascript" src="build/openaddresses.js?version=beta1.3"></script>
+   <script type="text/javascript" src="build/openaddresses.js?version=beta1.4"></script>
 
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

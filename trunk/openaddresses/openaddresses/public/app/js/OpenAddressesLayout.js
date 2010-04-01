@@ -446,7 +446,7 @@ openaddresses.layout = (function() {
                         },
                         {
                             title: OpenLayers.i18n('License'),
-                            html: '<a href="http://creativecommons.org/licenses/by-sa/3.0/" target="new">' + OpenLayers.i18n('OpenAddresses Data Licence') + '</a><li>' + OpenLayers.i18n('The addresses must be associated to the url of http://www.openaddresses.org.') + '</li><li>' + OpenLayers.i18n('The person or entity that submitted the data is stored in a field CREATED_BY.') + '</li><a href="http://www.opensource.org/licenses/gpl-3.0.html" target="new">' + OpenLayers.i18n('OpenAddresses Code Licence') + '</a>'
+                            html: '<a href="http://creativecommons.org/licenses/by-sa/2.0/" target="new">' + OpenLayers.i18n('OpenAddresses Data Licence') + '</a><li>' + OpenLayers.i18n('The addresses must be associated to the url of http://www.openaddresses.org.') + '</li><li>' + OpenLayers.i18n('The person or entity that submitted the data is stored in a field CREATED_BY.') + '</li><a href="http://www.opensource.org/licenses/gpl-3.0.html" target="new">' + OpenLayers.i18n('OpenAddresses Code Licence') + '</a>'
                         },
                         {
                             title: OpenLayers.i18n('About'),
