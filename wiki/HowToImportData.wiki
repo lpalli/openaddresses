@@ -2,8 +2,11 @@
 
 = Transfer from dev to prod =
 
- * scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/carolina/*.zip .
- * scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/* .
+{{{
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/carolina/*.zip .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/* .
+}}}
 = Situs Addresses for State of Arkansas =
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
@@ -130,7 +133,7 @@ update public.address set city = (select public.zipcode.city from public.zipcode
  * License: The database andthis README are copyright 2004 CivicSpace Labs, Inc., and are published under a Creative Commons Attribution-ShareAlike license, which requires that all updates must be released under the same license. See http://creativecommons.org/licenses/by-sa/2.0/ for more details.
 
 {{{
- * sudo su postgres
+sudo su postgres
 
 create table zipcode (
     zip char(5) primary key,
