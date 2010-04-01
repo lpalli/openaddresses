@@ -19,8 +19,6 @@ unzip *.zip
 
 shp2pgsql -s 4326 STRUC_SITUS_ADDRESS_PT_point arkansas > arkansas.sql
 
-sudo su postgres
-
 psql -d openaddresses -f arkansas.sql
 
 sudo su postgres 
