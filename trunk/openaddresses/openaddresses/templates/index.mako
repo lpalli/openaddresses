@@ -76,7 +76,7 @@
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js"></script>
-   <script type="text/javascript" src="build/openaddresses.js?version=beta1.5"></script>
+   <script type="text/javascript" src="build/openaddresses.js?version=beta1.6"></script>
 
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -97,6 +97,8 @@
    <script type="text/javascript" src="mfbase/mapfish/lang/zh_CN.js"></script>
    <script type="text/javascript" src="ext31/src/locale/ext-lang-zh_CN.js"></script>
    <script type="text/javascript" src="app/lang/zh_CN.js"></script>
+% elif c.lang == 'mk':
+   <script type="text/javascript" src="app/lang/mk.js"></script> 
 %else:
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
