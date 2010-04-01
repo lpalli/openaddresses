@@ -53,8 +53,6 @@ INSERT INTO address (
  * License validation: email from 4/30/2010
  * Import shapefile
 
- * To be done 10 times:
-
 {{{
 unzip NCMasterAddress_area01_shp.zip
 unzip NCMasterAddress_area02_shp.zip
@@ -121,7 +119,6 @@ INSERT INTO address (
 
  * Set zipcode
 
-  * North Carolina
 {{{
 update public.address set city = (select public.zipcode.city from public.zipcode where public.address.postcode = public.zipcode.zip and public.zipcode.zip is not null) where public.address.created_by = 'The State of NC'; 
 }}}
