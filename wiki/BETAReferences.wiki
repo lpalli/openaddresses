@@ -38,3 +38,5 @@ Found on the web during the launch:
   * http://www.gim-international.com/news/id4530-Community_Site_for_Free_and_Open_Addresses.html
   * http://www.sig-la-lettre.com/?30-03-2010-orgOpenAddresses-org-le
   * http://www.geoinweb.com/2010/03/31/geolocalisation-dadresses-openadresses-org/
+ * 1.04.2010
+  * http://openaddresses.posterous.com/
