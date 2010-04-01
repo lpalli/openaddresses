@@ -3,6 +3,7 @@
 = Transfer from dev to prod =
 
  * scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/carolina/*.zip .
+ * scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/* .
 = Situs Addresses for State of Arkansas =
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
@@ -52,11 +53,44 @@ INSERT INTO address (
  * To be done 10 times:
 
 {{{
-  * unzip NCMasterAddress_area01_shp.zip
-  * shp2pgsql -s 4326  NCMasterAddress_Area01 carolina1 > carolina1.sql
-  * psql -d openaddresses -h localhost -U postgres -f carolina1.sql
-  * sudo su postgres
-  * psql -d openadresses
+unzip NCMasterAddress_area01_shp.zip
+unzip NCMasterAddress_area02_shp.zip
+unzip NCMasterAddress_area03_shp.zip
+unzip NCMasterAddress_area04_shp.zip
+unzip NCMasterAddress_area05_shp.zip
+unzip NCMasterAddress_area06_shp.zip
+unzip NCMasterAddress_area07_shp.zip
+unzip NCMasterAddress_area08_shp.zip
+unzip NCMasterAddress_area09_shp.zip
+unzip NCMasterAddress_area10_shp.zip
+
+shp2pgsql -s 4326  NCMasterAddress_Area01 carolina1 > carolina1.sql
+shp2pgsql -s 4326  NCMasterAddress_Area02 carolina2 > carolina2.sql
+shp2pgsql -s 4326  NCMasterAddress_Area03 carolina3 > carolina3.sql
+shp2pgsql -s 4326  NCMasterAddress_Area04 carolina4 > carolina4.sql
+shp2pgsql -s 4326  NCMasterAddress_Area05 carolina5 > carolina5.sql
+shp2pgsql -s 4326  NCMasterAddress_Area06 carolina6 > carolina6.sql
+shp2pgsql -s 4326  NCMasterAddress_Area07 carolina7 > carolina7.sql
+shp2pgsql -s 4326  NCMasterAddress_Area08 carolina8 > carolina8.sql
+shp2pgsql -s 4326  NCMasterAddress_Area09 carolina9 > carolina9.sql
+shp2pgsql -s 4326  NCMasterAddress_Area10 carolina10 > carolina10.sql
+
+sudo su postgres
+
+psql -d openaddresses -f carolina1.sql
+psql -d openaddresses -f carolina2.sql
+psql -d openaddresses -f carolina3.sql
+psql -d openaddresses -f carolina4.sql
+psql -d openaddresses -f carolina5.sql
+psql -d openaddresses -f carolina6.sql
+psql -d openaddresses -f carolina7.sql
+psql -d openaddresses -f carolina8.sql
+psql -d openaddresses -f carolina9.sql
+psql -d openaddresses -f carolina10.sql
+
+
+sudo su postgres
+psql -d openadresses
 
 INSERT INTO address (
    housenumber,
@@ -74,12 +108,12 @@ INSERT INTO address (
       zip_code,
       'US',
       county,
-      'cgia.state.nc.us',
+      'The State of NC',
       now(),
       'http://www.openaddresses.org',
       'Donated',
       GeomFromEWKT('SRID=4326;POINT(' || address_lo || ' ' || address_la || ')') geom
-   FROM carolina1);
+   FROM carolinax);
 }}}
 
  * Set zipcode
@@ -108,7 +142,7 @@ create table zipcode (
     dst varchar(16)
 );
 
-COPY zipcode FROM '/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/zipcode.csv' WITH DELIMITER ',' CSV HEADER NULL AS '';
+COPY zipcode FROM '/home/admin/openaddresses/trunk/openaddresses/data/zipcode/zipcode.csv' WITH DELIMITER ',' CSV HEADER NULL AS '';
 
 create index zipcode_zip on zipcode USING btree(zip);
 }}}
