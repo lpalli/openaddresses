@@ -174,6 +174,34 @@ Weitere Informationen finden Sie in den folgenden Dokumenten:
 
 Vielen Dank für Ihr Interesse.
 
+==CA: www.openaddresses.org BETA en línia==
+
+Somieu amb adreces geolocalitzades lliures i obertes? O serveis de geolocalització i geolocalització inversa lliures i oberts? Doncs no cal que somieu més! Després de www.openaddresses.ch i www.openaddresses.at, s'ha llançat www.openaddresses.org per recopilar adreces localitzades de tot el món. Aquesta iniciativa de diverses persones, universitats i empreses d'Europa Central pretén proporcionar un portal web per a la gestió d'adreces lliures i obertes. L'objectiu de www.openaddresses.org és també col·laborar estretament amb www.openstreetmap.org a través de l'intercanvi de dades. A pesar d'això, com que les adreces geolocalitzades són un camp molt específic, considerem que és apropiat disposar d'una plataforma exclusiva.
+
+No dubteu en afegir les vostres adreces, adreces d'amics vostres i les d'amics dels vostres amics ;-). Si voleu formar part d'aquest esforç, també podeu proporcionar llistats d'adreces, ortofotos o qualsevol dada que considereu útil. També busquem persones que vulguin participar en la traducció, administració de sistemes, testeig, comunicacions, etc.
+
+Trobareu més informació en els documents següents:
+  *[http://code.google.com/p/openaddresses/wiki/FAQ Preguntes freqüents]
+  *[http://code.google.com/p/openaddresses/wiki/UserGuideEs Guia de l'usuari]
+  *[http://code.google.com/p/openaddresses/ Wiki]
+  *[http://groups.google.com/group/OpenAddresses Grup de discussió]
+
+Gràcies pel vostre interès.
+
+==ES: www.openaddresses.org BETA en línea==
+
+Soñáis con direcciones geolocalizadas libres y abiertas? O servicios de geolocalización y  geolocalización inversa libres y abiertos? Pues no soñéis más! Después de www.openaddresses.ch y www.openaddresses.at, se ha lanzado www.openaddresses.org para recopilar direcciones localizadas de todo el mundo. Esta iniciativa de diferentes personas, universidades y empresas de Europa Central pretende proporcionar un portal web para la gestión de direcciones libres y abiertas. El objetivo de  www.openaddresses.org es también colaborar estrechamente con www.openstreetmap.org a través del intercambio de datos. A pesar de esto, ya que las direcciones geolocalizadas son un campo muy específico, consideramos que es apropiado disponer de una plataforma exclusiva.
+
+No dudéis en añadir vuestras direcciones, las direcciones de vuestros amigos y las de los amigos de vuestros amigos ;-). Si queréis formar parte de esto esfuerzo, también podéis proporcionar listados de direcciones, ortofotos o cualquier dato que consideréis útil. También buscamos personas que quieran participar en la traducción, administración de sistemas, testeig, comunicaciones, etc.
+
+Encontraréis más información en los documentos siguientes:
+  *[http://code.google.com/p/openaddresses/wiki/FAQ Preguntas frecuentes]
+  *[http://code.google.com/p/openaddresses/wiki/UserGuideEs Guía del usuario]
+  *[http://code.google.com/p/openaddresses/ Wiki]
+  *[http://groups.google.com/group/OpenAddresses Grupo de discusión]
+
+Gracias por vuestro interés.
+
 
 = Short Article = 
 
