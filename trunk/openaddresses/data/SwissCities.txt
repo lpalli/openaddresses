@@ -1,0 +1,133 @@
+1.	Zürich 1	343'869	337'900	347'517	365'132	 Zürich
+2.	Genf 1	173'549	174'999	178'722	183'287	 Genf
+3.	Basel 1	174'007	166'009	163'930	164'937	 Basel-Stadt
+4.	Bern 1	127'469	122'484	122'178	122'925	 Bern
+5.	Lausanne 1	115'878	114'889	117'388	122'284	 Waadt
+6.	Winterthur 1	87'654	88'767	93'546	98'238	 Zürich
+7.	St. Gallen 1	71'877	69'836	70'316	72'040	 St. Gallen
+8.	Luzern 1	58'847	57'023	57'533	59'241	 Luzern
+9.	Lugano 1	26'000	25'872	49'223	54'437	 Tessin
+10.	Biel/Bienne 1	50'733	48'840	48'735	50'013	 Bern
+11.	Thun 1	39'094	39'981	41'138	42'129	 Bern
+12.	Köniz	36'335	37'196	37'250	37'974	 Bern
+13.	La Chaux-de-Fonds 1	37'375	36'747	36'809	37'240	 Neuenburg
+14.	Freiburg 1	32'501	31'691	33'008	34'084	 Freiburg
+15.	Schaffhausen 1	34'073	33'274	33'569	34'076	 Schaffhausen
+16.	Chur 1	30'091	31'310	32'409	32'957	 Graubünden
+17.	Neuenburg 1	31'768	31'639	32'117	32'592	 Neuenburg
+18.	Vernier	28'423	28'727	30'020	31'756	 Genf
+19.	Uster	26'139	27'893	29'855	31'406	 Zürich
+20.	Sion 1	26'065	27'145	28'510	29'304	 Wallis
+21.	Lancy	25'043	25'479	26'905	27'933	 Genf
+22.	Emmen	26'746	26'628	26'906	27'579	 Luzern
+23.	Rapperswil-Jona 1	15'742	16'733	17'689	26'034	 St. Gallen
+24.	Kriens	24'156	24'394	25'336	25'893	 Luzern
+25.	Yverdon-les-Bains 1	23'234	23'144	24'415	25'815	 Waadt
+26.	Zug 1	22'778	22'710	24'179	25'778	 Zug
+27.	Montreux	20'982	21'969	23'023	24'520	 Waadt
+28.	Dübendorf	20'906	22'011	22'707	23'852	 Zürich
+29.	Dietikon	20'953	21'060	22'178	22'954	 Zürich
+30.	Frauenfeld 1	20'359	21'620	22'058	22'665	 Thurgau
+31.	Baar	17'053	19'166	20'843	21'524	 Zug
+32.	Wetzikon	17'091	18'097	19'417	20'276	 Zürich
+33.	Riehen	20'602	20'480	20'472	20'549	 Basel-Stadt
+34.	Meyrin	20'029	18'890	19'661	20'329	 Genf
+35.	Wädenswil	19'241	19'122	19'378	19'913	 Zürich
+36.	Carouge	16'557	17'160	18'884	19'721	 Genf
+37.	Wettingen	17'795	17'739	18'318	19'430	 Aargau
+38.	Allschwil	18'569	18'207	18'158	19'013	 Basel-Landschaft
+39.	Renens	17'104	17'128	18'136	18'982	 Waadt
+40.	Reinach	17'770	18'441	18'536	18'714	 Basel-Landschaft
+41.	Kreuzlingen	17'971	16'714	17'691	18'526	 Thurgau
+42.	Horgen	16'520	17'286	17'909	18'431	 Zürich
+43.	Nyon 1	15'402	15'964	17'235	18'269	 Waadt
+44.	Wil 1	16'102	16'198	17'015	17'678	 St. Gallen
+45.	Vevey 1	15'671	15'420	16'664	17'676	 Waadt
+46.	Kloten	15'913	16'507	17'070	17'504	 Zürich
+47.	Bulle 1	10'144	10'970	12'411	17'494	 Freiburg
+48.	Baden 1	15'756	15'945	16'295	17'446	 Aargau
+49.	Gossau	16'429	16'788	17'020	17'314	 St. Gallen
+50.	Bellinzona 1	17'331	16'757	16'880	17'286	 Tessin
+51.	Muttenz	16'756	16'642	16'845	17'119	 Basel-Landschaft
+52.	Onex	16'059	16'419	17'167	17'108	 Genf
+53.	Littau	15'545	15'699	16'160	16'915	 Luzern
+54.	Olten 1	17'070	16'434	16'633	16'874	 Solothurn
+55.	Pully	15'826	16'005	16'500	16'836	 Waadt
+56.	Bülach 1	13'658	13'922	14'878	16'774	 Zürich
+57.	Thalwil	15'344	15'771	16'347	16'631	 Zürich
+58.	Volketswil	12'869	14'061	15'174	16'348	 Zürich
+59.	Monthey 1	13'960	14'102	15'476	16'302	 Wallis
+60.	Adliswil	15'563	15'433	15'710	16'052	 Zürich
+61.	Regensdorf	13'571	14'616	15'538	16'040	 Zürich
+62.	Grenchen	16'249	15'973	15'839	15'921	 Solothurn
+63.	Aarau 1	15'918	15'282	15'454	15'753	 Aargau
+64.	Freienbach	11'952	13'089	14'629	15'681	 Schwyz
+65.	Martigny 1	14'161	13'841	14'973	15'635	 Wallis
+66.	Solothurn 1	15'353	15'074	15'079	15'623	 Solothurn
+67.	Sierre	13'987	14'114	15'123	15'574	 Wallis
+68.	Herisau	16'154	15'799	15'245	15'450	 Appenzell Ausserrhoden
+69.	Steffisburg	13'619	14'140	15'122	15'379	 Bern
+70.	Illnau-Effretikon	14'427	14'433	15'056	15'338	 Zürich
+71.	Burgdorf 1	14'498	14'416	14'796	15'238	 Bern
+72.	Locarno 1	14'556	14'465	14'556	15'123	 Tessin
+73.	Pratteln	15'318	14'910	14'845	15'088	 Basel-Landschaft
+74.	Ostermundigen	15'797	15'202	14'886	15'031	 Bern
+75.	Langenthal	14'578	14'325	14'294	14'777	 Bern
+76.	Opfikon	11'426	11'846	12'912	14'675	 Zürich
+77.	Morges 1	12'892	13'754	13'984	14'615	 Waadt
+78.	Binningen	13'868	13'953	14'243	14'490	 Basel-Landschaft
+79.	Cham	12'054	13'145	13'791	14'259	 Zug
+80.	Schlieren	12'809	12'825	13'339	14'234	 Zürich
+81.	Schwyz	13'616	13'899	14'310	14'183	 Schwyz
+82.	Wohlen	12'892	13'223	14'035	14'120	 Aargau
+83.	Einsiedeln	11'691	12'470	13'370	14'022	 Schwyz
+84.	Stäfa	10'666	11'469	12'787	13'616	 Zürich
+85.	Arbon 1	13'357	13'144	12'853	13'427	 Thurgau
+86.	Thônex	11'134	12'398	13'092	13'340	 Genf
+87.	Liestal 1	12'353	12'695	13'052	13'289	 Basel-Landschaft
+88.	Küsnacht	12'317	12'375	12'980	13'283	 Zürich
+89.	Horw	11'672	12'267	12'431	12'986	 Luzern
+90.	Wallisellen	11'206	11'670	12'429	12'817	 Zürich
+91.	Muri bei Bern	12'627	12'477	12'458	12'752	 Bern
+92.	Versoix	9'490	10'796	11'868	12'636	 Genf
+93.	Spiez	11'320	11'869	12'339	12'453	 Bern
+94.	Uzwil	11'356	11'955	12'074	12'410	 St. Gallen
+95.	Meilen	10'855	11'429	11'794	12'194	 Zürich
+96.	Brig-Glis	11'356	11'846	12'029	12'162	 Wallis
+97.	Zollikon	11'331	11'542	11'861	12'154	 Zürich
+98.	Küssnacht	10'475	10'944	11'636	11'987	 Schwyz
+99.	Richterswil	9'821	10'461	11'388	11'920	 Zürich
+100.	Amriswil	10'972	11'227	11'515	11'788	 Thurgau
+101.	Ebikon	11'303	11'091	11'491	11'750	 Luzern
+102.	Münchenstein	11'572	11'573	11'588	11'736	 Basel-Landschaft
+103.	Rüti	10'708	10'807	11'376	11'678	 Zürich
+104.	Oftringen	9'978	10'220	10'635	11'665	 Aargau
+105.	Delémont 1	11'856	11'315	11'276	11'454	 Jura
+106.	Lyss	10'032	10'641	10'908	11'423	 Bern
+107.	Worb	11'100	10'779	11'137	11'359	 Bern
+108.	Gland	8'230	9'700	10'625	11'324	 Waadt
+109.	Rheinfelden 1	10'205	10'566	10'859	11'206	 Aargau
+110.	Prilly	10'682	10'488	10'672	11'058	 Waadt
+111.	Münsingen	9'594	10'421	10'974	11'023	 Bern
+112.	Buchs	10'214	10'272	10'547	10'954	 St. Gallen
+113.	Altstätten 1	10'293	10'283	10'547	10'777	 St. Gallen
+114.	Davos	11'232	12'013	10'817	10'762	 Graubünden
+115.	Bassersdorf	6'808	7'373	9'314	10'755	 Zürich
+116.	Ecublens	9'694	9'711	10'302	10'747	 Waadt
+117.	Ittigen	10'836	10'997	10'839	10'737	 Bern
+118.	Villars-sur-Glâne	8'584	9'010	9'992	10'733	 Freiburg
+119.	La Tour-de-Peilz 1	10'182	10'118	10'474	10'681	 Waadt
+120.	Affoltern am Albis	9'351	9'933	10'176	10'630	 Zürich
+121.	Zofingen	8'513	8'601	10'228	10'580	 Aargau
+122.	Le Grand-Saconnex	7'134	8'269	9'736	10'565	 Genf
+123.	Arth	9'288	9'963	9'925	10'480	 Schwyz
+124.	Spreitenbach	8'797	9'045	9'982	10'465	 Aargau
+125.	Oberwil	8'843	9'433	9'962	10'323	 Basel-Landschaft
+126.	Birsfelden	11'049	10'243	10'240	10'294	 Basel-Landschaft
+127.	Chêne-Bougeries	9'624	9'709	10'061	10'291	 Genf
+128.	Pfäffikon	8'947	9'332	9'951	10'291	 Zürich
+129.	Le Locle	10'977	10'349	10'226	10'204	 Neuenburg
+130.	Neuhausen am Rheinfall	10'626	10'062	9'880	10'098	 Schaffhausen
+131.	Aesch	9'555	9'801	9'880	10'043	 Basel-Landschaft
+132.	Männedorf	7'699	8'244	9'582	10'015	 Zürich
+133.	Weinfelden	9'301	9'366	9'519	10'006	 Thurgau
