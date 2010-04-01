@@ -22,7 +22,7 @@ Ext.namespace('openaddresses');
 openaddresses.languages = [
     /*['af', 'Afrikaans', 'ISO-8859-2'],
      ['bg', 'Bulgarian', 'utf-8'],*/
-     ['ca', 'Catalonian', 'utf-8'],/*
+     ['ca', 'Català', 'utf-8'],/*
      ['hr', 'Croatian', 'utf-8'],
      ['cs', 'Czech', 'utf-8'],
      ['da', 'Danish', 'utf-8'],
