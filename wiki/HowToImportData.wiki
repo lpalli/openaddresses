@@ -12,10 +12,13 @@
  * Import shapefile
 
 {{{
- * unzip *.zip
- * shp2pgsql -s 4326 STRUC_SITUS_ADDRESS_PT_point arkansas > arkansas.sql
- * psql -d openaddresses -h localhost -U postgres -f arkansas.sql
- * psql -d openaddresses
+unzip *.zip
+
+shp2pgsql -s 4326 STRUC_SITUS_ADDRESS_PT_point arkansas > arkansas.sql
+
+sudo su postgres
+
+psql -d openaddresses -f arkansas.sql
 
 INSERT INTO address (
    housenumber,
