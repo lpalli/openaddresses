@@ -1,5 +1,8 @@
 <wiki:toc max_depth="2" />
 
+= Transfer from dev to prod =
+
+ * scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/carolina/*.zip .
 = Situs Addresses for State of Arkansas =
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
