@@ -1,0 +1,41 @@
+= Donation: Top Ten Reasons =
+
+<wiki:toc max_depth="2" />
+
+== Navigate for free ==
+
+When you buy a GPS device, an important part of the price is due to the price of the data stored inside. If addresses are free and open, the price of the GPS devices will be reduced.
+
+== Pay less taxes ==
+
+Several address datasets are managed by administrations. This has a cost. If a dataset would be managed by an entire community, the administrations could handle other tasks.
+
+== Spatial information is a key success ==
+
+For companies, governments or private persons, the spatial information allows to make powerful analysis. Typically, companies can make geomarketing analysis, governments can make geostatistics, private persons can search locations. The adress is the base information for a large amount of spatial analysis.
+
+== Solidarity ==
+
+Think that if you provide an address in your area, you could maybe use an address provided by someone else on the other side of the earth.
+
+== Address search is used by everyon ==
+
+Who has never searched for an address ? NOBODY. We all need addresses and unfortunately, it's difficult to access them or they are provided by advertisement companies that have other ideas in mind.
+
+== Geocoding ==
+
+OpenAddresses provide geocoding functions.
+
+== Reverse geocoding ==  
+
+OpenAddresses provide reverse geocoding functions.
+
+== You don't want to buy a license or have a maintenance contract ==
+
+== You want to have a free navigation system ==
+
+Together with OSM, it's possible to build free and open navigation systems.
+
+== You believe in freedom ==
+
+The possibility to move where you want is one the freedom aspect. To know where you go, you need geolocated addresses !
