@@ -481,8 +481,7 @@ openaddresses.layout = (function() {
             map: map,
             loadingText: OpenLayers.i18n('Search in OpenAddresses...'),
             emptyText: OpenLayers.i18n('Search location in OpenAddresses'),
-            renderTo: 'OpenAddressesSearch',
-            url: 'http://127.0.0.1:5000/addresses/fullTextSearch?'
+            renderTo: 'OpenAddressesSearch'
         });
     };
 
