@@ -588,7 +588,9 @@ openaddresses.layout = (function() {
                 var bboxminy = lonlat.lat - 200;
                 var bboxmaxx = lonlat.lon + 200;
                 var bboxmaxy = lonlat.lat + 200;
-                window.open("http://map.housing-stat.ch/index.php?reset_session&recenter_bbox=" + bboxminx + "," + bboxminy + "," + bboxmaxx + "," + bboxmaxy);
+                if (bboxminx >  480000 && bboxminx < 835000 && bboxminy > 70000 &&  bboxmaxy < 298000) {
+                    window.open("http://map.housing-stat.ch/index.php?reset_session&recenter_bbox=" + bboxminx + "," + bboxminy + "," + bboxmaxx + "," + bboxmaxy);
+                }
             };
         }
     };
