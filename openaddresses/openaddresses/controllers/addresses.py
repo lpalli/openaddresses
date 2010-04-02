@@ -219,7 +219,7 @@ class AddressesController(BaseController):
        rowsDict.update(features=featuresArray)
 
        if 'callback' in request.params:
-          response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
+          response.headers['Content-Type'] = 'text/javascript'
           return request.params['callback'] + '(' + json_dumps(rowsDict) + ');'
        else:
           response.headers['Content-Type'] = 'application/json'
