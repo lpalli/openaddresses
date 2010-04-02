@@ -25,6 +25,7 @@
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 <div id="MouseOver" style="display: none;"></div>
+<div id="OpenAddressesSearch" style="position: absolute; left: 380px; top: 25px; width: 350px;"></div>
 <div id="OpacitySlider"></div>
 <div id="loading-mask" style=""></div>
 <div id="loading">
@@ -52,6 +53,7 @@
    <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js"></script>
    <script type="text/javascript" src="geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js"></script>
    <script type="text/javascript" src="geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js"></script>
+   <script type="text/javascript" src="geoext-ux-dev/OpenAddressesSearchCombo/lib/GeoExt.ux.openaddresses/OpenAddressesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script> 
@@ -76,7 +78,7 @@
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js"></script>
-   <script type="text/javascript" src="build/openaddresses.js?version=beta1.6"></script>
+   <script type="text/javascript" src="build/openaddresses.js?version=beta1.8"></script>
 
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

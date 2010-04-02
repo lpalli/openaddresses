@@ -110,7 +110,6 @@ CREATE FUNCTION update_address() RETURNS OPAQUE AS '
     QUALITY,
     REFERENCE,
     GEOM,
-    GEOM1,
     ARCHIVE_DATE,
     ARCHIVE_TYPE
 	)
@@ -132,7 +131,6 @@ CREATE FUNCTION update_address() RETURNS OPAQUE AS '
          OLD.QUALITY,
          OLD.REFERENCE,
          OLD.GEOM,
-         OLD.GEOM1,
          NOW(),
          TG_OP
        );
@@ -163,7 +161,6 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
     QUALITY,
     REFERENCE,
     GEOM,
-    GEOM1,
     ARCHIVE_DATE,
     ARCHIVE_TYPE
 	)
@@ -185,7 +182,6 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
          OLD.QUALITY,
          OLD.REFERENCE,
          OLD.GEOM,
-         OLD.GEOM1,
          NOW(),
          TG_OP
        );
@@ -222,7 +218,6 @@ CREATE TRIGGER delete_address
 
 #TODO
 DROP TRIGGER update_insert_address_geometry on address cascade;
-DROP TRIGGER update_address on address cascade;
 
 CREATE TRIGGER update_insert_address_geometry
     BEFORE UPDATE OR INSERT ON address
@@ -230,7 +225,7 @@ CREATE TRIGGER update_insert_address_geometry
     EXECUTE PROCEDURE update_insert_address_geometry();
 
 # update address set geom=geom;
-
+DROP TRIGGER update_address on address cascade;
 CREATE TRIGGER update_address
     AFTER UPDATE ON address
     FOR EACH ROW

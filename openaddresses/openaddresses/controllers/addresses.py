@@ -195,6 +195,7 @@ class AddressesController(BaseController):
        featuresArray = []
        for row in rows:
           columnCount = 0
+          displayText = ''
           featureDict = {}
           featureDict.update(type='Feature')
           featurePropertiesDict = {}
@@ -206,7 +207,9 @@ class AddressesController(BaseController):
                 geojson = geojson_dumps(coordinates)
              else:
                 featurePropertiesDict.update({'' + fieldName + '': column})
+                displayText = displayText + column + ' '
              columnCount = columnCount + 1
+          featurePropertiesDict.update({'displayText': displayText.rstrip().lstrip()})
           featureDict.update(properties=featurePropertiesDict)
           if 'geojson' in locals():
              featureDict.update(geometry=eval(geojson))
