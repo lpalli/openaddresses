@@ -77,7 +77,7 @@ C:\Windows\system32>c:
 
 C:\Windows\system32>cd "\Program Files\PostgreSQL\8.4\bin"
 
-C:\Program Files\PostgreSQL\8.4\bin>initdb -D "c:\Program Files\PostgreSQL\8.4\data" -E UTF8
+C:\Program Files\PostgreSQL\8.4\bin>initdb -D "c:\Program Files\PostgreSQL\8.4\dataPostgis" -E UTF8
 }}}
 Les fichiers de ce cluster appartiendront à l'utilisateur « postgres ».
 Le processus serveur doit également lui appartenir.
@@ -115,19 +115,19 @@ Cela peut être modifié par l'édition de pg_hba.conf ou en utilisant l'option
 Succès. Vous pouvez maintenant lancer le serveur de bases de données par :
 
 {{{
-    "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
+    "postgres" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis"
 }}}
 ou
 {{{
-    "pg_ctl" -D "c:/Program Files/PostgreSQL/8.4/data" -l journal_applicatif start
+    "pg_ctl" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis" -l journal_applicatif start
 }}}
 
 
 C:\Program Files\PostgreSQL\8.4\bin>
 
- * Postgres can be started with: "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
+ * Postgres can be started with: "postgres" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis"
 
- * Register a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" register -N postgresql -D "C:\Program Files\PostgreSQL\8.4\data" -l "C:\Program Files\PostgreSQL\8.4\log" 
+ * Register a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" register -N postgresql -D "C:\Program Files\PostgreSQL\8.4\dataPostgis" -l "C:\Program Files\PostgreSQL\8.4\log" 
 
  * Unregister a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" unregister -N postgresql 
 
@@ -136,7 +136,7 @@ C:\Program Files\PostgreSQL\8.4\bin>
 
  1. runas /user:postgres cmd
  1. cd "\Program Files\PostgreSQL\8.4\bin"
- 1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/data"
+ 1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis"
  1. Start pgAdminIII to check that database is working
 
 == Create database ==
