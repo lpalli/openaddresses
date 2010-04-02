@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+import time
 
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
@@ -60,6 +61,7 @@ class HomeController(BaseController):
         lang = str(get_lang())
         c.lang = self.current_lang = lang[3:5]
         c.charset = self.charset
+        c.versionTime = time.clock()
 
         c.available_languages = self.getAvailableLanguages()
 
