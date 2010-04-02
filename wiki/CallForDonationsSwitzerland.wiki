@@ -2,16 +2,16 @@
 
 Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
 
- * Zürich 1
+ * Zürich https://www.stadt-zuerich.ch/content/ted/de/index/geoz/gis_zentrum/jcr:content/contextparsys/kontakt/form.popup.html
  * Genf 1
- * Basel 1
+ * Basel gva at bs.ch
  * Bern 1
- * Lausanne 1
- * Winterthur 1
+ * Lausanne cadastre at lausanne.ch
+ * Winterthur daniel.kofmel at win.ch
  * St. Gallen 1
  * Luzern 1
  * Lugano 1
- * Biel/Bienne 1
+ * Biel/Bienne directiondestravauxpublics at biel-bienne.ch
  * Thun 1
  * Köniz
  * La Chaux-de-Fonds 1
