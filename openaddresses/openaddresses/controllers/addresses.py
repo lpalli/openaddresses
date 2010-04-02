@@ -207,7 +207,8 @@ class AddressesController(BaseController):
                 geojson = geojson_dumps(coordinates)
              else:
                 featurePropertiesDict.update({'' + fieldName + '': column})
-                displayText = displayText + column + ' '
+                if column is not None:
+                   displayText = displayText + column + ' '
              columnCount = columnCount + 1
           featurePropertiesDict.update({'displayText': displayText.rstrip().lstrip()})
           featureDict.update(properties=featurePropertiesDict)
