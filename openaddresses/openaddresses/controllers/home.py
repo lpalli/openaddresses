@@ -61,7 +61,7 @@ class HomeController(BaseController):
         lang = str(get_lang())
         c.lang = self.current_lang = lang[3:5]
         c.charset = self.charset
-        c.versionTime = time.clock()
+        c.versionTime = time.time()
 
         c.available_languages = self.getAvailableLanguages()
 
