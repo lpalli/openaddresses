@@ -479,6 +479,7 @@ openaddresses.layout = (function() {
     var createOpenAddressesSearchCombo = function(map) {
         return new GeoExt.ux.openaddresses.OpenAddressesSearchCombo({
             map: map,
+            zoom: 17,
             loadingText: OpenLayers.i18n('Search in OpenAddresses...'),
             emptyText: OpenLayers.i18n('Search address in OpenAddresses'),
             renderTo: 'OpenAddressesSearch'
