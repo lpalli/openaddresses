@@ -2,6 +2,8 @@
 
 <wiki:toc max_depth="2" />
 
+This page presents ten reasons in favor of the donation of addresses to the community.
+
 == 1. Spatial information is a key success ==
 
 For companies, governments or private persons, the spatial information allows to make powerful analysis. Typically, companies can make geomarketing analysis, governments can make geostatistics, private persons can search for locations. The adress is the base information for a large amount of spatial analysis.International studies have shown that there is a huge potential in spatial data for economic growth[http://www.crcsi.com.au/uploads/publications/PUBLICATION_324.pdf]. The adress is the base information for a large amount of spatial analysis.If this data are free it unleashes a potential of innovation and creativity that has not been possible yet. Think of GPS: everybody uses it for free! If the US had not provided this service for free a lot of what we take for granted today would not be reality!
@@ -41,8 +43,6 @@ The possibility to move where you want is one the freedom aspect. To know where 
 == 10. Pay less taxes ==
 
 Several address datasets are managed by administrations. This implies a cost. If a dataset would be managed by an entire community, the administration-costs go down and administration can focus on other issues.
-
-
 
 
 
