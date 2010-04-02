@@ -480,7 +480,7 @@ openaddresses.layout = (function() {
         return new GeoExt.ux.openaddresses.OpenAddressesSearchCombo({
             map: map,
             loadingText: OpenLayers.i18n('Search in OpenAddresses...'),
-            emptyText: OpenLayers.i18n('Search location in OpenAddresses'),
+            emptyText: OpenLayers.i18n('Search address in OpenAddresses'),
             renderTo: 'OpenAddressesSearch'
         });
     };
