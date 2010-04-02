@@ -54,6 +54,7 @@
  * @include app/js/OpenAddressesHover.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
+ * @include geoext-ux-dev/OpenAddressesSearchComb/lib/GeoExt.ux.openaddresses/OpenAddressesSearchCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
 
@@ -475,6 +476,16 @@ openaddresses.layout = (function() {
         });
     };
 
+    var createOpenAddressesSearchCombo = function(map) {
+        return new GeoExt.ux.openaddresses.OpenAddressesSearchCombo({
+            map: map,
+            loadingText: OpenLayers.i18n('Search in OpenAddresses...'),
+            emptyText: OpenLayers.i18n('Search location in OpenAddresses'),
+            renderTo: 'OpenAddressesSearch',
+            url: 'http://127.0.0.1:5000/addresses/fullTextSearch?'
+        });
+    };
+
     var setLangPermalink = function(languageStore, languageCombo) {
         var params = Ext.urlDecode(window.location.search.substring(1));
         if (!$('lang')) {
@@ -852,13 +863,13 @@ openaddresses.layout = (function() {
             //this.buildingControl.activate();
 
             var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
+            var openAddressesSearchCombo = createOpenAddressesSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
             var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
-
-
+            
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
             this.map.events.register('zoomend', this, function(record) {
