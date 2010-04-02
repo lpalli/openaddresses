@@ -2,42 +2,56 @@
 
 <wiki:toc max_depth="2" />
 
-== # Navigate for free ==
+== 1. Spatial information is a key success ==
 
-When you buy a GPS device, an important part of the price is due to the price of the data stored inside. If addresses are free and open, the price of the GPS devices will be reduced.
+For companies, governments or private persons, the spatial information allows to make powerful analysis. Typically, companies can make geomarketing analysis, governments can make geostatistics, private persons can search for locations. The adress is the base information for a large amount of spatial analysis.International studies have shown that there is a huge potential in spatial data for economic growth[http://www.crcsi.com.au/uploads/publications/PUBLICATION_324.pdf]. The adress is the base information for a large amount of spatial analysis.If this data are free it unleashes a potential of innovation and creativity that has not been possible yet. Think of GPS: everybody uses it for free! If the US had not provided this service for free a lot of what we take for granted today would not be reality!
 
-== Pay less taxes ==
+== 2. Address search is used by everyone ==
 
-Several address datasets are managed by administrations. This has a cost. If a dataset would be managed by an entire community, the administrations could handle other tasks.
+Who has never searched for an address ? NOBODY. We all need addresses and unfortunately, it's difficult to access them or they are provided by advertisement companies that have other ideas in mind and you are always dependent on their websites or services.
 
-== Spatial information is a key success ==
+== 3. Geocoding ==
 
-For companies, governments or private persons, the spatial information allows to make powerful analysis. Typically, companies can make geomarketing analysis, governments can make geostatistics, private persons can search locations. The adress is the base information for a large amount of spatial analysis.
+!OpenAddresses provides geocoding functions that you can freely use and implement in your own solutions.
 
-== Solidarity ==
+== 4. Reverse geocoding ==  
 
-Think that if you provide an address in your area, you could maybe use an address provided by someone else on the other side of the earth.
+!OpenAddresses provides reverse geocoding functions that you can freely use and implement in your own solutions.
 
-== Address search is used by everyone ==
-
-Who has never searched for an address ? NOBODY. We all need addresses and unfortunately, it's difficult to access them or they are provided by advertisement companies that have other ideas in mind.
-
-== Geocoding ==
-
-!OpenAddresses provides geocoding functions that you can freely use.
-
-== Reverse geocoding ==  
-
-!OpenAddresses provides reverse geocoding functions that you can freely use.
-
-== You don't want to buy a license or have a maintenance contract ==
+== 5. You don't want to buy a license or have a maintenance contract ==
 
 Do you ?
 
-== You want to have a free navigation system ==
+== 6. Solidarity ==
+
+Think that if you provide an address in your area, you could maybe use an address provided by someone else on the other side of the earth.
+
+== 7. Navigate for free ==
+
+When you buy a navigation system, an important part of the price is due to the price of the data stored inside. If addresses are free and open, the price of the navigation systems will be reduced.
+
+== 8. You want to have a free navigation system ==
 
 Together with OSM, it's possible to build free and open navigation systems.
 
-== You believe in freedom ==
+== 9. You believe in freedom ==
 
 The possibility to move where you want is one the freedom aspect. To know where you go, you need geolocated addresses !
+
+== 10. Pay less taxes ==
+
+Several address datasets are managed by administrations. This implies a cost. If a dataset would be managed by an entire community, the administration-costs go down and administration can focus on other issues.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
