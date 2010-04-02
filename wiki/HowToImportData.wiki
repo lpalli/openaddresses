@@ -151,3 +151,25 @@ COPY zipcode FROM '/home/admin/openaddresses/trunk/openaddresses/data/zipcode/zi
 
 create index zipcode_zip on zipcode USING btree(zip);
 }}}
+
+= World countries =
+
+ * Data origin: http://www.gadm.org/
+ * Contact person: ?
+ * License validation: This dataset is freely available for academic and other non-commercial use. Redistribution, or commercial use, is not allowed without prior permission.
+ * Import shapefile
+
+{{{
+shp2pgsql -s 4326  gadm1_lev0 country > country.sql
+
+sudo su postgres
+
+psql -d openaddresses -f country.sql
+
+psql -d openaddresses
+
+CREATE INDEX idx_country_geom
+  ON country
+  USING gist
+  (the_geom);
+}}}
