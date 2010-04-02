@@ -71,13 +71,13 @@
 
 % else:
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
-   <script type="text/javascript" src="ext31/adapter/ext/ext-base.js"></script>
-   <script type="text/javascript" src="ext31/ext-all.js"></script>
-   <script type="text/javascript" src="ext31/examples/ux/ux-all.js"></script>
-   <script type="text/javascript" src="proj4js/lib/proj4js-compressed.js"></script>
-   <script type="text/javascript" src="proj4js/lib/projCode/merc.js"></script>
-   <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js"></script>
-   <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js"></script>
+   <script type="text/javascript" src="ext31/adapter/ext/ext-base.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext31/ext-all.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext31/examples/ux/ux-all.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="proj4js/lib/proj4js-compressed.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="proj4js/lib/projCode/merc.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="build/openaddresses.js?version=${c.versionTime}"></script>
 
     <script type="text/javascript">
@@ -95,17 +95,17 @@
 % endif
 
 % if c.lang == 'zh':
-   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/zh-CN.js"></script>
-   <script type="text/javascript" src="mfbase/mapfish/lang/zh_CN.js"></script>
-   <script type="text/javascript" src="ext31/src/locale/ext-lang-zh_CN.js"></script>
-   <script type="text/javascript" src="app/lang/zh_CN.js"></script>
+   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/zh-CN.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="mfbase/mapfish/lang/zh_CN.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext31/src/locale/ext-lang-zh_CN.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="app/lang/zh_CN.js?version=${c.versionTime}"></script>
 % elif c.lang == 'mk':
-   <script type="text/javascript" src="app/lang/mk.js"></script> 
+   <script type="text/javascript" src="app/lang/mk.js?version=${c.versionTime}"></script>
 %else:
-   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js"></script>
-   <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js"></script>
-   <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js"></script>
-   <script type="text/javascript" src="app/lang/${c.lang}.js"></script>
+   <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="app/lang/${c.lang}.js?version=${c.versionTime}"></script>
 % endif
 
 </body>
