@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-== Navigate for free ==
+== # Navigate for free ==
 
 When you buy a GPS device, an important part of the price is due to the price of the data stored inside. If addresses are free and open, the price of the GPS devices will be reduced.
 
