@@ -6,6 +6,8 @@
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/carolina/*.zip .
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/country/* .
 }}}
 = Situs Addresses for State of Arkansas =
 
