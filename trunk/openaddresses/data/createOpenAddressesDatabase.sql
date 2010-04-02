@@ -350,6 +350,7 @@ tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', 
 
 create index address_postcode on address USING btree(postcode);
 create index address_created_by on address USING btree(created_by);
+create index address_country on address USING btree(country);
 
 
 #  ****************************************************************
@@ -428,6 +429,19 @@ update address set street = replace(street,'\x1A','') where street ilike '%\x1A%
 # /usr/lib/postgresql/8.4/bin/pg_dump -C -f openaddresses.backup -p 5432 openaddresses
 # /usr/lib/postgresql/8.4/bin/pg_restore -C -f openaddresses.backup -p 5433
 # /usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433
+
+
+#  ****************************************************************
+#  DATA CHECK
+#  ****************************************************************
+
+select count(1) from address where country is null;
+
+select country.iso2, country.name_iso, address.street from country, address where
+ST_Contains(country.the_geom, address.geom) = 't' limit 1;
+
+update address set country = (select country.iso2 from country where
+ST_Contains(country.the_geom, address.geom) = 't') where country is null;
 
 
 
