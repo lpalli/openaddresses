@@ -19,11 +19,47 @@ msgstr ""
 "Generated-By: Babel 0.9.4\n"
 
 msgid 'OpenAddresses.org soon ready for you !'
-msgstr 'OpenAddresses.org soon ready for you !'
+msgstr 'OpenAddresses.org bald bereits !'
 
 msgid 'Loading application...'
-msgstr 'Loading application...'
+msgstr 'OpenAddresses Laden...'
 
 msgid 'OpenAddresses.org works for you !'
-msgstr 'OpenAddresses.org works for you !'
+msgstr 'OpenAddresses.org arbeitet für ihnen !'
+
+msgid 'Homepage'
+msgstr 'Homepage'
+
+msgid 'Question or comments can de sent directly to info at openaddresses.org.'
+msgstr 'Fragen oder Anregungen zu dieser Webseite können direkt an info at openaddresses.org geschickt werden.'
+
+msgid 'Impressum'
+msgstr 'Impressum'
+
+msgid 'Owner of the domains openaddress.org and openaddressmap.org is Cedric Moullet, Switzerland, cedric.moullet at openaddresses.org.'
+msgstr 'Eigentümer der Domain openaddress.org, openaddressmap.org und openaddress.ch ist: Cedric Moullet, Schweiz, cedric.moullet at openaddresses.org.'
+
+msgid 'Owner of the domains openaddresses.org, openaddresses.ch and openaddress.ch is Hans-Jorg Stark, Switzerland, hansjoerg.stark at openaddresses.org.'
+msgstr 'Eigentümer der Domain openaddresses.org, openaddresses.ch und openaddress.ch ist: Hans-Jörg Stark, Schweiz, hansjoerg.stark at openaddresses.org.'
+
+msgid 'Owner of the domains openaddresses.at und openaddress.at is Fachhochschule Kaernten, Studienbereich Geoinformation, z.H. Stefanie Andrae, Europastrasse 4, 9524 Villach, Oesterreich, stef.andrae at openaddresses.org.'
+msgstr 'Eigentümer der Domain openaddresses.at und openaddress.at ist: Fachhochschule Kärnten, Studienbereich Geoinformation, z.H. Stefanie Andrae, Europastrasse 4, 9524 Villach, Österreich, stef.andrae at openaddresses.org.'
+
+msgid 'Liability for content'
+msgstr 'Haftung für Inhalte'
+
+msgid 'OpenAddresses is an OpenSource project. The contents of the website created jointly by the contributions and cooperation of many volunteers, without direct control of the owners of domains. These persons are fully responsible for their contributions.'
+msgstr 'OpenAddresses ist ein Open-Source Projekt. Die Inhalte der Homepage entstehen gemeinschaftlich durch die Beiträge und die Mitarbeit vieler Freiwilliger, ohne direkte Kontrolle der Eigentümer der Domains. Diese Mitarbeiter sind in vollem Umfang für die von ihnen erstellten Beiträge selbst verantwortlich.'
+
+msgid 'Privacy Policy'
+msgstr 'Datenschutz'
+
+msgid 'OpenAddreses stores geolocated postal addresses. Information related to persons, companies, points of interest etc.. is NOT part of OpenAddresses.'
+msgstr 'OpenAddreses speichert georeferenzierte Postadressen. Informationen die mit der Postadresse in Verbindung stehen, wie Privatpersonen, Firmen, Points of Interest, stehen NICHT im Fokus von OpenAddresses.'
+
+msgid 'The field "Username" means the name of the person or organization who created the geolocated address. We use this attribute ONLY for statistical purposes. This attribute can be viewed by all. You can choose a suitable pseudonym or group name.'
+msgstr 'Das Feld "Nutzername" bezeichnet den Namen der Person oder Organisation die die Postadresse erstellt/bereitgestellt hat. Wir nutzen dieses Attribut AUSSCHLIESSLICH für statistische Zwecke und um den Ersteller der Adresse in den Lizenzvereinbarungen nennen zu können. Dieses Attribut kann von allen eingesehen werden. Du kannst ein passendes Pseudonym oder Gruppennamen wählen.'
+
+msgid 'The field "House name" should include a description of the building, if one exists.'
+msgstr 'Das Feld "Gebäudename" soll eine Bezeichnung für das Gebäude beinhalten, falls eine existiert (z.B. "Technischer Hof").'
 

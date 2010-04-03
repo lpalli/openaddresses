@@ -14,7 +14,7 @@
     <meta name="robots" content="index,follow "/>
 
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/ext-all.css" />
-    <link rel="stylesheet" type="text/css" href="ext31/examples/ux/css/ux-all.css"></script>
+    <link rel="stylesheet" type="text/css" href="ext31/examples/ux/css/ux-all.css" />
     <link rel="stylesheet" type="text/css" href="ext31/resources/css/xtheme-gray.css" />
     <link rel="stylesheet" type="text/css" href="mfbase/geoext/resources/css/popup.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/OpenAddresses.css" />
