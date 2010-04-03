@@ -54,6 +54,7 @@
  * @include app/js/OpenAddressesHover.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
+ * @include geoext-ux-dev/RoutingPanel/ux/widgets/RoutingPanel.js
  * @include geoext-ux-dev/OpenAddressesSearchCombo/lib/GeoExt.ux.openaddresses/OpenAddressesSearchCombo.js
  * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
  */
@@ -393,6 +394,16 @@ openaddresses.layout = (function() {
         if (Ext.get('lang')) {
             langvalue = Ext.get('lang').dom.value;
         }
+
+                if (location.host.indexOf('openaddresses.org') > -1) {
+                    openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddresses;
+                }
+                if (location.host.indexOf('openaddress.org') > -1) {
+                    openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddress;
+                }
+                if (location.host.indexOf('openaddressmap.org') > -1) {
+                    openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddressMap;
+                }
         return new Ext.Viewport({
             layout: "border",
             items: [
@@ -430,6 +441,37 @@ openaddresses.layout = (function() {
 
                         },
                         {
+                            id: "routingpanel",
+                            title: OpenLayers.i18n('Routing'),
+                            listeners: {
+                                'expand': function(panel) {
+                                    openaddresses.layout.editControl.deactivate();
+                                    if (!Ext.getCmp('routingPanelItem')) {
+                                        this.add({
+                                            xtype: 'gxux_routingpanel',
+                                            id: 'routingPanelItem',
+                                            map: openaddresses.layout.map,
+                                            cloudmadeKey: openaddresses.config.cloudmadeKey,
+                                            geocodingType: 'openaddresses',
+                                            listeners:{
+                                                routingcomputed: function() {
+                                                },
+                                                beforeroutingcomputed: function() {
+                                                }
+                                            }
+                                        })
+                                    }
+                                    this.doLayout();
+                                },
+                                'collapse': function(panel) {
+                                    openaddresses.layout.editControl.activate();
+                                    if (Ext.getCmp('routingPanelItem')) {
+                                        Ext.getCmp('routingPanelItem').clearItinerary();
+                                    }
+                                }
+                            }
+                        },
+                        {
                             title: OpenLayers.i18n('Upload'),
                             html: OpenLayers.i18n('Ongoing development...<br> For now, take contact with us through openaddresses[at]googlegroups.com.')
                         },
@@ -452,7 +494,7 @@ openaddresses.layout = (function() {
                         {
                             title: OpenLayers.i18n('Impressum'),
                             anchor : '100%',
-                            html: '<IFRAME src="impressum?lang='+ Ext.get('lang').dom.value +'" width="100%" height="100%" frameborder="0"></IFRAME>'
+                            html: '<IFRAME src="impressum?lang=' + Ext.get('lang').dom.value + '" width="100%" height="100%" frameborder="0"></IFRAME>'
                         },
                         {
                             title: OpenLayers.i18n('About'),
@@ -593,7 +635,7 @@ openaddresses.layout = (function() {
                 var bboxminy = lonlat.lat - 200;
                 var bboxmaxx = lonlat.lon + 200;
                 var bboxmaxy = lonlat.lat + 200;
-                if (bboxminx >  480000 && bboxminx < 835000 && bboxminy > 70000 &&  bboxmaxy < 298000) {
+                if (bboxminx > 480000 && bboxminx < 835000 && bboxminy > 70000 && bboxmaxy < 298000) {
                     window.open("http://map.housing-stat.ch/index.php?reset_session&recenter_bbox=" + bboxminx + "," + bboxminy + "," + bboxmaxx + "," + bboxmaxy);
                 }
             };
@@ -876,7 +918,7 @@ openaddresses.layout = (function() {
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
-            
+
             this.viewport = createViewPort(this.map, this.layers, layerStore, topToolbar, bottomToolbar);
             this.map.zoomTo(1);
             this.map.events.register('zoomend', this, function(record) {

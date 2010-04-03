@@ -54,6 +54,7 @@
    <script type="text/javascript" src="geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js"></script>
    <script type="text/javascript" src="geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js"></script>
    <script type="text/javascript" src="geoext-ux-dev/OpenAddressesSearchCombo/lib/GeoExt.ux.openaddresses/OpenAddressesSearchCombo.js"></script>
+   <script type="text/javascript" src="geoext-ux-dev/RoutingPanel/ux/widgets/RoutingPanel.js"></script>
    <script type="text/javascript" src="mfbase/geoext/lib/GeoExt.js"></script>
    <script type="text/javascript" src="mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
    <script type="text/javascript" src="mfbase/mapfish/MapFish.js"></script> 
