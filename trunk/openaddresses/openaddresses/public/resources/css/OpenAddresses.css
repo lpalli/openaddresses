@@ -92,3 +92,15 @@ div.olControlMousePosition  {
     height:20px !important;
     width:20px !important;
 }
+
+#routingpanel {
+  background-color:#F0F0F0;
+}
+
+#routingPanelItem {
+  background-color:#F0F0F0;
+}
+
+#routingPanelItem  .x-panel-body  {
+   background-color:#F0F0F0 !important;
+}
