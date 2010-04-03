@@ -38,7 +38,7 @@ Together with OSM, it's possible to build free and open navigation systems.
 
 == 9. You wish to check your existing address data ==
 
-By giving your addresses to OpenAddresses, you get in return the possibility:
+By giving your addresses to !OpenAddresses, you get in return the possibility:
  #1. To compare your data with other addresses previously captured 
  #2. to be able to use a simple, yet powerful user interface to update  them
  #3. to ask the community (the inhabitants) to check themselves if their address is correct
@@ -46,9 +46,7 @@ By giving your addresses to OpenAddresses, you get in return the possibility:
 == 10. You need more addresses for your everyday tasks, but can't afford the large commercial datasets ==
 
 ... however, you may have some workforce available to capture and update local data. For example firefighters or electricity inspectors have a very good local knowledge of addresses, but it is very hard to have these addresses structured.
-By using OpenAddresses, all members of your organization work on a similar data structure and, in return for giving your addresses, you'll get the ones captured by others. Last but not least, in comparison to the commercial datasets providers, you decide how often you want your data to be updated. 
-
-
+By using !OpenAddresses, all members of your organization work on a similar data structure and, in return for giving your addresses, you'll get the ones captured by others. Last but not least, in comparison to the commercial datasets providers, you decide how often you want your data to be updated. 
 
 
 
