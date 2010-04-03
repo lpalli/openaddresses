@@ -460,7 +460,7 @@ openaddresses.layout = (function() {
                                                 beforeroutingcomputed: function() {
                                                 }
                                             }
-                                        })
+                                        });
                                     }
                                     Ext.getCmp('routingpanel').doLayout();
                                     Ext.getCmp('routingPanelItem').setVisible(false);
