@@ -453,6 +453,7 @@ openaddresses.layout = (function() {
                                             map: openaddresses.layout.map,
                                             cloudmadeKey: openaddresses.config.cloudmadeKey,
                                             geocodingType: 'openaddresses',
+                                            showGoogleItinerary: false,
                                             listeners:{
                                                 routingcomputed: function() {
                                                 },
