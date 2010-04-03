@@ -19,7 +19,7 @@ msgstr ""
 "Generated-By: Babel 0.9.4\n"
 
 msgid 'OpenAddresses.org soon ready for you !'
-msgstr 'OpenAddresses.org va vous accueillir tout bientôt!'
+msgstr 'OpenAddresses.org est tout de suite à votre service !'
 
 msgid 'Loading application...'
 msgstr 'Bougez pas, on charge....'
