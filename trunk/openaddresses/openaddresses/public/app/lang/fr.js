@@ -79,7 +79,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Search address in OpenAddresses':'Recherche adresse dans OpenAddresses',
     'Search end…':'Arrivée',
     'Search in Geonames…':'Rechercher dans GeoNames…',
-    'Search in OpenAddresses...':'Search in OpenAddresses...',
+    'Search in OpenAddresses...':'Rechercher dans OpenAddresses',
     'Search location in Geonames':'Rechercher un lieu dans GeoNames',
     'Search start...':'Départ',
     'Select a country…':'Choisissez un pays …',
