@@ -462,6 +462,7 @@ openaddresses.layout = (function() {
                                         })
                                     }
                                     this.doLayout();
+                                    this.doLayout();
                                 },
                                 'collapse': function(panel) {
                                     openaddresses.layout.editControl.activate();
