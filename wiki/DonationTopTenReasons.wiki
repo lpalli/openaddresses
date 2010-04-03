@@ -10,11 +10,11 @@ For companies, governments or private persons, the spatial information allows to
 
 If the address data are free, it unleashes a potential of innovation and creativity that has not been possible yet. Think of GPS: everybody uses it for free! If the US had not provided this service for free a lot of what we take for granted today would not be reality!
 
-== 2. Address search is used by everyone ==
+== 2. You search regularly for addresses ==
 
 Who has never searched for an address ? NOBODY. We all need addresses and unfortunately, it's difficult to access them or they are provided by advertisement companies that have other ideas in mind and you are always dependent on their websites or services.
 
-== 3. You are using Geocoding tools ... ==
+== 3. You are using geocoding tools ... ==
 
 !OpenAddresses provides geocoding functions that you can freely use and implement in your own solutions.
 
@@ -26,11 +26,11 @@ Who has never searched for an address ? NOBODY. We all need addresses and unfort
 
 Do you ?
 
-== 6. Solidarity is important for you ==
+== 6. You believe in solidarity ==
 
 Think that if you provide an address in your area, you could maybe use an address provided by someone else on the other side of the earth.
 
-== 7. Like free navigation ==
+== 7. You dream of a free navigation system ==
 
 When you buy a navigation system, an important part of the price is due to the price of the data stored inside. If addresses are free and open, the price of the navigation systems will be reduced.
 
