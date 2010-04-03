@@ -452,7 +452,7 @@ openaddresses.layout = (function() {
                         {
                             title: OpenLayers.i18n('Impressum'),
                             anchor : '100%',
-                            html: '<IFRAME src="impressum" width="100%" height="100%" frameborder="0"></IFRAME>'
+                            html: '<IFRAME src="impressum?lang='+ Ext.get('lang') +'" width="100%" height="100%" frameborder="0"></IFRAME>'
                         },
                         {
                             title: OpenLayers.i18n('About'),
