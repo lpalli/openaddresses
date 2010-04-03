@@ -395,15 +395,15 @@ openaddresses.layout = (function() {
             langvalue = Ext.get('lang').dom.value;
         }
 
-                if (location.host.indexOf('openaddresses.org') > -1) {
-                    openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddresses;
-                }
-                if (location.host.indexOf('openaddress.org') > -1) {
-                    openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddress;
-                }
-                if (location.host.indexOf('openaddressmap.org') > -1) {
-                    openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddressMap;
-                }
+        if (location.host.indexOf('openaddresses.org') > -1) {
+            openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddresses;
+        }
+        if (location.host.indexOf('openaddress.org') > -1) {
+            openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddress;
+        }
+        if (location.host.indexOf('openaddressmap.org') > -1) {
+            openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddressMap;
+        }
         return new Ext.Viewport({
             layout: "border",
             items: [
@@ -461,8 +461,10 @@ openaddresses.layout = (function() {
                                             }
                                         })
                                     }
-                                    this.doLayout();
-                                    this.doLayout();
+                                    Ext.getCmp('routingpanel').doLayout();
+                                    Ext.getCmp('routingPanelItem').setVisible(false);
+                                    Ext.getCmp('routingPanelItem').setVisible(true);
+                                    Ext.getCmp('routingPanelItem').doLayout();
                                 },
                                 'collapse': function(panel) {
                                     openaddresses.layout.editControl.activate();
