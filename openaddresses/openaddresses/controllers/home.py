@@ -72,3 +72,19 @@ class HomeController(BaseController):
             
         # Return a rendered template
         return render('/index.mako')
+
+    def impressum(self):
+        lang = str(get_lang())
+        c.lang = self.current_lang = lang[3:5]
+        c.charset = self.charset
+        c.versionTime = time.time()
+
+        c.available_languages = self.getAvailableLanguages()
+
+        if 'mode' in request.params:
+            c.debug = (request.params['mode'].lower() == 'debug')
+        else:
+            c.debug = config['debug']
+
+        # Return a rendered template
+        return render('/impressum.mako')

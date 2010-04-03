@@ -450,6 +450,11 @@ openaddresses.layout = (function() {
                             html: '<a href="http://creativecommons.org/licenses/by-sa/2.0/" target="new">' + OpenLayers.i18n('OpenAddresses Data Licence') + '</a><li>' + OpenLayers.i18n('The addresses must be associated to the url of http://www.openaddresses.org.') + '</li><li>' + OpenLayers.i18n('The person or entity that submitted the data is stored in a field CREATED_BY.') + '</li><a href="http://www.opensource.org/licenses/gpl-3.0.html" target="new">' + OpenLayers.i18n('OpenAddresses Code Licence') + '</a>'
                         },
                         {
+                            title: OpenLayers.i18n('Impressum'),
+                            anchor : '100%',
+                            html: '<IFRAME src="impressum/" width="100%" height="100%" frameborder="0"></IFRAME>'
+                        },
+                        {
                             title: OpenLayers.i18n('About'),
                             html: '<a href="http://code.google.com/p/openaddresses/" target="new">' + OpenLayers.i18n('Project Wiki') + '</a><br><a href="http://groups.google.com/group/OpenAddresses" target="new">' + OpenLayers.i18n('Project Discussion') + '</a> <br>' + OpenLayers.i18n('This project is a joint effort of several persons:') + '<br>' + OpenLayers.i18n('Several universities:') + '<br>' + OpenLayers.i18n('Several companies:') + '<br>' + OpenLayers.i18n('Powered by MapFish: the web mapping development framework !')
                         }
