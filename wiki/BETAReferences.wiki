@@ -47,3 +47,4 @@ Found on the web during the launch:
   * http://www.portailsig.org/content/communique-openaddressesorg-le-site-communautaire-de-gestion-des-adresses-vient-d-etre-mis-e
   * http://lists.unc.edu/read/archive?id=5455081
   * http://netpublic.wordpress.com/2010/04/03/openaddresses-des-points-d-adresses-geolocalises-mondialement-sous-licence-libre/
+  * http://emap.wordpress.com/2010/04/02/google-map-mail-envelopes-lbs2/
