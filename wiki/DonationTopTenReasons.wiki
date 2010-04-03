@@ -36,15 +36,17 @@ When you buy a navigation system, an important part of the price is due to the p
 
 Together with OSM, it's possible to build free and open navigation systems.
 
-== 9. You believe in freedom ==
+== 9. You wish to check your existing address data ==
 
-The possibility to move where you want is one the freedom aspect. To know where you go, you need geolocated addresses !
+By giving your addresses to OpenAddress, you get in return the possibility:
+ 1. To compare your data with other addresses previously captured
+ 2. to be able to use a simple, yet powerful user interface to update  them
+ 3. to ask the community (the inhabitants) to check themselves if their address is correct
 
-== 10. Pay less taxes ==
+== 10. You need more addresses for your everyday tasks, but can't afford the large commercial datasets ==
 
-Several address datasets are managed by administrations. This implies a cost. If a dataset would be managed by an entire community, the administration-costs go down and administration can focus on other issues.
-
-
+... however, you may have some workforce available to capture and update local data. For example firefighters or electricity inspectors have a very good local knowledge of addresses, but it is very hard to have these addresses structured.
+By using OpenAddresses, all members of your organization work on a similar data structure and, in return for giving your addresses, you'll get the ones captured by others. Last but not least, in comparison to the commercial datasets providers, you decide how often you want your data to be updated. 
 
 
 
