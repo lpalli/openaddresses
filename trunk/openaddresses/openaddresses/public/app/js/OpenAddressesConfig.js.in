@@ -30,6 +30,5 @@ openaddresses.config = {
     cloudmadeKeyOpenAddresses: '%CLOUDMADE_KEY_OPENADDRESSES%',
     cloudmadeKeyOpenAddress: '%CLOUDMADE_KEY_OPENADDRESS%',
     cloudmadeKeyOpenAddressMap: '%CLOUDMADE_KEY_OPENADDRESSMAP%',
-    activateHover: %ACTIVATE_HOVER%,
-
+    activateHover: %ACTIVATE_HOVER%
 };
