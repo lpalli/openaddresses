@@ -6,7 +6,9 @@ This page presents ten reasons in favor of the donation of addresses to the comm
 
 == 1. Spatial information is a key success ==
 
-For companies, governments or private persons, the spatial information allows to make powerful analysis. Typically, companies can make geomarketing analysis, governments can make geostatistics, private persons can search for locations. The adress is the base information for a large amount of spatial analysis.International studies have shown that there is a huge potential in spatial data for economic growth[http://www.crcsi.com.au/uploads/publications/PUBLICATION_324.pdf]. The adress is the base information for a large amount of spatial analysis.If this data are free it unleashes a potential of innovation and creativity that has not been possible yet. Think of GPS: everybody uses it for free! If the US had not provided this service for free a lot of what we take for granted today would not be reality!
+For companies, governments or private persons, the spatial information allows to make powerful analysis. Typically, companies can make geomarketing analysis, governments can make geostatistics, private persons can search for locations. The adress is the base information for a large amount of spatial analysis.International studies have shown that there is a huge potential in spatial data for economic growth [http://www.crcsi.com.au/uploads/publications/PUBLICATION_324.pdf]. 
+
+If the address data are free, it unleashes a potential of innovation and creativity that has not been possible yet. Think of GPS: everybody uses it for free! If the US had not provided this service for free a lot of what we take for granted today would not be reality!
 
 == 2. Address search is used by everyone ==
 
@@ -32,9 +34,35 @@ Think that if you provide an address in your area, you could maybe use an addres
 
 When you buy a navigation system, an important part of the price is due to the price of the data stored inside. If addresses are free and open, the price of the navigation systems will be reduced.
 
-== 8. You want to have a free navigation system ==
+It is still not possible to create open and free navigation systems. Together with the data of !OpenStreetMap, !OpenAddresses allows the creation of fantastic orientation tools.
 
-Together with OSM, it's possible to build free and open navigation systems.
+== 8. You agree with the Open Source philosophy ==
+
+There are several aspects of Open Source that are widely recognized. Let's take for example the points [http://cio-nii.defense.gov/sites/oss/2009OSS.pdf mentionned in 2009 by the DoD]:
+
+ * The continuous and broad peer-review enabled by publicly available
+source code supports software reliability and security efforts through the identification
+and elimination of defects that might otherwise go unrecognized by a more limited core
+development team.
+ * The unrestricted ability to modify software source code enables the
+Department to respond more rapidly to changing situations, missions, and future threats.
+ * Reliance on a particular software developer or vendor due to proprietary
+restrictions may be reduced by the use of OSS, which can be operated and maintained by
+multiple vendors, thus reducing barriers to entry and exit.
+ * Open source licenses do not restrict who can use the software or the fields
+of endeavor in which the software can be used. Therefore, OSS provides a net-centric
+licensing model that enables rapid provisioning of both known and unanticipated users.
+ * Since OSS typically does not have a per-seat licensing cost, it can provide
+a cost advantage in situations where many copies of the software may be required, and
+can mitigate risk of cost growth due to licensing in situations where the total number of
+users may not be known in advance.
+ * By sharing the responsibility for maintenance of OSS with other users,
+the Department can benefit by reducing the total cost of ownership for software, particularly compared with software for which the Department has sole responsibility for
+maintenance (e.g., GOTS).
+ * OSS is particularly suitable for rapid prototyping and experimentation,
+where the ability to “test drive” the software with minimal costs and administrative
+delays can be important.
+
 
 == 9. You wish to check your existing address data ==
 
@@ -47,8 +75,6 @@ By giving your addresses to !OpenAddresses, you get in return the possibility:
 
 ... however, you may have some workforce available to capture and update local data. For example firefighters or electricity inspectors have a very good local knowledge of addresses, but it is very hard to have these addresses structured.
 By using !OpenAddresses, all members of your organization work on a similar data structure and, in return for giving your addresses, you'll get the ones captured by others. Last but not least, in comparison to the commercial datasets providers, you decide how often you want your data to be updated. 
-
-
 
 
 
