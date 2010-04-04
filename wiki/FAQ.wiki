@@ -48,3 +48,13 @@ It is *very important* to describe the workflow to reproduce the problem, to inf
 == I have that the feeling that there is a white transparent layer over the background data. Why ? ==
 
 This is due to some external WMS that don't support transparency. You are probabaly in an area covered by the WMS but that has no data. You can simply set the opacity to 0 (the slider on top right). 
+
+= Frequently Asked Questions about usage of www.openadresses.org =
+
+== How can I input house number interpolations for a street ? ==
+
+Interpolations are not supported, every address is a point. You have to set on point for each house number or each building.
+
+== How should I handle buildings with more than one house number ? ==
+
+If a building has more than one house number (e.g. "1-2" or "a-e") you can put this value in the number field. If there are different entrances for each number it would be better to set different points. As the values of the previous point will be stored, it shouldn't be too much work.
