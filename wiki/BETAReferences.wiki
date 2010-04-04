@@ -48,3 +48,5 @@ Found on the web during the launch:
   * http://lists.unc.edu/read/archive?id=5455081
   * http://netpublic.wordpress.com/2010/04/03/openaddresses-des-points-d-adresses-geolocalises-mondialement-sous-licence-libre/
   * http://emap.wordpress.com/2010/04/02/google-map-mail-envelopes-lbs2/
+ * 4.04.2010 
+  * TWITTER: Superbe projet méconnu: OpenAddresses, des points d’adresses géolocalisés sous licence libre http://j.mp/9LWLwb
