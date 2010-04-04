@@ -133,3 +133,9 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * ~~FossGIS Cédric Hans-Jörg~~
    * Foss4G
    * AGIT Hans-Jörg, Lukas
+   * SOTM
+  * Make a wikipedia page
+  * Make a facebook group
+  * Créer un livejournal: http://www.livejournal.com/
+ * Sponsoring
+  * Add paypal
