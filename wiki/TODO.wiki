@@ -44,6 +44,8 @@ Description of tasks that need to be accomplished in order to launch www.openadd
   * ~~Content Cédric~~
   * ~~!GeoCoding API Cédric~~
   * ~~!ReverseGeocoding API Cédric~~
+  * Add a powerful geocoder
+   * something like http://www.batchgeocodeur.mapjmz.com/ 
  * Web Site Statistic
   * Client widget
   * Server service
