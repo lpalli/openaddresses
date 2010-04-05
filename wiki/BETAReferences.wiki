@@ -53,3 +53,5 @@ Found on the web during the launch:
   * TWITTER: Superbe projet méconnu: OpenAddresses, des points d’adresses géolocalisés sous licence libre http://j.mp/9LWLwb
   * http://lists.openstreetmap.org/pipermail/talk-de/2010-April/066047.html
   * http://gis.lacounty.gov/eGIS/
+ * 5.04.2010
+  * http://news.nsgic.org/2010/04/openaddresses.html
