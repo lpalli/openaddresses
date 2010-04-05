@@ -1,0 +1,39 @@
+= Guida utente (italiano) =
+
+<wiki:toc max_depth="3" />
+
+== Cosa ? Un'altra cominità cartografica? ==
+
+Sì, !OpenStreetMap ha indicato la strada da seguire ;-). Ma, crediamo che gli indirizzi postali abbiano bisogno di una comunità specifica. Come !GeoNames che raccoglie tutte le località del mondo, lo scopo di !OpenAddresses è di raccogliere tutti gli indirizzi postali del mondo (sì, siamo ambiziosi!) Lo scopo è pure di fornire dei servizi legati all'indirizzo postale come la Geocodifica e la Geocodifica invertita. Perciò, abbiamo sviluppato un'applicazione web d'utilizzo facile (o almeno è ciò che crediamo) per la visualizzazione e l'inserimento d'indirizzi postali.
+
+Ma una comunità non è niente senza .... DI VOI! Prendete del tempo per inserire degli indirizzi, fornire degli indirizzi liberi o fornire fantastiche foto aeree, mappe o dati di base.
+
+== Come utilizzare !OpenAddresses.org ==
+
+=== Vorrei inserire un nuovo indirizzo postale! ===
+
+Molto bene, clicchi sulla mappa. Una finestra apparirà con diversi attributi. Riempiteli et cliccate su "Crea". È fatto, il suo primo indirizzo è stato inserito. Grazie!
+
+Gli attributi sono i seguenti:
+ * Nome utente: la persona o l'entità che ha inserito l'indirizzo. Li utilizziamo unicamente a scopi statistici. Quest'informazione può essere consultata liberamente da chiunque. È possibile utilizzare uno pseudonimo, un nome di gruppo o qualunque cosa pertinente.
+ * Via: Nome della strada, di preferenza il nome utilizzato da chi ci abita.
+ * Numero dell'edificio: se esiste.
+ * Codice postale: il codice postale della località.
+ * Città: la località (città, paese, ...).
+ * Paese: la nazione.
+ * Qualità: utilizzando l'interfaccia web sarà "Digitalizzato".
+ * Nome dell'edificio: se esiste.
+ * Regione: Può trattarsi di una provincia, un cantone, un dipartimento, uno stato, ...
+
+
+=== Vorrei aggiungere un servizio di ricerca d'indirizzi sul mio sito web ===
+
+!OpenAddresses propone un servizio REST per questo scopo.
+I servizi sono documentati qui:
+http://code.google.com/p/openaddresses/wiki/RESTService
+
+Questi servizi sono liberamente disponibili. Ma non garantiamo nessuna qualità del servizio.
+
+=== E come posso conoscere l'indirizzo situato a queste coordinate?  ===
+
+La geocodifica invertita fa pure parte di !OpenAddresses. La documentazione si trova qui: http://code.google.com/p/openaddresses/wiki/RESTService#MapFish_Reverse_GeoCoding_Service
