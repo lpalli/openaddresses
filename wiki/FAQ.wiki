@@ -49,7 +49,11 @@ It is *very important* to describe the workflow to reproduce the problem, to inf
 
 This is due to some external WMS that don't support transparency. You are probabaly in an area covered by the WMS but that has no data. You can simply set the opacity to 0 (the slider on top right). 
 
-= Frequently Asked Questions about usage of www.openadresses.org =
+== Where are some of the address points which I had captured a few years ago using openaddress.ch or openaddress.at ? ==
+
+In order to be fully compliant with the licensing conditions of OpenStreetMap, and to guarantee synchronization in both directions, we had to remove all data that had been captured using Google Imagery as background. Sorry about that, but that was necessary. You'd help us most by re-capturing this address based on the backgrounds we provide. 
+
+= Frequently Asked Questions about usage of www.openaddresses.org =
 
 == How can I input house number interpolations for a street ? ==
 
