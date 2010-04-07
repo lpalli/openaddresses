@@ -689,7 +689,7 @@ openaddresses.layout = (function() {
             for (var i = 0; i < map.layers.length; i++) {
                 if (!map.layers[i].isBaseLayer) {
                     if (map.layers[i].setOpacity) {
-                        if (map.layers[i].name != OpenLayers.i18n("Addresses") && map.layers[i].name != "Routing") {
+                        if (map.layers[i].name != OpenLayers.i18n("Addresses") && map.layers[i].name != "Routing" && map.layers[i].name != OpenLayers.i18n("DrawingLayer")) {
                             map.layers[i].setOpacity(opacity);
                         }
                     }
