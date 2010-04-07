@@ -270,7 +270,7 @@ openaddresses.layout = (function() {
             numZoomLevels: 23,
             maxResolution: 500}
                 );
-        openaddresses.layout.map.drawingLayer = new OpenLayers.Layer.Vector(OpenLayers.i18n("DrawingLayer"), {
+        openaddresses.layout.map.drawingLayer = new OpenLayers.Layer.Vector("DrawingLayer", {
             isBaseLayer: false,
             displayInLayerSwitcher: false
         });
@@ -689,7 +689,7 @@ openaddresses.layout = (function() {
             for (var i = 0; i < map.layers.length; i++) {
                 if (!map.layers[i].isBaseLayer) {
                     if (map.layers[i].setOpacity) {
-                        if (map.layers[i].name != OpenLayers.i18n("Addresses") && map.layers[i].name != "Routing" && map.layers[i].name != OpenLayers.i18n("DrawingLayer")) {
+                        if (map.layers[i].name != OpenLayers.i18n("Addresses") && map.layers[i].name != "Routing" && map.layers[i].name != "DrawingLayer") {
                             map.layers[i].setOpacity(opacity);
                         }
                     }
