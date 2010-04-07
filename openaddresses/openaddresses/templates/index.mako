@@ -25,7 +25,7 @@
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 <div id="MouseOver" style="display: none;"></div>
-<div id="OpenAddressesSearch" style="position: absolute; left: 382px; top: 25px; width: 350px;"></div>
+<div id="OpenAddressesSearch" style="position: absolute; left: 382px; top: 25px; width: 400px;"></div>
 <div id="OpacitySlider"></div>
 <div id="loading-mask" style=""></div>
 <div id="loading">
@@ -63,6 +63,7 @@
    <script type="text/javascript" src="app/js/OpenAddressesOpacitySliderTip.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesCountryList.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesEditControl.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesGlobalSearchCombo.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesOsm.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesConfig.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesLanguage.js"></script>
