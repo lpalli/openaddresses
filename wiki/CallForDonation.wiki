@@ -24,7 +24,7 @@ Pour la communauté !OpenAddresses, Cédric Moullet
  * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Services]
  * (3) [http://code.google.com/p/openaddresses/ Site de la communauté]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
- * [http://code.google.com/p/openaddresses/wiki/FAQ Foire Aux Questions]
+ * [http://code.google.com/p/openaddresses/wiki/FAQ FAQ - Foire Aux Questions (en anglais)]
 
 = Contacts pour donation =
 
