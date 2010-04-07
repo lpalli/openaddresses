@@ -6,15 +6,17 @@ Madame, Monsieur,
 
 http://www.openaddresses.org/ est un site communautaire ayant pour but de collecter et de mettre à des dispositions des adresses localisées. Les adresses sont libres de droits et gratuites et peuvent donc être utilisées par toute personne ou entité intéressée.
 
-Actuellement, la base de données contient plus de 5 millions d'adresses et comme le but est de recenser l'entier des adresses mondiales, il reste du chemin à faire. 
+Actuellement, la base de données contient plus de 10 millions d'adresses et comme le but est de recenser l'entier des adresses mondiales, il reste du chemin à faire. 
 
-Si vous pouviez mettre à disposition les adresses en votre possession, vous participeriez à cet effort et bénéficierez de la communauté !OpenAddresses qui se chargera de mettre communautairement à jour les adresses et qui offre des services de geocoding et reverse geocoding (2). A ce jour, de nombreuses entités administratives ou économiques ont mis à disposition des adresses (3), soyez le suivant ;-)
+En mettant à disposition les adresses en votre possession, vous participez à cet effort et bénéficiez de la communauté !OpenAddresses qui se chargera de mettre communautairement à jour les adresses. De plus, vous avez la possibilité d'utiliser librement des services de geocoding et reverse geocoding (2) pour vos propres applications. A ce jour, de nombreuses entités administratives ou économiques ont mis à disposition des adresses (3), soyez le suivant ;-)
+
+Une fois vos adresses intégrées à Openaddresses.org, vous pouvez utiliser l'application très simple et conviviale que nous mettons à votre disposition compléter et mettre à jour les adresses que vous devez gérer.
 
 Une autre manière de contribuer est de mettre à disposition des données permettant de saisir les adresses, comme des orthophotos, des données de fond, des services WMS, WFS etc...
 
 Bien que soutenue par plusieurs entreprises et universités, cette initiative est le fait de plusieurs personnes privées qui ont décidé de s'unir pour mettre à disposition des adresses libres de droit. Vous êtes également bienvenus au sein de cette communauté (4)
 
-En espérant que notre mail pourra trouver une réponse positive, nous sommes bien sûr à votre disposition pour toute question que vous pourriez avoir,
+En espérant que notre message pourra trouver une réponse positive, nous sommes bien sûr à votre disposition pour toute question que vous pourriez avoir,
 
 Pour la communauté !OpenAddresses, Cédric Moullet
 
@@ -22,7 +24,7 @@ Pour la communauté !OpenAddresses, Cédric Moullet
  * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Services]
  * (3) [http://code.google.com/p/openaddresses/ Site de la communauté]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
- * [http://code.google.com/p/openaddresses/wiki/FAQ Questions fréquemments posées]
+ * [http://code.google.com/p/openaddresses/wiki/FAQ Foire Aux Questions]
 
 = Contacts pour donation =
 
@@ -36,7 +38,7 @@ Guten Tag!
 
 http://www.openaddresses.org/ ist eine Webseite mit dem Ziel, geokodierte Adressdaten (ohne Personeninformationen o.ä.!) frei zur Verfügung zu stellen. Das Projekt wird im Sinne von Web 2.0 "Gemeinschaftsprojekten" organisiert, so dass alle Interessierten daran teilnehmen können.
 
-Gegenwärtig umfasst der Adressdatenbestand in OpenAddresses.org etwa 5Mio Datensätze. Das ambitionierte Ziel ist es jedoch, alle Adressen weltweit zu sammeln und zur Verfügung zu stellen.
+Gegenwärtig umfasst der Adressdatenbestand in OpenAddresses.org etwa 10Mio Datensätze. Das ambitionierte Ziel ist es jedoch, alle Adressen weltweit zu sammeln und zur Verfügung zu stellen.
 
 Falls Sie selbst Eigentümerin oder Eigentümer von geokodierten Adressdaten sind, möchten wir Sie herzlich einladen, am Projekt mitzuarbeiten, indem Sie bspw. Ihre Adressdaten zur Verfügung stellen. Von Ihrer "Datenspende" wird nicht nur das Projekt, sondern werden alle daran Interessierten, insbesondere die Nutzer der Daten profitieren. Beachten Sie auch, dass wir im Projekt entsprechende Dienste zur Verfügung stellen, welche die Nutzung der Daten sehr vereinfachen (bspw. Geokodierungsdienste [2]). Bereits haben einige administrative Stellen Ihre Daten dem Projekt zur Verfügung gestellt [3] - daher wäre es sehr schön, Sie würden sich anschliessen.
 
