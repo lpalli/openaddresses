@@ -63,7 +63,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'OpenAddresses Data Licence':'Licence des données d\'OpenAddresses',
     'OpenAddresses is a web portail for the management of Open Source worldwide localized postal addresses.':'OpenAddresses est un géo-portail consacré à la gestion d\'adresses postales libres de droits à l\'échelle mondiale.',
     'Overlay opacity':'Opacité des calques',
-    'Permalink':'Permalien',
+    'Permalink':'Lien',
     'Please confirm that you agree with the OpenAddresses.org license and terms of services':'Merci de confirmer que vous acceptez les conditions de licence et d\'utilisation fixées par OpenAddresses.org',
     'Please fill all mandatory fields: ':'Veillez à remplir tous les champs obligatoires:',
     'Position: ':'Coordonnée: ',
