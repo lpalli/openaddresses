@@ -95,6 +95,10 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         //  3. if no
         //     - show a movable circle in the map at the digitized poistion
         //     - show the edition popup
+        if (openaddresses.layout.map.zoom < 9) {
+            alert(OpenLayers.i18n('Please zoom further to create or edit an address'));
+            return;
+        }
         openaddresses.layout.showWaitingMask();
         var clickedPosition = openaddresses.layout.map.getLonLatFromViewPortPx(evt.xy);
         var clickedPositionWGS84 = clickedPosition.clone();
