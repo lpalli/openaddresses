@@ -6,7 +6,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
 
  * Define license for data and code
   * Proposal:
-   * Data: http://creativecommons.org/licenses/by-sa/3.0/
+   * Address Data: http://creativecommons.org/licenses/by-sa/2.0/
     * The addresses must be associated to the url of http://www.openaddresses.org
     * The person or entity that submitted the data is stored in a field created_by
    * Code
