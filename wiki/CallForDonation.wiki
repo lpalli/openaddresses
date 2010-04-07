@@ -8,7 +8,7 @@ http://www.openaddresses.org/ est un site communautaire ayant pour but de collec
 
 Actuellement, la base de données contient plus de 10 millions d'adresses et comme le but est de recenser l'entier des adresses mondiales, il reste du chemin à faire. 
 
-En mettant à disposition les adresses en votre possession, vous participez à cet effort et bénéficiez de la communauté !OpenAddresses qui se chargera de mettre communautairement à jour les adresses. De plus, vous avez la possibilité d'utiliser librement des services de geocoding et reverse geocoding (2) pour vos propres applications. A ce jour, de nombreuses entités administratives ou économiques ont mis à disposition des adresses (3), soyez le suivant ;-)
+En mettant à disposition les adresses en votre possession, vous participez à cet effort et bénéficiez de la communauté !OpenAddresses qui se chargera de mettre communautairement à jour les adresses. De plus, vous avez la possibilité d'utiliser librement des services de géocodage direct et inverse (2) pour vos propres applications. A ce jour, de nombreuses sociétés ou collectivités publiques ont mis à disposition des adresses (3), soyez le suivant ;-)
 
 Une fois vos adresses intégrées à Openaddresses.org, vous pouvez utiliser l'application très simple et conviviale que nous mettons à votre disposition compléter et mettre à jour les adresses que vous devez gérer.
 
