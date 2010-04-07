@@ -52,6 +52,7 @@
  * @include app/js/OpenAddressesLayers.js
  * @include app/js/OpenAddressesEditControl.js
  * @include app/js/OpenAddressesHover.js
+ * @include app/js/OpenAddressesGlobalSearchCombo.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
  * @include geoext-ux-dev/RoutingPanel/ux/widgets/RoutingPanel.js
@@ -335,7 +336,7 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createTopToolbar = function(map, languageCombo, geonamesSearchCombo, permalinkButton) {
+    var createTopToolbar = function(map, languageCombo, permalinkButton) {
         var tools = [];
 
         var actionZoomBox = new GeoExt.Action({
@@ -347,8 +348,6 @@ openaddresses.layout = (function() {
         });
 
         tools.push(actionZoomBox);
-        tools.push('-');
-        tools.push(geonamesSearchCombo);
         tools.push('->');
         tools.push(languageCombo);
         tools.push(permalinkButton);
@@ -533,6 +532,14 @@ openaddresses.layout = (function() {
             zoom: 17,
             loadingText: OpenLayers.i18n('Search in OpenAddresses...'),
             emptyText: OpenLayers.i18n('Search address in OpenAddresses'),
+            renderTo: 'OpenAddressesSearch'
+        });
+    };
+
+    var createOpenAddressesGlobalSearchCombo = function(map) {
+        return new openaddresses.OpenAddressesGlobalSearchCombo({
+            map: map,
+            zoom: 18,
             renderTo: 'OpenAddressesSearch'
         });
     };
@@ -915,10 +922,10 @@ openaddresses.layout = (function() {
             }
             //this.buildingControl.activate();
 
-            var geonamesSearchCombo = createGeonamesSearchCombo(this.map);
-            var openAddressesSearchCombo = createOpenAddressesSearchCombo(this.map);
+            //Deactivate this function: var openAddressesSearchCombo = createOpenAddressesSearchCombo(this.map);
+            var openAddressesGlobalSearchCombo = createOpenAddressesGlobalSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
-            var topToolbar = createTopToolbar(this.map, languageCombo, geonamesSearchCombo, permalinkButton);
+            var topToolbar = createTopToolbar(this.map, languageCombo, permalinkButton);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
