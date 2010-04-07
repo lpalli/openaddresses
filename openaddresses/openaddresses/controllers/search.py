@@ -60,7 +60,7 @@ class SearchController(BaseController):
               featureDict.update(type='Feature')
               featurePropertiesDict = {}
               # Create three attributes  display / origin / description
-              displayText = 'GeoNames: ' + geoname['name'] + ' (' + geoname['fcodeName'] + ')'
+              displayText = geoname['name'] + ' (' + geoname['countryName'] + ',' + geoname['fcodeName'] + ')'
               featurePropertiesDict.update({'display': displayText})
               featurePropertiesDict.update({'origin': 'geonames'})
               featureDict.update(properties=featurePropertiesDict)
