@@ -8,7 +8,7 @@ Oui, !OpenStreetMap a montré la voie à suivre ;-). Mais, nous croyons que les 
 
 Mais une communauté n'est rien sans .... VOUS! Prenez le temps de créer des adresses, de fournir des adresses libres ou de fournir des orthophotos fantastiques, des cartes ou des données de base.
 
-== Comment utiliser !OpenAddresses.org ==
+== Comment utiliser !OpenAddresses.org ? ==
 
 === Je voudrais créer une nouvelle adresse postale ! ===
 
