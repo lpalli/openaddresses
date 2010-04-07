@@ -43,7 +43,7 @@ class SearchController(BaseController):
         threadOpenAddresses.start()
 
         for search in searchList:
-           search.join(0.5)
+           search.join(1)
         
         rowsDict = {}
         featuresArray = []
