@@ -265,15 +265,21 @@ class AddressesController(BaseController):
         terms = request.params.get('query').split()
         terms = ' & '.join([term + ':*' for term in terms])
 
+        limit = None
+
         params = {
-            'tsvector': "to_tsvector('french', city)",
-            'tsquery' : "to_tsquery('french', :terms)"
+            'tsvector': "tsvector_street_housenumber_city",
+            'tsquery' : "to_tsquery('english', :terms)"
         }
 
         query = Session.query(Address).filter("%(tsvector)s @@ %(tsquery)s"%params)
 
         query = query.params(terms=terms)
 
+        if 'limit' in request.params:
+           limit = int(request.params['limit'])
+           query = query.limit(limit)
+           
         return {
             'success': True,
             'results': [result.format() for result in query]
