@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
+from pylons.decorators import jsonify
 
 from openaddresses.lib.base import BaseController
 from openaddresses.model.addresses import Address
@@ -258,6 +259,7 @@ class AddressesController(BaseController):
           for column in row:
              return str(column)
 
+    @jsonify
     def json(self,request):
         # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
         terms = request.params.get('query').split()
@@ -269,7 +271,6 @@ class AddressesController(BaseController):
         }
 
         query = Session.query(Address).filter("%(tsvector)s @@ %(tsquery)s"%params)
-        query = query.order_by("ts_rank_cd(%(tsvector)s, %(tsquery)s) DESC"%params)
 
         query = query.params(terms=terms)
 
