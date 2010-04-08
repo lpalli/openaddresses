@@ -17,6 +17,6 @@ class Address(GeometryTableMixIn):
     __table__ = addresses_table
 
     def format(self):
-        return {'city': self.city}
+        return {'city': self.city,'street': self.street, 'housenumber': self.housenumber}
 
 mapper(Address, addresses_table)
