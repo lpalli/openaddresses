@@ -79,9 +79,9 @@ class AddressesController(BaseController):
 
            if 'attrs' in request.params:
               attributes = request.params.get('attrs').split(',')
-              if (len(attributes) == 3) and ('street' in attributes) and ('city' in attributes) and ('housenumber' in attributes):
+              if (len(attributes) == 3) and ('street' in request.params.get('attrs')) and ('city' in request.params.get('attrs')) and ('housenumber' in request.params.get('attrs')):
                  tsvector = 'tsvector_street_housenumber_city'
-              elif (len(attributes) == 1) and ('street' in attributes):
+              elif (len(attributes) == 1) and ('street' in request.params.get('attrs')):
                  tsvector = 'tsvector_street'
               else:
                  attributes = " || ' ' ||".join([attribute for attribute in attributes])
