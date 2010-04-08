@@ -9,6 +9,7 @@ from openaddresses.model.meta import Session
 
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
+from mapfish.lib.filters.spatial import Spatial
 
 try:
     from json import dumps as json_dumps
@@ -21,6 +22,7 @@ from shapely.wkt import loads as geojson_loads
 
 from geojson import dumps as geojson_dumps
 
+from sqlalchemy.sql import and_
 
 class AddressesController(BaseController):
     readonly = False # if set to True, only GET is supported
@@ -70,8 +72,34 @@ class AddressesController(BaseController):
         # else:
         #     filter = compare_filter
         # return self.protocol.index(request, response, format=format, filter=filter)
+        if 'query' in request.params:
+           # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
+           terms = request.params.get('query').split()
+           terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
 
-        return self.protocol.index(request, response, format=format)
+           if 'attrs' in request.params:
+              attributes = request.params.get('attrs').split(',')
+              if (len(attributes) == 3) and ('street' in attributes) and ('city' in attributes) and ('housenumber' in attributes):
+                 tsvector = 'tsvector_street_housenumber_city'
+              elif (len(attributes) == 1) and ('street' in attributes):
+                 tsvector = 'tsvector_street'
+              else:
+                 attributes = " || ' ' ||".join([attribute for attribute in attributes])
+                 tsvector = attributes
+           else:
+              tsvector = 'tsvector_street_housenumber_city'
+           
+           default_filter = create_default_filter(
+              request, Address
+           )
+           ftsFilter = "%(tsvector)s @@ to_tsquery('english', '%(terms)s')" %{'tsvector': tsvector, 'terms': terms}
+           if default_filter is not None:
+              filter = and_(default_filter.to_sql_expr(), ftsFilter)
+           else:
+              filter = ftsFilter
+           return self.protocol.index(request, response, format=format, filter=filter)
+        else:
+           return self.protocol.index(request, response, format=format)
 
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
@@ -263,18 +291,57 @@ class AddressesController(BaseController):
     def json(self,request):
         # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
         terms = request.params.get('query').split()
-        terms = ' & '.join([term + ':*' for term in terms])
+        terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
 
         limit = None
 
+        query = self.protocol.Session.query(Address)
+        
+        # Read request parameters
+        tsvector = ''
+        if 'fields' in request.params:
+           fields = request.params['fields']
+           # Manage fields
+           fieldList =  fields.split(",")
+           fieldCount = 0
+           fields = ''
+           for field in fieldList:
+              fieldCount = fieldCount + 1
+              if (field == 'geom'):
+                 field = 'astext(geom)'
+              if (fieldCount == len(fieldList)):
+                 tsvector = tsvector + field
+                 fields = fields + field
+              else:
+                 tsvector = tsvector + field + " || ' ' ||"
+                 fields = fields + field + ","
+        else:
+           tsvector = 'tsvector_street_housenumber_city'
+
+
         params = {
-            'tsvector': "tsvector_street_housenumber_city",
+            'tsvector': tsvector,
             'tsquery' : "to_tsquery('english', :terms)"
         }
-
-        query = Session.query(Address).filter("%(tsvector)s @@ %(tsquery)s"%params)
+           
+        query = query.filter("%(tsvector)s @@ %(tsquery)s"%params)
 
         query = query.params(terms=terms)
+
+        if ('easting' in request.params) and ('northing' in request.params) and ('tolerance' in request.params):
+          easting = float(request.params['easting'])
+          northing = float(request.params['northing'])
+          tolerance = float(request.params['tolerance'])
+          geom_column = Address.geometry_column()
+          filter = Spatial(
+             Spatial.WITHIN,
+             geom_column,
+             lon=easting,
+             lat=northing,
+             tolerance=tolerance,
+             epsg=4326
+          )
+          query = query.filter(filter.to_sql_expr())
 
         if 'limit' in request.params:
            limit = int(request.params['limit'])
