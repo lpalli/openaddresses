@@ -113,7 +113,7 @@ class searchThread(Thread):
          self.queryString = 'http://ws.geonames.org/searchJSON?maxRows=10&name_startsWith='+self.query.replace(' ','%20')+'&lang=en&charset=UTF8'
 
       if self.type == 'openaddresses':
-         self.queryString = 'http://127.0.0.1:5000/addresses/fullTextSearch?limit=10&lang=en&query='+self.query.replace(' ','%20')+'&fields=street%2Chousenumber%2Ccity%2Cgeom'
+         self.queryString = 'http://www.openaddresses.org/addresses/fullTextSearch?limit=10&lang=en&query='+self.query.replace(' ','%20')+'&fields=street%2Chousenumber%2Ccity%2Cgeom'
 
       response = urllib2.urlopen(self.queryString)
       self.json = response.read()
