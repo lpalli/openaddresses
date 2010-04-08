@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
@@ -157,13 +156,13 @@ class AddressesController(BaseController):
                 else:
                     tsquery = tsquery + queri + ":* & "
           if (len(fieldList) == 3) and ('street' in request.params['fields']) and ('city' in request.params['fields']) and ('housenumber' in request.params['fields']):
-             sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('" + tsquery + "')"
+             sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('english', '" + tsquery + "')"
           elif (len(fieldList) == 4) and ('geom' in request.params['fields']) and ('street' in request.params['fields']) and ('city' in request.params['fields']) and ('housenumber' in request.params['fields']):
-             sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('" + tsquery + "')"
+             sqlQuery = sqlQuery + " WHERE tsvector_street_housenumber_city @@ to_tsquery('english','" + tsquery + "')"
           elif (len(fieldList) == 1) and ('street' in request.params['fields']):
-             sqlQuery = sqlQuery + " WHERE tsvector_street @@ to_tsquery('" + tsquery + "')"
+             sqlQuery = sqlQuery + " WHERE tsvector_street @@ to_tsquery('english','" + tsquery + "')"
           else:
-             sqlQuery = sqlQuery + " WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('" + tsquery + "')"
+             sqlQuery = sqlQuery + " WHERE to_tsvector(" + tsvector + ") @@ to_tsquery('english','" + tsquery + "')"
 
        # Add spatial filter to SQL Query
        if ('easting' in request.params) and ('northing' in request.params) and ('tolerance' in request.params):
@@ -255,3 +254,4 @@ class AddressesController(BaseController):
        for row in result:
           for column in row:
              return str(column)
+
