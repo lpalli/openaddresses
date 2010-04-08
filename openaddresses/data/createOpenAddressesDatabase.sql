@@ -313,8 +313,9 @@ ALTER TABLE address ADD COLUMN tsvector_street tsvector;
 UPDATE address
 SET tsvector_street = to_tsvector('english', coalesce(street,'')); 
 
-CREATE INDEX tsvector_street_idx ON address
-USING gin(tsvector_street); 
+CREATE INDEX tsvector_street_idx ON address USING gin(tsvector_street);
+
+CREATE INDEX tsvector_street_idx1 ON address USING gin(to_tsvector('english', coalesce(street,'')));
 
 explain SELECT distinct street
 FROM address
@@ -330,10 +331,13 @@ ALTER TABLE address ADD COLUMN tsvector_street_housenumber_city tsvector;
 UPDATE address
 SET tsvector_street_housenumber_city = to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,'')); 
 
-CREATE INDEX tsvector_street_housenumber_city_idx ON address
-USING gin(tsvector_street_housenumber_city); 
+CREATE INDEX tsvector_street_housenumber_city_idx ON address USING gin(tsvector_street_housenumber_city);
 
-explain SELECT street, city, housenumber FROM address WHERE tsvector_street_housenumber_city @@ to_tsquery('chem:* & du:* & lau:* & 28') LIMIT 5;
+CREATE INDEX tsvector_street_housenumber_city_idx1 ON address USING gin(to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,''))); 
+
+explain SELECT street, city, housenumber FROM address WHERE tsvector_street_housenumber_city @@ to_tsquery('english', 'chem:* & du:* & lau:* & 28') LIMIT 5;
+
+explain SELECT street, city, housenumber FROM address WHERE to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,'')) @@ to_tsquery('chem:* & du:* & lau:* & 28') LIMIT 5;
 
 CREATE TRIGGER tsvector_street_update BEFORE INSERT OR UPDATE
 ON address FOR EACH ROW EXECUTE PROCEDURE
