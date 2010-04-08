@@ -83,7 +83,8 @@ class SearchController(BaseController):
               featureDict.update(type='Feature')
               featurePropertiesDict = {}
               # Create three attributes  display / origin / description
-              featurePropertiesDict.update({'display': openaddress['properties']['displayText']})
+              display = [openaddress['properties']['street'],openaddress['properties']['housenumber'],openaddress['properties']['city']]
+              featurePropertiesDict.update({'display': " ".join([n for n in display if n is not None])})
               featurePropertiesDict.update({'origin': 'openaddresses'})
               featureDict.update(properties=featurePropertiesDict)
               # Create geometry
@@ -113,7 +114,7 @@ class searchThread(Thread):
          self.queryString = 'http://ws.geonames.org/searchJSON?maxRows=10&name_startsWith='+self.query.replace(' ','%20')+'&lang=en&charset=UTF8'
 
       if self.type == 'openaddresses':
-         self.queryString = 'http://www.openaddresses.org/addresses/fullTextSearch?limit=10&lang=en&query='+self.query.replace(' ','%20')+'&fields=street%2Chousenumber%2Ccity%2Cgeom'
+         self.queryString = 'http://geolin01.cti.ac.at/openaddresses/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
 
       response = urllib2.urlopen(self.queryString)
       self.json = response.read()
