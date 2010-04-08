@@ -114,7 +114,7 @@ class searchThread(Thread):
          self.queryString = 'http://ws.geonames.org/searchJSON?maxRows=10&name_startsWith='+self.query.replace(' ','%20')+'&lang=en&charset=UTF8'
 
       if self.type == 'openaddresses':
-         self.queryString = 'http://geolin01.cti.ac.at/openaddresses/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
+         self.queryString = 'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
 
       response = urllib2.urlopen(self.queryString)
       self.json = response.read()
