@@ -82,6 +82,8 @@ class AddressesController(BaseController):
            return self.countUpdatedToday(request)
         elif (id == 'fullTextSearch'):
            return self.fullTextSearch(request)
+        elif (id == 'json'):
+           return self.json(request)
         elif (id == 'checkSession'):
            return self.checkSession()
         elif (id == 'createSession'):
@@ -256,3 +258,22 @@ class AddressesController(BaseController):
           for column in row:
              return str(column)
 
+    def json(self,request):
+        # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
+        terms = request.params.get('query').split()
+        terms = ' & '.join([term + ':*' for term in terms])
+
+        params = {
+            'tsvector': "to_tsvector('french', city)",
+            'tsquery' : "to_tsquery('french', :terms)"
+        }
+
+        query = Session.query(Addresses).filter("%(tsvector)s @@ %(tsquery)s"%params)
+        query = query.order_by("ts_rank_cd(%(tsvector)s, %(tsquery)s) DESC"%params)
+
+        query = query.params(terms=terms)
+
+        return {
+            'success': True,
+            'results': [result.format() for result in query]
+        }

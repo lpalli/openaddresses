@@ -333,9 +333,7 @@ SET tsvector_street_housenumber_city = to_tsvector('english', coalesce(street,''
 CREATE INDEX tsvector_street_housenumber_city_idx ON address
 USING gin(tsvector_street_housenumber_city); 
 
-explain SELECT street, city, housenumber
-FROM address
-WHERE tsvector_street_housenumber_city @@ to_tsquery('chem:* & du:* & lau:* & 28:*') LIMIT 5;
+explain SELECT street, city, housenumber FROM address WHERE tsvector_street_housenumber_city @@ to_tsquery('chem:* & du:* & lau:* & 28') LIMIT 5;
 
 CREATE TRIGGER tsvector_street_update BEFORE INSERT OR UPDATE
 ON address FOR EACH ROW EXECUTE PROCEDURE
