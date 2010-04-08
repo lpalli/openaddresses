@@ -443,6 +443,14 @@ ST_Contains(country.the_geom, address.geom) = 't' limit 1;
 update address set country = (select country.iso2 from country where
 ST_Contains(country.the_geom, address.geom) = 't') where country is null;
 
+#  ****************************************************************
+#  Statistics
+#  ****************************************************************
+
+select created_by, count(1) counter from  address where time_created::date = now()::date group by created_by order by counter desc;
+
+select created_by, count(1) counter from  address where time_updated::date = now()::date group by created_by order by counter desc;
+
 
 
 
