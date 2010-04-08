@@ -268,7 +268,7 @@ class AddressesController(BaseController):
             'tsquery' : "to_tsquery('french', :terms)"
         }
 
-        query = Session.query(Addresses).filter("%(tsvector)s @@ %(tsquery)s"%params)
+        query = Session.query(Address).filter("%(tsvector)s @@ %(tsquery)s"%params)
         query = query.order_by("ts_rank_cd(%(tsvector)s, %(tsquery)s) DESC"%params)
 
         query = query.params(terms=terms)
