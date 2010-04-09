@@ -31,10 +31,6 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
      */
     listWidth: 400,
 
-    loadingText: OpenLayers.i18n('Search address or location...'),
-
-    emptyText: OpenLayers.i18n('Search address or location'),
-
     /** api: config[minChars]
      *  ``Number`` Minimum number of characters to be typed before
      *  search occurs, defaults to 1.
@@ -72,6 +68,8 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
      */
     initComponent: function() {
         openaddresses.OpenAddressesGlobalSearchCombo.superclass.initComponent.apply(this, arguments);
+        this.loadingText =  OpenLayers.i18n('Search address or location...');
+        this.emptyText = OpenLayers.i18n('Search address or location');
         this.url = openaddresses.config.searchURL;
         this.store = new Ext.data.Store({
             proxy: new Ext.data.ScriptTagProxy({
