@@ -53,15 +53,6 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
      */
     tpl: '<tpl for="."><div class="x-combo-list-item">{displayText}</div></tpl>',
 
-    /** api: config[lang]
-     *  ``String`` Place name and country name will be returned in the specified
-     *  language. Default is English (en).
-     */
-    /** private: property[lang]
-     *  ``String``
-     */
-    lang: 'en',
-
     /** private: property[hideTrigger]
      *  Hide trigger of the combo.
      */
@@ -75,13 +66,13 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
     /** private: property[url]
      *  Url of the OpenAddresses service
      */
-    url: '/search',
+    url: '',
 
     /** private: constructor
      */
     initComponent: function() {
         openaddresses.OpenAddressesGlobalSearchCombo.superclass.initComponent.apply(this, arguments);
-
+        this.url = openaddresses.config.searchURL;
         this.store = new Ext.data.Store({
             proxy: new Ext.data.ScriptTagProxy({
                 url: this.url,
