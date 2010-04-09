@@ -119,8 +119,8 @@ class searchThread(Thread):
       if self.type == 'openaddresses':
          self.queryString = 'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
 
-      log.warning(self.queryString) 
-      response = urllib2.urlopen(self.queryString)
+      log.warning(unicode(self.queryString).encode("utf-8")) 
+      response = urllib2.urlopen(unicode(self.queryString).encode("utf-8"))
       self.json = response.read()
 
 
