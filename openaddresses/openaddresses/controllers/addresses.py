@@ -102,7 +102,13 @@ class AddressesController(BaseController):
            else:
               filter = ftsFilter
            #  log.warning(filter)
-           return self.protocol.index(request, response, format=format, filter=filter)
+           json = self.protocol.index(request, response, format=format, filter=filter)
+           if 'callback' in request.params:
+              response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
+              return request.params['callback'] + '(' + json + ');'
+           else:
+              response.headers['Content-Type'] = 'application/json'
+              return self.protocol.index(request, response, format=format, filter=filter)
         else:
            return self.protocol.index(request, response, format=format)
 
