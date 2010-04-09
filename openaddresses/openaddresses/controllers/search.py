@@ -8,6 +8,7 @@ from openaddresses.lib.base import BaseController, render
 
 from threading import Thread
 import urllib2
+import urllib
 
 try:
     from json import loads as json_loads
@@ -33,7 +34,7 @@ class SearchController(BaseController):
         else:
            return 'ERROR: Use a query parameter'
 
-        log.warning(query.encode("utf-8"))      
+        #log.warning(type(query)) 
 
         searchList = []
 
@@ -117,7 +118,7 @@ class searchThread(Thread):
          self.queryString = 'http://ws.geonames.org/searchJSON?maxRows=10&name_startsWith='+self.query.replace(' ','%20')+'&lang=en&charset=UTF8'
 
       if self.type == 'openaddresses':
-         self.queryString = 'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
+         self.queryString = 'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+urllib.quote(self.query.encode('utf8'))
 
       response = urllib2.urlopen(self.queryString)
       self.json = response.read()
