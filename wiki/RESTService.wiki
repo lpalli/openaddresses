@@ -40,7 +40,7 @@ Describe the REST services associated to the addresses
   * ge: greater than or equal to
   * like
   * ilike
- * query: makes a full text search. To be used with attrs key
+ * query: makes a full text search. To be used with attrs key.
 
 ==== HINTS ====
 
