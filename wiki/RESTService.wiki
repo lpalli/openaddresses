@@ -15,32 +15,6 @@ Describe the REST services associated to the addresses
  * COUNTRY: country code ('CH','FR','AT' etc..)
  * QUALITY ('Digitized','GPS','Linear interpolation')
 
-== !OpenAddresses !GeoCoding and Reverse !GeoCoding, based on Full text search ==
-
- * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=chemin%20fonten
- * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber&query=ch%20d%20fonten&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
- * http://www.openaddresses.org/addresses/fullTextSearch?fields=street,city,housenumber,geom&query=ch%20de%20fonten&limit=5
- * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&query=chemin%20des&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=20&distinct=true
- * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10&distinct=true
- * http://www.openaddresses.org/addresses/fullTextSearch?fields=street&limit=10
-
-   * Specification:
-    * fields: list of fields to get(mandatory)
-    * query: query string, separated by space (optional) 
-    * tolerance: spatial tolerance in degree (optional)
-    * easting: X in EPSG 4326 (optional)
-    * northing: Y in EPSG 4326 (optional)
-    * limit: maximum number of return results (optional)
-    * distinct: make a select distinct (optional)
-    * callback: name of the callback function (optional)
-   * Return 
-    * GeoJSON with requested fields or callback
-
-=== HINTS ===
-
- * Use *street* or *street,city,housnumber* as field list. Database is optimized for these fields.
- * Try to always add a spatial filter for maximum performance
-
 == !MapFish Services ==
 
 === !MapFish KVP parameters ===
@@ -65,7 +39,13 @@ Describe the REST services associated to the addresses
   * gt: greater than
   * ge: greater than or equal to
   * like
-  * ilike 
+  * ilike
+ * query: makes a full text search. To be used with attrs key
+
+==== HINTS ====
+
+ * Use *street* or *street,city,housnumber* as attrs. Database is optimized for these fields.
+ * Try to always add a spatial filter for maximum performance
 
 === !MapFish !GeoCoding Service ===
 
