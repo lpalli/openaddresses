@@ -803,7 +803,6 @@ openaddresses.layout = (function() {
             lonLat.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
             this.clientX = evt.clientX;
             this.clientY = evt.clientY;
-            // addresses/fullTextSearch?fields=street&tolerance=0.005&easting=6.62379551&northing=46.51687241&limit=10
             if (map.zoom == 16) {
                 map.tooltipTolerance = 0.000128987 / 2;
             }
