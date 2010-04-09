@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import logging
+
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 from pylons.decorators import jsonify
@@ -23,6 +25,8 @@ from shapely.wkt import loads as geojson_loads
 from geojson import dumps as geojson_dumps
 
 from sqlalchemy.sql import and_
+
+log = logging.getLogger(__name__)
 
 class AddressesController(BaseController):
     readonly = False # if set to True, only GET is supported
@@ -97,6 +101,7 @@ class AddressesController(BaseController):
               filter = and_(default_filter.to_sql_expr(), ftsFilter)
            else:
               filter = ftsFilter
+#           log.warning(filter)
            return self.protocol.index(request, response, format=format, filter=filter)
         else:
            return self.protocol.index(request, response, format=format)

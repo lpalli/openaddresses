@@ -44,14 +44,14 @@ set debug = false
 keys = root, routes, openaddresses, sqlalchemy
 
 [handlers]
-keys = console
+keys = wsgierrors
 
 [formatters]
 keys = generic
 
 [logger_root]
 level = WARN
-handlers = console
+handlers = wsgierrors
 
 [logger_routes]
 level = WARN
@@ -71,6 +71,11 @@ qualname = sqlalchemy.engine
 # "level = INFO" logs SQL queries.
 # "level = DEBUG" logs SQL queries and results.
 # "level = WARN" logs neither.  (Recommended for production systems.)
+
+[handler_wsgierrors]
+class = pylons.log.WSGIErrorsHandler
+args = ()
+format = generic
 
 [handler_console]
 class = StreamHandler
