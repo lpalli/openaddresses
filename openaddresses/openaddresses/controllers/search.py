@@ -114,10 +114,10 @@ class searchThread(Thread):
       self.json = 'ko'
    def run(self):
       if self.type == 'geonames':
-         self.queryString = 'http://ws.geonames.org/searchJSON?maxRows=10&name_startsWith='+self.query.replace(' ','%20')+'&lang=en&charset=UTF8'
+         self.queryString = u'http://ws.geonames.org/searchJSON?maxRows=10&name_startsWith='+self.query.replace(' ','%20')+'&lang=en&charset=UTF8'
 
       if self.type == 'openaddresses':
-         self.queryString = 'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
+         self.queryString = u'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
 
       log.warning(unicode(self.queryString).encode("utf-8")) 
       response = urllib2.urlopen(unicode(self.queryString).encode("utf-8"))
