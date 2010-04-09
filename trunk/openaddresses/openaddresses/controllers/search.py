@@ -33,7 +33,7 @@ class SearchController(BaseController):
         else:
            return 'ERROR: Use a query parameter'
 
-        log.warning(unicode(query).encode("utf-8"))      
+        log.warning(repr(query))      
 
         searchList = []
 
