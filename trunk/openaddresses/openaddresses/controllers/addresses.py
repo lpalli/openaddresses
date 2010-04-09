@@ -147,3 +147,33 @@ class AddressesController(BaseController):
            feature.properties['time_updated'] = datetime.now()
        else:
            feature.properties['time_updated'] = None
+
+    def checkSession(self):
+       return 'True'
+
+    def createSession(self):
+        return 'True'
+
+    def countCreatedToday(self,request):
+
+       # Create SQL Query
+       sqlQuery = "select count(1) count from address where time_created::date=now()::date"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+
+       for row in result:
+          for column in row:
+             return str(column)
+
+    def countUpdatedToday(self,request):
+
+       # Create SQL Query
+       sqlQuery = "select count(1) from address where time_updated::date=now()::date"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+
+       for row in result:
+          for column in row:
+             return str(column)
