@@ -8,6 +8,8 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/zipcode/* .
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/country/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/washington/* .
 }}}
 = Situs Addresses for State of Arkansas =
 
@@ -174,4 +176,50 @@ CREATE INDEX idx_country_geom
   ON country
   USING gist
   (the_geom);
+}}}
+
+= Washington,DC =
+
+ * Data origin: GIS department for Washington, DC
+ * Contact person: davidy.jackson at dc.gov
+ * License validation: email from 4/08/2010
+ * Import shapefile
+
+{{{
+
+unzip AddressPt.ZIP
+
+shp2pgsql -s 26985 AddressPt washington > washington.sql
+
+sudo su postgres
+
+psql -d openaddresses -f washington.sql
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     substring(addrnum || ' ' || coalesce(addrnumsuf,'') from 1 for 8),
+     rtrim(ltrim(coalesce(stname,'')) || ' ' || coalesce(street_typ,'') ||  ' ' || coalesce(quadrant,'')),
+     round(zipcode),
+     'Washington',
+     'US',
+     'DC',
+     'DC GIS',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     GeomFromEWKT('SRID=4326;POINT(' || longitude|| ' ' || latitude || ')') geom
+FROM washington where status != 'RETIRE');
+
 }}}
