@@ -336,7 +336,7 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createTopToolbar = function(map, languageCombo, permalinkButton) {
+    var createTopToolbar = function(map, languageCombo, permalinkButton, openAddressesGlobalSearchCombo) {
         var tools = [];
 
         var actionZoomBox = new GeoExt.Action({
@@ -348,6 +348,8 @@ openaddresses.layout = (function() {
         });
 
         tools.push(actionZoomBox);
+        tools.push('-');
+        tools.push(openAddressesGlobalSearchCombo);
         tools.push('->');
         tools.push(languageCombo);
         tools.push(permalinkButton);
@@ -539,8 +541,7 @@ openaddresses.layout = (function() {
     var createOpenAddressesGlobalSearchCombo = function(map) {
         return new openaddresses.OpenAddressesGlobalSearchCombo({
             map: map,
-            zoom: 18,
-            renderTo: 'OpenAddressesSearch'
+            zoom: 18
         });
     };
 
@@ -924,7 +925,7 @@ openaddresses.layout = (function() {
             //Deactivate this function: var openAddressesSearchCombo = createOpenAddressesSearchCombo(this.map);
             var openAddressesGlobalSearchCombo = createOpenAddressesGlobalSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
-            var topToolbar = createTopToolbar(this.map, languageCombo, permalinkButton);
+            var topToolbar = createTopToolbar(this.map, languageCombo, permalinkButton, openAddressesGlobalSearchCombo);
             var displayProjectionSelectorCombo = createDisplayProjectionSelectorCombo(this.map);
             var bottomToolbar = createBottomToolbar(this.map, displayProjectionSelectorCombo);
             var opacitySlider = createOpacitySlider(this.map);
