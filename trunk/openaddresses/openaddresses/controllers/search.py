@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import logging
 
 from pylons import request, response, session, tmpl_context as c
@@ -31,6 +32,8 @@ class SearchController(BaseController):
            query = request.params['query']
         else:
            return 'ERROR: Use a query parameter'
+
+        log.warning(query)      
 
         searchList = []
 
@@ -116,7 +119,7 @@ class searchThread(Thread):
       if self.type == 'openaddresses':
          self.queryString = 'http://www.openaddresses.org/addresses/?limit=10&attrs=street,housenumber,city&query='+self.query.replace(' ','%20')
 
-      log.warning(self.queryString)
+
       response = urllib2.urlopen(self.queryString)
       self.json = response.read()
 
