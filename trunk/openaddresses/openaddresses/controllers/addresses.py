@@ -101,7 +101,7 @@ class AddressesController(BaseController):
               filter = and_(default_filter.to_sql_expr(), ftsFilter)
            else:
               filter = ftsFilter
-#           log.warning(filter)
+           #  log.warning(filter)
            return self.protocol.index(request, response, format=format, filter=filter)
         else:
            return self.protocol.index(request, response, format=format)
