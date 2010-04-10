@@ -122,7 +122,7 @@ Die folgenden Links bieten weiterführende Informationen zum Projekt:
  * Twitter: https://twitter.com/openaddresses
  * Community-Webseite: http://code.google.com/p/openaddresses/
 
-==CA: OpenAddresses.org, un portal web comunitari per a la gestió d'adreces lliures i obertes està en línia==
+== CA: !OpenAddresses.org, un portal web comunitari per a la gestió d'adreces lliures i obertes està en línia==
 
 Com una típica aplicació de la web 2.0,  http://www.openaddresses.org pretén recopilar adreces geolocalitzades lliures i obertes. Aquest portal web comunitari permet a tothom emmagatzemar, gestionar i usar punts d'adreces.
 
@@ -157,7 +157,7 @@ En primer lloc introduint adreces (pensa en casa teva, la dels teus veïns, el l
   *Twitter: https://twitter.com/openaddresses 
   *Lloc de la comunitat: http://code.google.com/p/openaddresses/ 
 
-==ES: OpenAddresses.org, un portal web comunitario para la gestión de direcciones libres y abiertas está en línea==
+== ES: !OpenAddresses.org, un portal web comunitario para la gestión de direcciones libres y abiertas está en línea==
 
 Como una típica aplicación de la web 2.0,  http://www.openaddresses.org pretende recopilar 
 direcciones geolocalizadas libres y abiertas. Este portal web comunitario permite a todo el mundo almacenar, gestionar y usar puntos de direcciones.
