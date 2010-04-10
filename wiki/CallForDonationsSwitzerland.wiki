@@ -5,6 +5,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Zürich https://www.stadt-zuerich.ch/content/ted/de/index/geoz/gis_zentrum/jcr:content/contextparsys/kontakt/form.popup.html
  * ~~Genf francois.mumenthaler at etat.ge.ch Cédric~~
  * Basel gva at bs.ch
+ * ~~ Jura raphael Wunderlich Jean-Luc ~~
  * Bern 1
  * ~~Lausanne cadastre at lausanne.ch Cédric~~
  * ~~Winterthur daniel.kofmel at win.ch Cédric~~
@@ -44,7 +45,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Reinach
  * Kreuzlingen
  * Horgen
- * Nyon 1
+ * ~~ Nyon Gerard Sollberger Jean-Luc ~~
  * Wil 1
  * Vevey 1
  * Kloten
@@ -106,7 +107,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Münchenstein
  * Rüti
  * Oftringen
- * ~~Delémont 1 christophe.hanser at jura.ch Jean-Luc~~
+ * ~~Delémont 1 christophe.hanser at delemont.ch Jean-Luc~~
  * Lyss
  * Worb
  * Gland
@@ -137,4 +138,3 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Weinfelden
  * ~~ Cossonay Jorge Pezuela Jean-Luc ~~
  * ~~ Aigle informatique at aigle.ch Jean-Luc ~~
- * ~~ Nyon Gerard Sollberger Jean-Luc ~~
