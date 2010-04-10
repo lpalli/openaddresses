@@ -2,139 +2,141 @@
 
 Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
 
- * Zürich https://www.stadt-zuerich.ch/content/ted/de/index/geoz/gis_zentrum/jcr:content/contextparsys/kontakt/form.popup.html
- * ~~Genf francois.mumenthaler at etat.ge.ch Cédric~~
- * Basel gva at bs.ch
+ * ~~ Aigle informatique at aigle.ch Jean-Luc ~~
+ * ~~ Cossonay Jorge Pezuela Jean-Luc ~~
  * ~~ Jura raphael Wunderlich Jean-Luc ~~
- * Bern 1
+ * ~~ Morges 1 Already donated ~~
+ * ~~ Nyon Gerard Sollberger Jean-Luc ~~
+ * ~~ Uster Andreas Neumann Hans-Jörg~~
+ * ~~ Yverdon-les-Bains 1 Thomas Czaka Jean-Luc ~~
+ * ~~Delémont 1 christophe.hanser at delemont.ch Jean-Luc~~
+ * ~~Genf francois.mumenthaler at etat.ge.ch Cédric~~
  * ~~Lausanne cadastre at lausanne.ch Cédric~~
  * ~~Winterthur daniel.kofmel at win.ch Cédric~~
- * St. Gallen 1
- * Luzern 1
- * Lugano 1
- * Biel/Bienne directiondestravauxpublics at biel-bienne.ch
- * Thun 1
- * Köniz
- * La Chaux-de-Fonds 1
- * Freiburg 1
- * Schaffhausen 1
- * Chur 1
- * Neuenburg 1
- * Vernier
- * ~~ Uster Andreas Neumann Hans-Jörg~~
- * Sion 1
- * Lancy
- * Emmen
- * Rapperswil-Jona 1
- * Kriens
- * ~~ Yverdon-les-Bains 1 Thomas Czaka Jean-Luc ~~
- * Zug 1
- * Montreux
- * Dübendorf
- * Dietikon
- * Frauenfeld 1
- * Baar
- * Wetzikon
- * Riehen
- * Meyrin
- * Wädenswil
- * Carouge
- * Wettingen
- * Allschwil
- * Renens
- * Reinach
- * Kreuzlingen
- * Horgen
- * ~~ Nyon Gerard Sollberger Jean-Luc ~~
- * Wil 1
- * Vevey 1
- * Kloten
- * Bulle 1
- * Baden 1
- * Gossau
- * Bellinzona 1
- * Muttenz
- * Onex
- * Littau
- * Olten 1
- * Pully
- * Bülach 1
- * Thalwil
- * Volketswil
- * Monthey 1
- * Adliswil
- * Regensdorf
- * Grenchen
  * Aarau 1
- * Freienbach
- * Martigny 1
- * Solothurn 1
- * Sierre
- * Herisau
- * Steffisburg
- * Illnau-Effretikon
- * Burgdorf 1
- * Locarno 1
- * Pratteln
- * Ostermundigen
- * Langenthal
- * Opfikon
- * ~~ Morges 1 Already donated ~~
+ * Adliswil
+ * Aesch
+ * Affoltern am Albis
+ * Allschwil
+ * Altstätten 1
+ * Amriswil
+ * Arbon 1
+ * Arth
+ * Baar
+ * Baden 1
+ * Basel gva at bs.ch
+ * Bassersdorf
+ * Bellinzona 1
+ * Bern 1
+ * Biel/Bienne directiondestravauxpublics at biel-bienne.ch
  * Binningen
+ * Birsfelden
+ * Brig-Glis
+ * Buchs
+ * Bülach 1
+ * Bulle 1
+ * Burgdorf 1
+ * Carouge
  * Cham
+ * Chêne-Bougeries
+ * Chur 1
+ * Davos
+ * Dietikon
+ * Dübendorf
+ * Ebikon
+ * Ecublens
+ * Einsiedeln
+ * Emmen
+ * Frauenfeld 1
+ * Freiburg 1
+ * Freienbach
+ * Gland
+ * Gossau
+ * Grenchen
+ * Herisau
+ * Horgen
+ * Horw
+ * Illnau-Effretikon
+ * Ittigen
+ * Kloten
+ * Köniz
+ * Kreuzlingen
+ * Kriens
+ * Küsnacht
+ * Küssnacht
+ * La Chaux-de-Fonds 1
+ * La Tour-de-Peilz 1
+ * Lancy
+ * Langenthal
+ * Le Grand-Saconnex
+ * Le Locle
+ * Liestal 1
+ * Littau
+ * Locarno 1
+ * Lugano 1
+ * Luzern 1
+ * Lyss
+ * Männedorf
+ * Martigny 1
+ * Meilen
+ * Meyrin
+ * Monthey 1
+ * Montreux
+ * Münchenstein
+ * Münsingen
+ * Muri bei Bern
+ * Muttenz
+ * Neuenburg 1
+ * Neuhausen am Rheinfall
+ * Oberwil
+ * Oftringen
+ * Olten 1
+ * Onex
+ * Opfikon
+ * Ostermundigen
+ * Pfäffikon
+ * Pratteln
+ * Prilly
+ * Pully
+ * Rapperswil-Jona 1
+ * Regensdorf
+ * Reinach
+ * Renens
+ * Rheinfelden 1
+ * Richterswil
+ * Riehen
+ * Rüti
+ * Schaffhausen 1
  * Schlieren
  * Schwyz
- * Wohlen
- * Einsiedeln
- * Stäfa
- * Arbon 1
- * Thônex
- * Liestal 1
- * Küsnacht
- * Horw
- * Wallisellen
- * Muri bei Bern
- * Versoix
+ * Sierre
+ * Sion 1
+ * Solothurn 1
  * Spiez
- * Uzwil
- * Meilen
- * Brig-Glis
- * Zollikon
- * Küssnacht
- * Richterswil
- * Amriswil
- * Ebikon
- * Münchenstein
- * Rüti
- * Oftringen
- * ~~Delémont 1 christophe.hanser at delemont.ch Jean-Luc~~
- * Lyss
- * Worb
- * Gland
- * Rheinfelden 1
- * Prilly
- * Münsingen
- * Buchs
- * Altstätten 1
- * Davos
- * Bassersdorf
- * Ecublens
- * Ittigen
- * Villars-sur-Glâne
- * La Tour-de-Peilz 1
- * Affoltern am Albis
- * Zofingen
- * Le Grand-Saconnex
- * Arth
  * Spreitenbach
- * Oberwil
- * Birsfelden
- * Chêne-Bougeries
- * Pfäffikon
- * Le Locle
- * Neuhausen am Rheinfall
- * Aesch
- * Männedorf
+ * St. Gallen 1
+ * Stäfa
+ * Steffisburg
+ * Thalwil
+ * Thônex
+ * Thun 1
+ * Uzwil
+ * Vernier
+ * Versoix
+ * Vevey 1
+ * Villars-sur-Glâne
+ * Volketswil
+ * Wädenswil
+ * Wallisellen
  * Weinfelden
- * ~~ Cossonay Jorge Pezuela Jean-Luc ~~
- * ~~ Aigle informatique at aigle.ch Jean-Luc ~~
+ * Wettingen
+ * Wetzikon
+ * Wil 1
+ * Wohlen
+ * Worb
+ * Zofingen
+ * Zollikon
+ * Zug 1
+ * Zürich https://www.stadt-zuerich.ch/content/ted/de/index/geoz/gis_zentrum/jcr:content/contextparsys/kontakt/form.popup.html
+
+
