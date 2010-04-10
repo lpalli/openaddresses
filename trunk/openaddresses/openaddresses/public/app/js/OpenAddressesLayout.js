@@ -490,7 +490,9 @@ openaddresses.layout = (function() {
                         },
                         {
                             title: OpenLayers.i18n('Statistics'),
-                            html: OpenLayers.i18n('Ongoing development...<br> About 4.3 millions in OpenAddresses.org.For now, take contact with us through openaddresses[at]googlegroups.com.')
+                            html: '<a href="addresses/statistic?lang=' + Ext.get('lang').dom.value + '" target="new">' + OpenLayers.i18n('Statistics') + '</a>'
+                            //<IFRAME src="addresses/statistic?lang=' + Ext.get('lang').dom.value + '" width="100%" height="100%" frameborder="0"></IFRAME>'
+                            //html: OpenLayers.i18n('Ongoing development...<br> About 4.3 millions in OpenAddresses.org.For now, take contact with us through openaddresses[at]googlegroups.com.')
                         },
                         {
                             title: OpenLayers.i18n('License'),

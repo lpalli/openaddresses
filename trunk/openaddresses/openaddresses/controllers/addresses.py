@@ -5,7 +5,10 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 from pylons.decorators import jsonify
 
-from openaddresses.lib.base import BaseController
+from pylons import config
+from pylons.i18n.translation import *
+
+from openaddresses.lib.base import *
 from openaddresses.model.addresses import Address
 from openaddresses.model.meta import Session
 
@@ -13,16 +16,9 @@ from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
 from mapfish.lib.filters.spatial import Spatial
 
-try:
-    from json import dumps as json_dumps
-except:
-    from simplejson import dumps as json_dumps
+import locale 
 
 from datetime import datetime
-
-from shapely.wkt import loads as geojson_loads
-
-from geojson import dumps as geojson_dumps
 
 from sqlalchemy.sql import and_
 
@@ -120,8 +116,8 @@ class AddressesController(BaseController):
            return self.countCreatedToday(request)
         elif (id == 'countUpdatedToday'):
            return self.countUpdatedToday(request)
-        elif (id == 'json'):
-           return self.json(request)
+        elif (id == 'statistic'):
+           return self.statistic(request)
         elif (id == 'checkSession'):
            return self.checkSession()
         elif (id == 'createSession'):
@@ -177,3 +173,32 @@ class AddressesController(BaseController):
        for row in result:
           for column in row:
              return str(column)
+
+    def statistic(self,request):
+       if 'lang' in request.params:
+          c.lang = request.params.get('lang')
+       else:
+          c.lang = 'en'
+       c.charset = 'utf-8'
+
+       # Create SQL Query
+       sqlQuery = "select created_by, count(1) as numberAddresses " \
+          " from address where extract(week from time_created) = extract(week from now()) "\
+          " and extract(year from time_created) = extract (year from now()) "\
+          " group by created_by "\
+          " order by numberAddresses DESC "\
+          " LIMIT 20"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+
+       weekCreator=[]
+       for row in result:
+          weekRow = []
+          for column in row:
+             weekRow.append(str(column))
+          weekCreator.append(weekRow)
+
+       c.weekCreator = weekCreator
+       c.count = locale.format("%s", self.protocol.count(request), True)
+       return render('/statistic.mako')
