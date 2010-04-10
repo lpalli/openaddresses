@@ -50,8 +50,10 @@ Describe the REST services associated to the addresses
 === !MapFish !GeoCoding Service ===
 
 ==== Examples ====
- * Get three addresses of Genève 
+ * Get three addresses of Genève containing Vogt 
   * http://www.openaddresses.org/addresses/?limit=3&attrs=street,housenumber,city&query=Gen%E8ve%20Vogt
+ * Get three addresses of Genève containing Vogt, with callback 
+  * http://www.openaddresses.org/addresses/?limit=3&attrs=street,housenumber,city&query=Gen%E8ve%20Vogt&callback=myCallback
  * Get the coordinate of the address of "Chemin des Fleurettes 31" in "Lausanne"
   * http://www.openaddresses.org/addresses/?queryable=city,housenumber,street&city__ilike=%Lausanne%&housenumber__like=31&street__ilike=%Chemin%20Des%20Fleurettes% 
  * Extract the first three addresses in the city of "Lausanne" and return only the street, housenumber and city attribute, without geometry.
