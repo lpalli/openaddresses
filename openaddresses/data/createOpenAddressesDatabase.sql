@@ -355,6 +355,9 @@ create index address_created_by on address USING btree(created_by);
 create index address_country on address USING btree(country);
 create index address_time_created on address(date(time_created));
 create index address_time_updated on address(date(time_updated));
+create index address_time_created_1 on address(extract(year from time_created)); 
+create index address_time_created_2 on address(extract(week from time_created));
+create index address_time_created_3 on address(extract(day from time_created));
 
 
 
