@@ -38,13 +38,13 @@ Guten Tag!
 
 http://www.openaddresses.org/ ist eine Webseite mit dem Ziel, geokodierte Adressdaten (ohne Personeninformationen o.ä.!) frei zur Verfügung zu stellen. Das Projekt wird im Sinne von Web 2.0 "Gemeinschaftsprojekten" organisiert, so dass alle Interessierten daran teilnehmen können.
 
-Gegenwärtig umfasst der Adressdatenbestand in OpenAddresses.org etwa 10Mio Datensätze. Das ambitionierte Ziel ist es jedoch, alle Adressen weltweit zu sammeln und zur Verfügung zu stellen.
+Gegenwärtig umfasst der Adressdatenbestand in !OpenAddresses.org etwa 10Mio Datensätze. Das ambitionierte Ziel ist es jedoch, alle Adressen weltweit zu sammeln und zur Verfügung zu stellen.
 
-Falls Sie selbst Eigentümerin oder Eigentümer von geokodierten Adressdaten sind, möchten wir Sie herzlich einladen, am Projekt mitzuarbeiten, indem Sie bspw. Ihre Adressdaten zur Verfügung stellen. Von Ihrer "Datenspende" wird nicht nur das Projekt, sondern werden alle daran Interessierten, insbesondere die Nutzer der Daten profitieren. Beachten Sie auch, dass wir im Projekt entsprechende Dienste zur Verfügung stellen, welche die Nutzung der Daten sehr vereinfachen (bspw. Geokodierungsdienste [2]). Bereits haben einige administrative Stellen Ihre Daten dem Projekt zur Verfügung gestellt [3] - daher wäre es sehr schön, Sie würden sich anschliessen.
+Falls Sie selbst Eigentümerin oder Eigentümer von geokodierten Adressdaten sind, möchten wir Sie herzlich einladen, am Projekt mitzuarbeiten, indem Sie bspw. Ihre Adressdaten zur Verfügung stellen. Von Ihrer "Datenspende" wird nicht nur das Projekt, sondern werden alle daran Interessierten, insbesondere die Nutzer der Daten profitieren. Beachten Sie auch, dass wir im Projekt entsprechende Dienste zur Verfügung stellen, welche die Nutzung der Daten sehr vereinfachen (bspw. Geokodierungsdienste (2)). Bereits haben einige administrative Stellen Ihre Daten dem Projekt zur Verfügung gestellt (3) - daher wäre es sehr schön, Sie würden sich anschliessen.
 
-Falls Sie in der Lage sind, andere Daten, welche für das Projekt hilfreich sein könnten, zur Verfügung zu stellen, wäre das auch hilfreich. Nützlich sind in diesem Zusammenhang bspw. WebMapServices (WMS) oder WebFeatureServices (WFS) von Orthophotos oder Grundbuchkarten, usf.
+Falls Sie in der Lage sind, andere Daten, welche für das Projekt hilfreich sein könnten, zur Verfügung zu stellen, wäre das auch hilfreich. Nützlich sind in diesem Zusammenhang bspw. !WebMapServices (WMS) oder !WebFeatureServices (WFS) von Orthophotos oder Grundbuchkarten, usf.
 
-Gerne dürfen Sie sich auch unsrer "Community" anschliessen und mitdiskutieren [4]
+Gerne dürfen Sie sich auch unsrer "Community" anschliessen und mitdiskutieren (4)
 Wir hoffen, dass wir mit dieser Mail nicht nur Ihr Interesse, sondern auch Ihre Bereitschaft zu mitmachen wecken konnten. Gerne stehen wir für allfällige Fragen zur Verfügung.
 
 Für das Projektkernteam von !OpenAddresses, Hans-Jörg Stark
