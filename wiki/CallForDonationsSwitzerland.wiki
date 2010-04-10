@@ -20,7 +20,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Chur 1
  * Neuenburg 1
  * Vernier
- * Uster
+ * ~~ Uster~~
  * Sion 1
  * Lancy
  * Emmen
