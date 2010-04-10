@@ -55,3 +55,5 @@ Found on the web during the launch:
   * http://gis.lacounty.gov/eGIS/
  * 5.04.2010
   * http://news.nsgic.org/2010/04/openaddresses.html
+ * 10.04.2010
+  * http://blog.inovaos.it/2010/04/openaddresses-org-tutti-gli-indirizzi-postali-del-mondo-in-open-source.html
