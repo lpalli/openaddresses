@@ -20,7 +20,7 @@ En espérant que notre message pourra trouver une réponse positive, nous sommes
 
 Pour la communauté !OpenAddresses, Cédric Moullet
 
- * (1) Licence des données d'!OpenAddresses: http://creativecommons.org/licenses/by-sa/3.0/
+ * (1) Licence des données d'!OpenAddresses: http://creativecommons.org/licenses/by-sa/2.0/
  * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Services]
  * (3) [http://code.google.com/p/openaddresses/ Site de la communauté]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
@@ -51,7 +51,7 @@ Für das Projektkernteam von !OpenAddresses, Hans-Jörg Stark
 
 
 
- * (1) Daten Lizenz: http://creativecommons.org/licenses/by-sa/3.0/
+ * (1) Daten Lizenz: http://creativecommons.org/licenses/by-sa/2.0/
  * (2) [http://code.google.com/p/openaddresses/wiki/RESTService Dienste]
  * (3) [http://code.google.com/p/openaddresses/ Community]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
