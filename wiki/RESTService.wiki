@@ -75,9 +75,9 @@ Describe the REST services associated to the addresses. These services are provi
  * Extract all the addresses in a tolerance of 1000 m around coordinate 600'000/200'000 of Switzerland EPSG=21781. Return geometry is in EPSG:4326
   * http://www.openaddresses.org/addresses/?lon=600000&lat=200000&tolerance=1000&epsg=21781
 
-== Count ==
+=== Count ===
 
-=== Examples ===
+==== Examples ====
 
  * Count the number of addresses
   * http://www.openaddresses.org/addresses/count/
