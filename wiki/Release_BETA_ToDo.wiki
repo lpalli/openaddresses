@@ -92,6 +92,13 @@
     * ~~CM MAIL FR: http://media.baliz-geospatial.com/fr/publiez-une-information~~
     * ~~CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38 ~~
     * ~~CM MAIL FR: afigeo at afigeo.asso.fr~~
+   * Italy
+    * direttore rivistageomedia.it
+    * http://www.geoforus.it / redazione geoforus.it
+    * f.dovidio inovaos.it
+    * http://www.massimozotti.it/
+   * Other
+    * john telascience.org
   * TODO
    * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
    * CM PR DE: http://www.zeitung.ch/index.php 
