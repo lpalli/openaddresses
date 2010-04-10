@@ -26,7 +26,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Emmen
  * Rapperswil-Jona 1
  * Kriens
- * Yverdon-les-Bains 1
+ * ~~ Yverdon-les-Bains 1 Thomas Czaka Jean-Luc ~~
  * Zug 1
  * Montreux
  * Dübendorf
@@ -78,7 +78,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Ostermundigen
  * Langenthal
  * Opfikon
- * Morges 1
+ * ~~ Morges 1 Already donated ~~
  * Binningen
  * Cham
  * Schlieren
@@ -106,7 +106,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Münchenstein
  * Rüti
  * Oftringen
- * Delémont 1
+ * ~~Delémont 1 christophe.hanser at jura.ch Jean-Luc~~
  * Lyss
  * Worb
  * Gland
@@ -135,3 +135,6 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Aesch
  * Männedorf
  * Weinfelden
+ * ~~ Cossonay Jorge Pezuela Jean-Luc ~~
+ * ~~ Aigle informatique at aigle.ch Jean-Luc ~~
+ * ~~ Nyon Gerard Sollberger Jean-Luc ~~
