@@ -13,6 +13,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * ~~Genf francois.mumenthaler at etat.ge.ch Cédric~~
  * ~~Lausanne cadastre at lausanne.ch Cédric~~
  * ~~Winterthur daniel.kofmel at win.ch Cédric~~
+ * ~~Freiburg dominique.chenaux ville-fr.ch Cédric~~
  * Aarau 1
  * Adliswil
  * Aesch
@@ -48,7 +49,6 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Einsiedeln
  * Emmen
  * Frauenfeld 1
- * Freiburg 1
  * Freienbach
  * Gland
  * Gossau
@@ -138,5 +138,3 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Zollikon
  * Zug 1
  * Zürich https://www.stadt-zuerich.ch/content/ted/de/index/geoz/gis_zentrum/jcr:content/contextparsys/kontakt/form.popup.html
-
-
