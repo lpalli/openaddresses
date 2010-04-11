@@ -411,7 +411,7 @@ openaddresses.layout = (function() {
                 {
                     region: 'north',
                     height: 74,
-                    html: '<div><img src="resources/img/OpenAddressesLogoOri64.png" alt="OpenAddressesLogo" style="margin-top:5px;margin-left:5px"/><span style="position: absolute; top: 8px; right: 5px;font-size:48px;">OpenAddresses.org BETA</span></div>',
+                    html: '<div><img src="resources/img/OpenAddressesLogoOri64.png" alt="OpenAddressesLogo" style="margin-top:5px;margin-left:5px"/><span style="position: absolute; top: 8px; right: 5px;font:48px tahoma,arial,verdana,sans-serif;">OpenAddresses.org BETA</span></div>',
                     bodyStyle: 'backgroundColor: #F0F0F0;'
                 },
                 {
