@@ -17,6 +17,8 @@ Describe the REST services associated to the addresses. These services are provi
 
 == Services description ==
 
+Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish documentation]
+
 === KVP parameters ===
 
  * no_geom=true: so that the returned feature has no geometry ("geometry": null)
