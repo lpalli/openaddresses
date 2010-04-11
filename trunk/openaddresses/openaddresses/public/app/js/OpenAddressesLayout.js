@@ -530,16 +530,6 @@ openaddresses.layout = (function() {
         });
     };
 
-    var createOpenAddressesSearchCombo = function(map) {
-        return new GeoExt.ux.openaddresses.OpenAddressesSearchCombo({
-            map: map,
-            zoom: 17,
-            loadingText: OpenLayers.i18n('Search in OpenAddresses...'),
-            emptyText: OpenLayers.i18n('Search address in OpenAddresses'),
-            renderTo: 'OpenAddressesSearch'
-        });
-    };
-
     var createOpenAddressesGlobalSearchCombo = function(map) {
         return new openaddresses.OpenAddressesGlobalSearchCombo({
             map: map,
@@ -924,7 +914,6 @@ openaddresses.layout = (function() {
             }
             //this.buildingControl.activate();
 
-            //Deactivate this function: var openAddressesSearchCombo = createOpenAddressesSearchCombo(this.map);
             var openAddressesGlobalSearchCombo = createOpenAddressesGlobalSearchCombo(this.map);
             var permalinkButton = createPermalinkButton();
             var topToolbar = createTopToolbar(this.map, languageCombo, permalinkButton, openAddressesGlobalSearchCombo);
@@ -943,7 +932,6 @@ openaddresses.layout = (function() {
 
             // Manage controlers for reverse geocoding and editing, associated to navControl
             handleRightMouseClick(this.map);
-
 
             var hideMask = function () {
                 if (Ext.get('loading')) {
