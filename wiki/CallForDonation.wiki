@@ -1,5 +1,10 @@
 The goal of this page is to prepare a standard email for asking for addresses
 
+= Address sources =
+
+ * http://gisinventory.net/data_layers.html?view=metadata_search_form&action=set_page&page=1&search_action=search&keywords=&layer_name=Address+Points&status=Complete&production_date=&x=50&y=5
+ * http://www.bfs.admin.ch/bfs/portal/fr/index/infothek/nomenklaturen/blank/blank/gem_liste/03.html
+
 = FR: Recherche de données adresses =
 
 Madame, Monsieur,
@@ -26,12 +31,6 @@ Pour la communauté !OpenAddresses, Cédric Moullet
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
  * [http://code.google.com/p/openaddresses/wiki/FAQ FAQ - Foire Aux Questions (en anglais)]
 
-= Contacts pour donation =
-
- * http://www.bfs.admin.ch/bfs/portal/fr/index/infothek/nomenklaturen/blank/blank/gem_liste/03.html
-
-
-
 = DE: Anfragen für Adressdaten =
 
 Guten Tag!
@@ -56,6 +55,3 @@ Für das Projektkernteam von !OpenAddresses, Hans-Jörg Stark
  * (3) [http://code.google.com/p/openaddresses/ Community]
  * (4) http://groups.google.com/group/OpenAddresses?pli=1
  * [http://code.google.com/p/openaddresses/wiki/FAQ Häufig gestellte Fragen (vorerst in Englisch)]
-
-= Kontakt für Datenspende: = 
- * http://www.bfs.admin.ch/bfs/portal/fr/index/infothek/nomenklaturen/blank/blank/gem_liste/03.html 
