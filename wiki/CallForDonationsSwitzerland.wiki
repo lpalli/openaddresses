@@ -15,6 +15,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * ~~Winterthur daniel.kofmel at win.ch Cédric~~
  * ~~Freiburg dominique.chenaux at ville-fr.ch robadeyM at fr.ch Cédric~~
  * ~~Biel/Bienne directiondestravauxpublics at biel-bienne.ch Cédric~~
+ * ~~Basel gva at bs.ch Cédric~~
  * Aarau 1
  * Adliswil
  * Aesch
@@ -26,7 +27,6 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Arth
  * Baar
  * Baden 1
- * Basel gva at bs.ch
  * Bassersdorf
  * Bellinzona 1
  * Bern 1
