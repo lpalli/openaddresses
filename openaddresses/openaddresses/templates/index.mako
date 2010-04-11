@@ -25,7 +25,6 @@
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 <div id="MouseOver" style="display: none;"></div>
-<div id="OpenAddressesSearch" style="position: absolute; left: 382px; top: 25px; width: 400px;"></div>
 <div id="OpacitySlider"></div>
 <div id="loading-mask" style=""></div>
 <div id="loading">
