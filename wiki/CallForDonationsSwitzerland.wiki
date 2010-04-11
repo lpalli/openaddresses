@@ -26,7 +26,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Amriswil
  * Arbon 1
  * Arth
- * Baar
+ * ~~ Baar Already Donated ZG ~~
  * Baden 1
  * Bassersdorf
  * Bellinzona 1
@@ -38,7 +38,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Bülach 1
  * Burgdorf 1
  * Carouge
- * Cham
+ * ~~ Cham Already Donated ZG ~~
  * Chêne-Bougeries
  * Chur 1
  * Davos
@@ -52,7 +52,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Freienbach
  * Gland
  * Gossau
- * Grenchen
+ * ~~ Grenchen Already Donated SO ~~
  * Herisau
  * Horgen
  * Horw
@@ -90,7 +90,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Neuhausen am Rheinfall
  * Oberwil
  * Oftringen
- * Olten 1
+ * ~~ Olten  Already Donated SO ~~
  * Onex
  * Opfikon
  * Ostermundigen
@@ -111,7 +111,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Schwyz
  * Sierre
  * Sion 1
- * Solothurn 1
+ * ~~ Solothurn  Already Donated SO ~~
  * Spiez
  * Spreitenbach
  * St. Gallen 1
@@ -136,5 +136,5 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Worb
  * Zofingen
  * Zollikon
- * Zug 1
+ * ~~ Zug Already Donated ZG ~~
  * Zürich https://www.stadt-zuerich.ch/content/ted/de/index/geoz/gis_zentrum/jcr:content/contextparsys/kontakt/form.popup.html
