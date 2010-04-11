@@ -104,3 +104,11 @@ div.olControlMousePosition  {
 #routingPanelItem  .x-panel-body  {
    background-color:#F0F0F0 !important;
 }
+
+#SearchResult {
+   background-image:url(../img/circle.png) !important;
+   position: absolute;
+   opacity:1;
+   font-family:arial,tahoma,helvetica,sans-serif;
+   font-size:11px;
+}
