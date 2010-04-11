@@ -16,6 +16,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * ~~Freiburg dominique.chenaux at ville-fr.ch robadeyM at fr.ch Cédric~~
  * ~~Biel/Bienne directiondestravauxpublics at biel-bienne.ch Cédric~~
  * ~~Basel gva at bs.ch Cédric~~
+ * ~~ Bulle departement.technique at commune.bulle.ch Jean-Luc ~~
  * Aarau 1
  * Adliswil
  * Aesch
@@ -35,7 +36,6 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Brig-Glis
  * Buchs
  * Bülach 1
- * Bulle 1
  * Burgdorf 1
  * Carouge
  * Cham
