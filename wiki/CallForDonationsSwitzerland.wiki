@@ -14,6 +14,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * ~~Lausanne cadastre at lausanne.ch Cédric~~
  * ~~Winterthur daniel.kofmel at win.ch Cédric~~
  * ~~Freiburg dominique.chenaux at ville-fr.ch robadeyM at fr.ch Cédric~~
+ * ~~Biel/Bienne directiondestravauxpublics at biel-bienne.ch Cédric~~
  * Aarau 1
  * Adliswil
  * Aesch
@@ -29,7 +30,6 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * Bassersdorf
  * Bellinzona 1
  * Bern 1
- * Biel/Bienne directiondestravauxpublics at biel-bienne.ch
  * Binningen
  * Birsfelden
  * Brig-Glis
