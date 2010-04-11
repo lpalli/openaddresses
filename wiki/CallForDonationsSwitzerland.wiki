@@ -13,7 +13,7 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * ~~Genf francois.mumenthaler at etat.ge.ch Cédric~~
  * ~~Lausanne cadastre at lausanne.ch Cédric~~
  * ~~Winterthur daniel.kofmel at win.ch Cédric~~
- * ~~Freiburg dominique.chenaux ville-fr.ch Cédric~~
+ * ~~Freiburg dominique.chenaux at ville-fr.ch robadeyM at fr.ch Cédric~~
  * Aarau 1
  * Adliswil
  * Aesch
