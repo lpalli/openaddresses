@@ -25,7 +25,7 @@ msgid 'Loading application...'
 msgstr 'OpenAddresses Laden...'
 
 msgid 'OpenAddresses.org works for you !'
-msgstr 'OpenAddresses.org arbeitet für ihnen !'
+msgstr 'OpenAddresses.org arbeitet für Sie !'
 
 msgid 'Homepage'
 msgstr 'Homepage'
