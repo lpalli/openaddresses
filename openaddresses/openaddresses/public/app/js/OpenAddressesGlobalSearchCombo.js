@@ -96,11 +96,23 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
                     new OpenLayers.Projection("EPSG:4326"),
                     this.map.getProjectionObject()
                 );
+
                 if (record.data.properties.origin == 'geonames') {
                     this.map.setCenter(position, 12);
                 } else {
                     this.map.setCenter(position, this.zoom);
                 }
+                var px = this.map.getPixelFromLonLat(position);
+                var searchResultDiv = Ext.get('SearchResult');
+                var positionX = px.x + 355 - 16;
+                var positionY = px.y + 135 - 16;
+                searchResultDiv.dom.innerHTML = '';
+                searchResultDiv.dom.style.top = positionY + "px";
+                searchResultDiv.dom.style.left = positionX + "px";
+                searchResultDiv.dom.style.height = '32px';
+                searchResultDiv.dom.style.width = '32px';
+                searchResultDiv.dom.style.display = "block";
+                setTimeout('Ext.get("SearchResult").dom.style.display = "none";', 5000);
             }, this);
         }
     }
