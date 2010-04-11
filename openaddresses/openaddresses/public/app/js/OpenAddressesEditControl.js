@@ -251,6 +251,27 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 if (map.previousEditedFeature.attributes.housename) {
                     delete map.previousEditedFeature.attributes.housename;
                 }
+                if (map.previousEditedFeature.attributes.time_created) {
+                    delete map.previousEditedFeature.attributes.time_created;
+                }
+                if (map.previousEditedFeature.attributes.time_updated) {
+                    delete map.previousEditedFeature.attributes.time_updated;
+                }
+                if (map.previousEditedFeature.attributes.time_updated) {
+                    delete map.previousEditedFeature.attributes.time_updated;
+                }
+                if (map.previousEditedFeature.attributes.osmid) {
+                    delete map.previousEditedFeature.attributes.osmid;
+                }
+                if (map.previousEditedFeature.attributes.tsvector_street) {
+                    delete map.previousEditedFeature.attributes.tsvector_street;
+                }
+                if (map.previousEditedFeature.attributes.tsvector_street_housenumber_city) {
+                    delete map.previousEditedFeature.attributes.tsvector_street_housenumber_city;
+                }
+                if (map.previousEditedFeature.attributes.ipaddress) {
+                    delete map.previousEditedFeature.attributes.ipaddress;
+                }
 
                 // Cancel editing
                 cancelEditing(feature, true);
