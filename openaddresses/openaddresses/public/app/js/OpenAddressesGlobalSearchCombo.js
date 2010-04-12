@@ -109,8 +109,8 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
                 searchResultDiv.dom.innerHTML = '';
                 searchResultDiv.dom.style.top = positionY + "px";
                 searchResultDiv.dom.style.left = positionX + "px";
-                searchResultDiv.dom.style.height = '32px';
-                searchResultDiv.dom.style.width = '32px';
+                searchResultDiv.dom.style.height = '29px';
+                searchResultDiv.dom.style.width = '29px';
                 searchResultDiv.dom.style.display = "block";
                 setTimeout('Ext.get("SearchResult").dom.style.display = "none";', 5000);
             }, this);
