@@ -307,9 +307,7 @@ Nous appelons les personnes intéressées à s'engager dans ce projet. D'une par
 Une autre possibilité de contribuer au projet consiste à prendre part au projet pédagogique Map your World (www.map-your-world.ch), qui est déjà utilisé avec succès dans de nombreuses écoles suisses.
 
 
-== DE: Beitrag AGEO Newsletter und dem Magazin GIS Business ==
-
-== OpenAddresses: Weltweites Portal für offene und freie geokodierte Adressdaten ==
+== DE: OpenAddresses: Weltweites Portal für offene und freie geokodierte Adressdaten (für AGEO Newsletter und Magazin GIS Business) ==
 
 Anfang April 2010 ging ein neues Web-Portal für freie Geodaten online. OpenAddresses.org ermöglicht einerseits freie Adressen über eine webbasierte Kartenanwendung zu sammeln und zu nutzen, und bietet im Gegenzug freie Routing- und Geokodierungs-Dienste, basierend auf diesen Daten, an.
 
