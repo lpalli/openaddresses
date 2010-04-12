@@ -274,7 +274,7 @@ Encontraréis más información en los documentos siguientes:
 Gracias por vuestro interés.
 
 
-= Short Article = 
+= Short Articles = 
 
 == DE: !OpenAddresses reloaded ==
 
@@ -305,3 +305,21 @@ Une nouvelle version de l'application vient d'être mise en ligne (http://www.op
 Nous appelons les personnes intéressées à s'engager dans ce projet. D'une part, les fournisseurs de données peuvent mettre gratuitement à disposition du projet des services WMS (par exemple des orthophotos) qui permettent de positionner correctement les points adresses. D'autre part, les utilisateurs peuvent contribuer à la saisie de points adresses simplement en se connectant sur le portail du projet (www.openaddresses.org).
 
 Une autre possibilité de contribuer au projet consiste à prendre part au projet pédagogique Map your World (www.map-your-world.ch), qui est déjà utilisé avec succès dans de nombreuses écoles suisses.
+
+
+== DE: Beitrag AGEO Newsletter und dem Magazin GIS Business ==
+
+== OpenAddresses: Weltweites Portal für offene und freie geokodierte Adressdaten ==
+
+Anfang April 2010 ging ein neues Web-Portal für freie Geodaten online. OpenAddresses.org ermöglicht einerseits freie Adressen über eine webbasierte Kartenanwendung zu sammeln und zu nutzen, und bietet im Gegenzug freie Routing- und Geokodierungs-Dienste, basierend auf diesen Daten, an.
+
+Die Idee zu OpenAddresses wurde im Jahr 2007 von Hans-Jörg Stark an der FH Nordwestschweiz geboren, mit dem Ziel einen kompletten Datensatz geokodierter Gebäudeadressen mittels Engagement von Freiwilligen und Datenspenden amtlicher Stellen oder von Organisationen zu erstellen. Mitte 2008 bekam OpenAddresses.ch Unterstützung durch OpenAddresses.at an der FH Kärnten. Das Bestreben, dieses universitäre Projekt grenzübergreifend zu betreiben, legte eine  Weiterführung als freies und offenes Software-Projekt in Kooperation mit Open Source (OS) Software-Consultingunternehmen nahe. 
+
+Realisiert ist OpenAddresses.org mit OS Software, OS Daten und freien Diensten, wie beispielsweise MapFish, OpenStreetMap Daten und den Orthofoto-WebMapServices von geoland.at. Durch das Zusammenführen und die Nutzung dieser Georessourcen entsteht ein weiterer freier Geogdatensatz: Geokodierte Adressdaten, die für eine Vielzahl von räumliche Analysen unumgänglich sind.
+
+Jeder kann diese Adressdaten unter der Creative Commons BY-SA-Lizenz nutzen und sich an diesem Projekt beteiligen. Einzelne Adressen können über die webbasierte Kartenanwendung verortet werden. Es können auch ganze Adressdatensätze oder andere Beiträge, die das Projekt unterstützen und vorantreiben, übermitteln werden.
+
+Besuchen Sie www.openaddresses.org und machen Sie mit!
+
+von Stefanie Andrae
+FH Kärnten, Studienbereich Geoinformation
