@@ -104,8 +104,8 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
                 }
                 var px = this.map.getPixelFromLonLat(position);
                 var searchResultDiv = Ext.get('SearchResult');
-                var positionX = px.x + 345 - 16;
-                var positionY = px.y + 110 - 16;
+                var positionX = px.x + 342 - 16;
+                var positionY = px.y + 112 - 16;
                 searchResultDiv.dom.innerHTML = '';
                 searchResultDiv.dom.style.top = positionY + "px";
                 searchResultDiv.dom.style.left = positionX + "px";
