@@ -5,41 +5,41 @@ Email to send: http://code.google.com/p/openaddresses/wiki/CallForDonation
  * ~~ Aigle informatique at aigle.ch Jean-Luc ~~
  * ~~ Cossonay Jorge Pezuela Jean-Luc ~~
  * ~~ Jura raphael Wunderlich Jean-Luc ~~
- * ~~ Morges 1 Already donated ~~
+ * ~~ Morges 1 sitecom at morges.ch Cédric ~~
  * ~~ Nyon Gerard Sollberger Jean-Luc ~~
- * ~~ Uster Andreas Neumann Hans-Jörg~~
+ * ~~ Uster Andreas Neumann Hans-Jörg ~~
  * ~~ Yverdon-les-Bains 1 Thomas Czaka Jean-Luc ~~
- * ~~Delémont 1 christophe.hanser at delemont.ch Jean-Luc~~
- * ~~Genf francois.mumenthaler at etat.ge.ch Cédric~~
- * ~~Lausanne cadastre at lausanne.ch Cédric~~
- * ~~Winterthur daniel.kofmel at win.ch Cédric~~
- * ~~Freiburg dominique.chenaux at ville-fr.ch robadeyM at fr.ch Cédric~~
- * ~~Biel/Bienne directiondestravauxpublics at biel-bienne.ch Cédric~~
- * ~~Basel gva at bs.ch Cédric~~
+ * ~~ Delémont 1 christophe.hanser at delemont.ch Jean-Luc ~~
+ * ~~ Genf francois.mumenthaler at etat.ge.ch Cédric ~~
+ * ~~ Lausanne cadastre at lausanne.ch Cédric ~~
+ * ~~ Winterthur daniel.kofmel at win.ch Cédric ~~
+ * ~~ Freiburg dominique.chenaux at ville-fr.ch robadeyM at fr.ch Cédric ~~
+ * ~~ Biel/Bienne directiondestravauxpublics at biel-bienne.ch Cédric ~~
+ * ~~ Basel gva at bs.ch Cédric ~~
  * ~~ Bulle departement.technique at commune.bulle.ch Jean-Luc ~~
  * ~~ Echallens claude.berthoud at echallens.ch Jean-Luc ~~
- * Aarau 1
+ * ~~ Baar Already Donated ZG ~~
+ * ~~ Cham Already Donated ZG ~~
+ * Aarau 
  * Adliswil
  * Aesch
  * Affoltern am Albis
  * Allschwil
- * Altstätten 1
+ * Altstätten 
  * Amriswil
- * Arbon 1
+ * Arbon 
  * Arth
- * ~~ Baar Already Donated ZG ~~
- * Baden 1
+ * Baden 
  * Bassersdorf
- * Bellinzona 1
- * Bern 1
+ * Bellinzona 
+ * Bern 
  * Binningen
  * Birsfelden
  * Brig-Glis
  * Buchs
- * Bülach 1
- * Burgdorf 1
+ * Bülach 
+ * Burgdorf 
  * Carouge
- * ~~ Cham Already Donated ZG ~~
  * Chêne-Bougeries
  * Chur 1
  * Davos
