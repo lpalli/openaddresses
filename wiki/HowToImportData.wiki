@@ -260,7 +260,7 @@ attr4 VARCHAR(255),
 attr5 VARCHAR(255),
 attr6 VARCHAR(255));
 
-COPY importtmp FROM '/home/admin/openaddresses/trunk/openaddresses/data/morges.csv' WITH DELIMITER ';' CSV HEADER;
+COPY importtmp FROM '/home/admin/openaddresses/trunk/openaddresses/data/morges/morges.csv' WITH DELIMITER ';' CSV HEADER;
 
 select count(1) from address where created_by = 'GemMorges';
 
