@@ -102,6 +102,7 @@ Description of tasks that need to be accomplished in order to launch www.openadd
    * France: île de France Yves J.
   * Integrate IGN data: http://api.ign.fr/geoportail/api/doc/examples/index.html
   * Plausibility checks Jean-Luc
+  * Prepare a sound and convincing concept for data synchronization with OSM
  * Infrastructure
   * ~~Install test server~~
    * ~~!MapServer 5.6.1~~
