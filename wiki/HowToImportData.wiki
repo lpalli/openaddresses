@@ -233,3 +233,16 @@ INSERT INTO address (
 FROM washington where status != 'RETIRE');
 
 }}}
+
+= Morges,DC =
+
+ * Data origin: Morges City, Switzerland
+ * Contact person: roger.maurer at morges.ch
+ * License validation: email from 4/13/2010
+ * Import csv
+
+{{{
+
+"C:\Program Files\GnuWin32\bin\iconv.exe" -f windows-1252 -t UTF-8 Morges_Adresses_Etat13042010.csv > morges.csv
+
+}}}
