@@ -10,6 +10,9 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/country/* .
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/washington/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/morges/* .
+
 }}}
 
 = Manage Encoding =
@@ -244,5 +247,19 @@ FROM washington where status != 'RETIRE');
 {{{
 
 "C:\Program Files\GnuWin32\bin\iconv.exe" -f windows-1252 -t UTF-8 Morges_Adresses_Etat13042010.csv > morges.csv
+
+sudo su postgres
+psql -d openaddresses
+
+drop table importtmp cascade;
+
+create table importtmp (attr1 VARCHAR(255),
+attr2 VARCHAR(255),
+attr3 VARCHAR(255),
+attr4 VARCHAR(255),
+attr5 VARCHAR(255),
+attr6 VARCHAR(255));
+
+COPY importtmp FROM '/home/admin/openaddresses/trunk/openaddresses/data/morges.csv' WITH DELIMITER ';' CSV HEADER;
 
 }}}
