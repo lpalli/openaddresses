@@ -262,4 +262,35 @@ attr6 VARCHAR(255));
 
 COPY importtmp FROM '/home/admin/openaddresses/trunk/openaddresses/data/morges.csv' WITH DELIMITER ';' CSV HEADER;
 
+select count(1) from address where created_by = 'GemMorges';
+
+delete from address where created_by = 'GemMorges';
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     attr6,
+     attr5,
+     1110,
+     'Morges',
+     'CH',
+     'Vaud',
+     'Ville de Morges',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(GeomFromEWKT('SRID=21781;POINT(' || attr3 || ' ' || attr2 || ')'),4326) geom
+FROM importtmp);
+
+
+
 }}}
