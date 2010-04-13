@@ -19,10 +19,10 @@ msgstr ""
 "Generated-By: Babel 0.9.4\n"
 
 msgid 'OpenAddresses.org soon ready for you !'
-msgstr 'OpenAddresses.org bald bereits !'
+msgstr 'OpenAddresses.org ist gleich einsatzbereit !'
 
 msgid 'Loading application...'
-msgstr 'OpenAddresses Laden...'
+msgstr 'OpenAddresses Lädt...'
 
 msgid 'OpenAddresses.org works for you !'
 msgstr 'OpenAddresses.org arbeitet für Sie !'
@@ -62,4 +62,3 @@ msgstr 'Das Feld "Nutzername" bezeichnet den Namen der Person oder Organisation 
 
 msgid 'The field "House name" should include a description of the building, if one exists.'
 msgstr 'Das Feld "Gebäudename" soll eine Bezeichnung für das Gebäude beinhalten, falls eine existiert (z.B. "Technischer Hof").'
-
