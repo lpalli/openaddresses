@@ -101,12 +101,24 @@ openaddresses.layout = (function() {
             }
         };
 
+        OpenLayers.Control.Attribution.prototype.draw = function() {
+            OpenLayers.Control.prototype.draw.apply(this, arguments);
+
+            this.map.events.on({
+                'changebaselayer': this.updateAttribution,
+                'changelayer': this.updateAttribution,
+                'addlayer': this.updateAttribution,
+                'removelayer': this.updateAttribution,
+                'zoomend': this.updateAttribution,
+                'moveend': this.updateAttribution,
+                scope: this
+            });
+            this.updateAttribution();
+
+            return this.div;
+        };
+
         OpenLayers.Control.LayerSwitcher.prototype.redraw = function() {
-            //if the state hasn't changed since last redraw, no need
-            // to do anything. Just return the existing div.
-            if (!this.checkRedraw()) {
-                return this.div;
-            }
 
             //clear out previous layers
             this.clearLayersArray("base");
@@ -227,6 +239,20 @@ openaddresses.layout = (function() {
             this.baseLbl.style.display = (containsBaseLayers) ? "" : "none";
 
             return this.div;
+        };
+
+        OpenLayers.Control.LayerSwitcher.prototype.setMap = function(map) {
+            OpenLayers.Control.prototype.setMap.apply(this, arguments);
+
+            this.map.events.on({
+                "addlayer": this.redraw,
+                "changelayer": this.redraw,
+                "removelayer": this.redraw,
+                "changebaselayer": this.redraw,
+                "zoomend": this.redraw,
+                "moveend": this.redraw,
+                scope: this
+            });
         };
 
         var attributionControl = new OpenLayers.Control.Attribution();
