@@ -67,9 +67,10 @@ openaddresses.OpenAddressesGlobalSearchCombo = Ext.extend(Ext.form.ComboBox, {
     /** private: constructor
      */
     initComponent: function() {
-        openaddresses.OpenAddressesGlobalSearchCombo.superclass.initComponent.apply(this, arguments);
         this.loadingText =  OpenLayers.i18n('Search address or location...');
         this.emptyText = OpenLayers.i18n('Search address or location');
+        openaddresses.OpenAddressesGlobalSearchCombo.superclass.initComponent.apply(this, arguments);
+
         this.url = openaddresses.config.searchURL;
         this.store = new Ext.data.Store({
             proxy: new Ext.data.ScriptTagProxy({

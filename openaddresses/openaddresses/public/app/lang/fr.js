@@ -78,6 +78,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Save':'Enregistrer',
     'Save the address':'Enregistrer l\'adresse',
     'Search address in OpenAddresses':'Recherche dans OpenAddresses',
+    'Search address or location':'Recherche une adresse ou un lieu',
+    'Search address or location…':'Recherche une adresse ou un lieu...',
     'Search end…':'Arrivée',
     'Search in Geonames…':'Rechercher dans GeoNames…',
     'Search in OpenAddresses...':'Rechercher dans OpenAddresses…',

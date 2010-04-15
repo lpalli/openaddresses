@@ -75,6 +75,7 @@ openaddresses.layout = (function() {
      * {OpenLayers.Map} The OpenLayers.Map instance.
      */
     var createMap = function() {
+        // NOTE: override attribution and layer switcher to support dynamic hadnling of layers
         OpenLayers.Control.Attribution.prototype.updateAttribution = function() {
             var attributions = [];
             if (this.map && this.map.layers) {
