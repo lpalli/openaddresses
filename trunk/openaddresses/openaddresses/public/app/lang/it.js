@@ -66,6 +66,7 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Permalink':'Indirizzo',
     'Please confirm that you agree with the OpenAddresses.org license and terms of services':'Grazie di accettare la licenza e le condizioni d\'utilizzo di OpenAddresses.org ',
     'Please fill all mandatory fields: ':'Grazie di riempire tutti i campi obbligatori:',
+    'Please zoom further to create or edit an address':'Please zoom further to create or edit an address',
     'Position: ':'Coordinate:',
     'Postal code':'Codice postale',
     'Powered by MapFish: the web mapping development framework !':'Powered by MapFish: the web mapping development framework !',
@@ -76,10 +77,10 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Routing':'Itinerario',
     'Save':'Salva',
     'Save the address':'Salva l\'indirizzo',
-    'Search address in OpenAddresses':'Ricercare un indirizzo in OpenAddresses',
+    'Search address in OpenAddresses':'Ricercare in OpenAddresses',
     'Search end…':'Ricerca dell\'indirizzo di arrivo',
     'Search in Geonames…':'Ricerca in GeoNames...',
-    'Search in OpenAddresses...':'Ricerca in OpenAddresses',
+    'Search in OpenAddresses...':'Ricerca in OpenAddresses…',
     'Search location in Geonames':'Ricerca di una localizzazione in GeoNames...',
     'Search start...':'Ricerca dell\'idirizzo di partenza',
     'Select a country…':'Scegliere il paese...',
@@ -113,4 +114,4 @@ OpenLayers.Util.extend(OpenLayers.Lang["it"], {
     'Yahoo Satellite':'Yahoo Satellite',
     'You are using Chrome. Some unsolved known issues affect this browser. We recommend to use Firefox, Safari or Internet Explorer.':'State utilizzando Chrome. Alcuni problemi in corso di risoluzione concernono questo navigatore. Vi raccomandiamo d\'utilizzare Firefox, Safari o Internet Explorer.',
     'You are using Internet Explorer 6. We strongly recommend that you update it to a safer and newer version !':'State utilizzando Internet Explorer 6. Vi raccomandiamo di passare ad una versione più sicura e recente.'
- });
+});
