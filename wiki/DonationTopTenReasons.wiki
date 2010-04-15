@@ -51,9 +51,9 @@ There are several aspects of Open Source that are widely recognized. Let's take 
 == 9. You wish to check your existing address data ==
 
 By giving your addresses to !OpenAddresses, you get in return the possibility:
- #1. To compare your data with other addresses previously captured 
- #2. to be able to use a simple, yet powerful user interface to update  them
- #3. to ask the community (the inhabitants) to check themselves if their address is correct
+ 1. To compare your data with other addresses previously captured 
+ 2. to be able to use a simple, yet powerful user interface to update  them
+ 3. to ask the community (the inhabitants) to check themselves if their address is correct
 
 == 10. You need more addresses for your everyday tasks, but can't afford the large commercial datasets ==
 
