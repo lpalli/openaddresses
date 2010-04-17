@@ -52,7 +52,7 @@ openaddresses.layers = [
         displayOutsideMaxExtent: false,
         maxResolution: 50,
         attribution:"CH_SITN_Ortho: Server WMS du SITN open",
-        maxExtent: openaddresses.createBoundsFrom4326(6.31728, 46.7671, 7.1777, 47.222)}
+        maxExtent: openaddresses.createBoundsFrom4326(6.47, 46.84, 7.09, 47.17)}
             ),
     new OpenLayers.Layer.WMS(
             "CH_GENEVE_ortho",
