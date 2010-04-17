@@ -13,9 +13,9 @@
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
 
-    <link rel="stylesheet" type="text/css" href="ext31/resources/css/ext-all.css" />
-    <link rel="stylesheet" type="text/css" href="ext31/examples/ux/css/ux-all.css" />
-    <link rel="stylesheet" type="text/css" href="ext31/resources/css/xtheme-gray.css" />
+    <link rel="stylesheet" type="text/css" href="ext32/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="ext32/examples/ux/css/ux-all.css" />
+    <link rel="stylesheet" type="text/css" href="ext32/resources/css/xtheme-gray.css" />
     <link rel="stylesheet" type="text/css" href="mfbase/geoext/resources/css/popup.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/OpenAddresses.css" />
     
@@ -43,9 +43,9 @@
    }   </style>
 
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
-   <script type="text/javascript" src="ext31/adapter/ext/ext-base-debug.js"></script>
-   <script type="text/javascript" src="ext31/ext-all-debug.js"></script>
-   <script type="text/javascript" src="ext31/examples/ux/ux-all-debug.js"></script>
+   <script type="text/javascript" src="ext32/adapter/ext/ext-base-debug.js"></script>
+   <script type="text/javascript" src="ext32/ext-all-debug.js"></script>
+   <script type="text/javascript" src="ext32/examples/ux/ux-all-debug.js"></script>
 
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers.js"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js-compressed.js"></script>
@@ -74,9 +74,9 @@
 
 % else:
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
-   <script type="text/javascript" src="ext31/adapter/ext/ext-base.js?version=${c.versionTime}"></script>
-   <script type="text/javascript" src="ext31/ext-all.js?version=${c.versionTime}"></script>
-   <script type="text/javascript" src="ext31/examples/ux/ux-all.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext32/adapter/ext/ext-base.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext32/ext-all.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext32/examples/ux/ux-all.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="proj4js/lib/proj4js-compressed.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="proj4js/lib/projCode/merc.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="proj4js/lib/defs/EPSG900913.js?version=${c.versionTime}"></script>
@@ -100,14 +100,14 @@
 % if c.lang == 'zh':
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/zh-CN.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/zh_CN.js?version=${c.versionTime}"></script>
-   <script type="text/javascript" src="ext31/src/locale/ext-lang-zh_CN.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext32/src/locale/ext-lang-zh_CN.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="app/lang/zh_CN.js?version=${c.versionTime}"></script>
 % elif c.lang == 'mk':
    <script type="text/javascript" src="app/lang/mk.js?version=${c.versionTime}"></script>
 %else:
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js?version=${c.versionTime}"></script>
-   <script type="text/javascript" src="ext31/src/locale/ext-lang-${c.lang}.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="ext32/src/locale/ext-lang-${c.lang}.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="app/lang/${c.lang}.js?version=${c.versionTime}"></script>
 % endif
 
