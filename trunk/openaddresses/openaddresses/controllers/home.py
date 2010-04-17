@@ -88,3 +88,17 @@ class HomeController(BaseController):
 
         # Return a rendered template
         return render('/impressum.mako')
+
+    def mobile(self):
+        if 'mode' in request.params:
+            c.debug = (request.params['mode'].lower() == 'debug')
+        else:
+            c.debug = config['debug']
+        if not c.debug:
+            # cache for 8 hours
+            del response.headers["Pragma"]
+            response.headers["Cache-Control"] = "public"
+            return render('/mobile.mako',
+                          cache_key=c.lang, cache_type='memory', cache_expire=28800)
+        else:
+            return render('/mobile.mako')

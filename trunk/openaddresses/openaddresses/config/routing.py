@@ -22,6 +22,7 @@ def make_map():
     map.resource("address", "addresses")
     
     map.connect('', controller='home', action='index')
+    map.connect('mobile/', controller='home', action='mobile')
     map.connect('impressum/', controller='home', action='impressum')
     map.connect(':controller/:action/:id')
 
