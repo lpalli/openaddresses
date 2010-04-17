@@ -241,7 +241,7 @@ openaddresses.layers = [
         minResolution: 2,
         attribution:"DE_Bayern: Web Map Service der Bayerischen Vermessungsverwaltung",
         maxExtent: openaddresses.createBoundsFrom4326(8.89292, 47.08279, 13.97819, 50.626899)}
-            )/*,
+            ),
     new OpenLayers.Layer.WMS(
             "CH_Building",
             openaddresses.config.baseWMS,
@@ -258,7 +258,7 @@ openaddresses.layers = [
         maxResolution: 5,
         attribution:"CH_Building: BGDI WMS Dienst mit oeffentlich zugaenglichen Daten",
         maxExtent: openaddresses.createBoundsFrom4326(5.90971, 45.7899, 10.5604, 47.8154)}
-            ),
+            ),/*
     new OpenLayers.Layer.WMS(
             "DE_Lauf",
             openaddresses.config.baseWMS,
