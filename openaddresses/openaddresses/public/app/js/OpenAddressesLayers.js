@@ -258,7 +258,7 @@ openaddresses.layers = [
         maxResolution: 5,
         attribution:"CH_Building: BGDI WMS Dienst mit oeffentlich zugaenglichen Daten",
         maxExtent: openaddresses.createBoundsFrom4326(5.90971, 45.7899, 10.5604, 47.8154)}
-            ),/*
+            )/*
     new OpenLayers.Layer.WMS(
             "DE_Lauf",
             openaddresses.config.baseWMS,
