@@ -50,7 +50,7 @@ openaddressesMobile = (function() {
          */
 
         setCenter: function(lon, lat) {
-            map.setCenter(new OpenLayers.LonLat(lon, lat), ZOOMLEVEL_ON_RECENTER);
+            map.setCenter(new OpenLayers.LonLat(lon, lat), 17);
             markers.clearMarkers();
             markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(lon, lat)));
         },
@@ -103,9 +103,16 @@ openaddressesMobile = (function() {
                     html += '<ul title="Results" actionbutton="{visible: false}">';
                     for (var i = 0, len = obj.features.length; i < len; i++) {
                         var feature = obj.features[i];
-                        html += '<li><a href="#map" onclick="app.setCenter(' +
-                                feature.geometry.coordinates[0] + ',' +
-                                feature.geometry.coordinates[1] + ')">' +
+                        var position = new OpenLayers.LonLat(
+                                feature.geometry.coordinates[0], feature.geometry.coordinates[1]
+                                );
+                        position.transform(
+                                new OpenLayers.Projection("EPSG:4326"),
+                                map.getProjectionObject()
+                                );
+                        html += '<li><a href="#map" onclick="openaddressesMobile.setCenter(' +
+                                position.lon + ',' +
+                                position.lat + ')">' +
                                 feature.properties.display + '</a></li>';
                     }
                     html += '</ul>';

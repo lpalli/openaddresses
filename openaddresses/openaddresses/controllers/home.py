@@ -35,6 +35,7 @@ class HomeController(BaseController):
         self.charset = 'utf-8'
 
         self.root_path = config['root_path']
+        self.mobile_search_url = config['mobile_search_url']
 
         if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
             lang = request.params['lang']
@@ -94,6 +95,7 @@ class HomeController(BaseController):
 
     def mobile(self):
         c.root_path = self.root_path
+        c.mobile_search_url = self.mobile_search_url
         if 'mode' in request.params:
             c.debug = (request.params['mode'].lower() == 'debug')
         else:
