@@ -54,11 +54,11 @@ Site developed with MapFish (http://www.mapfish.org) framework technology
     <div id="map" title="${_('Map')}" class="panel" selected="true" actionbutton="{'title': '${_('Search')}', 'href': '#searchForm2'}">
     </div>
 
-    <form id="searchForm2" title="Search" class="panel" action="/cgi-bin/proxy.cgi?url=http://plan-test.epfl.ch/search" method="post" actionbutton="{visible: false}">
+    <form id="searchForm2" title="Search" class="panel" action="http://www.openaddresses.org/search" method="post" actionbutton="{visible: false}">
         <fieldset>
             <div class="row">
                 <label>Keyword</label>
-                <input id="search" type="text" name="keyword"/>
+                <input id="search" type="text" name="query"/>
             </div>
         </fieldset>
         <a class="whiteButton" type="submit">Go</a>
