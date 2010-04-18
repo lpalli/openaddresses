@@ -54,7 +54,7 @@ Site developed with MapFish (http://www.mapfish.org) framework technology
     <div id="map" title="${_('Map')}" class="panel" selected="true" actionbutton="{'title': '${_('Search')}', 'href': '#searchForm2'}">
     </div>
 
-    <form id="searchForm2" title="Search" class="panel" action="http://www.openaddresses.org/search" method="post" actionbutton="{visible: false}">
+    <form id="searchForm2" title="Search" class="panel" action="${c.mobile_search_url}" method="post" actionbutton="{visible: false}">
         <fieldset>
             <div class="row">
                 <label>Keyword</label>
