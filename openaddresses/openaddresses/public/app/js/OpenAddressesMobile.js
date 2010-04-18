@@ -11,6 +11,8 @@
  * @include OpenLayers/Layer/WMS.js
  * @include OpenLayers/Layer/Markers.js
  * @include OpenLayers/Marker.js
+ * @include OpenLayers/Projection.js
+ * @include OpenLayers/BaseTypes/Bounds.js
  */
 
 openaddressesMobile = (function() {
@@ -57,6 +59,14 @@ openaddressesMobile = (function() {
 
         init: function() {
             map = new OpenLayers.Map('map', {
+                projection: new OpenLayers.Projection("EPSG:900913"),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+                units: "m",
+                maxResolution: 156543.0339,
+                maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
+                        20037508, 20037508.34),
+                numZoomLevels: 23,
+                allOverlays: false,
                 controls: [
                     getZoomPanel(),
                     new IOL.Control.Navigation()
@@ -72,11 +82,12 @@ openaddressesMobile = (function() {
             {singleTile:true,
                 isBaseLayer: false,
                 transitionEffect: "resize",
-                ratio: 1.5,
-                numZoomLevels: 23}
+                ratio: 1.0,
+                numZoomLevels: 23,
+                maxResolution: 500}
                     );
             markers = new OpenLayers.Layer.Markers("Markers");
-            map.addLayers([osm, address, markers]);
+            map.addLayers([osm,address, markers]);
             map.zoomToExtent(new OpenLayers.Bounds.fromArray(DEFAULT_EXTENT));
 
             iui.parsers.__default_parser__ = function(json) {

@@ -19,11 +19,19 @@ Site developed with MapFish (http://www.mapfish.org) framework technology
   <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/examples/iol-iui.css" />
 % if c.debug:
   <script type="text/javascript" src="${c.root_path}mfbase/openlayers/lib/OpenLayers.js"></script>
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/proj4js-compressed.js"></script>
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/projCode/merc.js"></script>
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/defs/EPSG900913.js"></script>
+  <script type="text/javascript" src="proj4js/lib/defs/EPSG21781.js"></script>
   <script type="text/javascript" src="${c.root_path}mobile/lib/IOL/lib/loader.js"></script>
   <script type="text/javascript" src="${c.root_path}mobile/lib/iUI/iui/iui.js"></script>
   <script type="text/javascript" src="${c.root_path}app/js/OpenAddressesMobileConfig.js"></script>
   <script type="text/javascript" src="${c.root_path}app/js/OpenAddressesMobile.js"></script>
 % else:
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/proj4js-compressed.js?version=${c.versionTime}"></script>
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/projCode/merc.js?version=${c.versionTime}"></script>
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/defs/EPSG900913.js?version=${c.versionTime}"></script>
+  <script type="text/javascript" src="${c.root_path}proj4js/lib/defs/EPSG21781.js?version=${c.versionTime}"></script>
   <script type="text/javascript" src="${c.root_path}build/mobile.js"></script>
 % endif
   <script type="text/javascript">
