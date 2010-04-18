@@ -30,6 +30,7 @@ beaker.cache.type = memory
 
 available_languages = en,fr,de,zh_CN,es,it,ca,mk
 lang = en
+root_path = %ROOT_PATH%
 
 # SQLAlchemy database URL
 sqlalchemy.url = %SQLALCHEMY_URL%

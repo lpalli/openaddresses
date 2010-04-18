@@ -3,7 +3,7 @@
 <head>
 
 <!--
-Site developed with MapFish (http://www.mapfish.org) framework technology by CampToCamp (http://www.camptocamp.com)
+Site developed with MapFish (http://www.mapfish.org) framework technology
 -->
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
@@ -15,20 +15,20 @@ Site developed with MapFish (http://www.mapfish.org) framework technology by Cam
 
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
 
-  <link rel="stylesheet" type="text/css" href="/mobile/lib/iUI/iui/iui.css" />
-  <link rel="stylesheet" type="text/css" href="/mobile/examples/iol-iui.css" />
+  <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/lib/iUI/iui/iui.css" />
+  <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/examples/iol-iui.css" />
 % if c.debug:
-  <script type="text/javascript" src="/mobile/lib/openlayers/lib/OpenLayers.js"></script>
-  <script type="text/javascript" src="/mobile/lib/IOL/lib/loader.js"></script>
-  <script type="text/javascript" src="/mobile/lib/iUI/iui/iui.js"></script>
-  <script type="text/javascript" src="/app/js/OpenAddressesMobileConfig.js"></script>
-  <script type="text/javascript" src="/app/js/OpenAddressesMobile.js"></script>
+  <script type="text/javascript" src="${c.root_path}mobile/lib/openlayers/lib/OpenLayers.js"></script>
+  <script type="text/javascript" src="${c.root_path}mobile/lib/IOL/lib/loader.js"></script>
+  <script type="text/javascript" src="${c.root_path}mobile/lib/iUI/iui/iui.js"></script>
+  <script type="text/javascript" src="${c.root_path}app/js/OpenAddressesMobileConfig.js"></script>
+  <script type="text/javascript" src="${c.root_path}app/js/OpenAddressesMobile.js"></script>
 % else:
-  <script type="text/javascript" src="/build/mobile.js"></script>
+  <script type="text/javascript" src="${c.root_path}build/mobile.js"></script>
 % endif
   <script type="text/javascript">
       window.addEventListener("load", function() {
-          OpenLayers.ImgPath = "/mfbase/openlayers/img/";
+          OpenLayers.ImgPath = "${c.root_path}mfbase/openlayers/img/";
           openaddressesMobile.init();
       }, false);
   </script>
