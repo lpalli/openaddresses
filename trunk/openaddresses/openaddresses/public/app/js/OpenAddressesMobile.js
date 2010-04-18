@@ -1,5 +1,7 @@
 /**
  * @requires app/js/OpenAddressesMobileConfig.js
+ * @requires app/js/OpenAddressesMobileOsm.js
+ * @requires OpenLayers/BaseTypes/Class.js
  * @include iui/iui.js
  * @include IOL/Control/Panel.js
  * @include IOL/Control/Navigation.js
@@ -72,7 +74,11 @@ openaddressesMobile = (function() {
                     new IOL.Control.Navigation()
                 ]
             });
-            osm = new OpenLayers.Layer.OSM();
+            osm = new OpenLayers.mobileOSM({
+                isBaseLayer: true,
+                buffer: 0,
+                transitionEffect: "resize"
+            });
             address = new OpenLayers.Layer.WMS(
                     OpenLayers.i18n("Addresses"),
                     openaddressesMobileConfig.addressWMS(),
@@ -87,7 +93,7 @@ openaddressesMobile = (function() {
                 maxResolution: 500}
                     );
             markers = new OpenLayers.Layer.Markers("Markers");
-            map.addLayers([osm,address, markers]);
+            map.addLayers([osm,address,markers]);
             map.zoomToExtent(new OpenLayers.Bounds.fromArray(DEFAULT_EXTENT));
 
             iui.parsers.__default_parser__ = function(json) {
