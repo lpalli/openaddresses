@@ -34,6 +34,8 @@ class HomeController(BaseController):
         lang = None
         self.charset = 'utf-8'
 
+        self.root_path = config['root_path']
+
         if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
             lang = request.params['lang']
         elif 'lang' in session:
@@ -62,6 +64,7 @@ class HomeController(BaseController):
         c.lang = self.current_lang = lang[3:5]
         c.charset = self.charset
         c.versionTime = time.time()
+        c.root_path = self.root_path
 
         c.available_languages = self.getAvailableLanguages()
 
@@ -90,6 +93,7 @@ class HomeController(BaseController):
         return render('/impressum.mako')
 
     def mobile(self):
+        c.root_path = self.root_path
         if 'mode' in request.params:
             c.debug = (request.params['mode'].lower() == 'debug')
         else:
