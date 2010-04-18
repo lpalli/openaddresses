@@ -18,7 +18,7 @@ Site developed with MapFish (http://www.mapfish.org) framework technology
   <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/lib/iUI/iui/iui.css" />
   <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/examples/iol-iui.css" />
 % if c.debug:
-  <script type="text/javascript" src="${c.root_path}mfbase/openlayers/lib/OpenLayers.js"></script>
+  <script type="text/javascript" src="${c.root_path}mobile/lib/openlayers/lib/OpenLayers.js"></script>
   <script type="text/javascript" src="${c.root_path}proj4js/lib/proj4js-compressed.js"></script>
   <script type="text/javascript" src="${c.root_path}proj4js/lib/projCode/merc.js"></script>
   <script type="text/javascript" src="${c.root_path}proj4js/lib/defs/EPSG900913.js"></script>
@@ -51,7 +51,21 @@ Site developed with MapFish (http://www.mapfish.org) framework technology
         <a id="actionButton" class="button" href="#"></a>
     </div>
 
-    <div id="map" title="${_('Map')}" class="panel" selected="true" actionbutton="{'title': '${_('Search')}', 'href': '#searchForm'}">
+    <div id="map" title="${_('Map')}" class="panel" selected="true" actionbutton="{'title': '${_('Search')}', 'href': '#searchForm2'}">
+    </div>
+
+    <form id="searchForm2" title="Search" class="panel" action="/cgi-bin/proxy.cgi?url=http://plan-test.epfl.ch/search" method="post" actionbutton="{visible: false}">
+        <fieldset>
+            <div class="row">
+                <label>Keyword</label>
+                <input id="search" type="text" name="keyword"/>
+            </div>
+        </fieldset>
+        <a class="whiteButton" type="submit">Go</a>
+    </form>
+
+    <div id="no_result" title="Results" class="panel" actionbutton="{'title': 'Search', 'href': '#searchForm2', target: null}">
+        <h2>Aucun résultat trouvé.</h2>
     </div>
 
 </body>
