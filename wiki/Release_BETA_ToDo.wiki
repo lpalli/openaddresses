@@ -6,8 +6,8 @@
  * ~~Data~~
   * ~~Import/Synchronize new data set~~
    * ~~migrate prod server to 8.4~~
- * Application
-  * Test http://code.google.com/p/openaddresses/wiki/HowToTest
+ * ~~Application~~
+  * ~~Test http://code.google.com/p/openaddresses/wiki/HowToTest~~
   * ~~Redirect from www.openaddresses.ch and www.openaddresses.at~~
  * Server
   * ~~Test performance~~
@@ -93,15 +93,13 @@
     * ~~CM MAIL FR: http://georezo.net/forum/viewforum.php?id=38 ~~
     * ~~CM MAIL FR: afigeo at afigeo.asso.fr~~
    * Italy
-    * direttore rivistageomedia.it
-    * http://www.geoforus.it / redazione geoforus.it
-    * f.dovidio inovaos.it
-    * http://www.massimozotti.it/
-   * Other
-    * john telascience.org
+    * ~~direttore rivistageomedia.it v
+    * ~~http://www.geoforus.it / redazione geoforus.it ~~
+    * ~~f.dovidio inovaos.it ~~
+    * ~~http://www.massimozotti.it/ ~~
+   * ~~Other~~
+    * ~~john telascience.org~~
   * TODO
-   * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
-   * CM PR DE: http://www.zeitung.ch/index.php 
    * CM MAIL XX http://www.osgeo.org/content/chapters/index.html
    * CM MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page 
   * April: SA ARTICLE DE  "GISBusiness"
