@@ -105,9 +105,8 @@ openaddressesMobile = (function() {
                         var feature = obj.features[i];
                         html += '<li><a href="#map" onclick="app.setCenter(' +
                                 feature.geometry.coordinates[0] + ',' +
-                                feature.geometry.coordinates[1] + ')">[' +
-                                feature.properties.category + '] ' +
-                                feature.properties.text + '</a></li>';
+                                feature.geometry.coordinates[1] + ')">' +
+                                feature.properties.display + '</a></li>';
                     }
                     html += '</ul>';
                 }
