@@ -1,1 +1,21 @@
-Test
+ * Codename: Yes We Can
+ * Target date: 12.6.2010
+ * Data
+  * Import ALL OSM data
+  * Synchronize
+   * OSM -> OA
+   * OA -> OSM
+ * Application
+  * Import tool
+  * Export tool
+  * QA Page
+  * Mobile
+   * GeoLocator: See the addresses around me
+   * Creating an address
+   * Routing
+   * Store a picture
+  * Test http://code.google.com/p/openaddresses/wiki/HowToTest
+ * Marketing
+  * Switzerland
+   * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
+   * CM PR DE: http://www.zeitung.ch/index.php 
