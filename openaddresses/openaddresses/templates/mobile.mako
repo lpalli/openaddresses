@@ -18,7 +18,7 @@ Site developed with MapFish (http://www.mapfish.org) framework technology
   <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/lib/iUI/iui/iui.css" />
   <link rel="stylesheet" type="text/css" href="${c.root_path}mobile/examples/iol-iui.css" />
 % if c.debug:
-  <script type="text/javascript" src="${c.root_path}mobile/lib/openlayers/lib/OpenLayers.js"></script>
+  <script type="text/javascript" src="${c.root_path}mfbase/openlayers/lib/OpenLayers.js"></script>
   <script type="text/javascript" src="${c.root_path}mobile/lib/IOL/lib/loader.js"></script>
   <script type="text/javascript" src="${c.root_path}mobile/lib/iUI/iui/iui.js"></script>
   <script type="text/javascript" src="${c.root_path}app/js/OpenAddressesMobileConfig.js"></script>
