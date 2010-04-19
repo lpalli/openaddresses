@@ -16,6 +16,9 @@
    * Store a picture
   * Test http://code.google.com/p/openaddresses/wiki/HowToTest
  * Marketing
+  * Worldwide
+   * http://www.freebase.com/
+   * http://techcrunch.com/submit-profile/
   * Switzerland
    * Liste de journalistes: http://romandiepresse.ch/liste-de-journalistes-suisses.html
    * CM PR DE: http://www.zeitung.ch/index.php 
