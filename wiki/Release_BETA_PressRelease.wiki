@@ -282,17 +282,18 @@ The project !OpenAddresses was initiated in 2007 by the "Institut Vermessung und
 from institutions or public authorities. 
 
 The set of addresses is copyright-free so that anyone can use the addresses for private 
-or professional. 
+or professional usage. 
 
 Such a data set of interest for many applications, especially for spatial analysis or geomerketing. Numerous international studies have shown that the accuracy 
-affected by the data in navigation systems is not sufficient for microgeographic analysis. It is also very important that these data cover a significant portion of the territory, 
+of the data in navigation systems is not sufficient for microgeographic analysis. It is also very important that these data cover a significant portion of the territory, 
 are regularly updated and freely available: interesting challenges for !OpenAddresses ! 
 
-A new version of the application has been put online (http://www.openaddresses.org), with a large  number of major amendments. Firstly, the original project team has been completed and is consisting of representatives of FHNW, camp2camp, FH Kärnten, ubiThere and Inser. On the other hand, the site has been completely redesigned with a new application developed with !MapFish. !OpenAddresses data are published under a CreativeCommons license and are periodically synchronized with the !OpenStreetMap project (OSM).  
+A new version of the application has been launched http://www.openaddresses.org, with a large  number of major improvements. Firstly, the original project team has been completed and is consisting of representatives of FHNW, camp2camp, FH Kärnten, ubiThere and Inser. On the other hand, the site has been completely redesigned with a new application developed with !MapFish. !OpenAddresses data are published under a CreativeCommons license and are periodically synchronized with the !OpenStreetMap project (OSM).  
 
-The !OpenAddresses project is looking for persons willing to participate to this project. First, data providers  can provide WMS (eg orthophotos) that 
-can be positioned correctly points addresses. And also, everyone can contribute to 
-entry points addresses simply by using www.openaddresses.org.
+The !OpenAddresses project is looking for persons willing to participate to this project. Data providers  can provide WMS (eg orthophotos) that 
+can be positioned to correctly digitize point addresses. And also, everyone can contribute to collect points addresses simply by using www.openaddresses.org.
+
+!OpenAddresses deliver also very powerful REST services used for geocoding or reverse geocoding. 
 
 
 == DE: !OpenAddresses reloaded ==
