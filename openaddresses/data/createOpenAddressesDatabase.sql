@@ -359,6 +359,8 @@ create index address_time_created_1 on address(extract(year from time_created));
 create index address_time_created_2 on address(extract(week from time_created));
 create index address_time_created_3 on address(extract(day from time_created));
 
+create index address_archive_archive_type on address_archive(archive_type);
+
 
 
 #  ****************************************************************
