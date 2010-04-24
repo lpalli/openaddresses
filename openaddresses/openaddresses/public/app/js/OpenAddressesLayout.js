@@ -53,6 +53,7 @@
  * @include app/js/OpenAddressesEditControl.js
  * @include app/js/OpenAddressesHover.js
  * @include app/js/OpenAddressesGlobalSearchCombo.js
+ * @include app/js/OpenAddressesUploadPanel.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
  * @include geoext-ux-dev/RoutingPanel/ux/widgets/RoutingPanel.js
@@ -504,8 +505,27 @@ openaddresses.layout = (function() {
                             }
                         },
                         {
+                            id: "uploadpanel",
                             title: OpenLayers.i18n('Upload'),
-                            html: OpenLayers.i18n('Ongoing development...<br> For now, take contact with us through openaddresses[at]googlegroups.com.')
+                            listeners: {
+                                'expand': function(panel) {
+                                    if (!Ext.getCmp('uploadPanelItem')) {
+                                        this.add({
+                                            xtype: 'oa_uploadpanel',
+                                            id: 'uploadPanelItem'
+                                        });
+                                    }
+                                    Ext.getCmp('uploadpanel').doLayout();
+                                    Ext.getCmp('uploadPanelItem').setVisible(false);
+                                    Ext.getCmp('uploadPanelItem').setVisible(true);
+                                    Ext.getCmp('uploadPanelItem').doLayout();
+                                },
+                                'collapse': function(panel) {
+                                    if (Ext.getCmp('uploadPanelItem')) {
+
+                                    }
+                                }
+                            }
                         },
                         {
                             title: OpenLayers.i18n('Download'),
