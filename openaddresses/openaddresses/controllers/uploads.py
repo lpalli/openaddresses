@@ -30,15 +30,14 @@ class UploadsController(BaseController):
 
     def create(self):
         """POST /uploads: Create a new item"""
-        permanent_store = 'uploads/'
         archive = request.POST['uploaded_file']
         email = request.POST['email']
-        permanent_file = open(os.path.join(permanent_store,archive.filename.lstrip(os.sep)),'w')
+        permanent_file = open(archive.filename.lstrip(os.sep),'w')
         shutil.copyfileobj(archive.file, permanent_file)
         archive.file.close()
         permanent_file.close()
         self.mail(email,"OpenAddresses.org upload confirmation","The file " + permanent_file.name + " has been uploaded. Thanks ! The OpenAddresses.org team.")
-        self.mail("info@openaddresses.org","OpenAddresses.org new file uploaded !","The file " + permanent_file.name + " has been uploaded.")
+        self.mail("info@openaddresses.org","OpenAddresses.org new file uploaded !","The file " + permanent_file.name + " has been uploaded by " + email)
         return dumps({"success": True})        
 
     def new(self, format='html'):
