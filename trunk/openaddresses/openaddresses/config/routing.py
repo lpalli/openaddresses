@@ -20,6 +20,7 @@ def make_map():
     # CUSTOM ROUTES HERE
 
     map.resource("address", "addresses")
+    map.resource("upload", "uploads")
     
     map.connect('', controller='home', action='index')
     map.connect('mobile/', controller='home', action='mobile')

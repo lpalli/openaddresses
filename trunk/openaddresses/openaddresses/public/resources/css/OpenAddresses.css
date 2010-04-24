@@ -105,6 +105,18 @@ div.olControlMousePosition  {
    background-color:#F0F0F0 !important;
 }
 
+#uploadpanel {
+  background-color:#F0F0F0;
+}
+
+#uploadPanelItem {
+  background-color:#F0F0F0;
+}
+
+#uploadPanelItem  .x-panel-body  {
+   background-color:#F0F0F0 !important;
+}
+
 #SearchResult {
    background-image:url(../img/circle.gif) !important;
    position: absolute;
