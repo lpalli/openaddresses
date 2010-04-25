@@ -43,7 +43,7 @@ class UploadsController(BaseController):
         archive.file.close()
         permanent_file.close()
         self.mail(email,"OpenAddresses.org upload confirmation","The file " + permanent_file.name + " has been uploaded. Thanks ! The OpenAddresses.org team.")
-        self.mail("info@openaddresses.org","OpenAddresses.org new file uploaded !","The file " + permanent_file.name + " has been uploaded by " + email)
+        self.mail("cedric.moullet@openaddresses.org","OpenAddresses.org new file uploaded !","The file " + permanent_file.name + " has been uploaded by " + email)
         return dumps({"success": True, "filename": permanent_file.name})        
 
     def new(self, format='html'):
@@ -80,7 +80,7 @@ class UploadsController(BaseController):
         # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
         msg = MIMEMultipart()
 
-        msg['From'] = 'cedric.moullet@gmail.com'
+        msg['From'] = 'cedric.moullet@openaddresses.org'
         msg['To'] = to
         msg['Subject'] = subject
 
