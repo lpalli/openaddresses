@@ -257,9 +257,6 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 if (map.previousEditedFeature.attributes.time_updated) {
                     delete map.previousEditedFeature.attributes.time_updated;
                 }
-                if (map.previousEditedFeature.attributes.time_updated) {
-                    delete map.previousEditedFeature.attributes.time_updated;
-                }
                 if (map.previousEditedFeature.attributes.osmid) {
                     delete map.previousEditedFeature.attributes.osmid;
                 }
