@@ -41,6 +41,11 @@ openaddresses.UploadPanel = Ext.extend(Ext.form.FormPanel, {
         // Create items of upload panel
         this.items = [
             {
+                border:false,
+                bodyStyle:'padding:5px 0px 0px 5px',
+                html: OpenLayers.i18n('If you want to integrate your data in OpenAddresses, please upload them with the following form. If you have several files, create a zip. We\'ll take care of the import. For any questions, please send an email to info [at] openaddresses.org. By uploading data, you accept the terms of use od OpenAddresses.org.') + '<br>'
+            },
+            {
                 layout: 'form',
                 border:false,
                 labelWidth: 70,
@@ -120,7 +125,8 @@ openaddresses.UploadPanel = Ext.extend(Ext.form.FormPanel, {
                                             url: openaddresses.config.uploadsURL,
                                             waitMsg: OpenLayers.i18n('Uploading file'),
                                             success: function(fp, o) {
-                                                alert(OpenLayers.i18n('Your file has been uploaded. Thanks !'));
+                                                alert(OpenLayers.i18n('Your file has been uploaded. You will receive a confirmation email. Thanks for your contribution !'));
+                                                fp.reset();
                                             }
                                         });
                                     } else {

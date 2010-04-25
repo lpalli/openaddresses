@@ -6,7 +6,7 @@
    padding-right:2px;
    padding-top:2px;
    opacity:0.8;
-   font-family:arial,tahoma,helvetica,sans-serif;
+   font-family:tahoma,arial,verdana,sans-serif;
    font-size:11px;
 }
 #OpacitySlider {
@@ -41,14 +41,14 @@
 #loading .loading-indicator{
    background:white;
    color:#444;
-   font:bold 13px tahoma,arial,helvetica;
+   font:bold 13px tahoma,arial,verdana,sans-serif;
    padding:10px;
    margin:0;
    height:auto;
 }
 
 #loading-msg {
-   font: normal 10px arial,tahoma,sans-serif;
+   font: normal 10px tahoma,arial,verdana,sans-serif;
 }
 
 #waiting{
@@ -68,7 +68,7 @@
 #waiting .loading-indicator{
    background:white;
    color:#444;
-   font:bold 13px tahoma,arial,helvetica;
+   font:bold 13px tahoma,arial,verdana,sans-serif;
    padding:16px;
    margin:0;
    height:auto;
@@ -76,7 +76,7 @@
 
 .olControlAttribution  {
    bottom:3px !important;
-   font-family:Arial !important;
+   font-family:tahoma,arial,verdana,sans-serif !important;
    font-size:11px !important;
    left:3px !important;
 }
@@ -121,11 +121,21 @@ div.olControlMousePosition  {
    background-image:url(../img/circle.gif) !important;
    position: absolute;
    opacity:1;
-   font-family:arial,tahoma,helvetica,sans-serif;
+   font-family:tahoma,arial,verdana,sans-serif;
    font-size:11px;
 }
 
 /* ext32 bug */
 .x-statusbar .x-status-busy {
     background-image: url(../../ext32/resources/images/default/grid/loading.gif) !important;
+}
+
+.x-form-item {
+   font-family:tahoma,arial,verdana,sans-serif;
+   font-size:11px;
+}
+
+.x-form-field {
+   font-family:tahoma,arial,verdana,sans-serif;
+   font-size:11px;
 }
