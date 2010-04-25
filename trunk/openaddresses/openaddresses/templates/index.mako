@@ -105,6 +105,9 @@
    <script type="text/javascript" src="app/lang/zh_CN.js?version=${c.versionTime}"></script>
 % elif c.lang == 'mk':
    <script type="text/javascript" src="app/lang/mk.js?version=${c.versionTime}"></script>
+% elif c.lang == 'pl':
+   <script type="text/javascript" src="ext32/src/locale/ext-lang-${c.lang}.js?version=${c.versionTime}"></script>
+   <script type="text/javascript" src="app/lang/${c.lang}.js?version=${c.versionTime}"></script>
 %else:
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/${c.lang}.js?version=${c.versionTime}"></script>
    <script type="text/javascript" src="mfbase/mapfish/lang/${c.lang}.js?version=${c.versionTime}"></script>

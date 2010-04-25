@@ -44,8 +44,8 @@ openaddresses.languages = [
      ['lv', 'Latvian', 'utf-8'],
      ['lt', 'Lithuanian', 'utf-8'],*/
      ['mk', 'Lëtzebuergesch', 'utf-8'],/*
-     ['no', 'Norwegian', 'utf-8'],
-     ['pl', 'Polish', 'utf-8'],
+     ['no', 'Norwegian', 'utf-8'],*/
+     ['pl', 'Polski', 'utf-8'],/*
      ['pt_BR', 'Portuguese/Brazil', 'ascii'],
      ['ro', 'Romanian', 'utf-8'],
      ['ru', 'Russian', 'UTF-8'],

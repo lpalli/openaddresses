@@ -28,7 +28,7 @@ beaker.session.key = openaddresses
 beaker.session.secret = OpEnAdDrEsSeS
 beaker.cache.type = memory
 
-available_languages = en,fr,de,zh_CN,es,it,ca,mk
+available_languages = en,fr,de,zh_CN,es,it,ca,mk,pl
 lang = en
 root_path = %ROOT_PATH%
 mobile_search_url = %MOBILE_SEARCH_URL%
