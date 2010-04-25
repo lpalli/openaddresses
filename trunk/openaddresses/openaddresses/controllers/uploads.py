@@ -3,6 +3,8 @@ import logging
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
+from pylons import config
+
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
@@ -24,22 +26,25 @@ class UploadsController(BaseController):
     # file has a resource setup:
     #     map.resource('upload', 'uploads')
 
+    def __before__(self):
+       self.main_root = config['main_root']
+
     def index(self, format='html'):
         """GET /uploads: All items in the collection"""
         # url('uploads')
-        return os.getcwd()
+        return "Not implemented, for now"
 
     def create(self):
         """POST /uploads: Create a new item"""
         archive = request.POST['uploaded_file']
         email = request.POST['email']
-        permanent_file = open(archive.filename.lstrip(os.sep),'w')
+        permanent_file = open(os.path.join(self.main_root + '/trunk/openaddresses/uploads',archive.filename.lstrip(os.sep)), 'w')
         shutil.copyfileobj(archive.file, permanent_file)
         archive.file.close()
         permanent_file.close()
         self.mail(email,"OpenAddresses.org upload confirmation","The file " + permanent_file.name + " has been uploaded. Thanks ! The OpenAddresses.org team.")
         self.mail("info@openaddresses.org","OpenAddresses.org new file uploaded !","The file " + permanent_file.name + " has been uploaded by " + email)
-        return dumps({"success": True})        
+        return dumps({"success": True, "filename": permanent_file.name})        
 
     def new(self, format='html'):
         """GET /uploads/new: Form to create a new item"""
