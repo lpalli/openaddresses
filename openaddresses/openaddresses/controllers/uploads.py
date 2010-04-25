@@ -27,6 +27,7 @@ class UploadsController(BaseController):
     def index(self, format='html'):
         """GET /uploads: All items in the collection"""
         # url('uploads')
+        return os.getcwd()
 
     def create(self):
         """POST /uploads: Create a new item"""
