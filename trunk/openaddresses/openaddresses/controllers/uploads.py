@@ -38,7 +38,8 @@ class UploadsController(BaseController):
         html = 'Uploads directory listing <br>'
         for root, dirs, files in os.walk(self.main_root + '/trunk/openaddresses/uploads'):
            for name in files:
-              html = html + '<a href = "'+self.root_path+'uploads/'+urllib.quote(name)+'">'+name+'</a><br>'
+              if name != 'entries' and name != 'format' and name != 'all-wcprops':
+                 html = html + '<a href = "'+self.root_path+'uploads/'+urllib.quote(name)+'">'+name+'</a><br>'
         return html
 
     def create(self):
