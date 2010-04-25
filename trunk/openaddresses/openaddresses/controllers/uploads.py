@@ -17,6 +17,8 @@ from openaddresses.lib.base import BaseController, render
 
 import os
 import shutil
+import urllib
+import mimetypes
 
 log = logging.getLogger(__name__)
 
@@ -28,11 +30,16 @@ class UploadsController(BaseController):
 
     def __before__(self):
        self.main_root = config['main_root']
+       self.root_path = config['root_path']
 
     def index(self, format='html'):
         """GET /uploads: All items in the collection"""
         # url('uploads')
-        return "Not implemented, for now"
+        html = 'Uploads directory listing <br>'
+        for root, dirs, files in os.walk(self.main_root + '/trunk/openaddresses/uploads'):
+           for name in files:
+              html = html + '<a href = "'+self.root_path+'uploads/'+urllib.quote(name)+'">'+name+'</a><br>'
+        return html
 
     def create(self):
         """POST /uploads: Create a new item"""
@@ -71,6 +78,16 @@ class UploadsController(BaseController):
     def show(self, id, format='html'):
         """GET /uploads/id: Show a specific item"""
         # url('upload', id=ID)
+        filename =  id+'.'+format
+        file = open(os.path.join(self.main_root + '/trunk/openaddresses/uploads',filename.lstrip(os.sep)), 'r')
+        def stream_file():
+            chunk = file.read(1024)
+            while chunk:
+                yield chunk
+                chunk = file.read(1024)
+            file.close()
+        response.headers['Content-Type'] = mimetypes.types_map['.'+format]  
+        return stream_file()
 
     def edit(self, id, format='html'):
         """GET /uploads/id/edit: Form to edit an existing item"""
