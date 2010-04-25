@@ -1,4 +1,4 @@
-An upload system allows every user to upload files in OpenAddresses
+An upload system allows every user to upload files in !OpenAddresses
 
  * Upload panel in Upload accordion in http://www.openaddresses.org/
  * List of uploaded files: http://www.openaddresses.org/uploads
