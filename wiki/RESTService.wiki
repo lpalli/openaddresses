@@ -94,10 +94,10 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
 
 === Download ===
 
-The MapFish protocoll and its KVP can be used to create the query.
+The !MapFish protocoll and its KVP can be used to create the query.
 CSV or ZIP containing a csv file can be downloaded.
 
 ==== Examples ==== 
 
  * http://www.openaddresses.org/addresses.csv?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
-  http://www.openaddresses.org/addresses.zip?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
+ * http://www.openaddresses.org/addresses.zip?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
