@@ -70,7 +70,7 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
  * Extract the first three addresses in the city of "Lausanne" and return only the street, housenumber and city attribute, without geometry.
   * http://www.openaddresses.org/addresses/?limit=3&&queryable=city&city__ilike=Lausanne&attrs=street,housenumber,city&no_geom=true
  * Extract the addresses near a point with a specific name:
-  * http://www.openaddresses.org/addresses/?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%
+  * http://www.openaddresses.org/addresses?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%
 
 === Reverse !GeoCoding Service ===
 
@@ -99,5 +99,6 @@ CSV or ZIP containing a csv file can be downloaded.
 
 ==== Examples ==== 
 
- * http://www.openaddresses.org/addresses.csv?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
- * http://www.openaddresses.org/addresses.zip?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
+ * http://www.openaddresses.org/addresses.csv?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%&attrs=street,postcode,city,created_by
+ * http://www.openaddresses.org/addresses.zip?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%&attrs=street,postcode,city,created_by
+ * http://www.openaddresses.org/addresses.csv?queryable=city,country&city__ilike=%Bottens%&country__like=CH&attrs=street,postcode,city,created_by 
