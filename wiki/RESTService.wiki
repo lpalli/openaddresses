@@ -47,7 +47,10 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
 
 ==== Response ====
 
- [http://geojson.org/ GeoJSON] data are sent back.  
+ * Output formats:
+  * Per default: [http://geojson.org/ GeoJSON] data are sent back.
+  * CSV
+  * ZIP containing a CSV file  
 
 ==== Hints ====
 
@@ -57,6 +60,7 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
 === !GeoCoding Service ===
 
 ==== Examples ====
+
  * Get three addresses of Genève containing Vogt 
   * http://www.openaddresses.org/addresses/?limit=3&attrs=street,housenumber,city&query=Gen%E8ve%20Vogt
  * Get three addresses of Genève containing Vogt, with callback 
@@ -87,3 +91,13 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
   * http://www.openaddresses.org/addresses/countCreatedToday
  * Count the number of addresses updated today
   * http://www.openaddresses.org/addresses/countUpdatedToday
+
+=== Download ===
+
+The MapFish protocoll and its KVP can be used to create the query.
+CSV or ZIP containing a csv file can be downloaded.
+
+==== Examples ==== 
+
+ * http://www.openaddresses.org/addresses.csv?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
+  http://www.openaddresses.org/addresses.zip?lon=600000&lat=200000&tolerance=1000&epsg=21781&limit=10&attrs=street,postcode,city,created_by
