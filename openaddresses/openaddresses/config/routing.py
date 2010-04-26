@@ -21,7 +21,6 @@ def make_map():
 
     map.resource("address", "addresses")
     map.resource("upload", "uploads")
-    map.resource("download", "donwloads")
     
     map.connect('', controller='home', action='index')
     map.connect('mobile/', controller='home', action='mobile')
