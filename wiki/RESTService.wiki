@@ -94,7 +94,7 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
 
 === Download ===
 
-The !MapFish protocoll and its KVP can be used to create the query.
+The [http://code.google.com/p/openaddresses/wiki/RESTService#KVP_parameters !MapFish] protocoll and its KVP can be used to create the query.
 CSV or ZIP containing a csv file can be downloaded.
 
 ==== Examples ==== 
