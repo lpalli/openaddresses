@@ -124,8 +124,13 @@ class AddressesController(BaseController):
        io = StringIO.StringIO()
        writer = csv.writer(io, delimiter=';')
        objs = self.protocol._query(request, filter=filter)
+       def removeNone(value):
+          if len(value) == 4 and value == 'None':
+             return ''
+          else:
+             return value
        for f in [self.protocol._filter_attrs(o.toFeature(), request) for o in objs if o.geometry]:
-          row = map(lambda v : str(v), f.properties.values())
+          row = map(lambda v : removeNone(str(v)) , f.properties.values())
           row.insert(0,str(f.id))
           if (f.geometry is not None):
              row.append(str(f.geometry.coordinates[0]))
