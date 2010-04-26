@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import logging
+import csv
+import StringIO
+import zipfile
 
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
@@ -72,6 +75,9 @@ class AddressesController(BaseController):
         # else:
         #     filter = compare_filter
         # return self.protocol.index(request, response, format=format, filter=filter)
+        default_filter = create_default_filter(
+              request, Address
+        )
         if 'query' in request.params:
            # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
            terms = request.params.get('query').split()
@@ -88,26 +94,59 @@ class AddressesController(BaseController):
                  tsvector = attributes
            else:
               tsvector = 'tsvector_street_housenumber_city'
-           
-           default_filter = create_default_filter(
-              request, Address
-           )
+
            ftsFilter = "%(tsvector)s @@ to_tsquery('english', '%(terms)s')" %{'tsvector': tsvector, 'terms': terms}
            if default_filter is not None:
               filter = and_(default_filter.to_sql_expr(), ftsFilter)
            else:
               filter = ftsFilter
-           #  log.warning(filter)
+              
+           if format == 'csv':
+              return self.exportCsv(request,filter)
+           if format == 'zip':
+              return self.exportZip(request,filter)
+
            json = self.protocol.index(request, response, format=format, filter=filter)
            if 'callback' in request.params:
               response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
               return request.params['callback'] + '(' + json + ');'
            else:
               response.headers['Content-Type'] = 'application/json'
-              return self.protocol.index(request, response, format=format, filter=filter)
+              return json
         else:
+           if format == 'csv':
+              return self.exportCsv(request,default_filter)
+           if format == 'zip':
+              return self.exportZip(request,default_filter)
            return self.protocol.index(request, response, format=format)
 
+    def createCsvFile(self,request,filter):
+       io = StringIO.StringIO()
+       writer = csv.writer(io, delimiter=';')
+       objs = self.protocol._query(request, filter=filter)
+       for f in [self.protocol._filter_attrs(o.toFeature(), request) for o in objs if o.geometry]:
+          row = map(lambda v : str(v), f.properties.values())
+          row.insert(0,str(f.id))
+          if (f.geometry is not None):
+             row.append(str(f.geometry.coordinates[0]))
+             row.append(str(f.geometry.coordinates[1]))
+          writer.writerow(row)
+       output = io.getvalue()
+       io.close()
+       return output
+
+    def exportCsv(self,request,filter):
+       response.content_type = 'text/csv; charset=utf-8'
+       response.content_disposition = 'attachment; filename="addresses.csv"'
+       return self.createCsvFile(request,filter)
+
+    def exportZip(self,request,filter):
+       imz = InMemoryZip()
+       imz.append("addresses.csv", self.createCsvFile(request,filter))
+       response.content_type = 'application/zip; charset=utf-8'
+       response.content_disposition = 'attachment; filename="addresses.zip"'
+       return imz.read()
+          
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
         if (id == 'count'):
@@ -202,3 +241,36 @@ class AddressesController(BaseController):
        c.weekCreator = weekCreator
        c.count = locale.format("%s", self.protocol.count(request), True)
        return render('/statistic.mako')
+
+class InMemoryZip(object):
+   def __init__(self):
+       # Create the in-memory file-like object
+       self.in_memory_zip = StringIO.StringIO()
+
+   def append(self, filename_in_zip, file_contents):
+       '''Appends a file with name filename_in_zip and contents of
+          file_contents to the in-memory zip.'''
+       # Get a handle to the in-memory zip in append mode
+       zf = zipfile.ZipFile(self.in_memory_zip, "a", zipfile.ZIP_DEFLATED, False)
+
+       # Write the file to the in-memory zip
+       zf.writestr(filename_in_zip, file_contents)
+
+       # Mark the files as having been created on Windows so that
+       # Unix permissions are not inferred as 0000
+       for zfile in zf.filelist:
+           zfile.create_system = 0
+           
+       zf.close()
+       return self
+
+   def read(self):
+       '''Returns a string with the contents of the in-memory zip.'''
+       self.in_memory_zip.seek(0)
+       return self.in_memory_zip.read()
+
+   def writetofile(self, filename):
+       '''Writes the in-memory zip to a file.'''
+       f = file(filename, "w")
+       f.write(self.read())
+       f.close()
