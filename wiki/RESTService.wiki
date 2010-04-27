@@ -44,6 +44,17 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
   * ilike
  * query: string to search for Use a full text search. To be used with attrs key.
  * callback: name of callback function
+ * id={id}: the id of the address
+ * city={city}: the city of the address
+ * osmid={osmid}: the osmid of the address
+ * quality={quality}: the quality of the address. Possible values. 
+ * housenumber: ""
+ * region: ""
+ * created_by: "moi"
+ * street: "adsfasd"
+ * postcode: ""
+ * country={country}:  [http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesCountryList.js Possible values here.]
+ * housename: ""
 
 ==== Response ====
 
