@@ -78,6 +78,34 @@ class AddressesController(BaseController):
         default_filter = create_default_filter(
               request, Address
         )
+        # Convert attribute KVP to filter
+        for column in Address.__table__.columns:
+           if column.name in request.params:
+              column_name = column.name
+              column_value = request.params[column.name]
+              # PGString, PGInteger are supported
+              # PGDateTime, Geometry, NullType are not supported
+              if str(column.type).find('PGInteger') > -1:
+                 compareFilter = comparison.Comparison(
+	                comparison.Comparison.EQUAL_TO,
+	                Address.__table__.columns[column_name],
+	                value=column_value
+	             )
+                 if default_filter is not None:
+                    default_filter = and_(default_filter.to_sql_expr(), compareFilter)
+                 else:
+                    default_filter = compareFilter
+              if str(column.type).find('PGString') > -1:
+                 compareFilter = comparison.Comparison(
+	                comparison.Comparison.ILIKE,
+	                Address.__table__.columns[column_name],
+	                value='%' + column_value + '%'
+	             )
+                 if default_filter is not None:
+                    default_filter = and_(default_filter.to_sql_expr(), compareFilter)
+                 else:
+                    default_filter = compareFilter
+        # Check query for full text search
         if 'query' in request.params:
            # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
            terms = request.params.get('query').split()
@@ -118,7 +146,7 @@ class AddressesController(BaseController):
               return self.exportCsv(request,default_filter)
            if format == 'zip':
               return self.exportZip(request,default_filter)
-           return self.protocol.index(request, response, format=format)
+           return self.protocol.index(request, response, format=format, filter=default_filter)
 
     def createCsvFile(self,request,filter):
        io = StringIO.StringIO()
