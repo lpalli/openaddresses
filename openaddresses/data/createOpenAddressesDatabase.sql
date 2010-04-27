@@ -353,6 +353,8 @@ tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', 
 create index address_postcode on address USING btree(postcode);
 create index address_created_by on address USING btree(created_by);
 create index address_country on address USING btree(country);
+create index address_city on address USING btree(city);
+create index address_house_number on address USING btree(housenumber);
 create index address_time_created on address(date(time_created));
 create index address_time_updated on address(date(time_updated));
 create index address_time_created_1 on address(extract(year from time_created)); 

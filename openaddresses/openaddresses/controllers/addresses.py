@@ -97,9 +97,9 @@ class AddressesController(BaseController):
                     default_filter = compareFilter
               if str(column.type).find('PGString') > -1:
                  compareFilter = comparison.Comparison(
-	                comparison.Comparison.ILIKE,
+	                comparison.Comparison.LIKE,
 	                Address.__table__.columns[column_name],
-	                value='%' + column_value + '%'
+	                value=column_value
 	             )
                  if default_filter is not None:
                     default_filter = and_(default_filter.to_sql_expr(), compareFilter)
