@@ -111,7 +111,8 @@ CSV or ZIP containing a csv file can be downloaded.
 
 ==== Examples ==== 
 
- * http://www.openaddresses.org/addresses.csv?street=Rue%20du%20Creux%20du&20Van&attrs=street,city,postcode,housenumber&no_geom=true
+ * http://www.openaddresses.org/addresses.csv?city=Bottens&attrs=street,city,postcode,housenumber
+ * http://www.openaddresses.org/addresses.csv?street=Rue%20du%20Creux%20du%20Van&attrs=street,city,postcode,housenumber&no_geom=true
  * http://www.openaddresses.org/addresses.csv?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%&attrs=street,postcode,city,created_by
  * http://www.openaddresses.org/addresses.csv?id=1100000&attrs=street,postcode,city
  * http://www.openaddresses.org/addresses.zip?lon=6.62&lat=46.51&tolerance=0.01&queryable=street&street__ilike=%Chemin%20du%20M%&attrs=street,postcode,city,created_by
