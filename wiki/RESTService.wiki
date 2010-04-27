@@ -13,7 +13,7 @@ Describe the REST services associated to the addresses. These services are provi
  * REGION: Region
  * CITY: City
  * COUNTRY: country code ('CH','FR','AT' etc..)
- * QUALITY ('Digitized','GPS','Linear interpolation')
+ * QUALITY: ('Digitized','Donated','GPS','Linear interpolation')
 
 == Services description ==
 
