@@ -47,14 +47,14 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
  * id={id}: the id of the address
  * city={city}: the city of the address
  * osmid={osmid}: the osmid of the address
- * quality={quality}: the quality of the address. Possible values. 
- * housenumber: ""
- * region: ""
- * created_by: "moi"
- * street: "adsfasd"
- * postcode: ""
- * country={country}:  [http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesCountryList.js Possible values here.]
- * housename: ""
+ * quality={quality}: the quality of the address. [http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesEditControl.js#62 Possible values here]. 
+ * housenumber={housenumer}: the house number of the address
+ * region={region}: the region of the address
+ * created_by={created_by}: the creator of the address
+ * street={street}: the street of the address
+ * postcode={postcode}: the postal code of the address
+ * country={country}: the country of the address [http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesCountryList.js Possible values here.]
+ * housename={housename}: the house name of the address
 
 ==== Response ====
 
