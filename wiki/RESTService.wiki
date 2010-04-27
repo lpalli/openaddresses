@@ -43,8 +43,8 @@ Based on [http://trac.mapfish.org/trac/mapfish/wiki/MapFishProtocol MapFish docu
   * ge: greater than or equal to
   * like
   * ilike
- * query: string to search for Use a full text search. To be used with attrs key.
- * callback: name of callback function
+ * query={query term}: string to search for Use a full text search. To be used with attrs key.
+ * callback={callback name}: name of callback function
  * id={id}: the id of the address
  * city={city}: the city of the address
  * osmid={osmid}: the osmid of the address
