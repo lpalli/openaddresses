@@ -337,3 +337,32 @@ INSERT INTO address (
      ST_Force_2D(the_geom) geom
 FROM portland_region);
 }}}
+
+= Swiss Cities =
+
+ * Data origin: OSM / Swisstopo
+ * Contact person: Thomas Ineichen osm at t-i.ch
+ * License validation: email from 4/16/2010
+ * Import shp
+
+{{{
+
+shp2pgsql -s 21781 gg25_a_v2 city_swiss > city_swiss.sql
+
+sudo su postgres
+
+psql -d openaddresses -f city_swiss.sql
+
+psql -d openaddresses
+
+create table city as select gemname as name, transform(the_geom, 4326) as geom from city_swiss;
+
+CREATE INDEX idx_city_geom
+  ON city
+  USING gist
+  (geom);
+
+create index city_name on city USING btree(name);
+
+pgsql2shp openaddresses city -f swiss_city  -u postgres -P XXX
+}}}
