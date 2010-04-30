@@ -26,7 +26,7 @@ openaddressesMobileConfig = (function() {
            return '%ADDRESS_WMS%';
        },
        searchURL: function() {
-           return '%SEARCH_URL%'
+           return '%SEARCH_URL%';
        }
     }
 })();
