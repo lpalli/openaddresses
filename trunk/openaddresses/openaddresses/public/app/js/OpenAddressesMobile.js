@@ -24,7 +24,6 @@ openaddressesMobile = (function() {
      */
 
     var map, osm, address, markers;
-    var ZOOMLEVEL_ON_RECENTER = 0;
     //var DEFAULT_EXTENT = [-20000000,-20000000,20000000,20000000];
     var DEFAULT_EXTENT = [730154.802927831,5863118.72088469,733325.224489161,5865045.8547912];
 
