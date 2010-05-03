@@ -61,4 +61,5 @@ Found on the web during the launch:
   * http://gpsrevolution.blogspot.com/2010/04/osm-openadresses.html
   * http://apb.directionsmag.com/archives/7759-Podcast-OpenAddresses.org-Building-a-Free-Worldwide-Database-of-Addresses.html
   * http://lac-conakry.blogspot.com/2010/04/plus-de-11-millions-dadresses-pour.html
-  *  
+  * http://www.geowebguru.com/articles/269-an-overview-of-openaddressesorg
+  *
