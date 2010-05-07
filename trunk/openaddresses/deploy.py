@@ -1,4 +1,5 @@
 import os,sys
+import time
 
 # Get all files ending by .ini
 def getInFiles(inFiles,path):
@@ -41,6 +42,9 @@ def replaceConfig(filename,config):
             outputFile.write(newLine)
         else:
             outputFile.write(line)
+        if filename.find('development.ini.in') > 0:
+            if line.find('app:main') > 0:
+               outputFile.write('versionTime=' + str(time.time()) + "\n")
 
     file.close()
     outputFile.close();
