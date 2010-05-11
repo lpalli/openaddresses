@@ -19,6 +19,12 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 
 }}}
 
+= Transfer from prod to dev =
+
+{{{
+scp * oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/.
+}}}
+
 = Manage Encoding =
 
 {{{
