@@ -381,7 +381,6 @@ pgsql2shp openaddresses city -f swiss_city  -u postgres -P XXX
  * Contact person: geo-system geo-system.com.pl
  * License validation: email from 5/04/2010
  * Import shp
- * Needed to fix Łomżyńska manually
 
 {{{
 
@@ -413,4 +412,43 @@ INSERT INTO address (
      'Donated',
      ST_Force_2D(the_geom) geom
 FROM poland);
+}}}
+
+= BTI Riviera=
+
+ * Data origin: BTI
+ * Contact person: v.rizzi b-t-i.ch
+ * License validation: call from 5/11/2010
+ * Import shp
+
+{{{
+
+shp2pgsql -s 21781 adresse riviera > riviera.sql
+
+sudo su postgres
+
+psql -d openaddresses -f riviera.sql
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   city,
+   country,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     numer,
+     ulica,
+     miejscowo_,
+     'PL',
+     'geo-system',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     ST_Force_2D(the_geom) geom
+FROM bti);
 }}}
