@@ -402,9 +402,9 @@ INSERT INTO address (
    reference,
    quality,
    geom) (SELECT
-     numer,
-     ulica,
-     miejscowo_,
+     number,
+     street,
+     city,
      'PL',
      'geo-system',
      now(),
