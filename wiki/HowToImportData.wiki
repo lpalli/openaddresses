@@ -384,7 +384,7 @@ pgsql2shp openaddresses city -f swiss_city  -u postgres -P XXX
 
 {{{
 
-shp2pgsql -s 4326 addresses poland > poland.sql
+shp2pgsql -s 4326 -W 'utf-8' addresses poland > poland.sql
 
 sudo su postgres
 
@@ -423,7 +423,7 @@ FROM poland);
 
 {{{
 
-shp2pgsql -s 21781 adresse riviera > riviera.sql
+shp2pgsql -s 4326 -W 'utf-8' adresse riviera > riviera.sql
 
 sudo su postgres
 
@@ -435,20 +435,22 @@ INSERT INTO address (
    housenumber,
    street,
    city,
+   postcode,
    country,
    created_by,
    time_created,
    reference,
    quality,
    geom) (SELECT
-     numer,
-     ulica,
-     miejscowo_,
-     'PL',
-     'geo-system',
+     no,
+     nom_de_rue,
+     commune,
+     code_posta,
+     'CH',
+     'BTI',
      now(),
      'http://www.openaddresses.org',
      'Donated',
-     ST_Force_2D(the_geom) geom
-FROM bti);
+     the_geom geom
+FROM riviera);
 }}}
