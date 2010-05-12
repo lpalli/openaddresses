@@ -572,7 +572,7 @@ openaddresses.layout = (function() {
     };
 
     var createDisplayProjectionSelectorCombo = function(map) {
-        return new GeoExt.ux.form.DisplayProjectionSelectorCombo({
+        return new GeoExt.ux.DisplayProjectionSelectorCombo({
             map: map,
             projections: ['EPSG:4326', 'EPSG:900913'],
             width: 200
@@ -580,7 +580,7 @@ openaddresses.layout = (function() {
     };
 
     var createGeonamesSearchCombo = function(map) {
-        return new GeoExt.ux.geonames.GeoNamesSearchCombo({
+        return new GeoExt.ux.GeoNamesSearchCombo({
             map: map,
             zoom: 12,
             loadingText: OpenLayers.i18n('Search in Geonames...'),
