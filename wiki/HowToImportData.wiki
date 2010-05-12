@@ -17,6 +17,9 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/city_swiss/* .
 
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/bti/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/brwinow/* .
 }}}
 
 = Transfer from prod to dev =
