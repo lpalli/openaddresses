@@ -57,8 +57,8 @@
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
  * @include geoext-ux-dev/RoutingPanel/ux/widgets/RoutingPanel.js
- * @include geoext-ux-dev/OpenAddressesSearchCombo/lib/GeoExt.ux.openaddresses/OpenAddressesSearchCombo.js
- * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js
+ * @include geoext-ux-dev/OpenAddressesSearchCombo/lib/GeoExt.ux/OpenAddressesSearchCombo.js
+ * @include mfbase/geoext-ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux/GeoNamesSearchCombo.js
  */
 
 Ext.namespace("openaddresses");
