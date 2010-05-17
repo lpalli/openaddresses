@@ -498,5 +498,5 @@ INSERT INTO address (
      'http://www.openaddresses.org',
      'Donated',
      transform(the_geom, 4326) geom
-FROM indiana);
+FROM indiana where st_y(the_geom) > -1000000000 and st_x(the_geom) > -1000000000);
 }}}
