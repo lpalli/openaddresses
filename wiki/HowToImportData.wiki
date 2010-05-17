@@ -489,7 +489,7 @@ INSERT INTO address (
    quality,
    geom) (SELECT
      full_addre,
-     substring(to_char(address_zi,'99999999') from 1 for 8),
+     ltrim(substring(to_char(address_zi,'99999999') from 1 for 8)),
      address_ci,
      'US',
      address_co,
