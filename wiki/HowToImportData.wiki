@@ -457,3 +457,44 @@ INSERT INTO address (
      the_geom geom
 FROM riviera);
 }}}
+
+= Indiana =
+
+ * Data origin: Indiana Geographic Information Council / US
+ * Contact person: Philipp Worrall pworrall igic.org
+ * License validation: email from 5/13/2010
+ * Import shp
+
+{{{
+
+shp2pgsql -s 26916 Indiana_Address_Points_April_2010 indiana > indiana.sql
+
+sudo su postgres
+
+psql -d openaddresses -f indiana.sql > /tmp/indiana.log
+
+psql -d openaddresses
+
+INSERT INTO address (
+   street,
+   postcode,
+   city,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     full_addre,
+     address_zi,
+     address_ci,
+     'US',
+     address_co,
+     'igic.org',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(the_geom, 4326) geom
+FROM indiana);
+}}}
