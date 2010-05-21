@@ -39,6 +39,7 @@ scp * oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openadd
 
 dos2unix.exe
 }}}
+
 = Situs Addresses for State of Arkansas =
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
@@ -506,4 +507,49 @@ INSERT INTO address (
      'Donated',
      transform(the_geom, 4326) geom
 FROM indiana where st_y(the_geom) > -1000000000 and st_x(the_geom) > -1000000000);
+}}}
+
+=  Vancouver =
+
+ * Data origin: http://data.vancouver.ca/datacatalogue/index.htm
+ * Contact person: jonathan.mark at vancouver.ca
+ * License validation: email from 2010/5/17
+ * Import shapefile
+
+{{{
+
+unzip *.zip
+
+shp2pgsql -s 26910 property_addresses vancouver > vancouver.sql
+
+psql -d openaddresses -f vancouver.sql > /tmp/vancouver.log
+
+sudo su postgres 
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+      adr_num,
+      rtrim(ltrim(pstr_name || ' ') || coalesce(pstr_type,'')),
+      adr_zip5,
+      adr_city,
+      'US',
+      cnty_name,
+      'arkansas.gov',
+      now(),
+      'http://www.openaddresses.org',
+      'Donated',
+      ST_Force_2D(ST_SetSRID(the_geom,4326))
+   FROM arkansas);
 }}}
