@@ -22,6 +22,8 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/brwinow/* .
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/indiana/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/vancouver/* .
 }}}
 
 = Transfer from prod to dev =
@@ -514,42 +516,58 @@ FROM indiana where st_y(the_geom) > -1000000000 and st_x(the_geom) > -1000000000
  * Data origin: http://data.vancouver.ca/datacatalogue/index.htm
  * Contact person: jonathan.mark at vancouver.ca
  * License validation: email from 2010/5/17
- * Import shapefile
+ * Import csv
 
 {{{
 
 unzip *.zip
 
-shp2pgsql -s 26910 property_addresses vancouver > vancouver.sql
-
-psql -d openaddresses -f vancouver.sql > /tmp/vancouver.log
-
-sudo su postgres 
-
+sudo su postgres
 psql -d openaddresses
 
+create table vancouver(attr1 VARCHAR(255),
+attr2 VARCHAR(255),
+attr3 VARCHAR(255),
+attr4 VARCHAR(255),
+attr5 VARCHAR(255),
+attr6 VARCHAR(255),
+attr7 VARCHAR(255),
+attr8 VARCHAR(255),
+attr9 VARCHAR(255),
+attr10 VARCHAR(255),
+attr11 VARCHAR(255),
+attr12 VARCHAR(255),
+attr13 VARCHAR(255),
+attr14 VARCHAR(255),
+attr15 VARCHAR(255),
+attr16 VARCHAR(255),
+attr17 VARCHAR(255),
+attr18 VARCHAR(255),
+attr19 VARCHAR(255),
+attr20 VARCHAR(255),
+attr21 VARCHAR(255),
+attr22 VARCHAR(255),
+attr23 VARCHAR(255),
+attr24 VARCHAR(255));
+
+COPY vancouver FROM '/home/admin/openaddresses/trunk/openaddresses/data/vancouver/ICIS_AddressBC.csv' WITH DELIMITER ',' CSV HEADER NULL AS '';
+
 INSERT INTO address (
-   housenumber,
    street,
-   postcode,
    city,
    country,
-   region,
    created_by,
    time_created,
    reference,
    quality,
    geom) (SELECT
-      adr_num,
-      rtrim(ltrim(pstr_name || ' ') || coalesce(pstr_type,'')),
-      adr_zip5,
-      adr_city,
-      'US',
-      cnty_name,
-      'arkansas.gov',
-      now(),
-      'http://www.openaddresses.org',
-      'Donated',
-      ST_Force_2D(ST_SetSRID(the_geom,4326))
-   FROM arkansas);
+     attr7,
+     'Vancouver',
+     'CA',
+     'http://data.vancouver.ca/termsOfUse.htm',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     GeomFromEWKT('SRID=4326;POINT(' || attr4 || ' ' || attr3 || ')') geom
+FROM vancouver);
 }}}
