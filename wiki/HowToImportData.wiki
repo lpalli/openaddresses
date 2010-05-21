@@ -43,15 +43,22 @@ dos2unix.exe
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
  * Contact person: Learon Dalby- GIS Program Manager / learon.dalby at arkansas.gov
- * License validation: email from 4/30/2010
+ * License validation: email from 3/30/2010 / 5/20/2010
  * Import shapefile
 
 {{{
+
+psql -d openaddresses
+
+drop table arkansas cascade;
+delete from address where created_by = 'arkansas.gov';
+\q
+
 unzip *.zip
 
 shp2pgsql -s 4326 STRUC_SITUS_ADDRESS_PT_point arkansas > arkansas.sql
 
-psql -d openaddresses -f arkansas.sql
+psql -d openaddresses -f arkansas.sql > /tmp/arkansas.log
 
 sudo su postgres 
 
