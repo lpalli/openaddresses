@@ -178,7 +178,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     if (item.value) {
                         feature.attributes['' + item.name + ''] = openaddresses.qualityStore.getCodeFromValue(item.value);
                     }
-                } else if (item.name == 'created_by' || item.name == 'street' || item.name == 'housenumber' || item.name == 'housename' || item.name == 'postcode' || item.name == 'city' || item.name == 'region') {
+                } else if (item.name == 'created_by' || item.name == 'street' || item.name == 'housenumber' || item.name == 'housename' || item.name == 'postcode' || item.name == 'city' || item.name == 'locality' || item.name == 'region') {
                     feature.attributes['' + item.name + ''] = item.getValue();
                 }
             }
@@ -259,6 +259,12 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 }
                 if (map.previousEditedFeature.attributes.osmid) {
                     delete map.previousEditedFeature.attributes.osmid;
+                }
+                if (map.previousEditedFeature.attributes.externalid) {
+                    delete map.previousEditedFeature.attributes.externalid;
+                }
+                if (map.previousEditedFeature.attributes.status) {
+                    delete map.previousEditedFeature.attributes.status;
                 }
                 if (map.previousEditedFeature.attributes.tsvector_street) {
                     delete map.previousEditedFeature.attributes.tsvector_street;
@@ -476,6 +482,15 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         qtip: OpenLayers.i18n('The house name if one exists.')
                     },
                     {
+                        name:'locality',
+                        id:'locality',
+                        fieldLabel: OpenLayers.i18n('Locality'),
+                        allowBlank: true,
+                        width: 240,
+                        value: feature.attributes.locality,
+                        qtip: OpenLayers.i18n('The locality. It is an addition to the city information.')
+                    },
+                    {
                         name:'region',
                         id:'region',
                         fieldLabel: OpenLayers.i18n('Region'),
@@ -504,7 +519,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                 } else if (attribute == 'quality') {
                                     comboQuality.setValue(openaddresses.qualityStore.getValueFromCode(map.editedFeature.attributes['' + attribute + '']));
                                 } else {
-                                    if (attribute == 'created_by' || attribute == 'street' || attribute == 'postcode' || attribute == 'city' || attribute == 'region') {
+                                    if (attribute == 'created_by' || attribute == 'street' || attribute == 'postcode' || attribute == 'city' || attribute == 'locality' || attribute == 'region') {
                                         Ext.getCmp(attribute).setValue(map.editedFeature.attributes['' + attribute + '']);
                                     }
                                 }

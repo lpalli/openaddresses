@@ -197,6 +197,7 @@ CREATE TRIGGER delete_address
     EXECUTE PROCEDURE delete_address();
 
 DROP TRIGGER update_address on address cascade;
+
 CREATE TRIGGER update_address
     AFTER UPDATE ON address
     FOR EACH ROW
