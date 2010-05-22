@@ -1,4 +1,6 @@
-# Create database c2cpc84
+#  ****************************************************************
+#  Create database c2cpc84
+#  ****************************************************************
 sudo su postgres
 /usr/lib/postgresql/8.4/bin/psql -p 5433
 /usr/lib/postgresql/8.4/bin/psql -p 5433 -d openaddresses
@@ -8,7 +10,9 @@ sudo su postgres
 /usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433 -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
 /usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433 -f /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql
 
-# Create database geolin01
+#  ****************************************************************
+#  Create database geolin01
+#  ****************************************************************
 CREATE DATABASE openaddresses TEMPLATE=template_gis;
 
 \q
@@ -16,8 +20,10 @@ sudo su postgres
 /usr/lib/postgresql/8.4/bin/createuser -p 5433 -U postgres -P "www-data"
 createuser -U postgres -P "www-data"
 
+#  ****************************************************************
+#  Create Schema
+#  ****************************************************************
 
-/usr/lib/postgresql/8.4/bin/psql -d openaddresses -p 5433
 CREATE TABLE ADDRESS (
     ID SERIAL PRIMARY KEY,
     OSMID VARCHAR(128),
@@ -39,19 +45,10 @@ CREATE TABLE ADDRESS (
 
 SELECT AddGeometryColumn('address', 'geom', 4326, 'POINT', 2);
 
-#TODO
-SELECT AddGeometryColumn('address', 'geom1', 900913, 'POINT', 2);
-
 CREATE INDEX idx_address_geom
   ON address
   USING gist
   (geom);
-
-#TODO
-CREATE INDEX idx_address_geom1
-  ON address
-  USING gist
-  (geom1);
 
 GRANT ALL ON TABLE ADDRESS TO "www-data";
 GRANT ALL ON TABLE geography_columns TO "www-data";
@@ -83,9 +80,6 @@ CREATE TABLE ADDRESS_ARCHIVE (
 );
 
 SELECT AddGeometryColumn('address_archive', 'geom', 4326, 'POINT', 2);
-
-#TODO
-SELECT AddGeometryColumn('address_archive', 'geom1', 900913, 'POINT', 2);
 
 GRANT ALL ON TABLE ADDRESS_ARCHIVE TO "www-data";
 
@@ -191,22 +185,8 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
 
 ' LANGUAGE 'plpgsql';
 
-#TODO
-DROP FUNCTION update_insert_address_geometry() cascade;
-
-CREATE FUNCTION update_insert_address_geometry() RETURNS OPAQUE AS '
-  BEGIN
-     NEW.GEOM1 := Transform(NEW.GEOM,900913);
-     RETURN NEW;
-  END;
-
-' LANGUAGE 'plpgsql';
-
 GRANT ALL ON FUNCTION update_address() TO "www-data";
 GRANT ALL ON FUNCTION delete_address() TO "www-data";
-#TODO
-GRANT ALL ON FUNCTION update_address_geometry() TO "www-data";
-
 
 
 DROP TRIGGER delete_address on address cascade;
@@ -216,32 +196,72 @@ CREATE TRIGGER delete_address
     FOR EACH ROW
     EXECUTE PROCEDURE delete_address();
 
-#TODO
-DROP TRIGGER update_insert_address_geometry on address cascade;
-
-CREATE TRIGGER update_insert_address_geometry
-    BEFORE UPDATE OR INSERT ON address
-    FOR EACH ROW
-    EXECUTE PROCEDURE update_insert_address_geometry();
-
-# update address set geom=geom;
 DROP TRIGGER update_address on address cascade;
 CREATE TRIGGER update_address
     AFTER UPDATE ON address
     FOR EACH ROW
     EXECUTE PROCEDURE update_address();
 
-#TEST
-# update address set geom1 = (select Transform(geom,900913) from address where id = 349710) where id = 349710;
-# select street,geom, geom1 from address where id = 349710;
-# update address set street='test1' where id = 349710;
-# select geom, geom1 from address where id = 349710;
-# select street,geom, geom1 from address where id = 349711;
-# update address set geom=geom where id = 349711;
-# select street,geom, geom1 from address where id = 349711;
-# update address set geom = geom;
+#  ****************************************************************
+#  Add Full text search
+#  ****************************************************************
+#  http://code18.blogspot.com/2009/06/full-text-search-postgresql.html
 
--- Import data
+ALTER TABLE address ADD COLUMN tsvector_street tsvector;
+
+UPDATE address
+SET tsvector_street = to_tsvector('english', coalesce(street,'')); 
+
+CREATE INDEX tsvector_street_idx ON address USING gin(tsvector_street);
+
+CREATE INDEX tsvector_street_idx1 ON address USING gin(to_tsvector('english', coalesce(street,'')));
+
+explain SELECT distinct street
+FROM address
+WHERE geom && 'BOX(6.61879551 46.51187241, 6.62879551 46.52187241)'::box2d
+  AND
+ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005
+  AND 
+tsvector_street @@ to_tsquery('chem:* & d:* & f:*')
+  limit 15;
+ 
+ALTER TABLE address ADD COLUMN tsvector_street_housenumber_city tsvector; 
+ 
+UPDATE address
+SET tsvector_street_housenumber_city = to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,'')); 
+
+CREATE INDEX tsvector_street_housenumber_city_idx ON address USING gin(tsvector_street_housenumber_city);
+
+CREATE INDEX tsvector_street_housenumber_city_idx1 ON address USING gin(to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,''))); 
+
+explain SELECT street, city, housenumber FROM address WHERE tsvector_street_housenumber_city @@ to_tsquery('english', 'chem:* & du:* & lau:* & 28') LIMIT 5;
+
+explain SELECT street, city, housenumber FROM address WHERE to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,'')) @@ to_tsquery('chem:* & du:* & lau:* & 28') LIMIT 5;
+
+CREATE TRIGGER tsvector_street_update BEFORE INSERT OR UPDATE
+ON address FOR EACH ROW EXECUTE PROCEDURE
+tsvector_update_trigger(tsvector_street, 'pg_catalog.english', street);
+
+CREATE TRIGGER tsvector_street_housenumber_city_update BEFORE INSERT OR UPDATE
+ON address FOR EACH ROW EXECUTE PROCEDURE
+tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', street, city, housenumber);
+
+create index address_postcode on address USING btree(postcode);
+create index address_created_by on address USING btree(created_by);
+create index address_country on address USING btree(country);
+create index address_city on address USING btree(city);
+create index address_house_number on address USING btree(housenumber);
+create index address_time_created on address(date(time_created));
+create index address_time_updated on address(date(time_updated));
+create index address_time_created_1 on address(extract(year from time_created)); 
+create index address_time_created_2 on address(extract(week from time_created));
+create index address_time_created_3 on address(extract(day from time_created));
+
+create index address_archive_archive_type on address_archive(archive_type);
+
+#  ****************************************************************
+#  Import data
+#  ****************************************************************
 
 INSERT INTO address (
    housenumber,
@@ -302,71 +322,10 @@ INSERT INTO address (
    FROM "OpenAddresses" where created_by in ('pr_rueba','pr_Kogler','Stadt Villach'));
 
 update address set quality='Donated' where created_by in ('Stadt Villach');
-
 update address set quality='GPS' where created_by in ('pr_rueba','pr_Kogler');
 
--- Full text search
--- http://code18.blogspot.com/2009/06/full-text-search-postgresql.html
-
-ALTER TABLE address ADD COLUMN tsvector_street tsvector;
-
-UPDATE address
-SET tsvector_street = to_tsvector('english', coalesce(street,'')); 
-
-CREATE INDEX tsvector_street_idx ON address USING gin(tsvector_street);
-
-CREATE INDEX tsvector_street_idx1 ON address USING gin(to_tsvector('english', coalesce(street,'')));
-
-explain SELECT distinct street
-FROM address
-WHERE geom && 'BOX(6.61879551 46.51187241, 6.62879551 46.52187241)'::box2d
-  AND
-ST_Distance(geom, ST_GeomFromText('POINT(6.62379551 46.51687241)', 4326)) < 0.005
-  AND 
-tsvector_street @@ to_tsquery('chem:* & d:* & f:*')
-  limit 15;
- 
-ALTER TABLE address ADD COLUMN tsvector_street_housenumber_city tsvector; 
- 
-UPDATE address
-SET tsvector_street_housenumber_city = to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,'')); 
-
-CREATE INDEX tsvector_street_housenumber_city_idx ON address USING gin(tsvector_street_housenumber_city);
-
-CREATE INDEX tsvector_street_housenumber_city_idx1 ON address USING gin(to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,''))); 
-
-explain SELECT street, city, housenumber FROM address WHERE tsvector_street_housenumber_city @@ to_tsquery('english', 'chem:* & du:* & lau:* & 28') LIMIT 5;
-
-explain SELECT street, city, housenumber FROM address WHERE to_tsvector('english', coalesce(street,'') || ' ' || coalesce(housenumber,'') || ' ' || coalesce(city,'')) @@ to_tsquery('chem:* & du:* & lau:* & 28') LIMIT 5;
-
-CREATE TRIGGER tsvector_street_update BEFORE INSERT OR UPDATE
-ON address FOR EACH ROW EXECUTE PROCEDURE
-tsvector_update_trigger(tsvector_street, 'pg_catalog.english', street);
-
-CREATE TRIGGER tsvector_street_housenumber_city_update BEFORE INSERT OR UPDATE
-ON address FOR EACH ROW EXECUTE PROCEDURE
-tsvector_update_trigger(tsvector_street_housenumber_city, 'pg_catalog.english', street, city, housenumber);
-
-# Import backup file: pg_restore -d openaddresses oa.backup
-# /usr/lib/postgresql/8.4/bin/pg_restore -d openaddresses oa.backup -p 5433
-
-create index address_postcode on address USING btree(postcode);
-create index address_created_by on address USING btree(created_by);
-create index address_country on address USING btree(country);
-create index address_city on address USING btree(city);
-create index address_house_number on address USING btree(housenumber);
-create index address_time_created on address(date(time_created));
-create index address_time_updated on address(date(time_updated));
-create index address_time_created_1 on address(extract(year from time_created)); 
-create index address_time_created_2 on address(extract(week from time_created));
-create index address_time_created_3 on address(extract(day from time_created));
-
-create index address_archive_archive_type on address_archive(archive_type);
-
-
-
 #  ****************************************************************
-# IMPORT PROCEDURE FROM CSV FILE
+#  IMPORT PROCEDURE FROM CSV FILE
 #  ****************************************************************
 # On Windows: convert to UTF-8:
 # C:\Sandbox\openadresses\trunk\openaddresses\data>"C:\Program Files\GnuWin32\bin\iconv.exe" -f windows-1252 -t UTF-8 oa_ch.csv > oa_ch_utf8.csv
@@ -414,9 +373,6 @@ INSERT INTO address (
    GeomFromEWKT('SRID=4326;POINT(' || attr8 || ' ' || attr9 || ')') geom
 from importtmp);
 
-
-Clean data
-
 delete from address where country = '<\x1A';
 delete from address where country = 'R\x1A';
 delete from address where country = '69';
@@ -456,7 +412,7 @@ update address set country = (select country.iso2 from country where
 ST_Contains(country.the_geom, address.geom) = 't') where country is null;
 
 #  ****************************************************************
-#  Statistics
+#  STATISTICS
 #  ****************************************************************
 
 select created_by, count(1) counter from  address where time_created::date = now()::date group by created_by order by counter desc;
