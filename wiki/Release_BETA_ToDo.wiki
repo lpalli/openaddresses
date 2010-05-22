@@ -102,7 +102,7 @@
   * TODO
    * CM MAIL XX http://www.osgeo.org/content/chapters/index.html
    * CM MAIL EN: http://forum.geonames.org/gforum/forums/show/4.page 
-  * April: SA ARTICLE DE  "GISBusiness"
-  * May: HJ ARTICLE FR DE  "Geomatik Schweiz"
-  * May: SA ARTICLE DE  "AGEO Newsletter"
+  * ~~April: SA ARTICLE DE  "GISBusiness" ~~
+  * ~~May: HJ ARTICLE FR DE  "Geomatik Schweiz" ~~
+  * ~~May: SA ARTICLE DE  "AGEO Newsletter" ~~
  * ~~Add Google Analytics in http://code.google.com/p/openaddresses ~~ 
