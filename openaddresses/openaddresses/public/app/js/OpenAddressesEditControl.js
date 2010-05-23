@@ -103,6 +103,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
         var clickedPosition = openaddresses.layout.map.getLonLatFromViewPortPx(evt.xy);
         var clickedPositionWGS84 = clickedPosition.clone();
         clickedPositionWGS84.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
+        var clickedPosition21781 = clickedPosition.clone();
+        clickedPosition21781.transform(openaddresses.layout.map.getProjectionObject(), new OpenLayers.Projection("EPSG:21781"));
 
         var vectorLayer = openaddresses.layout.map.drawingLayer;
         var map = openaddresses.layout.map;
@@ -138,7 +140,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
         /** method[cancelEditing]
          */
-        var cancelEditing = function(feature,redraw) {
+        var cancelEditing = function(feature, redraw) {
             openaddresses.layout.showWaitingMask();
             if (feature.editingPopup) {
                 feature.editingPopup.close();
@@ -232,7 +234,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                         endSaveFeature(feature);
                     },
                     failure: function(resp, opt) {
-                        cancelEditing(feature,true);
+                        cancelEditing(feature, true);
                         alert(OpenLayers.i18n('Error during data storage'));
                     }
                 });
@@ -535,8 +537,55 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     }
                 }
             });
+            var getSwissValueButton = new Ext.Button({
+                id: 'getSwissValueButton',
+                text: OpenLayers.i18n('Get values from authorized source'),
+                qtip: OpenLayers.i18n('Get the address from an authorized source'),
+                disabled: false,
+                handler: function() {
+                    openaddresses.layout.showWaitingMask();
+                    Ext.Ajax.request({
+                        url: 'swissBuilding/',
+                        method: 'GET',
+                        success: function(responseObject) {
+                            var buildingFeatures = eval('(' + responseObject.responseText + ')');
+                            if (buildingFeatures[0].result) {
+                                alert(OpenLayers.i18n('No data found'));
+                            } else {
+                                if (buildingFeatures[0].housenumber) {
+                                    map.editedFeature.attributes['housenumber'] = buildingFeatures[0].housenumber;
+                                    Ext.getCmp('housenumber').setValue(map.editedFeature.attributes['housenumber']);
+                                }
+                                if (buildingFeatures[0].city) {
+                                    map.editedFeature.attributes['city'] = buildingFeatures[0].city;
+                                    Ext.getCmp('city').setValue(map.editedFeature.attributes['city']);
+                                }
+                                if (buildingFeatures[0].postcode) {
+                                    map.editedFeature.attributes['postcode'] = buildingFeatures[0].postcode;
+                                    Ext.getCmp('postcode').setValue(map.editedFeature.attributes['postcode']);
+                                }
+                                if (buildingFeatures[0].street) {
+                                    map.editedFeature.attributes['street'] = buildingFeatures[0].street;
+                                    Ext.getCmp('street').setValue(map.editedFeature.attributes['street']);
+                                }
+                                comboCountry.setValue('Switzerland');
+                            }
+                            openaddresses.layout.hideWaitingMask();
+                        },
+                        failure: function() {
+                            openaddresses.layout.hideWaitingMask();
+                            alert('Error in swissBuilding GET query');
+                        },
+                        params: {
+                            easting: clickedPosition21781.lon,
+                            northing: clickedPosition21781.lat
+                        }
+                    });
+                }
+            });
             if (feature.attributes && feature.attributes.id) {
                 buttonText = OpenLayers.i18n('Save');
+                getSwissValueButton.hide();
                 if (map.previousEditedFeature) {
                     getPreviousValueButton.show();
                 } else {
@@ -544,6 +593,15 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 }
             } else {
                 buttonText = OpenLayers.i18n('Create');
+                var bboxminx = clickedPosition21781.lon - 200;
+                var bboxminy = clickedPosition21781.lat - 200;
+                var bboxmaxx = clickedPosition21781.lon + 200;
+                var bboxmaxy = clickedPosition21781.lat + 200;
+                if (bboxminx > 480000 && bboxminx < 835000 && bboxminy > 70000 && bboxmaxy < 298000) {
+                    getSwissValueButton.show();
+                } else {
+                    getSwissValueButton.hide();
+                }
                 getPreviousValueButton.hide();
             }
 
@@ -565,7 +623,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                 openaddresses.layout.showWaitingMask();
                                 deleteEditing(feature);
                             }
-                        },getPreviousValueButton,
+                        },
+                        getPreviousValueButton,
+                        getSwissValueButton,
                         {
                             xtype: 'tbfill'
                         },
@@ -575,7 +635,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                             disabled: false,
                             handler: function() {
                                 openaddresses.layout.showWaitingMask();
-                                cancelEditing(feature,false);
+                                cancelEditing(feature, false);
                             }
                         },
                         {
