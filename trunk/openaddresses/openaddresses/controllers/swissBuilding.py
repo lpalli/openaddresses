@@ -52,5 +52,11 @@ class SwissbuildingController(BaseController):
               response.headers['Content-Type'] = 'application/json'
               return json_dumps(swissBuildingArray)
         else:
-           return 'Search returned no results'
+           if 'callback' in request.params:
+              response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
+              return request.params['callback'] + '(' + json_dumps([{'result':'Search returned no results'}]) + ');'
+           else:
+              response.headers['Content-Type'] = 'application/json'
+              return json_dumps([{'result':'Search returned no results'}])
+
 
