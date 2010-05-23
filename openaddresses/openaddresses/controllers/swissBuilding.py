@@ -39,11 +39,20 @@ class SwissbuildingController(BaseController):
         response = urllib2.urlopen(queryString)
         responseText = response.read()
         if responseText.rfind('Search returned no results') == -1:
-           responseElements = responseText.split('\'')
-           housenumber = responseElements[7]
-           street = responseElements[3]
-           postcode = responseElements[5]
-           city = responseElements[11]
+           responseElements = responseText.split('\n')
+           for element in responseElements:
+              if element.rfind('strname1') > -1:
+                 strname1_s = element.split('=')
+                 street = strname1_s[1].lstrip().lstrip('\'').rstrip().rstrip('\'')
+              if element.rfind('plz4') > -1:
+                 plz4_s = element.split('=')
+                 postcode = plz4_s[1].lstrip().lstrip('\'').rstrip().rstrip('\'')
+              if element.rfind('deinr') > -1:
+                 deinr_s = element.split('=')
+                 housenumber = deinr_s[1].lstrip().lstrip('\'').rstrip().rstrip('\'')
+              if element.rfind('plzname') > -1:
+                 plzname_s = element.split('=')
+                 city = plzname_s[1].lstrip().lstrip('\'').rstrip().rstrip('\'')
            swissBuildingArray = [{'housenumber': housenumber, 'street': street, 'postcode': postcode, 'city': city}]
            if 'callback' in request.params:
               response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
