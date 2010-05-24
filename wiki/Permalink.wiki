@@ -1,0 +1,11 @@
+= Permalink =
+
+The following permalink paramaters are supported:
+
+ * lang: language, possible values: en, fr, de etc..
+ * easting: easting position in Google oordinate 900913
+ * northing: easting position in Google oordinate 900913
+ * zoom: zoom level from 0 to 22
+ * overlayOpacity: opacity of the overlay layers from 0 to 1
+ * autload: boolean, per default true, used to autoload data from a swiss data source
+ * debug: boolean, per default false, used to use the uncompress version of the JavaScripts
