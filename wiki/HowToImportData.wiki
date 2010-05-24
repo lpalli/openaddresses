@@ -571,3 +571,46 @@ INSERT INTO address (
      GeomFromEWKT('SRID=4326;POINT(' || attr4 || ' ' || attr3 || ')') geom
 FROM vancouver);
 }}}
+
+= Nanaimo =
+
+ * Data origin: http://www.nanaimo.ca/EN/main/departments/Engineering-Public-Works/4489/Disclaimer.html
+ * Contact person: Jason.Birch at nanaimo.ca
+ * License validation: email from 5/22/2010
+ * Import shp, with treatment of Jean-Luc
+
+{{{
+
+unzip *.zip
+
+shp2pgsql -s 4326 PARCELS_points nanaimo > nanaimo.sql
+
+sudo su postgres
+
+psql -d openaddresses -f nanaimo.sql > /tmp/nanaimo.log
+
+psql -d openaddresses
+
+INSERT INTO address (
+   street,
+   housenumber,
+   postcode,
+   city,
+   country,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     str_name,
+     str_no,
+     post_code,
+     city,
+     'CA',
+     'City of Nanaimo',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     the_geom geom
+FROM nanaimo where char_length(str_no) < 9);
+}}}
