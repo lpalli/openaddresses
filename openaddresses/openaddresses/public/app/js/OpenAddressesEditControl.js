@@ -537,50 +537,53 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     }
                 }
             });
+            var getSwissAddress = function() {
+                openaddresses.layout.showWaitingMask();
+                Ext.Ajax.request({
+                    url: 'swissBuilding/',
+                    method: 'GET',
+                    success: function(responseObject) {
+                        var buildingFeatures = eval('(' + responseObject.responseText + ')');
+                        if (buildingFeatures[0].result) {
+                            alert(OpenLayers.i18n('No data found'));
+                        } else {
+                            if (buildingFeatures[0].housenumber) {
+                                map.editedFeature.attributes['housenumber'] = buildingFeatures[0].housenumber;
+                                Ext.getCmp('housenumber').setValue(map.editedFeature.attributes['housenumber']);
+                            }
+                            if (buildingFeatures[0].city) {
+                                map.editedFeature.attributes['city'] = buildingFeatures[0].city;
+                                Ext.getCmp('city').setValue(map.editedFeature.attributes['city']);
+                            }
+                            if (buildingFeatures[0].postcode) {
+                                map.editedFeature.attributes['postcode'] = buildingFeatures[0].postcode;
+                                Ext.getCmp('postcode').setValue(map.editedFeature.attributes['postcode']);
+                            }
+                            if (buildingFeatures[0].street) {
+                                map.editedFeature.attributes['street'] = buildingFeatures[0].street;
+                                Ext.getCmp('street').setValue(map.editedFeature.attributes['street']);
+                            }
+                            comboCountry.setValue('Switzerland');
+                        }
+                        openaddresses.layout.hideWaitingMask();
+                    },
+                    failure: function() {
+                        openaddresses.layout.hideWaitingMask();
+                        alert('Error in swissBuilding GET query');
+                    },
+                    params: {
+                        easting: clickedPosition21781.lon,
+                        northing: clickedPosition21781.lat
+                    }
+                });
+            };
             var getSwissValueButton = new Ext.Button({
                 id: 'getSwissValueButton',
                 text: OpenLayers.i18n('Get values from authorized source'),
                 qtip: OpenLayers.i18n('Get the address from an authorized source'),
                 disabled: false,
                 handler: function() {
-                    openaddresses.layout.showWaitingMask();
-                    Ext.Ajax.request({
-                        url: 'swissBuilding/',
-                        method: 'GET',
-                        success: function(responseObject) {
-                            var buildingFeatures = eval('(' + responseObject.responseText + ')');
-                            if (buildingFeatures[0].result) {
-                                alert(OpenLayers.i18n('No data found'));
-                            } else {
-                                if (buildingFeatures[0].housenumber) {
-                                    map.editedFeature.attributes['housenumber'] = buildingFeatures[0].housenumber;
-                                    Ext.getCmp('housenumber').setValue(map.editedFeature.attributes['housenumber']);
-                                }
-                                if (buildingFeatures[0].city) {
-                                    map.editedFeature.attributes['city'] = buildingFeatures[0].city;
-                                    Ext.getCmp('city').setValue(map.editedFeature.attributes['city']);
-                                }
-                                if (buildingFeatures[0].postcode) {
-                                    map.editedFeature.attributes['postcode'] = buildingFeatures[0].postcode;
-                                    Ext.getCmp('postcode').setValue(map.editedFeature.attributes['postcode']);
-                                }
-                                if (buildingFeatures[0].street) {
-                                    map.editedFeature.attributes['street'] = buildingFeatures[0].street;
-                                    Ext.getCmp('street').setValue(map.editedFeature.attributes['street']);
-                                }
-                                comboCountry.setValue('Switzerland');
-                            }
-                            openaddresses.layout.hideWaitingMask();
-                        },
-                        failure: function() {
-                            openaddresses.layout.hideWaitingMask();
-                            alert('Error in swissBuilding GET query');
-                        },
-                        params: {
-                            easting: clickedPosition21781.lon,
-                            northing: clickedPosition21781.lat
-                        }
-                    });
+                    getSwissAddress();
                 }
             });
             if (feature.attributes && feature.attributes.id) {
@@ -598,6 +601,9 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 var bboxmaxx = clickedPosition21781.lon + 200;
                 var bboxmaxy = clickedPosition21781.lat + 200;
                 if (bboxminx > 480000 && bboxminx < 835000 && bboxminy > 70000 && bboxmaxy < 298000) {
+                    if (openaddresses.config.autoload) {
+                        getSwissAddress();
+                    }
                     getSwissValueButton.show();
                 } else {
                     getSwissValueButton.hide();
