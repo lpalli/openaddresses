@@ -729,6 +729,16 @@ openaddresses.layout = (function() {
         } else {
             openaddresses.config.geocoding = false;
         }
+        openaddresses.config.autoload = true;
+        if (params.autoload) {
+            if (params.autoload == 'true') {
+               openaddresses.config.autoload = true;
+            } else {
+               openaddresses.config.autoload = false;
+            }
+        } else {
+            openaddresses.config.autoload = false;
+        }
     };
 
     var createOpacitySlider = function(map) {
