@@ -618,3 +618,46 @@ INSERT INTO address (
      the_geom geom
 FROM nanaimo where char_length(str_no) < 9);
 }}}
+
+= Metrogis =
+
+ * Data origin: http://www.datafinder.org/metadata/metrogis_address_points.htm
+ * Contact person: mark.kotz at metc.state.mn.us Metropolitan Council GIS, 
+ * License validation: email from 5/26/2010
+ * Import shp
+
+{{{
+
+shp2pgsql -s 26915 metrogis_address_points metrogis > metrogis.sql
+
+sudo su postgres
+
+psql -d openaddresses -f metrogis.sql > /tmp/metrogis.log
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     round(ANUMBER),
+     ST_NAME || ' ' || ST_POS_TYP || ' ' || ST_POS_DIR,
+     ZIP,
+     MUNI_NAME,
+     'US',
+     CO_NAME,
+     EDIT_ORG,
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(the_geom, 4326) geom
+FROM metrogis);
+}}}
