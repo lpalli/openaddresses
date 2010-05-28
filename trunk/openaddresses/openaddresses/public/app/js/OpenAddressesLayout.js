@@ -434,9 +434,11 @@ openaddresses.layout = (function() {
             openaddresses.config.cloudmadeKey = openaddresses.config.cloudmadeKeyOpenAddressMap;
         }
         return new Ext.Viewport({
+            id: 'mainViewport',
             layout: "border",
             items: [
                 {
+                    id: 'northRegion',
                     region: 'north',
                     height: 74,
                     html: '<div><img src="resources/img/OpenAddressesLogoOri64.png" alt="OpenAddressesLogo" style="margin-top:5px;margin-left:5px"/><span style="position: absolute; top: 8px; right: 5px;font:48px tahoma,arial,verdana,sans-serif;">OpenAddresses.org BETA</span></div>',
@@ -453,6 +455,7 @@ openaddresses.layout = (function() {
                     bbar: bottomToolbar
                 },
                 {
+                    id: 'westRegion',
                     region: 'west',
                     width: 335,
                     minSize: 256,
@@ -1006,6 +1009,17 @@ openaddresses.layout = (function() {
                 }
             };
             hideMask.defer(250);
+            if (screen.width < 1280 || screen.height < 800) {
+                var viewportComponent = Ext.getCmp('mainViewport');
+                var northRegionComponent = Ext.getCmp('northRegion');
+                var westRegionComponent = Ext.getCmp('westRegion');
+                northRegionComponent.setVisible(false);
+                westRegionComponent.setWidth(0);
+                document.getElementById('titleText').style.visibility = 'hidden';
+                document.getElementById('OpacitySlider').style.top = '37px';
+                viewportComponent.doLayout();
+                viewportComponent.doLayout();
+            }
         }
     };
 })();
