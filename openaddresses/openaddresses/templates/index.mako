@@ -26,7 +26,7 @@
 
 <div id="MouseOver" style="display: none;"></div>
 <div id="SearchResult" style="display: none; position: absolute;"></div>
-<div style="position: absolute; left: 85px; top: 43px; font:bold 13px tahoma,arial,verdana,sans-serif;">${_('Management of free and open worldwide localized addresses')}</div>
+<div id="titleText" style="position: absolute; left: 85px; top: 43px; font:bold 13px tahoma,arial,verdana,sans-serif;">${_('Management of free and open worldwide localized addresses')}</div>
 <div id="OpacitySlider"></div>
 <div id="loading-mask" style=""></div>
 <div id="loading">
