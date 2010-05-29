@@ -436,6 +436,9 @@ select created_by, count(1) counter from  address where time_created::date = now
 
 select created_by, count(1) counter from  address where time_updated::date = now()::date group by created_by order by counter desc;
 
+select count(1) counter from  address where extract(week from time_created) = extract(week from now()) and extract(year from time_created) = extract (year from now());
+
+select distinct created_by from  address where extract(week from time_created) = extract(week from now()) and extract(year from time_created) = extract (year from now());
 
 
 
