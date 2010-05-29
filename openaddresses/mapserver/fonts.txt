@@ -1,0 +1,10 @@
+vera-bold              fonts/VeraBd.ttf
+vera-bold-oblique      fonts/VeraBI.ttf
+vera-oblique           fonts/VeraIt.ttf
+vera-mono-bold         fonts/VeraMoBd.ttf
+vera-mono-bold-oblique fonts/VeraMoBI.ttf
+vera-mono-oblique      fonts/VeraMoIt.ttf
+vera-mono              fonts/VeraMono.ttf
+vera-serif-bold        fonts/VeraSeBd.ttf
+vera-serif             fonts/VeraSe.ttf
+vera-sans              fonts/Vera.ttf
