@@ -10,6 +10,8 @@ MAP
  PROJECTION
     "init=epsg:900913"
  END
+ FONTSET "fonts.txt"
+ 
  DEBUG 3
  CONFIG "MS_ERRORFILE" "%MS_ERRORFILE%"
 
@@ -334,6 +336,41 @@ MAP
    END
    METADATA
      "ows_title" "address"
+     "wms_srs" "EPSG:900913"
+   END
+ END
+
+ LAYER
+   NAME "addressNumber"
+   TYPE POINT
+   CONNECTIONTYPE POSTGIS
+   LABELITEM "housenumber"
+   LABELCACHE ON
+   CONNECTION "%DATABASE_CONNECTION_ADDRESS%"
+   PROCESSING "CLOSE_CONNECTION=DEFER"
+   PROJECTION
+       "init=epsg:4326"
+   END
+   DATA "geom from address using unique id using srid=4326"
+   STATUS ON
+   CLASS
+      MAXSCALEDENOM 5000
+      STYLE
+         SYMBOL "circle"
+         COLOR 254 254 254
+         SIZE 18
+         OFFSET -1 -1
+      END
+      LABEL
+        FONT "vera-sans"
+        TYPE truetype
+        POSITION cc
+        SIZE 6
+        COLOR 0 0 0
+      END
+   END
+   METADATA
+     "ows_title" "addressNumber"
      "wms_srs" "EPSG:900913"
    END
  END

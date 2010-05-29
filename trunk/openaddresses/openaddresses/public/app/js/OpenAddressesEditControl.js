@@ -149,6 +149,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
             vectorLayer.removeFeatures(feature);
             if (redraw) {
                 openaddresses.layout.map.addressLayer.redraw(true);
+                openaddresses.layout.map.addressNumberLayer.redraw(true);
             }
             openaddresses.layout.modifyFeatureControl.deactivate();
             openaddresses.layout.editControl.activate();

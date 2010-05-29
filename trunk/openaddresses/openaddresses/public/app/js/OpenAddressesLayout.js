@@ -299,6 +299,20 @@ openaddresses.layout = (function() {
             numZoomLevels: 23,
             maxResolution: 500}
                 );
+        openaddresses.layout.map.addressNumberLayer = new OpenLayers.Layer.WMS(
+                OpenLayers.i18n("Addresses Number"),
+                openaddresses.config.addressWMS,
+        {layers: 'addressNumber',
+            transparent: "true",
+            format:"image/png"},
+        {singleTile:true,
+            isBaseLayer: false,
+            visibility: false,
+            transitionEffect: "resize",
+            ratio: 1.5,
+            numZoomLevels: 23,
+            maxResolution: 5}
+                );
         openaddresses.layout.map.drawingLayer = new OpenLayers.Layer.Vector("DrawingLayer", {
             isBaseLayer: false,
             displayInLayerSwitcher: false
@@ -325,6 +339,7 @@ openaddresses.layout = (function() {
                         displayInLayerSwitcher: true
                     }),
                     openaddresses.layout.map.addressLayer,
+                    openaddresses.layout.map.addressNumberLayer,
                     openaddresses.layout.map.drawingLayer
                 ]);
             }
@@ -340,6 +355,7 @@ openaddresses.layout = (function() {
                     displayInLayerSwitcher: true
                 }),
                 openaddresses.layout.map.addressLayer,
+                openaddresses.layout.map.addressNumberLayer,
                 openaddresses.layout.map.drawingLayer
             ]);
         }
