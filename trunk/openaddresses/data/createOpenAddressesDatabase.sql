@@ -325,6 +325,43 @@ INSERT INTO address (
 update address set quality='Donated' where created_by in ('Stadt Villach');
 update address set quality='GPS' where created_by in ('pr_rueba','pr_Kogler');
 
+select count(1) FROM "OpenAddresses" where created_by not in ('pr_rueba','pr_Kogler','Stadt Villach', 'SO!GIS', 'zugis', 'OSM', 'Morges' and osmid is null;
+
+select created_by, count(1) counter FROM "OpenAddresses" where created_by not in ('pr_rueba','pr_Kogler','Stadt Villach', 'SO!GIS', 'zugis', 'OSM', 'Morges') and osmid is null
+group by created_by
+order by counter desc;
+
+INSERT INTO address (
+   housenumber,
+   housename,
+   street,
+   postcode,
+   city,
+   country,
+   created_by,
+   ipaddress,
+   time_created,
+   reference,
+   quality,
+   osmid,
+   geom) (SELECT
+      housenum,
+      housename,
+      street,
+      postcode,
+      city,
+      country,
+      created_by,
+      ipaddress,
+      time_creat,
+      'http://www.openaddresses.org',
+      'Donated',
+      osmid,
+      ST_SetSRID(ST_GeometryN(geom,1),4326)
+   FROM "OpenAddresses" where created_by not in ('pr_rueba','pr_Kogler','Stadt Villach', 'SO!GIS', 'zugis', 'OSM', 'Morges') and osmid is null);
+
+select count(1) counter FROM "OpenAddresses" where created_by not in ('pr_rueba','pr_Kogler','Stadt Villach', 'SO!GIS', 'zugis', 'OSM', 'Morges') and osmid is null;
+
 #  ****************************************************************
 #  IMPORT PROCEDURE FROM CSV FILE
 #  ****************************************************************
