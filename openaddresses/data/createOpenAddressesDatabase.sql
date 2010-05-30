@@ -456,6 +456,8 @@ select address.id from country, address where country.the_geom && address.geom a
 
 select count(1) from country, address where country.the_geom && address.geom and country.name_iso = 'SWITZERLAND' and address.country not like 'CH';
 
+select count(1) from country, address where country.the_geom && address.geom and country.name_iso = 'SWITZERLAND';
+
 select time_created::date, count(1) from address where country = 'CH' group by time_created::date order by time_created::date desc;
 
 select time_created::date, count(1) from address group by time_created::date order by time_created::date desc;
