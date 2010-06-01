@@ -291,7 +291,7 @@ MAP
   CONNECTION "http://wms.geo.admin.ch/"
   CONNECTIONTYPE WMS
   METADATA
-    "wms_srs"             "EPSG:4326"
+    "wms_srs"             "EPSG:21781"
     "wms_name"            "ch.bfs.gebaeude_wohnungs_register"
     "wms_server_version"  "1.1.1"
     "wms_format"          "image/png"
