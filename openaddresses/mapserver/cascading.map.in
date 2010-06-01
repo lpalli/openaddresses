@@ -290,6 +290,7 @@ MAP
   STATUS ON
   CONNECTION "http://wms.geo.admin.ch/"
   CONNECTIONTYPE WMS
+  OFFSITE 255 255 255
   METADATA
     "wms_srs"             "EPSG:21781"
     "wms_name"            "ch.bfs.gebaeude_wohnungs_register"
