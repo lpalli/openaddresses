@@ -28,6 +28,8 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/nanaimo/* .
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/metrogis/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/weelington/* .
 }}}
 
 = Transfer from prod to dev =
@@ -660,4 +662,64 @@ INSERT INTO address (
      'Donated',
      transform(the_geom, 4326) geom
 FROM metrogis);
+}}}
+
+= Wellington,South Africa =
+
+ * Data origin: Wellington, South Africa
+ * Contact person: schalk at quidity.co.za
+ * License validation: email from 6/3/2010
+ * Import csv
+
+{{{
+
+
+sudo su postgres
+psql -d openaddresses
+
+drop table importtmp cascade;
+
+create table importtmp (attr1 VARCHAR(255),
+attr2 VARCHAR(255),
+attr3 VARCHAR(255),
+attr4 VARCHAR(255),
+attr5 VARCHAR(255),
+attr6 VARCHAR(255),
+attr7 VARCHAR(255),
+attr8 VARCHAR(255),
+attr9 VARCHAR(255),
+attr10 VARCHAR(255),
+attr11 VARCHAR(255));
+
+COPY importtmp FROM '/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/wellington/Wellington.csv' WITH DELIMITER ',' CSV HEADER;
+
+COPY importtmp FROM '/home/admin/openaddresses/trunk/openaddresses/data/wellington/Wellington.csv' WITH DELIMITER ',' CSV HEADER;
+
+INSERT INTO address (
+   housenumber,
+   street,
+   housename,
+   city,
+   country,
+   region,
+   locality,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     attr1,
+     attr3,
+     attr2,
+     attr5,
+     attr7,
+     attr6,
+     attr4,
+     attr11,
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     GeomFromEWKT('SRID=4326;POINT(' || attr8 || ' ' || attr9 || ')') geom
+FROM importtmp);
+
 }}}
