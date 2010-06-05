@@ -268,7 +268,7 @@ FROM washington where status != 'RETIRE');
 
 }}}
 
-= Morges,DC =
+= Morges =
 
  * Data origin: Morges City, Switzerland
  * Contact person: roger.maurer at morges.ch
