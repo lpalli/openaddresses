@@ -32,6 +32,8 @@ scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddre
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/wellington/* .
 
 scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/paarl/* .
+
+scp oa_os@geolin01.cti.ac.at:/srv/www/htdocs/oa_os/openaddresses/trunk/openaddresses/data/uster/* .
 }}}
 
 = Transfer from prod to dev =
@@ -783,4 +785,47 @@ INSERT INTO address (
      GeomFromEWKT('SRID=4326;POINT(' || attr8 || ' ' || attr9 || ')') geom
 FROM importtmp where attr8 <> 'null' and attr9 <> 'null');
 
+}}}
+
+
+= Uster, Switzerland =
+
+ * Data origin: City of Uster
+ * Contact person: andreas.neumann at stadt-uster.ch
+ * License validation: email from 6/7/2010
+ * Import shp, deleted 15 invalid data
+
+{{{
+
+shp2pgsql -s 21781 -W 'utf-8' gebaeudeadressen_uster uster > uster.sql
+
+sudo su postgres
+
+psql -d openaddresses -f uster.sql
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   region,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     hausnummer,
+     strasse,
+     plz,
+     ort,
+     'CH',
+     'Uster',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(the_geom, 4326) geom
+FROM uster);
 }}}
