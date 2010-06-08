@@ -723,6 +723,7 @@ INSERT INTO address (
      'Donated',
      GeomFromEWKT('SRID=4326;POINT(' || attr8 || ' ' || attr9 || ')') geom
 FROM importtmp);
+}}}
 
 = Paarl,South Africa =
 
