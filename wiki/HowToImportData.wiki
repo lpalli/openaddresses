@@ -811,7 +811,6 @@ INSERT INTO address (
    postcode,
    city,
    country,
-   region,
    created_by,
    time_created,
    reference,
@@ -826,6 +825,6 @@ INSERT INTO address (
      now(),
      'http://www.openaddresses.org',
      'Donated',
-     transform(the_geom, 4326) geom
+     transform(the_geom, 4326)
 FROM uster);
 }}}
