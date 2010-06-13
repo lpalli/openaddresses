@@ -109,3 +109,18 @@ class HomeController(BaseController):
                           cache_key=c.lang, cache_type='memory', cache_expire=28800)
         else:
             return render('/mobile.mako')
+
+    def geolocation(self):
+        c.root_path = self.root_path
+        if 'mode' in request.params:
+            c.debug = (request.params['mode'].lower() == 'debug')
+        else:
+            c.debug = config['debug']
+        if not c.debug:
+            # cache for 8 hours
+            del response.headers["Pragma"]
+            response.headers["Cache-Control"] = "public"
+            return render('/geolocation.mako',
+                          cache_key=c.lang, cache_type='memory', cache_expire=28800)
+        else:
+            return render('/geolocation.mako')       

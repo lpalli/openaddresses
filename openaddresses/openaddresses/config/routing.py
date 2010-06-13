@@ -24,6 +24,7 @@ def make_map():
     
     map.connect('', controller='home', action='index')
     map.connect('mobile/', controller='home', action='mobile')
+    map.connect('geolocation/', controller='home', action='geolocation')
     map.connect('impressum/', controller='home', action='impressum')
     map.connect(':controller/:action/:id')
 
