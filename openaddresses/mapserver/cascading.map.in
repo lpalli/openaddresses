@@ -299,6 +299,20 @@ MAP
   END
  END
 
+  LAYER
+  NAME "SITJ_ortho_1998"
+  TYPE RASTER
+  STATUS ON
+  CONNECTION "http://sitn.ne.ch/ogc-sitj-open/wms?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "ortho"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/jpeg"
+  END
+ END
+ 
  LAYER
    NAME "address"
    TYPE POINT
