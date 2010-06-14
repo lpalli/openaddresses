@@ -307,7 +307,7 @@ MAP
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
-    "wms_name"            "ortho"
+    "wms_name"            "ortho1998_0"
     "wms_server_version"  "1.1.1"
     "wms_format"          "image/jpeg"
   END
