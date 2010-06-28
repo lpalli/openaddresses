@@ -4,6 +4,9 @@
 
 = Concept =
 
+Address data are regularly transferred from OSM to OA.
+OSM address are managed only in OSM. In that sense, they can't be modified in OA, but can only be viewed and used.
+
 = Technical specification =
 
 = Implementation =
@@ -26,12 +29,17 @@ Python scripts
  1. On Test: global osm export
  1. On Test: creation of INSERT SQL Script
  1. On Test: start SQL Script
- 1. On Test: validation
- 1. On Prod: import sql script
+ 1. On Test: user validation
+ 1. On Prod: import SQL script
  1. On Prod: delete osm data based on osmid
  1. On Prod: start SQL Script
 
 ==== Incremental load ====
 
- 1. On Test: weekly cron
-  1. 
+ 1. On Test: weekly cron:
+  1. On Test: Export differential OSM file based on last changeset
+  1. On Test: Creation of INSERT - UPDATE - DELETE SQL Script
+  1. On Test: Start SQL Script
+ 1. On Test: user validation
+ 1. On Prod: import SQL script
+ 1. On Prod: start SQL script
