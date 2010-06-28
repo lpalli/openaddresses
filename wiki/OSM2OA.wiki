@@ -34,6 +34,8 @@ Python scripts
  1. On Prod: delete osm data based on osmid
  1. On Prod: start SQL Script
 
+Q: What do you mean by "import SQL Script" ?
+
 ==== Incremental load ====
 
  1. On Test: weekly cron:
@@ -43,3 +45,5 @@ Python scripts
  1. On Test: user validation
  1. On Prod: import SQL script
  1. On Prod: start SQL script
+
+Q: Do we really need this differential load? As we don't manage any of the OSM points, we can do an initial load every week. It's easier to program and I'm not sure we can get the right information we need from the OSM changesets ..
