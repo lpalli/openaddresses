@@ -34,7 +34,8 @@ Python scripts
  1. On Prod: delete osm data based on osmid
  1. On Prod: start SQL Script
 
-Q: What do you mean by "import SQL Script" ?
+Q: What do you mean by "import SQL Script" ? 
+Simply transfer the sql file (scp) from one server to the other
 
 ==== Incremental load ====
 
@@ -47,3 +48,4 @@ Q: What do you mean by "import SQL Script" ?
  1. On Prod: start SQL script
 
 Q: Do we really need this differential load? As we don't manage any of the OSM points, we can do an initial load every week. It's easier to program and I'm not sure we can get the right information we need from the OSM changesets ..
+A: my concern is related to the downtime (since we have to delete and import). using SQL script is probably not the fastest import process. If we want to follow this path, I would use a temp table and then make a "insert into" SQL command. But, based on my experience with bulk import, this can take several minutes for millions of records. Another argument is that we have an archiving system. If we regularly delete and insert, then the archive tables will be huge and probably unmanageable.
