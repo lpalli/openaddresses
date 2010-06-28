@@ -1,0 +1,37 @@
+* Data synchronization from OpenStreetMap to OpenAddresses *
+
+<wiki:toc max_depth="2" /> 
+
+= Concept =
+
+= Technical specification =
+
+= Implementation =
+
+== Language ==
+
+Python scripts
+
+== Environment ==
+
+ * Dev environment: local computer
+ * Test environment: geolin01.cti.ac.at 
+ * Prod environment: c2cpc84.camptocamp.com
+
+=== Workflow ===
+
+==== Initial load ====
+
+ 1. On Test: delete osm data based on osmid
+ 1. On Test: global osm export
+ 1. On Test: creation of INSERT SQL Script
+ 1. On Test: start SQL Script
+ 1. On Test: validation
+ 1. On Prod: import sql script
+ 1. On Prod: delete osm data based on osmid
+ 1. On Prod: start SQL Script
+
+==== Incremental load ====
+
+ 1. On Test: weekly cron
+  1. 
