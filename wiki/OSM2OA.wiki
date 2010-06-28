@@ -1,4 +1,4 @@
-* Data synchronization from OpenStreetMap to OpenAddresses *
+* Data synchronization from !OpenStreetMap to !OpenAddresses *
 
 <wiki:toc max_depth="2" /> 
 
