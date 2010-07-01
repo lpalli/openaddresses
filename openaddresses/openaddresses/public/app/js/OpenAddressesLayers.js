@@ -157,6 +157,23 @@ openaddresses.layers = [
         maxExtent: openaddresses.createBoundsFrom4326(7.34084, 47.0741, 8.03378, 47.5041)}
             ),
     new OpenLayers.Layer.WMS(
+            "SITJ_ortho_1998",
+            openaddresses.config.baseWMS,
+    {layers: 'SITJ_ortho_1998',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        opacity: 0.7,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 20,
+        attribution:"Orthophotos 1998 RCJU 50cm",
+        maxExtent: openaddresses.createBoundsFrom4326(6.88, 47.14, 7.57, 47.51)}
+            ),
+    new OpenLayers.Layer.WMS(
             "AT_Kärnten",
             openaddresses.config.baseWMS,
     {layers: 'karnten',

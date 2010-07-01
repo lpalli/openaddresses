@@ -303,7 +303,7 @@ MAP
   NAME "SITJ_ortho_1998"
   TYPE RASTER
   STATUS ON
-  CONNECTION "http://sitn.ne.ch/ogc-sitj-open/wms?"
+  CONNECTION "http://sitn.ne.ch/ogc-sitj-ortho/wms?"
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
