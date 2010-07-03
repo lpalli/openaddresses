@@ -56,7 +56,7 @@ dos2unix.exe
 
  * Data origin: Arkansas Geographic Information Office- Putting Arkansas on the Map!
  * Contact person: Learon Dalby- GIS Program Manager / learon.dalby at arkansas.gov
- * License validation: email from 3/30/2010 / 5/20/2010
+ * License validation: email from 3/30/2010 / 7/1/2010
  * Import shapefile
 
 {{{
@@ -69,7 +69,7 @@ delete from address where created_by = 'arkansas.gov';
 
 unzip *.zip
 
-shp2pgsql -s 4326 STRUC_SITUS_ADDRESS_PT_point arkansas > arkansas.sql
+shp2pgsql -s 26915 STRUC_SITUS_ADDRESS_PT_point arkansas > arkansas.sql
 
 psql -d openaddresses -f arkansas.sql > /tmp/arkansas.log
 
@@ -99,7 +99,7 @@ INSERT INTO address (
       now(),
       'http://www.openaddresses.org',
       'Donated',
-      ST_Force_2D(ST_SetSRID(the_geom,4326))
+      ST_Force_2D(transform(the_geom,4326))
    FROM arkansas);
 }}}
 
