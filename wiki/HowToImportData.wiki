@@ -828,3 +828,45 @@ INSERT INTO address (
      transform(the_geom, 4326)
 FROM uster);
 }}}
+
+
+= Erfurt, Germany=
+
+ * Data origin: City of Erfurt ??
+ * Contact person: ???
+ * License validation: ??
+ * Import shp/csv
+
+{{{
+
+shp2pgsql -s 21781 -W 'utf-8' Erfurt_pts erfurt > erfurt.sql
+
+sudo su postgres
+
+psql -d openaddresses -f erfurt.sql
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     house_nr,
+     street,
+     zip,
+     ort,
+     'DE',
+     'Erfurt',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(the_geom, 4326)
+FROM erfurt);
+}}}
