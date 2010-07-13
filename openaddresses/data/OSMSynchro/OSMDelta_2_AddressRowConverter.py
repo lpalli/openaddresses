@@ -125,5 +125,5 @@ class OSMDelta_2_AddressRowConverter(Base):
             if hasTag:
                 self.rows.append(rec)
         #TODO
-        #os.remove(self.delta)
+        os.remove(self.delta)
         return self.rows
