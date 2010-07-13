@@ -11,6 +11,7 @@ class OA(Base):
         self.f=open(f,'w')
         self.osmids={}
         #self.__connect()
+        #self.logger.info("creating new file")
         pass
     """connect to the DB. Probably not needed as we generate an SQL file"""
     def __connect(self):
