@@ -14,6 +14,22 @@ class OSMDelta_2_AddressRowConverter(Base):
     def convert(self):
         self.logger.info("Converting %s" % self.delta) 
         osm=pyosm.OSMXMLFile(self.delta)
+        
+        #check relations for relations of type "associatedStreet" and build dict
+        self.relationMembers={}
+        for relation in osm.relations.values():
+            if len(relation.tags)>0:
+                #print relation.tags
+                if "type" in relation.tags:
+                    if relation.tags["type"]=="associatedStreet":
+                        try:
+                            name = relation.tags["name"]
+                            #print "got associatedStreet %s" % name
+                        except:
+                            print "no name for associatedStreet"
+                        for mem in relation.members:
+                            #print mem[0].id
+                            self.relationMembers[mem[0].id]=name
         for node in osm.nodes.values():
             rec = OARecord()
             rec.osmid=node.id
@@ -22,8 +38,9 @@ class OSMDelta_2_AddressRowConverter(Base):
                 rec.wkt=pt.wkt
             except:
                 continue
+            hasRelation=False
             hasTag=False
-            if len(node.tags)>0:
+            if len(node.tags)==0:
                 continue
             if "addr:housenumber" in node.tags:
                 rec.housenum=node.tags["addr:housenumber"].encode('utf-8','ignore')
@@ -42,6 +59,13 @@ class OSMDelta_2_AddressRowConverter(Base):
             if "addr:country" in node.tags:
                 rec.country=node.tags["addr:country"].encode('utf-8','ignore')
                 hasTag=True
+            #if we got a streetname in a relation, it has the priority    
+            if int(node.id) in self.relationMembers.keys():
+                #print "node in relation"
+                #if len(rec.street)>0:
+                #    print rec.street +" vs "+ self.relationMembers[node.id].encode('utf-8','ignore')
+                rec.street=self.relationMembers[node.id].encode('utf-8','ignore')
+                hasTag=True                
             if hasTag:
                 self.rows.append(rec)
         for way in osm.ways.values():
@@ -89,8 +113,17 @@ class OSMDelta_2_AddressRowConverter(Base):
             if "addr:country" in way.tags:
                 rec.country=way.tags["addr:country"].encode('UTF-8','ignore')
                 hasTag=True
+            #if we got a streetname in a relation, it has the priority    
+            if way.id in self.relationMembers.keys():
+                #print "way in relation"
+                if len(rec.street)>0:
+                    print rec.street +" vs "+ self.relationMembers[way.id].encode('utf-8','ignore')
+                rec.street=self.relationMembers[way.id].encode('utf-8','ignore')
+                #print rec.street
+                hasTag=True
+
             if hasTag:
                 self.rows.append(rec)
         #TODO
-        os.remove(self.delta)
+        #os.remove(self.delta)
         return self.rows
