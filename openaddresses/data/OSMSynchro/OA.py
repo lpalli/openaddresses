@@ -47,7 +47,7 @@ class OA(Base):
         #print attrs.values()
         try:
             self.f.write("""insert into address(city,housenum,osmid,locality,country,street,geom) 
-            values("%s","%s",%s,"%s","%s","%s",ST_GeomFromText('%s',4326));\n""" % tuple(attrs.values()))
+            values('%s','%s',%s,'%s','%s','%s',ST_GeomFromText('%s',4326));\n""" % tuple(attrs.values()))
             self.f.flush()
         except:
             print attrs
