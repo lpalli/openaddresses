@@ -34,6 +34,8 @@ class OSM(Base):
         x=xMin
         while x < xMax:
             prevx=x
+            #in central europe there are so many points that we
+            #have to subdivide the bboxes 
             if x >= 0 and x < 20 :
                 ms = self.maxSize / 10
             else:
@@ -43,6 +45,8 @@ class OSM(Base):
                 x=xMax
             y=yMin
             while y < yMax:
+                #in central europe there are so many points that we
+                #have to subdivide the bboxes 
                 if x >= 0 and x < 20 and y >= 40 and y < 60:
                     ms = self.maxSize / 10
                 else:
