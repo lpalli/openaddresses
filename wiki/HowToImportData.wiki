@@ -870,3 +870,44 @@ INSERT INTO address (
      transform(the_geom, 4326)
 FROM erfurt);
 }}}
+
+= Arvada, Colorado=
+
+ * Data origin: City of Arvada
+ * Contact person: Sargent McDonald
+ * License validation: email from 22/7/2010
+ * Import shp
+
+{{{
+
+shp2pgsql -s 4269 -W 'utf-8' OpenAddresses arvada > arvada.sql
+
+sudo su postgres
+
+psql -d openaddresses -f arvada.sql
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     street_num,
+     concatenate(street_pre,street_nam,street_typ),
+     zip_4,
+     mailing_ci,
+     'USA',
+     'Arvada',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(the_geom, 4326)
+FROM arvada);
+}}}
