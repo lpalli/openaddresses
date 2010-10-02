@@ -28,7 +28,7 @@ beaker.session.key = openaddresses
 beaker.session.secret = OpEnAdDrEsSeS
 beaker.cache.type = memory
 
-available_languages = en,fr,de,zh_CN,es,it,ca,mk,pl
+available_languages = en,fr,de,zh_CN,es,it,ca,mk,pl,hr
 lang = en
 # URL path of the root, after the domain
 root_path = %ROOT_PATH%
