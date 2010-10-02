@@ -833,9 +833,9 @@ FROM uster);
 = Erfurt, Germany=
 
  * Data origin: City of Erfurt ??
- * Contact person: ???
- * License validation: ??
- * Import shp/csv
+ * Contact person: asub at freenet.de
+ * License validation: 29.6.2010
+ * Import shp after treatment from Jean-Luc
 
 {{{
 
