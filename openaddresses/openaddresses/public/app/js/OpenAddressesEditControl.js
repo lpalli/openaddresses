@@ -614,12 +614,13 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
             feature.editingPopup = new GeoExt.Popup({
                 title: OpenLayers.i18n('Address Editor'),
-                feature: feature,
+                location: feature,
                 collapsible: true,
                 closable: false,
                 unpinnable: false,
                 draggable: true,
                 width: 410,
+                map: map,
                 bbar: new Ext.Toolbar({
                     items: [
                         {
