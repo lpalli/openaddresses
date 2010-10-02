@@ -31,7 +31,7 @@ Install !OpenAddresses on Suse
 This has to be done everytime a new application wants to be deployed on the server
 
  * cd trunk/openaddresses
- * python deploy config/geolin01.cfg
+ * python deploy.py config/geolin01.cfg
 
 = !HowTo Install !OpenAddresses Server =
 
