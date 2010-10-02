@@ -839,7 +839,7 @@ FROM uster);
 
 {{{
 
-shp2pgsql -s 4326 -W 'utf-8' Erfurt_pts erfurt > erfurt.sql
+shp2pgsql -s 4326 -W 'utf-8' erfurt_pts erfurt > erfurt.sql
 
 sudo su postgres
 
