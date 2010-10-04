@@ -7,6 +7,8 @@
 Address data are regularly transferred from OSM to OA.
 OSM address are managed only in OSM. In that sense, they can't be modified in OA, but can only be viewed and used.
 
+OSM Data that has been corrected inside of OA shall remain unchanged in OA. This can be done by comparing the data's timestamp (from OSM) with the last edit's date in OA.
+
 = Technical specification =
 
 = Implementation =
