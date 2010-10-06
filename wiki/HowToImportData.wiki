@@ -841,7 +841,7 @@ FROM uster);
 
 {{{
 
-shp2pgsql -s 4326 -W 'latin1' erfurt_pts erfurt > erfurt.sql
+shp2pgsql -s 31468 -W 'latin1' erfurt_pts erfurt > erfurt.sql
 
 sudo su postgres
 
@@ -863,7 +863,7 @@ INSERT INTO address (
      house_nr,
      street,
      zip,
-     ort,
+     'Erfurt',
      'DE',
      'Erfurt',
      now(),
