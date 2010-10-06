@@ -834,10 +834,10 @@ FROM uster);
 
 = Erfurt, Germany=
 
- * Data origin: City of Erfurt ??
+ * Data origin: City of Erfurt
  * Contact person: asub at freenet.de
  * License validation: 29.6.2010
- * Import shp after treatment from Jean-Luc
+ * Import shp
 
 {{{
 
