@@ -1,13 +1,138 @@
-#summary One-sentence summary of this page.
+Install !OpenAddresses on Windows
 
-= Introduction =
+<wiki:toc max_depth="2" />
 
-Add your content here.
+= Requirements =
+
+ * Tortoise for SVN: http://tortoisesvn.net/downloads
+ * (Optional): Use IDEA http://www.jetbrains.com/idea/ and request a community edition license to Cédric
+ * Tested with Windows Vista Family Edition SP2 (run command line as Administrator)
+
+= !HowTo Install !OpenAddresses Server =
+
+== Checkout Code ==
+
+ 1. Create a directory openaddresses (for examples: C:\Sandbox\openaddresses)
+ 1. Create a directory trunk inside openaddresses
+ 1. In this directory, checkout trunk code: http://code.google.com/p/openaddresses/source/checkout. I use as URL repository: https://openaddresses.googlecode.com/svn/trunk/
+ 1. Create a file !OpenAddressesConfig.js by replacing the variable of !OpenAddressesConfig.js.ini (http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/openaddresses/public/app/js/OpenAddressesConfig.js.ini). Example:
+
+{{{
+Ext.namespace("openaddresses");
+
+openaddresses.config = {
+    baseWMS: 'http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\\Sandbox\\openadresses\\trunk\\openaddresses\\mapserver\\cascading.map'
+};
+}}}
+
+== Install !MapFish ==
+
+ 1. In directory openaddresses: follow http://www.mapfish.org/doc/1.2/installation.html
+
+== Localize application ==
+
+ * (required only the first time) Server side localization
+  * in trunk/openaddresses, start in command line
+   * easy_install Babel
+   * python setup.py compile_catalog
+  * Documentation http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
+
+== Start !MapFish ==
+
+This has to be done everytime you want to test the application
+
+ 1. cd c:\Sandbox\openadresses (installation directory containing env)
+ 1. env\Scripts\activate.bat
+ 1. cd trunk/openaddresses
+ 1. paster serve --reload development.ini
+ 1. http://127.0.0.1:5000 
+
+ * Note that the second step is very important, since it makes that your application is working with a private environment (like a private OS)
 
 
-= Details =
+== Install !MapServer ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ * (required only the first time) http://maptools.org/ms4w/
+  * http://127.0.0.1/cgi-bin/mapserv.exe
+  * add in EPSG:
+{{{
+<900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs
+}}}
+
+== Install Postgres 8.4.2.1 ==
+
+ * (required only the first time) Installation procedure usually fails on Vista. It is needed to give full rights to all to data directory.
+Postgres needs to be installed with the installation procedure and then you can do:
+
+{{{
+C:\>runas /user:postgres cmd
+
+C:\Windows\system32>c:
+
+C:\Windows\system32>cd "\Program Files\PostgreSQL\8.4\bin"
+
+C:\Program Files\PostgreSQL\8.4\bin>initdb -D "c:\Program Files\PostgreSQL\8.4\dataPostgis" -E UTF8
+}}}
+Les fichiers de ce cluster appartiendront à l'utilisateur « postgres ».
+Le processus serveur doit également lui appartenir.
+
+Le cluster sera initialisé avec la locale French_Switzerland.1252.
+La configuration de la recherche plein texte a été initialisée à « french ».
+
+{{{
+correction des droits sur le répertoire existant c:/Program Files/PostgreSQL/8.4
+/data... ok
+création des sous-répertoires... ok
+sélection de la valeur par défaut de max_connections... 100
+sélection de la valeur par défaut pour shared_buffers... 32MB
+création des fichiers de configuration... ok
+création de la base de données template1 dans c:/Program Files/PostgreSQL/8.4/da
+ta/base/1... ok
+initialisation de pg_authid... ok
+initialisation des dépendances... ok
+création des vues système... ok
+chargement de la description des objets système... ok
+création des conversions... ok
+création des dictionnaires... ok
+initialisation des droits sur les objets internes... ok
+création du schéma d'informations... ok
+lancement du vacuum sur la base de données template1... ok
+copie de template1 vers template0... ok
+copie de template1 vers postgres... ok
+
+ATTENTION : active l'authentification « trust » pour les connexions
+locales.
+Cela peut être modifié par l'édition de pg_hba.conf ou en utilisant l'option
+-A au prochain lancement d'initdb.
+}}}
+
+Succès. Vous pouvez maintenant lancer le serveur de bases de données par :
+
+{{{
+    "postgres" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis"
+}}}
+ou
+{{{
+    "pg_ctl" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis" -l journal_applicatif start
+}}}
+
+
+C:\Program Files\PostgreSQL\8.4\bin>
+
+ * Postgres can be started with: "postgres" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis"
+
+ * Register a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" register -N postgresql -D "C:\Program Files\PostgreSQL\8.4\dataPostgis" -l "C:\Program Files\PostgreSQL\8.4\log" 
+
+ * Unregister a service: "C:\Program Files\PostgreSQL\8.4\bin\pg_ctl" unregister -N postgresql 
+
+
+== Start Postgres ==
+
+ 1. runas /user:postgres cmd
+ 1. cd "\Program Files\PostgreSQL\8.4\bin"
+ 1. "postgres" -D "c:/Program Files/PostgreSQL/8.4/dataPostgis"
+ 1. Start pgAdminIII to check that database is working
+
+== Create database ==
+
+ * (required only the first time) Create database according to data/createOpenAddressesDatabase.sql
