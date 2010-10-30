@@ -21,8 +21,22 @@ Install !OpenAddresses on Windows
 Ext.namespace("openaddresses");
 
 openaddresses.config = {
-    baseWMS: 'http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\\Sandbox\\openadresses\\trunk\\openaddresses\\mapserver\\cascading.map'
+    baseWMS: 'http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\\Sandbox\\openadresses\\trunk\\openaddresses\\mapserver\\cascading.map',
+    addressWMS: 'http://127.0.0.1/cgi-bin/mapserv.exe?map=C:\\Sandbox\\openadresses\\trunk\\openaddresses\\mapserver\\cascading.map',
+    searchURL: '/search',
+    uploadsURL: '/uploads',
+    googleKey: 'xxx',
+    googleKeyOpenAddresses: 'xxx',
+    googleKeyOpenAddress: 'xxx',
+    googleKeyOpenAddressMap: 'xxx',
+    cloudmadeKey: '6588c43109dd426f8bc067b508a2e84a',
+    cloudmadeKeyOpenAddresses: 'xxx',
+    cloudmadeKeyOpenAddress: 'xxx',
+    cloudmadeKeyOpenAddressMap: 'xxx',
+    activateHover: true,
+    autoload: true
 };
+
 }}}
 
  1. Create a file http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/development.ini (specific file for http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/development.ini.in):
