@@ -25,6 +25,103 @@ openaddresses.config = {
 };
 }}}
 
+ 1. Create a file http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/development.ini (specific file for http://code.google.com/p/openaddresses/source/browse/trunk/openaddresses/development.ini.in):
+
+{{{
+#
+# openaddresses - Pylons development environment configuration
+#
+# The %(here)s variable will be replaced with the parent directory of this file
+#
+[DEFAULT]
+debug = true
+# Uncomment and replace with the address which should receive any error reports
+#email_to = you@yourdomain.com
+smtp_server = localhost
+error_email_from = paste@localhost
+
+[server:main]
+use = egg:Paste#http
+host = 127.0.0.1
+port = 5000
+
+[filter:gzip]
+use = egg:Paste#gzip
+
+[app:main]
+versionTime = 123
+use = egg:openaddresses
+full_stack = true
+static_files = true
+filter-with = gzip
+
+beaker.session.key = openaddresses
+beaker.session.secret = OpEnAdDrEsSeS
+beaker.cache.type = memory
+
+available_languages = en,fr,de,zh_CN,es,it,ca,mk,pl,hr
+lang = en
+# URL path of the root, after the domain
+root_path = /
+# Root directory where trunk directory is stored
+main_root = c:/Sandbox/openadresses
+
+mobile_search_url = http://127.0.0.1:5000/search
+
+# SQLAlchemy database URL
+# sqlalchemy.url = sqlite:///%(here)s/development.db
+sqlalchemy.url = postgres://www-data:www-data@localhost:5432/postgis
+
+# WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
+# Debug mode will enable the interactive debugging tool, allowing ANYONE to
+# execute malicious code after an exception is raised.
+set debug = true
+
+# Logging configuration
+[loggers]
+keys = root, routes, openaddresses, sqlalchemy
+
+[handlers]
+keys = console
+
+[formatters]
+keys = generic
+
+[logger_root]
+level = INFO
+handlers = console
+
+[logger_routes]
+level = INFO
+handlers =
+qualname = routes.middleware
+# "level = DEBUG" logs the route matched and routing variables.
+
+[logger_openaddresses]
+level = DEBUG
+handlers =
+qualname = openaddresses
+
+[logger_sqlalchemy]
+level = INFO
+handlers =
+qualname = sqlalchemy.engine
+# "level = INFO" logs SQL queries.
+# "level = DEBUG" logs SQL queries and results.
+# "level = WARN" logs neither.  (Recommended for production systems.)
+
+[handler_console]
+class = StreamHandler
+args = (sys.stderr,)
+level = NOTSET
+formatter = generic
+
+[formatter_generic]
+format = %(asctime)s,%(msecs)03d %(levelname)-5.5s [%(name)s] %(message)s
+datefmt = %H:%M:%S
+
+}}}
+
 == Install !MapFish ==
 
  1. In directory openaddresses: follow http://www.mapfish.org/doc/1.2/installation.html
