@@ -95,6 +95,18 @@ openaddressesMobile = (function() {
             map.addLayers([osm,address,markers]);
             map.zoomToExtent(new OpenLayers.Bounds.fromArray(DEFAULT_EXTENT));
 
+            if (navigator.geolocation) {
+                /* geolocation is available */
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
+                    positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+                    map.setCenter(positionCH, 16);
+                });
+            } else {
+                alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
+            }
+
+
             iui.parsers.__default_parser__ = function(json) {
                 var html = '';
                 var obj = eval('(' + json + ')');
