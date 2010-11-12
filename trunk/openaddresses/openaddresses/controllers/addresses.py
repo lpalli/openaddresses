@@ -190,6 +190,8 @@ class AddressesController(BaseController):
            return self.countUpdatedToday(request)
         elif (id == 'statistic'):
            return self.statistic(request)
+        elif (id == 'weekstatistic'):
+           return self.weekstatistic(request)
         elif (id == 'checkSession'):
            return self.checkSession()
         elif (id == 'createSession'):
@@ -274,6 +276,33 @@ class AddressesController(BaseController):
        c.weekCreator = weekCreator
        c.count = locale.format("%s", self.protocol.count(request), True)
        return render('/statistic.mako')
+
+    def weekstatistic(self,request):
+       if 'lang' in request.params:
+          c.lang = request.params.get('lang')
+       else:
+          c.lang = 'en'
+       c.charset = 'utf-8'
+
+       # Create SQL Query
+       sqlQuery = "select extract(week from time_created), count(1) as numberAddresses " \
+          " from address where extract(year from time_created) = extract (year from now()) "\
+          " group by 1 "\
+          " order by 1"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+
+       weekCreator=[]
+       for row in result:
+          weekRow = []
+          for column in row:
+             weekRow.append(str(column))
+          weekCreator.append(weekRow)
+
+       c.weekCreator = weekCreator
+       c.count = locale.format("%s", self.protocol.count(request), True)
+       return render('/weekstatistic.mako')
 
 class InMemoryZip(object):
    def __init__(self):
