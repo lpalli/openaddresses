@@ -156,7 +156,7 @@ Check that "set STARTER_MAIN_CLASS=org.gradle.wrapper.GradleWrapperMain" is ok
 
 {{{
 cd c:\Sandbox\openadresses\trunk\openaddresses\print\trunk
-java -Djava.awt.headless=true -cp build\libs\print-standalone-1.2-SNAPSHOT.jar org.mapfish.print.ShellMapPrinter --config=samples/config.yaml --spec=samples/spec.json --output=c:\temp\print.pdf
+gradlew.bat run -Dconfig=samples/config.yaml -Dspec=samples/spec.json -Doutput=c:\temp\print.pdf
 }}} 
 
 = Misc Tutorials  =
