@@ -193,7 +193,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                 success: function(responseObject) {
                     if (responseObject.responseText == 'True' && this.isAuthenticated) {
                         saveFeature(feature);
-                    } else {
+						} else {
                         Ext.Msg.show({
                             title: OpenLayers.i18n('User Validation'),
                             msg: OpenLayers.i18n('Please confirm that you agree with the OpenAddresses.org license and terms of services'),
@@ -233,6 +233,22 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     jsonData: '{"type":"FeatureCollection", "features":[' + jsonData + ']}',
                     success: function(resp, opt) {
                         endSaveFeature(feature);
+					
+var curaddrID;
+if (feature.attributes.id){
+	alert("feature: " + feature.attributes.id);
+	curaddrID = feature.attributes.id;
+	}
+else {
+	//determine ID of address
+	var response = eval('(' + resp.responseText + ')');
+	curaddrID = response.features[0].id;
+}
+
+//addition for qa mechanism
+//alert(feature.attributes.street + " / " + feature.attributes.housenumber + " / " + feature.attributes.housename + " / " + feature.attributes.postcode + " / " + feature.attributes.city + " / " + feature.attributes.created_by + " / " + feature.geometry.x + " / " + feature.geometry.y + " / " + curaddrID);			
+qa_ComparisonWithOWMS(feature.attributes.street,feature.attributes.housenumber,feature.attributes.housename,feature.attributes.postcode,feature.attributes.city,feature.attributes.created_by,feature.geometry.x,feature.geometry.y,curaddrID);			
+
                     },
                     failure: function(resp, opt) {
                         cancelEditing(feature, true);
@@ -352,6 +368,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                     method: 'DELETE',
                                     success: function(resp, opt) {
                                         cancelEditing(feature, true);
+alert("delete address");										
                                     },
                                     failure: function(resp, opt) {
                                         openaddresses.layout.hideWaitingMask();

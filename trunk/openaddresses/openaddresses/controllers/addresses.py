@@ -227,19 +227,20 @@ class AddressesController(BaseController):
     def countCreatedToday(self,request):
 
        # Create SQL Query
-       sqlQuery = "select count(1) count from address where time_created::date=now()::date"
+       sqlQuery = "select count(1) from address where time_created::date=now()::date"
+       #sqlQuery = "select count(*) count from qaoa" # where time_created::date=now()::date"
 
        # Execute query
        result = Session.execute(sqlQuery)
 
        for row in result:
           for column in row:
-             return str(column)
+             return str(column) + " <br> so viele schon..."
 
     def countUpdatedToday(self,request):
 
        # Create SQL Query
-       sqlQuery = "select count(1) from address where time_updated::date=now()::date"
+       sqlQuery = "select count(*) from address where time_updated::date=now()::date"
 
        # Execute query
        result = Session.execute(sqlQuery)
@@ -288,7 +289,7 @@ class AddressesController(BaseController):
        sqlQuery = "select extract(week from time_created), count(1) as numberAddresses " \
           " from address where extract(year from time_created) = extract (year from now()) "\
           " group by 1 "\
-          " order by 1"
+          " order by 1 desc"
 
        # Execute query
        result = Session.execute(sqlQuery)
