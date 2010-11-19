@@ -190,6 +190,23 @@ openaddresses.layers = [
         attribution:"AT_Kärnten: Amt der Kärntner Landesregierung, Kärntner Geographisches Informationssystem (KAGIS)",
         maxExtent: openaddresses.createBoundsFrom4326(12.6078, 46.3413, 15.11358, 47.16447)}
             ),
+	new OpenLayers.Layer.WMS(
+            "AT_Oberösterreich",
+            openaddresses.config.baseWMS,
+    {layers: 'oberosterreich',
+        transparent: "false",
+        format:"image/jpeg"},
+    {singleTile:true,
+        isBaseLayer: false,
+        transitionEffect: "resize",
+        ratio: 1.0,
+        opacity: 0.7,
+        numZoomLevels: 23,
+        displayOutsideMaxExtent: false,
+        maxResolution: 3,
+        attribution:"AT_Oberösterreich: Amt der Oberösterreichischen Landesregierung, DORIS",
+        maxExtent: openaddresses.createBoundsFrom4326(12.7209, 47.4448, 15.0340, 48.7835)}
+            ),
     new OpenLayers.Layer.WMS(
             "IT_Toscana",
             openaddresses.config.baseWMS,
