@@ -13,6 +13,9 @@
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
 
+   <!--script src="http://www.google.com/jsapi?key=ABQIAAAAXP_8MYDI21DrDldhFCNqohSHQfVSIhQI6ECr286wVQ34_evcPRTow3UQ9rqhzod2zMXPH_sSoe-xBA" type="text/javascript"></script-->
+   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAmF9bNI4nQInzlORfshwB9hQChx54JYdgbPKio935j7RDK0bGdhSRJ4EAIkt7qwyaYpYR6IpKHQDL7g" type="text/javascript"></script>
+	
     <link rel="stylesheet" type="text/css" href="ext32/resources/css/ext-all.css" />
     <link rel="stylesheet" type="text/css" href="ext32/examples/ux/css/ux-all.css" />
     <link rel="stylesheet" type="text/css" href="ext32/resources/css/xtheme-gray.css" />
@@ -73,6 +76,8 @@
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesUploadPanel.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
+   <script type="text/javascript" src="app/js/_qaOA.js"></script>
+   
 
 % else:
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
