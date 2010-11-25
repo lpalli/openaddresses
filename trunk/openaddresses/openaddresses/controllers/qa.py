@@ -15,7 +15,7 @@ from openaddresses.model.meta import Session
 
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
-from mapfish.lib.filters.spatial import Spatial
+"""from mapfish.lib.filters.spatial import Spatial"""
 
 import locale 
 
@@ -36,6 +36,10 @@ class QaController(BaseController):
         default_filter = create_default_filter(
               request, Qaoa
         )
+        response.headers['Content-Type'] = 'application/json'
+        return self.protocol.index(request, response, format=format, filter=default_filter)
+
+        """
         # Convert attribute KVP to filter
         for column in Qaoa.__table__.columns:
            if column.name in request.params:
@@ -63,19 +67,58 @@ class QaController(BaseController):
                     default_filter = and_(default_filter.to_sql_expr(), compareFilter)
                  else:
                     default_filter = compareFilter
-          
+        # Check query for full text search
+        if 'query' in request.params:
+           # http://lowmanio.co.uk/blog/entries/postgresql-full-text-search-and-sqlalchemy/
+           terms = request.params.get('query').split()
+           terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
+
+           if 'attrs' in request.params:
+              attributes = request.params.get('attrs').split(',')
+              if (len(attributes) == 3) and ('street' in request.params.get('attrs')) and ('city' in request.params.get('attrs')) and ('housenumber' in request.params.get('attrs')):
+                 tsvector = 'tsvector_street_housenumber_city'
+              elif (len(attributes) == 1) and ('street' in request.params.get('attrs')):
+                 tsvector = 'tsvector_street'
+              else:
+                 attributes = " || ' ' ||".join([attribute for attribute in attributes])
+                 tsvector = attributes
+           else:
+              tsvector = 'tsvector_street_housenumber_city'
+
+           ftsFilter = "%(tsvector)s @@ to_tsquery('english', '%(terms)s')" %{'tsvector': tsvector, 'terms': terms}
+           if default_filter is not None:
+              filter = and_(default_filter.to_sql_expr(), ftsFilter)
+           else:
+              filter = ftsFilter
+              
+           if format == 'csv':
+              return self.exportCsv(request,filter)
+           if format == 'zip':
+              return self.exportZip(request,filter)
+
+           json = self.protocol.index(request, response, format=format, filter=filter)
+           if 'callback' in request.params:
+              response.headers['Content-Type'] = 'text/javascript; charset=utf-8'
+              return request.params['callback'] + '(' + json + ');'
+           else:
+              response.headers['Content-Type'] = 'application/json'
+              return json
+        else:
+           if format == 'csv':
+              return self.exportCsv(request,default_filter)
+           if format == 'zip':
+              return self.exportZip(request,default_filter)
+           return self.protocol.index(request, response, format=format, filter=default_filter)
+        """
+		
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
-        if (id == 'count'):
-           return self.protocol.count(request)
-        elif (id == 'countCreatedToday'):
+        if (id == 'countCreatedToday'):
            return self.countCreatedToday(request)
         elif (id == 'countUpdatedToday'):
            return self.countUpdatedToday(request)
         elif (id == 'statistic'):
            return self.statistic(request)
-        elif (id == 'weekstatistic'):
-           return self.weekstatistic(request)
         elif (id == 'checkSession'):
            return self.checkSession()
         elif (id == 'createSession'):
@@ -85,17 +128,21 @@ class QaController(BaseController):
 
     def create(self):
         """POST /: Create a new feature."""
+        "%%%%%%%%%%%%%%%%%create%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
         return self.protocol.create(request, response)
 
     def update(self, id):
         """PUT /id: Update an existing feature."""
+        "%%%%%%%%%%%%%%%%%update%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" + id
         return self.protocol.update(request, response, id)
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
+        "%%%%%%%%%%%%%%%%%delete%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" + id
         return self.protocol.delete(request, response, id)
 
     def before_create(self,request,feature):
+       "%%%%%%%%%%%%%%%%%before_create%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" + str(feature.id)
        feature.properties['ipaddress'] = request.environ['REMOTE_ADDR']
        if isinstance(feature.id, int):
            feature.properties['time_updated'] = datetime.now()
@@ -108,7 +155,7 @@ class QaController(BaseController):
     def createSession(self):
         return 'True'
 
-    def countCreatedToday(request):
+    def countCreatedToday(self,request):
 
        # Create SQL Query
        sqlQuery = "select count(1) from address where time_created::date=now()::date"
@@ -162,30 +209,6 @@ class QaController(BaseController):
        c.count = locale.format("%s", self.protocol.count(request), True)
        return render('/statistic.mako')
 
-    def weekstatistic(self,request):
-       if 'lang' in request.params:
-          c.lang = request.params.get('lang')
-       else:
-          c.lang = 'en'
-       c.charset = 'utf-8'
 
-       # Create SQL Query
-       sqlQuery = "select extract(week from time_created), count(1) as numberAddresses " \
-          " from address where extract(year from time_created) = extract (year from now()) "\
-          " group by 1 "\
-          " order by 1 desc"
 
-       # Execute query
-       result = Session.execute(sqlQuery)
-
-       weekCreator=[]
-       for row in result:
-          weekRow = []
-          for column in row:
-             weekRow.append(str(column))
-          weekCreator.append(weekRow)
-
-       c.weekCreator = weekCreator
-       c.count = locale.format("%s", self.protocol.count(request), True)
-       return render('/weekstatistic.mako')
 

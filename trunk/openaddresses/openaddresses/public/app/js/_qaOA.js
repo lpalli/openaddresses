@@ -132,17 +132,21 @@ g_zip = zip;
 g_city = city;
 g_lat = lat;
 g_lng = lng;
+getTimeStamp();
+
+
 
 //call bing maps
 //send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city + ",Switzerland");
-//send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city);
+send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city);
 
 //call google maps
-//send2GMGeocoder(str + "+" + hnr + "+" + zip + "+" + city + "+Switzerland");
 send2GMGeocoder(str + "+" + hnr + "+" + zip + "+" + city);
 
 //call yahoo maps
 //send2YGeocoder(str, hnr, zip, city);
+
+
 }
 
 ////*******************************************************************************
@@ -247,11 +251,12 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 
 		//check geocoding precision
 		if (acc.substring(0,11) == 'Good / High') {
-			c_acc = 1;
+			c_acc = "TRUE";
 		} else {
-			c_acc = 0;
+			c_acc = "FALSE";
 		}
 
+		/*
 		//Update table in DB on server 
 		getTimeStamp();
 		update_servertable('qaOA','bing_dist',c_dist,'float','oid='+g_oid);
@@ -260,6 +265,27 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 		update_servertable('qaOA','bing_zip',c_zip,'string','oid='+g_oid);
 		update_servertable('qaOA','bing_city',c_city,'string','oid='+g_oid);
 		update_servertable('qaOA','date',g_date,'string','oid='+g_oid);
+		*/
+		
+		var result = '"bing_dist":"' +c_dist + '" , "bing_addr": "' + c_addr + '", "bing_precision": "' + c_acc + '", "bing_zip": "' + c_zip + '", "bing_city": "' + c_city + '"';			
+
+		var jsontext = '{"type":"FeatureCollection", "features":[{"type":"Feature","id":' + g_oid + ',"properties":{"id": ' + g_oid + ', ' + result + ', "date": "' + g_date + '"},"geometry":{"type":"Point","coordinates":[' + g_lng + ',' + g_lat + ']},"crs":{"type":"EPSG","properties":{"code":900913}}}]}';
+		var json = eval('(' + jsontext + ')');
+
+		var conn1 = new Ext.data.Connection();
+		conn1.request({
+			url: "qa",
+			method: 'POST',
+			jsonData: json,
+			success: function(resp, opt) {
+				//alert("save ok");
+			},
+			failure: function(resp, opt) {
+				alert(OpenLayers.i18n('Error during data storage'));
+			}
+		});
+		
+		
 }	//function Bing geocoding
 
 
@@ -472,42 +498,33 @@ function send2GMGeocoder(adrInfo) {
 
 			//check geocoding precision
 			if (acc == 'address') {
-				c_acc = 1;
+				c_acc = "TRUE";
 			} else {
-				c_acc = 0;
+				c_acc = "FALSE";
 			}
 		
-			//Update table in DB on server 
-			getTimeStamp();
-/*
-			update_servertable('qaOA','google_dist',c_dist,'float','oid='+g_oid);
-			update_servertable('qaOA','google_precision',c_acc,'string','oid='+g_oid);
-			update_servertable('qaOA','google_addr',c_addr,'string','oid='+g_oid);
-			update_servertable('qaOA','google_zip',c_zip,'string','oid='+g_oid);
-			update_servertable('qaOA','google_city',c_city,'string','oid='+g_oid);
-			update_servertable('qaOA','date',g_date,'string','oid='+g_oid);
-*/
-			//write results in a JSON format to a variable...
-			var json = "{'google_dist':" + c_dist + " , 'google_addr': " + c_addr + ", 'google_precision': " + c_acc + ", 'google_zip': " + c_zip + ", 'google_city': " + c_city + ", 'oid': " + g_oid + ", 'date': '" + g_date + "'}";
-alert(json);
-			//new code within OA/MF
-			// Save qa results
+			var result = '"google_dist":"' +c_dist + '" , "google_addr": "' + c_addr + '", "google_precision": "' + c_acc + '", "google_zip": "' + c_zip + '", "google_city": "' + c_city + '"';			
 
-			var conn = new Ext.data.Connection();
-			conn.request({
+			var jsontext = '{"type":"FeatureCollection", "features":[{"type":"Feature","id":' + g_oid + ',"properties":{"id": ' + g_oid + ', ' + result + ', "date": "' + g_date + '"},"geometry":{"type":"Point","coordinates":[' + g_lng + ',' + g_lat + ']},"crs":{"type":"EPSG","properties":{"code":900913}}}]}';
+			var json = eval('(' + jsontext + ')');
+
+			var conn1 = new Ext.data.Connection();
+			conn1.request({
 				url: "qa",
 				method: 'POST',
 				jsonData: json,
 				success: function(resp, opt) {
-					alert("save ok");
+					//alert("save ok");
 				},
 				failure: function(resp, opt) {
 					alert(OpenLayers.i18n('Error during data storage'));
 				}
 			});
+
 		}
-	);
+	)	
 }
+
 
 ////*******************************************************************************
 ////Yahoo*******************************************************************************
@@ -590,9 +607,9 @@ function handleYahooServerGeocodingResponse() {
 function comparison(val1, val2) {
 		//Comparison of address-information
 		if (val1 == val2) {	//str & hnr are equal
-			return 1;
+			return 'TRUE';
 		} else {
-			return 0;	
+			return 'FALSE';	
 		}
 }
 

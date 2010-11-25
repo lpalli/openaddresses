@@ -236,7 +236,6 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 					
 var curaddrID;
 if (feature.attributes.id){
-	alert("feature: " + feature.attributes.id);
 	curaddrID = feature.attributes.id;
 	}
 else {
@@ -246,7 +245,6 @@ else {
 }
 
 //addition for qa mechanism
-//alert(feature.attributes.street + " / " + feature.attributes.housenumber + " / " + feature.attributes.housename + " / " + feature.attributes.postcode + " / " + feature.attributes.city + " / " + feature.attributes.created_by + " / " + feature.geometry.x + " / " + feature.geometry.y + " / " + curaddrID);			
 qa_ComparisonWithOWMS(feature.attributes.street,feature.attributes.housenumber,feature.attributes.housename,feature.attributes.postcode,feature.attributes.city,feature.attributes.created_by,feature.geometry.x,feature.geometry.y,curaddrID);			
 
                     },
