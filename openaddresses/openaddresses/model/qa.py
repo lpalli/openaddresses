@@ -8,6 +8,7 @@ from openaddresses.model.meta import metadata, engine
 
 qaoa_table = Table(
     'qaoa', metadata,
+    Column('geom', Geometry(4326)),
     autoload=True, autoload_with=engine)
 
 class Qaoa(GeometryTableMixIn):
@@ -17,6 +18,7 @@ class Qaoa(GeometryTableMixIn):
 
     def format(self):
         #return {'google_dist': self.google_dist,'google_zip': self.google_zip,'google_addr': self.google_addr, 'google_city': self.google_city}
-        return {'google_dist': self.google_dist, 'qa_oid': self.qa_oid}
+        #return {'google_dist': self.google_dist,'google_zip': self.google_zip,'google_addr': self.google_addr, 'google_city': self.google_city, 'id': self.id, 'oid': self.oid}
+        return {'id': self.id,'type': self.type,'date': self.date}
 
 mapper(Qaoa, qaoa_table)

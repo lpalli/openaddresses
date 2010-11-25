@@ -25,7 +25,7 @@
     
 </head>
 
-<body>
+<body onload="initiatebing()";>
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 <div id="MouseOver" style="display: none;"></div>
@@ -40,6 +40,8 @@
  <div id="waiting">
     <div class="loading-indicator"><img src="resources/img/OpenAddressesLoader.gif" width="32" height="32" style="margin-right:8px;float:left;vertical-align:top;"/>${_('OpenAddresses.org works for you !')}<br /></div>
 </div>
+<!--the following tag is necessary for the bing geocoding-->
+<div id='BingMap' style="position:relative; width:1px; height:1px;"></div>
 
 % if c.debug:
    <style type="text/css">.olTileImage {
@@ -77,6 +79,16 @@
    <script type="text/javascript" src="app/js/OpenAddressesUploadPanel.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
    <script type="text/javascript" src="app/js/_qaOA.js"></script>
+   <!--the following JS are necessary for the bing geocoding-->
+   <script type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+   <script type="text/javascript">
+		var bingmap = null;
+		function initiatebing() {
+			bingmap = new VEMap('BingMap');
+			bingmap.LoadMap(new VELatLong(47, 8.3), 6 );
+		}
+   </script>
+
    
 
 % else:

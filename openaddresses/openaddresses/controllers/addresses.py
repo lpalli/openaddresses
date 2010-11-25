@@ -78,7 +78,8 @@ class AddressesController(BaseController):
         default_filter = create_default_filter(
               request, Address
         )
-        # Convert attribute KVP to filter
+
+		# Convert attribute KVP to filter
         for column in Address.__table__.columns:
            if column.name in request.params:
               column_name = column.name
@@ -201,18 +202,22 @@ class AddressesController(BaseController):
 
     def create(self):
         """POST /: Create a new feature."""
+        print "...................create......................."
         return self.protocol.create(request, response)
 
     def update(self, id):
         """PUT /id: Update an existing feature."""
+        print "...................update......................." + id
         return self.protocol.update(request, response, id)
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
+        print "...................delete......................." + id
         return self.protocol.delete(request, response, id)
 
     def before_create(self,request,feature):
        feature.properties['ipaddress'] = request.environ['REMOTE_ADDR']
+       print "...................before_create......................." + str(feature.id)
        if isinstance(feature.id, int):
            feature.properties['time_updated'] = datetime.now()
        else:
