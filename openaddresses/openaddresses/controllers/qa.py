@@ -12,6 +12,7 @@ from pylons.i18n.translation import *
 from openaddresses.lib.base import *
 from openaddresses.model.qa import Qaoa
 from openaddresses.model.meta import Session
+from openaddresses.model.meta import metadata
 
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
@@ -123,6 +124,8 @@ class QaController(BaseController):
            return self.checkSession()
         elif (id == 'createSession'):
            return self.createSession()
+        elif (id == 'qareport'):
+           return self.qareport(request)
         else:
            return self.protocol.show(request, response, id, format=format)
 
@@ -208,6 +211,39 @@ class QaController(BaseController):
        c.weekCreator = weekCreator
        c.count = locale.format("%s", self.protocol.count(request), True)
        return render('/statistic.mako')
+
+
+    def qareport(self, request):
+       c.charset = 'utf-8'
+
+       # Create SQL Query
+       #sqlQuery = "SELECT qaoa.id, address.created_by, address.street, address.housenumber, address.postcode, address.city, address.country, qaoa.bing_dist, qaoa.bing_addr, qaoa.bing_zip, qaoa.bing_city, qaoa.bing_precision, qaoa.google_dist, qaoa.google_addr, qaoa.google_zip, qaoa.google_city, qaoa.google_precision, qaoa.yahoo_dist, qaoa.yahoo_addr, qaoa.yahoo_zip, qaoa.yahoo_city, qaoa.yahoo_precision, qaoa.date "\
+       #without Yahoo yet:
+       sqlQuery = "SELECT qaoa.id, address.created_by,address.street, address.housenumber, address.postcode, address.city, address.country, qaoa.bing_dist, qaoa.bing_addr, qaoa.bing_zip, qaoa.bing_city, qaoa.bing_precision, qaoa.google_dist, qaoa.google_addr, qaoa.google_zip, qaoa.google_city, qaoa.google_precision, qaoa.date "\
+          " FROM qaoa, address "\
+          " WHERE qaoa.id = address.id and address.quality='Digitized' "\
+          "ORDER BY qaoa.date"
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+		  
+       qaCreator=[]
+
+       for row in result:
+          qaRow = []
+          for column in row:
+             if str(type(column)).find('float') == 7: #this means a float value
+                #qaRow.append(str(round(column,4)))
+                qaRow.append(round(column,4))				
+             else:			 
+                qaRow.append(str(column))
+          qaCreator.append(qaRow)
+
+       c.qaCreator = qaCreator
+       c.count = locale.format("%s", self.protocol.count(request), True)
+       return render('/qareport.mako')
+
+
 
 
 
