@@ -222,7 +222,7 @@ class QaController(BaseController):
        sqlQuery = "SELECT qaoa.id, address.created_by,address.street, address.housenumber, address.postcode, address.city, address.country, qaoa.bing_dist, qaoa.bing_addr, qaoa.bing_zip, qaoa.bing_city, qaoa.bing_precision, qaoa.google_dist, qaoa.google_addr, qaoa.google_zip, qaoa.google_city, qaoa.google_precision, qaoa.date "\
           " FROM qaoa, address "\
           " WHERE qaoa.id = address.id and address.quality='Digitized' "\
-          "ORDER BY qaoa.date"
+          " ORDER BY qaoa.date desc limit 200"
 
        # Execute query
        result = Session.execute(sqlQuery)

@@ -192,6 +192,18 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 				}				
 			} 
 
+			if (addr_array.length == 2) {			  // two values comma-separated
+				if (parseInt(addr_array[1].substring(1,5)) > 1000){	// first value is a valid zip code
+						addr = addr_array[0];
+						zip = addr_array[1].substring(1,5);
+						city = addr_array[1].substring(6);
+					} else {
+						addr = "";
+						zip = 0;
+						city = addr_array[0];
+					}
+
+				}
 			if (addr_array.length == 3) {			  // two values comma-separated
 				if (parseInt(addr_array[1].substring(1,5)) > 1000){	// first value is a valid zip code
 						addr = addr_array[0];
@@ -203,7 +215,7 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 						city = addr_array[0];
 					}
 
-					}
+				}
 
 			//Determine MatchConfidence
 			if (place.MatchConfidence==VEMatchConfidence.High){
