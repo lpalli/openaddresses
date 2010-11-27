@@ -261,6 +261,74 @@ create index address_time_created_3 on address(extract(day from time_created));
 create index address_archive_archive_type on address_archive(archive_type);
 
 #  ****************************************************************
+#  Add QA support
+#  ****************************************************************
+
+CREATE SEQUENCE qaOA_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+
+ALTER SEQUENCE qaOA_seq OWNER TO postgres;
+
+CREATE TABLE qaOA
+(
+  id bigint,
+  bing_dist double precision,
+  bing_addr boolean,
+  bing_zip boolean,
+  bing_city boolean,
+  google_dist double precision,
+  google_addr boolean,
+  google_zip boolean,
+  google_city boolean,
+  yahoo_dist double precision,
+  yahoo_addr boolean,
+  yahoo_zip boolean,
+  yahoo_city boolean,
+  bing_precision boolean,
+  google_precision boolean,
+  yahoo_precision boolean,
+  type character(10),
+  date character(20),
+  CONSTRAINT pk_qaoa PRIMARY KEY (id)
+)
+WITH (OIDS=FALSE);
+
+ALTER TABLE qaOA OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION hj_add_qaOA()
+RETURNS trigger AS
+$BODY$
+  BEGIN
+     INSERT INTO qaoa
+       (id)
+        VALUES
+       (
+         NEW.id
+       );
+   RETURN NULL;
+  END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+
+ALTER FUNCTION hj_add_qaOA() OWNER TO postgres;
+
+CREATE TRIGGER f_add_qaOA
+  AFTER INSERT
+  ON address
+  FOR EACH ROW
+  EXECUTE PROCEDURE hj_add_qaOA();
+
+GRANT ALL ON TABLE qaoa TO "www-data";
+GRANT ALL ON TABLE qaoa TO postgres;
+GRANT ALL ON FUNCTION hj_add_qaoa() TO "www-data";
+GRANT ALL ON TABLE qaoa_seq TO "www-data";
+
+#  ****************************************************************
 #  Import data
 #  ****************************************************************
 
