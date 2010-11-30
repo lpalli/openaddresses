@@ -233,19 +233,19 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                     jsonData: '{"type":"FeatureCollection", "features":[' + jsonData + ']}',
                     success: function(resp, opt) {
                         endSaveFeature(feature);
-					
-var curaddrID;
-if (feature.attributes.id){
-	curaddrID = feature.attributes.id;
-	}
-else {
-	//determine ID of address
-	var response = eval('(' + resp.responseText + ')');
-	curaddrID = response.features[0].id;
-}
+					    //kick-off QA mechanism
+						var curaddrID;
+						if (feature.attributes.id){
+							curaddrID = feature.attributes.id;
+							}
+						else {
+							//determine ID of address
+							var response = eval('(' + resp.responseText + ')');
+							curaddrID = response.features[0].id;
+						}
 
-//addition for qa mechanism
-qa_ComparisonWithOWMS(feature.attributes.street,feature.attributes.housenumber,feature.attributes.housename,feature.attributes.postcode,feature.attributes.city,feature.attributes.created_by,feature.geometry.x,feature.geometry.y,curaddrID);			
+						//addition for qa mechanism
+						qa_ComparisonWithOWMS(feature.attributes.street,feature.attributes.housenumber,feature.attributes.housename,feature.attributes.postcode,feature.attributes.city,feature.attributes.created_by,feature.geometry.x,feature.geometry.y,curaddrID);			
 
                     },
                     failure: function(resp, opt) {
