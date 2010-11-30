@@ -20,14 +20,6 @@ var g_date;
 
 var gcxmlHttp = createXmlHttpRequestObject(); //to process via AJAX
 
-
-//**********************************************************************
-//Function that handles the qa procedure when an address is altered (attributes)
-//**********************************************************************
-//**********************************************************************
-//**********************************************************************
-
-
 ////*******************************************************************************
 ////Bing*******************************************************************************
 ////*******************************************************************************
@@ -405,8 +397,6 @@ function send2GMGeocoder(adrInfo) {
 	);	
 }
 
-
-
 ////*******************************************************************************
 ////general functions**************************************************************
 ////*******************************************************************************
@@ -436,7 +426,6 @@ function computedist(lat1, lon1, lat2, lon2) {
 
 function update_servertable(table,attribute,value,type,condition){
 
-//alert('updatetable.php?table='+table+'&attribute='+attribute+'&type='+type+'&value='+value+'&condition='+condition);
 		//Update table in DB on server 
 		GxmlHttp = createXmlHttpRequestObject();
 		//if object ready...
@@ -450,7 +439,6 @@ function update_servertable(table,attribute,value,type,condition){
 		} else {
 			// falls die Verbindung nicht frei ist, erneuter Versuch nach 1000 msecs
 			setTimeout('update_servertable('+table+','+attribute+','+value+','+type+','+condition+')', 1000);
-		
 		}
 }
 function handleServerResponse4update(){
@@ -544,10 +532,8 @@ g_lat = lat;
 g_lng = lng;
 getTimeStamp();
 
-
-
 //call bing maps
-//send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city + ",Switzerland");
+
 send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city);
 
 //call google maps
@@ -555,6 +541,5 @@ send2GMGeocoder(str + "+" + hnr + "+" + zip + "+" + city);
 
 //call yahoo maps
 //send2YGeocoder(str, hnr, zip, city);
-
 
 }
