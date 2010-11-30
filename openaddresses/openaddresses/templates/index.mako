@@ -78,7 +78,7 @@
    <script type="text/javascript" src="app/js/OpenAddressesLayout.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesUploadPanel.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
-   <script type="text/javascript" src="app/js/_qaOA.js"></script>
+   <script type="text/javascript" src="app/js/OpenAddressesQA.js"></script>
    <!--the following JS are necessary for the bing geocoding-->
    <script type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
    <script type="text/javascript">
