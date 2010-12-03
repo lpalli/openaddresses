@@ -365,8 +365,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                     url: "addresses/" + feature.id,
                                     method: 'DELETE',
                                     success: function(resp, opt) {
-                                        cancelEditing(feature, true);
-alert("delete address");										
+                                        cancelEditing(feature, true);										
                                     },
                                     failure: function(resp, opt) {
                                         openaddresses.layout.hideWaitingMask();
