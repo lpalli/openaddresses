@@ -20,7 +20,7 @@ def make_map():
     # CUSTOM ROUTES HERE
 
     map.resource("address", "addresses")
-    map.resource("test", "test")
+    map.resource("hello", "hello")
     map.resource("Qaoa", "qa")
     map.resource("upload", "uploads")
     
