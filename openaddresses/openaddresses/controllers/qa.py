@@ -99,15 +99,16 @@ class QaController(BaseController):
         Session.commit()		
         Session.close()
 
-    @jsonify
     def index(self):
-        qaoa = []
-        for s in Session.query(Qaoa):
-            qaoa.append({
-                "id": s.id
-                })
-        return qaoa
-
+        htmlinfo = "Please call <a href='/qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
+        "You may also use keyvalues to customise the report. In the following are some examples given:<br><br>"\
+        "The last 20 addresses from user Pete:<br><a href='/qa/qareport?limit=20&user=pete' target='_blank'>http://www.openaddresses.org/qa/qareport?limit=20&user=pete</a><br><br>"\
+        "All addresses from December 7 2010:<br><a href='/qa/qareport?date=20101207' target='_blank'>http://www.openaddresses.org/qa/qareport?date=20101207</a><br><br>"\
+        "All addresses since December 1 2010:<br><a href='/qa/qareport?datesince=20101201' target='_blank'>http://www.openaddresses.org/qa/qareport?datesince=20101201</a><br><br>"\
+        "All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:<br><a href='/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc' target='_blank'>http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc</a><br><br>"\
+        "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
+		
+        return htmlinfo
 		
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
@@ -123,6 +124,10 @@ class QaController(BaseController):
           limit = int(request.params.get('limit'))
        else:
           limit = 100
+       if 'orderby' in request.params:
+          orderby = request.params.get('orderby')
+       else:
+          orderby = 'qaoa.date desc'
        if 'user' in request.params:
           user = request.params.get('user')
           condition = " AND created_by='%s'" % user
@@ -156,15 +161,25 @@ class QaController(BaseController):
        if 'bdistsh' in request.params:
           bdistsh = int(request.params.get('bdistsh'))
           condition += " AND bing_dist<=%s" % bdistsh
+       if 'ydistgr' in request.params:
+          ydistgr = int(request.params.get('ydistgr'))
+          condition += " AND yahoo_dist>=%s" % ydistgr
+       if 'ydistsh' in request.params:
+          ydistsh = int(request.params.get('ydistsh'))
+          condition += " AND yahoo_dist<=%s" % ydistsh
 
        c.charset = 'utf-8'
        # Create SQL Query
        sqlQuery = "SELECT ST_y(ST_Transform(address.geom,900913)) AS lat, ST_x(ST_Transform(address.geom,900913)) as lng, qaoa.id,"\
-          " address.created_by,address.street, address.housenumber, address.postcode, address.city, address.country, qaoa.bing_dist, qaoa.bing_addr, qaoa.bing_zip, qaoa.bing_city, qaoa.bing_precision, qaoa.google_dist, qaoa.google_addr, qaoa.google_zip, qaoa.google_city, qaoa.google_precision, qaoa.date "\
+          " address.created_by,address.street, address.housenumber, address.postcode, address.city, address.country,"\
+          " qaoa.bing_dist, qaoa.bing_addr, qaoa.bing_zip, qaoa.bing_city, qaoa.bing_precision,"\
+          " qaoa.google_dist, qaoa.google_addr, qaoa.google_zip, qaoa.google_city, qaoa.google_precision,"\
+          " qaoa.yahoo_dist, qaoa.yahoo_addr, qaoa.yahoo_zip, qaoa.yahoo_city, qaoa.yahoo_precision,"\
+          " qaoa.date "\
           " FROM qaoa, address "\
           " WHERE qaoa.id = address.id and address.quality='Digitized' %s "\
-          " ORDER BY qaoa.date desc "\
-          " limit %i " % (condition, limit)
+          " ORDER BY %s "\
+          " limit %i " % (condition, orderby, limit)
 
        # Execute query
        result = Session.execute(sqlQuery)

@@ -475,6 +475,20 @@ send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city);
 send2GMGeocoder(str + "+" + hnr + "+" + zip + "+" + city);
 
 //call yahoo maps
-//send2YGeocoder(str, hnr, zip, city);
+var paramlist = "street=" + str + "&house=" + hnr + "&postal=" + zip + "&city=" + city + "&lat=" + lat + "&lng=" + lng;			
+//test url: http://127.0.0.1:5000/yahoo/doupdate/13898437?street=Kriegackerstrasse&house=40&postal=4132&city=Muttenz
+var qaurl= "yahoo/doupdate/" + g_oid + "?" + paramlist;
+
+var conn1 = new Ext.data.Connection();
+conn1.request({
+	url: qaurl,
+	method: 'GET',
+	success: function(resp, opt) {
+		//seems to work all right;
+	},
+	failure: function(resp, opt) {
+		alert(OpenLayers.i18n('Error during data storage'));
+	}
+});
 
 }

@@ -51,6 +51,11 @@
 	<td><b>Google Zip</b></td>
 	<td><b>Google City</b></td>
 	<td><b>Google Precision</b></td>
+	<td><b>Yahoo Distance</b></td>
+	<td><b>Yahoo Address</b></td>
+	<td><b>Yahoo Zip</b></td>
+	<td><b>Yahoo City</b></td>
+	<td><b>Yahoo Precision</b></td>
 	<td><b>Date</b></td>
 </tr>
 
@@ -86,7 +91,26 @@
           % endif
         % endif
       % endfor
-      <td>${row[19]}</td>
+      % for column in row[19:24]:
+        % if column == "True":
+              <td align="right" bgcolor=#66CC00>${column}</td>
+        % elif column == "False":
+              <td align="right" bgcolor=#FF3300>${column}</td>
+        % elif column == "None":
+              <td align="right" bgcolor=#FFFFCC>${column}</td>
+        % else:
+		  % if row[19] > 60:
+           <td align="right" bgcolor=#FF3300>${row[19]}</td>
+          % elif (row[19] > 40 and row[19] <= 60):
+           <td align="right" bgcolor=#FFCC00>${row[19]}</td>
+          % elif (row[19] > 20 and row[19] <= 40):
+           <td align="right" bgcolor=#009966>${row[19]}</td>
+          % else:
+           <td align="right" bgcolor=#66CC00>${row[19]}</td>
+          % endif
+        % endif
+      % endfor
+      <td>${row[24]}</td>
   </tr>
 % endfor
 </table>
