@@ -264,6 +264,12 @@ class QaController(BaseController):
        if 'ydistsh' in request.params:
           ydistsh = int(request.params.get('ydistsh'))
           condition += " AND yahoo_dist<=%s" % ydistsh
+       if 'qmname' in request.params:
+          tables2use =", qm_regions" 
+          qmname = request.params.get('qmname')
+          condition += " AND contains(qm_regions.geom,address.geom) and qm_regions.qmname='%s'" % qmname
+       else:
+          tables2use ="" 
 
        c.charset = 'utf-8'
        # Create SQL Query
@@ -273,10 +279,10 @@ class QaController(BaseController):
           " qaoa.google_dist, qaoa.google_addr, qaoa.google_zip, qaoa.google_city, qaoa.google_precision,"\
           " qaoa.yahoo_dist, qaoa.yahoo_addr, qaoa.yahoo_zip, qaoa.yahoo_city, qaoa.yahoo_precision,"\
           " qaoa.date "\
-          " FROM qaoa, address "\
+          " FROM qaoa, address %s"\
           " WHERE qaoa.id = address.id and address.quality='Digitized' %s "\
           " ORDER BY %s "\
-          " limit %i " % (condition, orderby, limit)
+          " limit %i " % (tables2use, condition, orderby, limit)
 
        # Execute query
        result = Session.execute(sqlQuery)
