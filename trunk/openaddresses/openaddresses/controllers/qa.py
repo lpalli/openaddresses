@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import logging
 import StringIO
+# Imports for mail sending
+import smtplib
+from email.mime.text import MIMEText
 
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
@@ -11,6 +14,7 @@ from pylons.i18n.translation import *
 
 from openaddresses.lib.base import *
 from openaddresses.model.qa import Qaoa
+from openaddresses.model.addresses import Address
 from openaddresses.model.meta import Session
 from openaddresses.model.meta import metadata
 
@@ -26,12 +30,42 @@ from sqlalchemy.sql import and_
 
 log = logging.getLogger(__name__)
 
+
+def sendamail(mailreceiver, mailtext):
+  sender = 'hansjoerg.stark@fhnw.ch'
+  sender = 'quality.manager@openaddresses.org'
+  receiver = mailreceiver #'hansjoerg.stark@openaddresses.ch'
+  msg = MIMEText(mailtext)
+  msg['Subject'] = 'One of your addresses in OpenAddresses.org has changed'
+  msg['From'] = sender
+  msg['To'] = receiver
+
+# Send the message via external SMTP server
+  smtpusername = 'qm@openaddresses.ch'
+  smtppwd = '**qmOA!!'
+  s = smtplib.SMTP('smtp.openaddresses.ch')
+  s.login(smtpusername,smtppwd)
+  s.sendmail(sender, receiver, msg.as_string())
+  s.quit()
+
+
 class QaController(BaseController):
     readonly = False # if set to True, only GET is supported
 
     def __init__(self):
         self.protocol = Protocol(Session, Qaoa, self.readonly)
 
+    def index(self):
+        htmlinfo = "Please call <a href='/qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
+        "You may also use keyvalues to customise the report. In the following are some examples given:<br><br>"\
+        "The last 20 addresses from user Pete:<br><a href='/qa/qareport?limit=20&user=pete' target='_blank'>http://www.openaddresses.org/qa/qareport?limit=20&user=pete</a><br><br>"\
+        "All addresses from December 7 2010:<br><a href='/qa/qareport?date=20101207' target='_blank'>http://www.openaddresses.org/qa/qareport?date=20101207</a><br><br>"\
+        "All addresses since December 1 2010:<br><a href='/qa/qareport?datesince=20101201' target='_blank'>http://www.openaddresses.org/qa/qareport?datesince=20101201</a><br><br>"\
+        "All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:<br><a href='/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc' target='_blank'>http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc</a><br><br>"\
+        "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
+
+        return htmlinfo
+		
     def doupdate(self, id):
         #http://127.0.0.1:5000/qa/doupdate/13898308?type=keiner&yahoo_addr=TRUE&yahoo_dist=99.123
         query = Session.query(Qaoa)
@@ -99,17 +133,80 @@ class QaController(BaseController):
         Session.commit()		
         Session.close()
 
-    def index(self):
-        htmlinfo = "Please call <a href='/qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
-        "You may also use keyvalues to customise the report. In the following are some examples given:<br><br>"\
-        "The last 20 addresses from user Pete:<br><a href='/qa/qareport?limit=20&user=pete' target='_blank'>http://www.openaddresses.org/qa/qareport?limit=20&user=pete</a><br><br>"\
-        "All addresses from December 7 2010:<br><a href='/qa/qareport?date=20101207' target='_blank'>http://www.openaddresses.org/qa/qareport?date=20101207</a><br><br>"\
-        "All addresses since December 1 2010:<br><a href='/qa/qareport?datesince=20101201' target='_blank'>http://www.openaddresses.org/qa/qareport?datesince=20101201</a><br><br>"\
-        "All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:<br><a href='/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc' target='_blank'>http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc</a><br><br>"\
-        "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
-		
-        return htmlinfo
-		
+        #do check only once - not twice because doupdate is called both from Google and Bing verification
+        if 'bing_dist' in request.params:
+          self.checkfornoticebymail()
+
+    def checkfornoticebymail(self):
+	    #check if the changed address has a contact mail who should be informed about a change
+        queryA = Session.query(Address)
+        currecA = queryA.filter_by(id=c.id).one()
+
+        mailReceiver = currecA.email
+        if mailReceiver:
+          #extract new values:
+          new_street = currecA.street
+          new_housenumber = currecA.housenumber
+          new_housename = currecA.housename
+          new_postcode = currecA.postcode
+          new_region = currecA.region
+          new_city = currecA.city
+          new_country = currecA.country
+          user = currecA.created_by
+
+          #extract old values:
+          sqlQuery = "select  address_archive.street,address_archive.housenumber,address_archive.housename,address_archive.postcode,address_archive.region,address_archive.city,address_archive.country,round(cast(ST_Distance_Sphere(address_archive.geom,address.geom) as Numeric),3) as deviation"\
+            " from address, address_archive where (address.id=%i and address.id=address_archive.id) order by address_archive.archive_date desc limit 1 " % int(c.id)
+
+          # Execute query
+          result = Session.execute(sqlQuery)
+          for row in result: 
+            old_street = row['street']
+            old_housenumber = row['housenumber']
+            old_housename = row['housename']
+            old_postcode = row['postcode']
+            old_region = row['region']
+            old_city = row['city']
+            old_country = row['country']
+            deviation = str(row['deviation'])
+
+          msgtext = '[changed?]\t\t[old value]  \t|  \t[new value] \n'
+          if old_street == new_street:
+             msgtext += '[ ] street: \t[%s]  \t|  \t[%s] \n' % (old_street, new_street)
+          else:
+             msgtext += '[x] street: \t[%s]  \t|  \t[%s] \n' % (old_street, new_street)
+          if old_housenumber == new_housenumber:
+             msgtext += '[ ] housenumber: \t[%s]  \t|  \t[%s] \n' % (old_housenumber, new_housenumber)
+          else:
+             msgtext += '[x] housenumber: \t[%s]  \t|  \t[%s] \n' % (old_housenumber, new_housenumber)
+          if old_housename == new_housename:
+             msgtext += '[ ] housename: \t[%s]  \t|  \t[%s] \n' % (old_housename, new_housename)
+          else:
+             msgtext += '[x] housename: \t[%s]  \t|  \t[%s] \n' % (old_housename, new_housename)
+          if old_postcode == new_postcode:
+             msgtext += '[ ] postcode: \t[%s]  \t|  \t[%s] \n' % (old_postcode, new_postcode)
+          else:
+             msgtext += '[x] postcode: \t[%s]  \t|  \t[%s] \n' % (old_postcode, new_postcode)
+          if old_region == new_region:
+             msgtext += '[ ] region: \t[%s]  \t|  \t[%s] \n' % (old_region, new_region)			 
+          else:
+             msgtext += '[x] region: \t[%s]  \t|  \t[%s] \n' % (old_region, new_region)			 
+          if old_city == new_city:
+             msgtext += '[ ] city: \t[%s]  \t|  \t[%s] \n' % (old_city, new_city)
+          else:
+             msgtext += '[x] city: \t[%s]  \t|  \t[%s] \n' % (old_city, new_city)
+          if old_country == new_country:
+             msgtext += '[ ] country: \t[%s]  \t|  \t[%s] \n' % (old_country, new_country)
+          else:
+             msgtext += '[x] country: \t[%s]  \t|  \t[%s] \n\n' % (old_country, new_country)
+          if float(deviation)>0:
+             msgtext += '[x] Deviation: \t%sm \n' % (deviation)
+          else:
+             msgtext += '[ ] Deviation: \t%sm \n' % (deviation)
+          msgtext += 'user: \t%s \n' % (user)
+          
+          sendamail(mailReceiver, msgtext)
+
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
         if (id == 'qareport'):
