@@ -49,27 +49,27 @@ function getTimeStamp() {
 var d = new Date();
 var ts;
 ts=d.getFullYear();
-if(d.getMonth()<9){
+if(d.getMonth()<=9){
 	ts = ts + "-0" + (d.getMonth()+1);
 } else {
 	ts=ts+ "-" + (d.getMonth()+1);
 }
-if(d.getDate()<9){
+if(d.getDate()<=9){
 	ts = ts + "-0" + (d.getDate());
 } else {
 	ts=ts+ "-" + (d.getDate());
 }
-if(d.getHours()<9){
+if(d.getHours()<=9){
 	ts = ts + "-0" + (d.getHours());
 } else {
 	ts=ts+ "-" + (d.getHours());
 }
-if(d.getMinutes()<9){
+if(d.getMinutes()<=9){
 	ts = ts + ":0" + (d.getMinutes());
 } else {
 	ts=ts+ ":" + (d.getMinutes());
 }
-if(d.getSeconds()<9){
+if(d.getSeconds()<=9){
 	ts = ts + ":0" + (d.getSeconds());
 } else {
 	ts=ts+ ":" + (d.getSeconds());

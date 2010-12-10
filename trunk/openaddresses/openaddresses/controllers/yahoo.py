@@ -68,7 +68,7 @@ class YahooController(BaseController):
         urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&flags=J&appid=dj0yJmk9aG5YOFZqRmwxQTNyJmQ9WVdrOVNVWmtaelJOTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Nw--' %(street, house, postal, city)
 
         query = Session.query(Qaoa)
-        myrec = query.filter_by(id=c.id).one()
+        currec = query.filter_by(id=c.id).one()
 
         fileHandle = urllib2.urlopen(urlStr)
         thefile = fileHandle.read()
@@ -86,25 +86,25 @@ class YahooController(BaseController):
         from_request = [float(lng), float(lat)]
         distance = points2distance(from_geocoder, from_request)
 
-        myrec.yahoo_dist=distance
+        currec.yahoo_dist=distance
         
         if (y_street != street) or (y_house != house):
-            myrec.yahoo_addr='False'
+            currec.yahoo_addr='False'
         else:
-            myrec.yahoo_addr='True'
+            currec.yahoo_addr='True'
         if y_postal != postal:
-            myrec.yahoo_zip='False'
+            currec.yahoo_zip='False'
         else:
-            myrec.yahoo_zip='True'
+            currec.yahoo_zip='True'
         if y_city != city:
-            myrec.yahoo_city='False'
+            currec.yahoo_city='False'
         else:
-            myrec.yahoo_city='True'
+            currec.yahoo_city='True'
         if y_quality>=87:
-            myrec.yahoo_precision='True'
+            currec.yahoo_precision='True'
         else:
-            myrec.yahoo_precision='False'
-        Session.update(myrec)
+            currec.yahoo_precision='False'
+        Session.update(currec)
         Session.commit()		
         Session.close()
 

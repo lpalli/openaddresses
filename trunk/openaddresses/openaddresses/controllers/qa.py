@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import StringIO
+
 # Imports for mail sending
 import smtplib
 from email.mime.text import MIMEText
@@ -69,67 +70,67 @@ class QaController(BaseController):
     def doupdate(self, id):
         #http://127.0.0.1:5000/qa/doupdate/13898308?type=keiner&yahoo_addr=TRUE&yahoo_dist=99.123
         query = Session.query(Qaoa)
-        myrec = query.filter_by(id=c.id).one()
+        currec = query.filter_by(id=c.id).one()
 
         #update BING values
         if 'bing_dist' in request.params:
           bing_dist = request.params.get('bing_dist')
-          myrec.bing_dist = bing_dist
+          currec.bing_dist = bing_dist
         if 'bing_addr' in request.params:
           bing_addr = request.params.get('bing_addr')
-          myrec.bing_addr = bing_addr
+          currec.bing_addr = bing_addr
         if 'bing_city' in request.params:
           bing_city = request.params.get('bing_city')
-          myrec.bing_city = bing_city
+          currec.bing_city = bing_city
         if 'bing_zip' in request.params:
           bing_zip = request.params.get('bing_zip')
-          myrec.bing_zip = bing_zip
+          currec.bing_zip = bing_zip
         if 'bing_precision' in request.params:
           bing_precision = request.params.get('bing_precision')
-          myrec.bing_precision = bing_precision
+          currec.bing_precision = bing_precision
 
         #update GOOGLE values
         if 'google_dist' in request.params:
           google_dist = request.params.get('google_dist')
-          myrec.google_dist = google_dist
+          currec.google_dist = google_dist
         if 'google_addr' in request.params:
           google_addr = request.params.get('google_addr')
-          myrec.google_addr = google_addr
+          currec.google_addr = google_addr
         if 'google_city' in request.params:
           google_city = request.params.get('google_city')
-          myrec.google_city = google_city
+          currec.google_city = google_city
         if 'google_zip' in request.params:
           google_zip = request.params.get('google_zip')
-          myrec.google_zip = google_zip
+          currec.google_zip = google_zip
         if 'google_precision' in request.params:
           google_precision = request.params.get('google_precision')
-          myrec.google_precision = google_precision
+          currec.google_precision = google_precision
 
 		  #update YAHOO values
         if 'yahoo_dist' in request.params:
           yahoo_dist = request.params.get('yahoo_dist')
-          myrec.yahoo_dist = yahoo_dist
+          currec.yahoo_dist = yahoo_dist
         if 'yahoo_addr' in request.params:
           yahoo_addr = request.params.get('yahoo_addr')
-          myrec.yahoo_addr = yahoo_addr
+          currec.yahoo_addr = yahoo_addr
         if 'yahoo_city' in request.params:
           yahoo_city = request.params.get('yahoo_city')
-          myrec.yahoo_city = yahoo_city
+          currec.yahoo_city = yahoo_city
         if 'yahoo_zip' in request.params:
           yahoo_zip = request.params.get('yahoo_zip')
-          myrec.yahoo_zip = yahoo_zip
+          currec.yahoo_zip = yahoo_zip
         if 'yahoo_precision' in request.params:
           yahoo_precision = request.params.get('yahoo_precision')
-          myrec.yahoo_precision = yahoo_precision
+          currec.yahoo_precision = yahoo_precision
 
         if 'type' in request.params:
           type = request.params.get('type')
-          myrec.type = type
+          currec.type = type
         if 'date' in request.params:
           date = request.params.get('date')
-          myrec.date = date
+          currec.date = date
 		  
-        Session.update(myrec)
+        Session.update(currec)
         Session.commit()		
         Session.close()
 

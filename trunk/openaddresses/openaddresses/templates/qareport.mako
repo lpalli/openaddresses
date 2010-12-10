@@ -32,6 +32,12 @@
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 <h3>Quality Report for <FONT SIZE=+1> ${c.count}</FONT> OpenAddresses Objects</h3>
+
+This page shows results of comparison of OpenAddresses.org addresses to OpenWebMapServices from Bing, Google and Yahoo.<br>
+Distance values as deviations are in [m]. 'True' and 'False' values indicate the resulte of a binary comparison of the user entered values to the ones from the mentioned OWMS.<br>
+'Precision' indicates as binary value whether the user entered address values could be geocoded by the OWMS to address-level.<br><br>
+In order to change the position or address values of an address simply click on its id. OpenAddresses launches in a new window at the address' location.<br><br>
+
 <table>
 <tr>
 	<td><b>id</b></td>
