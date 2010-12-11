@@ -179,6 +179,7 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
          NOW(),
          TG_OP
        );
+   DELETE FROM qaoa WHERE qaoa.id = OLD.ID;
    RETURN NULL;
 
   END;
@@ -187,7 +188,6 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
 
 GRANT ALL ON FUNCTION update_address() TO "www-data";
 GRANT ALL ON FUNCTION delete_address() TO "www-data";
-
 
 DROP TRIGGER delete_address on address cascade;
 
@@ -273,9 +273,9 @@ CREATE SEQUENCE qaOA_seq
 
 ALTER SEQUENCE qaOA_seq OWNER TO postgres;
 
-CREATE TABLE qaOA
+CREATE TABLE qaoa
 (
-  id bigint,
+  id bigint NOT NULL,
   bing_dist double precision,
   bing_addr boolean,
   bing_zip boolean,
@@ -293,11 +293,14 @@ CREATE TABLE qaOA
   yahoo_precision boolean,
   type character(10),
   date character(20),
-  CONSTRAINT pk_qaoa PRIMARY KEY (id)
+  CONSTRAINT qa_pkey PRIMARY KEY (id)
 )
-WITH (OIDS=FALSE);
-
-ALTER TABLE qaOA OWNER TO postgres;
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE qaoa OWNER TO postgres;
+GRANT ALL ON TABLE qaoa TO postgres;
+GRANT ALL ON TABLE qaoa TO "www-data";
 
 CREATE OR REPLACE FUNCTION hj_add_qaOA()
 RETURNS trigger AS
@@ -327,6 +330,26 @@ GRANT ALL ON TABLE qaoa TO "www-data";
 GRANT ALL ON TABLE qaoa TO postgres;
 GRANT ALL ON FUNCTION hj_add_qaoa() TO "www-data";
 GRANT ALL ON TABLE qaoa_seq TO "www-data";
+
+CREATE TABLE qm_regions
+(
+  qmname character varying(128),
+  id bigint NOT NULL,
+  geom geometry,
+  CONSTRAINT qm2_pk PRIMARY KEY (id),
+  CONSTRAINT enforce_dims_geom CHECK (st_ndims(geom) = 2),
+  CONSTRAINT enforce_geotype_geom CHECK (geometrytype(geom) = 'MULTIPOLYGON'::text OR geom IS NULL),
+  CONSTRAINT enforce_srid_geom CHECK (st_srid(geom) = 4326)
+)
+WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE qm_regions OWNER TO postgres;
+GRANT ALL ON TABLE qm_regions TO "www-data";
+
+ALTER TABLE address
+   ADD COLUMN "email" character(64);
 
 #  ****************************************************************
 #  Import data
