@@ -25,7 +25,7 @@
     
 </head>
 
-<body onload="initiatebing()";>
+<body onload="initiatebing();">
 <form><input type="hidden" id="lang" value="${c.lang}"/></form>
 
 <div id="MouseOver" style="display: none;"></div>
@@ -43,12 +43,14 @@
 <!--the following tag is necessary for the bing geocoding-->
 <div id='BingMap' style="position:relative; width:1px; height:1px;"></div>
 
+<script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
+
 % if c.debug:
    <style type="text/css">.olTileImage {
       border: 1px solid lime;
    }   </style>
 
-   <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
+
    <script type="text/javascript" src="ext32/adapter/ext/ext-base-debug.js"></script>
    <script type="text/javascript" src="ext32/ext-all-debug.js"></script>
    <script type="text/javascript" src="ext32/examples/ux/ux-all-debug.js"></script>
@@ -79,17 +81,6 @@
    <script type="text/javascript" src="app/js/OpenAddressesUploadPanel.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesInit.js"></script>
    <script type="text/javascript" src="app/js/OpenAddressesQA.js"></script>
-   <!--the following JS are necessary for the bing geocoding-->
-   <script type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
-   <script type="text/javascript">
-		var bingmap = null;
-		function initiatebing() {
-			bingmap = new VEMap('BingMap');
-			bingmap.LoadMap(new VELatLong(47, 8.3), 6 );
-		}
-   </script>
-
-   
 
 % else:
    <script src="http://api.maps.yahoo.com/ajaxymap?v=3.0&appid=X5v6V_PV34H4r2cBAwU2Ba6eimyZp6WAxo3y2pnvY_vGLfj4.zFsb6gzup25PyNBJ.sW2cM-"></script>
@@ -115,6 +106,16 @@
     </script>
 
 % endif
+
+   <!--the following JS are necessary for the bing geocoding-->
+   <script type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+   <script type="text/javascript">
+		var bingmap = null;
+		function initiatebing() {
+			bingmap = new VEMap('BingMap');
+			bingmap.LoadMap(new VELatLong(47, 8.3), 6 );
+		}
+   </script>
 
 % if c.lang == 'zh':
    <script type="text/javascript" src="mfbase/openlayers/lib/OpenLayers/Lang/zh-CN.js?version=${c.versionTime}"></script>
