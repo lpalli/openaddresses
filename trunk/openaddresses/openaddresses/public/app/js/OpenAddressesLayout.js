@@ -54,6 +54,7 @@
  * @include app/js/OpenAddressesHover.js
  * @include app/js/OpenAddressesGlobalSearchCombo.js
  * @include app/js/OpenAddressesUploadPanel.js
+ * @include app/js/OpenAddressesQA.js
  * @include geoext-ux-dev/DisplayProjectionSelectorCombo/ux/widgets/form/DisplayProjectionSelectorCombo.js
  * @include geoext-ux-dev/Toolbar/ux/widgets/LoadingStatusBar.js
  * @include geoext-ux-dev/RoutingPanel/ux/widgets/RoutingPanel.js
