@@ -14,7 +14,7 @@
     <meta name="robots" content="index,follow "/>
 
    <!--script src="http://www.google.com/jsapi?key=ABQIAAAAXP_8MYDI21DrDldhFCNqohSHQfVSIhQI6ECr286wVQ34_evcPRTow3UQ9rqhzod2zMXPH_sSoe-xBA" type="text/javascript"></script-->
-   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAmF9bNI4nQInzlORfshwB9hQChx54JYdgbPKio935j7RDK0bGdhSRJ4EAIkt7qwyaYpYR6IpKHQDL7g" type="text/javascript"></script>
+   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAmF9bNI4nQInzlORfshwB9hQChx54JYdgbPKio935j7RDK0bGdhSRJ4EAIkt7qwyaYpYR6IpKHQDL7g" type="text/javascript"></script>
 	
     <link rel="stylesheet" type="text/css" href="ext32/resources/css/ext-all.css" />
     <link rel="stylesheet" type="text/css" href="ext32/examples/ux/css/ux-all.css" />
