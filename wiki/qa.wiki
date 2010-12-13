@@ -1,6 +1,6 @@
 = Quality Assurance =
 
-Quality assurance is still one of the key issues in thr field of volunteered geographic information (vgi). The OpenaAddresses? project will shortly provide a report that shows a comparison of user entered address information (= OpenAddresses? record) compared to the information provided by open web-map services (owms) like Bing Maps, Google Maps and Yahoo Maps. The comparison provides mostly binary results: is the user entered spelling of street-name identical to the one provided by the owms? Also the deviation of the usere entered location compared to the one provided by the owms is computed.
+Quality assurance is still one of the key issues in the field of volunteered geographic information (vgi). The OpenaAddresses? project will shortly provide a report that shows a comparison of user entered address information (= OpenAddresses record) compared to the information provided by open web-map services (owms) like Bing Maps, Google Maps and Yahoo Maps. The comparison provides mostly binary results: is the user entered spelling of street-name identical to the one provided by the owms? Also the deviation of the usere entered location compared to the one provided by the owms is computed.
 
 The comparison results are presented in a table, sorted descending by date.
 
