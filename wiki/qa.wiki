@@ -11,26 +11,21 @@ Please call  http://www.openaddresses.org/qa/qareport for a report on quality in
 You may also use keyvalues to customise the report. In the following are some examples given:
 
 
-The last 20 addresses from user Pete:
-
+The last 20 addresses from user Pete:  
 [http://www.openaddresses.org/qa/qareport?limit=20&user=pete] http://www.openaddresses.org/qa/qareport?limit=20&user=pete
 
 
 All addresses from December 7 2010:
-
 http://www.openaddresses.org/qa/qareport?date=20101207
 
 
 All addresses since December 1 2010:
-
 http://www.openaddresses.org/qa/qareport?datesince=20101201
 
 
 All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:
-
 http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc
 
 
 All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:
-
 http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc
