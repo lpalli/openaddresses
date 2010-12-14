@@ -67,7 +67,8 @@ In order to change the position or address values of an address simply click on 
 
 % for row in c.qaCreator:
    <tr>
-      <td><a href="http://www.openaddresses.org/?northing=${row[0]}&easting=${row[1]}&zoom=18&overlayOpacity=0.7" target="newWindow">${row[2]}</a></td>
+      <!--td><a href="http://www.openaddresses.org/?northing=${row[0]}&easting=${row[1]}&zoom=18&overlayOpacity=0.7" target="newWindow">${row[2]}</a></td-->
+      <td><a href="../../?northing=${row[0]}&easting=${row[1]}&zoom=18&overlayOpacity=0.7" target="newWindow">${row[2]}</a></td>
       <td>${row[3]}</td><td>${row[4]}</td><td>${row[5]}</td><td>${row[6]}</td><td>${row[7]}</td><td>${row[8]}</td>
       % if row[9] > 60:
            <td align="right" bgcolor=#FF3300>${row[9]}</td>
