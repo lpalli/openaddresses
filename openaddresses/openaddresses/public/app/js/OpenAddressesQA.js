@@ -274,7 +274,6 @@ function send2GMGeocoder(adrInfo) {
 
 				if (place.AddressDetails.Accuracy) { 
 					accN = place.AddressDetails.Accuracy;
-					
 					switch (accN)
 					{
 					case 1:
@@ -389,6 +388,7 @@ function send2GMGeocoder(adrInfo) {
 										if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.DependentLocality.Thoroughfare) { 
 											if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.DependentLocality.Thoroughfare.ThoroughfareName) { 
 												adr = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.DependentLocality.Thoroughfare.ThoroughfareName;
+												adr = adr.split(",")[0];
 												}
 										}
 										if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.DependentLocality.PostalCode) { 
@@ -415,7 +415,6 @@ function send2GMGeocoder(adrInfo) {
 				}
 			
 			} //if - response ok
-
 			//Comparison of address-information
 			c_addr = comparison(adr, g_addr);
 			c_zip = comparison(zip, g_zip);
