@@ -12,7 +12,7 @@ You may also use keyvalues to customise the report. In the following are some ex
 
 
 The last 20 addresses from user Pete:  
-[http://www.openaddresses.org/qa/qareport?limit=20&user=pete] http://www.openaddresses.org/qa/qareport?limit=20&user=pete
+http://www.openaddresses.org/qa/qareport?limit=20&user=pete
 
 
 All addresses from December 7 2010:
