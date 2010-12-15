@@ -56,8 +56,11 @@ class QaController(BaseController):
     def __init__(self):
         self.protocol = Protocol(Session, Qaoa, self.readonly)
 
+    def __before__(self):
+       self.root_path = config['root_path']
+
     def index(self):
-        htmlinfo = "Please call <a href='/qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
+        htmlinfo = "Please call <a href=''+self.root_path+'qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
         "You may also use keyvalues to customise the report. In the following are some examples given:<br><br>"\
         "The last 20 addresses from user Pete:<br><a href='/qa/qareport?limit=20&user=pete' target='_blank'>http://www.openaddresses.org/qa/qareport?limit=20&user=pete</a><br><br>"\
         "All addresses from December 7 2010:<br><a href='/qa/qareport?date=20101207' target='_blank'>http://www.openaddresses.org/qa/qareport?date=20101207</a><br><br>"\
