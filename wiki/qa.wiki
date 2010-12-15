@@ -9,6 +9,8 @@ While spatial accuracy is computed as the deviation from the user entered locati
 == Quality Assurance report ==
 The OpenaAddresses project will shortly provide a report that shows these comparison results in a tabular format. As mentioned above, the comparison provides mostly binary results: is the user entered spelling of street-name identical to the one provided by the owms? The deviation is provided in metric units as [m].
 
+Call  http://www.openaddresses.org/qa/qareport for a short introduction to the QA report.
+
 By default the comparison results are presented in a table, sorted descending by date.
 
 === Key Values ===
@@ -32,14 +34,19 @@ The report can be customised by certain key values:
 
  * {{{city}}}: Filter the QA report to show only addresses of a specific city.
 
+ * {{{country}}}: Filter the QA report to show only addresses of a specific country.
 
+ * {{{bdistsh}}}: Filter the QA report to show only addresses with a deviation to the Bing Map location smaller than a specific value (in [m])
 
+ * {{{bdistgr}}}: Filter the QA report to show only addresses with a deviation to the Bing Map location greater than a specific value (in [m]).
 
+ * {{{gdistsh}}}: Filter the QA report to show only addresses with a deviation to the Google Map location smaller than a specific value (in [m])
 
+ * {{{gdistgr}}}: Filter the QA report to show only addresses with a deviation to the Google Map location greater than a specific value (in [m]).
 
+ * {{{ydistsh}}}: Filter the QA report to show only addresses with a deviation to the Yahoo Map location smaller than a specific value (in [m])
 
-
-Please call  http://www.openaddresses.org/qa/qareport for a report on quality information.
+ * {{{ydistgr}}}: Filter the QA report to show only addresses with a deviation to the Yahoo Map location greater than a specific value (in [m]).
 
 
 === Sample Reports ===
