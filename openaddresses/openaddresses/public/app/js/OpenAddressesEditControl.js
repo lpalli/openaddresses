@@ -245,7 +245,8 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 						}
 
 						//addition for qa mechanism
-						qa_ComparisonWithOWMS(feature.attributes.street,feature.attributes.housenumber,feature.attributes.housename,feature.attributes.postcode,feature.attributes.city,feature.attributes.created_by,feature.geometry.x,feature.geometry.y,curaddrID);			
+						var curCountry=feature.attributes.country;
+						qa_ComparisonWithOWMS(feature.attributes.street,feature.attributes.housenumber,feature.attributes.housename,feature.attributes.postcode,feature.attributes.city,feature.attributes.created_by,feature.geometry.x,feature.geometry.y,curaddrID,curCountry);			
 
                     },
                     failure: function(resp, opt) {
