@@ -1,14 +1,24 @@
 = Quality Assurance =
+== General comment on Quality Assurance ==
+Quality assurance (QA) is still one of the key issues in the field of volunteered geographic information (vgi). There are many aspects to quality measurements. OpenAddresses focuses in this context on 
+ * Spatial accuracy and
+ * Attribute accuracy
 
-Quality assurance is still one of the key issues in the field of volunteered geographic information (vgi). The OpenaAddresses? project will shortly provide a report that shows a comparison of user entered address information (= OpenAddresses record) compared to the information provided by open web-map services (owms) like Bing Maps, Google Maps and Yahoo Maps. The comparison provides mostly binary results: is the user entered spelling of street-name identical to the one provided by the owms? Also the deviation of the usere entered location compared to the one provided by the owms is computed.
+While spatial accuracy is computed as the deviation from the user entered location to the location provided by one of the three open web-map services (owms) Bing Maps, Google Maps and Yahoo Maps, attribute accuracy is defined as a binary comparison of the user entered address parameters to the address parameters provided by each owms. In this comparison upper and lower case are relevant, also special characters like '-' or ',' etc.
 
-The comparison results are presented in a table, sorted descending by date.
+== Quality Assurance report ==
+The OpenaAddresses project will shortly provide a report that shows these comparison results in a tabular format. As mentioned above, the comparison provides mostly binary results: is the user entered spelling of street-name identical to the one provided by the owms? The deviation is provided in metric units as [m].
 
+By default the comparison results are presented in a table, sorted descending by date.
+
+=== Key Values ===
 The report can be customised by certain key values:
 
 Please call  http://www.openaddresses.org/qa/qareport for a report on quality information.
 
-You may also use keyvalues to customise the report. In the following are some examples given:
+
+=== Sample Reports ===
+You may use the introduced key-values to customise the QA report. In the following are some examples given:
 
 
 The last 20 addresses from user Pete:  
