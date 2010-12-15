@@ -77,3 +77,10 @@ http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by 
 
 People who are interested in acting as regional quality managers may apply at OpenAddresses to do this. The idea of this concept is that people commit themselves to check addresses in a certain area or region they are familiar with. This could be districts of smaller or larger extent.
 Interested persons must provide the region(s) as geometry object they want to be responsible for along with some identity and contact information.
+
+To filter the QA report for addresses that are only within their region(s) they may use an additional key-value: {{{qmname}}}.
+
+A sample of the QA report may look like: 
+http://www.openaddresses.org/qa/qareport?qmname=tom69
+
+The key-values introduced earlier may be combined with this one.
