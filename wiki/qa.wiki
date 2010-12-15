@@ -44,7 +44,7 @@ The report can be customised by certain key values:
 
  * {{{gdistgr}}}: Filter the QA report to show only addresses with a deviation to the Google Map location greater than a specific value (in [m]).
 
- * {{{ydistsh}}}: Filter the QA report to show only addresses with a deviation to the Yahoo Map location smaller than a specific value (in \[m\])
+ * {{{ydistsh}}}: Filter the QA report to show only addresses with a deviation to the Yahoo Map location smaller than a specific value (in [m])
 
  * {{{ydistgr}}}: Filter the QA report to show only addresses with a deviation to the Yahoo Map location greater than a specific value (in [m]).
 
