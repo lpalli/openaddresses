@@ -9,13 +9,14 @@ Ext.namespace("openaddresses");
 //global variables to store oid and for comparison purpose
 var g_oid;
 var g_str;
-var g_hnr;
 var g_addr;
+var g_hnr;
 var g_zip;
 var g_city;
 var g_lat;
 var g_lng;
 var g_date;
+var g_country;
 
 ////*******************************************************************************
 ////general functions**************************************************************
@@ -78,15 +79,40 @@ return ts;
 
 }
 
+//the following functions provided by http://www.somacon.com/p355.php
+function ltrim(str) { 
+	for(var k = 0; k < str.length && isWhitespace(str.charAt(k)); k++);
+	return str.substring(k, str.length);
+}
+function rtrim(str) {
+	for(var j=str.length-1; j>=0 && isWhitespace(str.charAt(j)) ; j--) ;
+	return str.substring(0,j+1);
+}
+function trim(str) {
+	return ltrim(rtrim(str));
+}
+function isWhitespace(charToCheck) {
+	var whitespaceChars = " \t\n\r\f";
+	return (whitespaceChars.indexOf(charToCheck) != -1);
+}
+
 ////*******************************************************************************
 ////Bing*******************************************************************************
 ////*******************************************************************************
-function send2BingGeocoder(adrInfo) {
+function send2BingGeocoder(str,hnr,zip,city,country) {
+
 	//processes address information from DB via Bing geocoder
 	//API Info found at 
 	//http://msdn.microsoft.com/en-us/library/bb429645.aspx
 	//http://msdn.microsoft.com/en-us/library/bb429615.aspx and others
+	if (country=='FR' || country=='GB') {
+		g_addr = hnr + " " + str;
+	} else {
+	   g_addr = str + " " + hnr;	
+	}
 
+	var adrInfo=str + " " + hnr + ", " + zip + " " + city + " " + country;
+	g_country = adrInfo.substring(adrInfo.length-2);
 	results = bingmap.Find(null,adrInfo,null,null,0,1,false,false,false,false,evaluateResults);
 }
 
@@ -100,7 +126,7 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 	var PlaceMatchConfidence =  "";
 	var PlacePrecision = "";
 	var acc = "";
-
+	
 	if(places)	{
 	
 		if (places.length>0) {
@@ -121,29 +147,34 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 			} 
 
 			if (addr_array.length == 2) {			  // two values comma-separated
-				if (parseInt(addr_array[1].substring(1,5)) > 1000){	// first value is a valid zip code
-						addr = addr_array[0];
-						zip = addr_array[1].substring(1,5);
-						city = addr_array[1].substring(6);
+				addr = addr_array[0];
+				if (g_country=='GB') {
+						city = addr_array[1].split(" ")[1];
+						zip = addr_array[1].replace(city,"");
 					} else {
-						addr = "";
-						zip = 0;
-						city = addr_array[0];
+						zip = addr_array[1].split(" ")[1];
+						city = addr_array[1].split(" ")[2];
+					
 					}
 
 				}
 			if (addr_array.length == 3) {			  // two values comma-separated
-				if (parseInt(addr_array[1].substring(1,5)) > 1000){	// first value is a valid zip code
-						addr = addr_array[0];
-						zip = addr_array[1].substring(1,5);
-						city = addr_array[1].substring(6);
-					} else {
-						addr = "";
-						zip = 0;
-						city = addr_array[0];
-					}
-
+				if (g_country=='GB') {
+					addr = addr_array[0];
+					city = addr_array[1].split(" ")[1];
+					zip = addr_array[1].replace(city,"");
 				}
+				else if (g_country=='ES') {
+					addr = addr_array[0] + " " + addr_array[1];
+					zip = addr_array[2].split(" ")[1];
+					city = addr_array[2].replace(zip,"");
+				} 
+				else {
+					addr = addr_array[0];
+					zip = addr_array[1].split(" ")[1];
+					city = addr_array[1].split(" ")[2];
+				}
+			}
 
 			//Determine MatchConfidence
 			if (place.MatchConfidence==VEMatchConfidence.High){
@@ -181,6 +212,11 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 		}
 	}
 
+		//get rid of leading spaces
+		addr=ltrim(addr);
+		zip=ltrim(zip);
+		city=ltrim(city);
+	
 		//geocoding accuracy
 		acc = PlaceMatchCode + " / " + PlaceMatchConfidence + " / " + PlacePrecision;
 
@@ -220,8 +256,21 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 ////*******************************************************************************
 ////Google*******************************************************************************
 ////*******************************************************************************
-function send2GMGeocoder(adrInfo) {
+function send2GMGeocoder(str,hnr,zip,city,country) {
 	//processes address information from DB via GM geocoder
+
+	var u_addr;
+	if (country=='FR' || country=='GB') {
+		u_addr = hnr + " " + str;
+	} else {
+		if (country=='ES'){
+		   u_addr = str + ", " + hnr;	
+		} else {
+		   u_addr = str + " " + hnr;	
+		}
+	}
+
+	var adrInfo = hnr + "+" + str + "+" + zip + "+" + city + "+" + country;
 	var geocoder = new GClientGeocoder();
 	geocoder.getLocations(adrInfo, 
 		function showAddress(response) {
@@ -274,6 +323,7 @@ function send2GMGeocoder(adrInfo) {
 
 				if (place.AddressDetails.Accuracy) { 
 					accN = place.AddressDetails.Accuracy;
+
 					switch (accN)
 					{
 					case 1:
@@ -327,8 +377,10 @@ function send2GMGeocoder(adrInfo) {
 							}
 							if (place.AddressDetails.Country.AdministrativeArea) { 
 								if (place.AddressDetails.Country.AdministrativeArea.Locality) { 
-									if (place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName) { 
-										adr = place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+									if (place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare) { 
+										if (place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName) { 
+											adr = place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+										}
 									}
 									if (place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode) { 
 										if (place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber) { 
@@ -367,11 +419,27 @@ function send2GMGeocoder(adrInfo) {
 
 						if (place.AddressDetails.Country.AdministrativeArea) { 
 							if (place.AddressDetails.Country.AdministrativeArea.Locality) { 
-								if (place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName) { 
-									adr = place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+								if (place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare) { 
+									if (place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName) { 
+										adr = place.AddressDetails.Country.AdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
+									}
 								}
-								if (place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber) { 
-									zip = place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+								if (place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode) { 
+									if (place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber) { 
+										zip = place.AddressDetails.Country.AdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+									}
+								}
+								if (place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality) { 
+									if (place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality.Thoroughfare) { 
+										if (place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality.Thoroughfare.ThoroughfareName) { 
+											adr = place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality.Thoroughfare.ThoroughfareName;
+										}
+									}
+									if (place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality.PostalCode) { 
+										if (place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality.PostalCode.PostalCodeNumber) { 
+											zip = place.AddressDetails.Country.AdministrativeArea.Locality.DependentLocality.PostalCode.PostalCodeNumber;
+										}
+									}
 								}
 								if (place.AddressDetails.Country.AdministrativeArea.Locality.LocalityName) { 
 									cty = place.AddressDetails.Country.AdministrativeArea.Locality.LocalityName;
@@ -383,6 +451,14 @@ function send2GMGeocoder(adrInfo) {
 										if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName) { 
 											adr = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.Thoroughfare.ThoroughfareName;
 										}
+									}
+									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode) { 
+										if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber) { 
+											zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+										}
+									}
+									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.LocalityName) { 
+										cty = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.LocalityName;
 									}
 									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.DependentLocality) { 
 										if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.DependentLocality.Thoroughfare) { 
@@ -397,15 +473,19 @@ function send2GMGeocoder(adrInfo) {
 											}
 										}
 									}
-									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode) { 
-										if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber) { 
-											zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.PostalCode.PostalCodeNumber;
+								}
+								if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Thoroughfare) { 
+									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Thoroughfare.ThoroughfareName) { 
+										adr = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Thoroughfare.ThoroughfareName;
+										adr = adr.split(",")[0];
 										}
-									}
-									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.LocalityName) { 
-										cty = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.Locality.LocalityName;
+								}
+								if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.PostalCode) { 
+									if (place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.PostalCode.PostalCodeNumber) { 
+										zip = place.AddressDetails.Country.AdministrativeArea.SubAdministrativeArea.PostalCode.PostalCodeNumber;
 									}
 								}
+								
 							}
 						}	
 					   break;
@@ -415,8 +495,12 @@ function send2GMGeocoder(adrInfo) {
 				}
 			
 			} //if - response ok
+			//get rid of leading spaces
+			adr=ltrim(adr);
+			zip=ltrim(zip);
+			cty=ltrim(cty);
 			//Comparison of address-information
-			c_addr = comparison(adr, g_addr);
+			c_addr = comparison(adr, u_addr);
 			c_zip = comparison(zip, g_zip);
 			c_city = comparison(cty, g_city);
 			//compute distance
@@ -456,25 +540,22 @@ function send2GMGeocoder(adrInfo) {
 //**********************************************************************
 //**********************************************************************
 
-function qa_ComparisonWithOWMS(str,hnr,adrzusatz,zip,city,usr,lng,lat,oid) {
+function qa_ComparisonWithOWMS(str,hnr,adrzusatz,zip,city,usr,lng,lat,oid,country) {
 //this function calls bing, google, yahoo geocoders
 //populate global variables
 g_oid = oid;
-g_addr = str + " " + hnr;
 g_zip = zip;
 g_city = city;
 g_lat = lat;
 g_lng = lng;
 
-//call bing maps
+//call bing maps & Google Maps
+send2BingGeocoder(str,hnr,zip,city,country);
+send2GMGeocoder(str,hnr,zip,city,country);
 
-send2BingGeocoder(str + " " + hnr + ", " + zip + " " + city);
-
-//call google maps
-send2GMGeocoder(str + "+" + hnr + "+" + zip + "+" + city);
 
 //call yahoo maps
-var paramlist = "street=" + str + "&house=" + hnr + "&postal=" + zip + "&city=" + city + "&lat=" + lat + "&lng=" + lng;			
+var paramlist = "street=" + str + "&house=" + hnr + "&postal=" + zip + "&city=" + city + "&country=" + country + "&lat=" + lat + "&lng=" + lng;			
 //test url: http://127.0.0.1:5000/yahoo/doupdate/13898437?street=Kriegackerstrasse&house=40&postal=4132&city=Muttenz
 var qaurl= "yahoo/doupdate/" + g_oid + "?" + paramlist;
 
