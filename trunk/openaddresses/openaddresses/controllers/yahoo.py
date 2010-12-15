@@ -49,13 +49,19 @@ class YahooController(BaseController):
     def doupdate(self, id):
         #http://127.0.0.1:5000/yahoo/doupdate/13898437?street=Kriegackerstrasse&house=40&postal=4132&city=Muttenz&lat=47.53&lng=7.63
         if 'street' in request.params:
+          street_raw = request.params.get('street')
           street = urllib.quote(request.params.get('street').encode('utf-8'))
         if 'house' in request.params:
           house = request.params.get('house')
         if 'postal' in request.params:
-          postal = request.params.get('postal')
+          postal_raw = request.params.get('postal')
+          postal = urllib.quote(request.params.get('postal'))
         if 'city' in request.params:
+          city_raw = request.params.get('city')
           city = urllib.quote(request.params.get('city').encode('utf-8'))
+        if 'country' in request.params:
+          country_raw = request.params.get('country')
+          country = urllib.quote(request.params.get('country').encode('utf-8'))
         if 'lat' in request.params:
           lat = request.params.get('lat')
         else:
@@ -65,7 +71,7 @@ class YahooController(BaseController):
         else:
           lng = '0'
         #testlink: http://127.0.0.1:5000/yahoo/doupdate?street=Ramsteinerstrasse&house=10&postal=4052&city=Basel		  
-        urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&flags=J&appid=dj0yJmk9aG5YOFZqRmwxQTNyJmQ9WVdrOVNVWmtaelJOTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Nw--' %(street, house, postal, city)
+        urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&country=%s&flags=J&appid=dj0yJmk9aG5YOFZqRmwxQTNyJmQ9WVdrOVNVWmtaelJOTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Nw--' %(street, house, postal, city, country)
 
         query = Session.query(Qaoa)
         currec = query.filter_by(id=c.id).one()
@@ -88,15 +94,15 @@ class YahooController(BaseController):
 
         currec.yahoo_dist=distance
         
-        if (y_street != street) or (y_house != house):
+        if (y_street != street_raw) or (y_house != house):
             currec.yahoo_addr='False'
         else:
             currec.yahoo_addr='True'
-        if y_postal != postal:
+        if y_postal != postal_raw:
             currec.yahoo_zip='False'
         else:
             currec.yahoo_zip='True'
-        if y_city != city:
+        if y_city != city_raw:
             currec.yahoo_city='False'
         else:
             currec.yahoo_city='True'
