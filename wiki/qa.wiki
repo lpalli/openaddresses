@@ -22,6 +22,18 @@ The report can be customised by certain key values:
 
  * {{{datesince}}}: Filter the QA report to show only addresses digitised on a specific day. The format must be YYYYMMDD
 
+ * {{{datesince}}}: Filter the QA report to show only addresses digitised on a specific day. The format must be YYYYMMDD
+
+ * {{{orderby}}}: Customise the report in the way the records are ordered. The value must be a valid column name of the OpenAddresses table (e.g. created_by (=user), city, postal etc.).
+
+ * {{{street}}}: Filter the QA report to show only addresses of a specific street.
+
+ * {{{zip}}}: Filter the QA report to show only addresses of a specific zip/postal code.
+
+ * {{{city}}}: Filter the QA report to show only addresses of a specific city.
+
+
+
 
 
 
