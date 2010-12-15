@@ -14,6 +14,19 @@ By default the comparison results are presented in a table, sorted descending by
 === Key Values ===
 The report can be customised by certain key values:
 
+ * {{{limit}}}: Reduce the number of addresses in the QA report to a certain amount.
+
+ * {{{user}}}: Filter the QA report to show only addresses provided by a sepcific user.
+
+ * {{{date}}}: Filter the QA report to show only addresses digitised on a specific day. The format must be YYYYMMDD
+
+ * {{{datesince}}}: Filter the QA report to show only addresses digitised on a specific day. The format must be YYYYMMDD
+
+
+
+
+
+
 Please call  http://www.openaddresses.org/qa/qareport for a report on quality information.
 
 
