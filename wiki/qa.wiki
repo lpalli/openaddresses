@@ -71,3 +71,9 @@ http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_di
 
 All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:
 http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc
+
+
+=== Quality Manager ===
+
+People who are interested in acting as regional quality managers may apply at OpenAddresses to do this. The idea of this concept is that people commit themselves to check addresses in a certain area or region they are familiar with. This could be districts of smaller or larger extent.
+Interested persons must provide the region(s) as geometry object they want to be responsible for along with some identity and contact information.
