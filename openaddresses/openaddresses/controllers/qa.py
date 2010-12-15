@@ -33,9 +33,8 @@ log = logging.getLogger(__name__)
 
 
 def sendamail(mailreceiver, mailtext):
-  sender = 'hansjoerg.stark@fhnw.ch'
   sender = 'quality.manager@openaddresses.org'
-  receiver = mailreceiver #'hansjoerg.stark@openaddresses.ch'
+  receiver = mailreceiver
   msg = MIMEText(mailtext)
   msg['Subject'] = 'One of your addresses in OpenAddresses.org has changed'
   msg['From'] = sender
@@ -43,7 +42,7 @@ def sendamail(mailreceiver, mailtext):
 
 # Send the message via external SMTP server
   smtpusername = 'qm@openaddresses.ch'
-  smtppwd = '**qmOA!!'
+  smtppwd = 'xxxx'
   s = smtplib.SMTP('smtp.openaddresses.ch')
   s.login(smtpusername,smtppwd)
   s.sendmail(sender, receiver, msg.as_string())
@@ -60,13 +59,13 @@ class QaController(BaseController):
        self.root_path = config['root_path']
 
     def index(self):
-        htmlinfo = "Please call <a href=''+self.root_path+'qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
+        htmlinfo = "Please call <a href='"+self.root_path+"qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
         "You may also use keyvalues to customise the report. In the following are some examples given:<br><br>"\
-        "The last 20 addresses from user Pete:<br><a href='/qa/qareport?limit=20&user=pete' target='_blank'>http://www.openaddresses.org/qa/qareport?limit=20&user=pete</a><br><br>"\
-        "All addresses from December 7 2010:<br><a href='/qa/qareport?date=20101207' target='_blank'>http://www.openaddresses.org/qa/qareport?date=20101207</a><br><br>"\
-        "All addresses since December 1 2010:<br><a href='/qa/qareport?datesince=20101201' target='_blank'>http://www.openaddresses.org/qa/qareport?datesince=20101201</a><br><br>"\
-        "All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:<br><a href='/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc' target='_blank'>http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc</a><br><br>"\
-        "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
+        "The last 20 addresses from user Pete:<br><a href='"+self.root_path+"qa/qareport?limit=20&user=pete' target='_blank'>http://www.openaddresses.org/qa/qareport?limit=20&user=pete</a><br><br>"\
+        "All addresses from December 7 2010:<br><a href='"+self.root_path+"qa/qareport?date=20101207' target='_blank'>http://www.openaddresses.org/qa/qareport?date=20101207</a><br><br>"\
+        "All addresses since December 1 2010:<br><a href='"+self.root_path+"qa/qareport?datesince=20101201' target='_blank'>http://www.openaddresses.org/qa/qareport?datesince=20101201</a><br><br>"\
+        "All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:<br><a href='"+self.root_path+"qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc' target='_blank'>http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc</a><br><br>"\
+        "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='"+self.root_path+"qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
 
         return htmlinfo
 		
