@@ -34,6 +34,8 @@ lang = en
 root_path = %ROOT_PATH%
 # Yahoo key
 yahoo_key = %YAHOO_KEY%
+# Bing key
+bing_key = %BING_KEY%
 # Root directory where trunk directory is stored
 main_root = %MAIN_ROOT%
 mobile_search_url = %MOBILE_SEARCH_URL%
