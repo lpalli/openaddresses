@@ -37,6 +37,7 @@ class HomeController(BaseController):
         self.root_path = config['root_path']
         self.mobile_search_url = config['mobile_search_url']
         self.versionTime = config['versionTime']
+        self.yahoo_key = config['yahoo_key']
 
         if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
             lang = request.params['lang']
@@ -67,6 +68,7 @@ class HomeController(BaseController):
         c.charset = self.charset
         c.versionTime = self.versionTime
         c.root_path = self.root_path
+        c.yahoo_key = self.yahoo_key
 
         c.available_languages = self.getAvailableLanguages()
 
