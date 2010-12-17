@@ -32,6 +32,8 @@ available_languages = en,fr,de,zh_CN,es,it,ca,mk,pl,hr
 lang = en
 # URL path of the root, after the domain
 root_path = %ROOT_PATH%
+# Yahoo key
+yahoo_key = %YAHOO_KEY%
 # Root directory where trunk directory is stored
 main_root = %MAIN_ROOT%
 mobile_search_url = %MOBILE_SEARCH_URL%

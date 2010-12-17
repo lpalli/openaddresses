@@ -28,6 +28,7 @@ openaddresses.config = {
     googleKeyOpenAddresses: '%GOOGLE_KEY_OPENADDRESSES%',
     googleKeyOpenAddress: '%GOOGLE_KEY_OPENADDRESS%',
     googleKeyOpenAddressMap: '%GOOGLE_KEY_OPENADDRESSMAP%',
+    yahooKey: '%YAHOO_KEY%',
     cloudmadeKey: '%CLOUDMADE_KEY%',
     cloudmadeKeyOpenAddresses: '%CLOUDMADE_KEY_OPENADDRESSES%',
     cloudmadeKeyOpenAddress: '%CLOUDMADE_KEY_OPENADDRESS%',
