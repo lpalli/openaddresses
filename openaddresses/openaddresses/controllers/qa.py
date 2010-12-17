@@ -57,7 +57,7 @@ class QaController(BaseController):
 
     def __before__(self):
        self.root_path = config['root_path']
-
+   
     def index(self):
         htmlinfo = "Please call <a href='"+self.root_path+"qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
         "You may also use keyvalues to customise the report. In the following are some examples given:<br><br>"\

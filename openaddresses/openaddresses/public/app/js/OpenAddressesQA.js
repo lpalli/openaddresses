@@ -118,7 +118,7 @@ function send2BingGeocoder(str,hnr,zip,city,country) {
 
 function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 	var addr = "";
-	var zip = 0;
+	var zip = "";
 	var city = "";
 	var lat = 0;
 	var lng = 0;
@@ -127,6 +127,7 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 	var PlacePrecision = "";
 	var acc = "";
 	
+
 	if(places)	{
 	
 		if (places.length>0) {
@@ -147,22 +148,31 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 			} 
 
 			if (addr_array.length == 2) {			  // two values comma-separated
-				addr = addr_array[0];
-				if (g_country=='GB') {
-						city = addr_array[1].split(" ")[1];
-						zip = addr_array[1].replace(city,"");
-					} else {
-						zip = addr_array[1].split(" ")[1];
-						city = addr_array[1].split(" ")[2];
-					
-					}
-
-				}
-			if (addr_array.length == 3) {			  // two values comma-separated
 				if (g_country=='GB') {
 					addr = addr_array[0];
 					city = addr_array[1].split(" ")[1];
 					zip = addr_array[1].replace(city,"");
+				} else {
+					if (addr_array[1]== " Switzerland"){
+						city = addr_array[0];
+					} else {
+						addr = addr_array[0];
+						zip = addr_array[1].split(" ")[1];
+						city = addr_array[1].split(" ")[2];
+					}
+				}
+
+			}
+			if (addr_array.length == 3) {			  // two values comma-separated
+				if (g_country=='GB') {
+					if ((addr_array[2]) == " United Kingdom") {
+						zip = addr_array[0];
+						city = addr_array[1];
+					} else {
+						addr = addr_array[0];
+						city = addr_array[1].split(" ")[1];
+						zip = addr_array[1].replace(city,"");
+					}
 				}
 				else if (g_country=='ES') {
 					addr = addr_array[0] + " " + addr_array[1];
@@ -213,9 +223,15 @@ function evaluateResults(layer, resultsArray, places, hasMore, veErrorMessage){
 	}
 
 		//get rid of leading spaces
-		addr=ltrim(addr);
-		zip=ltrim(zip);
-		city=ltrim(city);
+		if (addr.length>0){
+			addr=ltrim(addr);
+		}
+		if (zip.length>0){
+			zip=ltrim(zip);
+		}
+		if (city.length>0){
+			city=ltrim(city);
+		}
 	
 		//geocoding accuracy
 		acc = PlaceMatchCode + " / " + PlaceMatchConfidence + " / " + PlacePrecision;
@@ -496,9 +512,16 @@ function send2GMGeocoder(str,hnr,zip,city,country) {
 			
 			} //if - response ok
 			//get rid of leading spaces
-			adr=ltrim(adr);
-			zip=ltrim(zip);
-			cty=ltrim(cty);
+			if (adr.length>0){
+				adr=ltrim(adr);
+			}
+			if (zip.length>0){
+				zip=ltrim(zip);
+			}
+			if (cty.length>0){
+				cty=ltrim(cty);
+			}
+
 			//Comparison of address-information
 			c_addr = comparison(adr, u_addr);
 			c_zip = comparison(zip, g_zip);

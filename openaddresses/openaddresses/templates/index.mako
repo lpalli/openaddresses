@@ -118,6 +118,7 @@
 		var bingmap = null;
 		function initiatebing() {
 			bingmap = new VEMap('BingMap');
+			bingmap.SetCredentials(openaddresses.config.bingKey);
 			bingmap.LoadMap(new VELatLong(47, 8.3), 6 );
 		}
    </script>

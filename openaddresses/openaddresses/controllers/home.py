@@ -38,6 +38,7 @@ class HomeController(BaseController):
         self.mobile_search_url = config['mobile_search_url']
         self.versionTime = config['versionTime']
         self.yahoo_key = config['yahoo_key']
+        self.bing_key = config['bing_key']
 
         if 'lang' in request.params and self._isLangAvailable(request.params['lang']):
             lang = request.params['lang']

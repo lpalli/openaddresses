@@ -9,6 +9,7 @@ import codecs, sys
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
+from pylons import config
 from openaddresses.lib.base import BaseController, render
 from mapfish.lib.protocol import Protocol, create_default_filter
 
@@ -46,6 +47,9 @@ class YahooController(BaseController):
         self.protocol = Protocol(Session, self.readonly)
     def index(self):
         return ''
+    def __before__(self):
+        self.yahoo_key = config['yahoo_key']
+   
     def doupdate(self, id):
         #http://127.0.0.1:5000/yahoo/doupdate/13898437?street=Kriegackerstrasse&house=40&postal=4132&city=Muttenz&lat=47.53&lng=7.63
         if 'street' in request.params:
@@ -71,7 +75,8 @@ class YahooController(BaseController):
         else:
           lng = '0'
         #testlink: http://127.0.0.1:5000/yahoo/doupdate?street=Ramsteinerstrasse&house=10&postal=4052&city=Basel		  
-        urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&country=%s&flags=J&appid=dj0yJmk9aG5YOFZqRmwxQTNyJmQ9WVdrOVNVWmtaelJOTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Nw--' %(street, house, postal, city, country)
+        #urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&country=%s&flags=J&appid=dj0yJmk9aG5YOFZqRmwxQTNyJmQ9WVdrOVNVWmtaelJOTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Nw--' %(street, house, postal, city, country)
+        urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&country=%s&flags=J&appid=%s' %(street, house, postal, city, country,self.yahoo_key)
 
         query = Session.query(Qaoa)
         currec = query.filter_by(id=c.id).one()
