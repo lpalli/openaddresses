@@ -11,3 +11,4 @@ class Qaoa(Base):
       'autoload': True,
       'autoload_with': engine
       }
+

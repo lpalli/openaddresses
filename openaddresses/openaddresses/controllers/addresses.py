@@ -14,7 +14,7 @@ from pylons.i18n.translation import *
 from openaddresses.lib.base import *
 from openaddresses.model.addresses import Address
 from openaddresses.model.meta import Session
-
+from openaddresses.controllers.qa import checkfornoticebymail   #QaController as qc  #=QaController()
 from mapfish.lib.filters import *
 from mapfish.lib.protocol import Protocol, create_default_filter
 from mapfish.lib.filters.spatial import Spatial
@@ -27,11 +27,15 @@ from sqlalchemy.sql import and_
 
 log = logging.getLogger(__name__)
 
+rootUrl =''
+
 class AddressesController(BaseController):
     readonly = False # if set to True, only GET is supported
 
     def __init__(self):
         self.protocol = Protocol(Session, Address, self.readonly, before_create = self.before_create)
+#    def __before__(self):
+#       rootUrl = config['root_path']
 
     def index(self, format='json'):
         """GET /: return all features."""
@@ -210,6 +214,8 @@ class AddressesController(BaseController):
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
+        rootUrl = config['root_url']
+        checkfornoticebymail(id,'delete',rootUrl)
         return self.protocol.delete(request, response, id)
 
     def before_create(self,request,feature):
@@ -306,6 +312,7 @@ class AddressesController(BaseController):
        c.count = locale.format("%s", self.protocol.count(request), True)
        return render('/weekstatistic.mako')
 
+
 class InMemoryZip(object):
    def __init__(self):
        # Create the in-memory file-like object
@@ -338,3 +345,4 @@ class InMemoryZip(object):
        f = file(filename, "w")
        f.write(self.read())
        f.close()
+

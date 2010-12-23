@@ -35,6 +35,7 @@ class HomeController(BaseController):
         self.charset = 'utf-8'
 
         self.root_path = config['root_path']
+        self.root_url = config['root_url']
         self.mobile_search_url = config['mobile_search_url']
         self.versionTime = config['versionTime']
         self.yahoo_key = config['yahoo_key']
