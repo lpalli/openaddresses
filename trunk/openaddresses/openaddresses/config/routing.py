@@ -22,6 +22,7 @@ def make_map():
     map.resource("address", "addresses")
     map.resource("hello", "hello")
     map.resource("Qaoa", "qa")
+    map.resource("Qmaddresses", "qm")
     map.resource("upload", "uploads")
     
     map.connect('', controller='home', action='index')

@@ -23,7 +23,7 @@ var g_country;
 ////*******************************************************************************
 function comparison(val1, val2) {
 		//Comparison of address-information
-		if (val1 == val2) {	//str & hnr are equal
+		if (val1.toLowerCase() == val2.toLowerCase()) {	//str & hnr are equal
 			return 'TRUE';
 		} else {
 			return 'FALSE';	

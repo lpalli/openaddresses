@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import logging
 import StringIO
+import simplejson as json
 
+import httplib,urllib
 # Imports for mail sending
 import smtplib
 from email.mime.text import MIMEText
@@ -9,13 +11,16 @@ from email.mime.text import MIMEText
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 from pylons.decorators import jsonify
+from shapely.wkb import loads as wkbloads
 
 from pylons import config
 from pylons.i18n.translation import *
 
 from openaddresses.lib.base import *
 from openaddresses.model.qa import Qaoa
+from openaddresses.model.qm import Qmaddresses
 from openaddresses.model.addresses import Address
+
 from openaddresses.model.meta import Session
 from openaddresses.model.meta import metadata
 
@@ -32,21 +37,130 @@ from sqlalchemy.sql import and_
 log = logging.getLogger(__name__)
 
 
+def checkfornoticebymail(curid,chktype,url):
+   queryQM = Session.query(Qmaddresses)
+   if queryQM.filter_by(id=curid).count()>0:
+     currecQM = queryQM.filter_by(id=curid).one()
+   else:
+     return
+   
+   mailReceiver = currecQM.email
+   if (mailReceiver and chktype=='update'):
+     #check if the changed address has a contact mail who should be informed about a change
+     queryA = Session.query(Address)
+     if queryA.filter_by(id=curid).count()>0:
+       currecA = queryA.filter_by(id=curid).one()
+     else:
+       return
+
+     #extract new values:
+     new_street = currecA.street
+     new_housenumber = currecA.housenumber
+     new_housename = currecA.housename
+     new_postcode = currecA.postcode
+     new_region = currecA.region
+     new_city = currecA.city
+     new_country = currecA.country
+     user = currecA.created_by
+
+     #extract old values:
+     sqlQuery = "select address_archive.street,address_archive.housenumber,address_archive.housename,address_archive.postcode,address_archive.region,address_archive.city,address_archive.country,round(cast(ST_Distance_Sphere(address_archive.geom,address.geom) as Numeric),3) as deviation"\
+      " from address, address_archive where (address.id=%i and address.id=address_archive.id) order by address_archive.archive_date desc limit 1 " % int(curid)
+
+     # Execute query
+     result = Session.execute(sqlQuery)
+     for row in result: 
+      old_street = row['street']
+      old_housenumber = row['housenumber']
+      old_housename = row['housename']
+      old_postcode = row['postcode']
+      old_region = row['region']
+      old_city = row['city']
+      old_country = row['country']
+      deviation = str(row['deviation'])
+     
+     msgtext = '[changed?]\t\t[old value]  \t|  \t[new value] \n'
+     if old_street == new_street:
+       msgtext += '[ ] street: \t[%s]  \t|  \t[%s] \n' %(old_street, new_street)
+     else:
+       msgtext += '[x] street: \t[%s]  \t|  \t[%s] \n' % (old_street, new_street)
+     if old_housenumber == new_housenumber:
+       msgtext += '[ ] housenumber: \t[%s]  \t|  \t[%s] \n' % (old_housenumber, new_housenumber)
+     else:
+       msgtext += '[x] housenumber: \t[%s]  \t|  \t[%s] \n' % (old_housenumber, new_housenumber)
+     if old_housename == new_housename:
+       msgtext += '[ ] housename: \t[%s]  \t|  \t[%s] \n' % (old_housename, new_housename)
+     else:
+       msgtext += '[x] housename: \t[%s]  \t|  \t[%s] \n' % (old_housename, new_housename)
+     if old_postcode == new_postcode:
+       msgtext += '[ ] postcode: \t[%s]  \t|  \t[%s] \n' % (old_postcode, new_postcode)
+     else:
+       msgtext += '[x] postcode: \t[%s]  \t|  \t[%s] \n' % (old_postcode, new_postcode)
+     if old_region == new_region:
+       msgtext += '[ ] region: \t[%s]  \t|  \t[%s] \n' % (old_region, new_region)          
+     else:
+       msgtext += '[x] region: \t[%s]  \t|  \t[%s] \n' % (old_region, new_region)          
+     if old_city == new_city:
+       msgtext += '[ ] city: \t[%s]  \t|  \t[%s] \n' % (old_city, new_city)
+     else:
+       msgtext += '[x] city: \t[%s]  \t|  \t[%s] \n' % (old_city, new_city)
+     if old_country == new_country:
+       msgtext += '[ ] country: \t[%s]  \t|  \t[%s] \n' % (old_country, new_country)
+     else:
+       msgtext += '[x] country: \t[%s]  \t|  \t[%s] \n\n' % (old_country, new_country)
+     if float(deviation)>0:
+       msgtext += '[x] Deviation: \t%sm \n' % (deviation)
+     else:
+       msgtext += '[ ] Deviation: \t%sm \n' % (deviation)
+     msgtext += 'user: \t%s \n' % (user)
+
+   elif (mailReceiver and chktype=='delete'):
+     #extract old values:
+     sqlQuery = "select address_archive.street,address_archive.housenumber,address_archive.housename,address_archive.postcode,address_archive.region,address_archive.city,address_archive.country,ST_y(ST_Transform(address_archive.geom,900913)) AS lat, ST_x(ST_Transform(address_archive.geom,900913)) as lng,ST_y(address_archive.geom) AS lat_pos, ST_x(address_archive.geom) as lng_pos"\
+      " from address_archive where address_archive.id=%i order by address_archive.archive_date desc limit 1 " % int(curid)
+
+     # Execute query
+     result = Session.execute(sqlQuery)
+     for row in result: 
+      old_street = row['street']
+      old_housenumber = row['housenumber']
+      old_housename = row['housename']
+      old_postcode = row['postcode']
+      old_region = row['region']
+      old_city = row['city']
+      old_country = row['country']
+      old_lng = row['lng']
+      old_lat = row['lat']
+      old_lng_pos = row['lng_pos']
+      old_lat_pos = row['lat_pos']
+
+     msgtext = 'The following address record was deleted: \n'
+     msgtext += old_street + ' ' + old_housenumber + ', ' + old_housename + ', ' + old_postcode + ' ' + old_city + ', ' + old_region + ' ' + old_country + ' \n'
+     msgtext += 'at position (long/lat): ' + str(round(old_lng_pos,4)) + '/' + str(round(old_lat_pos,4))
+     msgtext += '\n\n To check the location open the following link in your browser: \n'
+     msgtext += 'http://www.openaddresses.org/?northing=' + str(old_lat) + '&easting=' + str(old_lng) + '&zoom=18&overlayOpacity=0.7'
+     msgtext += '\n \n If you want to restore the deletion, open the following link in your browser: \n'
+     msgtext += url + 'qa/restore/' + curid
+   else:
+     return
+	 
+   sendamail(mailReceiver, msgtext)
+   Session.close()
 def sendamail(mailreceiver, mailtext):
-  sender = 'quality.manager@openaddresses.org'
-  receiver = mailreceiver
-  msg = MIMEText(mailtext)
-  msg['Subject'] = 'One of your addresses in OpenAddresses.org has changed'
-  msg['From'] = sender
-  msg['To'] = receiver
+   sender = 'xxx'
+   receiver = mailreceiver
+   msg = MIMEText(mailtext)
+   msg['Subject'] = 'One of your addresses in OpenAddresses.org has changed'
+   msg['From'] = sender
+   msg['To'] = receiver
 
 # Send the message via external SMTP server
-  smtpusername = 'qm@openaddresses.ch'
-  smtppwd = 'xxxx'
-  s = smtplib.SMTP('smtp.openaddresses.ch')
-  s.login(smtpusername,smtppwd)
-  s.sendmail(sender, receiver, msg.as_string())
-  s.quit()
+   smtpusername = 'xxx'
+   smtppwd = 'xxx'
+   s = smtplib.SMTP('xxx')
+   s.login(smtpusername,smtppwd)
+   s.sendmail(sender, receiver, msg.as_string())
+   s.quit()
 
 
 class QaController(BaseController):
@@ -68,10 +182,49 @@ class QaController(BaseController):
         "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='"+self.root_path+"qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
 
         return htmlinfo
-		
+
+    		
+    def restore(self,id):
+      #http://127.0.0.1:5000/qa/test/9
+#{"type":"FeatureCollection", "features":[{"type":"Feature","id":null,"properties":{"city":"Hornussen","postcode":"5075","street":"Hauptstrasse","created_by":"stark","country":"CH","quality":"Digitized","housename":"","locality":"","region":"","housenumber":"128"},"geometry":{"type":"Point","coordinates":[8.060519771228046,47.50041224524695]},"crs":{"type":"EPSG","properties":{"code":900913}}}]}
+
+      rest=Address()
+      sqlQuery = "select *, asbinary(geom) as geometry  from address_archive where archive_type='DELETE' and id=%i order by time_updated desc, time_created desc limit 1" % (int(id))
+
+      # Execute query
+      result = Session.execute(sqlQuery)
+		  
+      for row in result: 
+        rest.id=id
+        rest.osmid=row['osmid']
+        rest.housenumber=row['housenumber']
+        rest.housename=row['housename']
+        rest.street=row['street']
+        rest.postcode=row['postcode']
+        rest.region=row['region']
+        rest.city=row['city']
+        rest.country=row['country']
+        rest.created_by=row['created_by']
+        rest.ipaddress=row['ipaddress']
+        rest.time_created=row['time_created']
+        rest.time_updated=row['time_updated']
+        rest.quality=row['quality']
+        rest.reference=row['reference']
+        rest.externalid=row['externalid']
+        rest.status=row['status']
+        rest.locality=row['locality']
+        rest.geom=wkbloads(str(row['geometry']))
+
+      Session.add(rest)
+      Session.commit()
+      Session.close()
+      return "address successfully restored!"
+	
     def doupdate(self, id):
         #http://127.0.0.1:5000/qa/doupdate/13898308?type=keiner&yahoo_addr=TRUE&yahoo_dist=99.123
         query = Session.query(Qaoa)
+        if query.filter_by(id=c.id).count() ==0:
+          return
         currec = query.filter_by(id=c.id).one()
 
         #update BING values
@@ -138,77 +291,8 @@ class QaController(BaseController):
 
         #do check only once - not twice because doupdate is called both from Google and Bing verification
         if 'bing_dist' in request.params:
-          self.checkfornoticebymail()
+          checkfornoticebymail(c.id,'update','')
 
-    def checkfornoticebymail(self):
-	    #check if the changed address has a contact mail who should be informed about a change
-        queryA = Session.query(Address)
-        currecA = queryA.filter_by(id=c.id).one()
-
-        mailReceiver = currecA.email
-        if mailReceiver:
-          #extract new values:
-          new_street = currecA.street
-          new_housenumber = currecA.housenumber
-          new_housename = currecA.housename
-          new_postcode = currecA.postcode
-          new_region = currecA.region
-          new_city = currecA.city
-          new_country = currecA.country
-          user = currecA.created_by
-
-          #extract old values:
-          sqlQuery = "select  address_archive.street,address_archive.housenumber,address_archive.housename,address_archive.postcode,address_archive.region,address_archive.city,address_archive.country,round(cast(ST_Distance_Sphere(address_archive.geom,address.geom) as Numeric),3) as deviation"\
-            " from address, address_archive where (address.id=%i and address.id=address_archive.id) order by address_archive.archive_date desc limit 1 " % int(c.id)
-
-          # Execute query
-          result = Session.execute(sqlQuery)
-          for row in result: 
-            old_street = row['street']
-            old_housenumber = row['housenumber']
-            old_housename = row['housename']
-            old_postcode = row['postcode']
-            old_region = row['region']
-            old_city = row['city']
-            old_country = row['country']
-            deviation = str(row['deviation'])
-
-          msgtext = '[changed?]\t\t[old value]  \t|  \t[new value] \n'
-          if old_street == new_street:
-             msgtext += '[ ] street: \t[%s]  \t|  \t[%s] \n' % (old_street, new_street)
-          else:
-             msgtext += '[x] street: \t[%s]  \t|  \t[%s] \n' % (old_street, new_street)
-          if old_housenumber == new_housenumber:
-             msgtext += '[ ] housenumber: \t[%s]  \t|  \t[%s] \n' % (old_housenumber, new_housenumber)
-          else:
-             msgtext += '[x] housenumber: \t[%s]  \t|  \t[%s] \n' % (old_housenumber, new_housenumber)
-          if old_housename == new_housename:
-             msgtext += '[ ] housename: \t[%s]  \t|  \t[%s] \n' % (old_housename, new_housename)
-          else:
-             msgtext += '[x] housename: \t[%s]  \t|  \t[%s] \n' % (old_housename, new_housename)
-          if old_postcode == new_postcode:
-             msgtext += '[ ] postcode: \t[%s]  \t|  \t[%s] \n' % (old_postcode, new_postcode)
-          else:
-             msgtext += '[x] postcode: \t[%s]  \t|  \t[%s] \n' % (old_postcode, new_postcode)
-          if old_region == new_region:
-             msgtext += '[ ] region: \t[%s]  \t|  \t[%s] \n' % (old_region, new_region)			 
-          else:
-             msgtext += '[x] region: \t[%s]  \t|  \t[%s] \n' % (old_region, new_region)			 
-          if old_city == new_city:
-             msgtext += '[ ] city: \t[%s]  \t|  \t[%s] \n' % (old_city, new_city)
-          else:
-             msgtext += '[x] city: \t[%s]  \t|  \t[%s] \n' % (old_city, new_city)
-          if old_country == new_country:
-             msgtext += '[ ] country: \t[%s]  \t|  \t[%s] \n' % (old_country, new_country)
-          else:
-             msgtext += '[x] country: \t[%s]  \t|  \t[%s] \n\n' % (old_country, new_country)
-          if float(deviation)>0:
-             msgtext += '[x] Deviation: \t%sm \n' % (deviation)
-          else:
-             msgtext += '[ ] Deviation: \t%sm \n' % (deviation)
-          msgtext += 'user: \t%s \n' % (user)
-          
-          sendamail(mailReceiver, msgtext)
 
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""

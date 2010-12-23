@@ -79,6 +79,8 @@ class YahooController(BaseController):
         urlStr = 'http://where.yahooapis.com/geocode?street=%s&house=%s&postal=%s&city=%s&country=%s&flags=J&appid=%s' %(street, house, postal, city, country,self.yahoo_key)
 
         query = Session.query(Qaoa)
+        if query.filter_by(id=c.id).count()==0:
+          return
         currec = query.filter_by(id=c.id).one()
 
         fileHandle = urllib2.urlopen(urlStr)
@@ -99,7 +101,7 @@ class YahooController(BaseController):
 
         currec.yahoo_dist=distance
         
-        if (y_street != street_raw) or (y_house != house):
+        if (y_street.lower() != street_raw.lower()) or (y_house.lower() != house.lower()):
             currec.yahoo_addr='False'
         else:
             currec.yahoo_addr='True'
@@ -107,7 +109,7 @@ class YahooController(BaseController):
             currec.yahoo_zip='False'
         else:
             currec.yahoo_zip='True'
-        if y_city != city_raw:
+        if y_city.lower() != city_raw.lower():
             currec.yahoo_city='False'
         else:
             currec.yahoo_city='True'
