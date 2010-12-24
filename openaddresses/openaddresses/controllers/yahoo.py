@@ -80,7 +80,12 @@ class YahooController(BaseController):
 
         query = Session.query(Qaoa)
         if query.filter_by(id=c.id).count()==0:
-          return
+          newRec=Qaoa()
+          newRec.id=id
+          Session.add(newRec)
+          Session.commit()
+          Session.close()
+
         currec = query.filter_by(id=c.id).one()
 
         fileHandle = urllib2.urlopen(urlStr)
