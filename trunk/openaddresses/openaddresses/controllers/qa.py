@@ -146,6 +146,7 @@ def checkfornoticebymail(curid,chktype,url):
 	 
    sendamail(mailReceiver, msgtext)
    Session.close()
+
 def sendamail(mailreceiver, mailtext):
    sender = 'xxx'
    receiver = mailreceiver
@@ -161,6 +162,7 @@ def sendamail(mailreceiver, mailtext):
    s.login(smtpusername,smtppwd)
    s.sendmail(sender, receiver, msg.as_string())
    s.quit()
+
 
 
 class QaController(BaseController):
@@ -224,7 +226,12 @@ class QaController(BaseController):
         #http://127.0.0.1:5000/qa/doupdate/13898308?type=keiner&yahoo_addr=TRUE&yahoo_dist=99.123
         query = Session.query(Qaoa)
         if query.filter_by(id=c.id).count() ==0:
-          return
+          newRec=Qaoa()
+          newRec.id=id
+          Session.add(newRec)
+          Session.commit()
+          Session.close()
+
         currec = query.filter_by(id=c.id).one()
 
         #update BING values
