@@ -148,7 +148,7 @@ def checkfornoticebymail(curid,chktype,url):
    Session.close()
 
 def sendamail(mailreceiver, mailtext):
-   sender = 'xxx'
+   sender = 'quality.manager@openaddresses.org'
    receiver = mailreceiver
    msg = MIMEText(mailtext)
    msg['Subject'] = 'One of your addresses in OpenAddresses.org has changed'
@@ -156,13 +156,12 @@ def sendamail(mailreceiver, mailtext):
    msg['To'] = receiver
 
 # Send the message via external SMTP server
-   smtpusername = 'xxx'
-   smtppwd = 'xxx'
-   s = smtplib.SMTP('xxx')
+   smtpusername = 'qm@openaddresses.ch'
+   smtppwd = '++qM*OA'
+   s = smtplib.SMTP('smtp.openaddresses.ch')
    s.login(smtpusername,smtppwd)
    s.sendmail(sender, receiver, msg.as_string())
    s.quit()
-
 
 
 class QaController(BaseController):
@@ -187,11 +186,15 @@ class QaController(BaseController):
 
     		
     def restore(self,id):
-      #http://127.0.0.1:5000/qa/test/9
-#{"type":"FeatureCollection", "features":[{"type":"Feature","id":null,"properties":{"city":"Hornussen","postcode":"5075","street":"Hauptstrasse","created_by":"stark","country":"CH","quality":"Digitized","housename":"","locality":"","region":"","housenumber":"128"},"geometry":{"type":"Point","coordinates":[8.060519771228046,47.50041224524695]},"crs":{"type":"EPSG","properties":{"code":900913}}}]}
+      #http://127.0.0.1:5000/qa/restore/9
+      #check first if record does not exist in table addresses
+      query = Session.query(Address)
+      if query.filter_by(id=c.id).count() >0:
+        return 'Record already exists - nothing to restore!'
 
+      #handle restore
       rest=Address()
-      sqlQuery = "select *, asbinary(geom) as geometry  from address_archive where archive_type='DELETE' and id=%i order by time_updated desc, time_created desc limit 1" % (int(id))
+      sqlQuery = "select *, asbinary(geom) as geometry from address_archive where archive_type='DELETE' and id=%i order by time_updated desc, time_created desc limit 1" % (int(id))
 
       # Execute query
       result = Session.execute(sqlQuery)
@@ -220,6 +223,7 @@ class QaController(BaseController):
       Session.add(rest)
       Session.commit()
       Session.close()
+
       return "address successfully restored!"
 	
     def doupdate(self, id):
