@@ -148,7 +148,7 @@ def checkfornoticebymail(curid,chktype,url):
    Session.close()
 
 def sendamail(mailreceiver, mailtext):
-   sender = 'quality.manager@openaddresses.org'
+   sender = 'xxx'
    receiver = mailreceiver
    msg = MIMEText(mailtext)
    msg['Subject'] = 'One of your addresses in OpenAddresses.org has changed'
@@ -156,9 +156,9 @@ def sendamail(mailreceiver, mailtext):
    msg['To'] = receiver
 
 # Send the message via external SMTP server
-   smtpusername = 'qm@openaddresses.ch'
-   smtppwd = '++qM*OA'
-   s = smtplib.SMTP('smtp.openaddresses.ch')
+   smtpusername = 'xxx'
+   smtppwd = 'xxx'
+   s = smtplib.SMTP('xxx')
    s.login(smtpusername,smtppwd)
    s.sendmail(sender, receiver, msg.as_string())
    s.quit()
