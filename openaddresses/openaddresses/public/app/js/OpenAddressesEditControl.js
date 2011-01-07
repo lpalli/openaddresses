@@ -351,6 +351,7 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
 
             var deleteFeature = function(feature) {
                 var conn = new Ext.data.Connection();
+                var conn4mailchk = new Ext.data.Connection();
 
                 if (feature.attributes.id) {
                     feature.id = feature.attributes.id;
@@ -367,7 +368,11 @@ openaddresses.EditControl = OpenLayers.Class(OpenLayers.Control, {
                                     method: 'DELETE',
                                     success: function(resp, opt) {
                                         cancelEditing(feature, true);										
-                                    },
+										conn4mailchk.request({
+											url: "qa/ondelete/" + feature.id,
+											method: 'GET'
+										});
+									},
                                     failure: function(resp, opt) {
                                         openaddresses.layout.hideWaitingMask();
                                         alert(OpenLayers.i18n('Error during data deletion'));
