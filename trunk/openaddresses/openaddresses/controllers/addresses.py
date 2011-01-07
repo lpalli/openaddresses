@@ -34,8 +34,12 @@ class AddressesController(BaseController):
 
     def __init__(self):
         self.protocol = Protocol(Session, Address, self.readonly, before_create = self.before_create)
-#    def __before__(self):
-#       rootUrl = config['root_path']
+    def __before__(self):
+       rootUrl = config['root_path']
+       self.mail_sender = config['mail_sender']
+       self.mail_smtp_username = config['mail_smtp_username']
+       self.mail_smtp_password = config['mail_smtp_password']
+       self.mail_smtp_server = config['mail_smtp_server']
 
     def index(self, format='json'):
         """GET /: return all features."""
@@ -214,8 +218,6 @@ class AddressesController(BaseController):
 
     def delete(self, id):
         """DELETE /id: Delete an existing feature."""
-        rootUrl = config['root_url']
-        checkfornoticebymail(id,'delete',rootUrl)
         return self.protocol.delete(request, response, id)
 
     def before_create(self,request,feature):
