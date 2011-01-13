@@ -347,24 +347,6 @@ class AddressesController(BaseController):
        if 'datesince' in request.params:
           datesince = int(request.params.get('datesince'))
           condition += " AND (to_number(to_char(time_created,'YYYYMMDD'),'99999999')>=%s OR to_number(to_char(time_updated,'YYYYMMDD'),'99999999')>=%s)" % (datesince, datesince)
-       if 'gdistgr' in request.params:
-          gdistgr = int(request.params.get('gdistgr'))
-          condition += " AND google_dist>=%s" % gdistgr
-       if 'gdistsh' in request.params:
-          gdistsh = int(request.params.get('gdistsh'))
-          condition += " AND google_dist<=%s" % gdistsh
-       if 'bdistgr' in request.params:
-          bdistgr = int(request.params.get('bdistgr'))
-          condition += " AND bing_dist>=%s" % bdistgr
-       if 'bdistsh' in request.params:
-          bdistsh = int(request.params.get('bdistsh'))
-          condition += " AND bing_dist<=%s" % bdistsh
-       if 'ydistgr' in request.params:
-          ydistgr = int(request.params.get('ydistgr'))
-          condition += " AND yahoo_dist>=%s" % ydistgr
-       if 'ydistsh' in request.params:
-          ydistsh = int(request.params.get('ydistsh'))
-          condition += " AND yahoo_dist<=%s" % ydistsh
        if 'qmname' in request.params:
           tables2use =", qm_regions" 
           qmname = request.params.get('qmname')
