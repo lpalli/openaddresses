@@ -201,6 +201,8 @@ class AddressesController(BaseController):
            return self.statistic(request)
         elif (id == 'weekstatistic'):
            return self.weekstatistic(request)
+        elif (id == 'generalstatistics'):
+           return self.generalstatistics(request)
         elif (id == 'checkSession'):
            return self.checkSession()
         elif (id == 'createSession'):
@@ -237,14 +239,13 @@ class AddressesController(BaseController):
 
        # Create SQL Query
        sqlQuery = "select count(1) from address where time_created::date=now()::date"
-       #sqlQuery = "select count(*) count from qaoa" # where time_created::date=now()::date"
 
        # Execute query
        result = Session.execute(sqlQuery)
 
        for row in result:
           for column in row:
-             return str(column) + " <br> so viele schon..."
+             return str(column) 
 
     def countUpdatedToday(self,request):
 
@@ -295,8 +296,8 @@ class AddressesController(BaseController):
        c.charset = 'utf-8'
 
        # Create SQL Query
-       sqlQuery = "select extract(week from time_created), count(1) as numberAddresses " \
-          " from address where extract(year from time_created) = extract (year from now()) "\
+       sqlQuery = "select extract(year from time_created) || '/' || to_char(extract(week from time_created),'00'), count(1) as numberAddresses "\
+          " from address "\
           " group by 1 "\
           " order by 1 desc"
 
@@ -313,6 +314,90 @@ class AddressesController(BaseController):
        c.weekCreator = weekCreator
        c.count = locale.format("%s", self.protocol.count(request), True)
        return render('/weekstatistic.mako')
+
+    def generalstatistics(self, request):
+       condition=''
+       user=''	   
+       if 'limit' in request.params:
+          limit = int(request.params.get('limit'))
+       else:
+          limit = 100
+       if 'orderby' in request.params:
+          orderby = request.params.get('orderby')
+       else:
+          orderby = 'address.time_updated, address.time_created desc'
+       if 'user' in request.params:
+          user = request.params.get('user')
+          condition = " AND created_by='%s'" % user
+       if 'street' in request.params:
+          street = request.params.get('street')
+          condition += " AND street='%s'" % street
+       if 'zip' in request.params:
+          zip = request.params.get('zip')
+          condition += " AND postcode='%s'" % zip
+       if 'city' in request.params:
+          city = request.params.get('city')
+          condition += " AND city='%s'" % city
+       if 'country' in request.params:
+          country = request.params.get('country')
+          condition += " AND country='%s'" % country
+       if 'date' in request.params:
+          date = request.params.get('date')
+          condition += " AND (to_char(time_created,'YYYYMMDD')='%s' OR to_char(time_updated,'YYYYMMDD')='%s')" % (date, date)
+       if 'datesince' in request.params:
+          datesince = int(request.params.get('datesince'))
+          condition += " AND (to_number(to_char(time_created,'YYYYMMDD'),'99999999')>=%s OR to_number(to_char(time_updated,'YYYYMMDD'),'99999999')>=%s)" % (datesince, datesince)
+       if 'gdistgr' in request.params:
+          gdistgr = int(request.params.get('gdistgr'))
+          condition += " AND google_dist>=%s" % gdistgr
+       if 'gdistsh' in request.params:
+          gdistsh = int(request.params.get('gdistsh'))
+          condition += " AND google_dist<=%s" % gdistsh
+       if 'bdistgr' in request.params:
+          bdistgr = int(request.params.get('bdistgr'))
+          condition += " AND bing_dist>=%s" % bdistgr
+       if 'bdistsh' in request.params:
+          bdistsh = int(request.params.get('bdistsh'))
+          condition += " AND bing_dist<=%s" % bdistsh
+       if 'ydistgr' in request.params:
+          ydistgr = int(request.params.get('ydistgr'))
+          condition += " AND yahoo_dist>=%s" % ydistgr
+       if 'ydistsh' in request.params:
+          ydistsh = int(request.params.get('ydistsh'))
+          condition += " AND yahoo_dist<=%s" % ydistsh
+       if 'qmname' in request.params:
+          tables2use =", qm_regions" 
+          qmname = request.params.get('qmname')
+          condition += " AND contains(qm_regions.geom,address.geom) and qm_regions.qmname='%s'" % qmname
+       else:
+          tables2use ="" 
+
+       c.charset = 'utf-8'
+       # Create SQL Query
+       sqlQuery = "SELECT address.id, address.created_by,address.street, address.housenumber, address.housename, address.postcode, address.city, address.country,"\
+          " address.time_created, address.time_updated, ST_y(ST_Transform(address.geom,900913)) AS lat, ST_x(ST_Transform(address.geom,900913)) as lng "\
+          " FROM address %s"\
+          " WHERE address.quality='Digitized' %s "\
+          " ORDER BY %s "\
+          " limit %i " % (tables2use, condition, orderby, limit)
+
+       # Execute query
+       result = Session.execute(sqlQuery)
+		  
+       statCreator=[]
+
+       for row in result:
+          statRow = []
+          for column in row:
+             if str(type(column)).find('float') == 7: #this means a float value
+                statRow.append(round(column,4))				
+             else:			 
+                statRow.append(str(column))
+          statCreator.append(statRow)
+
+       c.count = len(statCreator)  
+       c.statCreator = statCreator
+       return render('/statreport.mako')
 
 
 class InMemoryZip(object):
