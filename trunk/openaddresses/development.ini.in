@@ -33,7 +33,7 @@ lang = en
 # URL path of the root, after the domain
 root_path = %ROOT_PATH%
 # complete URL path of the root, incl the domain
-root_path = %ROOT_URL%
+root_url = %ROOT_URL%
 # Yahoo key
 yahoo_key = %YAHOO_KEY%
 # Bing key

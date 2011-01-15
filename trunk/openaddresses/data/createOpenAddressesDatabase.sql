@@ -129,17 +129,15 @@ CREATE FUNCTION update_address() RETURNS OPAQUE AS '
          TG_OP
        );
    RETURN NULL;
-
   END;
-
 ' LANGUAGE 'plpgsql';
 
-DROP FUNCTION delete_address() cascade;
-
-CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
+CREATE OR REPLACE FUNCTION delete_address()
+  RETURNS trigger AS
+$BODY$
   BEGIN
      INSERT INTO ADDRESS_ARCHIVE
-	(ID,
+            (ID,
     OSMID,
     HOUSENUMBER,
     HOUSENAME,
@@ -156,8 +154,11 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
     REFERENCE,
     GEOM,
     ARCHIVE_DATE,
-    ARCHIVE_TYPE
-	)
+    ARCHIVE_TYPE,
+    STATUS,
+    EXTERNALID,
+    LOCALITY
+            )
         VALUES
        (
          OLD.ID,
@@ -177,14 +178,21 @@ CREATE FUNCTION delete_address() RETURNS OPAQUE AS '
          OLD.REFERENCE,
          OLD.GEOM,
          NOW(),
-         TG_OP
+         TG_OP,
+         OLD.STATUS,
+         OLD.EXTERNALID,
+         OLD.LOCALITY
        );
-   DELETE FROM qaoa WHERE qaoa.id = OLD.ID;
    RETURN NULL;
+END;$BODY$
+LANGUAGE plpgsql VOLATILE
+COST 100;
 
-  END;
+ALTER FUNCTION delete_address() OWNER TO postgres;
 
-' LANGUAGE 'plpgsql';
+GRANT EXECUTE ON FUNCTION delete_address() TO postgres;
+
+GRANT EXECUTE ON FUNCTION delete_address() TO public;
 
 GRANT ALL ON FUNCTION update_address() TO "www-data";
 GRANT ALL ON FUNCTION delete_address() TO "www-data";
@@ -303,22 +311,34 @@ GRANT ALL ON TABLE qaoa TO postgres;
 GRANT ALL ON TABLE qaoa TO "www-data";
 
 CREATE OR REPLACE FUNCTION hj_add_qaOA()
-RETURNS trigger AS
-$BODY$
+  RETURNS trigger AS
+$BODY$  DECLARE
+    reccount_ integer := 9;
+    curID_ bigint := NEW.id;
   BEGIN
+   SELECT count(*) into reccount_ FROM qaoa where id = curID_;
+   if reccount_ = 0 then
+     raise notice 'reccount3: %i', reccount_;
      INSERT INTO qaoa
-       (id)
+            (id)
         VALUES
        (
          NEW.id
        );
+    end if;
    RETURN NULL;
   END;
 $BODY$
-  LANGUAGE 'plpgsql' VOLATILE
+  LANGUAGE plpgsql VOLATILE
   COST 100;
 
-ALTER FUNCTION hj_add_qaOA() OWNER TO postgres;
+ALTER FUNCTION hj_add_qaoa() OWNER TO postgres;
+
+GRANT EXECUTE ON FUNCTION hj_add_qaoa() TO public;
+
+GRANT EXECUTE ON FUNCTION hj_add_qaoa() TO postgres;
+
+GRANT EXECUTE ON FUNCTION hj_add_qaoa() TO "www-data" WITH GRANT OPTION;
 
 CREATE TRIGGER f_add_qaOA
   AFTER INSERT
@@ -350,6 +370,21 @@ GRANT ALL ON TABLE qm_regions TO "www-data";
 
 ALTER TABLE address
    ADD COLUMN "email" character(64);
+
+CREATE TABLE qm_addresses
+(
+  id bigint NOT NULL,
+  qmname character varying(128),
+  email character varying(128),
+  CONSTRAINT pk_qm_address PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE qm_addresses OWNER TO postgres;
+GRANT ALL ON TABLE qm_addresses TO postgres;
+GRANT ALL ON TABLE qm_addresses TO "www-data";
 
 #  ****************************************************************
 #  Import data

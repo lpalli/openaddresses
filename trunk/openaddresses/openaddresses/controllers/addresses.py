@@ -36,10 +36,6 @@ class AddressesController(BaseController):
         self.protocol = Protocol(Session, Address, self.readonly, before_create = self.before_create)
     def __before__(self):
        rootUrl = config['root_path']
-       self.mail_sender = config['mail_sender']
-       self.mail_smtp_username = config['mail_smtp_username']
-       self.mail_smtp_password = config['mail_smtp_password']
-       self.mail_smtp_server = config['mail_smtp_server']
 
     def index(self, format='json'):
         """GET /: return all features."""
