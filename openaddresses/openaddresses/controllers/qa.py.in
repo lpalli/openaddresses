@@ -117,7 +117,7 @@ def checkfornoticebymail(curid,chktype,url):
    elif (mailReceiver and chktype=='delete'):
      #extract old values:
      sqlQuery = "select address_archive.street,address_archive.housenumber,address_archive.housename,address_archive.postcode,address_archive.region,address_archive.city,address_archive.country,ST_y(ST_Transform(address_archive.geom,900913)) AS lat, ST_x(ST_Transform(address_archive.geom,900913)) as lng,ST_y(address_archive.geom) AS lat_pos, ST_x(address_archive.geom) as lng_pos"\
-      " from address_archive where address_archive.id=%i order by address_archive.archive_date desc limit 1 " % int(curid)
+      " from address_archive where (address_archive.id=%i and address_archive.archive_type='DELETE') order by address_archive.archive_date desc limit 1 " % int(curid)
 
      # Execute query
      result = Session.execute(sqlQuery)
@@ -131,16 +131,16 @@ def checkfornoticebymail(curid,chktype,url):
       old_country = row['country']
       old_lng = row['lng']
       old_lat = row['lat']
-      old_lng_pos = row['lng_pos']
-      old_lat_pos = row['lat_pos']
+      old_lng_pos = round(row['lng_pos'],4)
+      old_lat_pos = round(row['lat_pos'],4)
 
      msgtext = 'The following address record was deleted: \n'
-     msgtext += old_street + ' ' + old_housenumber + ', ' + old_housename + ', ' + old_postcode + ' ' + old_city + ', ' + old_region + ' ' + old_country + ' \n'
-     msgtext += 'at position (long/lat): ' + str(round(old_lng_pos,4)) + '/' + str(round(old_lat_pos,4))
+     msgtext += '%s %s, %s, %s %s,%s %s \n' % (old_street, old_housenumber, old_housename , old_postcode, old_city , old_region, old_country)
+     msgtext += 'at position (long/lat): %f / %f' % (old_lng_pos, old_lat_pos)
      msgtext += '\n\n To check the location open the following link in your browser: \n'
-     msgtext += 'http://www.openaddresses.org/?northing=' + str(old_lat) + '&easting=' + str(old_lng) + '&zoom=18&overlayOpacity=0.7'
+     msgtext += 'http://www.openaddresses.org/?northing=%f&easting=%f&zoom=18&overlayOpacity=0.7' % (old_lat, old_lng) 
      msgtext += '\n \n If you want to restore the deletion, open the following link in your browser: \n'
-     msgtext += url + 'qa/restore/' + curid
+     msgtext += '%sqa/restore/%i' % (url, int(curid))
    else:
      return
 	 
@@ -172,6 +172,7 @@ class QaController(BaseController):
 
     def __before__(self):
        self.root_path = config['root_path']
+       self.rootUrl = config['root_url']
    
     def index(self):
         htmlinfo = "Please call <a href='"+self.root_path+"qa/qareport' target='_blank'>http://www.openaddresses.org/qa/qareport</a> for a report on quality information.<br>"\
@@ -181,10 +182,14 @@ class QaController(BaseController):
         "All addresses since December 1 2010:<br><a href='"+self.root_path+"qa/qareport?datesince=20101201' target='_blank'>http://www.openaddresses.org/qa/qareport?datesince=20101201</a><br><br>"\
         "All addresses with a deviation to Bing Maps greater than 50m of city Muttenz, ordered descending by deviation:<br><a href='"+self.root_path+"qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc' target='_blank'>http://www.openaddresses.org/qa/qareport?bdistgr=50&city=Muttenz&orderby=bing_dist desc</a><br><br>"\
         "All addresses with a deviation to Google Maps smaller than 20m of zip 4132, ordered ascending by user:<br><a href='"+self.root_path+"qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc' target='_blank'>http://www.openaddresses.org/qa/qareport?gdistsh=20&zip=4132&orderby=created_by asc</a><br><br>"
+        "Further information on the Quality Management of OpenAddresses can be found at:<br><a href='http://code.google.com/p/openaddresses/wiki/qa' target='_blank'>http://code.google.com/p/openaddresses/wiki/qa</a><br><br>"
 
         return htmlinfo
 
-    		
+    def ondelete(self,id):
+	  #when an address is deleted - send a mail if a qm is attached to it
+      checkfornoticebymail(c.id,'delete',self.rootUrl)
+    		    		
     def restore(self,id):
       #http://127.0.0.1:5000/qa/restore/9
       #check first if record does not exist in table addresses
@@ -304,7 +309,6 @@ class QaController(BaseController):
         if 'bing_dist' in request.params:
           checkfornoticebymail(c.id,'update','')
 
-
     def show(self, id, format='json'):
         """GET /id: Show a specific feature."""
         if (id == 'qareport'):
@@ -391,7 +395,6 @@ class QaController(BaseController):
           qaRow = []
           for column in row:
              if str(type(column)).find('float') == 7: #this means a float value
-                #qaRow.append(str(round(column,4)))
                 qaRow.append(round(column,4))				
              else:			 
                 qaRow.append(str(column))
@@ -400,9 +403,3 @@ class QaController(BaseController):
        c.count = len(qaCreator)  
        c.qaCreator = qaCreator
        return render('/qareport.mako')
-
-
-
-
-
-
