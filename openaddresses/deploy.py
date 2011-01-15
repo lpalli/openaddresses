@@ -33,6 +33,9 @@ def replaceConfig(filename,config):
             if config.get(splitString[1]) is not None:
                 newLine=line.replace('%'+splitString[1]+'%',config.get(splitString[1]).replace('\n',''))
                 outputFile.write(newLine)
+            else:
+                if filename.find('qa.py.in') > 0:
+                    outputFile.write(line)
         elif len(splitString) == 5:
             newLine = line
             if config.get(splitString[1]) is not None:
