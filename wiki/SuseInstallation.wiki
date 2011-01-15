@@ -141,6 +141,8 @@ http://geolin01.cti.ac.at:5000/
  * Include the file apache/wsgi.conf in Apache configuration
  * Include the file apache/mapserver.conf in Apache configuration
 
+ * Logs are under: /var/log/apache2
+
 == Install print ==
 
 {{{
