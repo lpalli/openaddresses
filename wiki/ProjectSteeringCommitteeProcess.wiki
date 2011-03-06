@@ -43,3 +43,14 @@ In brief, the committee votes on proposals on the !OpenAddresses mailing list. P
  1. Committee members are expected to participate in pre-scheduled IRC meetings.
  1. Committee members are expected to be active on the mailing lists.
  1. Committee members are expected to vote on proposals and issues in a timely manner.
+
+== PSC Members ==
+
+ 1. Stefanie Andrae, Carinthia University of Applied Sciences, Austria 
+ 1. Lukas Bähler, University of Applied Sciences Northwestrn, Switzerland, 
+ 1. Jeff Konnen, ubiThere Consulting s.àr.l., Luxembourg 
+ 1. Lars Lingner, Consultant, Germany 
+ 1. Jean-Luc Miserez, inser, Switzerland 
+ 1. Cédric Moullet, swisstopo, Switzerland 
+ 1. Luca Palli, inser, Switzerland 
+ 1. Hans-Jörg Stark, University of Applied Sciences Northwestrn, Switzerland (PSC Chairman). 
