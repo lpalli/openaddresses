@@ -913,3 +913,47 @@ INSERT INTO address (
      transform(the_geom, 4326)
 FROM arvada);
 }}}
+
+= Rhode Island, Colorado=
+
+ * Data origin: State of RI, Dep of Admin, Div of Planning
+ * Contact person: Shane D. White
+ * License validation: email from 03/04/2011
+ * Import shp
+
+{{{
+
+psql -d openaddresses
+INSERT into spatial_ref_sys (srid, auth_name, auth_srid, proj4text, srtext) values ( 9102730, 'esri', 102730, '+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.99999375 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs ', 'PROJCS["NAD_1983_StatePlane_Rhode_Island_FIPS_3800_Feet",GEOGCS["GCS_North_American_1983",DATUM["North_American_Datum_1983",SPHEROID["GRS_1980",6378137,298.257222101]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",328083.3333333333],PARAMETER["False_Northing",0],PARAMETER["Central_Meridian",-71.5],PARAMETER["Scale_Factor",0.99999375],PARAMETER["Latitude_Of_Origin",41.08333333333334],UNIT["Foot_US",0.30480060960121924],AUTHORITY["EPSG","102730"]]');
+
+shp2pgsql -s 9102730 -W 'utf-8' e911Sites11q1 > rhode.sql
+
+sudo su postgres
+
+psql -d openaddresses -f rhode.sql
+
+psql -d openaddresses
+
+INSERT INTO address (
+   housenumber,
+   street,
+   postcode,
+   city,
+   country,
+   created_by,
+   time_created,
+   reference,
+   quality,
+   geom) (SELECT
+     housenumbe,
+     sn || ' ' || st || ' ' || sd,
+     zip,
+     zn,
+     'US',
+     'Rhode Island',
+     now(),
+     'http://www.openaddresses.org',
+     'Donated',
+     transform(the_geom, 4326)
+FROM e911sites11q1 where zn is not null and sn is not null);
+}}}
