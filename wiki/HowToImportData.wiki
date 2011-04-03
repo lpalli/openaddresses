@@ -955,5 +955,7 @@ INSERT INTO address (
      'http://www.openaddresses.org',
      'Donated',
      transform(the_geom, 4326)
-FROM e911sites11q1 where zn is not null and sn is not null);
+FROM e911sites11q1 where zn is not null 
+  and sn is not null
+  and char_length(housenumbe) < 9);
 }}}
