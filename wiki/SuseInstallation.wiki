@@ -99,6 +99,11 @@ Available templates:
 
 This has to be done everytime you want to test the application
 
+Modify development.ini:
+
+host = 193.171.127.80
+set debug=true
+
 {{{
 cd
 source env/bin/activate
